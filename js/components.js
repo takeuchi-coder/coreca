@@ -1,21 +1,7 @@
 /**
- * 共通コンポーネントの読み込みと案件一覧 UI の制御
+ * 案件一覧 UI の制御
+ * ヘッダー・フッターは index.html に直接インライン記述（共通パーツの定義元: components/ ディレクトリ）
  */
-
-/* ===========================
-   共通パーツ読み込み
-=========================== */
-async function loadComponent(selector, url) {
-  const el = document.querySelector(selector);
-  if (!el) return;
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`${url} の読み込みに失敗しました`);
-    el.innerHTML = await res.text();
-  } catch (e) {
-    console.error(e);
-  }
-}
 
 /* ===========================
    SVG アイコン定義
@@ -293,13 +279,8 @@ function initToggles() {
 /* ===========================
    初期化
 =========================== */
-async function initComponents() {
-  await Promise.all([
-    loadComponent('#header-placeholder', 'components/header.html'),
-    loadComponent('#footer-placeholder', 'components/footer.html'),
-  ]);
-
-  // ハンバーガーメニュー
+function initHeader() {
+  // ハンバーガーメニュー（モバイル用）
   const hamburger = document.getElementById('hamburgerBtn');
   const nav = document.getElementById('headerNav');
   if (hamburger && nav) {
@@ -344,8 +325,8 @@ function initUI() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  await initComponents();
+document.addEventListener('DOMContentLoaded', () => {
+  initHeader();
   initUI();
   renderList();
 });
