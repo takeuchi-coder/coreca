@@ -765,6 +765,53 @@ button {
 }
 
 /* ===========================
+   Footer Pagination
+=========================== */
+.footer-pagination {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 0 4px;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-footer-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  color: #444;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+.btn-footer-page:hover:not(:disabled) {
+  border-color: #e8192c;
+  color: #e8192c;
+}
+
+.btn-footer-page:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.footer-page-info {
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+  min-width: 140px;
+  text-align: center;
+}
+
+/* ===========================
    Footer
 =========================== */
 .site-footer {

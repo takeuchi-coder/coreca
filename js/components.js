@@ -196,7 +196,27 @@ function renderList() {
   }
 
   renderPagination(total);
+  renderFooterPagination(total);
   updateBadgeCounts();
+}
+
+/* ===========================
+   フッターページネーション
+=========================== */
+function renderFooterPagination(total) {
+  const totalPages = Math.ceil(total / state.perPage);
+  const start = (state.page - 1) * state.perPage;
+  const end = Math.min(start + state.perPage, total);
+
+  const infoEl = document.getElementById('footerPageInfo');
+  if (infoEl) {
+    infoEl.textContent = total === 0 ? '0件' : `${total}件中${start + 1}〜${end}件表示`;
+  }
+
+  const prevBtn = document.getElementById('footerPrevBtn');
+  const nextBtn = document.getElementById('footerNextBtn');
+  if (prevBtn) prevBtn.disabled = state.page <= 1;
+  if (nextBtn) nextBtn.disabled = state.page >= totalPages || totalPages <= 1;
 }
 
 /* ===========================
@@ -321,6 +341,32 @@ function initUI() {
       state.perPage = parseInt(perPageSel.value);
       state.page = 1;
       renderList();
+    });
+  }
+
+  // フッター：前の10件
+  const footerPrev = document.getElementById('footerPrevBtn');
+  if (footerPrev) {
+    footerPrev.addEventListener('click', () => {
+      if (state.page > 1) {
+        state.page -= 1;
+        renderList();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
+  // フッター：次の10件
+  const footerNext = document.getElementById('footerNextBtn');
+  if (footerNext) {
+    footerNext.addEventListener('click', () => {
+      const filtered = getFiltered();
+      const totalPages = Math.ceil(filtered.length / state.perPage);
+      if (state.page < totalPages) {
+        state.page += 1;
+        renderList();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 }
