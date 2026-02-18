@@ -28,39 +28,43 @@
 
     <!-- タブ（進行中 / 完了） -->
     <div class="tab-bar">
-      <button class="tab-btn tab-btn--active">進行中（作業期間内）</button>
-      <button class="tab-btn">完了</button>
+      <button class="tab-btn tab-btn--active" data-tab="active">進行中（作業期間内）</button>
+      <button class="tab-btn" data-tab="done">完了</button>
     </div>
 
     <!-- 件数 + 表示件数 -->
     <div class="list-controls">
-      <p class="list-count"><strong>23</strong> 件中 <strong>1〜10</strong> 件表示</p>
-      <select class="per-page-select">
-        <option value="10">10件</option>
+      <p class="list-count">
+        <strong id="totalCount">0</strong> 件中
+        <strong id="rangeLabel">1〜10</strong> 件表示
+      </p>
+      <select class="per-page-select" id="perPageSelect">
+        <option value="5">5件</option>
+        <option value="10" selected>10件</option>
         <option value="20">20件</option>
         <option value="50">50件</option>
       </select>
     </div>
 
     <!-- ステータスフィルター -->
-    <div class="status-filters">
-      <button class="filter-pill filter-pill--active">全て</button>
-      <button class="filter-pill filter-pill--red">
+    <div class="status-filters" id="statusFilters">
+      <button class="filter-pill filter-pill--active" data-filter="all">全て</button>
+      <button class="filter-pill filter-pill--red" data-filter="no-hire">
         採用者なし
-        <span class="pill-count" style="background:#e8192c;color:#fff;">3</span>
+        <span class="pill-count" id="count-no-hire">0</span>
       </button>
-      <button class="filter-pill filter-pill--orange">
+      <button class="filter-pill filter-pill--orange" data-filter="need-report">
         要近況報告
-        <span class="pill-count" style="background:#f57c00;color:#fff;">2</span>
+        <span class="pill-count" id="count-need-report">0</span>
       </button>
-      <button class="filter-pill">仕事を受け付ける</button>
-      <button class="filter-pill">契約中</button>
-      <button class="filter-pill">要検収</button>
-      <button class="filter-pill filter-pill--red">
+      <button class="filter-pill" data-filter="accepting">仕事を受け付ける</button>
+      <button class="filter-pill" data-filter="contracted">契約中</button>
+      <button class="filter-pill" data-filter="need-inspection">要検収</button>
+      <button class="filter-pill filter-pill--red" data-filter="unread-msg">
         メッセージ未読
-        <span class="pill-count" style="background:#e8192c;color:#fff;">1</span>
+        <span class="pill-count" id="count-unread-msg">0</span>
       </button>
-      <button class="filter-pill filter-pill--detail">
+      <button class="filter-pill filter-pill--detail" data-filter="search">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"/>
           <line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -69,537 +73,27 @@
       </button>
     </div>
 
-    <!-- 案件リスト -->
-    <div class="project-list">
+    <!-- 案件リスト（JS で描画） -->
+    <div class="project-list" id="projectList"></div>
 
-      <!-- 案件カード 1（採用者なし・アラート） -->
-      <div class="project-card project-card--alert">
-        <div class="card-top">
-          <div class="card-thumbnail">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-          </div>
-          <div class="card-meta">
-            <p class="card-dates">2024/01/15 〜 2024/03/31</p>
-            <div class="card-status-row">
-              <span class="status-badge status-badge--green">進行中</span>
-              <span class="status-badge status-badge--blue">募集中</span>
-              <div class="toggle-wrap">
-                <span class="toggle-label">募集中</span>
-                <label class="toggle-switch">
-                  <input type="checkbox" checked>
-                  <span class="toggle-slider"></span>
-                </label>
-              </div>
-            </div>
-            <h2 class="card-title">【東京都渋谷区】スーパーのチラシ配布スタッフ大募集！時給1,200円・週2日〜OK</h2>
-          </div>
-        </div>
-
-        <div class="card-info-row">
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            東京都渋谷区
-          </span>
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-            ¥1,200〜¥1,500 / 時間
-          </span>
-        </div>
-
-        <div class="card-stats">
-          <span class="stat-item">
-            <span class="stat-label">契約者数：</span>
-            <span class="stat-value">0 名</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">検収完了：</span>
-            <span class="stat-value stat-value--green">0</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">要検収：</span>
-            <span class="stat-value stat-value--orange">0</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">報告中：</span>
-            <span class="stat-value">0</span>
-          </span>
-        </div>
-
-        <div class="card-footer-row">
-          <span class="card-id">案件ID：GK-2024-001</span>
-          <span class="alert-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-            採用者RL0件
-          </span>
-        </div>
-
-        <div class="card-actions">
-          <a href="#" class="btn-action btn-action--outline-red">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            応募者・契約者を確認する
-          </a>
-          <a href="#" class="btn-action btn-action--outline-gray">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-            作業手順・報告を確認する
-          </a>
-        </div>
-      </div>
-
-      <!-- 案件カード 2（通常・契約中） -->
-      <div class="project-card">
-        <div class="card-top">
-          <div class="card-thumbnail">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-          </div>
-          <div class="card-meta">
-            <p class="card-dates">2024/02/01 〜 2024/04/30</p>
-            <div class="card-status-row">
-              <span class="status-badge status-badge--green">進行中</span>
-              <span class="status-badge status-badge--gray">募集停止</span>
-              <div class="toggle-wrap">
-                <span class="toggle-label">募集停止</span>
-                <label class="toggle-switch">
-                  <input type="checkbox">
-                  <span class="toggle-slider"></span>
-                </label>
-              </div>
-            </div>
-            <h2 class="card-title">【神奈川県横浜市】カフェのホールスタッフ募集　未経験歓迎・シフト自由</h2>
-          </div>
-        </div>
-
-        <div class="card-info-row">
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            神奈川県横浜市
-          </span>
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-            ¥950〜¥1,100 / 時間
-          </span>
-        </div>
-
-        <div class="card-stats">
-          <span class="stat-item">
-            <span class="stat-label">契約者数：</span>
-            <span class="stat-value">4 名</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">検収完了：</span>
-            <span class="stat-value stat-value--green">2</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">要検収：</span>
-            <span class="stat-value stat-value--orange">1</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">報告中：</span>
-            <span class="stat-value">1</span>
-          </span>
-        </div>
-
-        <div class="card-footer-row">
-          <span class="card-id">案件ID：GK-2024-002</span>
-        </div>
-
-        <div class="card-actions">
-          <a href="#" class="btn-action btn-action--outline-red">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            応募者・契約者を確認する
-          </a>
-          <a href="#" class="btn-action btn-action--outline-gray">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-            作業手順・報告を確認する
-          </a>
-          <a href="#" class="btn-action btn-action--outline-blue">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="17 1 21 5 17 9"/>
-              <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-              <polyline points="7 23 3 19 7 15"/>
-              <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-            </svg>
-            契約を更新する
-          </a>
-        </div>
-      </div>
-
-      <!-- 案件カード 3（要近況報告） -->
-      <div class="project-card project-card--alert">
-        <div class="card-top">
-          <div class="card-thumbnail">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-          </div>
-          <div class="card-meta">
-            <p class="card-dates">2024/01/01 〜 2024/02/29</p>
-            <div class="card-status-row">
-              <span class="status-badge status-badge--green">進行中</span>
-              <span class="status-badge status-badge--blue">募集中</span>
-              <div class="toggle-wrap">
-                <span class="toggle-label">募集中</span>
-                <label class="toggle-switch">
-                  <input type="checkbox" checked>
-                  <span class="toggle-slider"></span>
-                </label>
-              </div>
-            </div>
-            <h2 class="card-title">【埼玉県さいたま市】引越し作業補助スタッフ　土日のみ可・日払いあり</h2>
-          </div>
-        </div>
-
-        <div class="card-info-row">
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            埼玉県さいたま市
-          </span>
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-            ¥10,000〜¥15,000 / 日
-          </span>
-        </div>
-
-        <div class="card-stats">
-          <span class="stat-item">
-            <span class="stat-label">契約者数：</span>
-            <span class="stat-value">2 名</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">検収完了：</span>
-            <span class="stat-value stat-value--green">0</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">要検収：</span>
-            <span class="stat-value stat-value--orange">2</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">報告中：</span>
-            <span class="stat-value">0</span>
-          </span>
-        </div>
-
-        <div class="card-footer-row">
-          <span class="card-id">案件ID：GK-2024-003</span>
-          <span class="alert-badge" style="background:#f57c00;">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="8" x2="12" y2="12"/>
-              <line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-            要近況報告
-          </span>
-        </div>
-
-        <div class="card-actions">
-          <a href="#" class="btn-action btn-action--outline-red">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            応募者・契約者を確認する
-          </a>
-          <a href="#" class="btn-action btn-action--outline-gray">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-            作業手順・報告を確認する
-          </a>
-        </div>
-      </div>
-
-      <!-- 案件カード 4（通常） -->
-      <div class="project-card">
-        <div class="card-top">
-          <div class="card-thumbnail">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-          </div>
-          <div class="card-meta">
-            <p class="card-dates">2024/03/01 〜 2024/05/31</p>
-            <div class="card-status-row">
-              <span class="status-badge status-badge--green">進行中</span>
-              <span class="status-badge status-badge--blue">募集中</span>
-              <div class="toggle-wrap">
-                <span class="toggle-label">募集中</span>
-                <label class="toggle-switch">
-                  <input type="checkbox" checked>
-                  <span class="toggle-slider"></span>
-                </label>
-              </div>
-            </div>
-            <h2 class="card-title">【千葉県千葉市】大型ショッピングモール内の清掃スタッフ　週3日〜・交通費支給</h2>
-          </div>
-        </div>
-
-        <div class="card-info-row">
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            千葉県千葉市
-          </span>
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-            ¥1,050 / 時間
-          </span>
-        </div>
-
-        <div class="card-stats">
-          <span class="stat-item">
-            <span class="stat-label">契約者数：</span>
-            <span class="stat-value">6 名</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">検収完了：</span>
-            <span class="stat-value stat-value--green">5</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">要検収：</span>
-            <span class="stat-value stat-value--orange">0</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">報告中：</span>
-            <span class="stat-value">1</span>
-          </span>
-        </div>
-
-        <div class="card-footer-row">
-          <span class="card-id">案件ID：GK-2024-004</span>
-        </div>
-
-        <div class="card-actions">
-          <a href="#" class="btn-action btn-action--outline-red">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            応募者・契約者を確認する
-          </a>
-          <a href="#" class="btn-action btn-action--outline-gray">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-            作業手順・報告を確認する
-          </a>
-          <a href="#" class="btn-action btn-action--outline-blue">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="17 1 21 5 17 9"/>
-              <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-              <polyline points="7 23 3 19 7 15"/>
-              <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-            </svg>
-            契約を更新する
-          </a>
-        </div>
-      </div>
-
-      <!-- 案件カード 5（メッセージ未読） -->
-      <div class="project-card project-card--alert">
-        <div class="card-top">
-          <div class="card-thumbnail">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-          </div>
-          <div class="card-meta">
-            <p class="card-dates">2024/02/15 〜 2024/06/30</p>
-            <div class="card-status-row">
-              <span class="status-badge status-badge--green">進行中</span>
-              <span class="status-badge status-badge--gray">募集停止</span>
-              <div class="toggle-wrap">
-                <span class="toggle-label">募集停止</span>
-                <label class="toggle-switch">
-                  <input type="checkbox">
-                  <span class="toggle-slider"></span>
-                </label>
-              </div>
-            </div>
-            <h2 class="card-title">【東京都港区】イベント会場の設営・撤去スタッフ　高時給・交通費全額支給</h2>
-          </div>
-        </div>
-
-        <div class="card-info-row">
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            東京都港区
-          </span>
-          <span class="card-info-item">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="1" x2="12" y2="23"/>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-            </svg>
-            ¥1,500〜¥2,000 / 時間
-          </span>
-        </div>
-
-        <div class="card-stats">
-          <span class="stat-item">
-            <span class="stat-label">契約者数：</span>
-            <span class="stat-value">3 名</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">検収完了：</span>
-            <span class="stat-value stat-value--green">1</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">要検収：</span>
-            <span class="stat-value stat-value--orange">1</span>
-          </span>
-          <span class="stat-sep">|</span>
-          <span class="stat-item">
-            <span class="stat-label">報告中：</span>
-            <span class="stat-value">1</span>
-          </span>
-        </div>
-
-        <div class="card-footer-row">
-          <span class="card-id">案件ID：GK-2024-005</span>
-          <span class="alert-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-            メッセージ未読 1件
-          </span>
-        </div>
-
-        <div class="card-actions">
-          <a href="#" class="btn-action btn-action--outline-red">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-            応募者・契約者を確認する
-          </a>
-          <a href="#" class="btn-action btn-action--outline-gray">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
-            作業手順・報告を確認する
-          </a>
-        </div>
-      </div>
-
-    </div><!-- /.project-list -->
+    <!-- 空の表示 -->
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+      </svg>
+      <p>該当する案件がありません</p>
+    </div>
 
     <!-- ページネーション -->
-    <nav class="pagination" aria-label="ページネーション">
-      <button class="page-btn page-btn--prev" disabled>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-        前へ
-      </button>
-      <button class="page-btn page-btn--active">1</button>
-      <button class="page-btn">2</button>
-      <button class="page-btn">3</button>
-      <span style="color:#999;padding:0 4px;">...</span>
-      <button class="page-btn">6</button>
-      <button class="page-btn page-btn--next">
-        次へ
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </button>
-    </nav>
+    <nav class="pagination" id="pagination" aria-label="ページネーション"></nav>
 
   </main>
 
   <!-- フッター（共通パーツ） -->
   <div id="footer-placeholder"></div>
 
+  <script src="js/projects.js"></script>
   <script src="js/components.js"></script>
 </body>
 </html>

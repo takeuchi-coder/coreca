@@ -708,6 +708,19 @@ button {
 }
 
 /* ===========================
+   Empty State
+=========================== */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 24px;
+  color: #bbb;
+  font-size: 14px;
+}
+
+/* ===========================
    Pagination
 =========================== */
 .pagination {
