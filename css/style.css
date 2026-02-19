@@ -188,24 +188,35 @@ button {
   white-space: nowrap;
 }
 
-/* アバター + チェブロンボタン */
-.header-avatar-btn {
+/* アカウント情報グループ全体をクリッカブルに見せる */
+.nav-user {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* アイコンのみを丸で囲む */
+.header-avatar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
   color: rgba(255,255,255,0.9);
-  background: rgba(255,255,255,0.15);
-  border-radius: 20px;
-  padding: 4px 8px 4px 6px;
+  flex-shrink: 0;
   transition: background 0.15s;
 }
-.header-avatar-btn:hover {
-  background: rgba(255,255,255,0.28);
-  color: #fff;
+.nav-user:hover .header-avatar-icon {
+  background: rgba(255,255,255,0.35);
 }
+
+/* アカウント名の右に並ぶ arrow */
 .chevron-down {
   flex-shrink: 0;
-  opacity: 0.85;
+  color: rgba(255,255,255,0.85);
 }
 
 .btn-help {
@@ -285,6 +296,7 @@ button {
 .btn-primary--full {
   width: 100%;
   justify-content: center;
+  margin-bottom: 8px;
 }
 
 /* Sidebar nav */
@@ -332,7 +344,7 @@ button {
   flex: 1;
   min-width: 0;
   background: #F5F5F5;
-  padding-left: 20px;
+  padding: 20px;
 }
 
 /* ===========================
@@ -1032,7 +1044,7 @@ button {
   }
 
   .main-content {
-    padding-left: 0;
+    padding: 16px;
   }
 
   .btn-primary--full {
