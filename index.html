@@ -24,30 +24,6 @@
       <!-- ナビゲーション -->
       <nav class="header-nav" id="headerNav">
         <ul class="nav-list">
-          <li class="nav-item">
-            <a href="#" class="nav-link nav-link--notification">
-              <span class="nav-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                </svg>
-              </span>
-              <span class="nav-text">通知</span>
-              <span class="badge badge--red">5</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <span class="nav-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="8" x2="12" y2="16"/>
-                  <line x1="8" y1="12" x2="16" y2="12"/>
-                </svg>
-              </span>
-              <span class="nav-text">案件新規作成</span>
-            </a>
-          </li>
           <li class="nav-item nav-item--active">
             <a href="index.html" class="nav-link">
               <span class="nav-icon">
@@ -60,7 +36,7 @@
                   <line x1="3" y1="18" x2="3.01" y2="18"/>
                 </svg>
               </span>
-              <span class="nav-text">案件一覧</span>
+              <span class="nav-text">案件作成・一覧</span>
             </a>
           </li>
           <li class="nav-item">
@@ -88,17 +64,6 @@
             <a href="#" class="nav-link">
               <span class="nav-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-              </span>
-              <span class="nav-text">アカウント</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <span class="nav-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
@@ -118,18 +83,6 @@
               <span class="nav-text">メニュー・価格表</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <span class="nav-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-                  <polyline points="16 17 21 12 16 7"/>
-                  <line x1="21" y1="12" x2="9" y2="12"/>
-                </svg>
-              </span>
-              <span class="nav-text">ログアウト</span>
-            </a>
-          </li>
         </ul>
         <div class="nav-actions">
           <a href="#" class="btn-help btn-help--teal">
@@ -138,14 +91,17 @@
               <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
               <line x1="12" y1="17" x2="12.01" y2="17"/>
             </svg>
-            操作に困ったら
+            ヘルプ
           </a>
-          <a href="#" class="btn-help btn-help--blue">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-            応募HELP!!
-          </a>
+          <div class="user-info">
+            <span class="user-avatar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+            <span class="user-name">aaaaaaa さん</span>
+          </div>
         </div>
       </nav>
 
@@ -202,7 +158,7 @@
         <span class="pill-count" id="count-no-hire">0</span>
       </button>
       <button class="filter-pill filter-pill--orange" data-filter="need-report">
-        要近況報告
+        要対応
         <span class="pill-count" id="count-need-report">0</span>
       </button>
       <button class="filter-pill" data-filter="accepting">仕事を受け付ける</button>

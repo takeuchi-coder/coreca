@@ -59,18 +59,23 @@ const ICONS = {
 function renderCard(p) {
   const recruitingLabel = p.recruiting ? '募集中' : '募集停止';
   const recruitingBadgeClass = p.recruiting ? 'status-badge--blue' : 'status-badge--gray';
-  const hasAlert = !!p.alert;
-  const alertColor = p.alert?.type === 'orange' ? '#f57c00' : '#e8192c';
-  const alertIcon = p.alert?.label?.includes('メッセージ') ? ICONS.chat : ICONS.alert;
+  const alerts = p.alerts || [];
+  const hasAlert = alerts.length > 0;
+
+  const alertsHtml = alerts.map(alert => {
+    const alertColor = alert.type === 'orange' ? '#f57c00' : '#e8192c';
+    const alertIcon = alert.label.includes('メッセージ') ? ICONS.chat : ICONS.alert;
+    return `<span class="alert-badge" style="background:${alertColor};">${alertIcon} ${alert.label}</span>`;
+  }).join('');
 
   const actionsHtml = [
     p.actions.includes('applicants') ? `
       <a href="#" class="btn-action btn-action--outline-red">
-        ${ICONS.users} 応募者・契約者を確認する
+        ${ICONS.users} 応募者・契約者を確認
       </a>` : '',
     p.actions.includes('procedure') ? `
       <a href="#" class="btn-action btn-action--outline-gray">
-        ${ICONS.file} 作業手順・報告を確認する
+        ${ICONS.file} 作業手順・報告を確認
       </a>` : '',
     p.actions.includes('renew') ? `
       <a href="#" class="btn-action btn-action--outline-blue">
@@ -128,10 +133,7 @@ function renderCard(p) {
 
       <div class="card-footer-row">
         <span class="card-id">案件ID：${p.id}</span>
-        ${hasAlert ? `
-          <span class="alert-badge" style="background:${alertColor};">
-            ${alertIcon} ${p.alert.label}
-          </span>` : ''}
+        ${alertsHtml}
       </div>
 
       <div class="card-actions">${actionsHtml}</div>

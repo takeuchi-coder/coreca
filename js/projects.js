@@ -3,17 +3,18 @@
  * status: 'active'（進行中）| 'done'（完了）
  * tags: フィルター用タグ配列
  *   'no-hire'        採用者なし
- *   'need-report'    要近況報告
+ *   'need-report'    要対応
  *   'accepting'      仕事を受け付ける
  *   'contracted'     契約中
  *   'need-inspection'要検収
  *   'unread-msg'     メッセージ未読
+ * alerts: アラートバッジ配列 { type: 'red'|'orange', label: string }
  */
 const PROJECTS = [
   {
     id: 'GK-2024-001',
     status: 'active',
-    tags: ['no-hire'],
+    tags: ['no-hire', 'need-report'],
     dateRange: '2024/01/15 〜 2024/03/31',
     recruiting: true,
     title: '【東京都渋谷区】スーパーのチラシ配布スタッフ大募集！時給1,200円・週2日〜OK',
@@ -23,13 +24,16 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者RL0件' },
+    alerts: [
+      { type: 'red', label: '採用者なし' },
+      { type: 'orange', label: '要対応' },
+    ],
     actions: ['applicants', 'procedure'],
   },
   {
     id: 'GK-2024-002',
     status: 'active',
-    tags: ['contracted'],
+    tags: ['contracted', 'unread-msg'],
     dateRange: '2024/02/01 〜 2024/04/30',
     recruiting: false,
     title: '【神奈川県横浜市】カフェのホールスタッフ募集　未経験歓迎・シフト自由',
@@ -39,7 +43,9 @@ const PROJECTS = [
     inspected: 2,
     needInspection: 1,
     reporting: 1,
-    alert: null,
+    alerts: [
+      { type: 'red', label: 'メッセージ未読2件' },
+    ],
     actions: ['applicants', 'procedure', 'renew'],
   },
   {
@@ -55,13 +61,15 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 2,
     reporting: 0,
-    alert: { type: 'orange', label: '要近況報告' },
+    alerts: [
+      { type: 'orange', label: '要対応' },
+    ],
     actions: ['applicants', 'procedure'],
   },
   {
     id: 'GK-2024-004',
     status: 'active',
-    tags: ['contracted', 'accepting'],
+    tags: ['contracted', 'accepting', 'need-report'],
     dateRange: '2024/03/01 〜 2024/05/31',
     recruiting: true,
     title: '【千葉県千葉市】大型ショッピングモール内の清掃スタッフ　週3日〜・交通費支給',
@@ -71,7 +79,9 @@ const PROJECTS = [
     inspected: 5,
     needInspection: 0,
     reporting: 1,
-    alert: null,
+    alerts: [
+      { type: 'orange', label: '要対応' },
+    ],
     actions: ['applicants', 'procedure', 'renew'],
   },
   {
@@ -87,7 +97,9 @@ const PROJECTS = [
     inspected: 1,
     needInspection: 1,
     reporting: 1,
-    alert: { type: 'red', label: 'メッセージ未読 1件' },
+    alerts: [
+      { type: 'red', label: 'メッセージ未読1件' },
+    ],
     actions: ['applicants', 'procedure'],
   },
   {
@@ -103,7 +115,9 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者RL0件' },
+    alerts: [
+      { type: 'red', label: '採用者なし' },
+    ],
     actions: ['applicants', 'procedure'],
   },
   {
@@ -119,7 +133,7 @@ const PROJECTS = [
     inspected: 3,
     needInspection: 2,
     reporting: 0,
-    alert: null,
+    alerts: [],
     actions: ['applicants', 'procedure'],
   },
   {
@@ -135,7 +149,7 @@ const PROJECTS = [
     inspected: 8,
     needInspection: 0,
     reporting: 0,
-    alert: null,
+    alerts: [],
     actions: ['applicants', 'procedure'],
   },
   {
@@ -151,7 +165,7 @@ const PROJECTS = [
     inspected: 3,
     needInspection: 0,
     reporting: 0,
-    alert: null,
+    alerts: [],
     actions: ['applicants', 'procedure'],
   },
 ];
