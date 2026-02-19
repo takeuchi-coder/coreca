@@ -112,7 +112,9 @@ button {
   color: rgba(255,255,255,0.85);
   padding: 6px 9px;
   border-radius: 6px;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 12px;
+  font-weight: 700;
   white-space: nowrap;
   transition: background 0.15s, color 0.15s;
   position: relative;
@@ -126,7 +128,6 @@ button {
 .nav-item--active .nav-link {
   background: rgba(255,255,255,0.22);
   color: #fff;
-  font-weight: 700;
 }
 
 .nav-icon {
@@ -160,8 +161,9 @@ button {
 /* Header user display */
 .header-username {
   color: rgba(255,255,255,0.95);
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   white-space: nowrap;
 }
 
