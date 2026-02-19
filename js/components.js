@@ -111,13 +111,13 @@ function renderCard(p) {
         </span>
         <span class="stat-sep">|</span>
         <span class="stat-item">
-          <span class="stat-label">検収完了：</span>
+          <span class="stat-label">確完了：</span>
           <span class="stat-value stat-value--green">${p.inspected}</span>
         </span>
         <span class="stat-sep">|</span>
         <span class="stat-item">
-          <span class="stat-label">要検収：</span>
-          <span class="stat-value stat-value--orange">${p.needInspection}</span>
+          <span class="stat-label">要確収：</span>
+          <span class="stat-value ${p.needInspection > 0 ? 'stat-value--red' : ''}">${p.needInspection}</span>
         </span>
         <span class="stat-sep">|</span>
         <span class="stat-item">
@@ -161,9 +161,9 @@ function getFiltered() {
 function updateBadgeCounts() {
   const active = PROJECTS.filter(p => p.status === state.tab);
   const countMap = {
-    'no-hire':         active.filter(p => p.tags.includes('no-hire')).length,
-    'need-report':     active.filter(p => p.tags.includes('need-report')).length,
-    'unread-msg':      active.filter(p => p.tags.includes('unread-msg')).length,
+    'no-hire':      active.filter(p => p.tags.includes('no-hire')).length,
+    'need-action':  active.filter(p => p.tags.includes('need-action')).length,
+    'unread-msg':   active.filter(p => p.tags.includes('unread-msg')).length,
   };
   for (const [key, val] of Object.entries(countMap)) {
     const el = document.getElementById(`count-${key}`);

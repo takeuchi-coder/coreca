@@ -23,7 +23,7 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者RL0件' },
+    alert: { type: 'red', label: '採用者なし' },
     actions: ['applicants', 'procedure'],
   },
   {
@@ -45,7 +45,7 @@ const PROJECTS = [
   {
     id: 'GK-2024-003',
     status: 'active',
-    tags: ['need-report', 'need-inspection'],
+    tags: ['need-action', 'need-inspection'],
     dateRange: '2024/01/01 〜 2024/02/29',
     recruiting: true,
     title: '【埼玉県さいたま市】引越し作業補助スタッフ　土日のみ可・日払いあり',
@@ -55,7 +55,7 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 2,
     reporting: 0,
-    alert: { type: 'orange', label: '要近況報告' },
+    alert: { type: 'orange', label: '要対応' },
     actions: ['applicants', 'procedure'],
   },
   {
@@ -103,7 +103,7 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者RL0件' },
+    alert: { type: 'red', label: '採用者なし' },
     actions: ['applicants', 'procedure'],
   },
   {
