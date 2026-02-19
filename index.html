@@ -89,79 +89,104 @@
   <!-- メインコンテンツ -->
   <main class="site-main">
 
-    <!-- ページタイトル + 新規作成ボタン -->
-    <div class="page-header">
-      <h1 class="page-title">案件一覧</h1>
-      <a href="#" class="btn-primary">
+    <!-- ===== サイドバー ===== -->
+    <aside class="sidebar">
+      <!-- 案件新規作成ボタン -->
+      <a href="#" class="btn-primary btn-primary--full">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <line x1="12" y1="5" x2="12" y2="19"/>
           <line x1="5" y1="12" x2="19" y2="12"/>
         </svg>
         案件新規作成
       </a>
-    </div>
 
-    <!-- タブ（進行中 / 完了） -->
-    <div class="tab-bar">
-      <button class="tab-btn tab-btn--active" data-tab="active">進行中（作業期間内）</button>
-      <button class="tab-btn" data-tab="done">完了</button>
-    </div>
+      <!-- タブ（進行中 / 完了） -->
+      <nav class="sidebar-nav" aria-label="案件ステータス">
+        <button class="sidebar-nav-btn tab-btn--active" data-tab="active">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          進行中（作業期間内）
+        </button>
+        <button class="sidebar-nav-btn" data-tab="done">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          完了
+        </button>
+      </nav>
+    </aside>
+    <!-- ===== /サイドバー ===== -->
 
-    <!-- 件数 + 表示件数 -->
-    <div class="list-controls">
-      <p class="list-count">
-        <strong id="totalCount">0</strong> 件中
-        <strong id="rangeLabel">1〜10</strong> 件表示
-      </p>
-      <select class="per-page-select" id="perPageSelect">
-        <option value="5">5件</option>
-        <option value="10" selected>10件</option>
-        <option value="20">20件</option>
-        <option value="50">50件</option>
-      </select>
-    </div>
+    <!-- ===== メインコンテンツエリア ===== -->
+    <div class="main-content">
 
-    <!-- ステータスフィルター -->
-    <div class="status-filters" id="statusFilters">
-      <button class="filter-pill filter-pill--active" data-filter="all">全て</button>
-      <button class="filter-pill filter-pill--red" data-filter="no-hire">
-        採用者なし
-        <span class="pill-count" id="count-no-hire">0</span>
-      </button>
-      <button class="filter-pill filter-pill--orange" data-filter="need-action">
-        要対応
-        <span class="pill-count" id="count-need-action">0</span>
-      </button>
-      <button class="filter-pill" data-filter="accepting">仕事を受け付ける</button>
-      <button class="filter-pill" data-filter="contracted">契約中</button>
-      <button class="filter-pill" data-filter="need-inspection">要収</button>
-      <button class="filter-pill filter-pill--red" data-filter="unread-msg">
-        未読メッセージ
-        <span class="pill-count" id="count-unread-msg">0</span>
-      </button>
-      <button class="filter-pill filter-pill--detail" data-filter="search">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"/>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <!-- ページタイトル -->
+      <div class="page-header">
+        <h1 class="page-title">案件一覧</h1>
+      </div>
+
+      <!-- 件数 + 表示件数（右揃えで横並び） -->
+      <div class="list-controls">
+        <div class="list-controls-right">
+          <p class="list-count">
+            <strong id="totalCount">0</strong> 件中
+            <strong id="rangeLabel">1〜10</strong> 件表示
+          </p>
+          <select class="per-page-select" id="perPageSelect">
+            <option value="5">5件</option>
+            <option value="10" selected>10件</option>
+            <option value="20">20件</option>
+            <option value="50">50件</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ステータスフィルター -->
+      <div class="status-filters" id="statusFilters">
+        <button class="filter-pill filter-pill--active" data-filter="all">全て</button>
+        <button class="filter-pill filter-pill--red" data-filter="no-hire">
+          採用者なし
+          <span class="pill-count" id="count-no-hire">0</span>
+        </button>
+        <button class="filter-pill filter-pill--orange" data-filter="need-action">
+          要対応
+          <span class="pill-count" id="count-need-action">0</span>
+        </button>
+        <button class="filter-pill" data-filter="accepting">仕事を受け付ける</button>
+        <button class="filter-pill" data-filter="contracted">契約中</button>
+        <button class="filter-pill" data-filter="need-inspection">要収</button>
+        <button class="filter-pill filter-pill--red" data-filter="unread-msg">
+          未読メッセージ
+          <span class="pill-count" id="count-unread-msg">0</span>
+        </button>
+        <button class="filter-pill filter-pill--detail" data-filter="search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          詳細検索
+        </button>
+      </div>
+
+      <!-- 案件リスト（JS で描画） -->
+      <div class="project-list" id="projectList"></div>
+
+      <!-- 空の表示 -->
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
         </svg>
-        詳細検索
-      </button>
+        <p>該当する案件がありません</p>
+      </div>
+
+      <!-- ページネーション -->
+      <nav class="pagination" id="pagination" aria-label="ページネーション"></nav>
+
     </div>
-
-    <!-- 案件リスト（JS で描画） -->
-    <div class="project-list" id="projectList"></div>
-
-    <!-- 空の表示 -->
-    <div class="empty-state" id="emptyState" style="display:none;">
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-      </svg>
-      <p>該当する案件がありません</p>
-    </div>
-
-    <!-- ページネーション -->
-    <nav class="pagination" id="pagination" aria-label="ページネーション"></nav>
+    <!-- ===== /メインコンテンツエリア ===== -->
 
   </main>
 

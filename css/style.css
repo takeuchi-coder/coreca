@@ -236,14 +236,83 @@ button {
 }
 
 /* ===========================
-   Main Layout
+   Main Layout (sidebar + content)
 =========================== */
 .site-main {
   flex: 1;
-  max-width: 1100px;
+  max-width: 1200px;
   width: 100%;
   margin: 24px auto;
   padding: 0 16px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 72px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary--full {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+
+.sidebar-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  text-align: left;
+  padding: 9px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.sidebar-nav-btn:hover {
+  color: #e8192c;
+  background: #fff5f5;
+  border-left-color: #f8a0a8;
+}
+
+.sidebar-nav-btn.tab-btn--active {
+  color: #e8192c;
+  background: #fff0f1;
+  border-left-color: #e8192c;
+  font-weight: 700;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ===========================
@@ -253,7 +322,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .page-title {
@@ -281,51 +350,25 @@ button {
 }
 
 /* ===========================
-   Tab Bar (進行中 / 完了)
-=========================== */
-.tab-bar {
-  display: flex;
-  border-bottom: 2px solid #ddd;
-  margin-bottom: 12px;
-}
-
-.tab-btn {
-  padding: 10px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #888;
-  background: none;
-  border: none;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.tab-btn:hover {
-  color: #e8192c;
-}
-
-.tab-btn--active {
-  color: #e8192c;
-  border-bottom-color: #e8192c;
-}
-
-/* ===========================
    List Controls
 =========================== */
 .list-controls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 12px;
-  flex-wrap: wrap;
-  gap: 8px;
+}
+
+.list-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .list-count {
   font-size: 13px;
   color: #555;
+  white-space: nowrap;
 }
 
 .list-count strong {
@@ -954,6 +997,47 @@ button {
   }
 }
 
+@media (max-width: 780px) {
+  .site-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .btn-primary--full {
+    width: auto;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    border-top: none;
+    border-left: 1px solid #eee;
+    padding-top: 0;
+    padding-left: 8px;
+  }
+
+  .sidebar-nav-btn {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 4px 4px 0 0;
+    padding: 6px 12px;
+  }
+
+  .sidebar-nav-btn.tab-btn--active {
+    border-left-color: transparent;
+    border-bottom-color: #e8192c;
+  }
+}
+
 @media (max-width: 600px) {
   .card-thumbnail {
     width: 72px;
@@ -969,14 +1053,7 @@ button {
     justify-content: center;
   }
 
-  .page-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .tab-btn {
-    padding: 8px 14px;
-    font-size: 13px;
+  .list-controls-right {
+    flex-wrap: wrap;
   }
 }

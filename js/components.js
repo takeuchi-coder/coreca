@@ -309,10 +309,10 @@ function initHeader() {
 }
 
 function initUI() {
-  // タブ
-  document.querySelectorAll('.tab-btn').forEach(btn => {
+  // タブ（サイドバーの data-tab ボタン）
+  document.querySelectorAll('[data-tab]').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-btn--active'));
+      document.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('tab-btn--active'));
       btn.classList.add('tab-btn--active');
       state.tab = btn.dataset.tab || 'active';
       state.page = 1;
