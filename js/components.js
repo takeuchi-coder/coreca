@@ -61,7 +61,6 @@ function renderCard(p) {
   const recruitingBadgeClass = p.recruiting ? 'status-badge--blue' : 'status-badge--gray';
   const hasAlert = !!p.alert;
   const alertColor = p.alert?.type === 'orange' ? '#f57c00' : '#e8192c';
-  const alertIcon = p.alert?.label?.includes('メッセージ') ? ICONS.chat : ICONS.alert;
 
   const actionsHtml = [
     p.actions.includes('applicants') ? `
@@ -107,7 +106,7 @@ function renderCard(p) {
       <div class="card-stats">
         <span class="stat-item">
           <span class="stat-label">契約者数：</span>
-          <span class="stat-value">${p.contracts} 名</span>
+          <span class="stat-value">${p.contracts}</span>
         </span>
         <span class="stat-sep">|</span>
         <span class="stat-item">
@@ -130,7 +129,7 @@ function renderCard(p) {
         <span class="card-id">案件ID：${p.id}</span>
         ${hasAlert ? `
           <span class="alert-badge" style="background:${alertColor};">
-            ${alertIcon} ${p.alert.label}
+            ${p.alert.label}
           </span>` : ''}
       </div>
 

@@ -14,7 +14,7 @@ html {
 
 body {
   font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', Meiryo, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #EDEDED;
   color: #333;
   min-height: 100vh;
   display: flex;
@@ -53,12 +53,11 @@ button {
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 24px;
   height: 56px;
-  gap: 8px;
 }
 
-/* Logo */
+/* Logo — flex: 1 で左半分を占有し、nav-list を中央に押し出す */
 .header-logo {
   display: flex;
   align-items: center;
@@ -66,7 +65,7 @@ button {
   color: #fff;
   font-size: 16px;
   font-weight: 700;
-  flex-shrink: 0;
+  flex: 1;
   letter-spacing: 0.02em;
 }
 
@@ -84,25 +83,17 @@ button {
   white-space: nowrap;
 }
 
-/* Nav */
+/* Nav — 中央配置（ロゴとアクションが両側でflex:1を取るため自然に中央へ） */
 .header-nav {
   display: flex;
   align-items: center;
-  gap: 4px;
-  flex: 1;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.header-nav::-webkit-scrollbar {
-  display: none;
+  flex: 0 0 auto;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
   gap: 2px;
-  flex-shrink: 0;
 }
 
 .nav-item .nav-link {
@@ -158,7 +149,37 @@ button {
   color: #e8192c;
 }
 
-/* Header user display */
+/* 右側アクション — flex: 1 で右半分を占有し、コンテンツを右端へ寄せる */
+.nav-actions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+/* 通知ベル */
+.nav-bell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: rgba(255,255,255,0.85);
+  transition: color 0.15s;
+}
+.nav-bell:hover { color: #fff; }
+.nav-bell .badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+}
+
+/* アカウント情報グループ */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .header-username {
   color: rgba(255,255,255,0.95);
   font-family: 'Noto Sans JP', sans-serif;
@@ -167,30 +188,24 @@ button {
   white-space: nowrap;
 }
 
-.header-avatar {
+/* アバター + チェブロンボタン */
+.header-avatar-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 50%;
-  color: #fff;
+  gap: 4px;
+  color: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 4px 8px 4px 6px;
   transition: background 0.15s;
-  flex-shrink: 0;
 }
-
-.header-avatar:hover {
-  background: rgba(255,255,255,0.35);
+.header-avatar-btn:hover {
+  background: rgba(255,255,255,0.28);
+  color: #fff;
 }
-
-/* Nav actions */
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: auto;
+.chevron-down {
   flex-shrink: 0;
+  opacity: 0.85;
 }
 
 .btn-help {
@@ -247,7 +262,7 @@ button {
   margin: 24px auto;
   padding: 0 16px;
   display: flex;
-  gap: 24px;
+  gap: 0;
   align-items: flex-start;
 }
 
@@ -257,9 +272,10 @@ button {
   flex-shrink: 0;
   position: sticky;
   top: 72px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  background: #F5F5F5;
+  border: none;
+  border-radius: 0;
+  border-right: 1px solid #DCDCDC;
   padding: 14px 12px;
   display: flex;
   flex-direction: column;
@@ -315,6 +331,8 @@ button {
 .main-content {
   flex: 1;
   min-width: 0;
+  background: #F5F5F5;
+  padding-left: 20px;
 }
 
 /* ===========================
@@ -976,18 +994,14 @@ button {
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
+  /* nav-actions はヘッダー内に常駐（ドロップダウンに入らない） */
   .nav-actions {
-    margin-left: 0;
-    margin-top: 12px;
-    width: 100%;
-    gap: 8px;
+    flex: 0 0 auto;
+    gap: 12px;
   }
 
-  .btn-help {
-    flex: 1;
-    justify-content: center;
-    padding: 8px;
-    font-size: 13px;
+  .header-username {
+    display: none;
   }
 
   .hamburger {
@@ -1002,7 +1016,7 @@ button {
 @media (max-width: 780px) {
   .site-main {
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
   }
 
   .sidebar {
@@ -1013,6 +1027,12 @@ button {
     align-items: center;
     padding: 10px 12px;
     gap: 8px;
+    border-right: none;
+    border-bottom: 1px solid #DCDCDC;
+  }
+
+  .main-content {
+    padding-left: 0;
   }
 
   .btn-primary--full {

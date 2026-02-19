@@ -24,7 +24,7 @@
         <span class="logo-text">ご近所ワーク</span>
       </a>
 
-      <!-- ナビゲーション -->
+      <!-- ナビゲーション（中央配置） -->
       <nav class="header-nav" id="headerNav">
         <ul class="nav-list">
           <li class="nav-item nav-item--active">
@@ -58,26 +58,32 @@
             </a>
           </li>
         </ul>
-        <div class="nav-actions">
-          <!-- 通知ベル -->
-          <a href="#" class="nav-link nav-link--notification" style="position:relative;color:#fff;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-            </svg>
-            <span class="badge badge--red" style="position:absolute;top:-4px;right:-6px;">3</span>
-          </a>
-          <!-- ユーザー名 -->
+      </nav>
+
+      <!-- 右側: 通知ベル ＋ アカウント情報 -->
+      <div class="nav-actions">
+        <!-- 通知ベル -->
+        <a href="#" class="nav-bell" aria-label="通知">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="badge badge--red">3</span>
+        </a>
+        <!-- アカウント情報（プルダウン用チェブロン付き） -->
+        <div class="nav-user">
           <span class="header-username">aaaaaa さん</span>
-          <!-- アバター -->
-          <a href="#" class="header-avatar" aria-label="アカウント">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <a href="#" class="header-avatar-btn" aria-label="アカウントメニュー">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
               <circle cx="12" cy="7" r="4"/>
             </svg>
+            <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
           </a>
         </div>
-      </nav>
+      </div>
 
       <!-- ハンバーガーメニュー（モバイル用） -->
       <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
