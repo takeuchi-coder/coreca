@@ -98,12 +98,55 @@ function renderRow(p) {
 }
 
 /* ===========================
+   グリッドカード行 HTML 生成
+=========================== */
+function renderCardItem(p) {
+  const parts = p.dateRange.split('〜');
+  const startDate = parts[0] ? parts[0].trim() : '';
+  const endDate   = parts[1] ? parts[1].trim() : '';
+
+  let stateClass, stateLabel;
+  if (p.status === 'done') {
+    stateClass = 'state-badge--done'; stateLabel = '完了';
+  } else if (p.recruiting) {
+    stateClass = 'state-badge--active'; stateLabel = '進行中';
+  } else {
+    stateClass = 'state-badge--stopped'; stateLabel = '募集停止';
+  }
+
+  return `
+    <div class="proj-icon-card" data-id="${p.id}" data-tags="${p.tags.join(',')}">
+      <div class="pic-thumb">${ICONS.image}</div>
+      <span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span>
+      <div class="pic-title">${p.title}</div>
+      <div class="pic-id">${p.id}</div>
+      <div class="pic-dates">${startDate} 〜 ${endDate}</div>
+      <div class="pic-state">
+        <label class="toggle-switch" style="flex-shrink:0;">
+          <input type="checkbox" ${p.recruiting ? 'checked' : ''}>
+          <span class="toggle-slider"></span>
+        </label>
+        <span class="state-badge ${stateClass}">${stateLabel}</span>
+      </div>
+      <div class="pic-footer">
+        <span class="pic-contracts">契約者 <strong>${p.contracts}</strong></span>
+        <div class="row-actions">
+          <button class="row-detail-btn" title="詳細">›</button>
+          <button class="row-menu-btn" title="メニュー">…</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ===========================
    案件リスト管理
 =========================== */
 let state = {
   tab: 'active',
   filter: 'all',
   sort: 'default',
+  view: 'list',
   page: 1,
   perPage: 10,
 };
@@ -165,6 +208,10 @@ function renderList() {
   if (page.length === 0) {
     list.innerHTML = '';
     empty.style.display = 'flex';
+  } else if (state.view === 'grid') {
+    list.innerHTML = `<div class="proj-icon-grid">${page.map(renderCardItem).join('')}</div>`;
+    empty.style.display = 'none';
+    initToggles();
   } else {
     list.innerHTML = `
       <table class="proj-table">
@@ -337,6 +384,17 @@ function initUI() {
     });
   });
 
+  // ビュー切替（リスト / グリッド）
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('view-btn--active'));
+      btn.classList.add('view-btn--active');
+      state.view = btn.dataset.view || 'list';
+      state.page = 1;
+      renderList();
+    });
+  });
+
   // 表示件数
   const perPageSel = document.getElementById('perPageSelect');
   if (perPageSel) {
@@ -427,7 +485,14 @@ function initUI() {
         const isActive = state.sort !== 'default';
         sortBtn.classList.toggle('filter-ctrl-btn--active', isActive);
         const icon = SORT_BTN_ICONS[state.sort] || SORT_BTN_ICONS['default'];
-        sortBtn.innerHTML = `${icon} 並び替え`;
+        // アクティブ時はアイコンのみ表示、デフォルト時はアイコン＋テキスト
+        if (isActive) {
+          sortBtn.innerHTML = icon;
+          sortBtn.title = opt.textContent.trim();
+        } else {
+          sortBtn.innerHTML = `${icon} 並び替え`;
+          sortBtn.title = '';
+        }
         sortPanel.classList.remove('is-open');
         renderList();
       });
