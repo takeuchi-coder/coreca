@@ -53,7 +53,7 @@ const TAG_LABELS = {
   'need-action':    '要対応',
   'accepting':      '仕事を受け付ける',
   'contracted':     '契約中',
-  'need-inspection':'要収',
+  'need-inspection':'検収',
   'unread-msg':     '未読メッセージ',
 };
 

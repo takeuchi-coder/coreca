@@ -85,10 +85,13 @@ button {
 
 .logo-role {
   font-size: 11px;
-  color: rgba(255,255,255,0.72);
-  font-weight: 400;
+  color: #fff;
+  font-weight: 700;
   white-space: nowrap;
   margin-left: 4px;
+  background: rgba(255,255,255,0.18);
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 /* Nav — 中央配置（ロゴとアクションが両側でflex:1を取るため自然に中央へ） */
