@@ -74,7 +74,7 @@ function renderRow(p) {
           </div>
         </div>
       </td>
-      <td><span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span></td>
+      <td class="col-type"><span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span></td>
       <td class="col-date">${startDate}</td>
       <td class="col-date">${endDate}</td>
       <td>
@@ -218,7 +218,7 @@ function renderList() {
         <thead>
           <tr>
             <th>案件名</th>
-            <th>種別</th>
+            <th class="col-type">種別</th>
             <th>掲載開始</th>
             <th>終了日</th>
             <th>状態</th>

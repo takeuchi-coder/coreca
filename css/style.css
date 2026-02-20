@@ -1341,6 +1341,11 @@ button {
   text-overflow: ellipsis;
 }
 
+.col-type {
+  width: 1%;
+  white-space: nowrap;
+}
+
 .col-date {
   font-size: 12px;
   color: #555;
