@@ -83,6 +83,14 @@ button {
   white-space: nowrap;
 }
 
+.logo-role {
+  font-size: 11px;
+  color: rgba(255,255,255,0.72);
+  font-weight: 400;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
 /* Nav — 中央配置（ロゴとアクションが両側でflex:1を取るため自然に中央へ） */
 .header-nav {
   display: flex;
@@ -1580,3 +1588,27 @@ button {
   font-family: monospace;
   letter-spacing: 0.02em;
 }
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.proj-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.proj-tag--no-hire       { color: #e8192c; }
+.proj-tag--need-action   { color: #f57c00; }
+.proj-tag--accepting     { color: #2e7d32; }
+.proj-tag--contracted    { color: #1565c0; }
+.proj-tag--need-inspection { color: #f57c00; }
+.proj-tag--unread-msg    { color: #6a1b9a; }

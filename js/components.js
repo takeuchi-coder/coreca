@@ -46,6 +46,26 @@ const ICONS = {
 };
 
 /* ===========================
+   ステータスタグ定義
+=========================== */
+const TAG_LABELS = {
+  'no-hire':        '採用者なし',
+  'need-action':    '要対応',
+  'accepting':      '仕事を受け付ける',
+  'contracted':     '契約中',
+  'need-inspection':'要収',
+  'unread-msg':     '未読メッセージ',
+};
+
+function renderStatusTags(tags) {
+  if (!tags || tags.length === 0) return '';
+  const pills = tags.map(t =>
+    `<span class="proj-tag proj-tag--${t}">${TAG_LABELS[t] || t}</span>`
+  ).join('');
+  return `<div class="proj-tags">${pills}</div>`;
+}
+
+/* ===========================
    テーブル行 HTML 生成
 =========================== */
 function renderRow(p) {
@@ -71,6 +91,7 @@ function renderRow(p) {
             <div class="proj-title">${p.title}</div>
             <div class="proj-sub">${p.location} ・ ${p.wage}</div>
             <div class="proj-id">${p.id}</div>
+            ${renderStatusTags(p.tags)}
           </div>
         </div>
       </td>
