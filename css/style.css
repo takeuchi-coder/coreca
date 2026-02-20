@@ -457,38 +457,42 @@ button {
   cursor: pointer;
   transition: all 0.15s;
   white-space: nowrap;
+  --pill-color: #e8192c;
   --pill-badge-bg: #888;
 }
 
+/* タグ別アクセント色 — proj-tag パレットと統一 */
+.filter-pill--no-hire        { --pill-color: #e8192c; color: #e8192c; border-color: #e8192c; --pill-badge-bg: #e8192c; }
+.filter-pill--need-action    { --pill-color: #f57c00; color: #f57c00; border-color: #f57c00; --pill-badge-bg: #f57c00; }
+.filter-pill--accepting      { --pill-color: #2e7d32; color: #2e7d32; border-color: #2e7d32; --pill-badge-bg: #2e7d32; }
+.filter-pill--contracted     { --pill-color: #1565c0; color: #1565c0; border-color: #1565c0; --pill-badge-bg: #1565c0; }
+.filter-pill--need-inspection { --pill-color: #f57c00; color: #f57c00; border-color: #f57c00; --pill-badge-bg: #f57c00; }
+.filter-pill--unread-msg     { --pill-color: #6a1b9a; color: #6a1b9a; border-color: #6a1b9a; --pill-badge-bg: #6a1b9a; }
+
+/* ホバー: 各ピル固有の色に変化（一律赤を廃止） */
 .filter-pill:hover {
-  border-color: #e8192c;
-  color: #e8192c;
-  --pill-badge-bg: #e8192c;
+  border-color: var(--pill-color);
+  color: var(--pill-color);
+  --pill-badge-bg: var(--pill-color);
 }
 
+/* アクティブ: 固有色を背景に */
 .filter-pill--active {
-  background: #e8192c;
-  border-color: #e8192c;
+  background: var(--pill-color);
+  border-color: var(--pill-color);
   color: #fff;
   --pill-badge-bg: rgba(0,0,0,0.22);
 }
 
-.filter-pill--red {
-  border-color: #e8192c;
-  color: #e8192c;
-  --pill-badge-bg: #e8192c;
+/* アクティブ＋ホバー: 白文字を維持（accent色文字→背景同色で不可視になるのを防ぐ） */
+.filter-pill--active:hover {
+  color: #fff;
+  --pill-badge-bg: rgba(0,0,0,0.22);
 }
 
-.filter-pill--orange {
-  border-color: #f57c00;
-  color: #f57c00;
-  --pill-badge-bg: #f57c00;
-}
-
-.filter-pill--detail {
-  border-color: #888;
-  color: #555;
-}
+.filter-pill--red    { --pill-color: #e8192c; color: #e8192c; border-color: #e8192c; --pill-badge-bg: #e8192c; }
+.filter-pill--orange { --pill-color: #f57c00; color: #f57c00; border-color: #f57c00; --pill-badge-bg: #f57c00; }
+.filter-pill--detail { border-color: #888; color: #555; }
 
 .filter-pill .pill-count {
   background: var(--pill-badge-bg, #888);
