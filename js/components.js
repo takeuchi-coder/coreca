@@ -64,7 +64,6 @@ function renderRow(p) {
 
   return `
     <tr class="proj-row" data-id="${p.id}" data-tags="${p.tags.join(',')}">
-      <td class="col-check"><input type="checkbox"></td>
       <td class="col-name">
         <div class="proj-name-cell">
           <div class="proj-thumb">${ICONS.image}</div>
@@ -171,7 +170,6 @@ function renderList() {
       <table class="proj-table">
         <thead>
           <tr>
-            <th class="col-check"><input type="checkbox"></th>
             <th>案件名</th>
             <th>種別</th>
             <th>掲載開始</th>
@@ -408,6 +406,16 @@ function initUI() {
       sortPanel.classList.toggle('is-open');
       sortBtn.classList.toggle('filter-ctrl-btn--active', sortPanel.classList.contains('is-open'));
     });
+    const SORT_BTN_ICONS = {
+      'default':         `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M9 18h6"/></svg>`,
+      'start-date-desc': `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`,
+      'start-date-asc':  `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`,
+      'end-date-asc':    `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`,
+      'end-date-desc':   `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`,
+      'contracts-desc':  `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`,
+      'contracts-asc':   `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`,
+    };
+
     sortPanel.querySelectorAll('.sort-option').forEach(opt => {
       opt.addEventListener('click', () => {
         state.sort  = opt.dataset.sort;
@@ -415,8 +423,11 @@ function initUI() {
         // アクティブ表示更新
         sortPanel.querySelectorAll('.sort-option').forEach(o => o.classList.remove('sort-option--active'));
         opt.classList.add('sort-option--active');
-        // ボタンのハイライト（デフォルト以外は強調）
-        sortBtn.classList.toggle('filter-ctrl-btn--active', state.sort !== 'default');
+        // ボタンのアイコン・ハイライト更新
+        const isActive = state.sort !== 'default';
+        sortBtn.classList.toggle('filter-ctrl-btn--active', isActive);
+        const icon = SORT_BTN_ICONS[state.sort] || SORT_BTN_ICONS['default'];
+        sortBtn.innerHTML = `${icon} 並び替え`;
         sortPanel.classList.remove('is-open');
         renderList();
       });
