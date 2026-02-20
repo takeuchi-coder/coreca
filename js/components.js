@@ -32,15 +32,7 @@ const ICONS = {
     <polyline points="7 23 3 19 7 15"/>
     <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
   </svg>`,
-  alert: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <circle cx="12" cy="12" r="10"/>
-    <line x1="12" y1="8" x2="12" y2="12"/>
-    <line x1="12" y1="16" x2="12.01" y2="16"/>
-  </svg>`,
-  chat: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-  </svg>`,
-  image: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+  image: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
     <rect x="3" y="3" width="18" height="18" rx="2"/>
     <circle cx="8.5" cy="8.5" r="1.5"/>
     <polyline points="21 15 16 10 5 21"/>
@@ -54,87 +46,54 @@ const ICONS = {
 };
 
 /* ===========================
-   カード HTML 生成
+   テーブル行 HTML 生成
 =========================== */
-function renderCard(p) {
-  const recruitingLabel = p.recruiting ? '募集中' : '募集停止';
-  const recruitingBadgeClass = p.recruiting ? 'status-badge--blue' : 'status-badge--gray';
-  const hasAlert = !!p.alert;
-  const alertColor = p.alert?.type === 'orange' ? '#f57c00' : '#e8192c';
+function renderRow(p) {
+  const parts = p.dateRange.split('〜');
+  const startDate = parts[0] ? parts[0].trim() : '';
+  const endDate   = parts[1] ? parts[1].trim() : '';
 
-  const actionsHtml = [
-    p.actions.includes('applicants') ? `
-      <a href="#" class="btn-action btn-action--outline-red">
-        ${ICONS.users} 応募者・契約者を確認する
-      </a>` : '',
-    p.actions.includes('procedure') ? `
-      <a href="#" class="btn-action btn-action--outline-gray">
-        ${ICONS.file} 作業手順・報告を確認する
-      </a>` : '',
-    p.actions.includes('renew') ? `
-      <a href="#" class="btn-action btn-action--outline-blue">
-        ${ICONS.renew} 契約を更新する
-      </a>` : '',
-  ].join('');
+  let stateClass, stateLabel;
+  if (p.status === 'done') {
+    stateClass = 'state-badge--done'; stateLabel = '完了';
+  } else if (p.recruiting) {
+    stateClass = 'state-badge--active'; stateLabel = '進行中';
+  } else {
+    stateClass = 'state-badge--stopped'; stateLabel = '募集停止';
+  }
 
   return `
-    <div class="project-card${hasAlert ? ' project-card--alert' : ''}" data-id="${p.id}" data-tags="${p.tags.join(',')}">
-      <div class="card-top">
-        <div class="card-thumbnail">${ICONS.image}</div>
-        <div class="card-meta">
-          <p class="card-dates">${p.dateRange}</p>
-          <div class="card-status-row">
-            <span class="status-badge status-badge--green">進行中</span>
-            <span class="status-badge ${recruitingBadgeClass}">${recruitingLabel}</span>
-            <div class="toggle-wrap">
-              <span class="toggle-label">${recruitingLabel}</span>
-              <label class="toggle-switch">
-                <input type="checkbox" ${p.recruiting ? 'checked' : ''}>
-                <span class="toggle-slider"></span>
-              </label>
-            </div>
+    <tr class="proj-row" data-id="${p.id}" data-tags="${p.tags.join(',')}">
+      <td class="col-check"><input type="checkbox"></td>
+      <td class="col-name">
+        <div class="proj-name-cell">
+          <div class="proj-thumb">${ICONS.image}</div>
+          <div class="proj-name-info">
+            <div class="proj-title">${p.title}</div>
+            <div class="proj-sub">${p.location} ・ ${p.wage}</div>
           </div>
-          <h2 class="card-title">${p.title}</h2>
         </div>
-      </div>
-
-      <div class="card-info-row">
-        <span class="card-info-item">${ICONS.pin} ${p.location}</span>
-        <span class="card-info-item">${ICONS.yen} ${p.wage}</span>
-      </div>
-
-      <div class="card-stats">
-        <span class="stat-item">
-          <span class="stat-label">契約者数：</span>
-          <span class="stat-value">${p.contracts}</span>
-        </span>
-        <span class="stat-sep">|</span>
-        <span class="stat-item">
-          <span class="stat-label">確完了：</span>
-          <span class="stat-value stat-value--green">${p.inspected}</span>
-        </span>
-        <span class="stat-sep">|</span>
-        <span class="stat-item">
-          <span class="stat-label">要確収：</span>
-          <span class="stat-value ${p.needInspection > 0 ? 'stat-value--red' : ''}">${p.needInspection}</span>
-        </span>
-        <span class="stat-sep">|</span>
-        <span class="stat-item">
-          <span class="stat-label">報告中：</span>
-          <span class="stat-value">${p.reporting}</span>
-        </span>
-      </div>
-
-      <div class="card-footer-row">
-        <span class="card-id">案件ID：${p.id}</span>
-        ${hasAlert ? `
-          <span class="alert-badge" style="background:${alertColor};">
-            ${p.alert.label}
-          </span>` : ''}
-      </div>
-
-      <div class="card-actions">${actionsHtml}</div>
-    </div>
+      </td>
+      <td><span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span></td>
+      <td class="col-date">${startDate}</td>
+      <td class="col-date">${endDate}</td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="state-badge ${stateClass}">${stateLabel}</span>
+          <label class="toggle-switch" style="flex-shrink:0;">
+            <input type="checkbox" ${p.recruiting ? 'checked' : ''}>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </td>
+      <td style="text-align:center;font-weight:700;color:#333;">${p.contracts}</td>
+      <td class="col-actions">
+        <div class="row-actions">
+          <button class="row-detail-btn" title="詳細">›</button>
+          <button class="row-menu-btn" title="メニュー">…</button>
+        </div>
+      </td>
+    </tr>
   `;
 }
 
@@ -160,9 +119,9 @@ function getFiltered() {
 function updateBadgeCounts() {
   const active = PROJECTS.filter(p => p.status === state.tab);
   const countMap = {
-    'no-hire':      active.filter(p => p.tags.includes('no-hire')).length,
-    'need-action':  active.filter(p => p.tags.includes('need-action')).length,
-    'unread-msg':   active.filter(p => p.tags.includes('unread-msg')).length,
+    'no-hire':     active.filter(p => p.tags.includes('no-hire')).length,
+    'need-action': active.filter(p => p.tags.includes('need-action')).length,
+    'unread-msg':  active.filter(p => p.tags.includes('unread-msg')).length,
   };
   for (const [key, val] of Object.entries(countMap)) {
     const el = document.getElementById(`count-${key}`);
@@ -171,25 +130,38 @@ function updateBadgeCounts() {
 }
 
 function renderList() {
-  const list = document.getElementById('projectList');
+  const list  = document.getElementById('projectList');
   const empty = document.getElementById('emptyState');
-  const totalEl = document.getElementById('totalCount');
-  const rangeEl = document.getElementById('rangeLabel');
 
   const filtered = getFiltered();
-  const total = filtered.length;
-  const start = (state.page - 1) * state.perPage;
-  const end = Math.min(start + state.perPage, total);
-  const page = filtered.slice(start, end);
-
-  if (totalEl) totalEl.textContent = total;
-  if (rangeEl) rangeEl.textContent = total === 0 ? '0' : `${start + 1}〜${end}`;
+  const total    = filtered.length;
+  const start    = (state.page - 1) * state.perPage;
+  const end      = Math.min(start + state.perPage, total);
+  const page     = filtered.slice(start, end);
 
   if (page.length === 0) {
     list.innerHTML = '';
     empty.style.display = 'flex';
   } else {
-    list.innerHTML = page.map(renderCard).join('');
+    list.innerHTML = `
+      <table class="proj-table">
+        <thead>
+          <tr>
+            <th class="col-check"><input type="checkbox"></th>
+            <th>案件名</th>
+            <th>種別</th>
+            <th>掲載開始</th>
+            <th>終了日</th>
+            <th>状態</th>
+            <th style="text-align:center;">契約者</th>
+            <th class="col-actions">アクション</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${page.map(renderRow).join('')}
+        </tbody>
+      </table>
+    `;
     empty.style.display = 'none';
     initToggles();
   }
@@ -200,22 +172,32 @@ function renderList() {
 }
 
 /* ===========================
-   フッターページネーション
+   フッター & ツールバーページネーション
 =========================== */
 function renderFooterPagination(total) {
-  const totalPages = Math.ceil(total / state.perPage);
+  const totalPages = Math.ceil(total / state.perPage) || 1;
   const start = (state.page - 1) * state.perPage;
-  const end = Math.min(start + state.perPage, total);
+  const end   = Math.min(start + state.perPage, total);
 
   const infoEl = document.getElementById('footerPageInfo');
   if (infoEl) {
     infoEl.textContent = total === 0 ? '0件' : `${total}件中${start + 1}〜${end}件表示`;
   }
 
-  const prevBtn = document.getElementById('footerPrevBtn');
-  const nextBtn = document.getElementById('footerNextBtn');
-  if (prevBtn) prevBtn.disabled = state.page <= 1;
-  if (nextBtn) nextBtn.disabled = state.page >= totalPages || totalPages <= 1;
+  const toolbarInfo = document.getElementById('toolbarPageInfo');
+  if (toolbarInfo) {
+    toolbarInfo.textContent = total === 0 ? '0 / 0' : `${state.page} / ${totalPages}`;
+  }
+
+  const footerPrev = document.getElementById('footerPrevBtn');
+  const footerNext = document.getElementById('footerNextBtn');
+  if (footerPrev) footerPrev.disabled = state.page <= 1;
+  if (footerNext) footerNext.disabled = state.page >= totalPages || totalPages <= 1;
+
+  const toolbarPrev = document.getElementById('toolbarPrevBtn');
+  const toolbarNext = document.getElementById('toolbarNextBtn');
+  if (toolbarPrev) toolbarPrev.disabled = state.page <= 1;
+  if (toolbarNext) toolbarNext.disabled = state.page >= totalPages || totalPages <= 1;
 }
 
 /* ===========================
@@ -282,14 +264,15 @@ function buildPageNumbers(cur, total) {
 function initToggles() {
   document.querySelectorAll('.toggle-switch input').forEach(input => {
     input.addEventListener('change', () => {
-      const wrap = input.closest('.toggle-wrap');
-      const label = wrap?.querySelector('.toggle-label');
-      const badge = wrap?.closest('.card-meta')?.querySelector('.status-badge:last-of-type');
-      const text = input.checked ? '募集中' : '募集停止';
-      if (label) label.textContent = text;
-      if (badge) {
-        badge.textContent = text;
-        badge.className = `status-badge ${input.checked ? 'status-badge--blue' : 'status-badge--gray'}`;
+      const text       = input.checked ? '進行中' : '募集停止';
+      const badgeClass = input.checked ? 'state-badge--active' : 'state-badge--stopped';
+      const td = input.closest('td');
+      if (td) {
+        const badge = td.querySelector('.state-badge');
+        if (badge) {
+          badge.textContent = text;
+          badge.className = `state-badge ${badgeClass}`;
+        }
       }
     });
   });
@@ -299,9 +282,8 @@ function initToggles() {
    初期化
 =========================== */
 function initHeader() {
-  // ハンバーガーメニュー（モバイル用）
   const hamburger = document.getElementById('hamburgerBtn');
-  const nav = document.getElementById('headerNav');
+  const nav       = document.getElementById('headerNav');
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => nav.classList.toggle('is-open'));
   }
@@ -313,8 +295,8 @@ function initUI() {
     btn.addEventListener('click', () => {
       document.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('tab-btn--active'));
       btn.classList.add('tab-btn--active');
-      state.tab = btn.dataset.tab || 'active';
-      state.page = 1;
+      state.tab    = btn.dataset.tab || 'active';
+      state.page   = 1;
       state.filter = 'all';
       document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('filter-pill--active'));
       document.querySelector('[data-filter="all"]')?.classList.add('filter-pill--active');
@@ -328,7 +310,7 @@ function initUI() {
       document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('filter-pill--active'));
       pill.classList.add('filter-pill--active');
       state.filter = pill.dataset.filter || 'all';
-      state.page = 1;
+      state.page   = 1;
       renderList();
     });
   });
@@ -338,8 +320,33 @@ function initUI() {
   if (perPageSel) {
     perPageSel.addEventListener('change', () => {
       state.perPage = parseInt(perPageSel.value);
-      state.page = 1;
+      state.page    = 1;
       renderList();
+    });
+  }
+
+  // ツールバー：前のページ
+  const toolbarPrev = document.getElementById('toolbarPrevBtn');
+  if (toolbarPrev) {
+    toolbarPrev.addEventListener('click', () => {
+      if (state.page > 1) {
+        state.page -= 1;
+        renderList();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
+  // ツールバー：次のページ
+  const toolbarNext = document.getElementById('toolbarNextBtn');
+  if (toolbarNext) {
+    toolbarNext.addEventListener('click', () => {
+      const totalPages = Math.ceil(getFiltered().length / state.perPage);
+      if (state.page < totalPages) {
+        state.page += 1;
+        renderList();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 
@@ -359,8 +366,7 @@ function initUI() {
   const footerNext = document.getElementById('footerNextBtn');
   if (footerNext) {
     footerNext.addEventListener('click', () => {
-      const filtered = getFiltered();
-      const totalPages = Math.ceil(filtered.length / state.perPage);
+      const totalPages = Math.ceil(getFiltered().length / state.perPage);
       if (state.page < totalPages) {
         state.page += 1;
         renderList();

@@ -138,51 +138,96 @@
         <h1 class="page-title">案件一覧</h1>
       </div>
 
-      <!-- 件数 + 表示件数（右揃えで横並び） -->
-      <div class="list-controls">
-        <div class="list-controls-right">
-          <p class="list-count">
-            <strong id="totalCount">0</strong> 件中
-            <strong id="rangeLabel">1〜10</strong> 件表示
-          </p>
+      <!-- フィルタータブ行（左: タブ / 右: フィルター・並び替え） -->
+      <div class="filter-bar">
+        <div class="status-filters" id="statusFilters">
+          <button class="filter-pill filter-pill--active" data-filter="all">全て</button>
+          <button class="filter-pill" data-filter="no-hire">
+            採用者なし
+            <span class="pill-count" id="count-no-hire">0</span>
+          </button>
+          <button class="filter-pill" data-filter="need-action">
+            要対応
+            <span class="pill-count" id="count-need-action">0</span>
+          </button>
+          <button class="filter-pill" data-filter="accepting">仕事を受け付ける</button>
+          <button class="filter-pill" data-filter="contracted">契約中</button>
+          <button class="filter-pill" data-filter="need-inspection">要収</button>
+          <button class="filter-pill" data-filter="unread-msg">
+            未読メッセージ
+            <span class="pill-count" id="count-unread-msg">0</span>
+          </button>
+          <button class="filter-pill filter-pill--search" data-filter="search">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            詳細検索
+          </button>
+        </div>
+        <div class="filter-bar-right">
+          <button class="filter-ctrl-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/>
+            </svg>
+            フィルター
+          </button>
+          <button class="filter-ctrl-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18M6 12h12M9 18h6"/>
+            </svg>
+            並び替え
+          </button>
+        </div>
+      </div>
+
+      <!-- 検索バー + ページコントロール -->
+      <div class="proj-toolbar">
+        <label class="toolbar-search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" class="search-input" placeholder="検索...">
+        </label>
+        <div class="toolbar-right">
+          <span class="toolbar-page-info" id="toolbarPageInfo">—</span>
+          <div class="toolbar-page-nav">
+            <button class="toolbar-nav-btn" id="toolbarPrevBtn" disabled>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button class="toolbar-nav-btn" id="toolbarNextBtn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
           <select class="per-page-select" id="perPageSelect">
             <option value="5">5件</option>
             <option value="10" selected>10件</option>
             <option value="20">20件</option>
             <option value="50">50件</option>
           </select>
+          <div class="view-toggle">
+            <button class="view-btn view-btn--active" title="リスト表示">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+            </button>
+            <button class="view-btn" title="グリッド表示">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      <!-- ステータスフィルター -->
-      <div class="status-filters" id="statusFilters">
-        <button class="filter-pill filter-pill--active" data-filter="all">全て</button>
-        <button class="filter-pill filter-pill--red" data-filter="no-hire">
-          採用者なし
-          <span class="pill-count" id="count-no-hire">0</span>
-        </button>
-        <button class="filter-pill filter-pill--orange" data-filter="need-action">
-          要対応
-          <span class="pill-count" id="count-need-action">0</span>
-        </button>
-        <button class="filter-pill" data-filter="accepting">仕事を受け付ける</button>
-        <button class="filter-pill" data-filter="contracted">契約中</button>
-        <button class="filter-pill" data-filter="need-inspection">要収</button>
-        <button class="filter-pill filter-pill--red" data-filter="unread-msg">
-          未読メッセージ
-          <span class="pill-count" id="count-unread-msg">0</span>
-        </button>
-        <button class="filter-pill filter-pill--detail" data-filter="search">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          詳細検索
-        </button>
-      </div>
-
-      <!-- 案件リスト（JS で描画） -->
-      <div class="project-list" id="projectList"></div>
+      <!-- 案件テーブル（JS で描画） -->
+      <div class="proj-table-wrap" id="projectList"></div>
 
       <!-- 空の表示 -->
       <div class="empty-state" id="emptyState" style="display:none;">
