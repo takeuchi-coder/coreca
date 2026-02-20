@@ -71,6 +71,7 @@ function renderRow(p) {
           <div class="proj-name-info">
             <div class="proj-title">${p.title}</div>
             <div class="proj-sub">${p.location} ・ ${p.wage}</div>
+            <div class="proj-id">${p.id}</div>
           </div>
         </div>
       </td>
@@ -79,11 +80,11 @@ function renderRow(p) {
       <td class="col-date">${endDate}</td>
       <td>
         <div style="display:flex;align-items:center;gap:8px;">
-          <span class="state-badge ${stateClass}">${stateLabel}</span>
           <label class="toggle-switch" style="flex-shrink:0;">
             <input type="checkbox" ${p.recruiting ? 'checked' : ''}>
             <span class="toggle-slider"></span>
           </label>
+          <span class="state-badge ${stateClass}">${stateLabel}</span>
         </div>
       </td>
       <td style="text-align:center;font-weight:700;color:#333;">${p.contracts}</td>
@@ -103,6 +104,7 @@ function renderRow(p) {
 let state = {
   tab: 'active',
   filter: 'all',
+  sort: 'default',
   page: 1,
   perPage: 10,
 };
@@ -113,6 +115,28 @@ function getFiltered() {
     if (state.filter === 'all') return true;
     if (state.filter === 'search') return true; // 詳細検索は全件表示
     return p.tags.includes(state.filter);
+  });
+}
+
+function getSortedFiltered() {
+  const filtered = getFiltered();
+  if (state.sort === 'default') return filtered;
+  return [...filtered].sort((a, b) => {
+    const ap = a.dateRange.split('〜');
+    const bp = b.dateRange.split('〜');
+    const aStart = ap[0] ? ap[0].trim() : '';
+    const bStart = bp[0] ? bp[0].trim() : '';
+    const aEnd   = ap[1] ? ap[1].trim() : '';
+    const bEnd   = bp[1] ? bp[1].trim() : '';
+    switch (state.sort) {
+      case 'start-date-desc':  return bStart.localeCompare(aStart);
+      case 'start-date-asc':   return aStart.localeCompare(bStart);
+      case 'end-date-asc':     return aEnd.localeCompare(bEnd);
+      case 'end-date-desc':    return bEnd.localeCompare(aEnd);
+      case 'contracts-desc':   return b.contracts - a.contracts;
+      case 'contracts-asc':    return a.contracts - b.contracts;
+      default: return 0;
+    }
   });
 }
 
@@ -133,7 +157,7 @@ function renderList() {
   const list  = document.getElementById('projectList');
   const empty = document.getElementById('emptyState');
 
-  const filtered = getFiltered();
+  const filtered = getSortedFiltered();
   const total    = filtered.length;
   const start    = (state.page - 1) * state.perPage;
   const end      = Math.min(start + state.perPage, total);
@@ -341,7 +365,7 @@ function initUI() {
   const toolbarNext = document.getElementById('toolbarNextBtn');
   if (toolbarNext) {
     toolbarNext.addEventListener('click', () => {
-      const totalPages = Math.ceil(getFiltered().length / state.perPage);
+      const totalPages = Math.ceil(getSortedFiltered().length / state.perPage);
       if (state.page < totalPages) {
         state.page += 1;
         renderList();
@@ -366,12 +390,41 @@ function initUI() {
   const footerNext = document.getElementById('footerNextBtn');
   if (footerNext) {
     footerNext.addEventListener('click', () => {
-      const totalPages = Math.ceil(getFiltered().length / state.perPage);
+      const totalPages = Math.ceil(getSortedFiltered().length / state.perPage);
       if (state.page < totalPages) {
         state.page += 1;
         renderList();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+    });
+  }
+
+  // 並び替えパネル
+  const sortBtn   = document.getElementById('sortCtrlBtn');
+  const sortPanel = document.getElementById('sortPanel');
+  if (sortBtn && sortPanel) {
+    sortBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      sortPanel.classList.toggle('is-open');
+      sortBtn.classList.toggle('filter-ctrl-btn--active', sortPanel.classList.contains('is-open'));
+    });
+    sortPanel.querySelectorAll('.sort-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        state.sort  = opt.dataset.sort;
+        state.page  = 1;
+        // アクティブ表示更新
+        sortPanel.querySelectorAll('.sort-option').forEach(o => o.classList.remove('sort-option--active'));
+        opt.classList.add('sort-option--active');
+        // ボタンのハイライト（デフォルト以外は強調）
+        sortBtn.classList.toggle('filter-ctrl-btn--active', state.sort !== 'default');
+        sortPanel.classList.remove('is-open');
+        renderList();
+      });
+    });
+    // パネル外クリックで閉じる
+    document.addEventListener('click', () => {
+      sortPanel.classList.remove('is-open');
+      sortBtn.classList.toggle('filter-ctrl-btn--active', state.sort !== 'default');
     });
   }
 }

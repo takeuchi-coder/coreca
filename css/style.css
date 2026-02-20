@@ -1424,3 +1424,76 @@ button {
   border-color: #e8192c;
   color: #e8192c;
 }
+
+/* ===========================
+   Sort Panel
+=========================== */
+.sort-ctrl-wrap {
+  position: relative;
+}
+
+.filter-ctrl-btn--active {
+  border-color: #e8192c;
+  color: #e8192c;
+  background: #fff0f1;
+}
+
+.sort-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  min-width: 200px;
+  padding: 4px;
+  z-index: 200;
+  flex-direction: column;
+}
+
+.sort-panel.is-open {
+  display: flex;
+}
+
+.sort-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.sort-option:hover {
+  background: #f5f5f5;
+}
+
+.sort-option--active {
+  color: #e8192c;
+  font-weight: 700;
+}
+
+.sort-option--active::before {
+  content: '✓';
+  margin-right: 6px;
+  font-size: 11px;
+}
+
+/* ===========================
+   Case ID in name cell
+=========================== */
+.proj-id {
+  font-size: 10px;
+  color: #bbb;
+  margin-top: 2px;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}

@@ -171,6 +171,24 @@
             </svg>
             フィルター
           </button>
+          <!-- 並び替えボタン + ドロップダウン -->
+          <div class="sort-ctrl-wrap">
+            <button class="filter-ctrl-btn" id="sortCtrlBtn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18M6 12h12M9 18h6"/>
+              </svg>
+              並び替え
+            </button>
+            <div class="sort-panel" id="sortPanel">
+              <button class="sort-option sort-option--active" data-sort="default">デフォルト</button>
+              <button class="sort-option" data-sort="start-date-desc">掲載開始（新しい順）</button>
+              <button class="sort-option" data-sort="start-date-asc">掲載開始（古い順）</button>
+              <button class="sort-option" data-sort="end-date-asc">終了日（近い順）</button>
+              <button class="sort-option" data-sort="end-date-desc">終了日（遠い順）</button>
+              <button class="sort-option" data-sort="contracts-desc">契約者数（多い順）</button>
+              <button class="sort-option" data-sort="contracts-asc">契約者数（少ない順）</button>
+            </div>
+          </div>
         </div>
       </div>
 
