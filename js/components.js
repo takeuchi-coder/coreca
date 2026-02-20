@@ -92,6 +92,22 @@ function renderRow(p) {
             <div class="proj-sub">${p.location} ・ ${p.wage}</div>
             <div class="proj-id">${p.id}</div>
             ${renderStatusTags(p.tags)}
+            <div class="card-stats">
+              <div class="stat-item">
+                <span class="stat-label">契約者</span>
+                <span class="stat-value">${p.contracts}</span>
+              </div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item">
+                <span class="stat-label">要検収</span>
+                <span class="stat-value ${p.needInspection > 0 ? 'stat-value--orange' : ''}">${p.needInspection}</span>
+              </div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item">
+                <span class="stat-label">報告中</span>
+                <span class="stat-value">${p.reporting}</span>
+              </div>
+            </div>
           </div>
         </div>
       </td>

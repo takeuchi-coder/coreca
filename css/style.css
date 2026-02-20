@@ -494,6 +494,11 @@ button {
   font-weight: 700;
 }
 
+.filter-pill--active .pill-count {
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+}
+
 .filter-pill--red .pill-count {
   background: #e8192c;
   color: #fff;
@@ -711,6 +716,11 @@ button {
   gap: 10px;
   margin-bottom: 8px;
   flex-wrap: wrap;
+}
+
+.proj-name-info .card-stats {
+  margin-bottom: 0;
+  margin-top: 4px;
 }
 
 .stat-item {
