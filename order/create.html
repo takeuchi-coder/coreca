@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件新規作成 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（案件一覧と共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link"><span class="nav-text">案件作成・一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">報酬支払い情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">メニュー・価格表</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">ヘルプ</span></a>
+          </li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="../notification/list.html" class="nav-bell" aria-label="通知">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="badge badge--red">3</span>
+        </a>
+        <div class="nav-user">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+          <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="create-wrap">
+
+    <!-- ページヘッダー -->
+    <div class="create-page-header">
+      <div class="create-page-header-left">
+        <a href="list.html" class="create-back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </a>
+        <h1 class="create-title">案件新規作成</h1>
+      </div>
+      <select class="create-type-select">
+        <option>スタッフワーク 単発 アルバイト 委員制</option>
+        <option>フリーランス 業務委託</option>
+        <option>スタッフワーク 定期 アルバイト</option>
+      </select>
+    </div>
+
+    <!-- フォーム本体 -->
+    <div class="proj-form">
+
+      <!-- 種別 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">種別</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <select class="form-select">
+            <option value="">選択してください</option>
+            <option>スタッフワーク</option>
+            <option>フリーランス</option>
+            <option>業務委託</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- コース名 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">コース名（自由記述）</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <input type="text" class="form-input" placeholder="例）ご近所ワーク 単発 アルバイト">
+          <p class="form-note">ご注意ください。コース名は「サービス区分 単発・日払い…」等、決められた命名規則に従って記述してください。変更が必要な場合は管理者へお問い合わせください。</p>
+        </div>
+      </div>
+
+      <!-- ワーク名 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">ワーク名（自由記述）</span>
+          <span class="field-badge field-badge--optional">任意</span>
+        </div>
+        <div class="form-field-cell">
+          <input type="text" class="form-input" placeholder="例）スーパーのチラシ配布スタッフ">
+        </div>
+      </div>
+
+      <!-- 仕事内容 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">仕事内容</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <textarea class="form-textarea" rows="12">■仕事タイプ
+●スタッフワーク・エンターテインメント系
+●アルバイト
+●その他
+
+■業務内容
+●チラシ配布（13:00 〜 17:00 予定）
+●受付・案内業務
+●商品の補充・管理
+
+■シフト
+月・火・水・木・金（週3日〜可）
+時間帯：午前9時〜午後6時（休憩1時間含む）
+
+■給与
+時給 1,200円〜1,500円（経験・スキルにより優遇）
+
+■交通費
+実費支給（上限 1,000円／日）
+
+【注意事項】
+・作業時は動きやすい服装でお越しください。
+・貴重品の管理には十分ご注意ください。
+・スマートフォンは作業中マナーモードにしてください。</textarea>
+        </div>
+      </div>
+
+      <!-- 労働条件 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">労働条件</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <textarea class="form-textarea" rows="16">【前払い】
+前払いサービスをご利用の場合は、以下の規則が適用されます。
+・前払い限度額：勤務した分の最大80%まで
+・申請期限：勤務当日の22:00まで
+・振込日：申請翌営業日（土日祝を除く）
+
+【就業規則】
+・遅刻・早退・欠勤は事前にご連絡ください。
+・携帯電話は作業中マナーモードにしてください。
+・服装規定：清潔感のある服装でお越しください（露出の高い服装は不可）。
+・作業中の飲食は休憩時間のみ可とします。
+
+【各種規定】
+・作業報告書（日報）の提出が必要です。
+・備品・機材の取り扱いには十分ご注意ください。
+・紛失・破損の場合は速やかにご報告ください。
+
+【保険等】
+・労働保険は事業者が手配します。
+・万が一の事故に備え、傷害保険に加入しています。
+・労働災害が発生した場合は、速やかに管理者へご報告ください。</textarea>
+        </div>
+      </div>
+
+      <!-- 労働時間合計 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">労働時間合計</span>
+          <span class="field-badge field-badge--optional">任意</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-inline">
+            <input type="number" class="form-input form-input--short" placeholder="0" min="0">
+            <span class="form-unit">時間</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 応募受付中のお知らせ -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">応募受付中のお知らせ</span>
+        </div>
+        <div class="form-field-cell">
+          <label class="form-checkbox-label">
+            <input type="checkbox" class="form-checkbox">
+            <span>応募受付中であることをワーカーに通知する</span>
+          </label>
+          <p class="form-note">チェックを入れると、案件公開時に登録ワーカーへプッシュ通知が送信されます。</p>
+        </div>
+      </div>
+
+      <!-- 案件受付の締切日時 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">案件受付の締切日時</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-inline">
+            <input type="date" class="form-input form-input--date">
+            <input type="time" class="form-input form-input--time">
+          </div>
+        </div>
+      </div>
+
+      <!-- 受付締切メール通知 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">受付締切メール通知</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <select class="form-select">
+            <option value="">選択してください</option>
+            <option>締切の3日前に通知</option>
+            <option>締切の1週間前に通知</option>
+            <option>締切当日に通知</option>
+            <option>通知しない</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 受取者のメール -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">受取者のメール<br>（指定必要）</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <input type="email" class="form-input" placeholder="example@gokinjowork.jp">
+          <p class="form-note">通知を受け取るメールアドレスを入力してください。複数指定する場合はカンマ区切りで入力してください。</p>
+        </div>
+      </div>
+
+      <!-- 予備予定日 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">予備予定日</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <input type="date" class="form-input form-input--date">
+          <p class="form-note">雨天・緊急時の予備日を設定してください。</p>
+        </div>
+      </div>
+
+      <!-- 前払予定日バイパス -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">前払予定日バイパス<br>（前払い）</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <select class="form-select">
+            <option value="">選択してください</option>
+            <option value="1">あり（前払いを許可する）</option>
+            <option value="0">なし（前払いを許可しない）</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 前払い予定日（任意確認） -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">前払い予定日<br>（任意確認）</span>
+          <span class="field-badge field-badge--optional">任意</span>
+        </div>
+        <div class="form-field-cell">
+          <input type="date" class="form-input form-input--date">
+        </div>
+      </div>
+
+      <!-- 支払方法 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">支払方法</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-radio-group">
+            <label class="form-radio-label">
+              <input type="radio" name="payment_method" value="monthly">
+              <span>月払い</span>
+            </label>
+            <label class="form-radio-label">
+              <input type="radio" name="payment_method" value="weekly">
+              <span>週払い</span>
+            </label>
+            <label class="form-radio-label">
+              <input type="radio" name="payment_method" value="daily">
+              <span>日払い</span>
+            </label>
+            <label class="form-radio-label">
+              <input type="radio" name="payment_method" value="advance">
+              <span>前払い</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- 支払条件 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">支払条件</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <select class="form-select">
+            <option value="">選択してください</option>
+            <option>当月末払い</option>
+            <option>翌月払い</option>
+            <option>翌々月払い</option>
+            <option>都度払い</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 支払予備日 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">支払予備日</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-inline">
+            <select class="form-select form-select--short">
+              <option value="">月</option>
+              <option>1月</option><option>2月</option><option>3月</option>
+              <option>4月</option><option>5月</option><option>6月</option>
+              <option>7月</option><option>8月</option><option>9月</option>
+              <option>10月</option><option>11月</option><option>12月</option>
+            </select>
+            <select class="form-select form-select--short">
+              <option value="">日</option>
+              <option>1日</option><option>5日</option><option>10日</option>
+              <option>15日</option><option>20日</option><option>25日</option>
+              <option>末日</option>
+            </select>
+          </div>
+          <p class="form-note">支払いが土日祝日と重なった場合の振替日を設定してください。</p>
+        </div>
+      </div>
+
+      <!-- 応募予定者数 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">応募予定者数<br>（単発・日払い・週払い）</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-inline">
+            <input type="number" class="form-input form-input--short" placeholder="0" min="1">
+            <span class="form-unit">人</span>
+          </div>
+          <div class="form-info-box form-info-box--warning">
+            <strong>注意（案件作成前にご確認ください）</strong><br>
+            以下の場合、案件申請審査が必要となります。<br>
+            ・応募予定者数が 50名以上 の場合<br>
+            ・過去に規約違反があった場合<br>
+            審査が必要な場合は、管理者へお問い合わせいただき、案件前に解除申請を行ってください。申請なしに公開した場合は案件が無効となる可能性があります。
+          </div>
+        </div>
+      </div>
+
+      <!-- 成果物 -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">成果物</span>
+          <span class="field-badge field-badge--optional">任意</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-upload-area">
+            <div class="form-upload-thumb">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <label class="form-upload-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              画像を追加
+              <input type="file" accept="image/*" hidden>
+            </label>
+          </div>
+          <p class="form-note">PNG・JPG・GIF 形式（最大 5MB）。成果物のサンプル画像や作業イメージを添付してください。</p>
+        </div>
+      </div>
+
+      <!-- 会社について -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">会社について</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-inline">
+            <select class="form-select form-select--wide">
+              <option value="">会社情報を選択してください</option>
+              <option>株式会社ご近所ワーク</option>
+              <option>gokinjowork合同会社</option>
+            </select>
+            <button type="button" class="btn-copy">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              コピーする
+            </button>
+          </div>
+          <div class="form-info-box">
+            以前作成した案件の会社情報をコピーして利用できます。「コピーする」ボタンをクリックすると、選択した会社の情報が各項目に自動入力されます。
+          </div>
+        </div>
+      </div>
+
+      <!-- 業種について -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">業種について</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <select class="form-select">
+            <option value="">業種を選択してください</option>
+            <option>飲食・フード</option>
+            <option>小売・販売</option>
+            <option>物流・配送</option>
+            <option>イベント・エンターテインメント</option>
+            <option>清掃・施設管理</option>
+            <option>事務・オフィスワーク</option>
+            <option>IT・テクノロジー</option>
+            <option>医療・介護</option>
+            <option>建設・土木</option>
+            <option>その他</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 想定予定者（報酬） -->
+      <div class="form-row">
+        <div class="form-label-cell">
+          <span class="form-label-text">想定予定者（報酬）</span>
+          <span class="field-badge field-badge--required">必須</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="form-wage-grid">
+            <div class="form-wage-row">
+              <span class="form-wage-label">基本給（時給）</span>
+              <div class="form-inline">
+                <input type="number" class="form-input form-input--short" placeholder="1200" min="0">
+                <span class="form-unit">円</span>
+              </div>
+            </div>
+            <div class="form-wage-row">
+              <span class="form-wage-label">諸費用（交通費）</span>
+              <div class="form-inline">
+                <input type="number" class="form-input form-input--short" placeholder="0" min="0">
+                <span class="form-unit">円</span>
+              </div>
+            </div>
+            <div class="form-wage-row">
+              <span class="form-wage-label">サービス利用料（発注者）</span>
+              <div class="form-inline">
+                <input type="number" class="form-input form-input--xshort" placeholder="10" min="0" max="100">
+                <span class="form-unit">%</span>
+              </div>
+            </div>
+            <div class="form-wage-row">
+              <span class="form-wage-label">サービス利用料（受注者）</span>
+              <div class="form-inline">
+                <input type="number" class="form-input form-input--xshort" placeholder="5" min="0" max="100">
+                <span class="form-unit">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- ===== /フォーム本体 ===== -->
+
+    <!-- アクションエリア -->
+    <div class="create-actions">
+      <p class="create-actions-note">※ 必須の項目数 27　記入前の全必須項目確認・（割愛済み）があります。</p>
+      <div class="create-btn-group">
+        <button type="submit" class="btn-create-submit">上記内容で案件を作成する</button>
+        <button type="button" class="btn-save-confirm">保存 → 確認する</button>
+      </div>
+    </div>
+
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事をお探しの方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1971,3 +1971,399 @@ button {
   padding: 0 4px;
   font-size: 13px;
 }
+
+/* ============================================================
+   案件新規作成フォーム (order/create.html)
+============================================================ */
+
+.create-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 32px 48px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ページヘッダー */
+.create-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 16px;
+}
+
+.create-page-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-back-link {
+  display: flex;
+  align-items: center;
+  color: #555;
+  text-decoration: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.12s;
+}
+
+.create-back-link:hover { color: #e8192c; }
+
+.create-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.create-type-select {
+  padding: 7px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  font-family: inherit;
+  background: #fff;
+  min-width: 260px;
+}
+
+/* ===========================
+   フォーム本体
+=========================== */
+.proj-form {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 196px 1fr;
+  border-bottom: 1px solid #ececec;
+}
+
+.form-row:last-child { border-bottom: none; }
+
+.form-label-cell {
+  background: #f7f7f7;
+  border-right: 1px solid #ececec;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-label-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.45;
+}
+
+.form-field-cell {
+  padding: 12px 16px;
+  background: #fff;
+}
+
+/* 必須 / 任意バッジ */
+.field-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.field-badge--required {
+  background: #e8192c;
+  color: #fff;
+}
+
+.field-badge--optional {
+  background: #888;
+  color: #fff;
+}
+
+/* ===========================
+   フォームコントロール
+=========================== */
+.form-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+  color: #333;
+  transition: border-color 0.12s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #e8192c;
+}
+
+.form-input--short  { width: 100px; }
+.form-input--xshort { width: 70px; }
+.form-input--date   { width: 160px; }
+.form-input--time   { width: 120px; }
+
+.form-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  box-sizing: border-box;
+  resize: vertical;
+  line-height: 1.7;
+  color: #333;
+  transition: border-color 0.12s;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #e8192c;
+}
+
+.form-select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.12s;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #e8192c;
+}
+
+.form-select--short { min-width: 100px; }
+.form-select--wide  { flex: 1; min-width: 200px; }
+
+/* インライン配置 */
+.form-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.form-unit {
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* チェックボックス */
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+.form-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #e8192c;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ラジオボタン */
+.form-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.form-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+.form-radio-label input[type="radio"] {
+  accent-color: #e8192c;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* 補足テキスト */
+.form-note {
+  font-size: 11px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.6;
+}
+
+/* 情報ボックス */
+.form-info-box {
+  background: #e8f4fd;
+  border: 1px solid #90caf9;
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.form-info-box--warning {
+  background: #fffde7;
+  border-color: #ffd54f;
+}
+
+/* ファイルアップロード */
+.form-upload-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-upload-thumb {
+  width: 72px;
+  height: 72px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1.5px dashed #bbb;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.form-upload-btn:hover {
+  border-color: #e8192c;
+  color: #e8192c;
+}
+
+/* コピーボタン */
+.btn-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 13px;
+  font-family: inherit;
+  color: #555;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.12s;
+}
+
+.btn-copy:hover {
+  border-color: #1565c0;
+  color: #1565c0;
+}
+
+/* 報酬サブグリッド */
+.form-wage-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-wage-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.form-wage-label {
+  font-size: 13px;
+  color: #555;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* ===========================
+   アクションエリア
+=========================== */
+.create-actions {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.create-actions-note {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.create-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-create-submit {
+  flex: 1;
+  padding: 14px 24px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-create-submit:hover { background: #c0161f; }
+
+.btn-save-confirm {
+  padding: 14px 24px;
+  background: #fff;
+  color: #333;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.btn-save-confirm:hover {
+  border-color: #555;
+  color: #111;
+}
