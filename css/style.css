@@ -2936,3 +2936,305 @@ button {
   padding: 0 20px 28px;
   line-height: 1.8;
 }
+
+/* ===========================
+   メッセージ一覧ページ
+=========================== */
+.msg-wrap {
+  padding: 20px 20px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* フィルターバー */
+.msg-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.msg-count-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #555;
+}
+
+.msg-count-total { font-weight: 700; }
+
+.msg-per-page {
+  padding: 3px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  background: #fff;
+}
+
+.msg-filter-btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.msg-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.msg-filter-btn:hover { border-color: #888; color: #333; }
+
+.msg-filter-btn--active {
+  background: #e8192c;
+  border-color: #e8192c;
+  color: #fff;
+}
+
+.msg-filter-btn--active:hover { background: #c0161f; border-color: #c0161f; }
+
+/* テーブル */
+.msg-table-wrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+}
+
+.msg-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 860px;
+}
+
+.msg-th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  background: #fff0f0;
+  border-bottom: 1px solid #e8e8e8;
+  white-space: nowrap;
+}
+
+.msg-th--name    { width: 88px; }
+.msg-th--id      { width: 90px; }
+.msg-th--period  { width: 100px; }
+.msg-th--course  { width: 180px; }
+.msg-th--address { width: 160px; }
+.msg-th--message { }
+.msg-th--action  { width: 76px; }
+
+.msg-row { border-bottom: 1px solid #f0f0f0; transition: background 0.1s; }
+.msg-row:last-child { border-bottom: none; }
+.msg-row:hover { background: #fafafa; }
+
+/* 未読行：左ボーダー + ごく薄い背景 */
+.msg-row--unread { background: #fffbfb; }
+.msg-row--unread:hover { background: #fff5f5; }
+.msg-row--unread .msg-td:first-child {
+  border-left: 3px solid #e8192c;
+}
+
+.msg-td {
+  padding: 11px 12px;
+  font-size: 12px;
+  color: #333;
+  vertical-align: top;
+}
+
+.msg-td--period { white-space: nowrap; line-height: 1.7; }
+
+.msg-td--course,
+.msg-td--address {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.msg-person-link {
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.msg-person-link:hover { text-decoration: underline; }
+
+.msg-proj-id {
+  display: block;
+  color: #1565c0;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.msg-proj-id:hover { text-decoration: underline; }
+
+.msg-status-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.msg-status-badge--active { background: #e8f5e9; color: #2e7d32; }
+.msg-status-badge--done   { background: #f5f5f5; color: #757575; }
+
+/* メッセージセル */
+.msg-td--message { max-width: 240px; }
+
+.msg-text {
+  font-size: 12px;
+  color: #444;
+  line-height: 1.55;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.msg-sender {
+  font-size: 11px;
+  color: #999;
+}
+
+/* 確認するボタン */
+.btn-confirm {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1.5px solid #e8192c;
+  border-radius: 5px;
+  color: #e8192c;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.12s;
+}
+
+.btn-confirm:hover { background: #e8192c; color: #fff; }
+
+/* ページネーション */
+.msg-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px 20px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.msg-page-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.msg-page-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.msg-page-btn:hover:not(:disabled) { border-color: #999; color: #333; }
+.msg-page-btn:disabled { opacity: 0.4; cursor: default; }
+
+.msg-page-num {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #ddd;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.msg-page-num:hover { border-color: #e8192c; color: #e8192c; }
+
+.msg-page-num.is-active {
+  background: #e8192c;
+  border-color: #e8192c;
+  color: #fff;
+}
+
+.msg-page-ellipsis { font-size: 13px; color: #aaa; padding: 0 4px; }
+
+/* チャットウィジェット */
+.chat-widget {
+  position: fixed;
+  bottom: 80px;
+  left: 12px;
+  width: 180px;
+  background: #fff;
+  border: 1.5px solid #e8192c;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(232,25,44,0.15);
+  z-index: 200;
+}
+
+.chat-widget-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 16px;
+  color: #aaa;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.chat-widget-close:hover { color: #555; }
+
+.chat-widget-mascot {
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.chat-widget-text {
+  font-size: 11px;
+  color: #555;
+  line-height: 1.6;
+}
