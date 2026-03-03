@@ -2639,6 +2639,8 @@ button {
   min-width: 0;
   display: flex;
   flex-direction: column;
+  background: #f0f2f5;
+  min-height: calc(100vh - 56px);
 }
 
 /* トップバー */

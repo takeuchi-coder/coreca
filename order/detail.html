@@ -9,352 +9,323 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="body--detail">
+<body>
 
-  <div class="detail-page">
-
-    <!-- ===== 左サイドバーナビ ===== -->
-    <aside class="det-sidebar">
-
-      <!-- ロゴエリア -->
-      <div class="det-sidebar-logo">
-        <p class="det-logo-role">発注者としてログイン中</p>
-        <a href="list.html" class="det-logo-name">
-          <span class="det-logo-icon">
-            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#e8192c"/>
-            </svg>
-          </span>
-          ご近所ワーク
-        </a>
-      </div>
+  <!-- ===== ヘッダー（共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- ロゴ -->
+      <a href="/" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
 
       <!-- ナビゲーション -->
-      <nav class="det-nav">
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link">
+              <span class="nav-text">案件作成・一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-text">報酬支払い情報</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../message/list.html" class="nav-link">
+              <span class="nav-text">メッセージ一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-text">お問い合わせ</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-text">メニュー・価格表</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-text">ヘルプ</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-        <!-- 通知 -->
-        <a href="../notification/list.html" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <!-- 右側: 通知ベル ＋ アカウント情報 -->
+      <div class="nav-actions">
+        <a href="../notification/list.html" class="nav-bell" aria-label="通知">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
           </svg>
-          <span class="det-nav-text">通知</span>
-          <span class="det-nav-badge">4</span>
+          <span class="badge badge--red">3</span>
         </a>
-
-        <!-- 案件新規作成 -->
-        <div class="det-nav-new-wrap">
-          <a href="create.html" class="det-nav-new-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <line x1="5" y1="12" x2="19" y2="12"/>
+        <div class="nav-user">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
             </svg>
-            案件新規作成
-          </a>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+          <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </div>
-
-        <!-- 案件一覧（active） -->
-        <a href="list.html" class="det-nav-link is-active">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
-            <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
-            <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
-          </svg>
-          <span class="det-nav-text">案件一覧</span>
-        </a>
-
-        <!-- 報酬支払い情報 -->
-        <a href="#" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="12" y1="1" x2="12" y2="23"/>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-          <span class="det-nav-text">報酬支払い情報</span>
-        </a>
-
-        <!-- メッセージ一覧 -->
-        <a href="../message/list.html" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-          <span class="det-nav-text">メッセージ一覧</span>
-        </a>
-
-        <!-- アカウント -->
-        <a href="#" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          <span class="det-nav-text">アカウント</span>
-        </a>
-
-        <!-- お問い合わせ -->
-        <a href="#" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12 19.79 19.79 0 0 1 1.99 3.42 2 2 0 0 1 3.98 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          <span class="det-nav-text">お問い合わせ</span>
-        </a>
-
-        <!-- メニュー・価格表 -->
-        <a href="#" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-          </svg>
-          <span class="det-nav-text">メニュー・価格表</span>
-        </a>
-
-      </nav>
-
-      <!-- ヘルプボタン -->
-      <div class="det-help-area">
-        <button class="det-help-btn det-help-btn--orange">操作に困ったら</button>
-        <button class="det-help-btn det-help-btn--red">応募HELP!!</button>
       </div>
 
-      <!-- マスコット -->
-      <div class="det-mascot">
-        <svg width="90" height="96" viewBox="0 0 90 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="45" cy="30" rx="22" ry="22" fill="#FFD8A8" stroke="#E8192C" stroke-width="2"/>
-          <circle cx="38" cy="27" r="3" fill="#333"/>
-          <circle cx="52" cy="27" r="3" fill="#333"/>
-          <path d="M38 37 Q45 43 52 37" stroke="#E8192C" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <ellipse cx="22" cy="34" rx="6" ry="4" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <ellipse cx="68" cy="34" rx="6" ry="4" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="28" y="50" width="34" height="26" rx="6" fill="#E8192C"/>
-          <rect x="17" y="53" width="12" height="10" rx="5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="61" y="53" width="12" height="10" rx="5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="35" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="46" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <div class="det-main">
+
+    <!-- トップバー（パンくず） -->
+    <div class="det-topbar">
+      <a href="list.html" class="det-back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
         </svg>
-      </div>
+        案件一覧
+      </a>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2" class="det-topbar-chevron">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span class="det-topbar-title">案件情報</span>
+    </div>
 
-    </aside>
-    <!-- ===== /左サイドバーナビ ===== -->
-
-    <!-- ===== メインコンテンツ ===== -->
-    <div class="det-main">
-
-      <!-- トップバー -->
-      <div class="det-topbar">
-        <a href="list.html" class="det-back-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="15 18 9 12 15 6"/>
+    <!-- 案件ヘッダーカード -->
+    <div class="proj-detail-header">
+      <div class="proj-detail-meta">
+        <div class="proj-detail-id-row">
+          <span class="proj-detail-id">案件ID：232497</span>
+          <span class="proj-detail-date">2025年12月02日 〜 2025年12月03日　いつでも</span>
+        </div>
+        <div class="proj-detail-title">
+          【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分
+        </div>
+        <div class="proj-detail-location">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:3px;flex-shrink:0;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
           </svg>
-          案件一覧
-        </a>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2" class="det-topbar-chevron">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-        <span class="det-topbar-title">案件情報</span>
+          埼玉県 川口市西青木3丁目2-4 川口警察署　／　埼玉県川口市元郷3-1-4
+        </div>
       </div>
+      <div class="proj-detail-actions">
+        <div class="proj-detail-status">
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="state-badge state-badge--active">進行中</span>
+        </div>
+        <button class="btn-status-stop">募集停止</button>
+      </div>
+    </div>
 
-      <!-- 案件ヘッダーカード -->
-      <div class="proj-detail-header">
-        <div class="proj-detail-meta">
-          <div class="proj-detail-id-row">
-            <span class="proj-detail-id">案件ID：232497</span>
-            <span class="proj-detail-date">2025年12月02日 〜 2025年12月03日　いつでも</span>
-          </div>
-          <div class="proj-detail-title">
-            【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分
-          </div>
-          <div class="proj-detail-location">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:3px;flex-shrink:0;">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    <!-- タブバー -->
+    <div class="det-tabs-wrap">
+      <div class="det-tabs">
+        <button class="det-tab-btn is-active" data-tab="info">案件情報</button>
+        <button class="det-tab-btn" data-tab="applicants">応募者・契約者</button>
+        <button class="det-tab-btn" data-tab="procedure">作業手順・報告</button>
+        <button class="det-tab-btn" data-tab="renewal">契約更新</button>
+      </div>
+    </div>
+
+    <!-- タブコンテンツ -->
+    <div class="det-tab-body" id="tabInfo">
+
+      <!-- 募集セクション -->
+      <div class="det-section">
+        <h3 class="det-section-title">募集</h3>
+        <div class="recruit-row">
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="recruit-note">募集中の場合受注者が応募できます</span>
+        </div>
+        <div class="recruit-actions">
+          <button class="btn-duplicate">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
             </svg>
-            埼玉県 川口市西青木3丁目2-4 川口警察署　／　埼玉県川口市元郷3-1-4
-          </div>
-        </div>
-        <div class="proj-detail-actions">
-          <div class="proj-detail-status">
-            <label class="toggle-switch">
-              <input type="checkbox" checked>
-              <span class="toggle-slider"></span>
-            </label>
-            <span class="state-badge state-badge--active">進行中</span>
-          </div>
-          <button class="btn-status-stop">募集停止</button>
+            案件を複製する
+          </button>
+          <button class="btn-copy-url">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+            掲載URLをコピーする
+          </button>
         </div>
       </div>
 
-      <!-- タブバー -->
-      <div class="det-tabs-wrap">
-        <div class="det-tabs">
-          <button class="det-tab-btn is-active" data-tab="info">案件情報</button>
-          <button class="det-tab-btn" data-tab="applicants">応募者・契約者</button>
-          <button class="det-tab-btn" data-tab="procedure">作業手順・報告</button>
-          <button class="det-tab-btn" data-tab="renewal">契約更新</button>
-        </div>
-      </div>
-
-      <!-- タブコンテンツ -->
-      <div class="det-tab-body" id="tabInfo">
-
-        <!-- 募集セクション -->
-        <div class="det-section">
-          <h3 class="det-section-title">募集</h3>
-          <div class="recruit-row">
-            <label class="toggle-switch">
-              <input type="checkbox" checked>
-              <span class="toggle-slider"></span>
-            </label>
-            <span class="recruit-note">募集中の場合受注者が応募できます</span>
-          </div>
-          <div class="recruit-actions">
-            <button class="btn-duplicate">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2"/>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-              </svg>
-              案件を複製する
-            </button>
-            <button class="btn-copy-url">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-              </svg>
-              掲載URLをコピーする
-            </button>
-          </div>
-        </div>
-
-        <!-- 掲載内容セクション -->
-        <div class="det-section">
-          <h3 class="det-section-title">掲載内容</h3>
-          <p class="det-content-note">※ 受注者からの応募後は掲載内容が変更できなくなります</p>
-          <table class="info-table">
-            <tbody>
-              <tr class="info-row">
-                <td class="info-label">職種</td>
-                <td class="info-value">【カスタムコース】マッチングするコースがない場合はフォームより問い合わせください（For_companies_only）</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">コース名（発注者向け）</td>
-                <td class="info-value">管同作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">コース名（受注者向け）</td>
-                <td class="info-value">警察署での書類受理・お届け業務 30分</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業概要</td>
-                <td class="info-value">
-                  警察署にて、依頼者の代わりに書類の受理・お届けを行っていただく業務です。<br>
-                  具体的には以下の作業を行っていただきます。<br>
-                  ① 指定された警察署の窓口にて書類を受け取る<br>
-                  ② 受け取った書類を依頼者の指定場所（川口市元郷3-1-4）まで届ける<br>
-                  ③ 受け渡し完了後、アプリにて報告書を提出する<br><br>
-                  ・警察署の窓口が開いている時間帯（平日9:00〜17:00）に対応してください。<br>
-                  ・移動手段は自転車や公共交通機関をご利用ください。
-                </td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業時間目安</td>
-                <td class="info-value">30分</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">最低報酬単価</td>
-                <td class="info-value">1,200円/件</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業場所の都道府県</td>
-                <td class="info-value">埼玉県</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業場所の住所1</td>
-                <td class="info-value">川口市西青木3丁目2-4 川口警察署</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">
-                  作業場所の住所2<br>
-                  <span class="visibility-badge visibility-badge--contractor">契約者のみへ公開</span>
-                </td>
-                <td class="info-value">埼玉県川口市元郷3-1-4</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">
-                  作業場所についての補足事項<br>
-                  <span class="visibility-badge visibility-badge--all">全ユーザーへ公開</span>
-                </td>
-                <td class="info-value">役所（行政機関）が開間している時間帯かつ、窓口が開いている時間帯を確認して訪問してください。警察署から現場埼玉県川口市元郷まで自転車で16分になります。</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業予定数</td>
-                <td class="info-value">期間内1件</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業体制</td>
-                <td class="info-value">1人にお願いしたい</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">契約更新の予定</td>
-                <td class="info-value">なし</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業・契約期間</td>
-                <td class="info-value">2025年12月02日 〜 2025年12月03日　いつでも</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">作業可能時間帯</td>
-                <td class="info-value">いつでもよい</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">
-                  作業可能時間帯・曜日・<br>期間についての補足事項<br>
-                  <span class="visibility-badge visibility-badge--all">全ユーザーへ公開</span>
-                </td>
-                <td class="info-value">できれば12/2でご対応いただけますと助かります。</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">報酬単価</td>
-                <td class="info-value">1,500円/件</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">掲載用画像</td>
-                <td class="info-value">
-                  <div class="info-image-thumb">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
-                      <rect x="3" y="3" width="18" height="18" rx="2"/>
-                      <circle cx="8.5" cy="8.5" r="1.5"/>
-                      <polyline points="21 15 16 10 5 21"/>
-                    </svg>
-                  </div>
-                </td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">
-                  作業についてのやり取りに<br>関する特記事項<br>
-                  <span class="visibility-badge visibility-badge--worker">受注者のみへ公開</span>
-                </td>
-                <td class="info-value">担当者・遠原、河辺</td>
-              </tr>
-              <tr class="info-row">
-                <td class="info-label">
-                  作業についての問い合わせ<br>電話番号<br>
-                  <span class="visibility-badge visibility-badge--contractor">契約者のみへ公開</span>
-                </td>
-                <td class="info-value">0366280497</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
-      <!-- /タブコンテンツ -->
-
-      <!-- フッターノート -->
-      <div class="det-footer-note">
-        ※ 掲載内容の編集・案件のキャンセルは、受注者からの応募がない場合に限り可能です。応募後に変更が必要な場合は、管理者へお問い合わせください。
+      <!-- 掲載内容セクション -->
+      <div class="det-section">
+        <h3 class="det-section-title">掲載内容</h3>
+        <p class="det-content-note">※ 受注者からの応募後は掲載内容が変更できなくなります</p>
+        <table class="info-table">
+          <tbody>
+            <tr class="info-row">
+              <td class="info-label">職種</td>
+              <td class="info-value">【カスタムコース】マッチングするコースがない場合はフォームより問い合わせください（For_companies_only）</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">コース名（発注者向け）</td>
+              <td class="info-value">管同作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">コース名（受注者向け）</td>
+              <td class="info-value">警察署での書類受理・お届け業務 30分</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業概要</td>
+              <td class="info-value">
+                警察署にて、依頼者の代わりに書類の受理・お届けを行っていただく業務です。<br>
+                具体的には以下の作業を行っていただきます。<br>
+                ① 指定された警察署の窓口にて書類を受け取る<br>
+                ② 受け取った書類を依頼者の指定場所（川口市元郷3-1-4）まで届ける<br>
+                ③ 受け渡し完了後、アプリにて報告書を提出する<br><br>
+                ・警察署の窓口が開いている時間帯（平日9:00〜17:00）に対応してください。<br>
+                ・移動手段は自転車や公共交通機関をご利用ください。
+              </td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業時間目安</td>
+              <td class="info-value">30分</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">最低報酬単価</td>
+              <td class="info-value">1,200円/件</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業場所の都道府県</td>
+              <td class="info-value">埼玉県</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業場所の住所1</td>
+              <td class="info-value">川口市西青木3丁目2-4 川口警察署</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">
+                作業場所の住所2<br>
+                <span class="visibility-badge visibility-badge--contractor">（契約者のみへ公開）</span>
+              </td>
+              <td class="info-value">埼玉県川口市元郷3-1-4</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">
+                作業場所についての補足事項<br>
+                <span class="visibility-badge visibility-badge--all">（全ユーザーへ公開）</span>
+              </td>
+              <td class="info-value">役所（行政機関）が開間している時間帯かつ、窓口が開いている時間帯を確認して訪問してください。警察署から現場埼玉県川口市元郷まで自転車で16分になります。</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業予定数</td>
+              <td class="info-value">期間内1件</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業体制</td>
+              <td class="info-value">1人にお願いしたい</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">契約更新の予定</td>
+              <td class="info-value">なし</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業・契約期間</td>
+              <td class="info-value">2025年12月02日 〜 2025年12月03日　いつでも</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">作業可能時間帯</td>
+              <td class="info-value">いつでもよい</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">
+                作業可能時間帯・曜日・<br>期間についての補足事項<br>
+                <span class="visibility-badge visibility-badge--all">（全ユーザーへ公開）</span>
+              </td>
+              <td class="info-value">できれば12/2でご対応いただけますと助かります。</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">報酬単価</td>
+              <td class="info-value">1,500円/件</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">掲載用画像</td>
+              <td class="info-value">
+                <div class="info-image-thumb">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+              </td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">
+                作業についてのやり取りに<br>関する特記事項<br>
+                <span class="visibility-badge visibility-badge--worker">（受注者のみへ公開）</span>
+              </td>
+              <td class="info-value">担当者・遠原、河辺</td>
+            </tr>
+            <tr class="info-row">
+              <td class="info-label">
+                作業についての問い合わせ<br>電話番号<br>
+                <span class="visibility-badge visibility-badge--contractor">（契約者のみへ公開）</span>
+              </td>
+              <td class="info-value">0366280497</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>
-    <!-- ===== /メインコンテンツ ===== -->
+    <!-- /タブコンテンツ -->
+
+    <!-- フッターノート -->
+    <div class="det-footer-note">
+      ※ 掲載内容の編集・案件のキャンセルは、受注者からの応募がない場合に限り可能です。応募後に変更が必要な場合は、管理者へお問い合わせください。
+    </div>
 
   </div>
-  <!-- /detail-page -->
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター（共通） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事を紹介したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
 
   <script>
     // タブ切替
