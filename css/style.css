@@ -2913,9 +2913,9 @@ button {
   line-height: 1.7;
 }
 
-.visibility-badge--contractor { background: #e3f2fd; color: #1565c0; }
-.visibility-badge--worker     { background: #f3e5f5; color: #6a1b9a; }
-.visibility-badge--all        { background: #e8f5e9; color: #2e7d32; }
+.visibility-badge--contractor { background: transparent; color: #e8192c; }
+.visibility-badge--worker     { background: transparent; color: #e8192c; }
+.visibility-badge--all        { background: transparent; color: #e8192c; }
 
 /* 画像サムネイル */
 .info-image-thumb {
