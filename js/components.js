@@ -88,7 +88,7 @@ function renderRow(p) {
         <div class="proj-name-cell">
           <div class="proj-thumb">${ICONS.image}</div>
           <div class="proj-name-info">
-            <div class="proj-title">${p.title}</div>
+            <a href="detail.html" class="proj-title proj-title--link">${p.title}</a>
             <div class="proj-sub">${p.location} ・ ${p.wage}</div>
             <div class="proj-id">${p.id}</div>
             ${renderStatusTags(p.tags)}
@@ -126,7 +126,7 @@ function renderRow(p) {
       <td style="text-align:center;font-weight:700;color:#333;">${p.contracts}</td>
       <td class="col-actions">
         <div class="row-actions">
-          <button class="row-detail-btn" title="詳細">›</button>
+          <a href="detail.html" class="row-detail-btn" title="詳細">›</a>
           <button class="row-menu-btn" title="メニュー">…</button>
         </div>
       </td>
