@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>報酬支払い情報 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="body--detail">
+
+  <div class="detail-page">
+
+    <!-- ===== 左サイドバーナビ ===== -->
+    <aside class="det-sidebar">
+
+      <!-- ロゴエリア -->
+      <div class="det-sidebar-logo">
+        <p class="det-logo-role">発注者としてログイン中</p>
+        <a href="../order/list.html" class="det-logo-name">
+          <span class="det-logo-icon">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#e8192c"/>
+            </svg>
+          </span>
+          ご近所ワーク
+        </a>
+      </div>
+
+      <!-- ナビゲーション -->
+      <nav class="det-nav">
+
+        <!-- 通知 -->
+        <a href="../notification/list.html" class="det-nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="det-nav-text">通知</span>
+          <span class="det-nav-badge">4</span>
+        </a>
+
+        <!-- 案件新規作成 -->
+        <div class="det-nav-new-wrap">
+          <a href="../order/create.html" class="det-nav-new-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            案件新規作成
+          </a>
+        </div>
+
+        <!-- 案件一覧 -->
+        <a href="../order/list.html" class="det-nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+          <span class="det-nav-text">案件一覧</span>
+        </a>
+
+        <!-- 報酬支払い情報（active） -->
+        <a href="list.html" class="det-nav-link is-active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          <span class="det-nav-text">報酬支払い情報</span>
+        </a>
+
+        <!-- メッセージ一覧 -->
+        <a href="../message/list.html" class="det-nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          <span class="det-nav-text">メッセージ一覧</span>
+        </a>
+
+        <!-- アカウント -->
+        <a href="#" class="det-nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="det-nav-text">アカウント</span>
+        </a>
+
+        <!-- お問い合わせ -->
+        <a href="#" class="det-nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12 19.79 19.79 0 0 1 1.99 3.42 2 2 0 0 1 3.98 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span class="det-nav-text">お問い合わせ</span>
+        </a>
+
+        <!-- メニュー・価格表 -->
+        <a href="#" class="det-nav-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+          </svg>
+          <span class="det-nav-text">メニュー・価格表</span>
+        </a>
+
+      </nav>
+
+      <!-- ヘルプボタン -->
+      <div class="det-help-area">
+        <button class="det-help-btn det-help-btn--orange">操作に困ったら</button>
+        <button class="det-help-btn det-help-btn--red">応募HELP!!</button>
+      </div>
+
+      <!-- マスコット -->
+      <div class="det-mascot">
+        <svg width="90" height="96" viewBox="0 0 90 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="45" cy="30" rx="22" ry="22" fill="#FFD8A8" stroke="#E8192C" stroke-width="2"/>
+          <circle cx="38" cy="27" r="3" fill="#333"/>
+          <circle cx="52" cy="27" r="3" fill="#333"/>
+          <path d="M38 37 Q45 43 52 37" stroke="#E8192C" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <ellipse cx="22" cy="34" rx="6" ry="4" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+          <ellipse cx="68" cy="34" rx="6" ry="4" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+          <rect x="28" y="50" width="34" height="26" rx="6" fill="#E8192C"/>
+          <rect x="17" y="53" width="12" height="10" rx="5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+          <rect x="61" y="53" width="12" height="10" rx="5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+          <rect x="35" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+          <rect x="46" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+    </aside>
+    <!-- ===== /左サイドバーナビ ===== -->
+
+    <!-- ===== メインコンテンツ ===== -->
+    <div class="det-main">
+
+      <!-- トップバー -->
+      <div class="det-topbar">
+        <span class="det-topbar-title">報酬支払い情報</span>
+      </div>
+
+      <!-- コンテンツ本体 -->
+      <div class="pay-wrap">
+
+        <!-- ヘッダー行：年選択 + 注記 -->
+        <div class="pay-header">
+          <div class="pay-year-row">
+            <label class="pay-year-label">
+              <select class="pay-year-select">
+                <option value="2025" selected>2025 年</option>
+                <option value="2024">2024 年</option>
+                <option value="2023">2023 年</option>
+              </select>
+            </label>
+            <p class="pay-year-note">2025年は検収承認日が12月2日分までの集計です。</p>
+          </div>
+        </div>
+
+        <!-- テーブルコントロールバー -->
+        <div class="pay-control-bar">
+          <div class="pay-count-info">
+            <span class="pay-count-num">16</span>
+            <span class="pay-count-text">件中 1〜10 件表示</span>
+            <select class="pay-per-page">
+              <option value="10">10件</option>
+              <option value="20">20件</option>
+              <option value="50">50件</option>
+            </select>
+          </div>
+          <button class="btn-csv-download">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            CSVダウンロード
+          </button>
+        </div>
+
+        <!-- 支払テーブル -->
+        <div class="pay-table-wrap">
+          <table class="pay-table">
+            <thead>
+              <tr>
+                <th class="pay-th pay-th--id">受注者ID</th>
+                <th class="pay-th pay-th--name">受注者名</th>
+                <th class="pay-th pay-th--address">住所</th>
+                <th class="pay-th pay-th--mynumber">マイナンバー</th>
+                <th class="pay-th pay-th--category">区分</th>
+                <th class="pay-th pay-th--detail">細目</th>
+                <th class="pay-th pay-th--amount">支払金額</th>
+                <th class="pay-th pay-th--tax">源泉徴収額</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">7092</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">阿部 圭子</a></td>
+                <td class="pay-td pay-td--address">福岡県 筑紫野市 牛島436-89</td>
+                <td class="pay-td"><span class="pay-mynumber pay-mynumber--unregistered">未登録</span></td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">3,000円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1016012</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">香取 久美子</a></td>
+                <td class="pay-td pay-td--address">宮城県 仙台市青葉区宮町 1-1-26 パンテオン宮町410</td>
+                <td class="pay-td pay-td--mynumber-num">257756348400</td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">1,500円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1016227</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">石本 優良</a></td>
+                <td class="pay-td pay-td--address">福岡県 北九州市八幡西区皇后崎町</td>
+                <td class="pay-td"><span class="pay-mynumber pay-mynumber--unregistered">未登録</span></td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">1,800円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1018812</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">宮野 智明</a></td>
+                <td class="pay-td pay-td--address">長崎県 佐世保市下宇戸町 225</td>
+                <td class="pay-td pay-td--mynumber-num">879365030482</td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">3,600円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1022467</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">福永 幸代</a></td>
+                <td class="pay-td pay-td--address">兵庫県 姫路市網干区余子浜 218-7</td>
+                <td class="pay-td pay-td--mynumber-num">729246095566</td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">1,800円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1031917</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">岡田 千秋</a></td>
+                <td class="pay-td pay-td--address">東京都 立川市幸町 5-106-35</td>
+                <td class="pay-td pay-td--mynumber-num">821702450342</td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">1,500円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1045859</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">藤尾 芳枝</a></td>
+                <td class="pay-td pay-td--address">長野県 安曇野市穂高 9545-3</td>
+                <td class="pay-td"><span class="pay-mynumber pay-mynumber--unknown">不明</span></td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">1,800円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1064382</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">本山 春代</a></td>
+                <td class="pay-td pay-td--address">千葉県 船橋市前貝塚町 821-20</td>
+                <td class="pay-td pay-td--mynumber-num">028421415899</td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">1,800円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1066047</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">高重 めぐみ</a></td>
+                <td class="pay-td pay-td--address">広島県 安芸郡海田町南昭和町 8-6-204</td>
+                <td class="pay-td pay-td--mynumber-num">754444430006</td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">1,800円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+              <tr class="pay-row">
+                <td class="pay-td pay-td--id">1067112</td>
+                <td class="pay-td"><a href="#" class="pay-person-link">唐澤 哲也</a></td>
+                <td class="pay-td pay-td--address">神奈川県 茅ヶ崎市菱沼海岸 8-9-5</td>
+                <td class="pay-td pay-td--mynumber-num">220093484193</td>
+                <td class="pay-td">個人</td>
+                <td class="pay-td">業務委託料</td>
+                <td class="pay-td pay-td--amount">5,000円</td>
+                <td class="pay-td pay-td--amount">0円</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ページネーション -->
+        <div class="pay-pagination">
+          <div class="pay-count-info">
+            <span class="pay-count-num">16</span>
+            <span class="pay-count-text">件中 1〜10 件表示</span>
+          </div>
+          <nav class="msg-page-nav">
+            <button class="msg-page-btn msg-page-btn--prev" disabled>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+              前の10件
+            </button>
+            <button class="msg-page-num is-active">1</button>
+            <button class="msg-page-num">2</button>
+            <button class="msg-page-btn msg-page-btn--next">
+              次の10件
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </nav>
+        </div>
+
+      </div>
+      <!-- /pay-wrap -->
+
+      <!-- フッター -->
+      <footer class="site-footer" style="margin-top:auto;">
+        <div class="footer-inner">
+          <nav class="footer-nav">
+            <ul class="footer-nav-list">
+              <li><a href="#">お知らせ</a></li>
+              <li><a href="#">利用規約</a></li>
+              <li><a href="#">プライバシーポリシー</a></li>
+              <li><a href="#">運営会社</a></li>
+              <li><a href="#">お仕事を紹介したい方はこちら</a></li>
+            </ul>
+          </nav>
+          <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+        </div>
+      </footer>
+
+    </div>
+    <!-- ===== /メインコンテンツ ===== -->
+
+    <!-- チャットウィジェット -->
+    <div class="chat-widget" id="chatWidget">
+      <button class="chat-widget-close" id="chatWidgetClose" aria-label="閉じる">×</button>
+      <div class="chat-widget-mascot">
+        <svg width="44" height="48" viewBox="0 0 90 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="45" cy="30" rx="22" ry="22" fill="#FFD8A8" stroke="#E8192C" stroke-width="2"/>
+          <circle cx="38" cy="27" r="3" fill="#333"/>
+          <circle cx="52" cy="27" r="3" fill="#333"/>
+          <path d="M38 37 Q45 43 52 37" stroke="#E8192C" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <rect x="28" y="50" width="34" height="26" rx="6" fill="#E8192C"/>
+          <rect x="35" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+          <rect x="46" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <p class="chat-widget-text">ご近所会員ですご質問があれば私の顔をクリック！</p>
+    </div>
+
+  </div>
+  <!-- /detail-page -->
+
+  <script>
+    document.getElementById('chatWidgetClose').addEventListener('click', function() {
+      document.getElementById('chatWidget').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

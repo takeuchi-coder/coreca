@@ -3240,3 +3240,211 @@ button {
   color: #555;
   line-height: 1.6;
 }
+
+/* ===========================
+   報酬支払い情報ページ
+=========================== */
+.pay-wrap {
+  padding: 20px 20px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ヘッダー：年選択 + 注記 */
+.pay-header {
+  margin-bottom: 14px;
+}
+
+.pay-year-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.pay-year-select {
+  padding: 6px 28px 6px 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  background: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.pay-year-note {
+  font-size: 12px;
+  color: #888;
+}
+
+/* テーブルコントロールバー */
+.pay-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pay-count-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+.pay-count-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.pay-per-page {
+  padding: 3px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  background: #fff;
+}
+
+.btn-csv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #fff;
+  color: #1565c0;
+  border: 1.5px solid #1565c0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.btn-csv-download:hover {
+  background: #1565c0;
+  color: #fff;
+}
+
+/* テーブル */
+.pay-table-wrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  background: #fff;
+}
+
+.pay-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+
+.pay-th {
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  background: #fff0f0;
+  border-bottom: 1px solid #e8e8e8;
+  white-space: nowrap;
+}
+
+.pay-th--id       { width: 80px; }
+.pay-th--name     { width: 100px; }
+.pay-th--address  { }
+.pay-th--mynumber { width: 130px; }
+.pay-th--category { width: 52px; }
+.pay-th--detail   { width: 90px; }
+.pay-th--amount   { width: 90px; text-align: right; }
+.pay-th--tax      { width: 90px; text-align: right; }
+
+.pay-row {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.1s;
+}
+
+.pay-row:last-child { border-bottom: none; }
+.pay-row:hover { background: #fafafa; }
+
+.pay-td {
+  padding: 11px 12px;
+  font-size: 12px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.pay-td--id {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.pay-td--address {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.pay-td--amount {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pay-td--mynumber-num {
+  font-family: monospace;
+  font-size: 12px;
+  color: #444;
+  letter-spacing: 0.03em;
+}
+
+.pay-person-link {
+  color: #1565c0;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pay-person-link:hover { text-decoration: underline; }
+
+.pay-mynumber {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.pay-mynumber--unregistered {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.pay-mynumber--unknown {
+  background: #f5f5f5;
+  color: #757575;
+}
+
+/* ページネーション */
+.pay-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 4px 20px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
