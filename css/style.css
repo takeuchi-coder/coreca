@@ -3528,3 +3528,313 @@ button {
 .pay-th--unit-price   { width: 80px; text-align: right; }
 .pay-th--qty          { width: 60px; text-align: right; }
 
+/* ===========================
+   メッセージ詳細
+=========================== */
+
+/* ラッパー */
+.msgd-wrap {
+  padding: 16px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* ユーザー情報ヘッダーカード */
+.msgd-header-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.msgd-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.msgd-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #e8192c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.msgd-user-meta { min-width: 0; }
+
+.msgd-user-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.msgd-repeat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #fff3e0;
+  color: #e65100;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.msgd-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.msgd-status-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.msgd-status-badge--applying {
+  background: #e3f0ff;
+  color: #1565c0;
+}
+
+.msgd-status-badge--active {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.msgd-btn-order {
+  padding: 8px 22px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.msgd-btn-order:hover { background: #c0161f; }
+
+.msgd-btn-reject {
+  padding: 8px 22px;
+  background: #fff;
+  color: #555;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.msgd-btn-reject:hover { border-color: #888; color: #1a1a1a; }
+
+/* チャットスレッド */
+.msgd-thread {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* 各メッセージ行 */
+.msgd-row {
+  display: flex;
+  flex-direction: column;
+  max-width: 72%;
+}
+
+.msgd-row--recv {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.msgd-row--sent {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.msgd-sender-name {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* 自動メッセージ（システム）ボックス */
+.msgd-auto-box {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 0 10px 10px 10px;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.msgd-auto-box-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #aaa;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.msgd-auto-link {
+  color: #1565c0;
+  text-decoration: underline;
+}
+
+/* 通常の受信バブル */
+.msgd-bubble--recv {
+  background: #f0f2f5;
+  border-radius: 0 10px 10px 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+/* 送信バブル */
+.msgd-bubble--sent {
+  background: #e8192c;
+  color: #fff;
+  border-radius: 10px 0 10px 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* バブル下メタ情報 */
+.msgd-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.msgd-time {
+  font-size: 11px;
+  color: #bbb;
+}
+
+.msgd-read-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.msgd-read-badge--read {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.msgd-read-badge--unread {
+  background: #f5f5f5;
+  color: #999;
+}
+
+/* メッセージ入力エリア */
+.msgd-compose {
+  background: #fff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.msgd-compose-textarea {
+  flex: 1;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1a1a1a;
+  resize: none;
+  line-height: 1.6;
+  min-height: 72px;
+  outline: none;
+  transition: border-color 0.15s;
+  background: #fafafa;
+}
+
+.msgd-compose-textarea:focus { border-color: #e8192c; background: #fff; }
+
+.msgd-compose-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.msgd-compose-attach {
+  background: none;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+}
+
+.msgd-compose-attach:hover { color: #888; }
+
+.msgd-compose-send {
+  padding: 9px 26px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.msgd-compose-send:hover { background: #c0161f; }
+
