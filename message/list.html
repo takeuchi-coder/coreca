@@ -9,429 +9,353 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="body--detail">
+<body>
 
-  <div class="detail-page">
-
-    <!-- ===== 左サイドバーナビ ===== -->
-    <aside class="det-sidebar">
-
-      <!-- ロゴエリア -->
-      <div class="det-sidebar-logo">
-        <p class="det-logo-role">発注者としてログイン中</p>
-        <a href="../order/list.html" class="det-logo-name">
-          <span class="det-logo-icon">
-            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#e8192c"/>
-            </svg>
-          </span>
-          ご近所ワーク
-        </a>
-      </div>
+  <!-- ===== ヘッダー（共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- ロゴ -->
+      <a href="/" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
 
       <!-- ナビゲーション -->
-      <nav class="det-nav">
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="../order/list.html" class="nav-link">
+              <span class="nav-text">案件作成・一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="../payment/list.html" class="nav-link">
+              <span class="nav-text">報酬支払い情報</span>
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link">
+              <span class="nav-text">メッセージ一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-text">お問い合わせ</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-text">メニュー・価格表</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="nav-text">ヘルプ</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-        <!-- 通知 -->
-        <a href="../notification/list.html" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <!-- 右側: 通知ベル ＋ アカウント情報 -->
+      <div class="nav-actions">
+        <a href="../notification/list.html" class="nav-bell" aria-label="通知">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
           </svg>
-          <span class="det-nav-text">通知</span>
-          <span class="det-nav-badge">4</span>
+          <span class="badge badge--red">3</span>
         </a>
-
-        <!-- 案件新規作成 -->
-        <div class="det-nav-new-wrap">
-          <a href="../order/create.html" class="det-nav-new-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <line x1="5" y1="12" x2="19" y2="12"/>
+        <div class="nav-user">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
             </svg>
-            案件新規作成
-          </a>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+          <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </div>
-
-        <!-- 案件一覧 -->
-        <a href="../order/list.html" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
-            <line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/>
-            <line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
-          </svg>
-          <span class="det-nav-text">案件一覧</span>
-        </a>
-
-        <!-- 報酬支払い情報 -->
-        <a href="../payment/list.html" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="12" y1="1" x2="12" y2="23"/>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-          <span class="det-nav-text">報酬支払い情報</span>
-        </a>
-
-        <!-- メッセージ一覧（active） -->
-        <a href="list.html" class="det-nav-link is-active">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-          <span class="det-nav-text">メッセージ一覧</span>
-        </a>
-
-        <!-- アカウント -->
-        <a href="#" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          <span class="det-nav-text">アカウント</span>
-        </a>
-
-        <!-- お問い合わせ -->
-        <a href="#" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12 19.79 19.79 0 0 1 1.99 3.42 2 2 0 0 1 3.98 1h3a2 2 0 0 1 2 1.72c.127.96.36 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.34 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-          </svg>
-          <span class="det-nav-text">お問い合わせ</span>
-        </a>
-
-        <!-- メニュー・価格表 -->
-        <a href="#" class="det-nav-link">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
-            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-          </svg>
-          <span class="det-nav-text">メニュー・価格表</span>
-        </a>
-
-      </nav>
-
-      <!-- ヘルプボタン -->
-      <div class="det-help-area">
-        <button class="det-help-btn det-help-btn--orange">操作に困ったら</button>
-        <button class="det-help-btn det-help-btn--red">応募HELP!!</button>
       </div>
 
-      <!-- マスコット -->
-      <div class="det-mascot">
-        <svg width="90" height="96" viewBox="0 0 90 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="45" cy="30" rx="22" ry="22" fill="#FFD8A8" stroke="#E8192C" stroke-width="2"/>
-          <circle cx="38" cy="27" r="3" fill="#333"/>
-          <circle cx="52" cy="27" r="3" fill="#333"/>
-          <path d="M38 37 Q45 43 52 37" stroke="#E8192C" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <ellipse cx="22" cy="34" rx="6" ry="4" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <ellipse cx="68" cy="34" rx="6" ry="4" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="28" y="50" width="34" height="26" rx="6" fill="#E8192C"/>
-          <rect x="17" y="53" width="12" height="10" rx="5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="61" y="53" width="12" height="10" rx="5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="35" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="46" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-        </svg>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <div class="det-main">
+
+    <!-- トップバー -->
+    <div class="det-topbar">
+      <span class="det-topbar-title">メッセージ一覧</span>
+    </div>
+
+    <!-- コンテンツ本体 -->
+    <div class="msg-wrap">
+
+      <!-- フィルターバー -->
+      <div class="msg-filter-bar">
+        <div class="msg-count-info">
+          <span class="msg-count-total">58 件中</span>
+          <span class="msg-count-range">1〜10 件表示</span>
+          <select class="msg-per-page">
+            <option value="10">10件</option>
+            <option value="20">20件</option>
+            <option value="50">50件</option>
+          </select>
+        </div>
+        <div class="msg-filter-btns">
+          <button class="msg-filter-btn msg-filter-btn--active">全て</button>
+          <button class="msg-filter-btn">未読のみ</button>
+          <button class="msg-filter-btn msg-filter-btn--search">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            詳細検索
+          </button>
+        </div>
       </div>
 
-    </aside>
-    <!-- ===== /左サイドバーナビ ===== -->
+      <!-- メッセージテーブル -->
+      <div class="msg-table-wrap">
+        <table class="msg-table">
+          <thead>
+            <tr>
+              <th class="msg-th msg-th--name">受注者名</th>
+              <th class="msg-th msg-th--id">案件ID</th>
+              <th class="msg-th msg-th--period">作業・契約期間</th>
+              <th class="msg-th msg-th--course">コース名</th>
+              <th class="msg-th msg-th--address">案件住所</th>
+              <th class="msg-th msg-th--message">メッセージ</th>
+              <th class="msg-th msg-th--action"></th>
+            </tr>
+          </thead>
+          <tbody>
 
-    <!-- ===== メインコンテンツ ===== -->
-    <div class="det-main">
+            <!-- Row 1 -->
+            <tr class="msg-row msg-row--unread">
+              <td class="msg-td"><a href="#" class="msg-person-link">山本 智美</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232851</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/04〜<br>2025/12/10</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
+              <td class="msg-td msg-td--address">静岡県 磐田市下本郷２６６−６１</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">ご応募ありがとうございます。12/8の9時〜11時半の間で訪問する時間帯を教えてください。お願いしようと思っております。</p>
+                <span class="msg-sender">9:50 河辺 美紀</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
 
-      <!-- トップバー -->
-      <div class="det-topbar">
-        <span class="det-topbar-title">メッセージ一覧</span>
+            <!-- Row 2 -->
+            <tr class="msg-row msg-row--unread">
+              <td class="msg-td"><a href="#" class="msg-person-link">松本 裕矢</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232850</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/08〜<br>2025/12/12</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
+              <td class="msg-td msg-td--address">静岡県 島田市井口５１４付近</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">ご応募ありがとうございます。発注させていただきます。12/8〜12で貸主様とご調整しまた報告させていただきます。</p>
+                <span class="msg-sender">9:44 河辺 美紀</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr class="msg-row msg-row--unread">
+              <td class="msg-td"><a href="#" class="msg-person-link">倉本 泰</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232849</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/04〜<br>2025/12/05</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
+              <td class="msg-td msg-td--address">静岡県 富士市宮下５８−５</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">ご応募ありがとうございます。12/4でお願いしようと思っています。お伺いできる時間帯を教えてください。</p>
+                <span class="msg-sender">9:17 河辺 美紀</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 4 -->
+            <tr class="msg-row">
+              <td class="msg-td"><a href="#" class="msg-person-link">石川 ルミ</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232856</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
+              <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">おはようございます。承知しました。よろしくお願いいたします。</p>
+                <span class="msg-sender">9:10 石川 ルミ</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 5 -->
+            <tr class="msg-row">
+              <td class="msg-td"><a href="#" class="msg-person-link">菊地 卓哉</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232856</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
+              <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">また機会がありましたら、よろしくお願い致します。</p>
+                <span class="msg-sender">12/2 菊地 卓哉</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 6 -->
+            <tr class="msg-row">
+              <td class="msg-td"><a href="#" class="msg-person-link">和田 奈月</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232856</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
+              <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">ご応募いただきありがとうございます。今回は先着順で別の方に決まりました。またのご応募をお待ちしております。</p>
+                <span class="msg-sender">12/2 河辺 美紀</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 7 -->
+            <tr class="msg-row">
+              <td class="msg-td"><a href="#" class="msg-person-link">竹内 正博</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232856</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
+              <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">ご応募いただきありがとうございます。今回は先着順で別の方に決まりました。またのご応募をお待ちしております。</p>
+                <span class="msg-sender">12/2 河辺 美紀</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 8 -->
+            <tr class="msg-row">
+              <td class="msg-td"><a href="#" class="msg-person-link">阿部 圭子</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232228</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/01〜<br>2025/12/03</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
+              <td class="msg-td msg-td--address">福岡県 筑紫野市山家２７２６−５</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">有難うございます。住所が違っていました。山家2727 砥綾様です。先日の筑紫野市役所の件でお尋ねしたいことがあります。こちらから確認しても…</p>
+                <span class="msg-sender">12/2 阿部 圭子</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 9 -->
+            <tr class="msg-row">
+              <td class="msg-td"><a href="#" class="msg-person-link">山本 由香</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232497</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/02〜<br>2025/12/03</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
+              <td class="msg-td msg-td--address">埼玉県 川口市西青木３丁目２−４ 川口警察署</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">ご対応いただき感謝いたします。また同じような案件がございましたら、是非応募お待ちしております。よろしくお願いいたします。</p>
+                <span class="msg-sender">12/2 河辺 美紀</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+            <!-- Row 10 -->
+            <tr class="msg-row">
+              <td class="msg-td"><a href="#" class="msg-person-link">樋口 由佳</a></td>
+              <td class="msg-td">
+                <a href="../order/detail.html" class="msg-proj-id">232495</a>
+                <span class="msg-status-badge msg-status-badge--active">進行中</span>
+              </td>
+              <td class="msg-td msg-td--period">2025/12/04〜<br>2025/12/05</td>
+              <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
+              <td class="msg-td msg-td--address">神奈川県 横浜市泉区和泉町５８６７−２６ 泉警察署…</td>
+              <td class="msg-td msg-td--message">
+                <p class="msg-text">よろしくお願いします。</p>
+                <span class="msg-sender">12/2 樋口 由佳</span>
+              </td>
+              <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
+            </tr>
+
+          </tbody>
+        </table>
       </div>
 
-      <!-- コンテンツ本体 -->
-      <div class="msg-wrap">
-
-        <!-- フィルターバー -->
-        <div class="msg-filter-bar">
-          <div class="msg-count-info">
-            <span class="msg-count-total">58 件中</span>
-            <span class="msg-count-range">1〜10 件表示</span>
-            <select class="msg-per-page">
-              <option value="10">10件</option>
-              <option value="20">20件</option>
-              <option value="50">50件</option>
-            </select>
-          </div>
-          <div class="msg-filter-btns">
-            <button class="msg-filter-btn msg-filter-btn--active">全て</button>
-            <button class="msg-filter-btn">未読のみ</button>
-            <button class="msg-filter-btn msg-filter-btn--search">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-              詳細検索
-            </button>
-          </div>
-        </div>
-
-        <!-- メッセージテーブル -->
-        <div class="msg-table-wrap">
-          <table class="msg-table">
-            <thead>
-              <tr>
-                <th class="msg-th msg-th--name">受注者名</th>
-                <th class="msg-th msg-th--id">案件ID</th>
-                <th class="msg-th msg-th--period">作業・契約期間</th>
-                <th class="msg-th msg-th--course">コース名</th>
-                <th class="msg-th msg-th--address">案件住所</th>
-                <th class="msg-th msg-th--message">メッセージ</th>
-                <th class="msg-th msg-th--action"></th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <!-- Row 1 -->
-              <tr class="msg-row msg-row--unread">
-                <td class="msg-td"><a href="#" class="msg-person-link">山本 智美</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232851</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/04〜<br>2025/12/10</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
-                <td class="msg-td msg-td--address">静岡県 磐田市下本郷２６６−６１</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">ご応募ありがとうございます。12/8の9時〜11時半の間で訪問する時間帯を教えてください。お願いしようと思っております。</p>
-                  <span class="msg-sender">9:50 河辺 美紀</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 2 -->
-              <tr class="msg-row msg-row--unread">
-                <td class="msg-td"><a href="#" class="msg-person-link">松本 裕矢</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232850</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/08〜<br>2025/12/12</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
-                <td class="msg-td msg-td--address">静岡県 島田市井口５１４付近</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">ご応募ありがとうございます。発注させていただきます。12/8〜12で貸主様とご調整しまた報告させていただきます。</p>
-                  <span class="msg-sender">9:44 河辺 美紀</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 3 -->
-              <tr class="msg-row msg-row--unread">
-                <td class="msg-td"><a href="#" class="msg-person-link">倉本 泰</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232849</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/04〜<br>2025/12/05</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
-                <td class="msg-td msg-td--address">静岡県 富士市宮下５８−５</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">ご応募ありがとうございます。12/4でお願いしようと思っています。お伺いできる時間帯を教えてください。</p>
-                  <span class="msg-sender">9:17 河辺 美紀</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 4 -->
-              <tr class="msg-row">
-                <td class="msg-td"><a href="#" class="msg-person-link">石川 ルミ</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232856</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
-                <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">おはようございます。承知しました。よろしくお願いいたします。</p>
-                  <span class="msg-sender">9:10 石川 ルミ</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 5 -->
-              <tr class="msg-row">
-                <td class="msg-td"><a href="#" class="msg-person-link">菊地 卓哉</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232856</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
-                <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">また機会がありましたら、よろしくお願い致します。</p>
-                  <span class="msg-sender">12/2 菊地 卓哉</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 6 -->
-              <tr class="msg-row">
-                <td class="msg-td"><a href="#" class="msg-person-link">和田 奈月</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232856</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
-                <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">ご応募いただきありがとうございます。今回は先着順で別の方に決まりました。またのご応募をお待ちしております。</p>
-                  <span class="msg-sender">12/2 河辺 美紀</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 7 -->
-              <tr class="msg-row">
-                <td class="msg-td"><a href="#" class="msg-person-link">竹内 正博</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232856</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/05〜<br>2025/12/05</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
-                <td class="msg-td msg-td--address">埼玉県 川越市大仙波４１０−１ 川越警察署</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">ご応募いただきありがとうございます。今回は先着順で別の方に決まりました。またのご応募をお待ちしております。</p>
-                  <span class="msg-sender">12/2 河辺 美紀</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 8 -->
-              <tr class="msg-row">
-                <td class="msg-td"><a href="#" class="msg-person-link">阿部 圭子</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232228</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/01〜<br>2025/12/03</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】訪問（アンケート取得）・現地調査（撮影）…</td>
-                <td class="msg-td msg-td--address">福岡県 筑紫野市山家２７２６−５</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">有難うございます。住所が違っていました。山家2727 砥綾様です。先日の筑紫野市役所の件でお尋ねしたいことがあります。こちらから確認しても…</p>
-                  <span class="msg-sender">12/2 阿部 圭子</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 9 -->
-              <tr class="msg-row">
-                <td class="msg-td"><a href="#" class="msg-person-link">山本 由香</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232497</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/02〜<br>2025/12/03</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
-                <td class="msg-td msg-td--address">埼玉県 川口市西青木３丁目２−４ 川口警察署</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">ご対応いただき感謝いたします。また同じような案件がございましたら、是非応募お待ちしております。よろしくお願いいたします。</p>
-                  <span class="msg-sender">12/2 河辺 美紀</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-              <!-- Row 10 -->
-              <tr class="msg-row">
-                <td class="msg-td"><a href="#" class="msg-person-link">樋口 由佳</a></td>
-                <td class="msg-td">
-                  <a href="../order/detail.html" class="msg-proj-id">232495</a>
-                  <span class="msg-status-badge msg-status-badge--active">進行中</span>
-                </td>
-                <td class="msg-td msg-td--period">2025/12/04〜<br>2025/12/05</td>
-                <td class="msg-td msg-td--course">【株式会社コレカ様専用】警察署での書類受理・お届け業務…</td>
-                <td class="msg-td msg-td--address">神奈川県 横浜市泉区和泉町５８６７−２６ 泉警察署…</td>
-                <td class="msg-td msg-td--message">
-                  <p class="msg-text">よろしくお願いします。</p>
-                  <span class="msg-sender">12/2 樋口 由佳</span>
-                </td>
-                <td class="msg-td msg-td--action"><a href="#" class="btn-confirm">確認する</a></td>
-              </tr>
-
-            </tbody>
-          </table>
-        </div>
-
-        <!-- ページネーション -->
-        <div class="msg-pagination">
-          <div class="msg-count-info">
-            <span class="msg-count-total">58 件中</span>
-            <span class="msg-count-range">1〜10 件表示</span>
-          </div>
-          <nav class="msg-page-nav">
-            <button class="msg-page-btn msg-page-btn--prev" disabled>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="15 18 9 12 15 6"/>
-              </svg>
-              前の10件
-            </button>
-            <button class="msg-page-num is-active">1</button>
-            <button class="msg-page-num">2</button>
-            <span class="msg-page-ellipsis">…</span>
-            <button class="msg-page-num">5</button>
-            <button class="msg-page-num">6</button>
-            <button class="msg-page-btn msg-page-btn--next">
-              次の10件
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="9 18 15 12 9 6"/>
-              </svg>
-            </button>
-          </nav>
-        </div>
-
+      <!-- ページネーション -->
+      <div class="footer-pagination">
+        <button class="btn-footer-page" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          前の10件
+        </button>
+        <span class="footer-page-info">58件中 1〜10件</span>
+        <button class="btn-footer-page">
+          次の10件
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
       </div>
-      <!-- /msg-wrap -->
-
-      <!-- フッター -->
-      <footer class="site-footer" style="margin-top:auto;">
-        <div class="footer-inner">
-          <nav class="footer-nav">
-            <ul class="footer-nav-list">
-              <li><a href="#">お知らせ</a></li>
-              <li><a href="#">利用規約</a></li>
-              <li><a href="#">プライバシーポリシー</a></li>
-              <li><a href="#">運営会社</a></li>
-              <li><a href="#">お仕事を紹介したい方はこちら</a></li>
-            </ul>
-          </nav>
-          <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
-        </div>
-      </footer>
 
     </div>
-    <!-- ===== /メインコンテンツ ===== -->
-
-    <!-- チャットウィジェット -->
-    <div class="chat-widget" id="chatWidget">
-      <button class="chat-widget-close" id="chatWidgetClose" aria-label="閉じる">×</button>
-      <div class="chat-widget-mascot">
-        <svg width="44" height="48" viewBox="0 0 90 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="45" cy="30" rx="22" ry="22" fill="#FFD8A8" stroke="#E8192C" stroke-width="2"/>
-          <circle cx="38" cy="27" r="3" fill="#333"/>
-          <circle cx="52" cy="27" r="3" fill="#333"/>
-          <path d="M38 37 Q45 43 52 37" stroke="#E8192C" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <rect x="28" y="50" width="34" height="26" rx="6" fill="#E8192C"/>
-          <rect x="35" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-          <rect x="46" y="76" width="9" height="16" rx="4.5" fill="#FFD8A8" stroke="#E8192C" stroke-width="1.5"/>
-        </svg>
-      </div>
-      <p class="chat-widget-text">ご近所会員ですご質問があれば私の顔をクリック！</p>
-    </div>
+    <!-- /msg-wrap -->
 
   </div>
-  <!-- /detail-page -->
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター（共通） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事を紹介したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
 
   <script>
-    document.getElementById('chatWidgetClose').addEventListener('click', function() {
-      document.getElementById('chatWidget').style.display = 'none';
-    });
-
     // フィルターボタン
     document.querySelectorAll('.msg-filter-btn').forEach(btn => {
       btn.addEventListener('click', function() {
