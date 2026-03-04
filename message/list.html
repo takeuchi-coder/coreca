@@ -116,7 +116,7 @@
         <div class="msg-filter-btns">
           <button class="msg-filter-btn msg-filter-btn--active">全て</button>
           <button class="msg-filter-btn">未読のみ</button>
-          <button class="msg-filter-btn msg-filter-btn--search">
+          <button class="msg-filter-btn msg-filter-btn--search" id="btnOpenSearch">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
@@ -338,6 +338,68 @@
   </div>
   <!-- ===== /メインコンテンツ ===== -->
 
+  <!-- ===== 絞り込み検索モーダル ===== -->
+  <div class="search-modal-overlay" id="searchModalOverlay" aria-hidden="true">
+    <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+
+      <!-- モーダルヘッダー -->
+      <div class="search-modal-header">
+        <h2 class="search-modal-title" id="searchModalTitle">絞り込み条件</h2>
+        <button class="search-modal-close" id="btnCloseSearch" aria-label="閉じる">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- フォーム -->
+      <form class="search-modal-form" id="searchForm">
+
+        <div class="search-form-row">
+          <label class="search-form-label" for="sf-name">受注者名</label>
+          <input type="text" id="sf-name" class="search-form-input" placeholder="">
+        </div>
+
+        <div class="search-form-row">
+          <label class="search-form-label" for="sf-tel">電話番号</label>
+          <input type="text" id="sf-tel" class="search-form-input" placeholder="ハイフンなし">
+        </div>
+
+        <div class="search-form-row">
+          <label class="search-form-label" for="sf-proj-id">案件ID</label>
+          <input type="text" id="sf-proj-id" class="search-form-input" placeholder="">
+        </div>
+
+        <div class="search-form-row">
+          <label class="search-form-label" for="sf-course">コース名</label>
+          <input type="text" id="sf-course" class="search-form-input" placeholder="">
+        </div>
+
+        <div class="search-form-row">
+          <label class="search-form-label" for="sf-address">案件住所</label>
+          <input type="text" id="sf-address" class="search-form-input" placeholder="">
+        </div>
+
+        <div class="search-form-row search-form-row--check">
+          <label class="search-form-check-label" for="sf-unread">
+            <input type="checkbox" id="sf-unread" class="search-form-check">
+            <span class="search-form-check-text">メッセージ未読</span>
+          </label>
+        </div>
+
+      </form>
+
+      <!-- フッターボタン -->
+      <div class="search-modal-footer">
+        <button type="button" class="search-btn-clear" id="btnSearchClear">クリア</button>
+        <button type="button" class="search-btn-submit">絞り込む</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /絞り込み検索モーダル ===== -->
+
   <!-- ===== フッター（共通） ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -356,12 +418,48 @@
   <!-- ===== /フッター ===== -->
 
   <script>
-    // フィルターボタン
-    document.querySelectorAll('.msg-filter-btn').forEach(btn => {
+    // フィルターボタン（全て／未読のみ）
+    document.querySelectorAll('.msg-filter-btn:not(.msg-filter-btn--search)').forEach(btn => {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.msg-filter-btn').forEach(b => b.classList.remove('msg-filter-btn--active'));
+        document.querySelectorAll('.msg-filter-btn:not(.msg-filter-btn--search)').forEach(b => b.classList.remove('msg-filter-btn--active'));
         this.classList.add('msg-filter-btn--active');
       });
+    });
+
+    // 絞り込み検索モーダル
+    const overlay  = document.getElementById('searchModalOverlay');
+    const btnOpen  = document.getElementById('btnOpenSearch');
+    const btnClose = document.getElementById('btnCloseSearch');
+    const btnClear = document.getElementById('btnSearchClear');
+
+    function openModal() {
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    btnOpen.addEventListener('click', openModal);
+    btnClose.addEventListener('click', closeModal);
+
+    // オーバーレイ背景クリックで閉じる
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeModal();
+    });
+
+    // Esc キーで閉じる
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+    });
+
+    // クリアボタン
+    btnClear.addEventListener('click', function() {
+      document.getElementById('searchForm').reset();
     });
   </script>
 
