@@ -3448,3 +3448,83 @@ button {
   gap: 8px;
 }
 
+/* ===========================
+   報酬支払詳細
+=========================== */
+.paydet-person-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.paydet-person-id {
+  font-size: 12px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.paydet-person-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.paydet-person-address {
+  font-size: 13px;
+  color: #555;
+}
+
+.paydet-person-mynumber {
+  font-size: 13px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.pay-year-back-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 16px;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  color: #444;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.btn-back:hover {
+  border-color: #888;
+  color: #1a1a1a;
+}
+
+/* 詳細テーブル列幅 */
+.pay-th--order-id     { width: 70px; }
+.pay-th--course       { min-width: 100px; }
+.pay-th--order-addr   { }
+.pay-th--period       { width: 160px; white-space: nowrap; }
+.pay-th--approval     { width: 90px; white-space: nowrap; }
+.pay-th--unit-price   { width: 80px; text-align: right; }
+.pay-th--qty          { width: 60px; text-align: right; }
+

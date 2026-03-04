@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>報酬支払い情報 | ご近所ワーク</title>
+  <title>報酬支払詳細 | ご近所ワーク</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -96,15 +96,34 @@
 
     <!-- トップバー -->
     <div class="det-topbar">
-      <span class="det-topbar-title">報酬支払い情報</span>
+      <a href="list.html" class="det-back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="det-topbar-chevron">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        報酬支払い情報
+      </a>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="det-topbar-chevron">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+      <span class="det-topbar-title">報酬支払詳細</span>
     </div>
 
     <!-- コンテンツ本体 -->
     <div class="pay-wrap">
 
-      <!-- ヘッダー行：年選択 + 注記 -->
+      <!-- 受注者情報カード -->
+      <div class="paydet-person-card">
+        <div class="paydet-person-id">受注者ID：7092</div>
+        <div class="paydet-person-name">阿部 圭子</div>
+        <div class="paydet-person-address">福岡県 筑紫野市 牛島436-89</div>
+        <div class="paydet-person-mynumber">
+          マイナンバー：<span class="pay-mynumber pay-mynumber--unregistered">未登録</span>
+        </div>
+      </div>
+
+      <!-- 年選択 + 戻るボタン + 注記 -->
       <div class="pay-header">
-        <div class="pay-year-row">
+        <div class="pay-year-back-row">
           <label class="pay-year-label">
             <select class="pay-year-select">
               <option value="2025" selected>2025 年</option>
@@ -112,15 +131,16 @@
               <option value="2023">2023 年</option>
             </select>
           </label>
-          <p class="pay-year-note">2025年は検収承認日が12月2日分までの集計です。</p>
+          <a href="list.html" class="btn-back">戻る</a>
         </div>
+        <p class="pay-year-note">2025年は検収承認日が12月2日分までの集計です。</p>
       </div>
 
       <!-- テーブルコントロールバー -->
       <div class="pay-control-bar">
         <div class="pay-count-info">
-          <span class="pay-count-num">16</span>
-          <span class="pay-count-text">件中 1〜10 件表示</span>
+          <span class="pay-count-num">2</span>
+          <span class="pay-count-text">件中 1〜2 件表示</span>
           <select class="pay-per-page">
             <option value="10">10件</option>
             <option value="20">20件</option>
@@ -137,17 +157,20 @@
         </button>
       </div>
 
-      <!-- 支払テーブル -->
+      <!-- 詳細テーブル -->
       <div class="pay-table-wrap">
         <table class="pay-table">
           <thead>
             <tr>
-              <th class="pay-th pay-th--id">受注者ID</th>
-              <th class="pay-th pay-th--name">受注者名</th>
-              <th class="pay-th pay-th--address">住所</th>
-              <th class="pay-th pay-th--mynumber">マイナンバー</th>
+              <th class="pay-th pay-th--order-id">案件ID</th>
+              <th class="pay-th pay-th--course">コース名</th>
+              <th class="pay-th pay-th--order-addr">案件住所</th>
+              <th class="pay-th pay-th--period">作業契約期間</th>
+              <th class="pay-th pay-th--approval">検収承認日</th>
               <th class="pay-th pay-th--category">区分</th>
               <th class="pay-th pay-th--detail">細目</th>
+              <th class="pay-th pay-th--unit-price">報酬単価</th>
+              <th class="pay-th pay-th--qty">納品数</th>
               <th class="pay-th pay-th--amount">支払金額</th>
               <th class="pay-th pay-th--tax">源泉徴収額</th>
             </tr>
@@ -155,112 +178,30 @@
           <tbody>
 
             <tr class="pay-row">
-              <td class="pay-td pay-td--id">7092</td>
-              <td class="pay-td"><a href="detail.html" class="pay-person-link">阿部 圭子</a></td>
-              <td class="pay-td pay-td--address">福岡県 筑紫野市 牛島436-89</td>
-              <td class="pay-td"><span class="pay-mynumber pay-mynumber--unregistered">未登録</span></td>
+              <td class="pay-td pay-td--id">30012</td>
+              <td class="pay-td">戸建て清掃スタンダード</td>
+              <td class="pay-td pay-td--address">福岡県 筑紫野市 二日市北 3-2-5</td>
+              <td class="pay-td" style="white-space: nowrap;">2025/09/01〜2025/09/30</td>
+              <td class="pay-td" style="white-space: nowrap;">2025/10/02</td>
               <td class="pay-td">個人</td>
               <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">3,000円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1016012</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">香取 久美子</a></td>
-              <td class="pay-td pay-td--address">宮城県 仙台市青葉区宮町 1-1-26 パンテオン宮町410</td>
-              <td class="pay-td pay-td--mynumber-num">257756348400</td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
+              <td class="pay-td pay-td--amount">1,500円</td>
+              <td class="pay-td" style="text-align: right;">1</td>
               <td class="pay-td pay-td--amount">1,500円</td>
               <td class="pay-td pay-td--amount">0円</td>
             </tr>
 
             <tr class="pay-row">
-              <td class="pay-td pay-td--id">1016227</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">石本 優良</a></td>
-              <td class="pay-td pay-td--address">福岡県 北九州市八幡西区皇后崎町</td>
-              <td class="pay-td"><span class="pay-mynumber pay-mynumber--unregistered">未登録</span></td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">1,800円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1018812</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">宮野 智明</a></td>
-              <td class="pay-td pay-td--address">長崎県 佐世保市下宇戸町 225</td>
-              <td class="pay-td pay-td--mynumber-num">879365030482</td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">3,600円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1022467</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">福永 幸代</a></td>
-              <td class="pay-td pay-td--address">兵庫県 姫路市網干区余子浜 218-7</td>
-              <td class="pay-td pay-td--mynumber-num">729246095566</td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">1,800円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1031917</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">岡田 千秋</a></td>
-              <td class="pay-td pay-td--address">東京都 立川市幸町 5-106-35</td>
-              <td class="pay-td pay-td--mynumber-num">821702450342</td>
+              <td class="pay-td pay-td--id">30087</td>
+              <td class="pay-td">マンション共用部清掃</td>
+              <td class="pay-td pay-td--address">福岡県 筑紫野市 原田 1-10-18</td>
+              <td class="pay-td" style="white-space: nowrap;">2025/10/01〜2025/10/31</td>
+              <td class="pay-td" style="white-space: nowrap;">2025/11/05</td>
               <td class="pay-td">個人</td>
               <td class="pay-td">業務委託料</td>
               <td class="pay-td pay-td--amount">1,500円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1045859</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">藤尾 芳枝</a></td>
-              <td class="pay-td pay-td--address">長野県 安曇野市穂高 9545-3</td>
-              <td class="pay-td"><span class="pay-mynumber pay-mynumber--unknown">不明</span></td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">1,800円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1064382</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">本山 春代</a></td>
-              <td class="pay-td pay-td--address">千葉県 船橋市前貝塚町 821-20</td>
-              <td class="pay-td pay-td--mynumber-num">028421415899</td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">1,800円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1066047</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">高重 めぐみ</a></td>
-              <td class="pay-td pay-td--address">広島県 安芸郡海田町南昭和町 8-6-204</td>
-              <td class="pay-td pay-td--mynumber-num">754444430006</td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">1,800円</td>
-              <td class="pay-td pay-td--amount">0円</td>
-            </tr>
-
-            <tr class="pay-row">
-              <td class="pay-td pay-td--id">1067112</td>
-              <td class="pay-td"><a href="#" class="pay-person-link">唐澤 哲也</a></td>
-              <td class="pay-td pay-td--address">神奈川県 茅ヶ崎市菱沼海岸 8-9-5</td>
-              <td class="pay-td pay-td--mynumber-num">220093484193</td>
-              <td class="pay-td">個人</td>
-              <td class="pay-td">業務委託料</td>
-              <td class="pay-td pay-td--amount">5,000円</td>
+              <td class="pay-td" style="text-align: right;">1</td>
+              <td class="pay-td pay-td--amount">1,500円</td>
               <td class="pay-td pay-td--amount">0円</td>
             </tr>
 
@@ -276,8 +217,8 @@
           </svg>
           前の10件
         </button>
-        <span class="footer-page-info">16件中 1〜10件</span>
-        <button class="btn-footer-page">
+        <span class="footer-page-info">2件中 1〜2件</span>
+        <button class="btn-footer-page" disabled>
           次の10件
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="9 18 15 12 9 6"/>
