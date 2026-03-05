@@ -231,6 +231,15 @@ button {
   color: rgba(255,255,255,0.85);
 }
 
+/* nav-user をリンクとして使う場合 */
+a.nav-user {
+  text-decoration: none;
+}
+
+a.nav-user--active .header-avatar-icon {
+  background: rgba(255,255,255,0.35);
+}
+
 .btn-help {
   display: inline-flex;
   align-items: center;
@@ -4027,3 +4036,66 @@ button {
 
 .search-btn-submit:hover { background: #c0161f; }
 
+
+/* ===========================
+   アカウント情報ページ
+=========================== */
+
+.acct-wrap {
+  padding: 32px 28px 48px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.acct-title-area {
+  margin-bottom: 24px;
+}
+
+.acct-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 16px;
+}
+
+.acct-divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
+
+.acct-menu-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.acct-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.12s;
+}
+
+.acct-menu-item:last-child {
+  border-bottom: none;
+}
+
+.acct-menu-item:hover {
+  background: #fafafa;
+}
+
+.acct-menu-text {
+  font-weight: 500;
+}
+
+.acct-menu-chevron {
+  color: #bbb;
+  flex-shrink: 0;
+}
