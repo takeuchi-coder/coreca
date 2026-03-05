@@ -4100,3 +4100,126 @@ a.nav-user--active .header-avatar-icon {
   color: #bbb;
   flex-shrink: 0;
 }
+
+/* ===========================
+   決済履歴一覧 (payment/history-list.html)
+=========================== */
+
+.phistory-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 36px;
+  width: 100%;
+}
+
+.phistory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.phistory-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px 24px 16px;
+}
+
+.phistory-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.phistory-date {
+  font-size: 13px;
+  color: #555;
+}
+
+.btn-dunning {
+  padding: 4px 14px;
+  border: 1.5px solid #e8192c;
+  border-radius: 4px;
+  background: #fff;
+  color: #e8192c;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.btn-dunning:hover {
+  background: #e8192c;
+  color: #fff;
+}
+
+.phistory-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.phistory-row {
+  display: flex;
+  gap: 6px;
+}
+
+.phistory-label {
+  color: #555;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.phistory-link {
+  color: #e8192c;
+  text-decoration: underline;
+}
+
+.phistory-link:hover {
+  opacity: 0.75;
+}
+
+.phistory-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.btn-detail-view {
+  padding: 10px 48px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.btn-detail-view:hover {
+  background: #c0001e;
+}
+
+.phistory-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.phistory-total {
+  font-size: 13px;
+  color: #555;
+}
