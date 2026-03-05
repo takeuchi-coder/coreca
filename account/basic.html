@@ -11,9 +11,10 @@
 </head>
 <body>
 
-  <!-- ===== ヘッダー（共通） ===== -->
+  <!-- ===== ヘッダー（案件一覧と共通） ===== -->
   <header class="site-header">
     <div class="header-inner">
+      <!-- ロゴ -->
       <a href="/" class="header-logo">
         <span class="logo-icon">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,30 +25,45 @@
         <span class="logo-role">発注者としてログイン中</span>
       </a>
 
+      <!-- ナビゲーション（中央配置） -->
       <nav class="header-nav" id="headerNav">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="../order/list.html" class="nav-link"><span class="nav-text">案件作成・一覧</span></a>
+            <a href="../order/list.html" class="nav-link">
+              <span class="nav-text">案件作成・一覧</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a href="../payment/list.html" class="nav-link"><span class="nav-text">報酬支払い情報</span></a>
+            <a href="../payment/list.html" class="nav-link">
+              <span class="nav-text">報酬支払い情報</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a href="../message/list.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+            <a href="#" class="nav-link">
+              <span class="nav-text">メッセージ一覧</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+            <a href="#" class="nav-link">
+              <span class="nav-text">お問い合わせ</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link"><span class="nav-text">メニュー・価格表</span></a>
+            <a href="#" class="nav-link">
+              <span class="nav-text">メニュー・価格表</span>
+            </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link"><span class="nav-text">ヘルプ</span></a>
+            <a href="#" class="nav-link">
+              <span class="nav-text">ヘルプ</span>
+            </a>
           </li>
         </ul>
       </nav>
 
+      <!-- 右側: 通知ベル ＋ アカウント情報 -->
       <div class="nav-actions">
+        <!-- 通知ベル -->
         <a href="../notification/list.html" class="nav-bell" aria-label="通知">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
@@ -55,6 +71,7 @@
           </svg>
           <span class="badge badge--red">3</span>
         </a>
+        <!-- アカウント情報（アクティブ） -->
         <a href="index.html" class="nav-user nav-user--active" aria-label="アカウント情報">
           <span class="header-avatar-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -69,26 +86,27 @@
         </a>
       </div>
 
+      <!-- ハンバーガーメニュー（モバイル用） -->
       <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
   <!-- ===== /ヘッダー ===== -->
 
   <!-- ===== メインコンテンツ ===== -->
-  <main class="create-wrap">
+  <main class="notif-main">
 
     <!-- ページヘッダー -->
-    <div class="create-page-header">
-      <div class="create-page-header-left">
-        <a href="index.html" class="create-back-link">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-        </a>
-        <h1 class="create-title">基本情報</h1>
-      </div>
+    <div class="notif-page-header">
+      <a href="index.html" class="notif-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      <h1 class="notif-page-title">基本情報</h1>
     </div>
 
     <!-- フォーム本体 -->
@@ -335,7 +353,7 @@
           <li><a href="#">利用規約</a></li>
           <li><a href="#">プライバシーポリシー</a></li>
           <li><a href="#">運営会社</a></li>
-          <li><a href="#">お仕事を紹介したい方はこちら</a></li>
+          <li><a href="#">お仕事をお探しの方はこちら</a></li>
         </ul>
       </nav>
       <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
