@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>応募者・契約者一覧 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
+
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link"><span class="nav-text">案件作成・一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../payment/list.html" class="nav-link"><span class="nav-text">報酬支払い情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../message/list.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">メニュー・価格表</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">ヘルプ</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../notification/list.html" class="nav-bell" aria-label="通知">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="badge badge--red">4</span>
+        </a>
+        <a href="../account/index.html" class="nav-user" aria-label="アカウント情報">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+          <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="applist-main">
+
+    <!-- ページタイトル -->
+    <div class="notif-page-header">
+      <a href="list.html" class="notif-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      <h1 class="notif-page-title">応募者・契約者一覧</h1>
+    </div>
+
+    <!-- 案件情報カード -->
+    <div class="applist-proj-card">
+      <div class="applist-proj-top">
+        <span class="applist-proj-id">案件ID：232497</span>
+        <span class="applist-ol-badge">進行中/募集停止</span>
+      </div>
+      <div class="applist-proj-date">2025年12月02日〜2025年12月03日　いつでも</div>
+      <div class="applist-proj-title">菊岡作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</div>
+      <div class="applist-proj-addr">埼玉県　川口市西青木３丁目２−４　川口警察署　埼玉県川口市元郷3-1-4</div>
+    </div>
+
+    <!-- タブバー -->
+    <div class="applist-tabs-wrap">
+      <div class="applist-tabs">
+        <a href="detail.html" class="applist-tab-btn">案件情報</a>
+        <span class="applist-tab-btn applist-tab-btn--active">応募者・契約者</span>
+        <a href="#" class="applist-tab-btn">作業手順・報告</a>
+        <a href="#" class="applist-tab-btn">契約更新</a>
+      </div>
+    </div>
+
+    <!-- 応募者・契約者カード -->
+    <div class="applist-card">
+
+      <!-- カードヘッダー：名前 + ステータス -->
+      <div class="applist-card-header">
+        <a href="#" class="applist-worker-name">山本 由香</a>
+        <span class="applist-ol-badge">契約中</span>
+      </div>
+
+      <!-- 詳細情報 -->
+      <div class="applist-info-list">
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">電話番号：</span>
+          <a href="tel:08031793056" class="applist-tel-link">08031793056</a>
+        </div>
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">年齢：</span>
+          <span class="applist-info-value">43歳（女性）</span>
+        </div>
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">住所：</span>
+          <span class="applist-info-value">
+            埼玉県 川口市芝西
+            <span class="applist-addr-note">※作業場所と離れている場合は応募理由（別の仕事が近隣、引っ越し済で近隣、etc）の確認を推薦しております。</span>
+          </span>
+        </div>
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">契約実績：</span>
+          <span class="applist-info-value">完了2　キャンセル0　納品評価 なし</span>
+        </div>
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">応募日時：</span>
+          <span class="applist-info-value">2025-12-01 14:18:21</span>
+        </div>
+
+        <div class="applist-info-row applist-info-row--block">
+          <span class="applist-info-label">応募時登録情報：</span>
+          <div class="applist-register-box">
+            <p>【作業可能スケジュール】<br>明日作業可能です。<br>【自己PR・その他質問など】<br>※未登録</p>
+          </div>
+        </div>
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">発注日時：</span>
+          <span class="applist-info-value">2025-12-01 14:50:27</span>
+        </div>
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">納品数（案件ID232497）：</span>
+          <span class="applist-info-value">
+            1件
+            <a href="#" class="applist-sub-link">納品内容確認</a>
+          </span>
+        </div>
+
+        <div class="applist-info-row">
+          <span class="applist-info-label">報告追加一時停止：</span>
+          <label class="toggle-switch">
+            <input type="checkbox">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="applist-info-row applist-info-row--block">
+          <span class="applist-memo-header">
+            <span class="applist-info-label">メモ</span>
+            <a href="#" class="applist-sub-link">メモ編集</a>
+          </span>
+          <textarea class="applist-memo-area" placeholder="応募者、契約者に関するメモを自由に残せます。" rows="2"></textarea>
+        </div>
+
+      </div>
+      <!-- /applist-info-list -->
+
+      <!-- メッセージするボタン -->
+      <button type="button" class="btn-applist-message">メッセージする</button>
+
+    </div>
+    <!-- /applist-card -->
+
+    <!-- ページネーション -->
+    <div class="applist-pagination">
+      <div class="applist-pager-count">
+        <span class="applist-pager-total">1</span> 件中
+        <strong class="applist-pager-range">1〜1</strong> 件表示
+      </div>
+      <div class="applist-pager-nav">
+        <button class="applist-pager-btn" disabled>＜ 前の10件</button>
+        <button class="applist-pager-btn applist-pager-btn--active">1</button>
+        <button class="applist-pager-btn">次の10件 ＞</button>
+      </div>
+    </div>
+
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター（共通） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事をお探しの方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+</body>
+</html>
