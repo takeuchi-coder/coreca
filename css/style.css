@@ -4400,3 +4400,168 @@ a.nav-user--active .header-avatar-icon {
   font-weight: 700;
   color: #111;
 }
+
+/* ===========================
+   絞り込み検索モーダル (order/list.html)
+=========================== */
+
+/* ダイアログサイズ上書き */
+.fmodal-dialog {
+  max-width: 780px;
+  width: 90%;
+}
+
+/* ボディ：スクロールなし・パディング */
+.fmodal-body {
+  padding: 8px 32px 24px;
+}
+
+/* フォームコンテナ */
+.fmodal-form {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* 各行 */
+.fmodal-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #efefef;
+}
+
+.fmodal-row--last {
+  border-bottom: none;
+}
+
+/* ラベル */
+.fmodal-label {
+  width: 130px;
+  min-width: 130px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* フィールド */
+.fmodal-field {
+  flex: 1;
+}
+
+/* テキスト入力 */
+.fmodal-input {
+  width: 100%;
+  max-width: 340px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.fmodal-input--id {
+  border-color: #e8192c;
+}
+
+.fmodal-input:focus {
+  outline: none;
+  border-color: #e8192c;
+}
+
+/* チェックボックス行 */
+.fmodal-field--checks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fmodal-check-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+.fmodal-checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* 期間フィールド */
+.fmodal-field--period {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.fmodal-period-sep {
+  font-size: 13px;
+  color: #555;
+  padding: 0 4px;
+}
+
+/* セレクト */
+.fmodal-select {
+  height: 34px;
+  padding: 0 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+  cursor: pointer;
+}
+
+.fmodal-select--year  { width: 72px; }
+.fmodal-select--month { width: 58px; }
+.fmodal-select--day   { width: 58px; }
+.fmodal-select--sort  { width: 200px; }
+
+/* アクションボタン行 */
+.fmodal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.btn-fmodal-clear {
+  min-width: 120px;
+  height: 40px;
+  padding: 0 24px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-fmodal-clear:hover {
+  background: #f5f5f5;
+}
+
+.btn-fmodal-submit {
+  min-width: 160px;
+  height: 40px;
+  padding: 0 32px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-fmodal-submit:hover {
+  background: #c0111f;
+}

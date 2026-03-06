@@ -160,6 +160,13 @@
           </button>
         </div>
         <div class="filter-bar-right">
+          <!-- 絞り込み検索ボタン -->
+          <button class="filter-ctrl-btn" id="filterSearchBtn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            絞り込み検索
+          </button>
           <!-- 並び替えボタン + ドロップダウン -->
           <div class="sort-ctrl-wrap">
             <button class="filter-ctrl-btn" id="sortCtrlBtn">
@@ -761,9 +768,214 @@
   </div>
   <!-- ===== /案件新規作成 モーダル ===== -->
 
+  <!-- ===== 絞り込み検索モーダル ===== -->
+  <div class="modal-overlay" id="filterModal" aria-modal="true" role="dialog" aria-labelledby="filterModalTitle">
+    <div class="modal-dialog fmodal-dialog">
+
+      <!-- ヘッダー -->
+      <div class="modal-header">
+        <h2 class="modal-title" id="filterModalTitle">絞り込み条件</h2>
+        <button class="modal-close" id="btnCloseFilter" aria-label="閉じる">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- ボディ -->
+      <div class="modal-body fmodal-body">
+        <div class="fmodal-form">
+
+          <!-- 案件ID -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">案件ID</label>
+            <div class="fmodal-field">
+              <input type="text" class="fmodal-input fmodal-input--id" placeholder="">
+            </div>
+          </div>
+
+          <!-- 募集ステータス -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">募集ステータス</label>
+            <div class="fmodal-field fmodal-field--checks">
+              <label class="fmodal-check-label">
+                <input type="checkbox" class="fmodal-checkbox">
+                <span>募集中</span>
+              </label>
+              <label class="fmodal-check-label">
+                <input type="checkbox" class="fmodal-checkbox">
+                <span>募集停止</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 作業場所 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">作業場所</label>
+            <div class="fmodal-field">
+              <input type="text" class="fmodal-input" placeholder="">
+            </div>
+          </div>
+
+          <!-- 作業・契約期間 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">作業・契約期間</label>
+            <div class="fmodal-field fmodal-field--period">
+              <select class="fmodal-select fmodal-select--year"><option value="">年</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select>
+              <select class="fmodal-select fmodal-select--month"><option value="">月</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select>
+              <select class="fmodal-select fmodal-select--day"><option value="">日</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option></select>
+              <span class="fmodal-period-sep">〜</span>
+              <select class="fmodal-select fmodal-select--year"><option value="">年</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select>
+              <select class="fmodal-select fmodal-select--month"><option value="">月</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select>
+              <select class="fmodal-select fmodal-select--day"><option value="">日</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option></select>
+            </div>
+          </div>
+
+          <!-- コース名 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">コース名</label>
+            <div class="fmodal-field">
+              <input type="text" class="fmodal-input" placeholder="">
+            </div>
+          </div>
+
+          <!-- ワーカー名 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">ワーカー名</label>
+            <div class="fmodal-field">
+              <input type="text" class="fmodal-input" placeholder="">
+            </div>
+          </div>
+
+          <!-- 応募者メモ -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">応募者メモ</label>
+            <div class="fmodal-field">
+              <input type="text" class="fmodal-input" placeholder="">
+            </div>
+          </div>
+
+          <!-- 要応募対応 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">要応募対応</label>
+            <div class="fmodal-field fmodal-field--checks">
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>あり</span></label>
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>なし</span></label>
+            </div>
+          </div>
+
+          <!-- 仕事引受待ち -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">仕事引受待ち</label>
+            <div class="fmodal-field fmodal-field--checks">
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>あり</span></label>
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>なし</span></label>
+            </div>
+          </div>
+
+          <!-- 契約中 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">契約中</label>
+            <div class="fmodal-field fmodal-field--checks">
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>あり</span></label>
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>なし</span></label>
+            </div>
+          </div>
+
+          <!-- 要検収 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">要検収</label>
+            <div class="fmodal-field fmodal-field--checks">
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>あり</span></label>
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>なし</span></label>
+            </div>
+          </div>
+
+          <!-- 検収完了 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">検収完了</label>
+            <div class="fmodal-field fmodal-field--checks">
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>あり</span></label>
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>なし</span></label>
+            </div>
+          </div>
+
+          <!-- メッセージ未読 -->
+          <div class="fmodal-row">
+            <label class="fmodal-label">メッセージ未読</label>
+            <div class="fmodal-field fmodal-field--checks">
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>未読あり</span></label>
+              <label class="fmodal-check-label"><input type="checkbox" class="fmodal-checkbox"><span>未読なし</span></label>
+            </div>
+          </div>
+
+          <!-- 並び順 -->
+          <div class="fmodal-row fmodal-row--last">
+            <label class="fmodal-label">並び順</label>
+            <div class="fmodal-field">
+              <select class="fmodal-select fmodal-select--sort">
+                <option>案件登録日が新しい順</option>
+                <option>案件登録日が古い順</option>
+                <option>掲載開始（新しい順）</option>
+                <option>掲載開始（古い順）</option>
+                <option>終了日（近い順）</option>
+                <option>終了日（遠い順）</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+        <!-- /fmodal-form -->
+
+        <!-- アクションボタン -->
+        <div class="fmodal-actions">
+          <button type="button" class="btn-fmodal-clear" id="btnFilterClear">クリア</button>
+          <button type="button" class="btn-fmodal-submit" id="btnFilterSubmit">絞り込む</button>
+        </div>
+
+      </div>
+      <!-- /fmodal-body -->
+
+    </div>
+    <!-- /fmodal-dialog -->
+  </div>
+  <!-- ===== /絞り込み検索モーダル ===== -->
+
   <script src="../js/projects.js"></script>
   <script src="../js/components.js"></script>
   <script>
+    // 絞り込み検索モーダル開閉
+    const filterModal     = document.getElementById('filterModal');
+    const filterSearchBtn = document.getElementById('filterSearchBtn');
+    const btnCloseFilter  = document.getElementById('btnCloseFilter');
+    const btnFilterClear  = document.getElementById('btnFilterClear');
+
+    function openFilterModal() {
+      filterModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeFilterModal() {
+      filterModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    filterSearchBtn.addEventListener('click', openFilterModal);
+    btnCloseFilter.addEventListener('click', closeFilterModal);
+    filterModal.addEventListener('click', function(e) {
+      if (e.target === filterModal) closeFilterModal();
+    });
+
+    btnFilterClear.addEventListener('click', function() {
+      filterModal.querySelectorAll('input[type="text"]').forEach(function(el) { el.value = ''; });
+      filterModal.querySelectorAll('input[type="checkbox"]').forEach(function(el) { el.checked = false; });
+      filterModal.querySelectorAll('select').forEach(function(el) { el.selectedIndex = 0; });
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && filterModal.classList.contains('is-open')) closeFilterModal();
+    });
+
     // 案件新規作成 モーダル開閉
     const createModal = document.getElementById('createModal');
     const btnOpen     = document.getElementById('btnOpenCreate');
