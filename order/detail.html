@@ -92,58 +92,43 @@
   <!-- ===== /ヘッダー ===== -->
 
   <!-- ===== メインコンテンツ ===== -->
-  <div class="det-main">
+  <main class="applist-main">
 
-    <!-- トップバー（パンくず） -->
-    <div class="det-topbar">
-      <a href="list.html" class="det-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+    <!-- ページタイトル -->
+    <div class="notif-page-header">
+      <a href="list.html" class="notif-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <polyline points="15 18 9 12 15 6"/>
         </svg>
-        案件一覧
       </a>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2" class="det-topbar-chevron">
-        <polyline points="9 18 15 12 9 6"/>
-      </svg>
-      <span class="det-topbar-title">案件情報</span>
+      <h1 class="notif-page-title">案件情報</h1>
     </div>
 
-    <!-- 案件ヘッダーカード -->
-    <div class="proj-detail-header">
-      <div class="proj-detail-meta">
-        <div class="proj-detail-id-row">
-          <span class="proj-detail-id">案件ID：232497</span>
-          <span class="proj-detail-date">2025年12月02日 〜 2025年12月03日　いつでも</span>
-        </div>
-        <div class="proj-detail-title">
-          【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分
-        </div>
-        <div class="proj-detail-location">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;margin-right:3px;flex-shrink:0;">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-          </svg>
-          埼玉県 川口市西青木3丁目2-4 川口警察署　／　埼玉県川口市元郷3-1-4
-        </div>
-      </div>
-      <div class="proj-detail-actions">
-        <div class="proj-detail-status">
+    <!-- 案件情報カード -->
+    <div class="applist-proj-card">
+      <div class="applist-proj-top">
+        <span class="applist-proj-id">案件ID：232497</span>
+        <div class="proj-status-actions">
           <label class="toggle-switch">
             <input type="checkbox" checked>
             <span class="toggle-slider"></span>
           </label>
           <span class="state-badge state-badge--active">進行中</span>
+          <button class="btn-status-stop">募集停止</button>
         </div>
-        <button class="btn-status-stop">募集停止</button>
       </div>
+      <div class="applist-proj-date">2025年12月02日 〜 2025年12月03日　いつでも</div>
+      <div class="applist-proj-title">【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</div>
+      <div class="applist-proj-addr">埼玉県 川口市西青木3丁目2-4 川口警察署　／　埼玉県川口市元郷3-1-4</div>
     </div>
 
     <!-- タブバー -->
-    <div class="det-tabs-wrap">
-      <div class="det-tabs">
-        <button class="det-tab-btn is-active" data-tab="info">案件情報</button>
-        <a href="applicants.html" class="det-tab-btn">応募者・契約者</a>
-        <a href="procedure.html" class="det-tab-btn">作業手順・報告</a>
-        <button class="det-tab-btn" data-tab="renewal">契約更新</button>
+    <div class="applist-tabs-wrap">
+      <div class="applist-tabs">
+        <span class="applist-tab-btn applist-tab-btn--active">案件情報</span>
+        <a href="applicants.html" class="applist-tab-btn">応募者・契約者</a>
+        <a href="procedure.html" class="applist-tab-btn">作業手順・報告</a>
+        <a href="#" class="applist-tab-btn">契約更新</a>
       </div>
     </div>
 
@@ -307,7 +292,7 @@
       ※ 掲載内容の編集・案件のキャンセルは、受注者からの応募がない場合に限り可能です。応募後に変更が必要な場合は、管理者へお問い合わせください。
     </div>
 
-  </div>
+  </main>
   <!-- ===== /メインコンテンツ ===== -->
 
   <!-- ===== フッター（共通） ===== -->
@@ -327,15 +312,6 @@
   </footer>
   <!-- ===== /フッター ===== -->
 
-  <script>
-    // タブ切替
-    document.querySelectorAll('.det-tab-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.det-tab-btn').forEach(b => b.classList.remove('is-active'));
-        this.classList.add('is-active');
-      });
-    });
-  </script>
 
 </body>
 </html>

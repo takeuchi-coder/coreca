@@ -5010,3 +5010,14 @@ a.nav-user--active .header-avatar-icon {
 .btn-proc-action:hover {
   background: #f5f5f5;
 }
+
+/* ===========================
+   案件情報カード右側 ステータス操作
+   (detail.html 共通 applist-proj-card 内)
+=========================== */
+.proj-status-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}

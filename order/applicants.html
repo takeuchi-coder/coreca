@@ -105,7 +105,7 @@
       <div class="applist-tabs">
         <a href="detail.html" class="applist-tab-btn">案件情報</a>
         <span class="applist-tab-btn applist-tab-btn--active">応募者・契約者</span>
-        <a href="#" class="applist-tab-btn">作業手順・報告</a>
+        <a href="procedure.html" class="applist-tab-btn">作業手順・報告</a>
         <a href="#" class="applist-tab-btn">契約更新</a>
       </div>
     </div>
@@ -196,16 +196,20 @@
     <!-- /applist-card -->
 
     <!-- ページネーション -->
-    <div class="applist-pagination">
-      <div class="applist-pager-count">
-        <span class="applist-pager-total">1</span> 件中
-        <strong class="applist-pager-range">1〜1</strong> 件表示
-      </div>
-      <div class="applist-pager-nav">
-        <button class="applist-pager-btn" disabled>＜ 前の10件</button>
-        <button class="applist-pager-btn applist-pager-btn--active">1</button>
-        <button class="applist-pager-btn">次の10件 ＞</button>
-      </div>
+    <div class="footer-pagination">
+      <button class="btn-footer-page" disabled>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        前の10件
+      </button>
+      <span class="footer-page-info">1〜1 件 / 全 1 件</span>
+      <button class="btn-footer-page" disabled>
+        次の10件
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
     </div>
 
   </main>
