@@ -92,17 +92,14 @@
   <!-- ===== /ヘッダー ===== -->
 
   <!-- ===== メインコンテンツ ===== -->
-  <div class="det-main">
+  <main class="pay-page-main">
 
-    <!-- トップバー -->
-    <div class="det-topbar">
-      <span class="det-topbar-title">報酬支払い情報</span>
-    </div>
+    <!-- ページタイトル -->
+    <h1 class="pay-page-title">報酬支払い情報</h1>
 
-    <!-- コンテンツ本体 -->
     <div class="pay-wrap">
 
-      <!-- ヘッダー行：年選択 + 注記 -->
+      <!-- 年選択 + 注記 -->
       <div class="pay-header">
         <div class="pay-year-row">
           <label class="pay-year-label">
@@ -269,26 +266,33 @@
       </div>
 
       <!-- ページネーション -->
-      <div class="footer-pagination">
-        <button class="btn-footer-page" disabled>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-          前の10件
-        </button>
-        <span class="footer-page-info">16件中 1〜10件</span>
-        <button class="btn-footer-page">
-          次の10件
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </button>
+      <div class="pay-pagination">
+        <div class="pay-count-info">
+          <span class="pay-count-num">16</span>
+          <span class="pay-count-text">件中 1〜10 件表示</span>
+        </div>
+        <div class="notif-pages">
+          <button class="notif-page-btn notif-page-btn--nav" disabled>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            前の10件
+          </button>
+          <button class="notif-page-btn notif-page-btn--current">1</button>
+          <button class="notif-page-btn">2</button>
+          <button class="notif-page-btn notif-page-btn--nav">
+            次の10件
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
       </div>
 
     </div>
     <!-- /pay-wrap -->
 
-  </div>
+  </main>
   <!-- ===== /メインコンテンツ ===== -->
 
   <!-- ===== フッター（共通） ===== -->
@@ -300,7 +304,7 @@
           <li><a href="#">利用規約</a></li>
           <li><a href="#">プライバシーポリシー</a></li>
           <li><a href="#">運営会社</a></li>
-          <li><a href="#">お仕事を紹介したい方はこちら</a></li>
+          <li><a href="#">お仕事をお探しの方はこちら</a></li>
         </ul>
       </nav>
       <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
