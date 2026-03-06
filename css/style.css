@@ -4280,3 +4280,123 @@ a.nav-user--active .header-avatar-icon {
 .btn-withdrawal:hover {
   background: #c0111f;
 }
+
+/* ===========================
+   決済履歴詳細 (payment/history-detail.html)
+=========================== */
+
+.phdet-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.phdet-card {
+  margin-top: 24px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.phdet-badge-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px 4px;
+}
+
+.phdet-badge {
+  display: inline-block;
+  padding: 3px 14px;
+  border: 1px solid #555;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #555;
+}
+
+/* 詳細テーブル */
+.phdet-table {
+  margin: 0;
+}
+
+.phdet-row {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 14px 20px;
+}
+
+.phdet-row:last-child {
+  border-bottom: none;
+}
+
+.phdet-label {
+  width: 160px;
+  min-width: 160px;
+  font-size: 13px;
+  color: #555;
+  padding-top: 2px;
+}
+
+.phdet-value {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.phdet-link {
+  color: #e8192c;
+  text-decoration: none;
+}
+
+.phdet-link:hover {
+  text-decoration: underline;
+}
+
+/* 請求金額サブ行 */
+.phdet-row--billing {
+  align-items: flex-start;
+}
+
+.phdet-billing {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.phdet-billing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dotted #e0e0e0;
+  font-size: 13px;
+  color: #333;
+}
+
+.phdet-billing-row:last-child {
+  border-bottom: none;
+}
+
+.phdet-billing-name {
+  color: #555;
+}
+
+.phdet-billing-amount {
+  text-align: right;
+  min-width: 72px;
+}
+
+/* 合計行 */
+.phdet-total-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0 4px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+}
