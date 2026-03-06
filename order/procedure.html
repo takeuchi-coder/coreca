@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作業手順・報告 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
+
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link"><span class="nav-text">案件作成・一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../payment/list.html" class="nav-link"><span class="nav-text">報酬支払い情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../message/list.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">メニュー・価格表</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">ヘルプ</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../notification/list.html" class="nav-bell" aria-label="通知">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="badge badge--red">4</span>
+        </a>
+        <a href="../account/index.html" class="nav-user" aria-label="アカウント情報">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+          <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="applist-main">
+
+    <!-- ページタイトル -->
+    <div class="notif-page-header">
+      <a href="list.html" class="notif-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      <h1 class="notif-page-title">作業手順・報告</h1>
+    </div>
+
+    <!-- 案件情報カード -->
+    <div class="applist-proj-card">
+      <div class="applist-proj-top">
+        <span class="applist-proj-id">案件ID：232497</span>
+        <span class="applist-ol-badge">進行中/募集停止</span>
+      </div>
+      <div class="applist-proj-date">2025年12月02日〜2025年12月03日　いつでも</div>
+      <div class="applist-proj-title">菊岡作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</div>
+      <div class="applist-proj-addr">埼玉県　川口市西青木３丁目２−４　川口警察署　埼玉県川口市元郷3-1-4</div>
+    </div>
+
+    <!-- タブバー -->
+    <div class="applist-tabs-wrap">
+      <div class="applist-tabs">
+        <a href="detail.html" class="applist-tab-btn">案件情報</a>
+        <a href="applicants.html" class="applist-tab-btn">応募者・契約者</a>
+        <span class="applist-tab-btn applist-tab-btn--active">作業手順・報告</span>
+        <a href="#" class="applist-tab-btn">契約更新</a>
+      </div>
+    </div>
+
+    <!-- コンテンツ本体 -->
+    <div class="proc-body">
+
+      <!-- コントロールバー -->
+      <div class="proc-ctrl-bar">
+        <!-- 作業手順を確認するボタン（左） -->
+        <button type="button" class="btn-proc-outline">作業手順を確認する</button>
+
+        <!-- フィルターボタン（右） -->
+        <div class="proc-filter-btns">
+          <button type="button" class="btn-proc-filter btn-proc-filter--active">全て</button>
+          <button type="button" class="btn-proc-filter btn-proc-filter--outline">検収待ち</button>
+          <button type="button" class="btn-proc-filter btn-proc-filter--outline">詳細検索</button>
+        </div>
+      </div>
+
+      <!-- 作業リスト -->
+      <div class="proc-list">
+
+        <!-- 作業行（ヘッダー） -->
+        <div class="proc-row proc-row--header">
+          <span class="proc-col proc-col--id">作業ID</span>
+          <span class="proc-col proc-col--worker">契約者</span>
+          <span class="proc-col proc-col--complete-date">作業報告完了日</span>
+          <span class="proc-col proc-col--approved-date">検収承認日時</span>
+          <span class="proc-col proc-col--status">作業ステータス</span>
+        </div>
+
+        <!-- 作業行（データ） -->
+        <div class="proc-row proc-row--data">
+          <div class="proc-cells">
+            <span class="proc-col proc-col--id">800474</span>
+            <span class="proc-col proc-col--worker">
+              <a href="#" class="proc-worker-link">山本 由香</a>
+            </span>
+            <span class="proc-col proc-col--complete-date">2025年12月02日<br>15:00</span>
+            <span class="proc-col proc-col--approved-date">2025年12月02日<br>17:18</span>
+            <span class="proc-col proc-col--status">検収完了</span>
+          </div>
+          <!-- アクションボタン -->
+          <div class="proc-actions">
+            <button type="button" class="btn-proc-action">確認する</button>
+            <button type="button" class="btn-proc-action">納品ダウンロード</button>
+            <button type="button" class="btn-proc-action">作業写真報告書ダウンロード</button>
+            <button type="button" class="btn-proc-action">決済履歴</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- /proc-list -->
+
+    </div>
+    <!-- /proc-body -->
+
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター（共通） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事をお探しの方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+</body>
+</html>

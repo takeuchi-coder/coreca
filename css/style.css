@@ -4862,3 +4862,151 @@ a.nav-user--active .header-avatar-icon {
 .applist-pager-btn--active:hover {
   background: #c0111f !important;
 }
+
+/* ===========================
+   作業手順・報告 (order/procedure.html)
+=========================== */
+
+/* コンテンツ本体 */
+.proc-body {
+  margin-top: 20px;
+}
+
+/* コントロールバー */
+.proc-ctrl-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* 作業手順を確認するボタン */
+.btn-proc-outline {
+  padding: 8px 16px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-proc-outline:hover {
+  background: #f5f5f5;
+}
+
+/* フィルターボタン群 */
+.proc-filter-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-proc-filter {
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-proc-filter--active {
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+}
+
+.btn-proc-filter--active:hover {
+  background: #c0111f;
+}
+
+.btn-proc-filter--outline {
+  background: #fff;
+  color: #333;
+  border: 1px solid #bbb;
+}
+
+.btn-proc-filter--outline:hover {
+  background: #f5f5f5;
+}
+
+/* 作業リスト */
+.proc-list {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* ヘッダー行 */
+.proc-row--header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 12px;
+  color: #777;
+  gap: 0;
+}
+
+/* データ行 */
+.proc-row--data {
+  padding: 12px 16px 14px;
+}
+
+.proc-cells {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* カラム幅 */
+.proc-col {
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.proc-col--id             { width: 90px; }
+.proc-col--worker         { width: 130px; }
+.proc-col--complete-date  { width: 160px; }
+.proc-col--approved-date  { width: 160px; }
+.proc-col--status         { flex: 1; }
+
+/* 契約者リンク */
+.proc-worker-link {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.proc-worker-link:hover {
+  text-decoration: underline;
+}
+
+/* アクションボタン群 */
+.proc-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-proc-action {
+  padding: 6px 14px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-proc-action:hover {
+  background: #f5f5f5;
+}
