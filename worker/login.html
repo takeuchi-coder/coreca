@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>無料会員登録（お仕事をお探しの方）| ご近所ワーク</title>
+  <title>ログイン（お仕事をお探しの方）| ご近所ワーク</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
   <!-- ===== ヘッダー（受注者用・シンプル） ===== -->
   <header class="worker-header">
     <div class="worker-header-inner">
+      <!-- ロゴ + エリア選択 -->
       <div class="worker-header-left">
         <a href="index.html" class="worker-logo">
           <span class="worker-logo-icon">
@@ -24,9 +25,23 @@
           </span>
           <span class="worker-logo-text">ご近所ワーク</span>
         </a>
+
+        <!-- エリア選択ドロップダウン -->
+        <div class="worker-area-select">
+          <select class="worker-area-dropdown" aria-label="エリアを選択">
+            <option value="tokyo">東京都版</option>
+            <option value="saitama">埼玉県版</option>
+            <option value="kanagawa">神奈川県版</option>
+            <option value="chiba">千葉県版</option>
+          </select>
+          <svg class="worker-area-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
       </div>
 
-      <a href="login.html" class="worker-header-login">
+      <!-- ログインボタン（右上） -->
+      <a href="login.html" class="worker-header-login worker-header-login--active">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
           <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
@@ -42,15 +57,13 @@
     <div class="worker-card">
 
       <!-- ページタイトル -->
-      <h1 class="worker-page-title">無料会員登録（お仕事をお探しの方）</h1>
+      <h1 class="worker-page-title">ログイン（お仕事をお探しの方）</h1>
       <hr class="worker-title-rule">
 
-      <!-- リード文 -->
-      <p class="worker-lead">ご入力いただいたメールアドレスで登録いたします。</p>
-
       <!-- フォーム -->
-      <form class="worker-form" action="#" method="post">
+      <form class="worker-form worker-form--login" action="#" method="post">
 
+        <!-- メールアドレス -->
         <div class="worker-form-group">
           <label class="worker-label" for="email">メールアドレス</label>
           <input
@@ -63,27 +76,39 @@
           >
         </div>
 
-        <button type="submit" class="btn-worker-primary">次へ</button>
+        <hr class="worker-field-rule">
 
-        <div class="worker-login-link-wrap">
-          <a href="login.html" class="worker-login-link">ログイン（お仕事をお探しの方）</a>
+        <!-- パスワード -->
+        <div class="worker-form-group">
+          <label class="worker-label" for="password">パスワード</label>
+          <input
+            class="worker-input"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="パスワードを入力してください"
+            autocomplete="current-password"
+          >
+        </div>
+
+        <!-- ログインボタン -->
+        <div class="worker-btn-wrap">
+          <button type="submit" class="btn-worker-login">ログイン</button>
+        </div>
+
+        <!-- リンク群 -->
+        <div class="worker-form-links">
+          <a href="#" class="worker-text-link">パスワードを忘れた方はこちら</a>
+          <a href="register.html" class="worker-text-link">無料会員登録（お仕事をお探しの方）はこちら</a>
         </div>
 
       </form>
-
-      <!-- 注意書き -->
-      <div class="worker-notice">
-        <p>
-          メールの受信設定を確認してください。<br>
-          迷惑メールフィルターを設定されている場合は、「@gokinjowork.jp」からのメールが受信できるようにご設定をお願い致します。または、迷惑メールとして認識されている可能性がありますので、迷惑メールフォルダをご確認ください。
-        </p>
-      </div>
 
     </div>
   </main>
   <!-- ===== /メインコンテンツ ===== -->
 
-  <!-- ===== フッター（共通） ===== -->
+  <!-- ===== フッター ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
       <nav class="footer-nav">
@@ -92,7 +117,7 @@
           <li><a href="#">利用規約</a></li>
           <li><a href="#">プライバシーポリシー</a></li>
           <li><a href="#">運営会社</a></li>
-          <li><a href="#">お仕事をお探しの方はこちら</a></li>
+          <li><a href="#">お仕事依頼したい方はこちら</a></li>
         </ul>
       </nav>
       <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>

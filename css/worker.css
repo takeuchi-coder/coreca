@@ -217,3 +217,108 @@
   line-height: 1.8;
   margin: 0;
 }
+
+/* ===========================
+   ヘッダー左側レイアウト
+=========================== */
+.worker-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ===========================
+   エリア選択ドロップダウン
+=========================== */
+.worker-area-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.worker-area-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 6px 32px 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.worker-area-dropdown:focus {
+  border-color: #e8192c;
+}
+
+.worker-area-chevron {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: #555;
+}
+
+/* ===========================
+   ログインフォーム専用
+=========================== */
+
+/* フィールド間の区切り線 */
+.worker-field-rule {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 4px 0 24px;
+}
+
+/* ログインフォーム: フィールド下余白調整 */
+.worker-form--login .worker-form-group {
+  margin-bottom: 20px;
+}
+
+/* ログインボタン（中央寄せ・幅固定） */
+.worker-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn-worker-login {
+  width: 280px;
+  padding: 14px 0;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-worker-login:hover {
+  background: #c0111f;
+}
+
+/* テキストリンク群（中央寄せ・縦並び） */
+.worker-form-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.worker-text-link {
+  font-size: 13px;
+  color: #333;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.worker-text-link:hover {
+  color: #e8192c;
+}
