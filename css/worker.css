@@ -578,3 +578,198 @@
 }
 
 .btn-worker-submit:hover { background: #c0111f; }
+
+/* ===========================
+   入力確認画面 (worker/profile-confirm.html)
+=========================== */
+
+/* 確認テーブル */
+.confirm-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #e0e0e0;
+}
+
+.confirm-row {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.confirm-row--last {
+  border-bottom: none;
+}
+
+.confirm-th {
+  width: 220px;
+  padding: 20px 16px 20px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.confirm-td {
+  padding: 20px 0;
+  font-size: 14px;
+  color: #333;
+  vertical-align: middle;
+}
+
+/* ボタン群（戻る＋登録する） */
+.confirm-btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.btn-confirm-back {
+  font-size: 14px;
+  color: #1a73e8;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.btn-confirm-back:hover {
+  text-decoration: underline;
+}
+
+.btn-confirm-submit {
+  width: 200px;
+  padding: 14px 0;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-confirm-submit:hover {
+  background: #c0111f;
+}
+
+/* ===========================
+   登録完了画面 (worker/profile-complete.html)
+=========================== */
+
+/* ログイン中バー */
+.worker-login-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #fdf5e0;
+  color: #555;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ヘッダー右側アイコン群 */
+.worker-header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.worker-header-icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.worker-header-icon-btn:hover {
+  color: #e8192c;
+}
+
+.worker-header-icon-label {
+  font-size: 11px;
+}
+
+/* 完了画面メイン */
+.worker-main--complete {
+  padding: 32px 24px 60px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* セクション */
+.complete-section {
+  margin: 28px 0;
+}
+
+.complete-section--mail {
+  margin-top: 20px;
+}
+
+.complete-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #e8192c;
+  margin: 0 0 14px;
+}
+
+.complete-section-heading--mail {
+  color: #222;
+}
+
+/* [重要] バッジ */
+.badge-important {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 7px;
+  background: #e8192c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 3px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.complete-p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+  margin: 0 0 8px;
+}
+
+/* グレー注意ボックス */
+.complete-notice-box {
+  background: #f3f3f3;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-top: 14px;
+}
+
+.complete-notice-box p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* マイページボタン（aタグ版） */
+.btn-worker-submit--link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 14px 32px;
+  text-decoration: none;
+}

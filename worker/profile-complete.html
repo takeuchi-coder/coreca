@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登録完了 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="worker-body">
+
+  <!-- ===== ログイン中バー ===== -->
+  <div class="worker-login-bar">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0;">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    <span>受注者としてログイン中</span>
+  </div>
+  <!-- ===== /ログイン中バー ===== -->
+
+  <!-- ===== ヘッダー（ロゴ＋エリア＋アイコン） ===== -->
+  <header class="worker-header">
+    <div class="worker-header-inner">
+      <!-- ロゴ + エリア選択 -->
+      <div class="worker-header-left">
+        <a href="index.html" class="worker-logo">
+          <span class="worker-logo-icon">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#e8192c"/>
+            </svg>
+          </span>
+          <span class="worker-logo-text">ご近所ワーク</span>
+        </a>
+        <!-- エリア選択ドロップダウン -->
+        <div class="worker-area-select">
+          <select class="worker-area-dropdown" aria-label="エリアを選択">
+            <option value="tokyo">東京都版</option>
+            <option value="saitama">埼玉県版</option>
+            <option value="kanagawa">神奈川県版</option>
+            <option value="chiba">千葉県版</option>
+          </select>
+          <svg class="worker-area-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 右側アイコン群 -->
+      <div class="worker-header-icons">
+        <a href="#" class="worker-header-icon-btn" aria-label="通知">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="worker-header-icon-label">通知</span>
+        </a>
+        <a href="#" class="worker-header-icon-btn" aria-label="メニュー">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="3" y1="6"  x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <span class="worker-header-icon-label">メニュー</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="worker-main worker-main--complete">
+    <div class="worker-card worker-card--wide">
+
+      <!-- ページタイトル -->
+      <h1 class="worker-page-title">登録完了</h1>
+      <hr class="worker-title-rule">
+
+      <!-- セクション1：メールアドレス確認 -->
+      <section class="complete-section">
+        <h2 class="complete-section-heading">
+          <span class="badge-important">重要</span>
+          メールアドレスの確認をお願いします。
+        </h2>
+        <p class="complete-p">会員登録の手続きが完了しました。</p>
+        <p class="complete-p">
+          wkana001@gmail.com 宛てに会員登録完了メールが送信されておりますので届いているか確認をお願いいたします。
+        </p>
+        <div class="complete-notice-box">
+          <p>※届いていない場合は迷惑メールフォルダもご確認ください。</p>
+          <p>※迷惑メールフォルダに届いている場合は「@gokinjowork.jp」からのメールが受信できるようにご設定をお願い致します。</p>
+          <p>※メールアドレスに間違いがある場合はマイページにて訂正をお願いいたします。</p>
+        </div>
+      </section>
+
+      <!-- セクション2：メール案内 -->
+      <section class="complete-section complete-section--mail">
+        <h2 class="complete-section-heading complete-section-heading--mail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0;">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="2,4 12,13 22,4"/>
+          </svg>
+          新しいお仕事は適宜メールでご案内します。
+        </h2>
+        <p class="complete-p">お住いエリアを中心に新しいお仕事が発生次第、ご案内させていただきます。</p>
+        <p class="complete-p">日本全国に素敵なご近所ワークを増やして参りますのでどうぞよろしくお願いいたします。</p>
+      </section>
+
+      <!-- ボタン -->
+      <div class="worker-btn-wrap">
+        <a href="mypage.html" class="btn-worker-submit btn-worker-submit--link">マイページで登録情報を確認する</a>
+      </div>
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事依頼したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+</body>
+</html>
