@@ -1,0 +1,219 @@
+/* ===========================
+   受注者画面 共通スタイル (worker.css)
+=========================== */
+
+/* ボディ */
+.worker-body {
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   ヘッダー（受注者用・シンプル）
+=========================== */
+.worker-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.worker-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 56px;
+}
+
+/* ロゴ */
+.worker-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.worker-logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1.5px solid #e8192c;
+}
+
+.worker-logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 0.02em;
+}
+
+/* ログインボタン（右上） */
+.worker-header-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: #333;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.worker-header-login:hover {
+  color: #e8192c;
+}
+
+.worker-header-login svg {
+  flex-shrink: 0;
+}
+
+/* ===========================
+   メインコンテンツ
+=========================== */
+.worker-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px 60px;
+}
+
+.worker-card {
+  width: 100%;
+  max-width: 760px;
+}
+
+/* ページタイトル */
+.worker-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 14px;
+  line-height: 1.4;
+}
+
+.worker-title-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 32px;
+}
+
+/* リード文 */
+.worker-lead {
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 24px;
+  line-height: 1.7;
+}
+
+/* ===========================
+   フォーム
+=========================== */
+.worker-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.worker-form-group {
+  margin-bottom: 16px;
+}
+
+.worker-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.worker-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.worker-input::placeholder {
+  color: #aaa;
+}
+
+.worker-input:focus {
+  border-color: #e8192c;
+}
+
+/* 次へボタン */
+.btn-worker-primary {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin-bottom: 20px;
+}
+
+.btn-worker-primary:hover {
+  background: #c0111f;
+}
+
+/* ログインリンク */
+.worker-login-link-wrap {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.worker-login-link {
+  font-size: 13px;
+  color: #333;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+
+.worker-login-link:hover {
+  color: #e8192c;
+}
+
+/* ===========================
+   注意書きボックス
+=========================== */
+.worker-notice {
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+.worker-notice p {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+}
