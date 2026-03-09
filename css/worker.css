@@ -322,3 +322,259 @@
 .worker-text-link:hover {
   color: #e8192c;
 }
+
+/* ===========================
+   基本情報入力 (worker/profile.html)
+=========================== */
+
+.worker-main--profile {
+  padding: 32px 24px 60px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.worker-card--wide {
+  max-width: 900px;
+}
+
+/* リード文 */
+.profile-lead {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+/* フォーム本体 */
+.profile-form {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* 各行 */
+.profile-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 24px;
+}
+
+.profile-row--last {
+  border-bottom: none;
+}
+
+/* ラベルセル */
+.profile-label-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 220px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.profile-label {
+  font-size: 14px;
+  color: #222;
+  font-weight: 400;
+}
+
+/* 必須・任意バッジ */
+.badge-required {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  background: #e8192c;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 3px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.badge-optional {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  background: #fff;
+  color: #888;
+  font-size: 11px;
+  font-weight: 400;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* 入力セル */
+.profile-input-cell {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 静的テキスト（メールアドレス表示） */
+.profile-static-value {
+  font-size: 14px;
+  color: #333;
+  line-height: 2;
+}
+
+/* テキスト入力 */
+.profile-input {
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.profile-input::placeholder { color: #aaa; }
+.profile-input:focus { border-color: #e8192c; }
+
+/* 氏名ペア */
+.profile-name-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.profile-input--name { width: 140px; }
+.profile-input--phone { width: 240px; }
+.profile-input--city { width: 100%; max-width: 440px; }
+.profile-input--password { width: 100%; max-width: 440px; }
+
+/* ヒントテキスト */
+.profile-hint {
+  font-size: 12px;
+  color: #888;
+  margin: 6px 0 0;
+}
+
+/* ラジオボタン */
+.profile-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-top: 4px;
+}
+
+.profile-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.profile-radio-label input[type="radio"] {
+  accent-color: #e8192c;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* 生年月日 */
+.profile-age-notice {
+  background: #f0f0f0;
+  color: #555;
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  max-width: 520px;
+}
+
+.profile-birthday-selects {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 9px 28px 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 8px center;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.profile-select:focus { border-color: #e8192c; }
+
+.profile-select--year  { width: 90px; }
+.profile-select--month { width: 72px; }
+.profile-select--day   { width: 72px; }
+.profile-select--pref  { width: 200px; }
+
+/* 郵便番号 + 住所入力ボタン */
+.profile-zip-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-input--zip { width: 110px; }
+
+.btn-zip-search {
+  padding: 9px 14px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.btn-zip-search:hover { background: #c0111f; }
+
+/* 同意テキスト */
+.profile-consent {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.8;
+  margin: 24px 0 20px;
+}
+
+.profile-consent-link {
+  color: #333;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.profile-consent-link:hover { color: #e8192c; }
+
+/* 送信ボタン */
+.btn-worker-submit {
+  width: 280px;
+  padding: 14px 0;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-worker-submit:hover { background: #c0111f; }
