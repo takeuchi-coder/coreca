@@ -1464,3 +1464,290 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* ===========================
+   案件一覧画面 (worker/list.html)
+=========================== */
+
+.wlist-body {
+  background: #fff;
+}
+
+/* ===========================
+   メインコンテンツ
+=========================== */
+.wlist-main {
+  flex: 1;
+  padding: 0 24px 48px;
+}
+
+.wlist-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wlist-separator {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 0;
+}
+
+/* ===========================
+   案件リスト
+=========================== */
+.wlist-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wlist-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.wlist-item--last {
+  border-bottom: none;
+}
+
+/* サムネイル */
+.wlist-item-img {
+  flex-shrink: 0;
+  width: 130px;
+  height: 96px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wlist-item-img--brand {
+  background: #fce4e7;
+}
+
+/* カラープレースホルダー（画像の代替） */
+.wlist-item-img-ph {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.wlist-item-img-ph--books {
+  background-color: #8fa8c8;
+  background-image: linear-gradient(135deg, #7a9abc 25%, #a0b8d0 50%, #6e8eb4 75%);
+}
+
+.wlist-item-img-ph--notebooks {
+  background-color: #8fa87a;
+  background-image: linear-gradient(135deg, #7a9a6a 25%, #a0b880 50%, #6e8a5e 75%);
+}
+
+.wlist-item-img-ph--phone {
+  background-color: #a8a87a;
+  background-image: linear-gradient(135deg, #9a9a6a 25%, #b8b880 50%, #8a8a5e 75%);
+}
+
+/* 本文エリア */
+.wlist-item-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* 日付 ＋ バッジ行 */
+.wlist-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.wlist-item-period {
+  font-size: 12px;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* 募集終了バッジ（赤枠ピル） */
+.wlist-item-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border: 1.5px solid #e8192c;
+  border-radius: 20px;
+  color: #e8192c;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: #fff;
+}
+
+/* タイトル */
+.wlist-item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 報酬 */
+.wlist-item-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e8192c;
+  letter-spacing: 0.01em;
+}
+
+/* タグ行（いつでも / 在宅ワーク） */
+.wlist-item-tags {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wlist-item-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #555;
+}
+
+.wlist-item-tag svg {
+  flex-shrink: 0;
+  color: #888;
+}
+
+/* 詳細ボタン */
+.wlist-item-action {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.btn-wlist-detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 10px 24px;
+  background: #e8192c;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.btn-wlist-detail:hover {
+  background: #c0111f;
+}
+
+/* ===========================
+   ページネーション
+=========================== */
+.wlist-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 12px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 件数表示 */
+.wlist-count {
+  font-size: 14px;
+  color: #555;
+  white-space: nowrap;
+}
+
+.wlist-count-num {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e8192c;
+}
+
+.wlist-count-range {
+  font-weight: 700;
+  color: #333;
+}
+
+/* ページャー（< 前の10件 [1] 次の10件 >） */
+.wlist-pager {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wlist-pager-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.12s, background 0.12s;
+}
+
+.wlist-pager-btn:hover:not(:disabled) {
+  color: #e8192c;
+  background: #fdf0f2;
+}
+
+.wlist-pager-btn:disabled {
+  color: #bbb;
+  cursor: default;
+}
+
+.wlist-pager-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #e8192c;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* マップでみるボタン */
+.btn-wlist-map {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: 2px solid #e8192c;
+  border-radius: 24px;
+  color: #e8192c;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-wlist-map:hover {
+  background: #e8192c;
+  color: #fff;
+}

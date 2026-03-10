@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件一覧 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wlist-body">
+
+  <!-- ===== ログイン中バー ===== -->
+  <div class="worker-login-bar">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    受注者としてログイン中
+  </div>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="mypage.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="notification.html" class="nav-link"><span class="nav-text">通知</span></a></li>
+          <li class="nav-item"><a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a></li>
+          <li class="nav-item nav-item--active"><a href="list.html" class="nav-link"><span class="nav-text">案件一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">報酬情報</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">メッセージ一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="wmypage-area-select">
+            <select class="wmypage-area-dropdown" aria-label="エリアを選択">
+              <option value="tokyo">東京都版</option>
+              <option value="saitama">埼玉県版</option>
+              <option value="kanagawa">神奈川県版</option>
+              <option value="chiba">千葉県版</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmypage-area-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+          <a href="mypage.html" class="nav-user nav-user--active" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== 検索コントロール ===== -->
+  <section class="wsearch-controls">
+    <div class="wsearch-controls-inner">
+
+      <!-- 左：日付タイトル＋フィルター -->
+      <div class="wsearch-left">
+        <h1 class="wsearch-date-title" id="listDateTitle">2025年12月2日のお仕事</h1>
+        <div class="wsearch-filter-row">
+          <!-- 応募可のみ トグル -->
+          <label class="wsearch-toggle-wrap">
+            <span class="wsearch-toggle-text">応募可のみ</span>
+            <span class="wsearch-toggle">
+              <input type="checkbox" id="availableOnly" checked>
+              <span class="wsearch-toggle-slider"></span>
+            </span>
+          </label>
+          <!-- 在宅ワーク トグル（一覧画面ではトグルスイッチ） -->
+          <label class="wsearch-toggle-wrap">
+            <span class="wsearch-toggle-text">在宅ワーク</span>
+            <span class="wsearch-toggle">
+              <input type="checkbox" id="remoteWork" checked>
+              <span class="wsearch-toggle-slider"></span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 右：カレンダー -->
+      <div class="wsearch-right">
+        <div class="wsearch-calendar">
+          <div class="wsearch-weekdays">
+            <span class="wsearch-wd">日</span>
+            <span class="wsearch-wd">月</span>
+            <span class="wsearch-wd">火</span>
+            <span class="wsearch-wd">水</span>
+            <span class="wsearch-wd">木</span>
+            <span class="wsearch-wd">金</span>
+            <span class="wsearch-wd wsearch-wd--sat">土</span>
+          </div>
+          <div class="wsearch-date-row">
+            <button class="wsearch-nav-btn" id="prevWeek" aria-label="前の週">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="wsearch-dates" id="dateList"></div>
+            <button class="wsearch-nav-btn" id="nextWeek" aria-label="次の週">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===== /検索コントロール ===== -->
+
+  <!-- ===== 案件一覧 ===== -->
+  <main class="wlist-main">
+    <div class="wlist-inner">
+
+      <hr class="wlist-separator">
+
+      <!-- 案件リスト -->
+      <ul class="wlist-items" id="jobList">
+
+        <!-- 案件 1 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img wlist-item-img--brand">
+            <svg width="64" height="64" viewBox="0 0 80 80" fill="none">
+              <rect width="80" height="80" rx="8" fill="#c0111f"/>
+              <path d="M40 10L10 32h8v32h16V44h12v20h16V32h8L40 10z" fill="#fff"/>
+              <rect x="28" y="48" width="8" height="8" rx="1" fill="#c0111f"/>
+              <rect x="44" y="48" width="8" height="8" rx="1" fill="#c0111f"/>
+            </svg>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">即日~2025年12月31日</span>
+              <span class="wlist-item-badge">募集終了まで：あと30日</span>
+            </div>
+            <h2 class="wlist-item-title">在宅業務</h2>
+            <div class="wlist-item-price">¥ 1,300/時間</div>
+            <div class="wlist-item-tags">
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                いつでも
+              </span>
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                在宅ワーク
+              </span>
+            </div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="#" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 2 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--books"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">即日~2025年12月31日</span>
+              <span class="wlist-item-badge">募集終了まで：あと30日</span>
+            </div>
+            <h2 class="wlist-item-title">相談サービスの体験談レポート業務</h2>
+            <div class="wlist-item-price">¥ 5,000/件</div>
+            <div class="wlist-item-tags">
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                いつでも
+              </span>
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                在宅ワーク
+              </span>
+            </div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="#" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 3 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--notebooks"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">即日~2025年12月31日</span>
+              <span class="wlist-item-badge">募集終了まで：あと30日</span>
+            </div>
+            <h2 class="wlist-item-title">出張買取の覆面調査のお仕事</h2>
+            <div class="wlist-item-price">¥ 6,000/件</div>
+            <div class="wlist-item-tags">
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                いつでも
+              </span>
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                在宅ワーク
+              </span>
+            </div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="#" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 4 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--phone"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">即日~2025年12月31日</span>
+              <span class="wlist-item-badge">募集終了まで：あと30日</span>
+            </div>
+            <h2 class="wlist-item-title">家計相談の体験談レポート業務</h2>
+            <div class="wlist-item-price">¥ 8,000/件</div>
+            <div class="wlist-item-tags">
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                いつでも
+              </span>
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                在宅ワーク
+              </span>
+            </div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="#" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 5 -->
+        <li class="wlist-item wlist-item--last">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--phone"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">即日~2025年12月31日</span>
+              <span class="wlist-item-badge">募集終了まで：あと30日</span>
+            </div>
+            <h2 class="wlist-item-title">ママ向け保険の面談モニター</h2>
+            <div class="wlist-item-price">¥ 5,000/件</div>
+            <div class="wlist-item-tags">
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                いつでも
+              </span>
+              <span class="wlist-item-tag">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                在宅ワーク
+              </span>
+            </div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="#" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+      </ul>
+      <!-- ===== /案件リスト ===== -->
+
+      <!-- ページネーション -->
+      <div class="wlist-pagination">
+        <!-- 件数表示 -->
+        <div class="wlist-count">
+          <span class="wlist-count-num">5</span>件中
+          <span class="wlist-count-range">1〜5</span>件表示
+        </div>
+
+        <!-- ページャー -->
+        <div class="wlist-pager">
+          <button class="wlist-pager-btn wlist-pager-prev" disabled>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+            前の10件
+          </button>
+          <span class="wlist-pager-current">1</span>
+          <button class="wlist-pager-btn wlist-pager-next" disabled>
+            次の10件
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+
+        <!-- マップでみる -->
+        <a href="search.html" class="btn-wlist-map">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          マップでみる
+        </a>
+      </div>
+
+    </div>
+  </main>
+  <!-- ===== /案件一覧 ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事依頼したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+
+  <script>
+  /* =============================================
+     日付ピッカー（search.html と共通ロジック）
+  ============================================= */
+  const today = new Date(2025, 11, 2);
+  let selectedDate = new Date(today);
+  let weekOffset = 0;
+
+  const WEEKDAY_NAMES = ['日', '月', '火', '水', '木', '金', '土'];
+
+  function getWeekStart(base, offset) {
+    const d = new Date(base);
+    d.setDate(d.getDate() - d.getDay() + offset * 7);
+    return d;
+  }
+
+  function renderCalendar() {
+    const list = document.getElementById('dateList');
+    list.innerHTML = '';
+
+    const weekStart = getWeekStart(today, weekOffset);
+
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(weekStart);
+      d.setDate(weekStart.getDate() + i);
+
+      const cell = document.createElement('button');
+      cell.className = 'wsearch-date-cell';
+      cell.textContent = d.getDate();
+
+      if (i === 6) cell.classList.add('wsearch-date-cell--sat');
+      if (i === 0) cell.classList.add('wsearch-date-cell--sun');
+      if (d.getMonth() !== today.getMonth()) cell.classList.add('wsearch-date-cell--other');
+      if (d.toDateString() === selectedDate.toDateString()) {
+        cell.classList.add('wsearch-date-cell--active');
+      }
+
+      cell.addEventListener('click', () => {
+        selectedDate = new Date(d);
+        renderCalendar();
+        updateTitle();
+      });
+
+      list.appendChild(cell);
+    }
+  }
+
+  function updateTitle() {
+    const el = document.getElementById('listDateTitle');
+    const m = selectedDate.getMonth() + 1;
+    const day = selectedDate.getDate();
+    const wd = WEEKDAY_NAMES[selectedDate.getDay()];
+    el.textContent = `${selectedDate.getFullYear()}年${m}月${day}日(${wd})のお仕事`;
+  }
+
+  document.getElementById('prevWeek').addEventListener('click', () => {
+    weekOffset--;
+    renderCalendar();
+  });
+  document.getElementById('nextWeek').addEventListener('click', () => {
+    weekOffset++;
+    renderCalendar();
+  });
+
+  renderCalendar();
+  updateTitle();
+  </script>
+
+</body>
+</html>
