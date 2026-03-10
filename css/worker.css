@@ -946,3 +946,45 @@
 .wnotif-empty {
   min-height: 120px;
 }
+
+/* ===========================
+   受注者ヘッダー：ナビリスト中央配置
+=========================== */
+
+/* header-inner を 3列グリッドに変更（ロゴ左 ｜ ナビ中央 ｜ アクション右） */
+.wmypage-body .header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0;
+}
+
+/* header-logo を grid の 1列目に（flex 値をリセット） */
+.wmypage-body .header-logo {
+  flex: none;
+}
+
+/* header-nav を透過させ、nav-list と nav-actions を grid の子として扱う */
+.wmypage-body .header-nav {
+  display: contents;
+}
+
+/* nav-list を grid の 2列目に（中央配置） */
+.wmypage-body .nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* nav-actions を grid の 3列目に（右端） */
+.wmypage-body .nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  flex: none;
+}
