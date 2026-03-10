@@ -2020,3 +2020,115 @@
 .btn-wdetail-apply:hover {
   background: #c0111f;
 }
+
+
+/* =============================================
+   案件一覧（my-list.html） wmylist-*
+   ============================================= */
+
+.wmylist-body {
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wmylist-main {
+  flex: 1;
+  padding: 40px 0 60px;
+}
+
+.wmylist-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* タイトル */
+.wmylist-title-row {
+  margin-bottom: 12px;
+}
+
+.wmylist-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.wmylist-title-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 24px;
+}
+
+/* タブ */
+.wmylist-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.wmylist-tab {
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  background: #fff;
+  border: none;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wmylist-tab:last-child {
+  border-right: none;
+}
+
+.wmylist-tab--active {
+  background: #c0111f;
+  color: #fff;
+  font-weight: 700;
+}
+
+.wmylist-tab:not(.wmylist-tab--active):hover {
+  background: #f9f9f9;
+}
+
+/* 案件ID検索ボタン */
+.wmylist-action-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.wmylist-id-search-btn {
+  padding: 8px 20px;
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wmylist-id-search-btn:hover {
+  background: #f0f0f0;
+}
+
+/* 空状態 */
+.wmylist-empty {
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 20px 24px;
+  color: #666;
+  font-size: 14px;
+}
+
+.wmylist-empty p {
+  margin: 0;
+}
