@@ -10,63 +10,64 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/worker.css">
 </head>
-<body class="worker-body">
+<body class="wmypage-body">
 
   <!-- ===== ログイン中バー ===== -->
   <div class="worker-login-bar">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0;">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
       <circle cx="12" cy="7" r="4"/>
     </svg>
-    <span>受注者としてログイン中</span>
+    受注者としてログイン中
   </div>
-  <!-- ===== /ログイン中バー ===== -->
 
-  <!-- ===== ヘッダー（ロゴ＋エリア＋アイコン） ===== -->
-  <header class="worker-header">
-    <div class="worker-header-inner">
-      <!-- ロゴ + エリア選択 -->
-      <div class="worker-header-left">
-        <a href="index.html" class="worker-logo">
-          <span class="worker-logo-icon">
-            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#e8192c"/>
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="mypage.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="notification.html" class="nav-link"><span class="nav-text">通知</span></a></li>
+          <li class="nav-item"><a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">案件一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">報酬情報</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">メッセージ一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="wmypage-area-select">
+            <select class="wmypage-area-dropdown" aria-label="エリアを選択">
+              <option value="tokyo">東京都版</option>
+              <option value="saitama">埼玉県版</option>
+              <option value="kanagawa">神奈川県版</option>
+              <option value="chiba">千葉県版</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmypage-area-chevron">
+              <polyline points="6 9 12 15 18 9"/>
             </svg>
-          </span>
-          <span class="worker-logo-text">ご近所ワーク</span>
-        </a>
-        <!-- エリア選択ドロップダウン -->
-        <div class="worker-area-select">
-          <select class="worker-area-dropdown" aria-label="エリアを選択">
-            <option value="tokyo">東京都版</option>
-            <option value="saitama">埼玉県版</option>
-            <option value="kanagawa">神奈川県版</option>
-            <option value="chiba">千葉県版</option>
-          </select>
-          <svg class="worker-area-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="6 9 12 15 18 9"/>
-          </svg>
+          </div>
+          <a href="mypage.html" class="nav-user nav-user--active" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
         </div>
-      </div>
+      </nav>
 
-      <!-- 右側アイコン群 -->
-      <div class="worker-header-icons">
-        <a href="#" class="worker-header-icon-btn" aria-label="通知">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-          </svg>
-          <span class="worker-header-icon-label">通知</span>
-        </a>
-        <a href="#" class="worker-header-icon-btn" aria-label="メニュー">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <line x1="3" y1="6"  x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-          <span class="worker-header-icon-label">メニュー</span>
-        </a>
-      </div>
     </div>
   </header>
   <!-- ===== /ヘッダー ===== -->

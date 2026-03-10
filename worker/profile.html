@@ -10,21 +10,64 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/worker.css">
 </head>
-<body class="worker-body">
+<body class="wmypage-body">
 
-  <!-- ===== ヘッダー（ロゴのみ） ===== -->
-  <header class="worker-header">
-    <div class="worker-header-inner">
-      <div class="worker-header-left">
-        <a href="index.html" class="worker-logo">
-          <span class="worker-logo-icon">
-            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#e8192c"/>
+  <!-- ===== ログイン中バー ===== -->
+  <div class="worker-login-bar">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    受注者としてログイン中
+  </div>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="mypage.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="notification.html" class="nav-link"><span class="nav-text">通知</span></a></li>
+          <li class="nav-item"><a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">案件一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">報酬情報</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">メッセージ一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="wmypage-area-select">
+            <select class="wmypage-area-dropdown" aria-label="エリアを選択">
+              <option value="tokyo">東京都版</option>
+              <option value="saitama">埼玉県版</option>
+              <option value="kanagawa">神奈川県版</option>
+              <option value="chiba">千葉県版</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmypage-area-chevron">
+              <polyline points="6 9 12 15 18 9"/>
             </svg>
-          </span>
-          <span class="worker-logo-text">ご近所ワーク</span>
-        </a>
-      </div>
+          </div>
+          <a href="mypage.html" class="nav-user nav-user--active" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
     </div>
   </header>
   <!-- ===== /ヘッダー ===== -->
