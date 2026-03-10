@@ -775,7 +775,7 @@
 }
 
 /* ===========================
-   受注者ホーム (worker/mypage.html)
+   受注者ホーム (worker/mypage.html / notification.html)
 =========================== */
 
 /* body */
@@ -789,77 +789,7 @@
   flex-direction: column;
 }
 
-/* ── 固定ヘッダー全体ラッパー ── */
-.wmypage-header-wrap {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-/* ログイン中バー */
-.wmypage-login-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: #fdf5e0;
-  color: #555;
-  font-size: 12px;
-  padding: 6px 16px;
-  border-bottom: 1px solid #e8d9a0;
-}
-
-/* メインヘッダー（発注者デザイン踏襲：赤背景） */
-.wmypage-header {
-  background: #e8192c;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.wmypage-header-inner {
-  display: flex;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 52px;
-  gap: 16px;
-}
-
-/* ロゴ */
-.wmypage-header-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-shrink: 0;
-}
-
-.wmypage-logo {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  text-decoration: none;
-}
-
-.wmypage-logo-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.wmypage-logo-text {
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-/* エリア選択 */
+/* エリア選択（赤ヘッダー内・白テキスト） */
 .wmypage-area-select {
   position: relative;
   display: flex;
@@ -889,46 +819,6 @@
   position: absolute;
   right: 7px;
   pointer-events: none;
-  color: #fff;
-}
-
-/* ── ナビゲーション ── */
-.wmypage-nav {
-  flex: 1;
-  overflow-x: auto;
-}
-
-.wmypage-nav-list {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 2px;
-}
-
-.wmypage-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
-  padding: 6px 9px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-  transition: background 0.15s, color 0.15s;
-}
-
-.wmypage-nav-link:hover {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-}
-
-/* アクティブ */
-.wmypage-nav-link--active {
-  background: rgba(255,255,255,0.22);
   color: #fff;
 }
 
