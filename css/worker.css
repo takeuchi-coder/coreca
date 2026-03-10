@@ -988,3 +988,479 @@
   gap: 20px;
   flex: none;
 }
+
+/* ===========================
+   案件検索画面 (worker/search.html)
+=========================== */
+
+/* body: ヘッダー・コントロール・マップ・フッターを縦に並べる */
+.wsearch-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===========================
+   検索コントロールパネル
+=========================== */
+.wsearch-controls {
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+.wsearch-controls-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  gap: 24px;
+}
+
+/* 左カラム：日付タイトル＋フィルター */
+.wsearch-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wsearch-date-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.wsearch-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 応募可のみ トグルスイッチ */
+.wsearch-toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.wsearch-toggle-text {
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.wsearch-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.wsearch-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.wsearch-toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 12px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.wsearch-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.wsearch-toggle input:checked + .wsearch-toggle-slider {
+  background: #4caf50;
+}
+
+.wsearch-toggle input:checked + .wsearch-toggle-slider::before {
+  transform: translateX(20px);
+}
+
+/* 在宅ワークボタン */
+.wsearch-remote-btn {
+  padding: 5px 14px;
+  border: 1.5px solid #aaa;
+  border-radius: 20px;
+  background: #fff;
+  color: #444;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.wsearch-remote-btn:hover {
+  border-color: #e8192c;
+  color: #e8192c;
+}
+
+.wsearch-remote-btn--active {
+  background: #e8192c;
+  border-color: #e8192c;
+  color: #fff;
+}
+
+/* 右カラム：カレンダー */
+.wsearch-right {
+  flex-shrink: 0;
+}
+
+.wsearch-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 曜日ヘッダー行 */
+.wsearch-weekdays {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 32px; /* nav-btn 幅分のオフセット */
+}
+
+.wsearch-wd {
+  width: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+}
+
+.wsearch-wd--sat {
+  color: #1a73e8;
+}
+
+/* 日付ナビ行（← 日付群 →） */
+.wsearch-date-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wsearch-nav-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: #555;
+  cursor: pointer;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: background 0.12s, color 0.12s;
+}
+
+.wsearch-nav-btn:hover {
+  background: #f0f0f0;
+  color: #e8192c;
+}
+
+.wsearch-dates {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 日付セル */
+.wsearch-date-cell {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s, color 0.12s;
+  flex-shrink: 0;
+}
+
+.wsearch-date-cell:hover {
+  background: #f0f0f0;
+}
+
+.wsearch-date-cell--sat {
+  color: #1a73e8;
+}
+
+.wsearch-date-cell--sun {
+  color: #e8192c;
+}
+
+.wsearch-date-cell--other {
+  color: #bbb;
+  font-weight: 400;
+}
+
+.wsearch-date-cell--active {
+  background: #e8192c !important;
+  color: #fff !important;
+}
+
+/* ===========================
+   マップセクション
+=========================== */
+.wsearch-map-section {
+  flex: 1;
+  position: relative;
+  min-height: 420px;
+}
+
+.wsearch-map {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+}
+
+/* カスタムマップマーカー */
+.wsearch-marker {
+  width: 28px;
+  height: 28px;
+  background: #e8192c;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.wsearch-marker:hover {
+  transform: scale(1.15);
+}
+
+.wsearch-marker--active {
+  background: #c0111f;
+  transform: scale(1.15);
+  box-shadow: 0 3px 10px rgba(232,25,44,0.5);
+}
+
+/* ===========================
+   リストでみる ボタン（マップ右下に浮遊）
+=========================== */
+.wsearch-list-btn {
+  position: absolute;
+  bottom: 160px;
+  right: 16px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  transition: background 0.15s, transform 0.1s;
+}
+
+.wsearch-list-btn:hover {
+  background: #c0111f;
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   案件カードカルーセル（マップ下部に浮遊）
+=========================== */
+.wsearch-carousel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  background: linear-gradient(to top, rgba(0,0,0,0.18) 0%, transparent 100%);
+}
+
+.wsearch-cards-viewport {
+  flex: 1;
+  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE/Edge */
+}
+
+.wsearch-cards-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.wsearch-cards {
+  display: flex;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+/* カルーセル矢印ボタン */
+.wsearch-carousel-arrow {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  transition: background 0.15s, transform 0.1s;
+  z-index: 1;
+}
+
+.wsearch-carousel-arrow:hover {
+  background: #c0111f;
+  transform: scale(1.08);
+}
+
+.wsearch-carousel-arrow--prev { margin-right: 6px; }
+.wsearch-carousel-arrow--next { margin-left:  6px; }
+
+/* 案件カード */
+.wsearch-card {
+  flex-shrink: 0;
+  width: 236px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  border: 2px solid transparent;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.wsearch-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.wsearch-card--active {
+  border-color: #e8192c;
+}
+
+/* サムネイル */
+.wsearch-card-img {
+  width: 72px;
+  flex-shrink: 0;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wsearch-card-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 90px;
+}
+
+/* カード本文 */
+.wsearch-card-body {
+  flex: 1;
+  padding: 8px 10px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.wsearch-card-period {
+  font-size: 11px;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 募集期間バッジ */
+.wsearch-card-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.wsearch-card-badge--urgent {
+  background: #e8192c;
+  color: #fff;
+}
+
+.wsearch-card-badge--soon {
+  background: #ff7043;
+  color: #fff;
+}
+
+.wsearch-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.wsearch-card-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e8192c;
+}
+
+.wsearch-card-addr {
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
