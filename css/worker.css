@@ -1019,3 +1019,40 @@
 .wmypage-menu-link:hover {
   background: #fafafa;
 }
+
+/* ===========================
+   通知画面 (worker/notification.html)
+=========================== */
+
+/* タイトル行（戻るリンク ＋ 見出し） */
+.wnotif-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.wnotif-back-link {
+  display: flex;
+  align-items: center;
+  color: #555;
+  text-decoration: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.wnotif-back-link:hover {
+  color: #e8192c;
+}
+
+/* タイトル行内の h1 はマージンをリセット */
+.wnotif-title-row .wmypage-page-title {
+  margin: 0;
+}
+
+/* 空状態 */
+.wnotif-empty {
+  min-height: 120px;
+}
