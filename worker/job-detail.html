@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在宅業務 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wdetail-body">
+
+  <!-- ===== ログイン中バー ===== -->
+  <div class="worker-login-bar">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    受注者としてログイン中
+  </div>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="mypage.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="notification.html" class="nav-link"><span class="nav-text">通知</span></a></li>
+          <li class="nav-item"><a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a></li>
+          <li class="nav-item nav-item--active"><a href="list.html" class="nav-link"><span class="nav-text">案件一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">報酬情報</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">メッセージ一覧</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a></li>
+          <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="wmypage-area-select">
+            <select class="wmypage-area-dropdown" aria-label="エリアを選択">
+              <option value="tokyo">東京都版</option>
+              <option value="saitama">埼玉県版</option>
+              <option value="kanagawa">神奈川県版</option>
+              <option value="chiba">千葉県版</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmypage-area-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+          <a href="mypage.html" class="nav-user nav-user--active" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wdetail-main">
+    <div class="wdetail-inner">
+
+      <!-- 戻るリンク -->
+      <div class="wdetail-back-row">
+        <a href="list.html" class="wdetail-back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          戻る
+        </a>
+      </div>
+
+      <hr class="wdetail-top-rule">
+
+      <!-- ===== ヒーローエリア（画像 ＋ タイトル・価格） ===== -->
+      <div class="wdetail-hero">
+        <!-- 画像 -->
+        <div class="wdetail-hero-img">
+          <div class="wdetail-img-wrap">
+            <svg width="120" height="120" viewBox="0 0 160 160" fill="none">
+              <rect width="160" height="160" rx="10" fill="#c0111f"/>
+              <path d="M80 18L20 62h14v66h32V94h28v34h32V62h14L80 18z" fill="#fff"/>
+              <rect x="56" y="98" width="16" height="16" rx="2" fill="#c0111f"/>
+              <rect x="88" y="98" width="16" height="16" rx="2" fill="#c0111f"/>
+            </svg>
+            <p class="wdetail-img-label">ご近所ワーク</p>
+          </div>
+        </div>
+        <!-- タイトル・価格 -->
+        <div class="wdetail-hero-info">
+          <h1 class="wdetail-job-title">在宅業務</h1>
+          <div class="wdetail-job-price">¥ 1,300/時間</div>
+        </div>
+      </div>
+
+      <!-- ===== 詳細セクション ===== -->
+      <div class="wdetail-sections">
+
+        <!-- 作業場所 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">作業場所</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>在宅のお仕事です。</p>
+          </div>
+        </section>
+
+        <!-- 作業概要 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">作業概要</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>在宅のお仕事です。<br>
+            作業内容については、詳細欄に概要記載いたします。<br>
+            詳細の作業手順、報告項目については別途メール、メッセージ等で依頼の業務範囲とします。</p>
+          </div>
+        </section>
+
+        <!-- 報酬単価 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">報酬単価</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>¥1,300/時間</p>
+          </div>
+        </section>
+
+        <!-- 作業可能時間帯 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">作業可能時間帯</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>ご自身の都合にあわせて自由</p>
+          </div>
+        </section>
+
+        <!-- 作業予定数 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">作業予定数</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>週60時間</p>
+            <p class="wdetail-note">※複数名でシフト調整可。希望日報を応募時に入力ください。</p>
+          </div>
+        </section>
+
+        <!-- 作業・契約期間 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">
+            作業・契約期間
+            <span class="wdetail-badge-long">長期継続予定</span>
+          </h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>即日~2025年12月31日</p>
+          </div>
+        </section>
+
+        <!-- 補足情報 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">作業可能時間帯・曜日・期間についての補足</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body wdetail-section-body--rich">
+            <p>※この案件は8月以降、SV募集枠が発生次第で選考のお声がけをいたします。8月1日からは必ず発注があるとは限りませんのであらかじめご理解のうえ応募をお願いいたします。</p>
+
+            <p class="wdetail-sub-heading">&lt;作業概要&gt;</p>
+            <ul class="wdetail-ul">
+              <li>・ご近所ワーク委託された案件の担当をお願いします。</li>
+              <li>・ワーカーのアサイン対応</li>
+              <li>・稼働チェック</li>
+              <li>・電話受電（複数案件の1次対応を含みます）</li>
+              <li>・その他付随業務</li>
+            </ul>
+            <p>★Slack・Googleスプレッドシート・kintoneを使用してのチーム内連携</p>
+
+            <p class="wdetail-sub-heading">&lt;応募必須条件&gt;</p>
+            <ul class="wdetail-ul">
+              <li>・PC・ネットワーク環境が整っていること</li>
+              <li>・Googleスプレッドシート使用経験があること</li>
+              <li>・毎週土日、もしくはどちらかは必須で業務に入れる方</li>
+              <li class="wdetail-ul-indent">※土日も含み稼働が週3-5日で60時間〜</li>
+              <li class="wdetail-ul-indent">※土日稼働は16時前後</li>
+            </ul>
+
+            <p class="wdetail-sub-heading">&lt;歓迎スキル&gt;</p>
+            <ul class="wdetail-ul">
+              <li>・カスタマーサポート業務経験</li>
+            </ul>
+
+            <p class="wdetail-sub-heading">&lt;業務スケジュール&gt;</p>
+            <p>※土日祝を含む稼働ができる方で日中9時-18時内で1日3-6時間、週3-5日月60時間が目安</p>
+
+            <p>※2週間ごとにシフト申告をお願いします。<br>
+            ※まれに業務が少ない場合もございますのでその際は調整をいただける方<br>
+            ※長期継続でのお願いをさせていただく場合もございます。</p>
+
+            <p class="wdetail-sub-heading">&lt;応募時に下記必ず記載ください&gt;</p>
+            <ul class="wdetail-ul">
+              <li>・PC、ネットワーク環境について</li>
+              <li>・これまでの職務経歴（PCスキルが高い方を優先します）</li>
+              <li>・Slack・Googleツールの使用経験</li>
+              <li>・自己PR/意気込み</li>
+              <li>・週何日、可能曜日、時間帯をお知らせください。</li>
+            </ul>
+
+            <p>※WEB面談にてお話をさせていただく場合がございます。</p>
+          </div>
+        </section>
+
+        <!-- 報酬総額 -->
+        <section class="wdetail-section wdetail-section--last">
+          <h2 class="wdetail-section-label">報酬総額</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>実際の報酬総額は【報酬単価×作業数】となります。</p>
+          </div>
+        </section>
+
+      </div>
+      <!-- ===== /詳細セクション ===== -->
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事依頼したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+
+  <!-- ===== 固定底部アクションバー ===== -->
+  <div class="wdetail-action-bar">
+    <div class="wdetail-action-left">
+      <div class="wdetail-action-price">¥1,300/時間</div>
+      <div class="wdetail-action-meta">2025年08月01日~2025年12月31日　いつでも</div>
+    </div>
+    <button class="btn-wdetail-apply" onclick="alert('応募フォームは準備中です。')">応募する</button>
+  </div>
+
+</body>
+</html>

@@ -1751,3 +1751,272 @@
   background: #e8192c;
   color: #fff;
 }
+
+/* ===========================
+   案件詳細画面 (worker/job-detail.html)
+=========================== */
+
+.wdetail-body {
+  background: #fff;
+  padding-bottom: 72px; /* 固定バー分の余白 */
+}
+
+/* ===========================
+   メインコンテンツ
+=========================== */
+.wdetail-main {
+  flex: 1;
+  padding: 0 24px 32px;
+}
+
+.wdetail-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* 戻るリンク */
+.wdetail-back-row {
+  padding: 16px 0 10px;
+}
+
+.wdetail-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.wdetail-back-link:hover {
+  color: #e8192c;
+}
+
+.wdetail-top-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 28px;
+}
+
+/* ===========================
+   ヒーローエリア（画像 ＋ タイトル/価格）
+=========================== */
+.wdetail-hero {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+
+/* 画像コンテナ */
+.wdetail-hero-img {
+  flex-shrink: 0;
+  width: 240px;
+}
+
+.wdetail-img-wrap {
+  width: 240px;
+  min-height: 180px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.wdetail-img-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #c0111f;
+  letter-spacing: 0.05em;
+}
+
+/* タイトル・価格 */
+.wdetail-hero-info {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.wdetail-job-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.wdetail-job-price {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e8192c;
+  letter-spacing: 0.01em;
+}
+
+/* ===========================
+   詳細セクション群
+=========================== */
+.wdetail-sections {
+  border-top: 1px solid #e0e0e0;
+}
+
+.wdetail-section {
+  padding: 20px 0 0;
+}
+
+.wdetail-section--last {
+  padding-bottom: 0;
+}
+
+/* セクションラベル */
+.wdetail-section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 10px;
+}
+
+/* 長期継続予定バッジ */
+.wdetail-badge-long {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  background: #e8192c;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 3px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* セクション内区切り線 */
+.wdetail-section-rule {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 0 0 14px;
+}
+
+/* セクション本文 */
+.wdetail-section-body {
+  padding-bottom: 20px;
+}
+
+.wdetail-section-body p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+  margin: 0 0 8px;
+}
+
+.wdetail-section-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 注記テキスト */
+.wdetail-note {
+  font-size: 12px;
+  color: #888;
+}
+
+/* リッチテキスト（補足情報） */
+.wdetail-section-body--rich {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wdetail-section-body--rich p {
+  margin: 0;
+}
+
+.wdetail-sub-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-top: 4px !important;
+}
+
+.wdetail-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wdetail-ul li {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.wdetail-ul-indent {
+  padding-left: 16px;
+  color: #666 !important;
+}
+
+/* ===========================
+   固定底部アクションバー
+=========================== */
+.wdetail-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  gap: 24px;
+}
+
+.wdetail-action-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wdetail-action-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #e8192c;
+  letter-spacing: 0.01em;
+}
+
+.wdetail-action-meta {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 応募するボタン */
+.btn-wdetail-apply {
+  padding: 14px 48px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-wdetail-apply:hover {
+  background: #c0111f;
+}
