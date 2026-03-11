@@ -2261,3 +2261,113 @@
 .wmylist-modal-btn--submit:hover {
   background: #a00e1a;
 }
+
+
+/* =============================================
+   報酬情報 (reward.html) wreward-*
+   ============================================= */
+
+.wreward-body {
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wreward-main {
+  flex: 1;
+  padding: 40px 0 60px;
+}
+
+.wreward-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.wreward-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+
+.wreward-title-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 24px;
+}
+
+/* 年選択 */
+.wreward-year-row {
+  margin-bottom: 16px;
+}
+
+.wreward-year-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.wreward-year-dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 6px 32px 6px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.wreward-year-dropdown:focus {
+  border-color: #c0111f;
+}
+
+.wreward-year-chevron {
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  color: #555;
+}
+
+/* 集計期間説明 */
+.wreward-period-note {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+
+/* 立替金注意書き */
+.wreward-advance-note {
+  font-size: 14px;
+  color: #c0111f;
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+
+.wreward-link {
+  color: #5a5aaa;
+  text-decoration: underline;
+}
+
+.wreward-link:hover {
+  color: #333;
+}
+
+/* 空状態 */
+.wreward-empty {
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 20px 24px;
+  color: #666;
+  font-size: 14px;
+}
+
+.wreward-empty p {
+  margin: 0;
+}
