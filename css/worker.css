@@ -2792,3 +2792,160 @@
   flex-shrink: 0;
   margin-left: 4px;
 }
+
+
+/* =============================================
+   振込申請履歴一覧 (transfer-history.html) wth-*
+   ============================================= */
+
+.wth-body {
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wth-main {
+  flex: 1;
+  padding: 36px 0 60px;
+}
+
+.wth-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* タイトル行 */
+.wth-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.wth-back-link {
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.wth-back-link:hover {
+  color: #c0111f;
+}
+
+.wth-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.wth-title-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 24px;
+}
+
+/* テーブル領域 */
+.wth-table-area {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  min-height: 80px;
+  margin-bottom: 20px;
+}
+
+/* 件数 + ページネーション行 */
+.wth-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wth-count-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.wth-count-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #c0111f;
+}
+
+.wth-count-text {
+  font-size: 13px;
+  color: #555;
+}
+
+/* ページネーション */
+.wth-pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wth-page-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.wth-page-nav:hover:not(:disabled) {
+  color: #c0111f;
+}
+
+.wth-page-nav:disabled {
+  color: #bbb;
+  cursor: default;
+}
+
+.wth-page-num {
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 700;
+  color: #555;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.wth-page-num--active {
+  background: #c0111f;
+  color: #fff;
+}
+
+.wth-page-num:not(.wth-page-num--active):hover {
+  background: #f0f0f0;
+}
+
+.wth-footer-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
