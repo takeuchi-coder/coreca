@@ -111,7 +111,7 @@
 
       <!-- 案件ID検索 -->
       <div class="wmylist-action-row">
-        <button class="wmylist-id-search-btn">案件ID検索</button>
+        <button class="wmylist-id-search-btn" id="openSearchModal">案件ID検索</button>
       </div>
 
       <!-- 空状態 -->
@@ -122,6 +122,26 @@
     </div>
   </main>
   <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== 案件ID検索モーダル ===== -->
+  <div class="wmylist-modal-overlay" id="searchModal" aria-modal="true" role="dialog" aria-labelledby="searchModalTitle" hidden>
+    <div class="wmylist-modal">
+      <button class="wmylist-modal-close" id="closeSearchModal" aria-label="閉じる">&times;</button>
+      <h2 class="wmylist-modal-title" id="searchModalTitle">絞り込み条件</h2>
+      <hr class="wmylist-modal-rule">
+      <div class="wmylist-modal-body">
+        <div class="wmylist-modal-field">
+          <label class="wmylist-modal-label" for="jobIdInput">案件ID</label>
+          <input class="wmylist-modal-input" type="text" id="jobIdInput" placeholder="">
+        </div>
+      </div>
+      <div class="wmylist-modal-footer">
+        <button class="wmylist-modal-btn wmylist-modal-btn--clear" id="clearSearchModal">クリア</button>
+        <button class="wmylist-modal-btn wmylist-modal-btn--submit">絞り込む</button>
+      </div>
+    </div>
+  </div>
+  <!-- ===== /案件ID検索モーダル ===== -->
 
   <!-- ===== フッター ===== -->
   <footer class="site-footer">
@@ -139,5 +159,22 @@
     </div>
   </footer>
 
+
+  <script>
+    const overlay      = document.getElementById('searchModal');
+    const openBtn      = document.getElementById('openSearchModal');
+    const closeBtn     = document.getElementById('closeSearchModal');
+    const clearBtn     = document.getElementById('clearSearchModal');
+    const jobIdInput   = document.getElementById('jobIdInput');
+
+    function openModal()  { overlay.hidden = false; jobIdInput.focus(); }
+    function closeModal() { overlay.hidden = true; }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    clearBtn.addEventListener('click', () => { jobIdInput.value = ''; closeModal(); });
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
+  </script>
 </body>
 </html>
