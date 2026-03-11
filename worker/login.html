@@ -12,42 +12,37 @@
 </head>
 <body class="worker-body">
 
-  <!-- ===== ヘッダー（受注者用・シンプル） ===== -->
-  <header class="worker-header">
-    <div class="worker-header-inner">
-      <!-- ロゴ + エリア選択 -->
-      <div class="worker-header-left">
-        <a href="index.html" class="worker-logo">
-          <span class="worker-logo-icon">
-            <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#e8192c"/>
-            </svg>
-          </span>
-          <span class="worker-logo-text">ご近所ワーク</span>
-        </a>
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
 
-        <!-- エリア選択ドロップダウン -->
-        <div class="worker-area-select">
-          <select class="worker-area-dropdown" aria-label="エリアを選択">
-            <option value="tokyo">東京都版</option>
-            <option value="saitama">埼玉県版</option>
-            <option value="kanagawa">神奈川県版</option>
-            <option value="chiba">千葉県版</option>
-          </select>
-          <svg class="worker-area-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="6 9 12 15 18 9"/>
+      <a href="index.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
           </svg>
-        </div>
-      </div>
-
-      <!-- ログインボタン（右上） -->
-      <a href="login.html" class="worker-header-login worker-header-login--active">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>
-        <span>ログイン</span>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
       </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list"></ul>
+        <div class="nav-actions">
+          <div class="wmypage-area-select">
+            <select class="wmypage-area-dropdown" aria-label="エリアを選択">
+              <option value="tokyo">東京都版</option>
+              <option value="saitama">埼玉県版</option>
+              <option value="kanagawa">神奈川県版</option>
+              <option value="chiba">千葉県版</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmypage-area-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+      </nav>
+
     </div>
   </header>
   <!-- ===== /ヘッダー ===== -->

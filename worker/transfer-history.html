@@ -113,22 +113,22 @@
       </div>
 
       <!-- 件数 + ページネーション -->
-      <div class="wth-footer-row">
-        <div class="wth-count-row">
-          <span class="wth-count-num">0</span>
-          <span class="wth-count-text">件中 〜 件表示</span>
+      <div class="wlist-pagination">
+        <div class="wlist-count">
+          <span class="wlist-count-num">0</span>件中
+          <span class="wlist-count-range">〜</span>件表示
         </div>
-        <nav class="wth-pagination" aria-label="ページネーション">
-          <button class="wth-page-nav" disabled>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        <div class="wlist-pager">
+          <button class="wlist-pager-btn wlist-pager-prev" disabled>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             前の10件
           </button>
-          <button class="wth-page-num wth-page-num--active" aria-current="page">1</button>
-          <button class="wth-page-nav">
+          <span class="wlist-pager-current">1</span>
+          <button class="wlist-pager-btn wlist-pager-next" disabled>
             次の10件
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
-        </nav>
+        </div>
       </div>
       <hr class="wth-footer-rule">
 
