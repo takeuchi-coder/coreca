@@ -112,7 +112,16 @@
 
       <!-- 左：日付タイトル＋フィルター -->
       <div class="wsearch-left">
-        <h1 class="wsearch-date-title" id="searchDateTitle">2025年12月2日のお仕事</h1>
+        <div class="wsearch-date-header">
+          <h1 class="wsearch-date-title" id="searchDateTitle">2025年12月2日のお仕事</h1>
+          <button class="wsearch-region-btn" id="regionOpenBtn" aria-haspopup="dialog">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            地域を選択
+          </button>
+        </div>
         <div class="wsearch-filter-row">
           <!-- 応募可のみ トグル -->
           <label class="wsearch-toggle-wrap">
@@ -154,6 +163,60 @@
     </div>
   </section>
   <!-- ===== /検索コントロール ===== -->
+
+  <!-- ===== 地域選択モーダル ===== -->
+  <div class="wregion-overlay" id="regionModal" role="dialog" aria-modal="true" aria-labelledby="regionModalLabel" hidden>
+    <div class="wregion-modal">
+
+      <!-- 全国 / 閉じる タブ行 -->
+      <div class="wregion-tab-row">
+        <button class="wregion-tab wregion-tab--all" id="regionAllBtn">全国</button>
+        <button class="wregion-tab wregion-tab--close" id="regionCloseBtn">閉じる</button>
+      </div>
+
+      <!-- 地域グリッド -->
+      <div class="wregion-grid" id="regionGrid">
+        <button class="wregion-item" data-region="kanto">
+          <span>関東</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="kansai">
+          <span>関西</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="tokai">
+          <span>東海</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="hokkaido">
+          <span>北海道</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="tohoku">
+          <span>東北</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="koshinetsu">
+          <span>甲信越<br>北陸</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="chugoku">
+          <span>中国</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="shikoku">
+          <span>四国</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="kyushu">
+          <span>九州<br>沖縄</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /地域選択モーダル ===== -->
 
   <!-- ===== マップセクション ===== -->
   <div class="wsearch-map-section">
@@ -492,6 +555,53 @@
      マップのリサイズ対応
   ============================================= */
   window.addEventListener('resize', () => map.invalidateSize());
+
+  /* =============================================
+     地域選択モーダル
+  ============================================= */
+  (function () {
+    var overlay   = document.getElementById('regionModal');
+    var openBtn   = document.getElementById('regionOpenBtn');
+    var closeBtn  = document.getElementById('regionCloseBtn');
+    var allBtn    = document.getElementById('regionAllBtn');
+    var gridItems = document.querySelectorAll('.wregion-item');
+
+    function openRegionModal() {
+      overlay.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeRegionModal() {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', openRegionModal);
+    closeBtn.addEventListener('click', closeRegionModal);
+
+    allBtn.addEventListener('click', function () {
+      // 全国選択：ここでは単純に閉じる（実装時に絞り込みリセットを追加）
+      closeRegionModal();
+    });
+
+    gridItems.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var region = btn.dataset.region;
+        // 地域選択後の処理をここに追加
+        closeRegionModal();
+      });
+    });
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeRegionModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !overlay.hidden) closeRegionModal();
+    });
+  })();
   </script>
 
 </body>
