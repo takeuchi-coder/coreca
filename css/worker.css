@@ -2509,3 +2509,152 @@
 .wmsg-empty p {
   margin: 0;
 }
+
+
+/* =============================================
+   絞り込み検索モーダル (wmsg-modal-*)
+   ============================================= */
+
+/* オーバーレイ */
+.wmsg-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wmsg-modal-overlay[hidden] {
+  display: none;
+}
+
+/* モーダル本体 */
+.wmsg-modal {
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 560px;
+  padding: 28px 36px 32px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+/* モーダルヘッダー */
+.wmsg-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.wmsg-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.wmsg-modal-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #aaa;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+
+.wmsg-modal-close:hover {
+  color: #555;
+}
+
+.wmsg-modal-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 20px;
+}
+
+/* フォーム行 */
+.wmsg-modal-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.wmsg-modal-field--check {
+  margin-bottom: 20px;
+}
+
+.wmsg-modal-label {
+  width: 110px;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.wmsg-modal-input {
+  flex: 1;
+  height: 38px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.wmsg-modal-input:focus {
+  border-color: #c0111f;
+}
+
+.wmsg-modal-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #c0111f;
+}
+
+/* ボタン行 */
+.wmsg-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.wmsg-modal-btn-clear,
+.wmsg-modal-btn-submit {
+  padding: 10px 40px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wmsg-modal-btn-clear {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.wmsg-modal-btn-clear:hover {
+  background: #f0f0f0;
+}
+
+.wmsg-modal-btn-submit {
+  background: #c0111f;
+  color: #fff;
+  border: 1px solid #c0111f;
+}
+
+.wmsg-modal-btn-submit:hover {
+  background: #a00e1a;
+}

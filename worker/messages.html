@@ -132,6 +132,51 @@
   </main>
   <!-- ===== /メインコンテンツ ===== -->
 
+  <!-- ===== 絞り込み検索モーダル ===== -->
+  <div class="wmsg-modal-overlay" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle" hidden>
+    <div class="wmsg-modal">
+
+      <!-- モーダルヘッダー -->
+      <div class="wmsg-modal-header">
+        <h2 class="wmsg-modal-title" id="searchModalTitle">絞り込み条件</h2>
+        <button class="wmsg-modal-close" id="searchModalClose" aria-label="閉じる">&times;</button>
+      </div>
+      <hr class="wmsg-modal-rule">
+
+      <!-- フォーム -->
+      <form class="wmsg-modal-form" id="searchForm">
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterOrderer">発注者名</label>
+          <input class="wmsg-modal-input" type="text" id="filterOrderer" name="orderer">
+        </div>
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterJobId">案件ID</label>
+          <input class="wmsg-modal-input" type="text" id="filterJobId" name="jobId">
+        </div>
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterCourse">コース名</label>
+          <input class="wmsg-modal-input" type="text" id="filterCourse" name="course">
+        </div>
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterAddress">案件住所</label>
+          <input class="wmsg-modal-input" type="text" id="filterAddress" name="address">
+        </div>
+        <div class="wmsg-modal-field wmsg-modal-field--check">
+          <label class="wmsg-modal-label" for="filterUnread">メッセージ未読</label>
+          <input class="wmsg-modal-checkbox" type="checkbox" id="filterUnread" name="unread">
+        </div>
+
+        <!-- ボタン行 -->
+        <div class="wmsg-modal-actions">
+          <button class="wmsg-modal-btn-clear" type="button" id="searchFormClear">クリア</button>
+          <button class="wmsg-modal-btn-submit" type="submit">絞り込む</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <!-- ===== /絞り込み検索モーダル ===== -->
+
   <!-- ===== フッター ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -147,6 +192,46 @@
       <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var overlay  = document.getElementById('searchModal');
+      var openBtn  = document.querySelector('.wmsg-filter-btn--search');
+      var closeBtn = document.getElementById('searchModalClose');
+      var clearBtn = document.getElementById('searchFormClear');
+      var form     = document.getElementById('searchForm');
+
+      function openModal() {
+        overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        overlay.hidden = true;
+        document.body.style.overflow = '';
+        openBtn.focus();
+      }
+
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+
+      // オーバーレイ背景クリックで閉じる
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+
+      // Escape キーで閉じる
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !overlay.hidden) closeModal();
+      });
+
+      // クリアボタン
+      clearBtn.addEventListener('click', function () {
+        form.reset();
+      });
+    })();
+  </script>
 
 </body>
 </html>
