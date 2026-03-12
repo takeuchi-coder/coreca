@@ -3509,3 +3509,15 @@
   border-top: 1px solid #eee;
   margin: 0;
 }
+
+/* 退会ページ */
+.wwithdrawal-card {
+  padding: 24px;
+}
+
+.wwithdrawal-notice {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0 0 24px;
+}
