@@ -3439,3 +3439,73 @@
 .wbankform-select {
   appearance: auto;
 }
+
+/* 振込申請ページ */
+.wtransfer-alert {
+  background: #fff0f0;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #c0111f;
+  margin-bottom: 12px;
+}
+
+.wtransfer-summary {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.wtransfer-balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffbe6;
+  padding: 18px 24px;
+}
+
+.wtransfer-balance-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.wtransfer-balance-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.wtransfer-detail {
+  background: #fff;
+  padding: 0 24px;
+}
+
+.wtransfer-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.wtransfer-detail-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.wtransfer-detail-value {
+  font-size: 14px;
+  color: #333;
+}
+
+.wtransfer-detail-value--total {
+  font-weight: 700;
+}
+
+.wtransfer-detail-rule {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 0;
+}
