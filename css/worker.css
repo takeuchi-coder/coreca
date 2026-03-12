@@ -2949,3 +2949,336 @@
   border-top: 1px solid #ddd;
   margin: 0;
 }
+
+/* =============================================
+   基本情報 / メール・パスワード変更 (wbasic-*)
+============================================= */
+
+.wbasic-body {
+  background: #f4f4f4;
+  min-height: 100vh;
+}
+
+.wbasic-main {
+  padding: 32px 24px 60px;
+}
+
+.wbasic-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* タイトル行 */
+.wbasic-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.wbasic-back-link {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.wbasic-back-link:hover {
+  color: #c0111f;
+}
+
+.wbasic-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.wbasic-title-rule {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 20px;
+}
+
+/* カード */
+.wbasic-card {
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+/* 行 */
+.wbasic-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 24px;
+  gap: 24px;
+}
+
+.wbasic-label-col {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 8px;
+}
+
+.wbasic-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.wbasic-badge-required {
+  font-size: 11px;
+  color: #fff;
+  background: #c0111f;
+  padding: 1px 5px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.wbasic-field-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.wbasic-row-rule {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 0 24px;
+}
+
+/* 入力フィールド */
+.wbasic-input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.wbasic-input:focus {
+  outline: none;
+  border-color: #888;
+}
+
+.wbasic-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.wbasic-input-group .wbasic-input--name {
+  flex: 1;
+}
+
+.wbasic-input--tel,
+.wbasic-input--zip,
+.wbasic-input--city,
+.wbasic-input--building,
+.wbasic-input--mynumber {
+  max-width: 360px;
+}
+
+.wbasic-input--email-readonly {
+  max-width: 440px;
+  background: #eef2f7;
+  color: #555;
+  cursor: default;
+}
+
+.wbasic-input--password {
+  max-width: 360px;
+}
+
+/* メールアドレス行 */
+.wbasic-email-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wbasic-email-value {
+  font-size: 14px;
+  color: #333;
+}
+
+.wbasic-btn-change {
+  padding: 5px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #c0111f;
+  background: #fff;
+  border: 1px solid #c0111f;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.wbasic-btn-change:hover {
+  background: #c0111f;
+  color: #fff;
+}
+
+/* ヒント */
+.wbasic-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 6px;
+}
+
+.wbasic-hint--red {
+  color: #c0111f;
+}
+
+/* 郵便番号 */
+.wbasic-zip-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wbasic-btn-zip {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #fff;
+  background: #555;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wbasic-btn-zip:hover {
+  background: #333;
+}
+
+/* セレクト */
+.wbasic-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.wbasic-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 8px 28px 8px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.wbasic-select--year { width: 90px; }
+.wbasic-select--month { width: 70px; }
+.wbasic-select--day { width: 70px; }
+.wbasic-select--pref { width: 160px; }
+
+.wbasic-select-chevron {
+  position: absolute;
+  right: 28px;
+  pointer-events: none;
+  color: #888;
+}
+
+.wbasic-select-unit {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 生年月日 */
+.wbasic-birth-note-bg {
+  font-size: 12px;
+  color: #555;
+  background: #f5f5f5;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.wbasic-birth-selects {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.wbasic-birth-age {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.wbasic-birth-caution {
+  font-size: 12px;
+  color: #c0111f;
+}
+
+/* ラジオ */
+.wbasic-radio-group {
+  display: flex;
+  gap: 20px;
+  padding-top: 6px;
+}
+
+.wbasic-radio-label {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* チェックボックス */
+.wbasic-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding-top: 6px;
+}
+
+.wbasic-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* 保存・変更ボタン */
+.wbasic-submit-row {
+  padding: 12px 24px 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wbasic-btn-submit {
+  padding: 10px 32px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #c0111f;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wbasic-btn-submit:hover {
+  background: #a00e1a;
+}
