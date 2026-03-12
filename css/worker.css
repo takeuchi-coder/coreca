@@ -3748,3 +3748,60 @@
   color: #ccc;
   margin: 0;
 }
+
+/* ご利用マニュアルページ */
+.wmanual-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wmanual-main {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.wmanual-iframe {
+  display: none; /* PDFが用意されるまで非表示 */
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.wmanual-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #3c3c3c;
+}
+
+.wmanual-placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.wmanual-placeholder-icon {
+  opacity: 0.5;
+}
+
+.wmanual-placeholder-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ccc;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.wmanual-placeholder-text {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+  line-height: 1.7;
+}
