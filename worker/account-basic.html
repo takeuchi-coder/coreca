@@ -105,7 +105,7 @@
             <div class="wbasic-field-col">
               <div class="wbasic-email-row">
                 <span class="wbasic-email-value">wkana001@gmail.com</span>
-                <button type="button" class="wbasic-btn-change">変更</button>
+                <a href="account-email-password.html" class="wbasic-btn-inline">変更</a>
               </div>
             </div>
           </div>
@@ -172,23 +172,17 @@
               <div class="wbasic-birth-note-bg">17歳以下の方はご登録できません。</div>
               <div class="wbasic-birth-selects">
                 <div class="wbasic-select-wrap">
-                  <select class="wbasic-select wbasic-select--year" id="birthYear" name="birthYear" aria-label="生年">
-                    <!-- JS で生成 -->
-                  </select>
+                  <select class="wbasic-select wbasic-select--year" id="birthYear" name="birthYear" aria-label="生年"></select>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wbasic-select-chevron"><polyline points="6 9 12 15 18 9"/></svg>
                   <span class="wbasic-select-unit">年</span>
                 </div>
                 <div class="wbasic-select-wrap">
-                  <select class="wbasic-select wbasic-select--month" id="birthMonth" name="birthMonth" aria-label="生月">
-                    <!-- JS で生成 -->
-                  </select>
+                  <select class="wbasic-select wbasic-select--month" id="birthMonth" name="birthMonth" aria-label="生月"></select>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wbasic-select-chevron"><polyline points="6 9 12 15 18 9"/></svg>
                   <span class="wbasic-select-unit">月</span>
                 </div>
                 <div class="wbasic-select-wrap">
-                  <select class="wbasic-select wbasic-select--day" id="birthDay" name="birthDay" aria-label="生日">
-                    <!-- JS で生成 -->
-                  </select>
+                  <select class="wbasic-select wbasic-select--day" id="birthDay" name="birthDay" aria-label="生日"></select>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wbasic-select-chevron"><polyline points="6 9 12 15 18 9"/></svg>
                   <span class="wbasic-select-unit">日</span>
                 </div>
@@ -220,7 +214,7 @@
             <div class="wbasic-field-col">
               <div class="wbasic-zip-row">
                 <input class="wbasic-input wbasic-input--zip" type="text" id="zip" name="zip" value="4750848" placeholder="例：1000001" maxlength="7">
-                <button type="button" class="wbasic-btn-zip">住所入力</button>
+                <button type="button" class="wbasic-btn-inline">住所入力</button>
               </div>
             </div>
           </div>
@@ -367,31 +361,25 @@
 
   <script>
   (function () {
-    /* 生年月日セレクト生成 */
     var currentYear = new Date().getFullYear();
     var initYear = 1986, initMonth = 6, initDay = 22;
 
-    // 年
     var yearSel = document.getElementById('birthYear');
     for (var y = currentYear - 17; y >= 1920; y--) {
       var opt = document.createElement('option');
-      opt.value = y;
-      opt.textContent = y;
+      opt.value = y; opt.textContent = y;
       if (y === initYear) opt.selected = true;
       yearSel.appendChild(opt);
     }
 
-    // 月
     var monthSel = document.getElementById('birthMonth');
     for (var m = 1; m <= 12; m++) {
       var opt = document.createElement('option');
-      opt.value = m;
-      opt.textContent = ('0' + m).slice(-2);
+      opt.value = m; opt.textContent = ('0' + m).slice(-2);
       if (m === initMonth) opt.selected = true;
       monthSel.appendChild(opt);
     }
 
-    // 日
     function buildDays(year, month) {
       var daySel = document.getElementById('birthDay');
       var cur = parseInt(daySel.value) || initDay;
@@ -399,35 +387,26 @@
       var last = new Date(year, month, 0).getDate();
       for (var d = 1; d <= last; d++) {
         var opt = document.createElement('option');
-        opt.value = d;
-        opt.textContent = ('0' + d).slice(-2);
+        opt.value = d; opt.textContent = ('0' + d).slice(-2);
         if (d === cur) opt.selected = true;
         daySel.appendChild(opt);
       }
     }
     buildDays(initYear, initMonth);
 
-    // 年齢計算
     function calcAge() {
       var y = parseInt(yearSel.value);
       var mo = parseInt(monthSel.value);
       var d = parseInt(document.getElementById('birthDay').value);
       var today = new Date();
       var age = today.getFullYear() - y;
-      var bday = new Date(today.getFullYear(), mo - 1, d);
-      if (today < bday) age--;
+      if (today < new Date(today.getFullYear(), mo - 1, d)) age--;
       document.getElementById('birthAge').textContent = age + '歳';
     }
     calcAge();
 
-    yearSel.addEventListener('change', function () {
-      buildDays(parseInt(yearSel.value), parseInt(monthSel.value));
-      calcAge();
-    });
-    monthSel.addEventListener('change', function () {
-      buildDays(parseInt(yearSel.value), parseInt(monthSel.value));
-      calcAge();
-    });
+    yearSel.addEventListener('change', function () { buildDays(parseInt(yearSel.value), parseInt(monthSel.value)); calcAge(); });
+    monthSel.addEventListener('change', function () { buildDays(parseInt(yearSel.value), parseInt(monthSel.value)); calcAge(); });
     document.getElementById('birthDay').addEventListener('change', calcAge);
   })();
   </script>

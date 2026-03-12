@@ -3128,6 +3128,28 @@
   color: #fff;
 }
 
+/* インラインアクションボタン（赤塗り・変更/住所入力など） */
+.wbasic-btn-inline {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #c0111f;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.wbasic-btn-inline:hover {
+  background: #a00e1a;
+}
+
 /* ヒント */
 .wbasic-hint {
   font-size: 12px;
@@ -3151,7 +3173,7 @@
   font-size: 13px;
   font-family: inherit;
   color: #fff;
-  background: #555;
+  background: #c0111f;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -3159,7 +3181,7 @@
 }
 
 .wbasic-btn-zip:hover {
-  background: #333;
+  background: #a00e1a;
 }
 
 /* セレクト */
@@ -3259,16 +3281,16 @@
   cursor: pointer;
 }
 
-/* 保存・変更ボタン */
+/* 保存ボタン行 */
 .wbasic-submit-row {
-  padding: 12px 24px 20px;
+  padding: 24px 24px 28px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .wbasic-btn-submit {
-  padding: 10px 32px;
-  font-size: 14px;
+  padding: 12px 80px;
+  font-size: 15px;
   font-family: inherit;
   font-weight: 700;
   color: #fff;
