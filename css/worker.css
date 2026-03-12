@@ -3304,3 +3304,8 @@
 .wbasic-btn-submit:hover {
   background: #a00e1a;
 }
+
+.wbasic-btn-submit--wide {
+  padding-left: 120px;
+  padding-right: 120px;
+}
