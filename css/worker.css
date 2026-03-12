@@ -3510,298 +3510,124 @@
   margin: 0;
 }
 
-/* 退会ページ */
-.wwithdrawal-card {
-  padding: 24px;
-}
+/* ===================================================
+   ログイン後 業種選択ポップアップ (.wlogin-select-*)
+   =================================================== */
 
-.wwithdrawal-notice {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #333;
-  margin: 0 0 24px;
-}
-
-/* お問い合わせページ */
-.wcontact-body {
-  background: #dce8f5;
-}
-
-.wcontact-main {
-  min-height: calc(100vh - 60px - 48px);
-  padding: 32px 16px;
-}
-
-.wcontact-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.wcontact-heading {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 20px;
-}
-
-.wcontact-card {
-  background: #fff;
-  border-radius: 6px;
-  padding: 28px 32px 32px;
-}
-
-/* ステッパー */
-.wcontact-stepper {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.wcontact-step {
-  display: flex;
-  align-items: center;
-  flex: 1;
-}
-
-.wcontact-step--inactive {
-  flex: 0;
-}
-
-.wcontact-step-circle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 2px solid #bbb;
+.wlogin-select-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
-  color: #bbb;
-  flex-shrink: 0;
+  z-index: 9000;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.wlogin-select-overlay[hidden] {
+  display: none;
+}
+
+.wlogin-select-modal {
+  position: relative;
   background: #fff;
+  border-radius: 4px;
+  width: 92%;
+  max-width: 400px;
+  padding: 40px 32px 36px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
 }
 
-.wcontact-step-circle--active {
-  border-color: #2196f3;
-  color: #2196f3;
-}
-
-.wcontact-step-line {
-  flex: 1;
-  height: 2px;
-  background: #ddd;
-  margin: 0 8px;
-}
-
-.wcontact-step-line--active {
-  background: #2196f3;
-}
-
-.wcontact-stepper-labels {
+.wlogin-select-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #aaa;
+  border: none;
+  cursor: pointer;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 24px;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
 }
 
-.wcontact-stepper-label {
+.wlogin-select-close:hover {
+  background: #888;
+}
+
+.wlogin-select-close-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+  stroke-width: 2.5;
+}
+
+.wlogin-select-title {
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 20px;
+  font-weight: 400;
+}
+
+.wlogin-select-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 12px;
 }
 
-.wcontact-stepper-label--inactive {
-  text-align: right;
-}
-
-.wcontact-stepper-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #bbb;
-}
-
-.wcontact-stepper-label--active .wcontact-stepper-title {
-  color: #2196f3;
-}
-
-.wcontact-stepper-desc {
-  font-size: 11px;
-  color: #bbb;
-}
-
-.wcontact-stepper-label--active .wcontact-stepper-desc {
-  color: #2196f3;
-}
-
-/* 案内文 */
-.wcontact-notice {
-  font-size: 14px;
-  color: #d32f2f;
-  line-height: 1.8;
-  margin: 0 0 20px;
-}
-
-.wcontact-rule {
-  border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 0 0 20px;
-}
-
-/* フォームフィールド */
-.wcontact-field {
-  margin-bottom: 20px;
-}
-
-.wcontact-label {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 8px;
-}
-
-.wcontact-required {
-  color: #d32f2f;
-  margin-left: 4px;
-}
-
-.wcontact-select-wrap {
-  position: relative;
-  display: inline-block;
-  width: 260px;
-}
-
-.wcontact-select {
-  width: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 10px 36px 10px 12px;
-  font-size: 14px;
-  color: #999;
-  background: #fff;
-  cursor: pointer;
-}
-
-.wcontact-select:focus {
-  outline: none;
-  border-color: #2196f3;
-}
-
-.wcontact-select-chevron {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-/* 注意テキスト */
-.wcontact-warn {
-  font-size: 13px;
-  color: #d32f2f;
-  line-height: 1.8;
-  margin: 0 0 12px;
-}
-
-.wcontact-info {
-  font-size: 13px;
-  color: #333;
-  line-height: 1.8;
-  margin: 0 0 8px;
-}
-
-/* 次へボタン */
-.wcontact-btn-row {
-  margin-top: 24px;
-}
-
-.wcontact-btn-next {
-  display: inline-flex;
+.wlogin-select-btn {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background: #26a69a;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  min-height: 56px;
+  background: #e04a3a;
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 11px 20px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.wcontact-btn-next:hover {
-  background: #00897b;
-}
-
-/* フッター */
-.wcontact-footer {
-  background: #222;
-  padding: 14px 0;
-  text-align: center;
-}
-
-.wcontact-footer-text {
-  font-size: 12px;
-  color: #ccc;
-  margin: 0;
-}
-
-/* ご利用マニュアルページ */
-.wmanual-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.wmanual-main {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-
-.wmanual-iframe {
-  display: none; /* PDFが用意されるまで非表示 */
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.wmanual-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background: #3c3c3c;
-}
-
-.wmanual-placeholder-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  text-align: center;
-}
-
-.wmanual-placeholder-icon {
-  opacity: 0.5;
-}
-
-.wmanual-placeholder-title {
   font-size: 16px;
   font-weight: 700;
-  color: #ccc;
-  margin: 0;
-  letter-spacing: 0.03em;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  line-height: 1.4;
 }
 
-.wmanual-placeholder-text {
-  font-size: 13px;
-  color: #888;
-  margin: 0;
-  line-height: 1.7;
+.wlogin-select-btn:hover {
+  background: #c93d2d;
+}
+
+.wlogin-select-btn--tall {
+  min-height: 80px;
+  padding: 14px 20px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.wlogin-select-btn-label {
+  flex: 1;
+}
+
+.wlogin-select-btn--tall .wlogin-select-btn-label {
+  text-align: center;
+}
+
+.wlogin-select-arrow {
+  width: 16px;
+  height: 16px;
+  stroke: #fff;
+  stroke-width: 2.5;
+  flex-shrink: 0;
+  margin-left: 8px;
 }

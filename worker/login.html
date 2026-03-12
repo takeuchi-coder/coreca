@@ -103,6 +103,101 @@
   </main>
   <!-- ===== /メインコンテンツ ===== -->
 
+  <!-- ===== 業種選択ポップアップ ===== -->
+  <div class="wlogin-select-overlay" id="loginSelectOverlay" hidden>
+    <div class="wlogin-select-modal" role="dialog" aria-modal="true" aria-labelledby="loginSelectTitle">
+
+      <!-- 閉じるボタン -->
+      <button class="wlogin-select-close" id="loginSelectClose" aria-label="閉じる">
+        <svg class="wlogin-select-close-icon" viewBox="0 0 24 24" fill="none">
+          <line x1="4" y1="4" x2="20" y2="20"/>
+          <line x1="20" y1="4" x2="4" y2="20"/>
+        </svg>
+      </button>
+
+      <!-- タイトル -->
+      <p class="wlogin-select-title" id="loginSelectTitle">業種・依頼内容をお選びください</p>
+
+      <!-- 選択ボタン一覧 -->
+      <ul class="wlogin-select-list">
+        <li>
+          <button class="wlogin-select-btn" type="button">
+            <span class="wlogin-select-btn-label">不動産管理事業者・オーナー様</span>
+            <svg class="wlogin-select-arrow" viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </li>
+        <li>
+          <button class="wlogin-select-btn" type="button">
+            <span class="wlogin-select-btn-label">レンタルスペース管理者様</span>
+            <svg class="wlogin-select-arrow" viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </li>
+        <li>
+          <button class="wlogin-select-btn" type="button">
+            <span class="wlogin-select-btn-label">店舗管理者様</span>
+            <svg class="wlogin-select-arrow" viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </li>
+        <li>
+          <button class="wlogin-select-btn" type="button">
+            <span class="wlogin-select-btn-label">家事代行のご依頼</span>
+            <svg class="wlogin-select-arrow" viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </li>
+        <li>
+          <button class="wlogin-select-btn wlogin-select-btn--tall" type="button">
+            <span class="wlogin-select-btn-label">上記以外の業種や依頼などの<br>お問い合わせはこちら</span>
+            <svg class="wlogin-select-arrow" viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <!-- ===== /業種選択ポップアップ ===== -->
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('loginSelectOverlay');
+      var closeBtn = document.getElementById('loginSelectClose');
+      var form = document.querySelector('.worker-form--login');
+
+      function openModal() {
+        overlay.removeAttribute('hidden');
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        overlay.setAttribute('hidden', '');
+      }
+
+      // ログインボタン送信時にポップアップを表示
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          openModal();
+        });
+      }
+
+      // 閉じるボタン
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      // オーバーレイ背景クリックで閉じる
+      if (overlay) {
+        overlay.addEventListener('click', function (e) {
+          if (e.target === overlay) closeModal();
+        });
+      }
+
+      // Escキーで閉じる
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
+      });
+    })();
+  </script>
+
   <!-- ===== フッター ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
