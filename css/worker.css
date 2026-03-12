@@ -3317,3 +3317,76 @@
   color: #333;
   line-height: 1.6;
 }
+
+/* 銀行口座登録ページ */
+.wbank-section {
+  margin-bottom: 8px;
+}
+
+.wbank-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #c0111f;
+  margin: 0 0 0 0;
+  padding: 20px 0 10px;
+}
+
+.wbank-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wbank-list-item {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.wbank-list-item:last-child {
+  border-bottom: none;
+}
+
+.wbank-list-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+}
+
+.wbank-list-btn:hover {
+  background: #f7f7f7;
+}
+
+.wbank-kana-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.wbank-kana-input {
+  max-width: 100%;
+}
+
+.wbank-kana-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.wbank-kana-btn {
+  padding-left: 80px;
+  padding-right: 80px;
+}

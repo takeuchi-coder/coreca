@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>銀行口座登録 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wbasic-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="mypage.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="notification.html" class="nav-link"><span class="nav-text">通知</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="wmypage-area-select">
+            <select class="wmypage-area-dropdown" aria-label="エリアを選択">
+              <option value="tokyo">東京都版</option>
+              <option value="saitama">埼玉県版</option>
+              <option value="kanagawa">神奈川県版</option>
+              <option value="chiba">千葉県版</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmypage-area-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wbasic-main">
+    <div class="wbasic-inner">
+
+      <!-- ページタイトル行 -->
+      <div class="wbasic-title-row">
+        <a href="account-bank.html" class="wbasic-back-link" aria-label="戻る">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </a>
+        <h1 class="wbasic-title">銀行口座</h1>
+      </div>
+      <hr class="wbasic-title-rule">
+
+      <!-- 金融機関を選択 -->
+      <section class="wbank-section">
+        <h2 class="wbank-section-title">金融機関を選択</h2>
+        <ul class="wbank-list">
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>三井住友銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>りそな銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>みずほ銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>三菱UFJ銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>ゆうちょ銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>楽天銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>SBI新生銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>ジャパンネット銀行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <!-- カナで検索 -->
+      <section class="wbank-section">
+        <h2 class="wbank-section-title">カナで検索</h2>
+        <div class="wbank-kana-card">
+          <input type="text" class="wbasic-input wbank-kana-input" placeholder="例）アイチ" aria-label="カナで銀行を検索">
+          <div class="wbank-kana-submit">
+            <button type="button" class="wbasic-btn-submit wbank-kana-btn">決定</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 50音で検索 -->
+      <section class="wbank-section">
+        <h2 class="wbank-section-title">50音で検索</h2>
+        <ul class="wbank-list">
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>あ行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>か行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>さ行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>た行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>な行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>は行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>ま行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>や行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>ら行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+          <li class="wbank-list-item">
+            <button type="button" class="wbank-list-btn">
+              <span>わ行</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事依頼したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
