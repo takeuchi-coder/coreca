@@ -3309,3 +3309,11 @@
   padding-left: 120px;
   padding-right: 120px;
 }
+
+/* 銀行口座ページ */
+.wbank-notice {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
