@@ -222,21 +222,24 @@
     const tabs = document.querySelectorAll('.wmylist-sidetab');
     const tabContents = document.querySelectorAll('.wmylist-tab-content');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
-
-        tabs.forEach(t => {
-          t.classList.remove('wmylist-sidetab--active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        tab.classList.add('wmylist-sidetab--active');
-        tab.setAttribute('aria-selected', 'true');
-
-        tabContents.forEach(content => {
-          content.classList.toggle('wmylist-tab-content--active', content.dataset.tabContent === target);
-        });
+    function activateTab(targetKey) {
+      tabs.forEach(t => {
+        t.classList.toggle('wmylist-sidetab--active', t.dataset.tab === targetKey);
+        t.setAttribute('aria-selected', t.dataset.tab === targetKey ? 'true' : 'false');
       });
+      tabContents.forEach(c => {
+        c.classList.toggle('wmylist-tab-content--active', c.dataset.tabContent === targetKey);
+      });
+    }
+
+    // URL ハッシュで初期タブを決定（例: my-list.html#done）
+    const hashTab = window.location.hash.replace('#', '');
+    if (hashTab && document.querySelector(`[data-tab="${hashTab}"]`)) {
+      activateTab(hashTab);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab.dataset.tab));
     });
 
     // 案件ID検索モーダル
