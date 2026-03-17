@@ -29,35 +29,25 @@
       <nav class="header-nav" aria-label="メインナビゲーション">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="notification.html" class="nav-link">
-              <span class="nav-text">通知</span>
-            </a>
+            <a href="notification.html" class="nav-link"><span class="nav-text">通知</span></a>
           </li>
           <li class="nav-item">
-            <a href="search.html" class="nav-link">
-              <span class="nav-text">案件検索</span>
-            </a>
+            <a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a>
           </li>
           <li class="nav-item nav-item--active">
-            <a href="my-list.html" class="nav-link">
-              <span class="nav-text">案件一覧</span>
-            </a>
+            <a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a>
           </li>
           <li class="nav-item">
-            <a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span>
-            </a>
+            <a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a>
           </li>
           <li class="nav-item">
-            <a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span>
-            </a>
+            <a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span>
-            </a>
+            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
           </li>
           <li class="nav-item">
-            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span>
-            </a>
+            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a>
           </li>
         </ul>
 
@@ -98,85 +88,94 @@
       </div>
       <hr class="wmylist-title-rule">
 
-      <!-- タブ -->
-      <div class="wmylist-tabs" role="tablist">
-        <button class="wmylist-tab" role="tab" aria-selected="false" data-tab="entry">エントリー中</button>
-        <button class="wmylist-tab" role="tab" aria-selected="false" data-tab="progress">進行中</button>
-        <button class="wmylist-tab wmylist-tab--active" role="tab" aria-selected="true" data-tab="done">完了</button>
-      </div>
+      <!-- 2カラムレイアウト: 左タブ + 右コンテンツ -->
+      <div class="wmylist-layout">
 
-      <!-- 案件ID検索 -->
-      <div class="wmylist-action-row">
-        <button class="wmylist-id-search-btn" id="openSearchModal">案件ID検索</button>
-      </div>
+        <!-- 左: 縦並びタブ -->
+        <aside class="wmylist-sidetabs" role="tablist" aria-label="案件ステータス">
+          <button class="wmylist-sidetab wmylist-sidetab--active" role="tab" aria-selected="true"  data-tab="entry">エントリー中</button>
+          <button class="wmylist-sidetab"                          role="tab" aria-selected="false" data-tab="progress">進行中</button>
+          <button class="wmylist-sidetab"                          role="tab" aria-selected="false" data-tab="done">完了</button>
+        </aside>
 
-      <!-- エントリー中 -->
-      <div class="wmylist-tab-content" data-tab-content="entry">
-        <div class="wmylist-empty">
-          <p>該当する案件がありません。</p>
-        </div>
-      </div>
+        <!-- 右: コンテンツエリア -->
+        <div class="wmylist-content">
 
-      <!-- 進行中 -->
-      <div class="wmylist-tab-content" data-tab-content="progress">
-        <div class="wmylist-empty">
-          <p>該当する案件がありません。</p>
-        </div>
-      </div>
+          <!-- 案件ID検索 -->
+          <div class="wmylist-action-row">
+            <button class="wmylist-id-search-btn" id="openSearchModal">案件ID検索</button>
+          </div>
 
-      <!-- 完了 -->
-      <div class="wmylist-tab-content wmylist-tab-content--active" data-tab-content="done">
-        <div class="wmylist-cards">
-
-          <div class="wmylist-card">
-            <div class="wmylist-card-body">
-              <div class="wmylist-card-thumb">
-                <img src="../images/job-sample.jpg" alt="案件画像" onerror="this.style.display='none'">
-              </div>
-              <div class="wmylist-card-info">
-                <div class="wmylist-card-top-row">
-                  <span class="wmylist-card-date">2025年12月19日~2025年12月26日&nbsp;&nbsp;いつでも</span>
-                  <span class="wmylist-card-status">契約完了</span>
-                </div>
-                <h3 class="wmylist-card-title">警察署への書類提出業務_30分</h3>
-                <div class="wmylist-card-meta">
-                  <span class="wmylist-card-location">
-                    <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                      <circle cx="12" cy="10" r="3"/>
-                    </svg>
-                    東京都 杉並区成田東4丁目38番16号　杉並警察署
-                  </span>
-                  <span class="wmylist-card-price">
-                    <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="10"/>
-                      <line x1="12" y1="8" x2="12" y2="16"/>
-                      <line x1="8" y1="12" x2="16" y2="12"/>
-                    </svg>
-                    ¥1,200 / 件
-                  </span>
-                </div>
-                <div class="wmylist-card-id">案件ID：236603</div>
-              </div>
-            </div>
-            <div class="wmylist-card-actions">
-              <a href="messages.html" class="wmylist-card-action-btn">メッセージ</a>
-              <a href="#" class="wmylist-card-action-btn">作業手順・報告</a>
+          <!-- エントリー中 -->
+          <div class="wmylist-tab-content wmylist-tab-content--active" data-tab-content="entry">
+            <div class="wmylist-empty">
+              <p>該当する案件がありません。</p>
             </div>
           </div>
 
-        </div>
-
-        <!-- ページネーション -->
-        <div class="wmylist-pagination-wrap">
-          <div class="wmylist-count">1 件中 <strong>1〜1</strong> 件表示</div>
-          <div class="wmylist-pagination">
-            <button class="wmylist-page-btn" disabled>← 前の10件</button>
-            <button class="wmylist-page-btn wmylist-page-btn--active">1</button>
-            <button class="wmylist-page-btn" disabled>次の10件 →</button>
+          <!-- 進行中 -->
+          <div class="wmylist-tab-content" data-tab-content="progress">
+            <div class="wmylist-empty">
+              <p>該当する案件がありません。</p>
+            </div>
           </div>
-        </div>
-      </div>
+
+          <!-- 完了 -->
+          <div class="wmylist-tab-content" data-tab-content="done">
+            <div class="wmylist-cards">
+
+              <div class="wmylist-card">
+                <div class="wmylist-card-body">
+                  <div class="wmylist-card-thumb">
+                    <img src="../images/job-sample.jpg" alt="案件画像" onerror="this.style.display='none'">
+                  </div>
+                  <div class="wmylist-card-info">
+                    <div class="wmylist-card-top-row">
+                      <span class="wmylist-card-date">2025年12月19日~2025年12月26日&nbsp;&nbsp;いつでも</span>
+                      <span class="wmylist-card-status">契約完了</span>
+                    </div>
+                    <h3 class="wmylist-card-title">警察署への書類提出業務_30分</h3>
+                    <div class="wmylist-card-meta">
+                      <span class="wmylist-card-location">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        東京都 杉並区成田東4丁目38番16号　杉並警察署
+                      </span>
+                      <span class="wmylist-card-price">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="12" y1="8" x2="12" y2="16"/>
+                          <line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                        ¥1,200 / 件
+                      </span>
+                    </div>
+                    <div class="wmylist-card-id">案件ID：236603</div>
+                  </div>
+                </div>
+                <div class="wmylist-card-actions">
+                  <a href="messages.html" class="wmylist-card-action-btn">メッセージ</a>
+                  <a href="#" class="wmylist-card-action-btn">作業手順・報告</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ページネーション -->
+            <div class="wmylist-pagination-wrap">
+              <div class="wmylist-count">1 件中 <strong>1〜1</strong> 件表示</div>
+              <div class="wmylist-pagination">
+                <button class="wmylist-page-btn" disabled>← 前の10件</button>
+                <button class="wmylist-page-btn wmylist-page-btn--active">1</button>
+                <button class="wmylist-page-btn" disabled>次の10件 →</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /wmylist-content -->
+      </div><!-- /wmylist-layout -->
 
     </div>
   </main>
@@ -218,10 +217,9 @@
     </div>
   </footer>
 
-
   <script>
     // タブ切り替え
-    const tabs = document.querySelectorAll('.wmylist-tab');
+    const tabs = document.querySelectorAll('.wmylist-sidetab');
     const tabContents = document.querySelectorAll('.wmylist-tab-content');
 
     tabs.forEach(tab => {
@@ -229,18 +227,14 @@
         const target = tab.dataset.tab;
 
         tabs.forEach(t => {
-          t.classList.remove('wmylist-tab--active');
+          t.classList.remove('wmylist-sidetab--active');
           t.setAttribute('aria-selected', 'false');
         });
-        tab.classList.add('wmylist-tab--active');
+        tab.classList.add('wmylist-sidetab--active');
         tab.setAttribute('aria-selected', 'true');
 
         tabContents.forEach(content => {
-          if (content.dataset.tabContent === target) {
-            content.classList.add('wmylist-tab-content--active');
-          } else {
-            content.classList.remove('wmylist-tab-content--active');
-          }
+          content.classList.toggle('wmylist-tab-content--active', content.dataset.tabContent === target);
         });
       });
     });
@@ -258,8 +252,8 @@
     openBtn.addEventListener('click', openModal);
     closeBtn.addEventListener('click', closeModal);
     clearBtn.addEventListener('click', () => { jobIdInput.value = ''; closeModal(); });
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
   </script>
 </body>
 </html>

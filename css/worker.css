@@ -2026,6 +2026,62 @@
    案件一覧（my-list.html） wmylist-*
    ============================================= */
 
+/* 2カラムレイアウト */
+.wmylist-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* 左: 縦並びタブ */
+.wmylist-sidetabs {
+  flex-shrink: 0;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wmylist-sidetab {
+  padding: 14px 10px 14px 13px;
+  font-size: 13px;
+  color: #555;
+  background: #fff;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-left: 3px solid transparent;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1.4;
+}
+
+.wmylist-sidetab:last-child {
+  border-bottom: none;
+}
+
+.wmylist-sidetab--active {
+  color: #c0111f;
+  background: #fff5f5;
+  border-left-color: #c0111f;
+  font-weight: 700;
+}
+
+.wmylist-sidetab:not(.wmylist-sidetab--active):hover {
+  color: #c0111f;
+  background: #fafafa;
+}
+
+/* 右: コンテンツエリア */
+.wmylist-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .wmylist-body {
   background: #f5f5f5;
   min-height: 100vh;
@@ -3870,4 +3926,309 @@
   color: #333;
   margin: 0 0 8px;
   line-height: 1.7;
+}
+
+
+/* =============================================
+   ご利用マニュアル（manual.html） wmanual-*
+   ============================================= */
+
+.wmanual-body {
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wmanual-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.wmanual-iframe {
+  flex: 1;
+  width: 100%;
+  border: none;
+  display: none;
+  min-height: calc(100vh - 72px);
+}
+
+.wmanual-placeholder {
+  flex: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 72px);
+  background: #f5f5f5;
+}
+
+.wmanual-placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.wmanual-placeholder-icon {
+  opacity: 0.35;
+}
+
+.wmanual-placeholder-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+  margin: 0;
+}
+
+.wmanual-placeholder-text {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.75;
+  margin: 0;
+}
+
+
+/* =============================================
+   お問い合わせ（contact.html） wcontact-*
+   ============================================= */
+
+.wcontact-body {
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wcontact-main {
+  flex: 1;
+  padding: 40px 24px 60px;
+}
+
+.wcontact-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.wcontact-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.wcontact-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 36px 40px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ステッパー */
+.wcontact-stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.wcontact-step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.wcontact-step:last-child {
+  flex: 0;
+}
+
+.wcontact-step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #aaa;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wcontact-step-circle--active {
+  background: #c0111f;
+  color: #fff;
+}
+
+.wcontact-step-line {
+  flex: 1;
+  height: 3px;
+  background: #ddd;
+  margin: 0 6px;
+}
+
+.wcontact-step-line--active {
+  background: #c0111f;
+}
+
+.wcontact-stepper-labels {
+  display: flex;
+  margin-bottom: 28px;
+}
+
+.wcontact-stepper-label {
+  flex: 1;
+}
+
+.wcontact-stepper-label:last-child {
+  flex: 0;
+  min-width: 90px;
+  text-align: right;
+}
+
+.wcontact-stepper-title {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.wcontact-stepper-label--inactive .wcontact-stepper-title {
+  color: #bbb;
+  font-weight: 400;
+}
+
+.wcontact-stepper-desc {
+  display: block;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 3px;
+}
+
+/* 案内文 */
+.wcontact-notice {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.85;
+  margin: 0 0 20px;
+}
+
+/* 区切り線 */
+.wcontact-rule {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 0 0 24px;
+}
+
+/* フォームフィールド */
+.wcontact-field {
+  margin-bottom: 28px;
+}
+
+.wcontact-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.wcontact-required {
+  color: #c0111f;
+  margin-left: 4px;
+}
+
+.wcontact-select-wrap {
+  position: relative;
+  display: block;
+}
+
+.wcontact-select {
+  width: 100%;
+  height: 44px;
+  padding: 0 40px 0 12px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.wcontact-select:focus {
+  border-color: #c0111f;
+  box-shadow: 0 0 0 2px rgba(192, 17, 31, 0.12);
+}
+
+.wcontact-select-chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* 注意・案内テキスト */
+.wcontact-warn {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.85;
+  margin: 0 0 14px;
+}
+
+.wcontact-info {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.85;
+  margin: 0 0 8px;
+}
+
+/* 次へボタン */
+.wcontact-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 28px;
+}
+
+.wcontact-btn-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 28px;
+  background: #c0111f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.wcontact-btn-next:hover {
+  background: #a00e1a;
+}
+
+/* フッター */
+.wcontact-footer {
+  text-align: center;
+  padding: 14px 24px;
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+}
+
+.wcontact-footer-text {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
 }
