@@ -102,6 +102,7 @@
       <div class="wreward-year-row">
         <div class="wreward-year-select">
           <select class="wreward-year-dropdown" id="yearSelect" aria-label="年を選択">
+            <option value="2026" selected>2026 年</option>
             <option value="2025">2025 年</option>
             <option value="2024">2024 年</option>
             <option value="2023">2023 年</option>
@@ -113,16 +114,73 @@
       </div>
 
       <!-- 集計期間の説明 -->
-      <p class="wreward-period-note" id="periodNote">2025年は検収承認日が12月1日分までの集計です。</p>
+      <p class="wreward-period-note" id="periodNote">2026年は検収承認日が3月16日分までの集計です。</p>
 
       <!-- 立替金の注意書き -->
       <p class="wreward-advance-note">
-        立替金については算出対象外となります。案件ごとの<a href="my-list.html#done" class="wreward-link">作業手順・報告</a>か、<a href="transfer-history.html" class="wreward-link">振込申請履歴一覧</a>からご確認ください。
+        立替金については算出対象外となります。案件ごとの<a href="my-list.html#done" class="wreward-link">作業手順・報告</a>か、<a href="transfer-history.html" class="wreward-link">振込申請履歴</a>からご確認ください。
       </p>
 
-      <!-- 空状態 -->
-      <div class="wreward-empty">
-        <p>報酬情報がありません。</p>
+      <!-- 件数バー -->
+      <div class="wreward-toolbar">
+        <div class="wreward-count-row">
+          <span class="wreward-count-num">1</span>
+          <span class="wreward-count-text">件中 <strong class="wreward-count-range">1〜1</strong> 件表示</span>
+          <div class="wreward-per-page-select">
+            <select class="wreward-per-page-dropdown" aria-label="表示件数">
+              <option value="10">10件</option>
+              <option value="20">20件</option>
+              <option value="50">50件</option>
+            </select>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wreward-per-page-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+        <button class="wreward-pdf-btn">PDFダウンロード</button>
+      </div>
+
+      <!-- 報酬テーブル -->
+      <div class="wreward-table-wrap">
+        <table class="wreward-table">
+          <thead>
+            <tr>
+              <th class="wreward-th">発注者ID</th>
+              <th class="wreward-th">法人・団体名</th>
+              <th class="wreward-th">発注者名</th>
+              <th class="wreward-th">住所</th>
+              <th class="wreward-th">区分</th>
+              <th class="wreward-th">細目</th>
+              <th class="wreward-th wreward-th--num">支払金額</th>
+              <th class="wreward-th wreward-th--num">源泉徴収額</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="wreward-tr">
+              <td class="wreward-td">10375</td>
+              <td class="wreward-td"><a href="#" class="wreward-cell-link">株式会社コレカ</a></td>
+              <td class="wreward-td"><a href="#" class="wreward-cell-link">道原 靖人</a></td>
+              <td class="wreward-td">東京都 豊島区 北大塚1-22-3<br>パークサイドビルディング2F</td>
+              <td class="wreward-td">法人</td>
+              <td class="wreward-td">業務委託料</td>
+              <td class="wreward-td wreward-td--num">1,200円</td>
+              <td class="wreward-td wreward-td--num">0円</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ページネーション -->
+      <div class="wreward-pagination-wrap">
+        <div class="wreward-count-row wreward-count-row--bottom">
+          <span class="wreward-count-num">1</span>
+          <span class="wreward-count-text">件中 <strong class="wreward-count-range">1〜1</strong> 件表示</span>
+        </div>
+        <div class="wreward-pagination">
+          <button class="wreward-page-btn" disabled>← 前の10件</button>
+          <button class="wreward-page-btn wreward-page-btn--active">1</button>
+          <button class="wreward-page-btn" disabled>次の10件 →</button>
+        </div>
       </div>
 
     </div>
