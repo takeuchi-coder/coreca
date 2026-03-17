@@ -105,30 +105,24 @@
       </div>
       <hr class="wth-title-rule">
 
-      <!-- テーブル領域（空状態） -->
-      <div class="wth-table-area">
-        <!-- データがある場合はここにテーブルを出力 -->
-      </div>
-
       <!-- 件数 + ページネーション -->
-      <div class="wlist-pagination">
-        <div class="wlist-count">
-          <span class="wlist-count-num">0</span>件中
-          <span class="wlist-count-range">〜</span>件表示
+      <div class="wth-footer-row">
+        <div class="wth-count-row">
+          <span class="wth-count-num">0</span>
+          <span class="wth-count-text">件中 〜 件表示</span>
         </div>
-        <div class="wlist-pager">
-          <button class="wlist-pager-btn wlist-pager-prev" disabled>
+        <div class="wth-pagination">
+          <button class="wth-page-nav" disabled>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
             前の10件
           </button>
-          <span class="wlist-pager-current">1</span>
-          <button class="wlist-pager-btn wlist-pager-next" disabled>
+          <button class="wth-page-num wth-page-num--active">1</button>
+          <button class="wth-page-nav" disabled>
             次の10件
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </div>
-      <hr class="wth-footer-rule">
 
     </div>
   </main>
