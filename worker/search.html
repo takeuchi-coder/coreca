@@ -243,6 +243,49 @@
   </div>
   <!-- ===== /マップセクション ===== -->
 
+  <!-- ===== リスト表示セクション ===== -->
+  <div class="wsearch-list-section" id="listSection" hidden>
+
+    <!-- ヘッダー行：タイトル + トグルフィルター -->
+    <div class="wsearch-list-header">
+      <h2 class="wsearch-list-heading">案件検索</h2>
+      <div class="wsearch-list-toggles">
+        <label class="wsearch-toggle-wrap">
+          <span class="wsearch-toggle-text">在宅ワーク</span>
+          <span class="wsearch-toggle">
+            <input type="checkbox" id="remoteOnlyList">
+            <span class="wsearch-toggle-slider"></span>
+          </span>
+        </label>
+        <label class="wsearch-toggle-wrap">
+          <span class="wsearch-toggle-text">応募可のみ</span>
+          <span class="wsearch-toggle">
+            <input type="checkbox" id="availableOnlyList" checked>
+            <span class="wsearch-toggle-slider"></span>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- 案件リスト -->
+    <div class="wsearch-list-items" id="jobListItems">
+      <!-- JavaScript で生成 -->
+    </div>
+
+    <!-- 地図でみる フローティングボタン -->
+    <button class="wsearch-mapview-btn" id="mapViewBtn" aria-label="地図表示に切り替え">
+      <span class="wsearch-mapview-btn-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </span>
+      地図でみる
+    </button>
+
+  </div>
+  <!-- ===== /リスト表示セクション ===== -->
+
   <!-- ===== フッター ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -270,57 +313,62 @@
   const JOBS = [
     {
       id: 1,
-      title: '共用部清掃_掃きのみ_26-30...',
-      price: '¥1800/件',
-      address: '港区港南区4-2-27',
-      period: '即日〜12月02日(火)',
-      daysLeft: 1,
-      lat: 35.6762,
-      lng: 139.7303,
+      title: '役所等での申請・書類取得',
+      price: '¥1,000/件',
+      hours: '09:00〜17:00',
+      address: '愛知県半田市東洋町2-1',
+      period: '2026年04月01日~2026年06月30日',
+      daysLeft: 106,
+      lat: 34.8897,
+      lng: 136.9370,
       img: null
     },
     {
       id: 2,
-      title: 'ゴミ出し〜20代女性歓迎',
-      price: '¥1100/件',
-      address: '世田谷区岡本2-14-10',
-      period: '即日〜12月05日(金)',
-      daysLeft: 3,
-      lat: 35.6628,
-      lng: 139.6394,
+      title: '共用部清掃_掃き・拭き上げ_6-10世帯',
+      price: '¥1,200/件',
+      hours: 'いつでも',
+      address: '愛知県半田市東大矢知町',
+      period: '即日~2026年03月31日',
+      daysLeft: 15,
+      lat: 34.8850,
+      lng: 136.9350,
       img: null
     },
     {
       id: 3,
-      title: 'レンタルスペース清掃スタッフ',
-      price: '¥1000/件',
-      address: '千代田区神田より徒歩2分',
-      period: '即日〜12月08日(月)',
-      daysLeft: 6,
-      lat: 35.6938,
-      lng: 139.7636,
+      title: '駐車場設置のEV充電器アップデート業務',
+      price: '¥1,500/件',
+      hours: 'いつでも',
+      address: '愛知県常滑市 栄町7-108',
+      period: '即日~2026年03月29日',
+      daysLeft: 13,
+      lat: 34.8920,
+      lng: 136.8360,
       img: null
     },
     {
       id: 4,
-      title: 'マンション共用廊下清掃',
-      price: '¥1500/件',
-      address: '新宿区西新宿3-7-1',
-      period: '即日〜12月10日(水)',
-      daysLeft: 8,
-      lat: 35.6930,
-      lng: 139.6923,
+      title: '植栽水やり・軽作業スタッフ募集',
+      price: '¥2,000/件',
+      hours: 'いつでも',
+      address: '愛知県常滑市 栄町7-108',
+      period: '即日~2026年03月29日',
+      daysLeft: 13,
+      lat: 34.8900,
+      lng: 136.8400,
       img: null
     },
     {
       id: 5,
-      title: '植栽水やり・軽作業スタッフ',
-      price: '¥2000/件',
-      address: '渋谷区代々木1-1-5',
-      period: '即日〜12月12日(金)',
-      daysLeft: 10,
-      lat: 35.6840,
-      lng: 139.7020,
+      title: 'マンション共用廊下清掃スタッフ',
+      price: '¥1,800/件',
+      hours: '09:00〜12:00',
+      address: '愛知県知多市 新知字弐ノ割',
+      period: '即日~2026年04月15日',
+      daysLeft: 29,
+      lat: 34.9100,
+      lng: 136.9200,
       img: null
     }
   ];
@@ -533,11 +581,79 @@
   });
 
   /* =============================================
+     リスト表示：案件リストを生成
+  ============================================= */
+  function renderListItems() {
+    const container = document.getElementById('jobListItems');
+    container.innerHTML = '';
+
+    JOBS.forEach(job => {
+      const item = document.createElement('div');
+      item.className = 'wsearch-list-item';
+
+      const badgeClass = job.daysLeft <= 15
+        ? 'wsearch-list-badge--red'
+        : 'wsearch-list-badge--gray';
+
+      item.innerHTML = `
+        <div class="wsearch-list-thumb">
+          <div class="wsearch-list-thumb-inner">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+        </div>
+        <div class="wsearch-list-body">
+          <div class="wsearch-list-top">
+            <span class="wsearch-list-date">${job.period}</span>
+            <span class="wsearch-list-badge ${badgeClass}">募集終了まで：あと${job.daysLeft}日</span>
+          </div>
+          <div class="wsearch-list-title">${job.title}</div>
+          <div class="wsearch-list-price">${job.price}</div>
+          <div class="wsearch-list-meta">
+            <span class="wsearch-list-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              ${job.hours}
+            </span>
+            <span class="wsearch-list-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              ${job.address}
+            </span>
+          </div>
+        </div>
+        <div class="wsearch-list-action">
+          <a href="detail.html" class="wsearch-list-detail-btn">詳細をみる</a>
+        </div>
+      `;
+
+      container.appendChild(item);
+    });
+  }
+
+  /* =============================================
      リストでみる ボタン
   ============================================= */
   document.getElementById('listViewBtn').addEventListener('click', () => {
-    // 将来的なリスト表示ページへの遷移
-    alert('リスト表示は準備中です。');
+    document.querySelector('.wsearch-controls').hidden = true;
+    document.querySelector('.wsearch-map-section').hidden = true;
+    document.getElementById('listSection').hidden = false;
+    renderListItems();
+  });
+
+  /* =============================================
+     地図でみる ボタン
+  ============================================= */
+  document.getElementById('mapViewBtn').addEventListener('click', () => {
+    document.getElementById('listSection').hidden = true;
+    document.querySelector('.wsearch-controls').hidden = false;
+    document.querySelector('.wsearch-map-section').hidden = false;
+    map.invalidateSize();
   });
 
   /* =============================================

@@ -1466,6 +1466,215 @@
 }
 
 /* ===========================
+   リスト表示セクション（wsearch-list-*）
+=========================== */
+
+.wsearch-list-section {
+  background: #fff;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ヘッダー行 */
+.wsearch-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px 12px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.wsearch-list-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.wsearch-list-toggles {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 案件リスト */
+.wsearch-list-items {
+  flex: 1;
+  padding: 0 32px 100px;
+}
+
+/* 各案件行 */
+.wsearch-list-item {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 16px 0;
+  gap: 20px;
+}
+
+/* サムネイル */
+.wsearch-list-thumb {
+  flex-shrink: 0;
+  width: 130px;
+  min-height: 110px;
+  background: #e8e8e8;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wsearch-list-thumb-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* 本文 */
+.wsearch-list-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  justify-content: center;
+}
+
+.wsearch-list-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.wsearch-list-date {
+  font-size: 13px;
+  color: #444;
+}
+
+/* バッジ（枠線のみ） */
+.wsearch-list-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.wsearch-list-badge--red {
+  color: #e8192c;
+  border-color: #e8192c;
+}
+
+.wsearch-list-badge--gray {
+  color: #555;
+  border-color: #aaa;
+}
+
+.wsearch-list-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.wsearch-list-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e8192c;
+}
+
+.wsearch-list-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.wsearch-list-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #555;
+}
+
+.wsearch-list-meta-item svg {
+  flex-shrink: 0;
+  color: #777;
+}
+
+/* 詳細ボタン */
+.wsearch-list-action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.wsearch-list-detail-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background: #e8192c;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.wsearch-list-detail-btn:hover {
+  background: #c0111f;
+}
+
+/* 地図でみる フローティングボタン */
+.wsearch-mapview-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 20px 11px 10px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 28px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  transition: background 0.15s, transform 0.1s;
+}
+
+.wsearch-mapview-btn:hover {
+  background: #c0111f;
+  transform: translateY(-1px);
+}
+
+.wsearch-mapview-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===========================
    案件一覧画面 (worker/list.html)
 =========================== */
 
