@@ -101,8 +101,8 @@
       <!-- 件数バー + フィルター -->
       <div class="wmsg-toolbar">
         <div class="wmsg-count-row">
-          <span class="wmsg-count-num">0</span>
-          <span class="wmsg-count-text">件中 〜 件表示</span>
+          <span class="wmsg-count-num">1</span>
+          <span class="wmsg-count-text">件中 <strong class="wmsg-count-range">1〜1</strong> 件表示</span>
           <div class="wmsg-per-page-select">
             <select class="wmsg-per-page-dropdown" aria-label="表示件数">
               <option value="10">10件</option>
@@ -121,9 +121,56 @@
         </div>
       </div>
 
-      <!-- 空状態 -->
-      <div class="wmsg-empty">
-        <p>該当するメッセージがありません。</p>
+      <!-- メッセージテーブル -->
+      <div class="wmsg-table-wrap">
+        <table class="wmsg-table">
+          <thead>
+            <tr>
+              <th class="wmsg-th">発注者名</th>
+              <th class="wmsg-th">案件ID</th>
+              <th class="wmsg-th">作業・契約期間</th>
+              <th class="wmsg-th">コース名</th>
+              <th class="wmsg-th">案件住所</th>
+              <th class="wmsg-th wmsg-th--msg">メッセージ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="wmsg-tr">
+              <td class="wmsg-td">
+                <a href="#" class="wmsg-orderer-link">株式会社コレカ<br>道原 靖人</a>
+              </td>
+              <td class="wmsg-td wmsg-td--id">
+                <a href="#" class="wmsg-job-id-link">236603</a>
+                <span class="wmsg-status-badge">完了</span>
+              </td>
+              <td class="wmsg-td wmsg-td--period">
+                2025/12/19 〜<br>2025/12/26
+              </td>
+              <td class="wmsg-td">警察署への書類提出業務_30分</td>
+              <td class="wmsg-td">東京都 杉並区成田東4丁目38番16号　杉並警察署</td>
+              <td class="wmsg-td wmsg-td--msg">
+                <div class="wmsg-msg-content">
+                  <p class="wmsg-msg-text">よろしくお願いします。</p>
+                  <p class="wmsg-msg-date">12/18 竹内 由佳</p>
+                </div>
+                <button class="wmsg-confirm-btn">確認する</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ページネーション -->
+      <div class="wmsg-pagination-wrap">
+        <div class="wmsg-count-row wmsg-count-row--bottom">
+          <span class="wmsg-count-num">1</span>
+          <span class="wmsg-count-text">件中 <strong class="wmsg-count-range">1〜1</strong> 件表示</span>
+        </div>
+        <div class="wmsg-pagination">
+          <button class="wmsg-page-btn" disabled>← 前の10件</button>
+          <button class="wmsg-page-btn wmsg-page-btn--active">1</button>
+          <button class="wmsg-page-btn" disabled>次の10件 →</button>
+        </div>
       </div>
 
     </div>
