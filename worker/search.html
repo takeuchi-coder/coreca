@@ -208,7 +208,7 @@
   <!-- ===== /地域選択モーダル ===== -->
 
   <!-- ===== マップセクション ===== -->
-  <div class="wsearch-map-section">
+  <div class="wsearch-map-section" hidden>
 
     <!-- Leaflet マップ -->
     <div id="wsearchMap" class="wsearch-map"></div>
@@ -244,7 +244,7 @@
   <!-- ===== /マップセクション ===== -->
 
   <!-- ===== リスト表示セクション ===== -->
-  <div class="wsearch-list-section" id="listSection" hidden>
+  <div class="wsearch-list-section" id="listSection">
 
     <!-- ヘッダー行：タイトル + トグルフィルター -->
     <div class="wsearch-list-header">
@@ -568,6 +568,7 @@
   }
 
   renderCards();
+  renderListItems(); // 初期表示はリスト
 
   // カルーセル 矢印ナビ
   const viewport = document.querySelector('.wsearch-cards-viewport');
@@ -652,8 +653,9 @@
   document.getElementById('mapViewBtn').addEventListener('click', () => {
     document.getElementById('listSection').hidden = true;
     document.querySelector('.wsearch-controls').hidden = false;
-    document.querySelector('.wsearch-map-section').hidden = false;
-    map.invalidateSize();
+    const mapSection = document.querySelector('.wsearch-map-section');
+    mapSection.hidden = false;
+    setTimeout(() => map.invalidateSize(), 50);
   });
 
   /* =============================================
