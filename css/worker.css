@@ -2263,6 +2263,195 @@
 }
 
 
+/* 案件カード */
+.wmylist-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.wmylist-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.wmylist-card-body {
+  display: flex;
+  gap: 0;
+  padding: 0;
+}
+
+.wmylist-card-thumb {
+  width: 140px;
+  flex-shrink: 0;
+  background: #e0e0e0;
+  overflow: hidden;
+}
+
+.wmylist-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wmylist-card-info {
+  flex: 1;
+  padding: 14px 16px 10px;
+  position: relative;
+}
+
+.wmylist-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.wmylist-card-date {
+  font-size: 13px;
+  color: #555;
+}
+
+.wmylist-card-status {
+  font-size: 12px;
+  color: #888;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+.wmylist-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.wmylist-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.wmylist-card-location,
+.wmylist-card-price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #444;
+}
+
+.wmylist-card-meta-icon {
+  flex-shrink: 0;
+  color: #888;
+}
+
+.wmylist-card-id {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+  margin-top: 8px;
+}
+
+.wmylist-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #ddd;
+}
+
+.wmylist-card-action-btn {
+  display: block;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  border: none;
+  border-right: 1px solid #ddd;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+
+.wmylist-card-action-btn:last-child {
+  border-right: none;
+}
+
+.wmylist-card-action-btn:hover {
+  background: #f5f5f5;
+}
+
+/* ページネーション */
+.wmylist-pagination-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.wmylist-count {
+  font-size: 14px;
+  color: #333;
+}
+
+.wmylist-count strong {
+  color: #c0111f;
+  font-weight: 700;
+}
+
+.wmylist-pagination {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.wmylist-page-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.wmylist-page-btn:hover:not(.wmylist-page-btn--active):not(:disabled) {
+  background: #f0f0f0;
+}
+
+.wmylist-page-btn--active {
+  background: #c0111f;
+  color: #fff;
+  border-color: #c0111f;
+  font-weight: 700;
+  cursor: default;
+}
+
+.wmylist-page-btn:disabled {
+  color: #bbb;
+  cursor: default;
+  border-color: #e0e0e0;
+}
+
+/* タブコンテンツの切り替え */
+.wmylist-tab-content {
+  display: none;
+}
+
+.wmylist-tab-content--active {
+  display: block;
+}
+
+
 /* =============================================
    報酬情報 (reward.html) wreward-*
    ============================================= */
