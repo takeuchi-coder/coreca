@@ -1273,13 +1273,13 @@
 }
 
 /* ===========================
-   リストでみる ボタン（マップ右下に浮遊）
+   リストでみる ボタン（右下固定）
 =========================== */
 .wsearch-list-btn {
-  position: absolute;
-  bottom: 160px;
-  right: 16px;
-  z-index: 500;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1639,9 +1639,9 @@
 /* 地図でみる フローティングボタン */
 .wsearch-mapview-btn {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 600;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
   display: flex;
   align-items: center;
   gap: 6px;
