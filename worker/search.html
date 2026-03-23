@@ -209,7 +209,7 @@
   <!-- ===== /地域選択モーダル ===== -->
 
   <!-- ===== マップセクション ===== -->
-  <div class="wsearch-map-section" hidden>
+  <div class="wsearch-map-section">
 
     <!-- Leaflet マップ -->
     <div id="wsearchMap" class="wsearch-map"></div>
@@ -245,7 +245,7 @@
   <!-- ===== /マップセクション ===== -->
 
   <!-- ===== リスト表示セクション ===== -->
-  <div class="wsearch-list-section" id="listSection">
+  <div class="wsearch-list-section" id="listSection" hidden>
 
     <!-- ヘッダー行：タイトル + トグルフィルター -->
     <div class="wsearch-list-header">
@@ -569,7 +569,6 @@
   }
 
   renderCards();
-  renderListItems(); // 初期表示はリスト
 
   // カルーセル 矢印ナビ
   const viewport = document.querySelector('.wsearch-cards-viewport');
