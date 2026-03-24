@@ -177,16 +177,7 @@
 
     <!-- 右下：ボタン群 -->
     <div class="wsearch-map-actions" id="mapActions">
-      <button class="wsearch-map-action-btn" id="remoteMapBtn">
-        <span class="wsearch-map-action-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-        </span>
-        在宅ワーク
-      </button>
-      <button class="wsearch-map-action-btn" id="listViewBtn">
+<button class="wsearch-map-action-btn" id="listViewBtn">
         <span class="wsearch-map-action-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -220,14 +211,7 @@
     <div class="wsearch-list-header">
       <h2 class="wsearch-list-heading">案件検索</h2>
       <div class="wsearch-list-toggles">
-        <label class="wsearch-toggle-wrap">
-          <span class="wsearch-toggle-text">在宅ワーク</span>
-          <span class="wsearch-toggle">
-            <input type="checkbox" id="remoteOnlyList">
-            <span class="wsearch-toggle-slider"></span>
-          </span>
-        </label>
-        <label class="wsearch-toggle-wrap">
+<label class="wsearch-toggle-wrap">
           <span class="wsearch-toggle-text">応募可のみ</span>
           <span class="wsearch-toggle">
             <input type="checkbox" id="availableOnlyList" checked>
@@ -398,16 +382,6 @@
   }
 
   addMarkers();
-
-  /* =============================================
-     在宅ワーク（マップ）トグル
-  ============================================= */
-  const remoteMapBtn = document.getElementById('remoteMapBtn');
-  let remoteActive = false;
-  remoteMapBtn.addEventListener('click', () => {
-    remoteActive = !remoteActive;
-    remoteMapBtn.classList.toggle('wsearch-map-action-btn--active', remoteActive);
-  });
 
   /* =============================================
      リストでみる ボタン
