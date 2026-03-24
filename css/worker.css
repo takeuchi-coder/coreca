@@ -1377,6 +1377,11 @@
   position: relative;
 }
 
+/* hidden属性がdisplay:flexに上書きされるのを防ぐ */
+.wsearch-list-section[hidden] {
+  display: none;
+}
+
 /* ヘッダー行 */
 .wsearch-list-header {
   display: flex;
