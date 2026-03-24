@@ -384,13 +384,24 @@
   addMarkers();
 
   /* =============================================
+     ビュー切り替え共通関数
+  ============================================= */
+  function showListView() {
+    document.getElementById('mapSection').style.display = 'none';
+    document.getElementById('listSection').style.display = 'flex';
+    renderListItems();
+  }
+
+  function showMapView() {
+    document.getElementById('listSection').style.display = 'none';
+    document.getElementById('mapSection').style.display = '';
+    setTimeout(() => map.invalidateSize(), 50);
+  }
+
+  /* =============================================
      リストでみる ボタン
   ============================================= */
-  document.getElementById('listViewBtn').addEventListener('click', () => {
-    document.querySelector('.wsearch-map-section').hidden = true;
-    document.getElementById('listSection').hidden = false;
-    renderListItems();
-  });
+  document.getElementById('listViewBtn').addEventListener('click', showListView);
 
   /* =============================================
      現在地 ボタン
@@ -405,12 +416,7 @@
   /* =============================================
      地図でみる ボタン
   ============================================= */
-  document.getElementById('mapViewBtn').addEventListener('click', () => {
-    document.getElementById('listSection').hidden = true;
-    const mapSection = document.querySelector('.wsearch-map-section');
-    mapSection.hidden = false;
-    setTimeout(() => map.invalidateSize(), 50);
-  });
+  document.getElementById('mapViewBtn').addEventListener('click', showMapView);
 
   /* =============================================
      リスト表示：案件リストを生成
