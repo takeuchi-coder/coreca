@@ -1789,21 +1789,21 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 0 12px;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 
-/* 件数表示 */
+/* 件数表示（中央） */
 .wlist-count {
+  flex: 1;
+  text-align: center;
   font-size: 14px;
   color: #555;
   white-space: nowrap;
 }
 
 .wlist-count-num {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
-  color: #e8192c;
+  color: #333;
 }
 
 .wlist-count-range {
@@ -1811,49 +1811,31 @@
   color: #333;
 }
 
-/* ページャー（< 前の10件 [1] 次の10件 >） */
-.wlist-pager {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
+/* ページャーボタン（< 前の10件 / 次の10件 >） */
 .wlist-pager-btn {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 6px 12px;
-  border: none;
-  background: none;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: #fff;
   font-family: inherit;
   font-size: 13px;
   color: #555;
   cursor: pointer;
-  border-radius: 4px;
-  transition: color 0.12s, background 0.12s;
+  border-radius: 6px;
+  transition: background 0.15s;
+  white-space: nowrap;
 }
 
 .wlist-pager-btn:hover:not(:disabled) {
-  color: #e8192c;
-  background: #fdf0f2;
+  background: #f0f0f0;
 }
 
 .wlist-pager-btn:disabled {
   color: #bbb;
+  border-color: #e0e0e0;
   cursor: default;
-}
-
-.wlist-pager-current {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: #e8192c;
-  color: #fff;
-  border-radius: 50%;
-  font-size: 14px;
-  font-weight: 700;
 }
 
 /* マップでみるボタン */
@@ -2875,41 +2857,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4px;
+  padding: 20px 0 12px;
 }
 
-.wreward-count-row--bottom {
-  gap: 6px;
-}
-
-.wreward-pagination {
-  display: flex;
-  align-items: center;
-  gap: 2px;
+.wreward-count-center {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  white-space: nowrap;
 }
 
 .wreward-page-btn {
-  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
   font-size: 13px;
-  color: #333;
+  color: #555;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 6px;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s;
+  white-space: nowrap;
 }
 
-.wreward-page-btn:hover:not(.wreward-page-btn--active):not(:disabled) {
+.wreward-page-btn:hover:not(:disabled) {
   background: #f0f0f0;
-}
-
-.wreward-page-btn--active {
-  background: #c0111f;
-  color: #fff;
-  border-color: #c0111f;
-  font-weight: 700;
-  cursor: default;
 }
 
 .wreward-page-btn:disabled {
@@ -3195,41 +3171,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4px;
+  padding: 20px 0 12px;
 }
 
-.wmsg-count-row--bottom {
-  gap: 6px;
-}
-
-.wmsg-pagination {
-  display: flex;
-  align-items: center;
-  gap: 2px;
+.wmsg-count-center {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  white-space: nowrap;
 }
 
 .wmsg-page-btn {
-  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
   font-size: 13px;
-  color: #333;
+  color: #555;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 6px;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s;
+  white-space: nowrap;
 }
 
-.wmsg-page-btn:hover:not(.wmsg-page-btn--active):not(:disabled) {
+.wmsg-page-btn:hover:not(:disabled) {
   background: #f0f0f0;
-}
-
-.wmsg-page-btn--active {
-  background: #c0111f;
-  color: #fff;
-  border-color: #c0111f;
-  font-weight: 700;
-  cursor: default;
 }
 
 .wmsg-page-btn:disabled {

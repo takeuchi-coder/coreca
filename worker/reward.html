@@ -173,15 +173,18 @@
 
       <!-- ページネーション -->
       <div class="wreward-pagination-wrap">
-        <div class="wreward-count-row wreward-count-row--bottom">
+        <button class="wreward-page-btn wreward-page-btn--prev" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          前の10件
+        </button>
+        <div class="wreward-count-center">
           <span class="wreward-count-num">1</span>
           <span class="wreward-count-text">件中 <strong class="wreward-count-range">1〜1</strong> 件表示</span>
         </div>
-        <div class="wreward-pagination">
-          <button class="wreward-page-btn" disabled>← 前の10件</button>
-          <button class="wreward-page-btn wreward-page-btn--active">1</button>
-          <button class="wreward-page-btn" disabled>次の10件 →</button>
-        </div>
+        <button class="wreward-page-btn wreward-page-btn--next" disabled>
+          次の10件
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
 
     </div>

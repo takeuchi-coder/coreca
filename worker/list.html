@@ -308,24 +308,18 @@
 
       <!-- ページネーション -->
       <div class="wlist-pagination">
-        <!-- 件数表示 -->
+        <button class="wlist-pager-btn wlist-pager-prev" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          前の10件
+        </button>
         <div class="wlist-count">
           <span class="wlist-count-num">5</span>件中
           <span class="wlist-count-range">1〜5</span>件表示
         </div>
-
-        <!-- ページャー -->
-        <div class="wlist-pager">
-          <button class="wlist-pager-btn wlist-pager-prev" disabled>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-            前の10件
-          </button>
-          <span class="wlist-pager-current">1</span>
-          <button class="wlist-pager-btn wlist-pager-next" disabled>
-            次の10件
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
+        <button class="wlist-pager-btn wlist-pager-next" disabled>
+          次の10件
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
 
         <!-- マップでみる -->
         <a href="search.html" class="btn-wlist-map">

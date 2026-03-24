@@ -163,15 +163,18 @@
 
       <!-- ページネーション -->
       <div class="wmsg-pagination-wrap">
-        <div class="wmsg-count-row wmsg-count-row--bottom">
+        <button class="wmsg-page-btn wmsg-page-btn--prev" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          前の10件
+        </button>
+        <div class="wmsg-count-center">
           <span class="wmsg-count-num">1</span>
           <span class="wmsg-count-text">件中 <strong class="wmsg-count-range">1〜1</strong> 件表示</span>
         </div>
-        <div class="wmsg-pagination">
-          <button class="wmsg-page-btn" disabled>← 前の10件</button>
-          <button class="wmsg-page-btn wmsg-page-btn--active">1</button>
-          <button class="wmsg-page-btn" disabled>次の10件 →</button>
-        </div>
+        <button class="wmsg-page-btn wmsg-page-btn--next" disabled>
+          次の10件
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
 
     </div>
