@@ -1801,26 +1801,6 @@
   cursor: default;
 }
 
-/* マップでみるボタン */
-.btn-wlist-map {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 22px;
-  border: 2px solid #e8192c;
-  border-radius: 24px;
-  color: #e8192c;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background 0.15s, color 0.15s;
-}
-
-.btn-wlist-map:hover {
-  background: #e8192c;
-  color: #fff;
-}
 
 /* ===========================
    案件詳細画面 (worker/job-detail.html)
