@@ -1552,43 +1552,6 @@
   color: #fff;
 }
 
-/* 地図でみる フローティングボタン */
-.wsearch-mapview-btn {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 1100;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 11px 20px 11px 10px;
-  background: #e8192c;
-  color: #fff;
-  border: none;
-  border-radius: 28px;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
-  transition: background 0.15s, transform 0.1s;
-}
-
-.wsearch-mapview-btn:hover {
-  background: #c0111f;
-  transform: translateY(-1px);
-}
-
-.wsearch-mapview-btn-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
 
 /* ===========================
    案件一覧画面 (worker/list.html)
