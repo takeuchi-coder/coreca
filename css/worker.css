@@ -1040,6 +1040,71 @@
   gap: 12px;
 }
 
+/* ===========================
+   職種・コースフィルター
+=========================== */
+.wcourse-filter {
+  background: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+  flex-shrink: 0;
+}
+
+.wcourse-filter-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 24px;
+}
+
+.wcourse-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wcourse-jobtype-label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 700;
+}
+
+.wcourse-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wcourse-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  color: #333;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.wcourse-chip:hover {
+  border-color: #e8192c;
+  color: #e8192c;
+}
+
+.wcourse-chip--selected {
+  border-color: #e8192c;
+  background: #e8192c;
+  color: #fff;
+}
+
+.wcourse-chip--selected:hover {
+  background: #c0111f;
+  border-color: #c0111f;
+  color: #fff;
+}
+
 /* 応募可のみ トグルスイッチ */
 .wsearch-toggle-wrap {
   display: flex;
