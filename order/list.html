@@ -341,15 +341,29 @@
             </div>
           </div>
 
-          <!-- コース名 -->
+          <!-- 職種 -->
           <div class="form-row">
             <div class="form-label-cell">
-              <span class="form-label-text">コース名（自由記述）</span>
+              <span class="form-label-text">職種</span>
               <span class="field-badge field-badge--required">必須</span>
             </div>
             <div class="form-field-cell">
-              <input type="text" class="form-input" placeholder="例）ご近所ワーク 単発 アルバイト">
-              <p class="form-note">ご注意ください。コース名は「サービス区分 単発・日払い…」等、決められた命名規則に従って記述してください。変更が必要な場合は管理者へお問い合わせください。</p>
+              <select class="form-select">
+                <option>【オフィスビル／テナントビル／クリニック】日常清掃・ご近所管理人</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- コース名 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">コース名</span>
+              <span class="field-badge field-badge--required">必須</span>
+            </div>
+            <div class="form-field-cell">
+              <select class="form-select">
+                <option>オフィス／テナントのトイレ清掃／20分</option>
+              </select>
             </div>
           </div>
 
@@ -371,7 +385,9 @@
               <span class="field-badge field-badge--required">必須</span>
             </div>
             <div class="form-field-cell">
-              <textarea class="form-textarea" rows="10">■仕事タイプ
+              <textarea class="form-textarea" rows="10">【作業概要】
+
+■仕事タイプ
 ●スタッフワーク・エンターテインメント系
 ●アルバイト
 ●その他
