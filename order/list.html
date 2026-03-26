@@ -307,11 +307,6 @@
           <h2 class="modal-title" id="modalTitle">案件新規作成</h2>
         </div>
         <div class="modal-header-right">
-          <select class="create-type-select">
-            <option>スタッフワーク 単発 アルバイト 委員制</option>
-            <option>フリーランス 業務委託</option>
-            <option>スタッフワーク 定期 アルバイト</option>
-          </select>
           <button class="modal-close" id="btnCloseCreate" aria-label="閉じる">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <line x1="18" y1="6" x2="6" y2="18"/>
@@ -324,22 +319,6 @@
       <!-- モーダルボディ（スクロール） -->
       <div class="modal-body">
         <div class="proj-form">
-
-          <!-- 種別 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">種別</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <select class="form-select">
-                <option value="">選択してください</option>
-                <option>アルバイト</option>
-                <option>フリーランス</option>
-                <option>業務委託</option>
-              </select>
-            </div>
-          </div>
 
           <!-- 職種 -->
           <div class="form-row">
@@ -367,21 +346,10 @@
             </div>
           </div>
 
-          <!-- ワーク名 -->
+          <!-- 作業概要 -->
           <div class="form-row">
             <div class="form-label-cell">
-              <span class="form-label-text">ワーク名（自由記述）</span>
-              <span class="field-badge field-badge--optional">任意</span>
-            </div>
-            <div class="form-field-cell">
-              <input type="text" class="form-input" placeholder="例）スーパーのチラシ配布スタッフ">
-            </div>
-          </div>
-
-          <!-- 仕事内容 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">仕事内容</span>
+              <span class="form-label-text">作業概要</span>
               <span class="field-badge field-badge--required">必須</span>
             </div>
             <div class="form-field-cell">
@@ -411,6 +379,253 @@
 ・作業時は動きやすい服装でお越しください。
 ・貴重品の管理には十分ご注意ください。
 ・スマートフォンは作業中マナーモードにしてください。</textarea>
+            </div>
+          </div>
+
+          <!-- 作業手順 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業手順</span>
+            </div>
+            <div class="form-field-cell">
+              <button type="button" class="btn-secondary">作業手順を確認する</button>
+            </div>
+          </div>
+
+          <!-- 作業時間目安 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業時間目安</span>
+            </div>
+            <div class="form-field-cell">
+              <span class="form-plain-text">20分</span>
+            </div>
+          </div>
+
+          <!-- 最低報酬単価 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">最低報酬単価</span>
+            </div>
+            <div class="form-field-cell">
+              <span class="form-plain-text">700円</span>
+            </div>
+          </div>
+
+          <!-- 作業場所の都道府県 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業場所の都道府県</span>
+              <span class="field-badge field-badge--required">必須</span>
+            </div>
+            <div class="form-field-cell">
+              <select class="form-select">
+                <option value="">選択してください</option>
+                <option>北海道</option>
+                <option>青森県</option><option>岩手県</option><option>宮城県</option>
+                <option>秋田県</option><option>山形県</option><option>福島県</option>
+                <option>茨城県</option><option>栃木県</option><option>群馬県</option>
+                <option>埼玉県</option><option>千葉県</option><option>東京都</option>
+                <option>神奈川県</option>
+                <option>新潟県</option><option>富山県</option><option>石川県</option>
+                <option>福井県</option><option>山梨県</option><option>長野県</option>
+                <option>岐阜県</option><option>静岡県</option><option>愛知県</option>
+                <option>三重県</option>
+                <option>滋賀県</option><option>京都府</option><option>大阪府</option>
+                <option>兵庫県</option><option>奈良県</option><option>和歌山県</option>
+                <option>鳥取県</option><option>島根県</option><option>岡山県</option>
+                <option>広島県</option><option>山口県</option>
+                <option>徳島県</option><option>香川県</option><option>愛媛県</option>
+                <option>高知県</option>
+                <option>福岡県</option><option>佐賀県</option><option>長崎県</option>
+                <option>熊本県</option><option>大分県</option><option>宮崎県</option>
+                <option>鹿児島県</option><option>沖縄県</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 作業場所の住所１ -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業場所の住所１</span>
+              <span class="field-badge field-badge--required">必須</span>
+            </div>
+            <div class="form-field-cell">
+              <input type="text" class="form-input" placeholder="例）渋谷区渋谷1-1-1">
+            </div>
+          </div>
+
+          <!-- 作業場所の住所２ -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業場所の住所２<br>（契約者のみへ公開）</span>
+              <span class="field-badge field-badge--optional">任意</span>
+            </div>
+            <div class="form-field-cell">
+              <input type="text" class="form-input" placeholder="例）○○ビル3F">
+            </div>
+          </div>
+
+          <!-- 作業場所についての補足事項 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業場所についての補足事項</span>
+              <span class="field-badge field-badge--optional">任意</span>
+            </div>
+            <div class="form-field-cell">
+              <textarea class="form-textarea" rows="4"></textarea>
+            </div>
+          </div>
+
+          <!-- 作業体制 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業体制</span>
+              <span class="field-badge field-badge--required">必須</span>
+            </div>
+            <div class="form-field-cell">
+              <div class="form-radio-group">
+                <label class="form-radio-label">
+                  <input type="radio" name="work_style" value="single"><span>1人にお願いしたい</span>
+                </label>
+                <label class="form-radio-label">
+                  <input type="radio" name="work_style" value="multiple"><span>複数人のシェアでお願いしたい</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 作業・契約期間 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業・契約期間</span>
+              <span class="field-badge field-badge--required">必須</span>
+            </div>
+            <div class="form-field-cell">
+              <div class="form-period">
+                <div class="form-inline">
+                  <span class="form-period-label">開始</span>
+                  <select class="form-select form-select--short">
+                    <option value="">年</option>
+                    <option>2024年</option><option>2025年</option><option>2026年</option>
+                    <option>2027年</option><option>2028年</option>
+                  </select>
+                  <select class="form-select form-select--short">
+                    <option value="">月</option>
+                    <option>1月</option><option>2月</option><option>3月</option>
+                    <option>4月</option><option>5月</option><option>6月</option>
+                    <option>7月</option><option>8月</option><option>9月</option>
+                    <option>10月</option><option>11月</option><option>12月</option>
+                  </select>
+                  <select class="form-select form-select--short">
+                    <option value="">日</option>
+                    <option>1日</option><option>2日</option><option>3日</option>
+                    <option>4日</option><option>5日</option><option>6日</option>
+                    <option>7日</option><option>8日</option><option>9日</option>
+                    <option>10日</option><option>11日</option><option>12日</option>
+                    <option>13日</option><option>14日</option><option>15日</option>
+                    <option>16日</option><option>17日</option><option>18日</option>
+                    <option>19日</option><option>20日</option><option>21日</option>
+                    <option>22日</option><option>23日</option><option>24日</option>
+                    <option>25日</option><option>26日</option><option>27日</option>
+                    <option>28日</option><option>29日</option><option>30日</option>
+                    <option>31日</option>
+                  </select>
+                </div>
+                <div class="form-inline">
+                  <span class="form-period-label">終了</span>
+                  <select class="form-select form-select--short">
+                    <option value="">年</option>
+                    <option>2024年</option><option>2025年</option><option>2026年</option>
+                    <option>2027年</option><option>2028年</option>
+                  </select>
+                  <select class="form-select form-select--short">
+                    <option value="">月</option>
+                    <option>1月</option><option>2月</option><option>3月</option>
+                    <option>4月</option><option>5月</option><option>6月</option>
+                    <option>7月</option><option>8月</option><option>9月</option>
+                    <option>10月</option><option>11月</option><option>12月</option>
+                  </select>
+                  <select class="form-select form-select--short">
+                    <option value="">日</option>
+                    <option>1日</option><option>2日</option><option>3日</option>
+                    <option>4日</option><option>5日</option><option>6日</option>
+                    <option>7日</option><option>8日</option><option>9日</option>
+                    <option>10日</option><option>11日</option><option>12日</option>
+                    <option>13日</option><option>14日</option><option>15日</option>
+                    <option>16日</option><option>17日</option><option>18日</option>
+                    <option>19日</option><option>20日</option><option>21日</option>
+                    <option>22日</option><option>23日</option><option>24日</option>
+                    <option>25日</option><option>26日</option><option>27日</option>
+                    <option>28日</option><option>29日</option><option>30日</option>
+                    <option>31日</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 作業可能時間帯 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業可能時間帯</span>
+              <span class="field-badge field-badge--required">必須</span>
+            </div>
+            <div class="form-field-cell">
+              <select class="form-select">
+                <option value="">選択してください</option>
+                <option>いつでも良い</option>
+                <option>開始時間を指定する</option>
+                <option>終了時間を指定する</option>
+                <option>開始と終了時間を指定する</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 作業可能時間帯・曜日・納期についての補足事項 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業可能時間帯・曜日・納期についての補足事項</span>
+              <span class="field-badge field-badge--optional">任意</span>
+            </div>
+            <div class="form-field-cell">
+              <textarea class="form-textarea" rows="4"></textarea>
+            </div>
+          </div>
+
+          <!-- 報酬単価 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">報酬単価</span>
+              <span class="field-badge field-badge--required">必須</span>
+            </div>
+            <div class="form-field-cell">
+              <div class="form-inline">
+                <input type="number" class="form-input form-input--short" placeholder="0" min="0">
+                <span class="form-unit">円</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 掲載用画像 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">掲載用画像</span>
+              <span class="field-badge field-badge--optional">任意</span>
+            </div>
+            <div class="form-field-cell">
+              <input type="file" accept="image/*" class="form-input-file">
+            </div>
+          </div>
+
+          <!-- 作業についてのやり取りに関する補足事項 -->
+          <div class="form-row">
+            <div class="form-label-cell">
+              <span class="form-label-text">作業についてのやり取りに関する補足事項</span>
+              <span class="field-badge field-badge--optional">任意</span>
+            </div>
+            <div class="form-field-cell">
+              <textarea class="form-textarea" rows="4"></textarea>
             </div>
           </div>
 
