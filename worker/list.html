@@ -137,19 +137,6 @@
   </section>
   <!-- ===== /検索コントロール ===== -->
 
-  <!-- ===== 職種・コースフィルター ===== -->
-  <section class="wcourse-filter">
-    <div class="wcourse-filter-inner">
-      <div class="wcourse-group">
-        <div class="wcourse-jobtype-label">【オフィス／テナントビル／クリニック】日常清掃、ご近所管理人</div>
-        <div class="wcourse-chips">
-          <button class="wcourse-chip wcourse-chip--selected">オフィス／テナントのトイレ掃除／20分</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ===== /職種・コースフィルター ===== -->
-
   <!-- ===== 案件一覧 ===== -->
   <main class="wlist-main">
     <div class="wlist-inner">
@@ -358,15 +345,6 @@
   </footer>
 
   <script>
-  /* =============================================
-     職種・コースチップ トグル
-  ============================================= */
-  document.querySelectorAll('.wcourse-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      chip.classList.toggle('wcourse-chip--selected');
-    });
-  });
-
   /* =============================================
      日付ピッカー（search.html と共通ロジック）
   ============================================= */
