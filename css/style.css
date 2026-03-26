@@ -2254,6 +2254,20 @@ a.nav-user--active .header-avatar-icon {
   padding: 8px 0;
 }
 
+.form-plain-text--block {
+  display: block;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #333;
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 0;
+}
+
 /* 期間フィールド */
 .form-period {
   display: flex;

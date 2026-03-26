@@ -353,7 +353,7 @@
               <span class="field-badge field-badge--required">必須</span>
             </div>
             <div class="form-field-cell">
-              <textarea class="form-textarea" rows="10">【作業概要】
+              <pre class="form-plain-text form-plain-text--block">【作業概要】
 
 ■仕事タイプ
 ●スタッフワーク・エンターテインメント系
@@ -378,7 +378,7 @@
 【注意事項】
 ・作業時は動きやすい服装でお越しください。
 ・貴重品の管理には十分ご注意ください。
-・スマートフォンは作業中マナーモードにしてください。</textarea>
+・スマートフォンは作業中マナーモードにしてください。</pre>
             </div>
           </div>
 
@@ -607,17 +607,6 @@
             </div>
           </div>
 
-          <!-- 掲載用画像 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">掲載用画像</span>
-              <span class="field-badge field-badge--optional">任意</span>
-            </div>
-            <div class="form-field-cell">
-              <input type="file" accept="image/*" class="form-input-file">
-            </div>
-          </div>
-
           <!-- 作業についてのやり取りに関する補足事項 -->
           <div class="form-row">
             <div class="form-label-cell">
@@ -660,207 +649,10 @@
             </div>
           </div>
 
-          <!-- 労働時間合計 -->
+          <!-- 掲載用画像 -->
           <div class="form-row">
             <div class="form-label-cell">
-              <span class="form-label-text">労働時間合計</span>
-              <span class="field-badge field-badge--optional">任意</span>
-            </div>
-            <div class="form-field-cell">
-              <div class="form-inline">
-                <input type="number" class="form-input form-input--short" placeholder="0" min="0">
-                <span class="form-unit">時間</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 応募受付中のお知らせ -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">応募受付中のお知らせ</span>
-            </div>
-            <div class="form-field-cell">
-              <label class="form-checkbox-label">
-                <input type="checkbox" class="form-checkbox">
-                <span>応募受付中であることをワーカーに通知する</span>
-              </label>
-              <p class="form-note">チェックを入れると、案件公開時に登録ワーカーへプッシュ通知が送信されます。</p>
-            </div>
-          </div>
-
-          <!-- 案件受付の締切日時 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">案件受付の締切日時</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <div class="form-inline">
-                <input type="date" class="form-input form-input--date">
-                <input type="time" class="form-input form-input--time">
-              </div>
-            </div>
-          </div>
-
-          <!-- 受付締切メール通知 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">受付締切メール通知</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <select class="form-select">
-                <option value="">選択してください</option>
-                <option>締切の3日前に通知</option>
-                <option>締切の1週間前に通知</option>
-                <option>締切当日に通知</option>
-                <option>通知しない</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- 受取者のメール -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">受取者のメール<br>（指定必要）</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <input type="email" class="form-input" placeholder="example@gokinjowork.jp">
-              <p class="form-note">通知を受け取るメールアドレスを入力してください。複数指定する場合はカンマ区切りで入力してください。</p>
-            </div>
-          </div>
-
-          <!-- 予備予定日 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">予備予定日</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <input type="date" class="form-input form-input--date">
-              <p class="form-note">雨天・緊急時の予備日を設定してください。</p>
-            </div>
-          </div>
-
-          <!-- 前払予定日バイパス -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">前払予定日バイパス<br>（前払い）</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <select class="form-select">
-                <option value="">選択してください</option>
-                <option value="1">あり（前払いを許可する）</option>
-                <option value="0">なし（前払いを許可しない）</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- 前払い予定日 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">前払い予定日<br>（任意確認）</span>
-              <span class="field-badge field-badge--optional">任意</span>
-            </div>
-            <div class="form-field-cell">
-              <input type="date" class="form-input form-input--date">
-            </div>
-          </div>
-
-          <!-- 支払方法 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">支払方法</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <div class="form-radio-group">
-                <label class="form-radio-label">
-                  <input type="radio" name="m_payment_method" value="monthly"><span>月払い</span>
-                </label>
-                <label class="form-radio-label">
-                  <input type="radio" name="m_payment_method" value="weekly"><span>週払い</span>
-                </label>
-                <label class="form-radio-label">
-                  <input type="radio" name="m_payment_method" value="daily"><span>日払い</span>
-                </label>
-                <label class="form-radio-label">
-                  <input type="radio" name="m_payment_method" value="advance"><span>前払い</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- 支払条件 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">支払条件</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <select class="form-select">
-                <option value="">選択してください</option>
-                <option>当月末払い</option>
-                <option>翌月払い</option>
-                <option>翌々月払い</option>
-                <option>都度払い</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- 支払予備日 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">支払予備日</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <div class="form-inline">
-                <select class="form-select form-select--short">
-                  <option value="">月</option>
-                  <option>1月</option><option>2月</option><option>3月</option>
-                  <option>4月</option><option>5月</option><option>6月</option>
-                  <option>7月</option><option>8月</option><option>9月</option>
-                  <option>10月</option><option>11月</option><option>12月</option>
-                </select>
-                <select class="form-select form-select--short">
-                  <option value="">日</option>
-                  <option>1日</option><option>5日</option><option>10日</option>
-                  <option>15日</option><option>20日</option><option>25日</option>
-                  <option>末日</option>
-                </select>
-              </div>
-              <p class="form-note">支払いが土日祝日と重なった場合の振替日を設定してください。</p>
-            </div>
-          </div>
-
-          <!-- 応募予定者数 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">応募予定者数<br>（単発・日払い・週払い）</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <div class="form-inline">
-                <input type="number" class="form-input form-input--short" placeholder="0" min="1">
-                <span class="form-unit">人</span>
-              </div>
-              <div class="form-info-box form-info-box--warning">
-                <strong>注意（案件作成前にご確認ください）</strong><br>
-                以下の場合、案件申請審査が必要となります。<br>
-                ・応募予定者数が 50名以上 の場合<br>
-                ・過去に規約違反があった場合<br>
-                審査が必要な場合は、管理者へお問い合わせいただき、案件前に解除申請を行ってください。
-              </div>
-            </div>
-          </div>
-
-          <!-- 成果物 -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">成果物</span>
+              <span class="form-label-text">掲載用画像</span>
               <span class="field-badge field-badge--optional">任意</span>
             </div>
             <div class="form-field-cell">
@@ -880,96 +672,7 @@
                   <input type="file" accept="image/*" hidden>
                 </label>
               </div>
-              <p class="form-note">PNG・JPG・GIF 形式（最大 5MB）。成果物のサンプル画像や作業イメージを添付してください。</p>
-            </div>
-          </div>
-
-          <!-- 会社について -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">会社について</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <div class="form-inline">
-                <select class="form-select form-select--wide">
-                  <option value="">会社情報を選択してください</option>
-                  <option>株式会社ご近所ワーク</option>
-                  <option>gokinjowork合同会社</option>
-                </select>
-                <button type="button" class="btn-copy">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                  </svg>
-                  コピーする
-                </button>
-              </div>
-              <div class="form-info-box">
-                以前作成した案件の会社情報をコピーして利用できます。「コピーする」ボタンをクリックすると、選択した会社の情報が各項目に自動入力されます。
-              </div>
-            </div>
-          </div>
-
-          <!-- 業種について -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">業種について</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <select class="form-select">
-                <option value="">業種を選択してください</option>
-                <option>飲食・フード</option>
-                <option>小売・販売</option>
-                <option>物流・配送</option>
-                <option>イベント・エンターテインメント</option>
-                <option>清掃・施設管理</option>
-                <option>事務・オフィスワーク</option>
-                <option>IT・テクノロジー</option>
-                <option>医療・介護</option>
-                <option>建設・土木</option>
-                <option>その他</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- 想定予定者（報酬） -->
-          <div class="form-row">
-            <div class="form-label-cell">
-              <span class="form-label-text">想定予定者（報酬）</span>
-              <span class="field-badge field-badge--required">必須</span>
-            </div>
-            <div class="form-field-cell">
-              <div class="form-wage-grid">
-                <div class="form-wage-row">
-                  <span class="form-wage-label">基本給（時給）</span>
-                  <div class="form-inline">
-                    <input type="number" class="form-input form-input--short" placeholder="1200" min="0">
-                    <span class="form-unit">円</span>
-                  </div>
-                </div>
-                <div class="form-wage-row">
-                  <span class="form-wage-label">諸費用（交通費）</span>
-                  <div class="form-inline">
-                    <input type="number" class="form-input form-input--short" placeholder="0" min="0">
-                    <span class="form-unit">円</span>
-                  </div>
-                </div>
-                <div class="form-wage-row">
-                  <span class="form-wage-label">サービス利用料（発注者）</span>
-                  <div class="form-inline">
-                    <input type="number" class="form-input form-input--xshort" placeholder="10" min="0" max="100">
-                    <span class="form-unit">%</span>
-                  </div>
-                </div>
-                <div class="form-wage-row">
-                  <span class="form-wage-label">サービス利用料（受注者）</span>
-                  <div class="form-inline">
-                    <input type="number" class="form-input form-input--xshort" placeholder="5" min="0" max="100">
-                    <span class="form-unit">%</span>
-                  </div>
-                </div>
-              </div>
+              <p class="form-note">PNG・JPG・GIF 形式（最大 5MB）</p>
             </div>
           </div>
 
