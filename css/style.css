@@ -3508,7 +3508,7 @@ a.nav-user--active .header-avatar-icon {
 .pay-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 780px;
+  min-width: 1100px;
 }
 
 .pay-th {
@@ -3607,6 +3607,172 @@ a.nav-user--active .header-avatar-icon {
   padding: 16px 4px 20px;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+/* 絞り込みバー */
+.pay-filter-bar {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 14px 16px;
+  background: #f9f9f9;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.pay-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pay-filter-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  white-space: nowrap;
+}
+
+.pay-filter-select {
+  padding: 5px 28px 5px 8px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.pay-filter-date {
+  padding: 5px 8px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.pay-filter-range-sep {
+  font-size: 13px;
+  color: #888;
+}
+
+.pay-filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pay-filter-btn {
+  padding: 6px 18px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.pay-filter-btn:hover {
+  background: #c0121f;
+}
+
+.pay-filter-reset {
+  padding: 6px 14px;
+  background: #fff;
+  color: #666;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.pay-filter-reset:hover {
+  border-color: #999;
+  color: #333;
+}
+
+/* ソート可能ヘッダー */
+.pay-th--sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.pay-th--sortable:hover {
+  background: #ffe0e3;
+}
+
+.pay-sort-icon {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+  color: #e8192c;
+  opacity: 1;
+}
+
+.pay-sort-icon--neutral {
+  color: #bbb;
+  transform: rotate(0deg);
+}
+
+.pay-th--sort-asc .pay-sort-icon {
+  transform: rotate(0deg);
+}
+
+.pay-th--sort-desc .pay-sort-icon {
+  transform: rotate(180deg);
+}
+
+/* 新規列のヘッダー幅 */
+.pay-th--workdate  { width: 90px; white-space: nowrap; }
+.pay-th--course    { min-width: 120px; }
+.pay-th--location  { min-width: 160px; }
+.pay-th--expense   { min-width: 110px; }
+
+/* 新規列のセルスタイル */
+.pay-worker-id {
+  display: block;
+  font-size: 10px;
+  color: #bbb;
+  margin-top: 2px;
+}
+
+.pay-td--workdate {
+  white-space: nowrap;
+  font-size: 12px;
+  color: #444;
+}
+
+.pay-td--course {
+  font-size: 12px;
+  color: #444;
+}
+
+.pay-td--location {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.pay-td--expense {
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.pay-td--expense-none {
+  color: #bbb;
 }
 
 /* ===========================
