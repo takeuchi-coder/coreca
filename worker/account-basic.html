@@ -118,8 +118,8 @@
             </div>
             <div class="wbasic-field-col">
               <div class="wbasic-input-group">
-                <input class="wbasic-input wbasic-input--name" type="text" id="lastName" name="lastName" value="竹内" placeholder="姓" required>
-                <input class="wbasic-input wbasic-input--name" type="text" id="firstName" name="firstName" value="由佳" placeholder="名" required>
+                <input class="wbasic-input wbasic-input--name" type="text" id="lastName" name="lastName" placeholder="姓" required>
+                <input class="wbasic-input wbasic-input--name" type="text" id="firstName" name="firstName" placeholder="名" required>
               </div>
             </div>
           </div>
@@ -132,8 +132,8 @@
             </div>
             <div class="wbasic-field-col">
               <div class="wbasic-input-group">
-                <input class="wbasic-input wbasic-input--name" type="text" id="lastNameKana" name="lastNameKana" value="タケウチ" placeholder="セイ">
-                <input class="wbasic-input wbasic-input--name" type="text" id="firstNameKana" name="firstNameKana" value="ユカ" placeholder="メイ">
+                <input class="wbasic-input wbasic-input--name" type="text" id="lastNameKana" name="lastNameKana" placeholder="セイ">
+                <input class="wbasic-input wbasic-input--name" type="text" id="firstNameKana" name="firstNameKana" placeholder="メイ">
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@
                   <input type="radio" name="gender" value="male"> 男性
                 </label>
                 <label class="wbasic-radio-label">
-                  <input type="radio" name="gender" value="female" checked> 女性
+                  <input type="radio" name="gender" value="female"> 女性
                 </label>
               </div>
             </div>
@@ -186,7 +186,7 @@
                   <span class="wbasic-select-unit">日</span>
                 </div>
               </div>
-              <div class="wbasic-birth-age" id="birthAge">39歳</div>
+              <div class="wbasic-birth-age" id="birthAge"></div>
               <div class="wbasic-birth-caution">※18歳未満は登録できません。</div>
             </div>
           </div>
@@ -199,7 +199,7 @@
               <span class="wbasic-badge-required">必須</span>
             </div>
             <div class="wbasic-field-col">
-              <input class="wbasic-input wbasic-input--tel" type="tel" id="tel" name="tel" value="08015685804" placeholder="例：09012345678" required>
+              <input class="wbasic-input wbasic-input--tel" type="tel" id="tel" name="tel" placeholder="例：09012345678" required>
               <div class="wbasic-hint">半角数字でご入力ください。ハイフン (-) などの区切りは不要です。</div>
             </div>
           </div>
@@ -212,7 +212,7 @@
             </div>
             <div class="wbasic-field-col">
               <div class="wbasic-zip-row">
-                <input class="wbasic-input wbasic-input--zip" type="text" id="zip" name="zip" value="4750848" placeholder="例：1000001" maxlength="7">
+                <input class="wbasic-input wbasic-input--zip" type="text" id="zip" name="zip" placeholder="例：1000001" maxlength="7">
                 <button type="button" class="wbasic-btn-inline">住所入力</button>
               </div>
             </div>
@@ -251,7 +251,7 @@
                   <option value="nagano">長野県</option>
                   <option value="gifu">岐阜県</option>
                   <option value="shizuoka">静岡県</option>
-                  <option value="aichi" selected>愛知県</option>
+                  <option value="aichi">愛知県</option>
                   <option value="mie">三重県</option>
                   <option value="shiga">滋賀県</option>
                   <option value="kyoto">京都府</option>
@@ -290,7 +290,7 @@
               <span class="wbasic-badge-required">必須</span>
             </div>
             <div class="wbasic-field-col">
-              <input class="wbasic-input wbasic-input--city" type="text" id="city" name="city" value="半田市成岩本町4-41-3" placeholder="例：千代田区" required>
+              <input class="wbasic-input wbasic-input--city" type="text" id="city" name="city" placeholder="例：千代田区" required>
             </div>
           </div>
           <hr class="wbasic-row-rule">
@@ -361,29 +361,35 @@
   <script>
   (function () {
     var currentYear = new Date().getFullYear();
-    var initYear = 1986, initMonth = 6, initDay = 22;
 
     var yearSel = document.getElementById('birthYear');
+    var blankOpt = document.createElement('option');
+    blankOpt.value = ''; blankOpt.textContent = '年を選択';
+    yearSel.appendChild(blankOpt);
     for (var y = currentYear - 17; y >= 1920; y--) {
       var opt = document.createElement('option');
       opt.value = y; opt.textContent = y;
-      if (y === initYear) opt.selected = true;
       yearSel.appendChild(opt);
     }
 
     var monthSel = document.getElementById('birthMonth');
+    var blankMonthOpt = document.createElement('option');
+    blankMonthOpt.value = ''; blankMonthOpt.textContent = '月を選択';
+    monthSel.appendChild(blankMonthOpt);
     for (var m = 1; m <= 12; m++) {
       var opt = document.createElement('option');
       opt.value = m; opt.textContent = ('0' + m).slice(-2);
-      if (m === initMonth) opt.selected = true;
       monthSel.appendChild(opt);
     }
 
     function buildDays(year, month) {
       var daySel = document.getElementById('birthDay');
-      var cur = parseInt(daySel.value) || initDay;
+      var cur = parseInt(daySel.value);
       daySel.innerHTML = '';
-      var last = new Date(year, month, 0).getDate();
+      var blankDayOpt = document.createElement('option');
+      blankDayOpt.value = ''; blankDayOpt.textContent = '日を選択';
+      daySel.appendChild(blankDayOpt);
+      var last = (year && month) ? new Date(year, month, 0).getDate() : 31;
       for (var d = 1; d <= last; d++) {
         var opt = document.createElement('option');
         opt.value = d; opt.textContent = ('0' + d).slice(-2);
@@ -391,12 +397,13 @@
         daySel.appendChild(opt);
       }
     }
-    buildDays(initYear, initMonth);
+    buildDays(null, null);
 
     function calcAge() {
       var y = parseInt(yearSel.value);
       var mo = parseInt(monthSel.value);
       var d = parseInt(document.getElementById('birthDay').value);
+      if (!y || !mo || !d) { document.getElementById('birthAge').textContent = ''; return; }
       var today = new Date();
       var age = today.getFullYear() - y;
       if (today < new Date(today.getFullYear(), mo - 1, d)) age--;
