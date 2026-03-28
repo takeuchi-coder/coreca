@@ -125,9 +125,16 @@ function renderRow(p) {
       </td>
       <td style="text-align:center;font-weight:700;color:#333;">${p.contracts}</td>
       <td class="col-actions">
-        <div class="row-actions">
-          <a href="detail.html" class="row-detail-btn" title="詳細">›</a>
-          <button class="row-menu-btn" title="メニュー">…</button>
+        <div class="row-action-btns">
+          <a href="applicants.html" class="row-action-btn row-action-btn--applicants">
+            ${ICONS.users}応募者・契約者を確認する
+          </a>
+          <a href="procedure.html" class="row-action-btn row-action-btn--procedure">
+            ${ICONS.file}作業手順・報告を確認する
+          </a>
+          <button class="row-action-btn row-action-btn--renew">
+            ${ICONS.renew}契約を更新する
+          </button>
         </div>
       </td>
     </tr>
@@ -260,7 +267,7 @@ function renderList() {
             <th>終了日</th>
             <th>状態</th>
             <th style="text-align:center;">契約者</th>
-            <th class="col-actions">アクション</th>
+            <th class="col-actions">操作</th>
           </tr>
         </thead>
         <tbody>

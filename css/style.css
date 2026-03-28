@@ -1423,36 +1423,61 @@ a.nav-user--active .header-avatar-icon {
 
 /* Row action buttons */
 .col-actions {
-  width: 80px;
-  text-align: right;
+  width: 180px;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.row-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+.row-action-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.row-detail-btn,
-.row-menu-btn {
-  display: inline-flex;
+.row-action-btn {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border: 1px solid #ddd;
+  gap: 5px;
+  padding: 6px 10px;
   border-radius: 4px;
-  background: #fff;
-  color: #555;
-  font-size: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.15s;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  justify-content: center;
 }
 
-.row-detail-btn:hover,
-.row-menu-btn:hover {
-  border-color: #e8192c;
+.row-action-btn--applicants {
+  background: #fff;
+  border: 1px solid #1565c0;
+  color: #1565c0;
+}
+.row-action-btn--applicants:hover {
+  background: #1565c0;
+  color: #fff;
+}
+
+.row-action-btn--procedure {
+  background: #fff;
+  border: 1px solid #2e7d32;
+  color: #2e7d32;
+}
+.row-action-btn--procedure:hover {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.row-action-btn--renew {
+  background: #fff;
+  border: 1px solid #e8192c;
   color: #e8192c;
+}
+.row-action-btn--renew:hover {
+  background: #e8192c;
+  color: #fff;
 }
 
 /* ===========================
