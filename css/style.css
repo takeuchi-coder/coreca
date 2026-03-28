@@ -3508,7 +3508,7 @@ a.nav-user--active .header-avatar-icon {
 .pay-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 1100px;
+  min-width: 1600px;
 }
 
 .pay-th {
@@ -3741,6 +3741,14 @@ a.nav-user--active .header-avatar-icon {
 .pay-th--expense   { min-width: 110px; }
 
 /* 新規列のセルスタイル */
+.pay-person-name {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
 .pay-worker-id {
   display: block;
   font-size: 10px;
