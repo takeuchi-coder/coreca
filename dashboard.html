@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ダッシュボード | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- ロゴ -->
+      <a href="dashboard.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
+
+      <!-- ナビゲーション -->
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item nav-item--active">
+            <a href="dashboard.html" class="nav-link">
+              <span class="nav-text">ダッシュボード</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="order/list.html" class="nav-link">
+              <span class="nav-text">案件作成・一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="payment/list.html" class="nav-link">
+              <span class="nav-text">報酬支払い情報</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="message/list.html" class="nav-link">
+              <span class="nav-text">メッセージ一覧</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 右側: アカウント情報 -->
+      <div class="nav-actions">
+        <a href="account/index.html" class="nav-user" aria-label="アカウント情報">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+          <svg class="chevron-down" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- ハンバーガーメニュー（モバイル用） -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="dashboard-main">
+
+    <!-- ウェルカムバナー -->
+    <div class="dashboard-welcome">
+      <div class="dashboard-welcome__text">
+        <h1>おかようございます、aaaaaa さん</h1>
+        <p>本日も ご近所ワーク をご利用いただきありがとうございます。現在の案件状況をご確認ください。</p>
+      </div>
+      <a href="order/create.html" class="dashboard-welcome__action">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        案件を新規作成
+      </a>
+    </div>
+
+    <!-- サマリー統計 -->
+    <div class="dashboard-stats">
+
+      <a href="order/list.html" class="stat-card">
+        <div class="stat-card__icon stat-card__icon--red">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+          </svg>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value">5<span class="stat-card__unit">件</span></div>
+          <div class="stat-card__label">進行中の案件</div>
+          <span class="stat-card__link">案件一覧を見る →</span>
+        </div>
+      </a>
+
+      <a href="order/applicants.html" class="stat-card">
+        <div class="stat-card__icon stat-card__icon--orange">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value">3<span class="stat-card__unit">名</span></div>
+          <div class="stat-card__label">新着応募者</div>
+          <span class="stat-card__link">応募者を確認 →</span>
+        </div>
+      </a>
+
+      <a href="message/list.html" class="stat-card">
+        <div class="stat-card__icon stat-card__icon--blue">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value">2<span class="stat-card__unit">件</span></div>
+          <div class="stat-card__label">未読メッセージ</div>
+          <span class="stat-card__link">メッセージを見る →</span>
+        </div>
+      </a>
+
+      <a href="payment/list.html" class="stat-card">
+        <div class="stat-card__icon stat-card__icon--green">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+          </svg>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__value">¥<span style="font-size:22px;">156,000</span></div>
+          <div class="stat-card__label">今月の支払い総額</div>
+          <span class="stat-card__link">支払い情報を見る →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- クイックアクション -->
+    <div class="dashboard-section">
+      <div class="dashboard-section__header">
+        <span class="dashboard-section__title">
+          <svg class="dashboard-section__title-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          クイックアクション
+        </span>
+      </div>
+      <div class="dashboard-actions">
+
+        <a href="order/create.html" class="action-card">
+          <div class="action-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </div>
+          <span class="action-card__label">案件を<br>新規作成</span>
+        </a>
+
+        <a href="order/list.html" class="action-card">
+          <div class="action-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+            </svg>
+          </div>
+          <span class="action-card__label">案件一覧を<br>確認する</span>
+        </a>
+
+        <a href="order/applicants.html" class="action-card">
+          <div class="action-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <span class="action-card__label">応募者を<br>確認する</span>
+        </a>
+
+        <a href="message/list.html" class="action-card">
+          <div class="action-card__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <span class="action-card__label">メッセージ<br>一覧を見る</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- 2カラムレイアウト: 最近の案件 + 要対応 -->
+    <div class="dashboard-two-col">
+
+      <!-- 最近の案件 -->
+      <div class="dashboard-section">
+        <div class="dashboard-section__header">
+          <span class="dashboard-section__title">
+            <svg class="dashboard-section__title-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+            </svg>
+            最近の案件
+          </span>
+          <a href="order/list.html" class="dashboard-section__link">
+            すべて見る
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+        </div>
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>案件名</th>
+              <th>ステータス</th>
+              <th>期間</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="order/detail.html" class="dashboard-table__title-link">
+                  庭の草刈り・剪定（戸建て）
+                </a>
+              </td>
+              <td><span class="order-status-badge order-status-badge--accepting">募集中</span></td>
+              <td style="font-size:12px;color:#777;">〜 2026/04/15</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="order/detail.html" class="dashboard-table__title-link">
+                  引越し荷物の運搬補助
+                </a>
+              </td>
+              <td><span class="order-status-badge order-status-badge--contracted">契約中</span></td>
+              <td style="font-size:12px;color:#777;">〜 2026/03/30</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="order/detail.html" class="dashboard-table__title-link">
+                  倉庫の整理・棚卸し作業
+                </a>
+              </td>
+              <td><span class="order-status-badge order-status-badge--inspection">検収待ち</span></td>
+              <td style="font-size:12px;color:#777;">〜 2026/03/28</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="order/detail.html" class="dashboard-table__title-link">
+                  イベント会場の設営補助
+                </a>
+              </td>
+              <td><span class="order-status-badge order-status-badge--accepting">募集中</span></td>
+              <td style="font-size:12px;color:#777;">〜 2026/04/05</td>
+            </tr>
+            <tr>
+              <td>
+                <a href="order/detail.html" class="dashboard-table__title-link">
+                  農業補助（収穫作業）
+                </a>
+              </td>
+              <td><span class="order-status-badge order-status-badge--done">完了</span></td>
+              <td style="font-size:12px;color:#777;">2026/03/10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 要対応タスク -->
+      <div class="dashboard-section">
+        <div class="dashboard-section__header">
+          <span class="dashboard-section__title">
+            <svg class="dashboard-section__title-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            要対応
+          </span>
+          <span style="font-size:12px;color:#e8192c;font-weight:700;">3件</span>
+        </div>
+        <div class="dashboard-alerts">
+
+          <a href="order/applicants.html" class="alert-item">
+            <span class="alert-item__dot alert-item__dot--red"></span>
+            <div class="alert-item__body">
+              <div class="alert-item__title">新着応募者を確認してください</div>
+              <div class="alert-item__sub">「庭の草刈り・剪定」に 2名 の応募があります</div>
+            </div>
+            <svg class="alert-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+
+          <a href="order/procedure.html" class="alert-item">
+            <span class="alert-item__dot alert-item__dot--orange"></span>
+            <div class="alert-item__body">
+              <div class="alert-item__title">作業報告の検収が必要です</div>
+              <div class="alert-item__sub">「倉庫の整理・棚卸し」の検収期限が本日です</div>
+            </div>
+            <svg class="alert-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+
+          <a href="message/list.html" class="alert-item">
+            <span class="alert-item__dot alert-item__dot--blue"></span>
+            <div class="alert-item__body">
+              <div class="alert-item__title">未読メッセージがあります</div>
+              <div class="alert-item__sub">ワーカー「田中 太郎」さんからのメッセージ</div>
+            </div>
+            <svg class="alert-item__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事をお探しの方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+</body>
+</html>
