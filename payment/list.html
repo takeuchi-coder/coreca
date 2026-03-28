@@ -127,14 +127,25 @@
             <option value="50">50件</option>
           </select>
         </div>
-        <button class="btn-csv-download">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
-          </svg>
-          CSVダウンロード
-        </button>
+        <div class="pay-csv-actions">
+          <button class="btn-csv-download">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            CSVダウンロード
+          </button>
+          <label class="btn-csv-upload">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 14 12 9 17 14"/>
+              <line x1="12" y1="9" x2="12" y2="21"/>
+            </svg>
+            CSVアップロード（ステータス更新）
+            <input type="file" accept=".csv" class="pay-csv-file-input">
+          </label>
+        </div>
       </div>
 
       <!-- 支払テーブル（案件単位・全情報 + 全銀フォーマット項目） -->
@@ -142,6 +153,8 @@
         <table class="pay-table">
           <thead>
             <tr>
+              <!-- ステータス -->
+              <th class="pay-th pay-th--status">ステータス</th>
               <!-- 案件情報 -->
               <th class="pay-th pay-th--order-id">案件ID</th>
               <th class="pay-th pay-th--course">コース名</th>
@@ -189,6 +202,7 @@
 
             <!-- 案件30012：阿部 圭子 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--done">振込完了</span></td>
               <td class="pay-td pay-td--id">30012</td>
               <td class="pay-td">戸建て清掃スタンダード</td>
               <td class="pay-td pay-td--address">福岡県 筑紫野市 二日市北 3-2-5</td>
@@ -218,6 +232,7 @@
 
             <!-- 案件30087：阿部 圭子 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--done">振込完了</span></td>
               <td class="pay-td pay-td--id">30087</td>
               <td class="pay-td">マンション共用部清掃</td>
               <td class="pay-td pay-td--address">福岡県 筑紫野市 原田 1-10-18</td>
@@ -247,6 +262,7 @@
 
             <!-- 案件30045：香取 久美子 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--requested">振込申請</span></td>
               <td class="pay-td pay-td--id">30045</td>
               <td class="pay-td">軽作業スタンダード</td>
               <td class="pay-td pay-td--address">宮城県 仙台市青葉区本町 2-3</td>
@@ -276,6 +292,7 @@
 
             <!-- 案件30098：香取 久美子 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--requested">振込申請</span></td>
               <td class="pay-td pay-td--id">30098</td>
               <td class="pay-td">データ入力コース</td>
               <td class="pay-td pay-td--address">宮城県 仙台市宮城野区二十人町 300-1</td>
@@ -305,6 +322,7 @@
 
             <!-- 案件30156：石本 優良 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--none">未申請</span></td>
               <td class="pay-td pay-td--id">30156</td>
               <td class="pay-td">チラシ配布コース</td>
               <td class="pay-td pay-td--address">福岡県 北九州市八幡西区熊手 1-1</td>
@@ -334,6 +352,7 @@
 
             <!-- 案件30201：宮野 智明 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--requested">振込申請</span></td>
               <td class="pay-td pay-td--id">30201</td>
               <td class="pay-td">調査・リサーチコース</td>
               <td class="pay-td pay-td--address">長崎県 佐世保市三浦町 1-1</td>
@@ -363,6 +382,7 @@
 
             <!-- 案件30245：宮野 智明 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--none">未申請</span></td>
               <td class="pay-td pay-td--id">30245</td>
               <td class="pay-td">軽作業スタンダード</td>
               <td class="pay-td pay-td--address">長崎県 佐世保市下京町 6-10</td>
@@ -392,6 +412,7 @@
 
             <!-- 案件30312：福永 幸代 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--none">未申請</span></td>
               <td class="pay-td pay-td--id">30312</td>
               <td class="pay-td">チラシ配布コース</td>
               <td class="pay-td pay-td--address">兵庫県 姫路市本町 68</td>
@@ -421,6 +442,7 @@
 
             <!-- 案件30389：岡田 千秋 -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--done">振込完了</span></td>
               <td class="pay-td pay-td--id">30389</td>
               <td class="pay-td">ポスティングコース</td>
               <td class="pay-td pay-td--address">東京都 立川市曙町 2-23-1</td>
@@ -450,6 +472,7 @@
 
             <!-- 案件30478：藤尾 芳枝（10件目） -->
             <tr class="pay-row">
+              <td class="pay-td"><span class="pay-status pay-status--none">未申請</span></td>
               <td class="pay-td pay-td--id">30478</td>
               <td class="pay-td">軽作業スタンダード</td>
               <td class="pay-td pay-td--address">長野県 安曇野市穂高牧 9500</td>
