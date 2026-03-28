@@ -3508,7 +3508,7 @@ a.nav-user--active .header-avatar-icon {
 .pay-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 1600px;
+  min-width: 2200px;
 }
 
 .pay-th {
@@ -3739,6 +3739,37 @@ a.nav-user--active .header-avatar-icon {
 .pay-th--course    { min-width: 120px; }
 .pay-th--location  { min-width: 160px; }
 .pay-th--expense   { min-width: 110px; }
+
+/* 全銀フォーマット列 */
+.pay-th--bank-code    { width: 72px; text-align: center; white-space: nowrap; }
+.pay-th--bank-name    { min-width: 100px; }
+.pay-th--branch-code  { width: 60px; text-align: center; white-space: nowrap; }
+.pay-th--branch-name  { min-width: 90px; }
+.pay-th--account-type { width: 60px; text-align: center; white-space: nowrap; }
+.pay-th--account-num  { width: 80px; text-align: right; white-space: nowrap; }
+.pay-th--account-kana { min-width: 130px; white-space: nowrap; }
+
+.pay-td--bank-code {
+  text-align: center;
+  font-family: monospace;
+  font-size: 12px;
+  color: #555;
+  letter-spacing: 0.05em;
+}
+
+.pay-td--account-num {
+  text-align: right;
+  font-family: monospace;
+  font-size: 12px;
+  color: #444;
+  letter-spacing: 0.05em;
+}
+
+.pay-td--account-kana {
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+}
 
 /* 新規列のセルスタイル */
 .pay-person-name {
