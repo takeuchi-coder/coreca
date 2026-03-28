@@ -192,19 +192,33 @@
   <!-- ===== リスト表示セクション ===== -->
   <div class="wsearch-list-section" id="listSection" hidden>
 
-    <!-- ヘッダー行：タイトル + トグルフィルター -->
+    <!-- ヘッダー行：タイトル + ソート + トグルフィルター -->
     <div class="wsearch-list-header">
       <h2 class="wsearch-list-heading">案件検索</h2>
-      <div class="wsearch-list-toggles">
-<label class="wsearch-toggle-wrap">
-          <span class="wsearch-toggle-text">応募可のみ</span>
-          <span class="wsearch-toggle">
-            <input type="checkbox" id="availableOnlyList" checked>
-            <span class="wsearch-toggle-slider"></span>
-          </span>
-        </label>
+      <div class="wsearch-list-controls">
+        <div class="wsearch-sort-wrap">
+          <select class="wsearch-sort-select" id="listSortSelect" aria-label="並び順">
+            <option value="distance">近い順</option>
+            <option value="deadline-asc">締切日 近い順</option>
+            <option value="deadline-desc">締切日 遠い順</option>
+          </select>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wsearch-sort-chevron">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+        <div class="wsearch-list-toggles">
+          <label class="wsearch-toggle-wrap">
+            <span class="wsearch-toggle-text">応募可のみ</span>
+            <span class="wsearch-toggle">
+              <input type="checkbox" id="availableOnlyList" checked>
+              <span class="wsearch-toggle-slider"></span>
+            </span>
+          </label>
+        </div>
       </div>
     </div>
+    <!-- 検索基準地点の表示 -->
+    <div class="wsearch-base-notice" id="baseNotice"></div>
 
     <!-- 案件リスト -->
     <div class="wsearch-list-items" id="jobListItems">
@@ -248,6 +262,32 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPbM=" crossorigin=""></script>
 
   <script>
+  /* =============================================
+     受注者の登録住所（基準地点）
+     ※ 実装時はプロフィールDBから取得
+  ============================================= */
+  const WORKER_HOME = { lat: 34.8897, lng: 136.9370 }; // 愛知県半田市（登録住所）
+
+  // 現在の検索基準地点（初期値＝登録住所、地図移動後に更新）
+  let searchCenter = { lat: WORKER_HOME.lat, lng: WORKER_HOME.lng };
+
+  /* =============================================
+     距離計算（Haversine 公式、単位：km）
+  ============================================= */
+  function calcDistance(lat1, lng1, lat2, lng2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) ** 2 +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function formatDistance(km) {
+    return km < 1 ? `${Math.round(km * 1000)}m` : `${km.toFixed(1)}km`;
+  }
+
   /* =============================================
      案件サンプルデータ
   ============================================= */
@@ -320,7 +360,7 @@
   ============================================= */
   const map = L.map('wsearchMap', {
     zoomControl: false,
-    center: [35.6762, 139.6503],
+    center: [WORKER_HOME.lat, WORKER_HOME.lng],
     zoom: 13
   });
 
@@ -386,9 +426,29 @@
   }
 
   /* =============================================
-     リストでみる ボタン
+     リストでみる ボタン（インページ切り替え）
   ============================================= */
-  document.getElementById('listViewBtn').addEventListener('click', showListView);
+  document.getElementById('listViewBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    // 一覧を開く時点の地図中心を検索基準地点として確定
+    const c = map.getCenter();
+    searchCenter = { lat: c.lat, lng: c.lng };
+    showListView();
+  });
+
+  /* =============================================
+     このエリアを検索 ボタン
+  ============================================= */
+  document.getElementById('areaSearchBtn').addEventListener('click', () => {
+    const c = map.getCenter();
+    searchCenter = { lat: c.lat, lng: c.lng };
+    // 地図でマーカー再描画（フィルタリングは将来実装）
+    updateMarkers();
+    // リスト表示中なら再レンダリング
+    if (document.getElementById('listSection').style.display === 'flex') {
+      renderListItems();
+    }
+  });
 
   /* =============================================
      現在地 ボタン
@@ -396,7 +456,14 @@
   document.getElementById('currentLocationBtn').addEventListener('click', () => {
     if (!navigator.geolocation) return;
     navigator.geolocation.getCurrentPosition(pos => {
-      map.panTo([pos.coords.latitude, pos.coords.longitude], { animate: true });
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      map.panTo([lat, lng], { animate: true });
+      searchCenter = { lat, lng };
+      // リスト表示中なら距離順で再レンダリング
+      if (document.getElementById('listSection').style.display === 'flex') {
+        renderListItems();
+      }
     });
   });
 
@@ -406,13 +473,37 @@
   document.getElementById('mapViewBtn').addEventListener('click', showMapView);
 
   /* =============================================
-     リスト表示：案件リストを生成
+     リスト表示：案件リストを生成（距離・ソート対応）
   ============================================= */
   function renderListItems() {
     const container = document.getElementById('jobListItems');
+    const sortSelect = document.getElementById('listSortSelect');
+    const notice = document.getElementById('baseNotice');
+    const sortMode = sortSelect ? sortSelect.value : 'distance';
+
+    // 基準地点の表示を更新
+    const isHome = searchCenter.lat === WORKER_HOME.lat && searchCenter.lng === WORKER_HOME.lng;
+    notice.textContent = isHome
+      ? '基準地点：登録住所のエリア'
+      : `基準地点：現在の地図中心（地図を動かして「このエリアを検索」または「一覧でみる」を押すと更新）`;
+
+    // 距離を付与してソート
+    const jobs = JOBS.map(job => ({
+      ...job,
+      distance: calcDistance(searchCenter.lat, searchCenter.lng, job.lat, job.lng)
+    }));
+
+    if (sortMode === 'distance') {
+      jobs.sort((a, b) => a.distance - b.distance);
+    } else if (sortMode === 'deadline-asc') {
+      jobs.sort((a, b) => a.daysLeft - b.daysLeft);
+    } else if (sortMode === 'deadline-desc') {
+      jobs.sort((a, b) => b.daysLeft - a.daysLeft);
+    }
+
     container.innerHTML = '';
 
-    JOBS.forEach(job => {
+    jobs.forEach(job => {
       const item = document.createElement('div');
       item.className = 'wsearch-list-item';
 
@@ -450,6 +541,14 @@
               </svg>
               ${job.address}
             </span>
+            <span class="wsearch-list-meta-item wsearch-list-distance">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="8 12 12 8 16 12"/>
+                <line x1="12" y1="8" x2="12" y2="16"/>
+              </svg>
+              基準地点から ${formatDistance(job.distance)}
+            </span>
           </div>
         </div>
         <div class="wsearch-list-action">
@@ -460,6 +559,11 @@
       container.appendChild(item);
     });
   }
+
+  // ソート変更時に再レンダリング
+  document.addEventListener('change', (e) => {
+    if (e.target.id === 'listSortSelect') renderListItems();
+  });
 
   /* =============================================
      マップのリサイズ対応
