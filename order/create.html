@@ -109,7 +109,7 @@
           <span class="field-badge field-badge--required">必須</span>
         </div>
         <div class="form-field-cell">
-          <pre class="form-plain-text form-plain-text--block">【作業概要】
+          <p class="form-plain-text form-plain-text--bare">【作業概要】
 
 ■仕事タイプ
 ●スタッフワーク・エンターテインメント系
@@ -134,7 +134,7 @@
 【注意事項】
 ・作業時は動きやすい服装でお越しください。
 ・貴重品の管理には十分ご注意ください。
-・スマートフォンは作業中マナーモードにしてください。</pre>
+・スマートフォンは作業中マナーモードにしてください。</p>
         </div>
       </div>
 
@@ -261,19 +261,19 @@
           <div class="form-period">
             <div class="form-inline">
               <span class="form-period-label">開始</span>
-              <select class="form-select form-select--short">
+              <select id="startYear" class="form-select form-select--short">
                 <option value="">年</option>
                 <option>2024年</option><option>2025年</option><option>2026年</option>
                 <option>2027年</option><option>2028年</option>
               </select>
-              <select class="form-select form-select--short">
+              <select id="startMonth" class="form-select form-select--short">
                 <option value="">月</option>
                 <option>1月</option><option>2月</option><option>3月</option>
                 <option>4月</option><option>5月</option><option>6月</option>
                 <option>7月</option><option>8月</option><option>9月</option>
                 <option>10月</option><option>11月</option><option>12月</option>
               </select>
-              <select class="form-select form-select--short">
+              <select id="startDay" class="form-select form-select--short">
                 <option value="">日</option>
                 <option>1日</option><option>2日</option><option>3日</option>
                 <option>4日</option><option>5日</option><option>6日</option>
@@ -290,19 +290,19 @@
             </div>
             <div class="form-inline">
               <span class="form-period-label">終了</span>
-              <select class="form-select form-select--short">
+              <select id="endYear" class="form-select form-select--short">
                 <option value="">年</option>
                 <option>2024年</option><option>2025年</option><option>2026年</option>
                 <option>2027年</option><option>2028年</option>
               </select>
-              <select class="form-select form-select--short">
+              <select id="endMonth" class="form-select form-select--short">
                 <option value="">月</option>
                 <option>1月</option><option>2月</option><option>3月</option>
                 <option>4月</option><option>5月</option><option>6月</option>
                 <option>7月</option><option>8月</option><option>9月</option>
                 <option>10月</option><option>11月</option><option>12月</option>
               </select>
-              <select class="form-select form-select--short">
+              <select id="endDay" class="form-select form-select--short">
                 <option value="">日</option>
                 <option>1日</option><option>2日</option><option>3日</option>
                 <option>4日</option><option>5日</option><option>6日</option>
@@ -357,7 +357,7 @@
         </div>
         <div class="form-field-cell">
           <div class="form-inline">
-            <input type="number" class="form-input form-input--short" placeholder="0" min="0">
+            <input type="number" id="inputUnitPrice" class="form-input form-input--short" placeholder="0" min="0">
             <span class="form-unit">円</span>
           </div>
         </div>
@@ -412,6 +412,43 @@
         </div>
       </div>
 
+      <!-- 請求予定金額 -->
+      <div class="form-row form-row--summary-header">
+        <div class="form-label-cell">
+          <span class="form-label-text">請求予定金額</span>
+        </div>
+        <div class="form-field-cell">
+          <div class="billing-summary">
+
+            <div class="billing-row">
+              <span class="billing-label">作業・契約期間</span>
+              <span class="billing-value" id="summaryPeriod">年月日〜年月日</span>
+            </div>
+
+            <div class="billing-row">
+              <span class="billing-label">報酬単価</span>
+              <span class="billing-value"><span id="summaryUnitPrice">0</span> 円</span>
+            </div>
+
+            <div class="billing-row">
+              <span class="billing-label">サービス利用料（報酬総額の30%）</span>
+              <span class="billing-value"><span id="summaryServiceFee">0</span> 円</span>
+            </div>
+
+            <div class="billing-row">
+              <span class="billing-label">サービス利用料（税）</span>
+              <span class="billing-value"><span id="summaryServiceTax">0</span> 円</span>
+            </div>
+
+            <div class="billing-row billing-row--total">
+              <span class="billing-label">1作業あたりの請求額</span>
+              <span class="billing-value"><span id="summaryTotal">0</span> 円</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </div>
     <!-- ===== /フォーム本体 ===== -->
 
@@ -443,5 +480,37 @@
     </div>
   </footer>
 
+  <script>
+    /* =============================================
+       請求予定金額 自動計算
+    ============================================= */
+    const inputUnitPrice = document.getElementById('inputUnitPrice');
+    const periodSelects  = ['startYear','startMonth','startDay','endYear','endMonth','endDay'].map(id => document.getElementById(id));
+
+    function updateBilling() {
+      // 報酬単価
+      const unitPrice = Math.max(0, parseInt(inputUnitPrice.value, 10) || 0);
+
+      // サービス利用料（30%）・その消費税（10%）
+      const serviceFee = Math.floor(unitPrice * 0.30);
+      const serviceTax = Math.floor(serviceFee * 0.10);
+      const total      = unitPrice + serviceFee + serviceTax;
+
+      document.getElementById('summaryUnitPrice').textContent  = unitPrice.toLocaleString();
+      document.getElementById('summaryServiceFee').textContent = serviceFee.toLocaleString();
+      document.getElementById('summaryServiceTax').textContent = serviceTax.toLocaleString();
+      document.getElementById('summaryTotal').textContent      = total.toLocaleString();
+
+      // 作業・契約期間
+      const [sy, sm, sd, ey, em, ed] = periodSelects.map(s => s.value);
+      const start = [sy, sm, sd].filter(Boolean).join('');
+      const end   = [ey, em, ed].filter(Boolean).join('');
+      document.getElementById('summaryPeriod').textContent =
+        (start || end) ? `${start || '年月日'}〜${end || '年月日'}` : '年月日〜年月日';
+    }
+
+    inputUnitPrice.addEventListener('input', updateBilling);
+    periodSelects.forEach(s => s.addEventListener('change', updateBilling));
+  </script>
 </body>
 </html>

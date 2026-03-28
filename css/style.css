@@ -2268,6 +2268,73 @@ a.nav-user--active .header-avatar-icon {
   margin: 0;
 }
 
+/* ボーダーなし・背景なしの純テキスト表示（作業概要など） */
+.form-plain-text--bare {
+  display: block;
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0;
+  padding: 4px 0;
+}
+
+/* ===========================
+   請求予定金額サマリー
+=========================== */
+.billing-summary {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.billing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e8e8e8;
+  gap: 16px;
+}
+
+.billing-row:last-child {
+  border-bottom: none;
+}
+
+.billing-row--total {
+  background: #fff7f7;
+  border-top: 2px solid #e8192c;
+}
+
+.billing-label {
+  font-size: 13px;
+  color: #555;
+}
+
+.billing-row--total .billing-label {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.billing-value {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.billing-row--total .billing-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8192c;
+}
+
+.form-row--summary-header .form-label-cell {
+  padding-top: 14px;
+}
+
 /* 期間フィールド */
 .form-period {
   display: flex;
