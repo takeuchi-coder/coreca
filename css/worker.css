@@ -2258,10 +2258,12 @@
   background: #f9f9f9;
 }
 
-/* 案件ID検索ボタン */
+/* アクション行（案件ID検索 + 地図トグル） */
 .wmylist-action-row {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
@@ -2278,6 +2280,78 @@
 
 .wmylist-id-search-btn:hover {
   background: #f0f0f0;
+}
+
+/* 地図トグルボタン */
+.wmylist-map-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  font-size: 13px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.wmylist-map-toggle-btn:hover {
+  background: #f0f0f0;
+}
+
+.wmylist-map-toggle-btn--active {
+  background: #e8192c;
+  color: #fff;
+  border-color: #e8192c;
+}
+
+.wmylist-map-toggle-btn--active:hover {
+  background: #c0111f;
+}
+
+/* マップコンテナ */
+.wmylist-map-wrap {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.wmylist-map {
+  height: 300px;
+  width: 100%;
+}
+
+/* マップマーカー */
+.wmylist-map-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e8192c;
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.wmylist-map-marker--active {
+  background: #c0111f;
+  transform: scale(1.25);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* ハイライトカード */
+.wmylist-card--highlighted {
+  outline: 2px solid #e8192c;
+  outline-offset: -2px;
+  border-radius: 8px;
 }
 
 /* 空状態 */
