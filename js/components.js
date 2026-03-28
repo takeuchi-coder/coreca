@@ -173,10 +173,17 @@ function renderCardItem(p) {
       </div>
       <div class="pic-footer">
         <span class="pic-contracts">契約者 <strong>${p.contracts}</strong></span>
-        <div class="row-actions">
-          <button class="row-detail-btn" title="詳細">›</button>
-          <button class="row-menu-btn" title="メニュー">…</button>
-        </div>
+      </div>
+      <div class="row-action-btns">
+        <a href="applicants.html" class="row-action-btn row-action-btn--applicants">
+          ${ICONS.users}応募者・契約者を確認する
+        </a>
+        <a href="procedure.html" class="row-action-btn row-action-btn--procedure">
+          ${ICONS.file}作業手順・報告を確認する
+        </a>
+        <button class="row-action-btn row-action-btn--renew">
+          ${ICONS.renew}契約を更新する
+        </button>
       </div>
     </div>
   `;
