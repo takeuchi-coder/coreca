@@ -5086,3 +5086,44 @@
 .apply-complete-flow p {
   margin: 0;
 }
+
+/* 応募キャンセルボタン（アクションバー） */
+.btn-wdetail-cancel {
+  padding: 12px 24px;
+  background: #fff;
+  color: #555;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-wdetail-cancel:hover {
+  background: #f5f5f5;
+  border-color: #aaa;
+}
+
+/* キャンセルモーダル：危険アクションボタン */
+.btn-apply-modal-submit--danger {
+  background: #555;
+}
+
+.btn-apply-modal-submit--danger:hover {
+  background: #333;
+}
+
+/* 案件一覧へ移動するリンク */
+.cancel-to-list-link {
+  display: inline-block;
+  font-size: 14px;
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+.cancel-to-list-link:hover {
+  color: #1557b0;
+}
