@@ -5127,3 +5127,166 @@
 .cancel-to-list-link:hover {
   color: #1557b0;
 }
+
+/* ===========================
+   案件詳細ページ (my-list-detail)
+=========================== */
+.wmld-main {
+  padding-bottom: 80px;
+}
+
+.wmld-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+.wmld-page-header {
+  padding: 20px 0 12px;
+}
+
+.wmld-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  text-decoration: none;
+}
+
+.wmld-back-link:hover {
+  color: #e8192c;
+}
+
+.wmld-id-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0 16px;
+  flex-wrap: wrap;
+}
+
+.wmld-id-bar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wmld-id {
+  font-size: 13px;
+  color: #555;
+}
+
+.wmld-orderer {
+  font-size: 13px;
+  color: #555;
+}
+
+.wmld-status-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid #1a73e8;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a73e8;
+  white-space: nowrap;
+}
+
+.wmld-tabs {
+  display: flex;
+  border-bottom: 2px solid #e0e0e0;
+  margin-bottom: 0;
+}
+
+.wmld-tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #666;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+
+.wmld-tab--active {
+  color: #e8192c;
+  border-bottom-color: #e8192c;
+}
+
+.wmld-tab:not(.wmld-tab--active):hover {
+  color: #333;
+}
+
+.wmld-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0;
+}
+
+.wmld-row {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.wmld-label {
+  width: 160px;
+  padding: 18px 16px 18px 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.wmld-value {
+  padding: 18px 0;
+  font-size: 13px;
+  color: #222;
+  line-height: 1.7;
+  vertical-align: top;
+}
+
+.wmld-value--rich p {
+  margin: 0 0 10px;
+}
+
+.wmld-value--rich p:last-child {
+  margin-bottom: 0;
+}
+
+.wmld-subheading {
+  font-weight: 700;
+  margin-top: 14px !important;
+}
+
+.wmld-section-hr {
+  border: none;
+  border-top: 1px dashed #ccc;
+  margin: 16px 0;
+}
+
+/* カードをクリッカブルにする */
+.wmylist-card--clickable {
+  cursor: pointer;
+}
+
+.wmylist-card--clickable:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 600px) {
+  .wmld-label {
+    width: 110px;
+    font-size: 12px;
+  }
+  .wmld-tabs {
+    overflow-x: auto;
+  }
+  .wmld-tab {
+    padding: 10px 14px;
+    white-space: nowrap;
+  }
+}
