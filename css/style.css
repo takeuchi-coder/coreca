@@ -5386,6 +5386,82 @@ a.nav-user--active .header-avatar-icon {
   background: #c0111f;
 }
 
+/* 契約更新ページ */
+.renew-body {
+  padding: 0 16px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.renew-create-wrap {
+  margin: 24px 0 20px;
+}
+
+.btn-renew-create {
+  display: inline-block;
+  padding: 13px 32px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.btn-renew-create:hover {
+  background: #1557b0;
+}
+
+.renew-info-box {
+  background: #f5f7fa;
+  border: 1px solid #dce3ed;
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.renew-info-box p {
+  margin: 0 0 4px;
+}
+
+.renew-info-box p:last-child {
+  margin-bottom: 0;
+}
+
+.renew-info-link {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+.renew-info-link:hover {
+  color: #1557b0;
+}
+
+.btn-renew-order {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-renew-order:hover {
+  background: #1b5e20;
+}
+
 /* ページネーション */
 .applist-pagination {
   display: flex;
