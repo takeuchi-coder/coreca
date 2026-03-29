@@ -110,7 +110,7 @@
         <div class="proc-filter-btns">
           <button type="button" class="btn-proc-filter btn-proc-filter--active">全て</button>
           <button type="button" class="btn-proc-filter btn-proc-filter--outline">検収待ち</button>
-          <button type="button" class="btn-proc-filter btn-proc-filter--outline">詳細検索</button>
+          <button type="button" class="btn-proc-filter btn-proc-filter--outline" id="btnDetailSearch">詳細検索</button>
         </div>
       </div>
 
@@ -197,6 +197,43 @@
   </main>
   <!-- ===== /メインコンテンツ ===== -->
 
+  <!-- ===== 詳細検索モーダル ===== -->
+  <div class="search-modal-overlay" id="searchModalOverlay" hidden>
+    <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+
+      <div class="search-modal-header">
+        <h2 class="search-modal-title" id="searchModalTitle">絞り込み条件</h2>
+        <button type="button" class="search-modal-close" id="searchModalClose" aria-label="閉じる">&times;</button>
+      </div>
+
+      <div class="search-modal-body">
+
+        <div class="search-modal-row">
+          <label class="search-modal-label" for="searchWorkerName">ワーカー名</label>
+          <input type="text" id="searchWorkerName" class="search-modal-input" placeholder="">
+        </div>
+
+        <div class="search-modal-row">
+          <label class="search-modal-label" for="searchSortOrder">並び順</label>
+          <select id="searchSortOrder" class="search-modal-select">
+            <option>作業報告が新しい順</option>
+            <option>作業報告が古い順</option>
+            <option>検収承認日時が新しい順</option>
+            <option>検収承認日時が古い順</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="search-modal-footer">
+        <button type="button" class="btn-search-modal-clear" id="searchModalClear">クリア</button>
+        <button type="button" class="btn-search-modal-submit">絞り込む</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /詳細検索モーダル ===== -->
+
   <!-- ===== フッター（共通） ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -214,5 +251,27 @@
   </footer>
   <!-- ===== /フッター ===== -->
 
+  <script>
+    (function () {
+      var overlay = document.getElementById('searchModalOverlay');
+
+      document.getElementById('btnDetailSearch').addEventListener('click', function () {
+        overlay.hidden = false;
+      });
+
+      document.getElementById('searchModalClose').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      document.getElementById('searchModalClear').addEventListener('click', function () {
+        document.getElementById('searchWorkerName').value = '';
+        document.getElementById('searchSortOrder').selectedIndex = 0;
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.hidden = true;
+      });
+    })();
+  </script>
 </body>
 </html>
