@@ -102,7 +102,7 @@
 
         <!-- アクションボタン行（全幅） -->
         <div class="msgd-action-row">
-          <button class="msgd-btn-order">発注する</button>
+          <button class="msgd-btn-order" id="msgBtnOrder">発注する</button>
           <button class="msgd-btn-reject">不採用</button>
         </div>
 
@@ -182,6 +182,34 @@
   </div>
   <!-- ===== /メインコンテンツ ===== -->
 
+  <!-- ===== 発注確認モーダル ===== -->
+  <div class="order-modal-overlay" id="orderModalOverlay" hidden>
+    <div class="order-modal" role="dialog" aria-modal="true">
+
+      <!-- STEP 1: 確認 -->
+      <div class="order-modal-step" id="orderStep1">
+        <p class="order-modal-caution">発注判断のため、作業可能日や人物面などで不安がないか事前にメッセージ等でのやり取りを推奨します。</p>
+        <p class="order-modal-question">倉本 泰さんに発注しますか？</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-yes" id="orderModalYes">はい</button>
+          <button type="button" class="btn-order-modal-no" id="orderModalNo">いいえ</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: 完了 -->
+      <div class="order-modal-step" id="orderStep2" hidden>
+        <p class="order-modal-complete">倉本 泰さんへの発注が完了しました。</p>
+        <p class="order-modal-caution">想定人数分の発注が完了しましたら、「募集を停止する」ボタンを押してください。</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-continue" id="orderModalContinue">募集を継続する</button>
+          <button type="button" class="btn-order-modal-stop" id="orderModalStop">募集を停止する</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /発注確認モーダル ===== -->
+
   <!-- ===== フッター（共通） ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -199,5 +227,39 @@
   </footer>
   <!-- ===== /フッター ===== -->
 
+  <script>
+    (function () {
+      var overlay = document.getElementById('orderModalOverlay');
+      var step1   = document.getElementById('orderStep1');
+      var step2   = document.getElementById('orderStep2');
+
+      document.getElementById('msgBtnOrder').addEventListener('click', function () {
+        step1.hidden = false;
+        step2.hidden = true;
+        overlay.hidden = false;
+      });
+
+      document.getElementById('orderModalYes').addEventListener('click', function () {
+        step1.hidden = true;
+        step2.hidden = false;
+      });
+
+      document.getElementById('orderModalNo').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      document.getElementById('orderModalContinue').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      document.getElementById('orderModalStop').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.hidden = true;
+      });
+    })();
+  </script>
 </body>
 </html>
