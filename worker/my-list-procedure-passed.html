@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作業手順・報告 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wdetail-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="mypage.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item"><a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a></li>
+          <li class="nav-item nav-item--active"><a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a></li>
+          <li class="nav-item"><a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a></li>
+          <li class="nav-item"><a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span></a></li>
+          <li class="nav-item"><a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="wmypage-area-select">
+            <select class="wmypage-area-dropdown" aria-label="エリアを選択">
+              <option value="tokyo">東京都版</option>
+              <option value="saitama">埼玉県版</option>
+              <option value="kanagawa">神奈川県版</option>
+              <option value="chiba">千葉県版</option>
+            </select>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmypage-area-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+          <a href="mypage.html" class="nav-user nav-user--active" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wmld-main">
+    <div class="wmld-inner">
+
+      <!-- ページヘッダー -->
+      <div class="wmld-page-header">
+        <a href="my-list-detail.html" class="wmld-back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          作業手順・報告
+        </a>
+      </div>
+
+      <!-- 案件IDバー -->
+      <div class="wmld-id-bar">
+        <div class="wmld-id-bar-left">
+          <span class="wmld-id">案件ID：236603</span>
+          <span class="wmld-orderer">発注者：株式会社コレカ　河辺美紀</span>
+        </div>
+        <span class="wmld-status-badge wmld-status-badge--green">仕事引き受け判断中</span>
+      </div>
+
+      <!-- タブバー -->
+      <div class="wmld-tabs">
+        <a href="my-list-detail.html" class="wmld-tab">案件情報</a>
+        <a href="messages.html" class="wmld-tab">メッセージ</a>
+        <span class="wmld-tab wmld-tab--active">作業手順・報告</span>
+      </div>
+
+      <!-- コンテンツ本体 -->
+      <div class="wprocedure-body">
+
+        <p class="wprocedure-lead">「作業マニュアルを確認する」ボタンを押して作業内容を確認後、「お仕事を引き受ける」ボタンを押してください。<br>
+        発注者と作業予定日についてのやり取りを必ずメッセージでしてください。</p>
+
+        <p class="wprocedure-note">※「応募後の選考状況」「業務内容」「報告の承認状況」などは発注者へ確認ください。メッセージページは<a href="messages.html" class="wprocedure-link">こちら</a></p>
+
+        <div class="wprocedure-actions">
+          <button type="button" class="btn-wprocedure-outline">作業手順を確認する</button>
+          <button type="button" class="btn-wprocedure-primary" id="btnAccept">仕事を引き受ける</button>
+          <button type="button" class="btn-wprocedure-ghost" id="btnDecline">仕事を引き受けない</button>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事依頼したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

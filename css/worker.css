@@ -5290,3 +5290,138 @@
     white-space: nowrap;
   }
 }
+
+/* ===========================
+   作業手順・報告ページ (wprocedure)
+=========================== */
+.wmld-status-badge--green {
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+
+.wprocedure-body {
+  padding: 36px 0 48px;
+  max-width: 760px;
+}
+
+.wprocedure-body--center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.wprocedure-lead {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #222;
+  margin: 0 0 20px;
+}
+
+.wprocedure-lead--center {
+  text-align: center;
+}
+
+.wprocedure-text--center {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #222;
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.wprocedure-flow {
+  display: inline-block;
+  text-align: left;
+  background: #f5f7fa;
+  border-radius: 6px;
+  padding: 16px 28px;
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 2.2;
+  color: #333;
+}
+
+.wprocedure-flow p {
+  margin: 0;
+}
+
+.wprocedure-note {
+  font-size: 13px;
+  color: #555;
+  margin: 0 0 28px;
+  line-height: 1.7;
+}
+
+.wprocedure-note--center {
+  text-align: center;
+}
+
+.wprocedure-link {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+.wprocedure-link:hover {
+  color: #1557b0;
+}
+
+.wprocedure-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.wprocedure-actions--center {
+  justify-content: center;
+}
+
+.btn-wprocedure-outline {
+  padding: 11px 24px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-wprocedure-outline:hover {
+  background: #f5f5f5;
+}
+
+.btn-wprocedure-primary {
+  padding: 11px 28px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-wprocedure-primary:hover {
+  background: #c0111f;
+}
+
+.btn-wprocedure-ghost {
+  padding: 11px 24px;
+  background: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-wprocedure-ghost:hover {
+  background: #f5f5f5;
+}
