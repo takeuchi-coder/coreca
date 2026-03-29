@@ -5670,6 +5670,38 @@ a.nav-user--active .header-avatar-icon {
   background: #f5f5f5;
 }
 
+.btn-proc-kenshu {
+  padding: 6px 18px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.btn-proc-kenshu:hover {
+  background: #c0111f;
+}
+
+.proc-kenshu-note {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.proc-deadline {
+  color: #e8192c;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
 /* ===========================
    案件情報カード右側 ステータス操作
    (detail.html 共通 applist-proj-card 内)
