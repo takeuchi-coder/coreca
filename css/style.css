@@ -5208,9 +5208,41 @@ a.nav-user--active .header-avatar-icon {
 }
 
 /* メッセージするボタン */
+.applist-card-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.btn-applist-order {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-applist-order:hover {
+  background: #1557b0;
+}
+
+.btn-applist-order--change {
+  background: #f57c00;
+}
+
+.btn-applist-order--change:hover {
+  background: #c46200;
+}
+
 .btn-applist-message {
   display: inline-block;
-  margin-top: 18px;
   padding: 12px 32px;
   background: #e8192c;
   color: #fff;
