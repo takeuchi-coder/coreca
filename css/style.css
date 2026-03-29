@@ -4063,19 +4063,21 @@ a.nav-user--active .header-avatar-icon {
   background: transparent;
 }
 
-/* アクションボタン行（全幅） */
+/* アクションボタン行 */
 .msgd-action-row {
   display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border-top: 1px solid #f0f0f0;
 }
 
 .msgd-btn-order {
-  flex: 1;
-  padding: 13px 0;
+  padding: 7px 20px;
   background: #e8192c;
   color: #fff;
   border: none;
-  border-radius: 0 0 0 8px;
-  font-size: 14px;
+  border-radius: 4px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -4085,14 +4087,12 @@ a.nav-user--active .header-avatar-icon {
 .msgd-btn-order:hover { background: #c0161f; }
 
 .msgd-btn-reject {
-  flex: 1;
-  padding: 13px 0;
+  padding: 7px 20px;
   background: #fff;
   color: #555;
-  border: none;
-  border-left: 1px solid #e8e8e8;
-  border-radius: 0 0 8px 0;
-  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
