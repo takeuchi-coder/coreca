@@ -214,24 +214,11 @@
           </div>
         </div>
 
-        <div class="applist-info-row">
-          <span class="applist-info-label">発注日時：</span>
-          <span class="applist-info-value">未発注</span>
-        </div>
-
-        <div class="applist-info-row">
-          <span class="applist-info-label">納品数（案件ID232497）：</span>
-          <span class="applist-info-value">
-            0件
-            <a href="#" class="applist-sub-link">納品内容確認</a>
-          </span>
-        </div>
-
       </div>
 
       <!-- ボタンエリア -->
       <div class="applist-card-actions">
-        <button type="button" class="btn-applist-order btn-applist-order--change">発注に変更する</button>
+        <button type="button" class="btn-applist-order btn-applist-order--change" data-name="田中 浩二">発注に変更する</button>
         <button type="button" class="btn-applist-message">メッセージする</button>
       </div>
 
@@ -283,24 +270,11 @@
           </div>
         </div>
 
-        <div class="applist-info-row">
-          <span class="applist-info-label">発注日時：</span>
-          <span class="applist-info-value">未発注</span>
-        </div>
-
-        <div class="applist-info-row">
-          <span class="applist-info-label">納品数（案件ID232497）：</span>
-          <span class="applist-info-value">
-            0件
-            <a href="#" class="applist-sub-link">納品内容確認</a>
-          </span>
-        </div>
-
       </div>
 
       <!-- ボタンエリア -->
       <div class="applist-card-actions">
-        <button type="button" class="btn-applist-order">発注する</button>
+        <button type="button" class="btn-applist-order" data-name="佐藤 美咲">発注する</button>
         <button type="button" class="btn-applist-message">メッセージする</button>
       </div>
 
@@ -352,24 +326,11 @@
           </div>
         </div>
 
-        <div class="applist-info-row">
-          <span class="applist-info-label">発注日時：</span>
-          <span class="applist-info-value">未発注</span>
-        </div>
-
-        <div class="applist-info-row">
-          <span class="applist-info-label">納品数（案件ID232497）：</span>
-          <span class="applist-info-value">
-            0件
-            <a href="#" class="applist-sub-link">納品内容確認</a>
-          </span>
-        </div>
-
       </div>
 
       <!-- ボタンエリア -->
       <div class="applist-card-actions">
-        <button type="button" class="btn-applist-order">発注する</button>
+        <button type="button" class="btn-applist-order" data-name="鈴木 健太">発注する</button>
         <button type="button" class="btn-applist-message">メッセージする</button>
       </div>
 
@@ -396,6 +357,34 @@
   </main>
   <!-- ===== /メインコンテンツ ===== -->
 
+  <!-- ===== 発注確認モーダル ===== -->
+  <div class="order-modal-overlay" id="orderModalOverlay" hidden>
+    <div class="order-modal" role="dialog" aria-modal="true">
+
+      <!-- STEP 1: 確認 -->
+      <div class="order-modal-step" id="orderStep1">
+        <p class="order-modal-caution">発注判断のため、作業可能日や人物面などで不安がないか事前にメッセージ等でのやり取りを推奨します。</p>
+        <p class="order-modal-question"><span id="orderModalName"></span>さんに発注しますか？</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-yes" id="orderModalYes">はい</button>
+          <button type="button" class="btn-order-modal-no" id="orderModalNo">いいえ</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: 完了 -->
+      <div class="order-modal-step" id="orderStep2" hidden>
+        <p class="order-modal-complete"><span id="orderModalName2"></span>さんへの発注が完了しました。</p>
+        <p class="order-modal-caution">想定人数分の発注が完了しましたら、「募集を停止する」ボタンを押してください。</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-continue" id="orderModalContinue">募集を継続する</button>
+          <button type="button" class="btn-order-modal-stop" id="orderModalStop">募集を停止する</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /発注確認モーダル ===== -->
+
   <!-- ===== フッター（共通） ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -413,5 +402,53 @@
   </footer>
   <!-- ===== /フッター ===== -->
 
+  <script>
+    (function () {
+      var overlay = document.getElementById('orderModalOverlay');
+      var step1   = document.getElementById('orderStep1');
+      var step2   = document.getElementById('orderStep2');
+      var nameEl1 = document.getElementById('orderModalName');
+      var nameEl2 = document.getElementById('orderModalName2');
+
+      function openModal(name) {
+        nameEl1.textContent = name;
+        nameEl2.textContent = name;
+        step1.hidden = false;
+        step2.hidden = true;
+        overlay.hidden = false;
+      }
+
+      function closeModal() {
+        overlay.hidden = true;
+      }
+
+      // 発注ボタン（発注する / 発注に変更する）にイベント登録
+      document.querySelectorAll('.btn-applist-order').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(btn.dataset.name);
+        });
+      });
+
+      // はい → STEP2へ
+      document.getElementById('orderModalYes').addEventListener('click', function () {
+        step1.hidden = true;
+        step2.hidden = false;
+      });
+
+      // いいえ → 閉じる
+      document.getElementById('orderModalNo').addEventListener('click', closeModal);
+
+      // 募集を継続する → 閉じる
+      document.getElementById('orderModalContinue').addEventListener('click', closeModal);
+
+      // 募集を停止する → 閉じる（実際の停止処理はここに追加）
+      document.getElementById('orderModalStop').addEventListener('click', closeModal);
+
+      // オーバーレイ外クリックで閉じる
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+    })();
+  </script>
 </body>
 </html>

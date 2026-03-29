@@ -5241,6 +5241,133 @@ a.nav-user--active .header-avatar-icon {
   background: #c46200;
 }
 
+/* 発注確認モーダル */
+.order-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.order-modal-overlay[hidden] {
+  display: none;
+}
+
+.order-modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px 28px;
+  max-width: 420px;
+  width: calc(100% - 32px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.order-modal-caution {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: #fff8e1;
+  border-left: 3px solid #f57c00;
+  border-radius: 2px;
+}
+
+.order-modal-question {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 24px;
+}
+
+.order-modal-complete {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 16px;
+}
+
+.order-modal-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-order-modal-yes {
+  flex: 1;
+  padding: 12px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-order-modal-yes:hover {
+  background: #1557b0;
+}
+
+.btn-order-modal-no {
+  flex: 1;
+  padding: 12px;
+  background: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-order-modal-no:hover {
+  background: #f5f5f5;
+}
+
+.btn-order-modal-continue {
+  flex: 1;
+  padding: 12px;
+  background: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-order-modal-continue:hover {
+  background: #f5f5f5;
+}
+
+.btn-order-modal-stop {
+  flex: 1;
+  padding: 12px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-order-modal-stop:hover {
+  background: #c0111f;
+}
+
 .btn-applist-message {
   display: inline-block;
   padding: 12px 32px;
