@@ -1302,6 +1302,29 @@
   color: #888;
 }
 
+/* 一覧でみるボタン（ドロップダウン横） */
+.wsearch-list-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #fff;
+  color: #e8192c;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.15s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.wsearch-list-view-btn:hover {
+  background: #fff5f5;
+}
+
 /* ===========================
    地図右下ボタン群
 =========================== */
