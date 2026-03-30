@@ -1256,14 +1256,54 @@
 }
 
 /* ===========================
-   このエリアを検索ボタン（上部中央）
+   エリア選択ラッパー（上部中央）
 =========================== */
-.wsearch-area-btn {
+.wsearch-area-wrap {
   position: absolute;
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1100;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* エリア選択ドロップダウン */
+.wsearch-area-select-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.wsearch-area-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 8px 36px 8px 16px;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  white-space: nowrap;
+  outline: none;
+}
+.wsearch-area-select:hover {
+  background: #f9f9f9;
+}
+.wsearch-area-select-chevron {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+  color: #888;
+}
+
+/* このエリアを検索ボタン */
+.wsearch-area-btn {
   display: inline-flex;
   align-items: center;
   gap: 6px;

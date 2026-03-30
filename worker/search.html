@@ -140,17 +140,77 @@
     <!-- Leaflet マップ -->
     <div id="wsearchMap" class="wsearch-map"></div>
 
-    <!-- 上部中央：このエリアを検索 -->
-    <button class="wsearch-area-btn" id="areaSearchBtn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-      </svg>
-      このエリアを検索
-    </button>
+    <!-- 上部中央：エリア選択ドロップダウン＋このエリアを検索 -->
+    <div class="wsearch-area-wrap">
+      <div class="wsearch-area-select-wrap">
+        <select class="wsearch-area-select" id="areaLocationSelect" aria-label="エリア選択">
+          <option value="current">現在地</option>
+          <option value="registered">登録住所</option>
+          <optgroup label="都道府県">
+            <option value="hokkaido">北海道</option>
+            <option value="aomori">青森県</option>
+            <option value="iwate">岩手県</option>
+            <option value="miyagi">宮城県</option>
+            <option value="akita">秋田県</option>
+            <option value="yamagata">山形県</option>
+            <option value="fukushima">福島県</option>
+            <option value="ibaraki">茨城県</option>
+            <option value="tochigi">栃木県</option>
+            <option value="gunma">群馬県</option>
+            <option value="saitama">埼玉県</option>
+            <option value="chiba">千葉県</option>
+            <option value="tokyo">東京都</option>
+            <option value="kanagawa">神奈川県</option>
+            <option value="niigata">新潟県</option>
+            <option value="toyama">富山県</option>
+            <option value="ishikawa">石川県</option>
+            <option value="fukui">福井県</option>
+            <option value="yamanashi">山梨県</option>
+            <option value="nagano">長野県</option>
+            <option value="gifu">岐阜県</option>
+            <option value="shizuoka">静岡県</option>
+            <option value="aichi">愛知県</option>
+            <option value="mie">三重県</option>
+            <option value="shiga">滋賀県</option>
+            <option value="kyoto">京都府</option>
+            <option value="osaka">大阪府</option>
+            <option value="hyogo">兵庫県</option>
+            <option value="nara">奈良県</option>
+            <option value="wakayama">和歌山県</option>
+            <option value="tottori">鳥取県</option>
+            <option value="shimane">島根県</option>
+            <option value="okayama">岡山県</option>
+            <option value="hiroshima">広島県</option>
+            <option value="yamaguchi">山口県</option>
+            <option value="tokushima">徳島県</option>
+            <option value="kagawa">香川県</option>
+            <option value="ehime">愛媛県</option>
+            <option value="kochi">高知県</option>
+            <option value="fukuoka">福岡県</option>
+            <option value="saga">佐賀県</option>
+            <option value="nagasaki">長崎県</option>
+            <option value="kumamoto">熊本県</option>
+            <option value="oita">大分県</option>
+            <option value="miyazaki">宮崎県</option>
+            <option value="kagoshima">鹿児島県</option>
+            <option value="okinawa">沖縄県</option>
+          </optgroup>
+        </select>
+        <svg class="wsearch-area-select-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+      <button class="wsearch-area-btn" id="areaSearchBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        このエリアを検索
+      </button>
+    </div>
 
     <!-- 右下：ボタン群 -->
     <div class="wsearch-map-actions" id="mapActions">
-<a href="list.html" class="wsearch-map-action-btn" id="listViewBtn">
+      <a href="list.html" class="wsearch-map-action-btn" id="listViewBtn">
         <span class="wsearch-map-action-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -160,19 +220,6 @@
         </span>
         一覧でみる
       </a>
-      <button class="wsearch-map-action-btn" id="currentLocationBtn">
-        <span class="wsearch-map-action-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <circle cx="12" cy="12" r="3"/>
-            <line x1="12" y1="2" x2="12" y2="5"/>
-            <line x1="12" y1="19" x2="12" y2="22"/>
-            <line x1="2" y1="12" x2="5" y2="12"/>
-            <line x1="19" y1="12" x2="22" y2="12"/>
-          </svg>
-        </span>
-        現在地
-      </button>
     </div>
   </div>
   <!-- ===== /マップセクション ===== -->
@@ -436,23 +483,6 @@
     if (document.getElementById('listSection').style.display === 'flex') {
       renderListItems();
     }
-  });
-
-  /* =============================================
-     現在地 ボタン
-  ============================================= */
-  document.getElementById('currentLocationBtn').addEventListener('click', () => {
-    if (!navigator.geolocation) return;
-    navigator.geolocation.getCurrentPosition(pos => {
-      const lat = pos.coords.latitude;
-      const lng = pos.coords.longitude;
-      map.panTo([lat, lng], { animate: true });
-      searchCenter = { lat, lng };
-      // リスト表示中なら距離順で再レンダリング
-      if (document.getElementById('listSection').style.display === 'flex') {
-        renderListItems();
-      }
-    });
   });
 
   /* =============================================
