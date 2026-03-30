@@ -789,39 +789,6 @@
   flex-direction: column;
 }
 
-/* エリア選択（赤ヘッダー内・白テキスト） */
-.wmypage-area-select {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.wmypage-area-dropdown {
-  appearance: none;
-  -webkit-appearance: none;
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.4);
-  border-radius: 4px;
-  padding: 5px 26px 5px 10px;
-  font-size: 12px;
-  font-family: inherit;
-  cursor: pointer;
-  outline: none;
-}
-
-.wmypage-area-dropdown option {
-  background: #fff;
-  color: #333;
-}
-
-.wmypage-area-chevron {
-  position: absolute;
-  right: 7px;
-  pointer-events: none;
-  color: #fff;
-}
-
 /* ── メインコンテンツ ── */
 .wmypage-main {
   flex: 1;
