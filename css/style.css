@@ -5031,6 +5031,11 @@ a.nav-user--active .header-avatar-icon {
   white-space: nowrap;
 }
 
+.applist-ol-badge--rejected {
+  border-color: #999;
+  color: #999;
+}
+
 .applist-proj-date {
   font-size: 14px;
   color: #333;
@@ -5366,6 +5371,23 @@ a.nav-user--active .header-avatar-icon {
 
 .btn-order-modal-stop:hover {
   background: #c0111f;
+}
+
+.btn-applist-reject {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #757575;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-applist-reject:hover {
+  background: #555;
 }
 
 .btn-applist-message {
