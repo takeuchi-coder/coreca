@@ -323,7 +323,7 @@
   <!-- ===== /メインコンテンツ ===== -->
 
   <!-- ===== 絞り込み検索モーダル ===== -->
-  <div class="search-modal-overlay" id="searchModalOverlay" aria-hidden="true">
+  <div class="search-modal-overlay" id="searchModalOverlay" hidden>
     <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
 
       <!-- モーダルヘッダー -->
@@ -417,14 +417,12 @@
     const btnClear = document.getElementById('btnSearchClear');
 
     function openModal() {
-      overlay.classList.add('is-open');
-      overlay.setAttribute('aria-hidden', 'false');
+      overlay.hidden = false;
       document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-      overlay.classList.remove('is-open');
-      overlay.setAttribute('aria-hidden', 'true');
+      overlay.hidden = true;
       document.body.style.overflow = '';
     }
 
@@ -438,7 +436,7 @@
 
     // Esc キーで閉じる
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
+      if (e.key === 'Escape' && !overlay.hidden) closeModal();
     });
 
     // クリアボタン
