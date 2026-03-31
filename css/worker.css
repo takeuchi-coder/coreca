@@ -4996,6 +4996,7 @@
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
+  text-decoration: none;
   transition: background 0.15s;
 }
 
@@ -5005,15 +5006,14 @@
 
 /* 確認画面 */
 .wcontact-confirm-table {
-  margin-top: 32px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #e8e8e8;
 }
 
 .wcontact-confirm-row {
   display: flex;
   gap: 24px;
   padding: 16px 0;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .wcontact-confirm-label {
@@ -5021,7 +5021,7 @@
   width: 200px;
   font-size: 14px;
   font-weight: 700;
-  color: #374151;
+  color: #333;
   display: flex;
   align-items: flex-start;
   gap: 4px;
@@ -5030,7 +5030,7 @@
 .wcontact-confirm-value {
   flex: 1;
   font-size: 14px;
-  color: #374151;
+  color: #333;
   line-height: 1.7;
   word-break: break-all;
 }
@@ -5052,14 +5052,14 @@
 .wcontact-complete-title {
   font-size: 20px;
   font-weight: 700;
-  color: #111827;
+  color: #1a1a1a;
   margin: 0;
 }
 
 .wcontact-complete-text {
   font-size: 14px;
-  color: #6b7280;
-  line-height: 1.8;
+  color: #444;
+  line-height: 1.85;
   margin: 0;
 }
 
