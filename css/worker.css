@@ -6043,6 +6043,30 @@
   background: #c0111f;
 }
 
+/* 仕事引き受け・辞退確認ポップアップ */
+.wprocedure-popup {
+  background: #fff;
+  border-radius: 10px;
+  padding: 32px 24px 24px;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+
+.wprocedure-popup-message {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 24px;
+}
+
+.wprocedure-popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* 検収確認モーダル */
 .kenshu-confirm-row {
   display: flex;
