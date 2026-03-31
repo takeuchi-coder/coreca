@@ -432,6 +432,92 @@
   </div>
   <!-- ===== /作業報告モーダル（検収する） ===== -->
 
+  <!-- ===== 検収確認モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="kenshu-confirm-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="kenshu-confirm-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="kenshu-confirm-modal-title">警察署への書類提出品業_30分</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-kenshu-confirm-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p class="wprocedure-modal-section-title">作業報告の検収</p>
+
+        <p style="font-size:13px;color:#333;margin:0 0 6px;">報告内容を承認して、決済を行います。<br>内容をご確認のうえ、承認ボタンを押してください。</p>
+        <p class="wprocedure-modal-note">報告の重複・内容不備がある場合は契約者にメッセージで報告修正or削除の依頼をしてください。</p>
+
+        <!-- 決済方法 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済方法</span>
+          <span class="kenshu-confirm-value">掛け払い</span>
+        </div>
+
+        <!-- 請求金額 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">請求金額</span>
+          <div class="kenshu-confirm-billing">
+            <div class="kenshu-billing-item">
+              <span>報酬単価</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>納品数</span>
+              <span>1件</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>報酬総額</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料</span>
+              <span>360円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料（税）</span>
+              <span>36円</span>
+            </div>
+            <div class="kenshu-billing-item kenshu-billing-item--bold">
+              <span>立替金額</span>
+              <span>2,700円</span>
+            </div>
+            <div class="kenshu-billing-total">合計<strong>4,296円</strong></div>
+          </div>
+        </div>
+
+        <!-- 納品アンケート -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">納品アンケート</span>
+          <div class="kenshu-confirm-survey">
+            <p class="kenshu-confirm-survey-intro">今回の納品に対するアンケートのご協力お願いいたします。<br>集計結果はサービス向上のために役立てて行く予定です。</p>
+            <p class="kenshu-confirm-survey-note">※受注者には公開されません。受注者への連絡はメッセージにてお願いします。</p>
+            <p class="kenshu-confirm-survey-q">Q1.今回の納品内容に満足していますか</p>
+            <div class="kenshu-confirm-survey-radios">
+              <span class="wprocedure-modal-badge wprocedure-modal-badge--required">必須</span>
+              <label><input type="radio" name="kenshu-satisfaction" value="good"> 良い</label>
+              <label><input type="radio" name="kenshu-satisfaction" value="normal"> 普通</label>
+              <label><input type="radio" name="kenshu-satisfaction" value="bad"> 悪い</label>
+            </div>
+            <p class="kenshu-confirm-survey-q">Q2. 納品に対するコメントがありましたらご記入ください</p>
+            <textarea class="kenshu-confirm-survey-textarea" name="kenshu-comment"></textarea>
+          </div>
+        </div>
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- モーダルフッター -->
+      <div class="kenshu-confirm-footer-btns">
+        <button type="button" class="kenshu-confirm-cancel-btn" id="btn-cancel-kenshu-confirm">キャンセル</button>
+        <button type="button" class="wprocedure-modal-start-btn" id="btn-approve-kenshu-confirm">上記の内容で、承認する</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /検収確認モーダル ===== -->
+
   <!-- ===== 詳細検索モーダル ===== -->
   <div class="search-modal-overlay" id="searchModalOverlay" hidden>
     <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
@@ -526,6 +612,10 @@
       var btnOpenKenshu = document.getElementById('btn-open-kenshu-modal');
       var btnCloseKenshu = document.getElementById('btn-close-kenshu-modal');
       var btnConfirmKenshu = document.getElementById('btn-kenshu-modal-confirm');
+      var kenshuConfirmOverlay = document.getElementById('kenshu-confirm-modal-overlay');
+      var btnCloseKenshuConfirm = document.getElementById('btn-close-kenshu-confirm-modal');
+      var btnCancelKenshuConfirm = document.getElementById('btn-cancel-kenshu-confirm');
+      var btnApproveKenshuConfirm = document.getElementById('btn-approve-kenshu-confirm');
 
       function openKenshuModal() {
         kenshuOverlay.removeAttribute('hidden');
@@ -540,16 +630,37 @@
         btnOpenKenshu.focus();
       }
 
+      function openKenshuConfirmModal() {
+        kenshuOverlay.setAttribute('hidden', '');
+        kenshuConfirmOverlay.removeAttribute('hidden');
+        kenshuConfirmOverlay.scrollTop = 0;
+        btnCloseKenshuConfirm.focus();
+      }
+
+      function closeKenshuConfirmModal() {
+        kenshuConfirmOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenKenshu.focus();
+      }
+
       btnOpenKenshu.addEventListener('click', openKenshuModal);
       btnCloseKenshu.addEventListener('click', closeKenshuModal);
-      btnConfirmKenshu.addEventListener('click', closeKenshuModal);
+      btnConfirmKenshu.addEventListener('click', openKenshuConfirmModal);
+      btnCloseKenshuConfirm.addEventListener('click', closeKenshuConfirmModal);
+      btnCancelKenshuConfirm.addEventListener('click', closeKenshuConfirmModal);
+      btnApproveKenshuConfirm.addEventListener('click', closeKenshuConfirmModal);
 
       kenshuOverlay.addEventListener('click', function (e) {
         if (e.target === kenshuOverlay) closeKenshuModal();
       });
 
+      kenshuConfirmOverlay.addEventListener('click', function (e) {
+        if (e.target === kenshuConfirmOverlay) closeKenshuConfirmModal();
+      });
+
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !kenshuOverlay.hasAttribute('hidden')) closeKenshuModal();
+        if (e.key === 'Escape' && !kenshuConfirmOverlay.hasAttribute('hidden')) closeKenshuConfirmModal();
       });
     })();
   </script>

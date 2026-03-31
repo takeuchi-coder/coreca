@@ -5761,3 +5761,130 @@
 .wprocedure-modal-start-btn:hover {
   background: #c0111f;
 }
+
+/* 検収確認モーダル */
+.kenshu-confirm-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 13px;
+}
+
+.kenshu-confirm-row:first-of-type {
+  border-top: 1px solid #e8e8e8;
+}
+
+.kenshu-confirm-label {
+  width: 90px;
+  flex-shrink: 0;
+  color: #555;
+  padding-top: 2px;
+}
+
+.kenshu-confirm-value {
+  color: #222;
+}
+
+.kenshu-confirm-billing {
+  flex: 1;
+}
+
+.kenshu-billing-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed #e0e0e0;
+  font-size: 13px;
+  color: #333;
+}
+
+.kenshu-billing-item:last-child {
+  border-bottom: none;
+}
+
+.kenshu-billing-item--bold {
+  font-weight: 700;
+}
+
+.kenshu-billing-total {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  padding: 10px 0 4px;
+}
+
+.kenshu-confirm-survey {
+  flex: 1;
+}
+
+.kenshu-confirm-survey-intro {
+  font-size: 13px;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+.kenshu-confirm-survey-note {
+  font-size: 12px;
+  color: #e8192c;
+  margin: 0 0 14px;
+}
+
+.kenshu-confirm-survey-q {
+  font-size: 13px;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+.kenshu-confirm-survey-radios {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 6px 0 16px;
+  flex-wrap: wrap;
+}
+
+.kenshu-confirm-survey-radios label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.kenshu-confirm-survey-textarea {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.kenshu-confirm-footer-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px 20px;
+}
+
+.kenshu-confirm-cancel-btn {
+  padding: 11px 28px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.kenshu-confirm-cancel-btn:hover {
+  background: #f5f5f5;
+}
