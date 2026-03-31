@@ -153,7 +153,7 @@
             <span class="proc-col proc-col--status">検収待ち</span>
           </div>
           <div class="proc-actions">
-            <button type="button" class="btn-proc-kenshu">検収する</button>
+            <button type="button" class="btn-proc-kenshu" id="btn-open-kenshu-modal">検収する</button>
             <span class="proc-kenshu-note">重複報告、内容不備がある場合は、契約者にメッセージで修正・終了・削除の依頼をしてください</span>
           </div>
         </div>
@@ -345,6 +345,141 @@
   </div>
   <!-- ===== /作業手順確認モーダル ===== -->
 
+  <!-- ===== 作業報告モーダル（検収する） ===== -->
+  <div class="wprocedure-modal-overlay" id="kenshu-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="kenshu-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="kenshu-modal-title">警察署への書類提出品業_30分</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-kenshu-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p class="wprocedure-modal-section-title">作業報告</p>
+
+        <!-- 作業概要 -->
+        <div class="wprocedure-modal-h2">作業概要</div>
+        <div class="wprocedure-modal-overview">
+          <p>コンビニ等の警察署指定にて、指定の書類を提出・申請するお仕事です。</p>
+          <br>
+          <p>&lt;作業の流れ&gt;</p>
+          <p>①発注者からメッセージで送られた書類を確認し、書類をカラー印刷（必須）（正本・副本用に2部）をします。（だいたい6-8枚）</p>
+          <p>②コンビニ印刷の場合、だいたい1枚50円 ～ 一回代行では費用で買い取りします。領収証はなくさないよう注意ください。</p>
+          <p>※書類枚数が申告書補充表上の申告者枠が満数以上の場合は申請する名前のを記入入力してください。</p>
+          <p>※書類はクリアファイルに入れ、ホチキス止めはしないでください。</p>
+          <br>
+          <p>②作業完了後は警察署へ行き、申請口へ向かいます。</p>
+          <p>※（連絡担当者は来ます）申請窓口で「申告番号：ランディット」〇〇（ご自身の名前）と名乗ってください。</p>
+          <br>
+          <p>③書類担当者がその場で確認し先払いを手先に先払いするように案内されます。</p>
+          <p>※連絡先は、掲載者用「作業についての問い合わせ対策番号」（受注者のみ公開）をご確認ください。</p>
+          <p>※支払方法は現金の他に、クレジットカード等のキャッシュレス決済にも対応している警察署もあります。</p>
+        </div>
+
+        <!-- 提出時の写真報告 (1回目) -->
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください。</p>
+        <p class="wprocedure-modal-note">※注意 写真報告が誤れていたり、割り切りできない場合、再提出の場合もございます。</p>
+        <p class="wprocedure-modal-note">※書類発行が受け取れない場合は、窓口で受け取り受取記号メモしたものを報告し報告してください。</p>
+
+        <p class="wprocedure-modal-photo-label">申請代理書類</p>
+        <div class="wprocedure-modal-photo-box" style="background:#e8f4fd;border-color:#90caf9;position:relative;">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge" style="background:#42a5f5;">&#10003;</span>
+        </div>
+        <span class="wprocedure-modal-photo-action" style="color:#42a5f5;">アップロードしました。</span>
+
+        <p class="wprocedure-modal-photo-label">控え（証拠がいなければ添付書写真）</p>
+        <div class="wprocedure-modal-photo-box" style="background:#e8f4fd;border-color:#90caf9;position:relative;">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge" style="background:#42a5f5;">&#10003;</span>
+        </div>
+        <span class="wprocedure-modal-photo-action" style="color:#42a5f5;">アップロードしました。</span>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <input type="text" class="wprocedure-modal-date-select" value="2025" readonly style="background:#f5f5f5;color:#333;cursor:default;">年
+          <input type="text" class="wprocedure-modal-date-select" value="12" readonly style="background:#f5f5f5;color:#333;cursor:default;">月
+          <input type="text" class="wprocedure-modal-date-select" value="02" readonly style="background:#f5f5f5;color:#333;cursor:default;">日
+        </div>
+        <p style="font-size:12px;color:#555;margin:8px 0 0;">その後に印刷代まで審査金が発生した場合（審査の領収書を1枚に収めて撮影してください）</p>
+
+        <!-- 受理時の写真報告 -->
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください。</p>
+        <p class="wprocedure-modal-note">※注意 写真報告が誤れていたり、割り切りできない場合、再提出の場合もございます。</p>
+        <p class="wprocedure-modal-note">※書類発行が受け取れない場合は、窓口で受け取り受取記号メモしたものを報告し報告してください。</p>
+
+        <p class="wprocedure-modal-photo-label">申請代理書類</p>
+        <div class="wprocedure-modal-photo-box" style="background:#e8f4fd;border-color:#90caf9;position:relative;">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge" style="background:#42a5f5;">&#10003;</span>
+        </div>
+        <span class="wprocedure-modal-photo-action" style="color:#42a5f5;">アップロードしました。</span>
+
+        <p class="wprocedure-modal-photo-label">控え（証拠がいなければ添付書写真）</p>
+        <div class="wprocedure-modal-photo-box" style="background:#e8f4fd;border-color:#90caf9;position:relative;">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge" style="background:#42a5f5;">&#10003;</span>
+        </div>
+        <span class="wprocedure-modal-photo-action" style="color:#42a5f5;">アップロードしました。</span>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <input type="text" class="wprocedure-modal-date-select" value="2025" readonly style="background:#f5f5f5;color:#333;cursor:default;">年
+          <input type="text" class="wprocedure-modal-date-select" value="12" readonly style="background:#f5f5f5;color:#333;cursor:default;">月
+          <input type="text" class="wprocedure-modal-date-select" value="02" readonly style="background:#f5f5f5;color:#333;cursor:default;">日
+        </div>
+        <p style="font-size:12px;color:#555;margin:8px 0 16px;">その後に印刷代まで審査金が発生した場合（審査の領収書を1枚に収めて撮影してください）</p>
+
+        <!-- 立替金について -->
+        <div class="wprocedure-modal-h2">立替金について</div>
+
+        <p style="font-size:12px;color:#555;margin:10px 0 4px;">立替金が発生した場合（領収書の領収書を1枚に収めて撮影してください）</p>
+        <p class="wprocedure-modal-photo-label">立替金を記録する写真（レート等）</p>
+        <div class="wprocedure-modal-photo-box" style="background:#e8f4fd;border-color:#90caf9;position:relative;">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#42a5f5" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge" style="background:#42a5f5;">&#10003;</span>
+        </div>
+        <span class="wprocedure-modal-photo-action" style="color:#42a5f5;">アップロードしました。</span>
+
+        <p class="wprocedure-modal-photo-label">立替金の合計金額</p>
+        <input type="number" class="wprocedure-modal-input" value="300" readonly style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:16px;background:#f5f5f5;color:#333;cursor:default;">
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <button type="button" class="wprocedure-modal-start-btn" id="btn-kenshu-modal-confirm">検収する</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業報告モーダル（検収する） ===== -->
+
   <!-- ===== 詳細検索モーダル ===== -->
   <div class="search-modal-overlay" id="searchModalOverlay" hidden>
     <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
@@ -429,6 +564,40 @@
 
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !procOverlay.hasAttribute('hidden')) closeProcModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var kenshuOverlay = document.getElementById('kenshu-modal-overlay');
+      var btnOpenKenshu = document.getElementById('btn-open-kenshu-modal');
+      var btnCloseKenshu = document.getElementById('btn-close-kenshu-modal');
+      var btnConfirmKenshu = document.getElementById('btn-kenshu-modal-confirm');
+
+      function openKenshuModal() {
+        kenshuOverlay.removeAttribute('hidden');
+        kenshuOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseKenshu.focus();
+      }
+
+      function closeKenshuModal() {
+        kenshuOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenKenshu.focus();
+      }
+
+      btnOpenKenshu.addEventListener('click', openKenshuModal);
+      btnCloseKenshu.addEventListener('click', closeKenshuModal);
+      btnConfirmKenshu.addEventListener('click', closeKenshuModal);
+
+      kenshuOverlay.addEventListener('click', function (e) {
+        if (e.target === kenshuOverlay) closeKenshuModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !kenshuOverlay.hasAttribute('hidden')) closeKenshuModal();
       });
     })();
   </script>
