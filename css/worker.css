@@ -6385,3 +6385,19 @@
   text-align: center;
   margin: 10px 0 24px;
 }
+
+/* 完了報告ポップアップ */
+.wprocedure-modal--compact {
+  max-width: 460px;
+}
+
+.wcomplete-modal-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.7;
+  margin: 0 0 10px;
+}
+
+.wcomplete-modal-text:last-child {
+  margin-bottom: 0;
+}

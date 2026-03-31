@@ -347,6 +347,33 @@
   </div>
   <!-- ===== /作業報告確認モーダル ===== -->
 
+  <!-- ===== 完了報告ポップアップ ===== -->
+  <div class="wprocedure-modal-overlay" id="complete-modal-overlay" hidden>
+    <div class="wprocedure-modal wprocedure-modal--compact" role="dialog" aria-modal="true" aria-labelledby="complete-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="complete-modal-title">完了報告しました。</p>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+        <p class="wcomplete-modal-text">報酬は発注者の報告承認後となります。</p>
+        <p class="wcomplete-modal-text">報告承認されるとメールが送られますのでお待ちください。</p>
+        <p class="wcomplete-modal-text">承認期限は最大1週間です。1週間を過ぎると自動承認となり報酬が反映されます。</p>
+      </div>
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <div class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-complete-close">閉じる</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /完了報告ポップアップ ===== -->
+
   <script>
     (function () {
       // ===== 作業手順・報告モーダル =====
@@ -475,10 +502,32 @@
       // この内容で報告する
       btnConfirmSubmit.addEventListener('click', function () {
         closeConfirmModal();
+        openCompleteModal();
       });
 
       confirmOverlay.addEventListener('click', function (e) {
         if (e.target === confirmOverlay) closeConfirmModal();
+      });
+
+      // ===== 完了報告ポップアップ =====
+      var completeOverlay = document.getElementById('complete-modal-overlay');
+      var btnCompleteClose = document.getElementById('btn-complete-close');
+
+      function openCompleteModal() {
+        completeOverlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        btnCompleteClose.focus();
+      }
+
+      function closeCompleteModal() {
+        completeOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+
+      btnCompleteClose.addEventListener('click', closeCompleteModal);
+
+      completeOverlay.addEventListener('click', function (e) {
+        if (e.target === completeOverlay) closeCompleteModal();
       });
     })();
   </script>
