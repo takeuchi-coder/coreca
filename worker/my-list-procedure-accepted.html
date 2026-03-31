@@ -128,9 +128,9 @@
       <!-- モーダル本体 -->
       <div class="wprocedure-modal-body">
 
-        <p class="wprocedure-modal-section-title">作業手順の確認</p>
+        <p class="wprocedure-modal-section-title" id="procedure-modal-section-title">作業手順の確認</p>
 
-        <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:10px 14px;margin-bottom:12px;color:#856404;font-size:13px;">
+        <div id="procedure-modal-alert" style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:10px 14px;margin-bottom:12px;color:#856404;font-size:13px;">
           &#x26A0; 作業報告ではないので入力できません
         </div>
 
@@ -272,10 +272,21 @@
       // 作業手順モーダル
       var overlay = document.getElementById('procedure-modal-overlay');
       var btnOpen = document.getElementById('btn-open-procedure-modal');
+      var btnStartReport = document.getElementById('btnStartReport');
       var btnClose = document.getElementById('btn-close-procedure-modal');
       var btnStart = document.getElementById('btn-procedure-modal-start');
+      var sectionTitle = document.getElementById('procedure-modal-section-title');
+      var alertBox = document.getElementById('procedure-modal-alert');
+      var lastOpener = btnOpen;
 
-      function openModal() {
+      function openModal(isReport) {
+        if (isReport) {
+          sectionTitle.textContent = '作業報告';
+          alertBox.hidden = true;
+        } else {
+          sectionTitle.textContent = '作業手順の確認';
+          alertBox.hidden = false;
+        }
         overlay.removeAttribute('hidden');
         overlay.scrollTop = 0;
         document.body.style.overflow = 'hidden';
@@ -285,10 +296,17 @@
       function closeModal() {
         overlay.setAttribute('hidden', '');
         document.body.style.overflow = '';
-        btnOpen.focus();
+        lastOpener.focus();
       }
 
-      btnOpen.addEventListener('click', openModal);
+      btnOpen.addEventListener('click', function () {
+        lastOpener = btnOpen;
+        openModal(false);
+      });
+      btnStartReport.addEventListener('click', function () {
+        lastOpener = btnStartReport;
+        openModal(true);
+      });
       btnClose.addEventListener('click', closeModal);
       btnStart.addEventListener('click', closeModal);
 
