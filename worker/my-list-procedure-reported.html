@@ -360,8 +360,7 @@
       <!-- モーダルフッター -->
       <div class="wprocedure-modal-footer">
         <div class="wprocedure-modal-footer-report">
-          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-confirm-back">戻る</button>
-          <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-submit">この内容で報告する</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-close">閉じる</button>
         </div>
       </div>
 
@@ -451,23 +450,7 @@
       // ===== 確認モーダル =====
       var confirmOverlay = document.getElementById('confirm-modal-overlay');
       var btnCloseConfirmModal = document.getElementById('btn-close-confirm-modal');
-      var btnConfirmBack = document.getElementById('btn-confirm-back');
-      var btnConfirmSubmit = document.getElementById('btn-confirm-submit');
-
-      function formatDate(yearId, monthId, dayId) {
-        var y = document.getElementById(yearId).value;
-        var m = document.getElementById(monthId).value;
-        var d = document.getElementById(dayId).value;
-        if (!y && !m && !d) return '未入力';
-        return (y || '─') + '年' + (m || '─') + '月' + (d || '─') + '日';
-      }
-
-      function buildConfirmContent() {
-        document.getElementById('confirm-submit-date').textContent = formatDate('submit-year', 'submit-month', 'submit-day');
-        document.getElementById('confirm-accept-date').textContent = formatDate('accept-year', 'accept-month', 'accept-day');
-        var advanceVal = document.getElementById('advance-total').value;
-        document.getElementById('confirm-advance-total').textContent = advanceVal !== '' ? advanceVal + '円' : '未入力';
-      }
+      var btnConfirmClose = document.getElementById('btn-confirm-close');
 
       function openConfirmModal() {
         confirmOverlay.removeAttribute('hidden');
@@ -483,15 +466,7 @@
       }
 
       btnCloseConfirmModal.addEventListener('click', closeConfirmModal);
-
-      btnConfirmBack.addEventListener('click', function () {
-        closeConfirmModal();
-      });
-
-      btnConfirmSubmit.addEventListener('click', function () {
-        closeConfirmModal();
-        openCompleteModal();
-      });
+      btnConfirmClose.addEventListener('click', closeConfirmModal);
 
       confirmOverlay.addEventListener('click', function (e) {
         if (e.target === confirmOverlay) closeConfirmModal();
