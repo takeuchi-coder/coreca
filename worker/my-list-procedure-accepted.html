@@ -183,13 +183,13 @@
 
         <p class="wprocedure-modal-photo-label">作業日</p>
         <div class="wprocedure-modal-date-row">
-          <select class="wprocedure-modal-date-select">
+          <select id="submit-year" class="wprocedure-modal-date-select">
             <option value="">─</option>
           </select>年
-          <select class="wprocedure-modal-date-select">
+          <select id="submit-month" class="wprocedure-modal-date-select">
             <option value="">─</option>
           </select>月
-          <select class="wprocedure-modal-date-select">
+          <select id="submit-day" class="wprocedure-modal-date-select">
             <option value="">─</option>
           </select>日
         </div>
@@ -226,13 +226,13 @@
 
         <p class="wprocedure-modal-photo-label">作業日</p>
         <div class="wprocedure-modal-date-row">
-          <select class="wprocedure-modal-date-select">
+          <select id="accept-year" class="wprocedure-modal-date-select">
             <option value="">─</option>
           </select>年
-          <select class="wprocedure-modal-date-select">
+          <select id="accept-month" class="wprocedure-modal-date-select">
             <option value="">─</option>
           </select>月
-          <select class="wprocedure-modal-date-select">
+          <select id="accept-day" class="wprocedure-modal-date-select">
             <option value="">─</option>
           </select>日
         </div>
@@ -254,22 +254,102 @@
         <span class="wprocedure-modal-photo-action">追加を削除する</span>
 
         <p class="wprocedure-modal-photo-label">立替金の合計金額</p>
-        <input type="number" class="wprocedure-modal-input" name="advance_total" min="0" placeholder="0" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:16px;">
+        <input type="number" id="advance-total" class="wprocedure-modal-input" name="advance_total" min="0" placeholder="0" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:16px;">
 
       </div><!-- /.wprocedure-modal-body -->
 
       <!-- モーダルフッター -->
       <div class="wprocedure-modal-footer">
-        <button type="button" class="wprocedure-modal-start-btn" id="btn-procedure-modal-start">確認完了</button>
+        <!-- 作業手順確認モード時のボタン -->
+        <div id="footer-check-mode">
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-procedure-modal-start">確認完了</button>
+        </div>
+        <!-- 作業報告モード時のボタン -->
+        <div id="footer-report-mode" hidden class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-close-no-save">保存せず閉じる</button>
+          <button type="button" class="wprocedure-modal-btn-outline" id="btn-save-close">保存して閉じる</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-save-confirm">保存して確認画面へ進む</button>
+        </div>
       </div>
 
     </div>
   </div>
   <!-- ===== /作業手順確認モーダル ===== -->
 
+  <!-- ===== 作業報告確認モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="confirm-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="confirm-modal-title">作業報告の確認</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-confirm-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+        <p style="font-size:14px;color:#444;margin-bottom:16px;">以下の内容で報告します。内容をご確認ください。</p>
+
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>申請代理書類</th>
+            <td id="confirm-submit-photo1">－</td>
+          </tr>
+          <tr>
+            <th>控え</th>
+            <td id="confirm-submit-photo2">－</td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td id="confirm-submit-date">－</td>
+          </tr>
+        </table>
+
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>申請代理書類</th>
+            <td id="confirm-accept-photo1">－</td>
+          </tr>
+          <tr>
+            <th>控え</th>
+            <td id="confirm-accept-photo2">－</td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td id="confirm-accept-date">－</td>
+          </tr>
+        </table>
+
+        <div class="wprocedure-modal-h2">立替金について</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>立替金を記録する写真</th>
+            <td id="confirm-advance-photo">－</td>
+          </tr>
+          <tr>
+            <th>立替金の合計金額</th>
+            <td id="confirm-advance-total">－</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <div class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-confirm-back">戻る</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-submit">この内容で報告する</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業報告確認モーダル ===== -->
+
   <script>
     (function () {
-      // 作業手順モーダル
+      // ===== 作業手順・報告モーダル =====
       var overlay = document.getElementById('procedure-modal-overlay');
       var btnOpen = document.getElementById('btn-open-procedure-modal');
       var btnStartReport = document.getElementById('btnStartReport');
@@ -277,15 +357,26 @@
       var btnStart = document.getElementById('btn-procedure-modal-start');
       var sectionTitle = document.getElementById('procedure-modal-section-title');
       var alertBox = document.getElementById('procedure-modal-alert');
+      var footerCheckMode = document.getElementById('footer-check-mode');
+      var footerReportMode = document.getElementById('footer-report-mode');
+      var btnCloseNoSave = document.getElementById('btn-close-no-save');
+      var btnSaveClose = document.getElementById('btn-save-close');
+      var btnSaveConfirm = document.getElementById('btn-save-confirm');
       var lastOpener = btnOpen;
+      var isReportMode = false;
 
       function openModal(isReport) {
+        isReportMode = isReport;
         if (isReport) {
           sectionTitle.textContent = '作業報告';
           alertBox.hidden = true;
+          footerCheckMode.hidden = true;
+          footerReportMode.removeAttribute('hidden');
         } else {
           sectionTitle.textContent = '作業手順の確認';
           alertBox.hidden = false;
+          footerCheckMode.hidden = false;
+          footerReportMode.setAttribute('hidden', '');
         }
         overlay.removeAttribute('hidden');
         overlay.scrollTop = 0;
@@ -310,12 +401,84 @@
       btnClose.addEventListener('click', closeModal);
       btnStart.addEventListener('click', closeModal);
 
+      // 保存せず閉じる
+      btnCloseNoSave.addEventListener('click', closeModal);
+
+      // 保存して閉じる
+      btnSaveClose.addEventListener('click', function () {
+        closeModal();
+      });
+
+      // 保存して確認画面へ進む
+      btnSaveConfirm.addEventListener('click', function () {
+        buildConfirmContent();
+        closeModal();
+        openConfirmModal();
+      });
+
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closeModal();
       });
 
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !overlay.hasAttribute('hidden')) closeModal();
+        if (e.key === 'Escape') {
+          if (!overlay.hasAttribute('hidden')) closeModal();
+          if (!confirmOverlay.hasAttribute('hidden')) closeConfirmModal();
+        }
+      });
+
+      // ===== 確認モーダル =====
+      var confirmOverlay = document.getElementById('confirm-modal-overlay');
+      var btnCloseConfirmModal = document.getElementById('btn-close-confirm-modal');
+      var btnConfirmBack = document.getElementById('btn-confirm-back');
+      var btnConfirmSubmit = document.getElementById('btn-confirm-submit');
+
+      function formatDate(yearId, monthId, dayId) {
+        var y = document.getElementById(yearId).value;
+        var m = document.getElementById(monthId).value;
+        var d = document.getElementById(dayId).value;
+        if (!y && !m && !d) return '未入力';
+        return (y || '─') + '年' + (m || '─') + '月' + (d || '─') + '日';
+      }
+
+      function buildConfirmContent() {
+        // 提出時の作業日
+        document.getElementById('confirm-submit-date').textContent = formatDate('submit-year', 'submit-month', 'submit-day');
+        // 受理時の作業日
+        document.getElementById('confirm-accept-date').textContent = formatDate('accept-year', 'accept-month', 'accept-day');
+        // 立替金
+        var advanceVal = document.getElementById('advance-total').value;
+        document.getElementById('confirm-advance-total').textContent = advanceVal !== '' ? advanceVal + '円' : '未入力';
+      }
+
+      function openConfirmModal() {
+        confirmOverlay.removeAttribute('hidden');
+        confirmOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseConfirmModal.focus();
+      }
+
+      function closeConfirmModal() {
+        confirmOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        lastOpener.focus();
+      }
+
+      btnCloseConfirmModal.addEventListener('click', closeConfirmModal);
+
+      // 戻るボタン：確認モーダルを閉じて報告モーダルを再度開く
+      btnConfirmBack.addEventListener('click', function () {
+        closeConfirmModal();
+        openModal(true);
+      });
+
+      // この内容で報告する
+      btnConfirmSubmit.addEventListener('click', function () {
+        closeConfirmModal();
+      });
+
+      confirmOverlay.addEventListener('click', function (e) {
+        if (e.target === confirmOverlay) closeConfirmModal();
       });
     })();
   </script>
