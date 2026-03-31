@@ -5888,3 +5888,80 @@
 .kenshu-confirm-cancel-btn:hover {
   background: #f5f5f5;
 }
+
+/* 承認完了モーダル */
+.kenshu-complete-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.kenshu-complete-header-close {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+}
+
+.kenshu-complete-header-close:hover {
+  background: #f5f5f5;
+}
+
+.kenshu-complete-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.kenshu-complete-intro {
+  padding: 20px 0;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 4px;
+}
+
+.kenshu-complete-intro p {
+  font-size: 13px;
+  color: #333;
+  margin: 0 0 14px;
+  line-height: 1.7;
+}
+
+.kenshu-complete-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.kenshu-complete-survey-answer {
+  font-size: 13px;
+  color: #333;
+  margin: 0 0 14px;
+  padding-left: 14px;
+}
+
+.kenshu-complete-footer {
+  display: flex;
+  justify-content: center;
+  padding: 16px 20px 24px;
+}
+
+.kenshu-complete-footer-btn {
+  padding: 12px 80px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kenshu-complete-footer-btn:hover {
+  background: #f5f5f5;
+}

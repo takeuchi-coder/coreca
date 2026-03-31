@@ -495,6 +495,93 @@
   </div>
   <!-- ===== /作業報告モーダル（検収する） ===== -->
 
+  <!-- ===== 承認完了モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="kenshu-complete-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="kenshu-complete-modal-title">
+
+      <!-- ヘッダー -->
+      <div class="kenshu-complete-header">
+        <button type="button" class="kenshu-complete-header-close" id="btn-close-kenshu-complete-header" aria-label="閉じる">閉じる</button>
+        <p class="kenshu-complete-title" id="kenshu-complete-modal-title">菊岡作成【株式会社コレカ様専用】警察署への書類提出業務_30分</p>
+      </div>
+
+      <!-- 本体 -->
+      <div class="wprocedure-modal-body">
+
+        <div class="kenshu-complete-intro">
+          <p>下記の内容で決済しました。<br>ご利用ありがとうございました。</p>
+          <p>作業報告の「検収日」を基準に、月末締め、翌月5営業日まで（当社営業日は土日祝日を除く平日）にご請求書を発行致します。<br>ご入金日は翌月末日までとさせていただいております。</p>
+        </div>
+
+        <!-- 決済日時 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済日時</span>
+          <div>
+            <p style="font-size:13px;color:#222;margin:0 0 4px;">2025年12月19日 16:21</p>
+            <p style="font-size:13px;color:#222;margin:0;">請求ID：787086</p>
+          </div>
+        </div>
+
+        <!-- 決済方法 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済方法</span>
+          <span class="kenshu-confirm-value">掛け払い</span>
+        </div>
+
+        <!-- 請求金額 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">請求金額</span>
+          <div class="kenshu-confirm-billing">
+            <div class="kenshu-billing-item">
+              <span>報酬単価</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>納品数</span>
+              <span>1件</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>報酬総額</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料</span>
+              <span>360円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料（税）</span>
+              <span>36円</span>
+            </div>
+            <div class="kenshu-billing-item kenshu-billing-item--bold">
+              <span>立替金額</span>
+              <span>2,700円</span>
+            </div>
+            <div class="kenshu-billing-total">合計<strong>4,296円</strong></div>
+          </div>
+        </div>
+
+        <!-- 納品アンケート -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">納品アンケート</span>
+          <div class="kenshu-confirm-survey">
+            <p class="kenshu-confirm-survey-q">Q1.今回の納品内容に満足していますか</p>
+            <p class="kenshu-complete-survey-answer">良い</p>
+            <p class="kenshu-confirm-survey-q">Q2. 納品に対するコメントがありましたらご記入ください</p>
+            <p class="kenshu-complete-survey-answer">とてもスムーズでよかったです。</p>
+          </div>
+        </div>
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- フッター -->
+      <div class="kenshu-complete-footer">
+        <button type="button" class="kenshu-complete-footer-btn" id="btn-close-kenshu-complete">閉じる</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /承認完了モーダル ===== -->
+
   <!-- ===== 詳細検索モーダル ===== -->
   <div class="search-modal-overlay" id="searchModalOverlay" hidden>
     <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
@@ -590,6 +677,9 @@
       var btnCloseKenshu = document.getElementById('btn-close-kenshu-modal');
       var btnConfirmKenshu = document.getElementById('btn-kenshu-modal-confirm');
       var btnCancelKenshu = document.getElementById('btn-kenshu-modal-cancel');
+      var kenshuCompleteOverlay = document.getElementById('kenshu-complete-modal-overlay');
+      var btnCloseKenshuCompleteHeader = document.getElementById('btn-close-kenshu-complete-header');
+      var btnCloseKenshuComplete = document.getElementById('btn-close-kenshu-complete');
 
       function openKenshuModal() {
         kenshuOverlay.removeAttribute('hidden');
@@ -604,17 +694,37 @@
         btnOpenKenshu.focus();
       }
 
+      function openKenshuCompleteModal() {
+        kenshuOverlay.setAttribute('hidden', '');
+        kenshuCompleteOverlay.removeAttribute('hidden');
+        kenshuCompleteOverlay.scrollTop = 0;
+        btnCloseKenshuCompleteHeader.focus();
+      }
+
+      function closeKenshuCompleteModal() {
+        kenshuCompleteOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenKenshu.focus();
+      }
+
       btnOpenKenshu.addEventListener('click', openKenshuModal);
       btnCloseKenshu.addEventListener('click', closeKenshuModal);
-      btnConfirmKenshu.addEventListener('click', closeKenshuModal);
+      btnConfirmKenshu.addEventListener('click', openKenshuCompleteModal);
       btnCancelKenshu.addEventListener('click', closeKenshuModal);
+      btnCloseKenshuCompleteHeader.addEventListener('click', closeKenshuCompleteModal);
+      btnCloseKenshuComplete.addEventListener('click', closeKenshuCompleteModal);
 
       kenshuOverlay.addEventListener('click', function (e) {
         if (e.target === kenshuOverlay) closeKenshuModal();
       });
 
+      kenshuCompleteOverlay.addEventListener('click', function (e) {
+        if (e.target === kenshuCompleteOverlay) closeKenshuCompleteModal();
+      });
+
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !kenshuOverlay.hasAttribute('hidden')) closeKenshuModal();
+        if (e.key === 'Escape' && !kenshuCompleteOverlay.hasAttribute('hidden')) closeKenshuCompleteModal();
       });
     })();
   </script>
