@@ -5435,3 +5435,329 @@
 .btn-wprocedure-ghost:hover {
   background: #f5f5f5;
 }
+
+/* ===========================
+   作業手順確認モーダル (wprocedure-modal-*)
+=========================== */
+.wprocedure-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px 16px;
+  overflow-y: auto;
+}
+
+.wprocedure-modal-overlay[hidden] {
+  display: none;
+}
+
+.wprocedure-modal {
+  background: #fff;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.wprocedure-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+  border-radius: 6px 6px 0 0;
+}
+
+.wprocedure-modal-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.wprocedure-modal-close {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  font-family: inherit;
+}
+
+.wprocedure-modal-close:hover {
+  color: #333;
+}
+
+.wprocedure-modal-body {
+  padding: 20px 20px 8px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.wprocedure-modal-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 14px;
+}
+
+.wprocedure-modal-h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  background: #f5f7fa;
+  border-left: 3px solid #e8192c;
+  padding: 6px 10px;
+  margin: 20px 0 10px;
+}
+
+.wprocedure-modal-overview {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin: 0 0 16px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.wprocedure-modal-overview p {
+  margin: 0 0 6px;
+}
+
+.wprocedure-modal-overview p:last-child {
+  margin: 0;
+}
+
+.wprocedure-modal-note {
+  font-size: 12px;
+  color: #e8192c;
+  margin: 0 0 4px;
+}
+
+.wprocedure-modal-divider {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 18px 0;
+}
+
+/* 写真エリア */
+.wprocedure-modal-photo-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin: 12px 0 6px;
+}
+
+.wprocedure-modal-photo-box {
+  position: relative;
+  width: 110px;
+  height: 90px;
+  background: #f0f0f0;
+  border: 1px dashed #bbb;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 4px;
+}
+
+.wprocedure-modal-photo-icon {
+  color: #bbb;
+}
+
+.wprocedure-modal-photo-badge {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  background: #e8192c;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.wprocedure-modal-photo-action {
+  font-size: 12px;
+  color: #e8192c;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 4px 0 8px;
+  display: inline-block;
+}
+
+/* 日付フィールド */
+.wprocedure-modal-date-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: #333;
+  margin: 8px 0;
+}
+
+.wprocedure-modal-date-select {
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+}
+
+/* バッジ */
+.wprocedure-modal-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+}
+
+.wprocedure-modal-badge--required {
+  background: #e8192c;
+  color: #fff;
+}
+
+.wprocedure-modal-badge--blue {
+  background: #1a73e8;
+  color: #fff;
+}
+
+/* テーブル形式 */
+.wprocedure-modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.wprocedure-modal-table th,
+.wprocedure-modal-table td {
+  border: 1px solid #ddd;
+  padding: 7px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.wprocedure-modal-table th {
+  background: #f5f7fa;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ラジオ */
+.wprocedure-modal-radios {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.wprocedure-modal-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* テキスト入力 */
+.wprocedure-modal-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* 強調ボックス */
+.wprocedure-modal-info-box {
+  background: #fff8f8;
+  border: 1px solid #f5c0c4;
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin: 10px 0 14px;
+}
+
+/* 立替金セクション */
+.wprocedure-modal-box {
+  background: #f5f7fa;
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 8px 0 16px;
+}
+
+/* 業務完了メッセージ */
+.wprocedure-modal-finish {
+  text-align: center;
+  padding: 20px 0 8px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #222;
+}
+
+.wprocedure-modal-finish strong {
+  font-size: 15px;
+}
+
+/* フッター */
+.wprocedure-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 18px;
+  border-top: 1px solid #e8e8e8;
+  background: #fff;
+  border-radius: 0 0 6px 6px;
+}
+
+.wprocedure-modal-page-info {
+  font-size: 12px;
+  color: #999;
+}
+
+.wprocedure-modal-start-btn {
+  padding: 11px 24px;
+  background: #e8192c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wprocedure-modal-start-btn:hover {
+  background: #c0111f;
+}
