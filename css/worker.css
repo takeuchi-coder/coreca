@@ -6114,6 +6114,82 @@
   color: #333;
 }
 
+/* 作業報告一覧テーブル */
+.wreport-table-wrap {
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.wreport-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.wreport-table thead tr {
+  background: #f7f7f7;
+}
+
+.wreport-table th {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #555;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.wreport-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.wreport-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.wreport-table-actions {
+  padding: 10px 12px;
+}
+
+.btn-wreport-outline {
+  display: inline-block;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.btn-wreport-outline:hover {
+  background: #f5f5f5;
+}
+
+.btn-wreport-primary {
+  display: inline-block;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #c0392b;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-wreport-primary:hover {
+  background: #a93226;
+}
+
 /* 仕事引き受け・辞退確認ポップアップ */
 .wprocedure-popup {
   background: #fff;
