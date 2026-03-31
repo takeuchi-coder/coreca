@@ -6270,3 +6270,47 @@
 .kenshu-complete-footer-btn:hover {
   background: #f5f5f5;
 }
+
+/* ===========================
+   作業手順・報告（引き受け後）
+=========================== */
+.wprocedure-special-notes {
+  margin: 24px 0 20px;
+  text-align: center;
+}
+
+.wprocedure-special-notes-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.wprocedure-special-notes-contact {
+  font-size: 14px;
+  color: #444;
+}
+
+.wprocedure-phone-section {
+  margin: 20px 0 28px;
+  text-align: center;
+}
+
+.wprocedure-phone-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.wprocedure-phone-number {
+  font-size: 15px;
+  color: #222;
+}
+
+.wprocedure-report-note {
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+  margin: 10px 0 24px;
+}
