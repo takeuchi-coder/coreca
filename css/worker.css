@@ -4782,6 +4782,227 @@
   margin: 0;
 }
 
+/* ステッパー追加状態（contact-detail.html） */
+.wcontact-step-circle--done {
+  background: #43a047;
+  color: #fff;
+}
+
+.wcontact-step-circle--current {
+  background: #fff;
+  color: #1a73e8;
+  border: 2px solid #1a73e8;
+}
+
+.wcontact-stepper-label--done .wcontact-stepper-title {
+  color: #43a047;
+  font-weight: 700;
+}
+
+.wcontact-stepper-label--done .wcontact-stepper-desc {
+  color: #e8761a;
+}
+
+.wcontact-stepper-label--active .wcontact-stepper-title {
+  color: #1a73e8;
+  font-weight: 700;
+}
+
+.wcontact-stepper-label--active .wcontact-stepper-desc {
+  color: #1a73e8;
+}
+
+/* 詳細フォーム入力フィールド */
+.wcontact-name-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.wcontact-name-row .wcontact-field {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.wcontact-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.wcontact-input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.12);
+}
+
+.wcontact-input--medium {
+  max-width: 280px;
+}
+
+.wcontact-input-hint {
+  font-size: 12px;
+  color: #888;
+  margin: 6px 0 0;
+  line-height: 1.6;
+}
+
+.wcontact-textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  resize: vertical;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.wcontact-textarea:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.12);
+}
+
+/* ファイルアップロード */
+.wcontact-file-wrap {
+  display: inline-block;
+}
+
+.wcontact-file-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.wcontact-file-btn:hover {
+  background: #1558b0;
+}
+
+.wcontact-file-input {
+  display: none;
+}
+
+/* プライバシーポリシー */
+.wcontact-privacy-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 28px;
+}
+
+.wcontact-privacy-link-wrap {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.85;
+  padding-top: 4px;
+}
+
+.wcontact-privacy-link {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.wcontact-privacy-link:hover {
+  text-decoration: underline;
+}
+
+.wcontact-privacy-check-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wcontact-privacy-check-wrap .wcontact-label {
+  margin-bottom: 0;
+}
+
+.wcontact-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.wcontact-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* 戻る・確認ボタン */
+.wcontact-detail-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.wcontact-btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #f59e0b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.wcontact-btn-back:hover {
+  background: #d97706;
+}
+
+.wcontact-btn-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #10b981;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.wcontact-btn-confirm:hover {
+  background: #059669;
+}
+
 /* ===========================
    サイドバー（マイページ系）
 =========================== */
