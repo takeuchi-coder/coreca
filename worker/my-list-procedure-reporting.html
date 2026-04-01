@@ -433,6 +433,31 @@
   </div>
   <!-- ===== /削除確認ダイアログ ===== -->
 
+  <!-- ===== 削除完了ポップアップ ===== -->
+  <div class="wprocedure-modal-overlay" id="delete-complete-modal-overlay" hidden>
+    <div class="wprocedure-modal wprocedure-modal--compact" role="dialog" aria-modal="true" aria-labelledby="delete-complete-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="delete-complete-modal-title">作業報告を削除しました。</p>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+        <p class="wcomplete-modal-text">報告中の作業報告を削除しました。</p>
+      </div>
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <div class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-delete-complete-close">閉じる</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /削除完了ポップアップ ===== -->
+
   <script>
     (function () {
       // ===== 作業手順・報告モーダル =====
@@ -505,6 +530,7 @@
           if (!overlay.hasAttribute('hidden')) closeModal();
           if (!confirmOverlay.hasAttribute('hidden')) closeConfirmModal();
           if (!deleteOverlay.hasAttribute('hidden')) closeDeleteModal();
+          if (!deleteCompleteOverlay.hasAttribute('hidden')) closeDeleteCompleteModal();
         }
       });
 
@@ -603,12 +629,32 @@
       btnDeleteCancel.addEventListener('click', closeDeleteModal);
       btnDeleteConfirm.addEventListener('click', function () {
         closeDeleteModal();
-        // 削除後の遷移（実際の実装ではページ遷移等を行う）
-        alert('作業報告を削除しました。');
+        openDeleteCompleteModal();
       });
 
       deleteOverlay.addEventListener('click', function (e) {
         if (e.target === deleteOverlay) closeDeleteModal();
+      });
+
+      // ===== 削除完了ポップアップ =====
+      var deleteCompleteOverlay = document.getElementById('delete-complete-modal-overlay');
+      var btnDeleteCompleteClose = document.getElementById('btn-delete-complete-close');
+
+      function openDeleteCompleteModal() {
+        deleteCompleteOverlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        btnDeleteCompleteClose.focus();
+      }
+
+      function closeDeleteCompleteModal() {
+        deleteCompleteOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+
+      btnDeleteCompleteClose.addEventListener('click', closeDeleteCompleteModal);
+
+      deleteCompleteOverlay.addEventListener('click', function (e) {
+        if (e.target === deleteCompleteOverlay) closeDeleteCompleteModal();
       });
     })();
   </script>
