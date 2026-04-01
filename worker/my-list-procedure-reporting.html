@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作業手順・報告 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wdetail-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="mypage.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+        <span class="logo-role">受注者としてログイン</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item"><a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a></li>
+          <li class="nav-item nav-item--active"><a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a></li>
+          <li class="nav-item"><a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a></li>
+          <li class="nav-item"><a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span></a></li>
+          <li class="nav-item"><a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="mypage.html" class="nav-user nav-user--active" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wmld-main">
+    <div class="wmld-inner">
+
+      <!-- ページヘッダー -->
+      <div class="wmld-page-header">
+        <a href="my-list-detail.html" class="wmld-back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          作業手順・報告
+        </a>
+      </div>
+
+      <!-- 案件IDバー -->
+      <div class="wmld-id-bar">
+        <div class="wmld-id-bar-left">
+          <span class="wmld-id">案件ID：236603</span>
+          <span class="wmld-orderer">発注者：株式会社コレカ　河辺美紀</span>
+        </div>
+        <span class="wmld-status-badge">契約中</span>
+      </div>
+
+      <!-- タブバー -->
+      <div class="wmld-tabs">
+        <a href="my-list-detail.html" class="wmld-tab">案件情報</a>
+        <a href="messages.html" class="wmld-tab">メッセージ</a>
+        <span class="wmld-tab wmld-tab--active">作業手順・報告</span>
+      </div>
+
+      <!-- コンテンツ本体 -->
+      <div class="wprocedure-body">
+
+        <!-- 作業報告作成通知バナー -->
+        <div class="wreport-info-banner">作業報告を作成しました</div>
+
+        <div class="wprocedure-special-notes">
+          <p class="wprocedure-special-notes-title">作業についてのやり取りに関する特記事項</p>
+          <p class="wprocedure-special-notes-contact">担当：河辺・道原</p>
+        </div>
+
+        <div class="wprocedure-phone-section">
+          <p class="wprocedure-phone-label">作業についての問い合わせ電話番号</p>
+          <p class="wprocedure-phone-number">0366280497</p>
+        </div>
+
+        <!-- 作業報告一覧テーブル -->
+        <div class="wreport-table-wrap">
+          <table class="wreport-table">
+            <thead>
+              <tr>
+                <th>作業ID</th>
+                <th>開始日</th>
+                <th>完了日</th>
+                <th>報酬反映日</th>
+                <th>報酬総額</th>
+                <th>立替金</th>
+                <th>ステータス</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>816968</td>
+                <td>2025年12月19日</td>
+                <td>－</td>
+                <td>－</td>
+                <td>－</td>
+                <td>－</td>
+                <td>報告中</td>
+              </tr>
+              <tr>
+                <td colspan="7" class="wreport-table-actions">
+                  <button type="button" class="btn-wreport-primary" id="btn-reopen-report">再開する</button>
+                  <button type="button" class="btn-wreport-outline" id="btn-delete-report">削除する</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="wprocedure-actions">
+          <button type="button" class="btn-wprocedure-outline" id="btn-open-procedure-modal">作業手順を確認する</button>
+          <button type="button" class="btn-wprocedure-disabled" disabled>作業報告を追加する</button>
+        </div>
+
+        <p class="wprocedure-report-note">報告途中の情報も発注者は閲覧可能になります。</p>
+
+        <p class="wprocedure-report-note">作業報告を追加するためには報告中の作業報告を完了してください。</p>
+
+        <p class="wprocedure-note">※「操作方法の不明点」「作業手順に記載のない業務を依頼された場合」はご近所ワーク事務局へ<a href="contact.html" class="wprocedure-link">お問い合わせ</a>ください。</p>
+
+        <p class="wprocedure-note">※「応募後の選考状況」「業務内容」「報告の承認状況」などは発注者へ確認ください。メッセージページは<a href="messages.html" class="wprocedure-link">こちら</a></p>
+
+      </div>
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== 作業手順確認モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="procedure-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="procedure-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="procedure-modal-title">警察署への書類提出品業_30分</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-procedure-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p class="wprocedure-modal-section-title" id="procedure-modal-section-title">作業手順の確認</p>
+
+        <div id="procedure-modal-alert" style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:10px 14px;margin-bottom:12px;color:#856404;font-size:13px;">
+          &#x26A0; 作業報告ではないので入力できません
+        </div>
+
+        <!-- 作業概要 -->
+        <div class="wprocedure-modal-h2">作業概要</div>
+        <div class="wprocedure-modal-overview">
+          <p>コンビニ等の警察署指定にて、指定の書類を提出・申請するお仕事です。</p>
+          <br>
+          <p>&lt;作業の流れ&gt;</p>
+          <p>①発注者からメッセージで送られた書類を確認し、書類をカラー印刷（必須）（正本・副本用に2部）をします。（だいたい6-8枚）</p>
+          <p>②コンビニ印刷の場合、だいたい1枚50円 ～ 一回代行では費用で買い取りします。領収証はなくさないよう注意ください。</p>
+          <p>※書類枚数が申告書補充表上の申告者枠が満数以上の場合は申請する名前のを記入入力してください。</p>
+          <p>※書類はクリアファイルに入れ、ホチキス止めはしないでください。</p>
+          <br>
+          <p>②作業完了後は警察署へ行き、申請口へ向かいます。</p>
+          <p>※（連絡担当者は来ます）申請窓口で「申告番号：ランディット」〇〇（ご自身の名前）と名乗ってください。</p>
+          <br>
+          <p>③書類担当者がその場で確認し先払いを手先に先払いするように案内されます。</p>
+          <p>※連絡先は、掲載者用「作業についての問い合わせ対策番号」（受注者のみ公開）をご確認ください。</p>
+          <p>※支払方法は現金の他に、クレジットカード等のキャッシュレス決済にも対応している警察署もあります。</p>
+        </div>
+
+        <!-- 提出時の写真報告 (1回目) -->
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください。</p>
+        <p class="wprocedure-modal-note">※注意 写真報告が誤れていたり、割り切りできない場合、再提出の場合もございます。</p>
+        <p class="wprocedure-modal-note">※書類発行が受け取れない場合は、窓口で受け取り受取記号メモしたものを報告し報告してください。</p>
+
+        <p class="wprocedure-modal-photo-label">申請代理書類</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">控え（証拠がいなければ添付書写真）</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <select id="submit-year" class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>年
+          <select id="submit-month" class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>月
+          <select id="submit-day" class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>日
+        </div>
+        <p style="font-size:12px;color:#555;margin:8px 0 0;">その後に印刷代まで審査金が発生した場合（審査の領収書を1枚に収めて撮影してください）</p>
+
+        <!-- 受理時の写真報告 -->
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください。</p>
+        <p class="wprocedure-modal-note">※注意 写真報告が誤れていたり、割り切りできない場合、再提出の場合もございます。</p>
+        <p class="wprocedure-modal-note">※書類発行が受け取れない場合は、窓口で受け取り受取記号メモしたものを報告し報告してください。</p>
+
+        <p class="wprocedure-modal-photo-label">申請代理書類</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">控え（証拠がいなければ添付書写真）</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <select id="accept-year" class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>年
+          <select id="accept-month" class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>月
+          <select id="accept-day" class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>日
+        </div>
+        <p style="font-size:12px;color:#555;margin:8px 0 16px;">その後に印刷代まで審査金が発生した場合（審査の領収書を1枚に収めて撮影してください）</p>
+
+        <!-- 立替金について -->
+        <div class="wprocedure-modal-h2">立替金について</div>
+
+        <p style="font-size:12px;color:#555;margin:10px 0 4px;">立替金が発生した場合（領収書の領収書を1枚に収めて撮影してください）</p>
+        <p class="wprocedure-modal-photo-label">立替金を記録する写真（レート等）</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">立替金の合計金額</p>
+        <input type="number" id="advance-total" class="wprocedure-modal-input" name="advance_total" min="0" placeholder="0" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:16px;">
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <div id="footer-check-mode">
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-procedure-modal-start">確認完了</button>
+        </div>
+        <!-- 作業報告モード時のボタン -->
+        <div id="footer-report-mode" hidden class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-close-no-save">保存せず閉じる</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-save-confirm">保存して確認画面へ進む</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業手順確認モーダル ===== -->
+
+  <!-- ===== 作業報告確認モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="confirm-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="confirm-modal-title">作業報告の確認</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-confirm-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+        <p style="font-size:14px;color:#444;margin-bottom:16px;">以下の内容で報告します。内容をご確認ください。</p>
+
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>申請代理書類</th>
+            <td id="confirm-submit-photo1">未アップロード</td>
+          </tr>
+          <tr>
+            <th>控え</th>
+            <td id="confirm-submit-photo2">未アップロード</td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td id="confirm-submit-date">未入力</td>
+          </tr>
+        </table>
+
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>申請代理書類</th>
+            <td id="confirm-accept-photo1">未アップロード</td>
+          </tr>
+          <tr>
+            <th>控え</th>
+            <td id="confirm-accept-photo2">未アップロード</td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td id="confirm-accept-date">未入力</td>
+          </tr>
+        </table>
+
+        <div class="wprocedure-modal-h2">立替金について</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>立替金を記録する写真</th>
+            <td id="confirm-advance-photo">未アップロード</td>
+          </tr>
+          <tr>
+            <th>立替金の合計金額</th>
+            <td id="confirm-advance-total">未入力</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <div id="confirm-footer-edit" class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-confirm-back">戻る</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-submit">この内容で報告する</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業報告確認モーダル ===== -->
+
+  <!-- ===== 報告完了ポップアップ ===== -->
+  <div class="wprocedure-modal-overlay" id="complete-modal-overlay" hidden>
+    <div class="wprocedure-modal wprocedure-modal--compact" role="dialog" aria-modal="true" aria-labelledby="complete-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="complete-modal-title">作業報告が完了しました。</p>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+        <p class="wcomplete-modal-text">報酬は発注者の報告承認後となります。</p>
+        <p class="wcomplete-modal-text">報告承認されるとメールが送られますのでお待ちください。</p>
+        <p class="wcomplete-modal-text">承認期限は最大1週間です。1週間を過ぎると自動承認となり報酬が反映されます。</p>
+      </div>
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <div class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-complete-close">閉じる</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /報告完了ポップアップ ===== -->
+
+  <!-- ===== 削除確認ダイアログ ===== -->
+  <div class="wprocedure-modal-overlay" id="delete-modal-overlay" hidden>
+    <div class="wprocedure-modal wprocedure-modal--compact" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="delete-modal-title">作業報告を削除しますか？</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-delete-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+        <p style="font-size:14px;color:#444;">この操作は取り消せません。報告中の作業報告を削除してもよろしいですか？</p>
+      </div>
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <div class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-delete-cancel">キャンセル</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-delete-confirm" style="background:#e8192c;">削除する</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /削除確認ダイアログ ===== -->
+
+  <script>
+    (function () {
+      // ===== 作業手順・報告モーダル =====
+      var overlay = document.getElementById('procedure-modal-overlay');
+      var btnOpen = document.getElementById('btn-open-procedure-modal');
+      var btnReopenReport = document.getElementById('btn-reopen-report');
+      var btnClose = document.getElementById('btn-close-procedure-modal');
+      var btnStart = document.getElementById('btn-procedure-modal-start');
+      var sectionTitle = document.getElementById('procedure-modal-section-title');
+      var alertBox = document.getElementById('procedure-modal-alert');
+      var footerCheckMode = document.getElementById('footer-check-mode');
+      var footerReportMode = document.getElementById('footer-report-mode');
+      var btnCloseNoSave = document.getElementById('btn-close-no-save');
+      var btnSaveConfirm = document.getElementById('btn-save-confirm');
+      var lastOpener = btnOpen;
+      var isReportMode = false;
+
+      function openModal(isReport) {
+        isReportMode = isReport;
+        if (isReport) {
+          sectionTitle.textContent = '作業報告の入力';
+          alertBox.hidden = true;
+          footerCheckMode.hidden = true;
+          footerReportMode.removeAttribute('hidden');
+        } else {
+          sectionTitle.textContent = '作業手順の確認';
+          alertBox.hidden = false;
+          footerCheckMode.hidden = false;
+          footerReportMode.setAttribute('hidden', '');
+        }
+        overlay.removeAttribute('hidden');
+        overlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnClose.focus();
+      }
+
+      function closeModal() {
+        overlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        lastOpener.focus();
+      }
+
+      btnOpen.addEventListener('click', function () {
+        lastOpener = btnOpen;
+        openModal(false);
+      });
+      btnReopenReport.addEventListener('click', function () {
+        lastOpener = btnReopenReport;
+        openModal(true);
+      });
+      btnClose.addEventListener('click', closeModal);
+      btnStart.addEventListener('click', closeModal);
+
+      btnCloseNoSave.addEventListener('click', closeModal);
+
+      btnSaveConfirm.addEventListener('click', function () {
+        buildConfirmContent();
+        closeModal();
+        openConfirmModal();
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (!overlay.hasAttribute('hidden')) closeModal();
+          if (!confirmOverlay.hasAttribute('hidden')) closeConfirmModal();
+          if (!deleteOverlay.hasAttribute('hidden')) closeDeleteModal();
+        }
+      });
+
+      // ===== 確認モーダル =====
+      var confirmOverlay = document.getElementById('confirm-modal-overlay');
+      var btnCloseConfirmModal = document.getElementById('btn-close-confirm-modal');
+      var btnConfirmBack = document.getElementById('btn-confirm-back');
+      var btnConfirmSubmit = document.getElementById('btn-confirm-submit');
+
+      function formatDate(yearId, monthId, dayId) {
+        var y = document.getElementById(yearId).value;
+        var m = document.getElementById(monthId).value;
+        var d = document.getElementById(dayId).value;
+        if (!y && !m && !d) return '未入力';
+        return (y || '─') + '年' + (m || '─') + '月' + (d || '─') + '日';
+      }
+
+      function buildConfirmContent() {
+        document.getElementById('confirm-submit-date').textContent = formatDate('submit-year', 'submit-month', 'submit-day');
+        document.getElementById('confirm-accept-date').textContent = formatDate('accept-year', 'accept-month', 'accept-day');
+        var advanceVal = document.getElementById('advance-total').value;
+        document.getElementById('confirm-advance-total').textContent = advanceVal !== '' ? advanceVal + '円' : '未入力';
+      }
+
+      function openConfirmModal() {
+        confirmOverlay.removeAttribute('hidden');
+        confirmOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseConfirmModal.focus();
+      }
+
+      function closeConfirmModal() {
+        confirmOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        lastOpener.focus();
+      }
+
+      btnCloseConfirmModal.addEventListener('click', closeConfirmModal);
+
+      btnConfirmBack.addEventListener('click', function () {
+        closeConfirmModal();
+        openModal(true);
+      });
+
+      btnConfirmSubmit.addEventListener('click', function () {
+        closeConfirmModal();
+        openCompleteModal();
+      });
+
+      confirmOverlay.addEventListener('click', function (e) {
+        if (e.target === confirmOverlay) closeConfirmModal();
+      });
+
+      // ===== 完了報告ポップアップ =====
+      var completeOverlay = document.getElementById('complete-modal-overlay');
+      var btnCompleteClose = document.getElementById('btn-complete-close');
+
+      function openCompleteModal() {
+        completeOverlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        btnCompleteClose.focus();
+      }
+
+      function closeCompleteModal() {
+        completeOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+      }
+
+      btnCompleteClose.addEventListener('click', closeCompleteModal);
+
+      completeOverlay.addEventListener('click', function (e) {
+        if (e.target === completeOverlay) closeCompleteModal();
+      });
+
+      // ===== 削除確認ダイアログ =====
+      var deleteOverlay = document.getElementById('delete-modal-overlay');
+      var btnDeleteReport = document.getElementById('btn-delete-report');
+      var btnCloseDeleteModal = document.getElementById('btn-close-delete-modal');
+      var btnDeleteCancel = document.getElementById('btn-delete-cancel');
+      var btnDeleteConfirm = document.getElementById('btn-delete-confirm');
+
+      function openDeleteModal() {
+        deleteOverlay.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+        btnCloseDeleteModal.focus();
+      }
+
+      function closeDeleteModal() {
+        deleteOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnDeleteReport.focus();
+      }
+
+      btnDeleteReport.addEventListener('click', openDeleteModal);
+      btnCloseDeleteModal.addEventListener('click', closeDeleteModal);
+      btnDeleteCancel.addEventListener('click', closeDeleteModal);
+      btnDeleteConfirm.addEventListener('click', function () {
+        closeDeleteModal();
+        // 削除後の遷移（実際の実装ではページ遷移等を行う）
+        alert('作業報告を削除しました。');
+      });
+
+      deleteOverlay.addEventListener('click', function (e) {
+        if (e.target === deleteOverlay) closeDeleteModal();
+      });
+    })();
+  </script>
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事依頼したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
