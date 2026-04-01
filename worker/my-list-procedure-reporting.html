@@ -133,7 +133,6 @@
 
         <div class="wprocedure-actions">
           <button type="button" class="btn-wprocedure-outline" id="btn-open-procedure-modal">作業手順を確認する</button>
-          <button type="button" class="btn-wprocedure-disabled" disabled>作業報告を追加する</button>
         </div>
 
         <p class="wprocedure-report-note">報告途中の情報も発注者は閲覧可能になります。</p>
@@ -300,6 +299,7 @@
         <!-- 作業報告モード時のボタン -->
         <div id="footer-report-mode" hidden class="wprocedure-modal-footer-report">
           <button type="button" class="wprocedure-modal-btn-secondary" id="btn-close-no-save">保存せず閉じる</button>
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-save-close">保存して閉じる</button>
           <button type="button" class="wprocedure-modal-start-btn" id="btn-save-confirm">保存して確認画面へ進む</button>
         </div>
       </div>
@@ -446,6 +446,7 @@
       var footerCheckMode = document.getElementById('footer-check-mode');
       var footerReportMode = document.getElementById('footer-report-mode');
       var btnCloseNoSave = document.getElementById('btn-close-no-save');
+      var btnSaveClose = document.getElementById('btn-save-close');
       var btnSaveConfirm = document.getElementById('btn-save-confirm');
       var lastOpener = btnOpen;
       var isReportMode = false;
@@ -487,6 +488,7 @@
       btnStart.addEventListener('click', closeModal);
 
       btnCloseNoSave.addEventListener('click', closeModal);
+      btnSaveClose.addEventListener('click', closeModal);
 
       btnSaveConfirm.addEventListener('click', function () {
         buildConfirmContent();
