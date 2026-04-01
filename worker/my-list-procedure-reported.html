@@ -295,7 +295,6 @@
         <!-- 作業報告モード時のボタン -->
         <div id="footer-report-mode" hidden class="wprocedure-modal-footer-report">
           <button type="button" class="wprocedure-modal-btn-secondary" id="btn-close-no-save">保存せず閉じる</button>
-          <button type="button" class="wprocedure-modal-btn-outline" id="btn-save-close">保存して閉じる</button>
           <button type="button" class="wprocedure-modal-start-btn" id="btn-save-confirm">保存して確認画面へ進む</button>
         </div>
       </div>
@@ -310,7 +309,7 @@
 
       <!-- モーダルヘッダー -->
       <div class="wprocedure-modal-header">
-        <p class="wprocedure-modal-title" id="confirm-modal-title">作業報告の確認</p>
+        <p class="wprocedure-modal-title" id="confirm-modal-title">作業報告の修正の確認</p>
         <button type="button" class="wprocedure-modal-close" id="btn-close-confirm-modal" aria-label="閉じる">&times;</button>
       </div>
 
@@ -372,7 +371,7 @@
         <!-- 修正するフロー -->
         <div id="confirm-footer-edit" hidden class="wprocedure-modal-footer-report">
           <button type="button" class="wprocedure-modal-btn-secondary" id="btn-confirm-back">戻る</button>
-          <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-submit">この内容で報告する</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-submit">この内容に修正する</button>
         </div>
       </div>
 
@@ -386,7 +385,7 @@
 
       <!-- モーダルヘッダー -->
       <div class="wprocedure-modal-header">
-        <p class="wprocedure-modal-title" id="complete-modal-title">完了報告しました。</p>
+        <p class="wprocedure-modal-title" id="complete-modal-title">作業報告の修正が完了しました。</p>
       </div>
 
       <!-- モーダル本体 -->
@@ -428,7 +427,7 @@
       function openModal(isReport) {
         isReportMode = isReport;
         if (isReport) {
-          sectionTitle.textContent = '作業報告';
+          sectionTitle.textContent = '作業報告の修正';
           alertBox.hidden = true;
           footerCheckMode.hidden = true;
           footerReportMode.removeAttribute('hidden');
