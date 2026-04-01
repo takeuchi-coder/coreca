@@ -292,6 +292,12 @@
         <div id="footer-check-mode">
           <button type="button" class="wprocedure-modal-start-btn" id="btn-procedure-modal-start">確認完了</button>
         </div>
+        <!-- 作業報告モード時のボタン -->
+        <div id="footer-report-mode" hidden class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-close-no-save">保存せず閉じる</button>
+          <button type="button" class="wprocedure-modal-btn-outline" id="btn-save-close">保存して閉じる</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-save-confirm">保存して確認画面へ進む</button>
+        </div>
       </div>
 
     </div>
@@ -359,8 +365,14 @@
 
       <!-- モーダルフッター -->
       <div class="wprocedure-modal-footer">
-        <div class="wprocedure-modal-footer-report">
+        <!-- 確認するフロー -->
+        <div id="confirm-footer-view" class="wprocedure-modal-footer-report">
           <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-close">閉じる</button>
+        </div>
+        <!-- 修正するフロー -->
+        <div id="confirm-footer-edit" hidden class="wprocedure-modal-footer-report">
+          <button type="button" class="wprocedure-modal-btn-secondary" id="btn-confirm-back">戻る</button>
+          <button type="button" class="wprocedure-modal-start-btn" id="btn-confirm-submit">この内容で報告する</button>
         </div>
       </div>
 
@@ -400,15 +412,32 @@
       // ===== 作業手順・報告モーダル =====
       var overlay = document.getElementById('procedure-modal-overlay');
       var btnOpen = document.getElementById('btn-open-procedure-modal');
+      var btnEditReport = document.getElementById('btn-edit-report');
       var btnClose = document.getElementById('btn-close-procedure-modal');
       var btnStart = document.getElementById('btn-procedure-modal-start');
       var sectionTitle = document.getElementById('procedure-modal-section-title');
       var alertBox = document.getElementById('procedure-modal-alert');
+      var footerCheckMode = document.getElementById('footer-check-mode');
+      var footerReportMode = document.getElementById('footer-report-mode');
+      var btnCloseNoSave = document.getElementById('btn-close-no-save');
+      var btnSaveClose = document.getElementById('btn-save-close');
+      var btnSaveConfirm = document.getElementById('btn-save-confirm');
       var lastOpener = btnOpen;
+      var isReportMode = false;
 
-      function openModal() {
-        sectionTitle.textContent = '作業手順の確認';
-        alertBox.hidden = false;
+      function openModal(isReport) {
+        isReportMode = isReport;
+        if (isReport) {
+          sectionTitle.textContent = '作業報告';
+          alertBox.hidden = true;
+          footerCheckMode.hidden = true;
+          footerReportMode.removeAttribute('hidden');
+        } else {
+          sectionTitle.textContent = '作業手順の確認';
+          alertBox.hidden = false;
+          footerCheckMode.hidden = false;
+          footerReportMode.setAttribute('hidden', '');
+        }
         overlay.removeAttribute('hidden');
         overlay.scrollTop = 0;
         document.body.style.overflow = 'hidden';
@@ -423,10 +452,29 @@
 
       btnOpen.addEventListener('click', function () {
         lastOpener = btnOpen;
-        openModal();
+        openModal(false);
+      });
+      btnEditReport.addEventListener('click', function () {
+        lastOpener = btnEditReport;
+        openModal(true);
       });
       btnClose.addEventListener('click', closeModal);
       btnStart.addEventListener('click', closeModal);
+
+      // 保存せず閉じる
+      btnCloseNoSave.addEventListener('click', closeModal);
+
+      // 保存して閉じる
+      btnSaveClose.addEventListener('click', function () {
+        closeModal();
+      });
+
+      // 保存して確認画面へ進む
+      btnSaveConfirm.addEventListener('click', function () {
+        buildConfirmContent();
+        closeModal();
+        openConfirmModal(true);
+      });
 
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) closeModal();
@@ -444,15 +492,41 @@
 
       btnConfirmReport.addEventListener('click', function () {
         lastOpener = btnConfirmReport;
-        openConfirmModal();
+        openConfirmModal(false);
       });
 
       // ===== 確認モーダル =====
       var confirmOverlay = document.getElementById('confirm-modal-overlay');
       var btnCloseConfirmModal = document.getElementById('btn-close-confirm-modal');
       var btnConfirmClose = document.getElementById('btn-confirm-close');
+      var confirmFooterView = document.getElementById('confirm-footer-view');
+      var confirmFooterEdit = document.getElementById('confirm-footer-edit');
+      var btnConfirmBack = document.getElementById('btn-confirm-back');
+      var btnConfirmSubmit = document.getElementById('btn-confirm-submit');
 
-      function openConfirmModal() {
+      function formatDate(yearId, monthId, dayId) {
+        var y = document.getElementById(yearId).value;
+        var m = document.getElementById(monthId).value;
+        var d = document.getElementById(dayId).value;
+        if (!y && !m && !d) return '未入力';
+        return (y || '─') + '年' + (m || '─') + '月' + (d || '─') + '日';
+      }
+
+      function buildConfirmContent() {
+        document.getElementById('confirm-submit-date').textContent = formatDate('submit-year', 'submit-month', 'submit-day');
+        document.getElementById('confirm-accept-date').textContent = formatDate('accept-year', 'accept-month', 'accept-day');
+        var advanceVal = document.getElementById('advance-total').value;
+        document.getElementById('confirm-advance-total').textContent = advanceVal !== '' ? advanceVal + '円' : '未入力';
+      }
+
+      function openConfirmModal(isEdit) {
+        if (isEdit) {
+          confirmFooterView.setAttribute('hidden', '');
+          confirmFooterEdit.removeAttribute('hidden');
+        } else {
+          confirmFooterView.removeAttribute('hidden');
+          confirmFooterEdit.setAttribute('hidden', '');
+        }
         confirmOverlay.removeAttribute('hidden');
         confirmOverlay.scrollTop = 0;
         document.body.style.overflow = 'hidden';
@@ -467,6 +541,18 @@
 
       btnCloseConfirmModal.addEventListener('click', closeConfirmModal);
       btnConfirmClose.addEventListener('click', closeConfirmModal);
+
+      // 戻る：確認モーダルを閉じて報告モーダルを再度開く
+      btnConfirmBack.addEventListener('click', function () {
+        closeConfirmModal();
+        openModal(true);
+      });
+
+      // この内容で報告する
+      btnConfirmSubmit.addEventListener('click', function () {
+        closeConfirmModal();
+        openCompleteModal();
+      });
 
       confirmOverlay.addEventListener('click', function (e) {
         if (e.target === confirmOverlay) closeConfirmModal();
