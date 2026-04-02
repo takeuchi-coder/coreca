@@ -4796,7 +4796,7 @@
 
 /* ステッパー追加状態（contact-detail.html） */
 .wcontact-step-circle--done {
-  background: #c0111f;
+  background: #43a047;
   color: #fff;
 }
 
@@ -4807,12 +4807,12 @@
 }
 
 .wcontact-stepper-label--done .wcontact-stepper-title {
-  color: #c0111f;
+  color: #43a047;
   font-weight: 700;
 }
 
 .wcontact-stepper-label--done .wcontact-stepper-desc {
-  color: #c0111f;
+  color: #43a047;
 }
 
 .wcontact-stepper-label--active .wcontact-stepper-title {
@@ -4898,18 +4898,20 @@
   display: inline-flex;
   align-items: center;
   padding: 6px 16px;
-  background: #c0111f;
-  color: #fff;
+  background: #fff;
+  color: #666;
+  border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 400;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.15s;
+  transition: background 0.15s, border-color 0.15s;
 }
 
 .wcontact-file-btn:hover {
-  background: #a00e1a;
+  background: #f5f5f5;
+  border-color: #aaa;
 }
 
 .wcontact-file-input {
