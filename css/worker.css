@@ -4477,6 +4477,18 @@
   line-height: 1.7;
 }
 
+.wpr-back-login {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.wpr-back-login:hover {
+  text-decoration: underline;
+}
+
 
 /* =============================================
    ご利用マニュアル（manual.html） wmanual-*
