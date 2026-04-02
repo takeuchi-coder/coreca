@@ -113,11 +113,23 @@
         </p>
 
         <div class="wbasic-submit-row">
-          <button type="button" class="wbasic-btn-submit wbasic-btn-submit--wide">退会申請する</button>
+          <button type="button" class="wbasic-btn-submit wbasic-btn-submit--wide" onclick="document.getElementById('withdrawal-confirm-modal').removeAttribute('hidden')">退会申請する</button>
         </div>
       </div>
     </div><!-- /wsidebar-layout -->
   </main>
+
+  <!-- ===== 退会確認モーダル ===== -->
+  <div id="withdrawal-confirm-modal" class="order-modal-overlay" hidden>
+    <div class="order-modal" role="dialog" aria-modal="true" aria-labelledby="withdrawal-modal-question">
+      <p id="withdrawal-modal-question" class="order-modal-question">退会申請を行います。この操作は取り消せませんが、実行してもよろしいですか？</p>
+      <div class="order-modal-actions">
+        <button type="button" class="btn-order-modal-no" onclick="document.getElementById('withdrawal-confirm-modal').setAttribute('hidden', '')">キャンセル</button>
+        <button type="button" class="btn-order-modal-stop">退会申請を行う</button>
+      </div>
+    </div>
+  </div>
+  <!-- ===== /退会確認モーダル ===== -->
   <!-- ===== /メインコンテンツ ===== -->
 
   <!-- ===== フッター ===== -->
