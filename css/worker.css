@@ -4796,32 +4796,32 @@
 
 /* ステッパー追加状態（contact-detail.html） */
 .wcontact-step-circle--done {
-  background: #43a047;
+  background: #c0111f;
   color: #fff;
 }
 
 .wcontact-step-circle--current {
   background: #fff;
-  color: #1a73e8;
-  border: 2px solid #1a73e8;
+  color: #c0111f;
+  border: 2px solid #c0111f;
 }
 
 .wcontact-stepper-label--done .wcontact-stepper-title {
-  color: #43a047;
+  color: #c0111f;
   font-weight: 700;
 }
 
 .wcontact-stepper-label--done .wcontact-stepper-desc {
-  color: #e8761a;
+  color: #c0111f;
 }
 
 .wcontact-stepper-label--active .wcontact-stepper-title {
-  color: #1a73e8;
+  color: #c0111f;
   font-weight: 700;
 }
 
 .wcontact-stepper-label--active .wcontact-stepper-desc {
-  color: #1a73e8;
+  color: #c0111f;
 }
 
 /* 詳細フォーム入力フィールド */
@@ -4853,8 +4853,8 @@
 }
 
 .wcontact-input:focus {
-  border-color: #1a73e8;
-  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.12);
+  border-color: #c0111f;
+  box-shadow: 0 0 0 2px rgba(192, 17, 31, 0.12);
 }
 
 .wcontact-input--medium {
@@ -4885,8 +4885,8 @@
 }
 
 .wcontact-textarea:focus {
-  border-color: #1a73e8;
-  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.12);
+  border-color: #c0111f;
+  box-shadow: 0 0 0 2px rgba(192, 17, 31, 0.12);
 }
 
 /* ファイルアップロード */
@@ -4898,7 +4898,7 @@
   display: inline-flex;
   align-items: center;
   padding: 6px 16px;
-  background: #1a73e8;
+  background: #c0111f;
   color: #fff;
   border-radius: 4px;
   font-size: 14px;
@@ -4909,7 +4909,7 @@
 }
 
 .wcontact-file-btn:hover {
-  background: #1558b0;
+  background: #a00e1a;
 }
 
 .wcontact-file-input {
@@ -4932,7 +4932,7 @@
 }
 
 .wcontact-privacy-link {
-  color: #1a73e8;
+  color: #c0111f;
   text-decoration: none;
 }
 
@@ -4979,7 +4979,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 24px;
-  background: #f59e0b;
+  background: #888;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -4992,7 +4992,7 @@
 }
 
 .wcontact-btn-back:hover {
-  background: #d97706;
+  background: #666;
 }
 
 .wcontact-btn-confirm {
@@ -5000,7 +5000,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 24px;
-  background: #10b981;
+  background: #c0111f;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -5013,7 +5013,7 @@
 }
 
 .wcontact-btn-confirm:hover {
-  background: #059669;
+  background: #a00e1a;
 }
 
 /* 確認画面 */
@@ -5058,7 +5058,7 @@
 }
 
 .wcontact-complete-icon {
-  color: #10b981;
+  color: #c0111f;
 }
 
 .wcontact-complete-title {
