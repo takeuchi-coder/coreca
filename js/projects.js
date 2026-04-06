@@ -19,7 +19,7 @@ const PROJECTS = [
     title: '【東京都渋谷区】スーパーのチラシ配布スタッフ大募集！時給1,200円・週2日〜OK',
     location: '東京都渋谷区',
     wage: '¥1,200〜¥1,500 / 時間',
-    jobType: 'チラシ配布',
+    jobType: '警察署への書類提出業務_30分',
     jobTypeColor: 'blue',
     contracts: 0,
     inspected: 0,

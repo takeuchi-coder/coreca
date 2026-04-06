@@ -268,7 +268,7 @@ function renderList() {
         <thead>
           <tr>
             <th>案件名</th>
-            <th class="col-type">種別</th>
+            <th class="col-type">コース名</th>
             <th>掲載期間</th>
             <th>状態</th>
             <th style="text-align:center;">契約者</th>
