@@ -322,9 +322,28 @@
 
         </form>
         <script>
+          function showToast(title, sub) {
+            var toast = document.getElementById('wToast');
+            toast.querySelector('.w-toast-title').textContent = title;
+            toast.querySelector('.w-toast-sub').textContent = sub || '';
+            toast.classList.remove('is-hiding');
+            toast.classList.add('is-visible');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(function() {
+              toast.classList.add('is-hiding');
+              setTimeout(function() { toast.classList.remove('is-visible', 'is-hiding'); }, 260);
+            }, 3500);
+          }
+
+          document.getElementById('wToastClose').addEventListener('click', function() {
+            var toast = document.getElementById('wToast');
+            toast.classList.add('is-hiding');
+            setTimeout(function() { toast.classList.remove('is-visible', 'is-hiding'); }, 260);
+          });
+
           document.getElementById('basicInfoForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('基本情報を保存しました。');
+            showToast('基本情報を保存しました', '入力内容が正常に保存されました。');
           });
         </script>
       </div>
@@ -405,6 +424,24 @@
     document.getElementById('birthDay').addEventListener('change', calcAge);
   })();
   </script>
+
+  <!-- トースト通知 -->
+  <div class="w-toast" id="wToast" role="alert" aria-live="polite">
+    <div class="w-toast-icon">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2a9d5c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <div class="w-toast-body">
+      <div class="w-toast-title"></div>
+      <div class="w-toast-sub"></div>
+    </div>
+    <button class="w-toast-close" id="wToastClose" aria-label="閉じる">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
 
 </body>
 </html>
