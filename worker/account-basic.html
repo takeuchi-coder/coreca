@@ -321,6 +321,12 @@
           </div>
 
         </form>
+        <script>
+          document.getElementById('basicInfoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'account-basic-saved.html';
+          });
+        </script>
       </div>
     </div><!-- /wsidebar-layout -->
   </main>
