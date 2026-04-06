@@ -89,7 +89,7 @@
         <!-- アクションボタン行（全幅） -->
         <div class="msgd-action-row">
           <button class="msgd-btn-order" id="msgBtnOrder">発注する</button>
-          <button class="msgd-btn-reject">不採用</button>
+          <button class="msgd-btn-reject" id="msgBtnReject">不採用</button>
         </div>
 
       </div>
@@ -216,6 +216,31 @@
   </div>
   <!-- ===== /発注確認モーダル ===== -->
 
+  <!-- ===== 不採用確認モーダル ===== -->
+  <div class="order-modal-overlay" id="rejectModalOverlay" hidden>
+    <div class="order-modal" role="dialog" aria-modal="true">
+
+      <!-- STEP 1: 確認 -->
+      <div class="order-modal-step" id="rejectStep1">
+        <p class="order-modal-question">倉本 泰さんを不採用にしますか？</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-yes" id="rejectModalYes">はい</button>
+          <button type="button" class="btn-order-modal-no" id="rejectModalNo">いいえ</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: 完了 -->
+      <div class="order-modal-step" id="rejectStep2" hidden>
+        <p class="order-modal-complete">倉本 泰さんを不採用にしました。</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-no" id="rejectModalClose">閉じる</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /不採用確認モーダル ===== -->
+
   <!-- ===== フッター（共通） ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
@@ -264,6 +289,35 @@
 
       overlay.addEventListener('click', function (e) {
         if (e.target === overlay) overlay.hidden = true;
+      });
+    })();
+
+    (function () {
+      var rejectOverlay = document.getElementById('rejectModalOverlay');
+      var rejectStep1   = document.getElementById('rejectStep1');
+      var rejectStep2   = document.getElementById('rejectStep2');
+
+      document.getElementById('msgBtnReject').addEventListener('click', function () {
+        rejectStep1.hidden = false;
+        rejectStep2.hidden = true;
+        rejectOverlay.hidden = false;
+      });
+
+      document.getElementById('rejectModalYes').addEventListener('click', function () {
+        rejectStep1.hidden = true;
+        rejectStep2.hidden = false;
+      });
+
+      document.getElementById('rejectModalNo').addEventListener('click', function () {
+        rejectOverlay.hidden = true;
+      });
+
+      document.getElementById('rejectModalClose').addEventListener('click', function () {
+        rejectOverlay.hidden = true;
+      });
+
+      rejectOverlay.addEventListener('click', function (e) {
+        if (e.target === rejectOverlay) rejectOverlay.hidden = true;
       });
     })();
   </script>
