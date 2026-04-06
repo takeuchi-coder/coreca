@@ -285,6 +285,9 @@
         </div>
         <span class="wprocedure-modal-photo-action">追加を削除する</span>
 
+        <p class="wprocedure-modal-photo-label">立替金の明細</p>
+        <textarea id="advance-detail" class="wprocedure-modal-input" name="advance_detail" placeholder="例）交通費 1,200円、材料費 800円" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:8px;min-height:80px;resize:vertical;"></textarea>
+
         <p class="wprocedure-modal-photo-label">立替金の合計金額</p>
         <input type="number" id="advance-total" class="wprocedure-modal-input" name="advance_total" min="0" placeholder="0" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:16px;">
 
@@ -358,6 +361,10 @@
           <tr>
             <th>立替金を記録する写真</th>
             <td id="confirm-advance-photo">未アップロード</td>
+          </tr>
+          <tr>
+            <th>立替金の明細</th>
+            <td id="confirm-advance-detail">未入力</td>
           </tr>
           <tr>
             <th>立替金の合計金額</th>
@@ -550,6 +557,8 @@
       function buildConfirmContent() {
         document.getElementById('confirm-submit-date').textContent = formatDate('submit-year', 'submit-month', 'submit-day');
         document.getElementById('confirm-accept-date').textContent = formatDate('accept-year', 'accept-month', 'accept-day');
+        var advanceDetail = document.getElementById('advance-detail').value;
+        document.getElementById('confirm-advance-detail').textContent = advanceDetail !== '' ? advanceDetail : '未入力';
         var advanceVal = document.getElementById('advance-total').value;
         document.getElementById('confirm-advance-total').textContent = advanceVal !== '' ? advanceVal + '円' : '未入力';
       }
