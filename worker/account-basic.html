@@ -317,16 +317,10 @@
 
           <!-- 保存ボタン -->
           <div class="wbasic-submit-row">
-            <button type="submit" class="wbasic-btn-submit">保存する</button>
+            <button type="button" class="wbasic-btn-submit" onclick="window.location.href='account-basic-saved.html'">保存する</button>
           </div>
 
         </form>
-        <script>
-          document.getElementById('basicInfoForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            window.location.href = 'account-basic-saved.html';
-          });
-        </script>
       </div>
     </div><!-- /wsidebar-layout -->
   </main>
