@@ -6562,39 +6562,18 @@
 }
 
 /* ===========================
-   成功トースト通知
+   成功アラートバナー
 =========================== */
 .w-toast {
-  position: fixed;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(-8px);
-  z-index: 9999;
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #fff;
+  background: #f0faf4;
   border: 1.5px solid #2a9d5c;
   border-left: 5px solid #2a9d5c;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   padding: 14px 18px 14px 16px;
-  min-width: 280px;
-  max-width: 420px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.w-toast.is-visible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
-}
-
-.w-toast.is-hiding {
-  opacity: 0;
-  transform: translateX(-50%) translateY(-8px);
+  margin-bottom: 20px;
 }
 
 .w-toast-icon {
@@ -6624,21 +6603,4 @@
   color: #555;
   margin-top: 2px;
   line-height: 1.4;
-}
-
-.w-toast-close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #999;
-  padding: 2px;
-  flex-shrink: 0;
-  transition: color 0.15s;
-}
-
-.w-toast-close:hover {
-  color: #333;
 }
