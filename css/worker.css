@@ -286,6 +286,7 @@
 }
 
 .btn-worker-login {
+  display: inline-block;
   width: 280px;
   padding: 14px 0;
   background: #e8192c;
@@ -296,11 +297,31 @@
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
   transition: background 0.15s;
 }
 
 .btn-worker-login:hover {
   background: #c0111f;
+}
+
+/* ログアウト完了メッセージ */
+.worker-logout-message {
+  text-align: center;
+  margin: 24px 0 32px;
+}
+
+.worker-logout-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.worker-logout-subtext {
+  font-size: 14px;
+  color: #666;
 }
 
 /* テキストリンク群（中央寄せ・縦並び） */
