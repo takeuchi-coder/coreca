@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>基本情報入力 | ご近所ワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+  <style>
+    .profile-error-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff5f5;
+      border: 1px solid #f5c6c6;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 24px;
+      color: #c0392b;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .profile-error-banner svg {
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .profile-input--error {
+      border-color: #e8192c !important;
+      background: #fff8f8;
+    }
+    .profile-input--error:focus {
+      outline-color: #e8192c;
+      box-shadow: 0 0 0 3px rgba(232, 25, 44, 0.15);
+    }
+    .profile-select--error {
+      border-color: #e8192c !important;
+      background: #fff8f8;
+    }
+    .profile-error-msg {
+      font-size: 12px;
+      color: #c0111f;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body class="wmypage-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">ご近所ワーク</span>
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list"></ul>
+        <div class="nav-actions">
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="worker-main worker-main--profile">
+    <div class="worker-card worker-card--wide">
+
+      <!-- リード文 -->
+      <p class="profile-lead">
+        メールアドレスを確認しました。<br>
+        引き続き、下記情報の登録をお願いします。
+      </p>
+
+      <!-- 基本情報フォーム -->
+      <form class="profile-form" action="profile-confirm.html" method="get" novalidate>
+
+        <!-- エラーバナー -->
+        <div class="profile-error-banner" role="alert">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <span>入力内容に誤りがあります。<br>各項目のエラーメッセージをご確認のうえ、正しく入力してください。</span>
+        </div>
+
+        <!-- メールアドレス（表示のみ） -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">メールアドレス</span>
+          </div>
+          <div class="profile-input-cell">
+            <span class="profile-static-value">wkana001@gmail.com</span>
+            <a href="register.html" class="wbasic-btn-change" style="display:inline-block;margin-top:8px;text-decoration:none;">メールアドレスの変更</a>
+          </div>
+        </div>
+
+        <!-- 氏名 -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">氏名</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <div class="profile-name-inputs">
+              <input class="profile-input profile-input--name profile-input--error" type="text" placeholder="山田" autocomplete="family-name" value="">
+              <input class="profile-input profile-input--name profile-input--error" type="text" placeholder="花子" autocomplete="given-name" value="">
+            </div>
+            <p class="profile-error-msg">氏名を入力してください。</p>
+          </div>
+        </div>
+
+        <!-- 氏名（カナ） -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">氏名（カナ）</span>
+            <span class="badge-optional">任意</span>
+          </div>
+          <div class="profile-input-cell">
+            <div class="profile-name-inputs">
+              <input class="profile-input profile-input--name" type="text" placeholder="ヤマダ" autocomplete="off">
+              <input class="profile-input profile-input--name" type="text" placeholder="ハナコ" autocomplete="off">
+            </div>
+          </div>
+        </div>
+
+        <!-- 性別 -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">性別</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <div class="profile-radio-group">
+              <label class="profile-radio-label">
+                <input type="radio" name="gender" value="female">
+                <span>女</span>
+              </label>
+              <label class="profile-radio-label">
+                <input type="radio" name="gender" value="male">
+                <span>男</span>
+              </label>
+              <label class="profile-radio-label">
+                <input type="radio" name="gender" value="unset">
+                <span>設定しない</span>
+              </label>
+            </div>
+            <p class="profile-error-msg">性別を選択してください。</p>
+          </div>
+        </div>
+
+        <!-- 生年月日 -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">生年月日</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <div class="profile-age-notice">17歳以下の方はご登録できません。</div>
+            <div class="profile-birthday-selects">
+              <select class="profile-select profile-select--year profile-select--error">
+                <option value="">年</option>
+                <script>
+                  for (var y = new Date().getFullYear() - 17; y >= 1924; y--) {
+                    document.write('<option value="' + y + '">' + y + '</option>');
+                  }
+                </script>
+              </select>
+              <select class="profile-select profile-select--month profile-select--error">
+                <option value="">月</option>
+                <script>
+                  for (var m = 1; m <= 12; m++) {
+                    document.write('<option value="' + m + '">' + m + '</option>');
+                  }
+                </script>
+              </select>
+              <select class="profile-select profile-select--day profile-select--error">
+                <option value="">日</option>
+                <script>
+                  for (var d = 1; d <= 31; d++) {
+                    document.write('<option value="' + d + '">' + d + '</option>');
+                  }
+                </script>
+              </select>
+            </div>
+            <p class="profile-error-msg">生年月日を選択してください。</p>
+          </div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">電話番号</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <input class="profile-input profile-input--phone profile-input--error" type="tel" placeholder="09012345678" autocomplete="tel" value="090-1234-5678">
+            <p class="profile-hint">半角数字で入力ください。ハイフン（-）などの区切りは不要です。</p>
+            <p class="profile-error-msg">電話番号はハイフンなしの半角数字で入力してください。</p>
+          </div>
+        </div>
+
+        <!-- 郵便番号 -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">郵便番号</span>
+            <span class="badge-optional">任意</span>
+          </div>
+          <div class="profile-input-cell">
+            <div class="profile-zip-row">
+              <input class="profile-input profile-input--zip" type="text" placeholder="1690074" maxlength="7" inputmode="numeric">
+              <button type="button" class="btn-zip-search">住所入力</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 住所（都道府県） -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">住所（都道府県）</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <select class="profile-select profile-select--pref profile-select--error">
+              <option value="">選択してください</option>
+              <option>北海道</option><option>青森県</option><option>岩手県</option>
+              <option>宮城県</option><option>秋田県</option><option>山形県</option>
+              <option>福島県</option><option>茨城県</option><option>栃木県</option>
+              <option>群馬県</option><option>埼玉県</option><option>千葉県</option>
+              <option>東京都</option><option>神奈川県</option><option>新潟県</option>
+              <option>富山県</option><option>石川県</option><option>福井県</option>
+              <option>山梨県</option><option>長野県</option><option>岐阜県</option>
+              <option>静岡県</option><option>愛知県</option><option>三重県</option>
+              <option>滋賀県</option><option>京都府</option><option>大阪府</option>
+              <option>兵庫県</option><option>奈良県</option><option>和歌山県</option>
+              <option>鳥取県</option><option>島根県</option><option>岡山県</option>
+              <option>広島県</option><option>山口県</option><option>徳島県</option>
+              <option>香川県</option><option>愛媛県</option><option>高知県</option>
+              <option>福岡県</option><option>佐賀県</option><option>長崎県</option>
+              <option>熊本県</option><option>大分県</option><option>宮崎県</option>
+              <option>鹿児島県</option><option>沖縄県</option>
+            </select>
+            <p class="profile-error-msg">都道府県を選択してください。</p>
+          </div>
+        </div>
+
+        <!-- 住所（市区町村） -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">住所（市区町村）</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <input class="profile-input profile-input--city profile-input--error" type="text" autocomplete="address-level2" value="">
+            <p class="profile-error-msg">市区町村を入力してください。</p>
+          </div>
+        </div>
+
+        <!-- 住所（番地以降） -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">住所（番地以降）</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <input class="profile-input profile-input--building profile-input--error" type="text" autocomplete="address-line2" value="">
+            <p class="profile-error-msg">番地以降を入力してください。</p>
+          </div>
+        </div>
+
+        <!-- パスワード -->
+        <div class="profile-row">
+          <div class="profile-label-cell">
+            <span class="profile-label">パスワード</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <input class="profile-input profile-input--password profile-input--error" type="password" autocomplete="new-password" value="abc">
+            <p class="profile-hint">英数字6文字以上16文字以内で入力してください。</p>
+            <p class="profile-error-msg">パスワードは英数字6文字以上16文字以内で入力してください。</p>
+          </div>
+        </div>
+
+        <!-- パスワード（確認） -->
+        <div class="profile-row profile-row--last">
+          <div class="profile-label-cell">
+            <span class="profile-label">パスワード（確認）</span>
+            <span class="badge-required">必須</span>
+          </div>
+          <div class="profile-input-cell">
+            <input class="profile-input profile-input--password profile-input--error" type="password" autocomplete="new-password" value="xyz">
+            <p class="profile-error-msg">パスワードが一致しません。</p>
+          </div>
+        </div>
+
+        <!-- 同意文 -->
+        <p class="profile-consent">
+          18歳以上であり、<a href="#" class="profile-consent-link">利用規約
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8192c" stroke-width="2.5" style="vertical-align:middle;margin-left:1px;">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>、<a href="#" class="profile-consent-link">プライバシーポリシー
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e8192c" stroke-width="2.5" style="vertical-align:middle;margin-left:1px;">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>にご同意の上、会員登録にお進みください。
+        </p>
+
+        <!-- 送信ボタン -->
+        <div class="worker-btn-wrap">
+          <button type="submit" class="btn-worker-submit">入力確認画面へ進む</button>
+        </div>
+
+      </form>
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 2020 gokinjowork Inc.</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+</body>
+</html>
