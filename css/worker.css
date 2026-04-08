@@ -4320,6 +4320,39 @@
 }
 
 /* 振込申請ページ */
+
+/* 振込申請完了メッセージ */
+.wtransfer-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px 28px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.wtransfer-complete-icon {
+  color: #c0111f;
+}
+
+.wtransfer-complete-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.wtransfer-complete-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0;
+}
+
 .wtransfer-alert {
   background: #fff0f0;
   border: 1px solid #f5c6cb;

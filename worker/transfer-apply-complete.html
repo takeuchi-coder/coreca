@@ -92,14 +92,54 @@
 
         <!-- ページタイトル行 -->
         <div class="wbasic-title-row">
-          <h1 class="wbasic-title">振込申請（申請完了）</h1>
+          <h1 class="wbasic-title">振込申請</h1>
         </div>
         <hr class="wbasic-title-rule">
 
         <!-- 申請完了メッセージ -->
-        <div class="worker-logout-message">
-          <p class="worker-logout-text">振込申請が完了しました。</p>
-          <p class="worker-logout-subtext">申請内容をご確認いただきありがとうございます。<br>振込処理が完了次第、ご登録の銀行口座にお振り込みいたします。</p>
+        <div class="wtransfer-complete">
+          <div class="wtransfer-complete-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <p class="wtransfer-complete-title">振込申請が完了しました。</p>
+          <p class="wtransfer-complete-text">申請内容をご確認いただきありがとうございます。<br>振込処理が完了次第、ご登録の銀行口座にお振り込みいたします。</p>
+        </div>
+
+        <!-- 銀行口座未登録の案内 -->
+        <div class="wtransfer-alert">
+          銀行振込を申請するために、銀行口座を登録しましょう。
+        </div>
+
+        <!-- 銀行口座登録へボタン -->
+        <div class="wbasic-submit-row">
+          <a href="account-bank.html" class="wbasic-btn-submit wbasic-btn-submit--wide" style="display:inline-block;text-align:center;text-decoration:none;">銀行口座登録へ</a>
+        </div>
+
+        <!-- 残高・金額カード -->
+        <div class="wtransfer-summary">
+
+          <!-- 残高行 -->
+          <div class="wtransfer-balance-row">
+            <span class="wtransfer-balance-label">残高</span>
+            <span class="wtransfer-balance-amount">0円</span>
+          </div>
+
+          <!-- 明細行 -->
+          <div class="wtransfer-detail">
+            <div class="wtransfer-detail-row">
+              <span class="wtransfer-detail-label">振込手数料</span>
+              <span class="wtransfer-detail-value">300円</span>
+            </div>
+            <hr class="wtransfer-detail-rule">
+            <div class="wtransfer-detail-row">
+              <span class="wtransfer-detail-label">振込予定金額</span>
+              <span class="wtransfer-detail-value wtransfer-detail-value--total">合計0円</span>
+            </div>
+          </div>
+
         </div>
 
         <!-- 振込申請履歴リンク -->
