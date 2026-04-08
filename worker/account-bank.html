@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>銀行口座 | ご近所ワーク</title>
+  <title>銀行口座登録 | ご近所ワーク</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@
 
       <!-- ページタイトル行 -->
       <div class="wbasic-title-row">
-        <a href="mypage.html" class="wbasic-back-link" aria-label="戻る">
+        <a href="account-bank-register.html" class="wbasic-back-link" aria-label="戻る">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="15 18 9 12 15 6"/>
           </svg>
@@ -101,14 +101,67 @@
       </div>
       <hr class="wbasic-title-rule">
 
-      <!-- 案内カード -->
+      <!-- 口座情報フォーム -->
       <div class="wbasic-card">
-        <p class="wbank-notice">振込先の銀行口座を登録してください。</p>
-      </div>
+        <form id="bankForm">
 
-      <!-- 登録ボタン -->
-      <div class="wbasic-submit-row">
-        <a href="account-bank-register.html" class="wbasic-btn-submit wbasic-btn-submit--wide" style="display:inline-block;text-align:center;text-decoration:none;">登録する</a>
+          <!-- 金融機関コード -->
+          <div class="wbasic-row wbankform-row">
+            <div class="wbankform-label">金融機関コード<span class="wbasic-badge-required">必須</span></div>
+            <div class="wbankform-input-col">
+              <input type="number" class="wbasic-input" id="bankCode" name="bankCode" autocomplete="off">
+            </div>
+          </div>
+          <hr class="wbasic-row-rule">
+
+          <!-- 支店番号 -->
+          <div class="wbasic-row wbankform-row">
+            <div class="wbankform-label">支店番号<span class="wbasic-badge-required">必須</span></div>
+            <div class="wbankform-input-col">
+              <input type="number" class="wbasic-input" id="branchName" name="branchName" autocomplete="off">
+            </div>
+          </div>
+          <hr class="wbasic-row-rule">
+
+          <!-- 預金種別 -->
+          <div class="wbasic-row wbankform-row">
+            <div class="wbankform-label">預金種別<span class="wbasic-badge-required">必須</span></div>
+            <div class="wbankform-input-col">
+              <select class="wbasic-input wbankform-select" id="accountType" name="accountType">
+                <option value="">選択してください</option>
+                <option value="futsu">普通</option>
+                <option value="toza">当座</option>
+              </select>
+            </div>
+          </div>
+          <hr class="wbasic-row-rule">
+
+          <!-- 口座番号 -->
+          <div class="wbasic-row wbankform-row">
+            <div class="wbankform-label">口座番号<span class="wbasic-badge-required">必須</span></div>
+            <div class="wbankform-input-col">
+              <input type="text" class="wbasic-input" id="accountNumber" name="accountNumber" placeholder="1234567" inputmode="numeric" maxlength="8" autocomplete="off">
+            </div>
+          </div>
+          <hr class="wbasic-row-rule">
+
+          <!-- 口座名義カナ -->
+          <div class="wbasic-row wbankform-row">
+            <div class="wbankform-label">口座名義カナ<span class="wbasic-badge-required">必須</span></div>
+            <div class="wbankform-input-col">
+              <input type="text" class="wbasic-input" id="accountName" name="accountName" placeholder="ヤマダ　タロウ" autocomplete="off">
+              <div class="wbasic-hint">全角カナで入力してください。</div>
+              <div class="wbasic-hint">姓と名の間にはスペースを入れてください。</div>
+              <div class="wbasic-hint">例）ヤマダ　タロウ</div>
+            </div>
+          </div>
+
+          <!-- 確認画面へボタン -->
+          <div class="wbasic-submit-row">
+            <button type="submit" class="wbasic-btn-submit wbasic-btn-submit--wide">銀行口座を保存する</button>
+          </div>
+
+        </form>
       </div>
     </div><!-- /wsidebar-layout -->
   </main>
