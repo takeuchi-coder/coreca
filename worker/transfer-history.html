@@ -93,8 +93,8 @@
       <!-- 件数 + ページネーション -->
       <div class="wth-footer-row">
         <div class="wth-count-row">
-          <span class="wth-count-num">0</span>
-          <span class="wth-count-text">件中 〜 件表示</span>
+          <span class="wth-count-num">10</span>
+          <span class="wth-count-text">件中 1 〜 10 件表示</span>
         </div>
         <div class="wth-pagination">
           <button class="wth-page-nav" disabled>
@@ -107,6 +107,93 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
+      </div>
+
+      <!-- テーブル -->
+      <div class="wth-table-area">
+        <table class="wth-table">
+          <thead>
+            <tr>
+              <th>申請日時</th>
+              <th class="wth-th--num">申請金額</th>
+              <th class="wth-th--num">振込手数料</th>
+              <th class="wth-th--num">振込金額</th>
+              <th>ステータス</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026/04/05 14:23</td>
+              <td class="wth-td--num">30,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">29,700円</td>
+              <td><span class="wth-status wth-status--pending">振込処理中</span></td>
+            </tr>
+            <tr>
+              <td>2026/03/28 10:15</td>
+              <td class="wth-td--num">15,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">14,700円</td>
+              <td><span class="wth-status wth-status--done">2026/03/30に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2026/03/20 16:45</td>
+              <td class="wth-td--num">50,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">49,700円</td>
+              <td><span class="wth-status wth-status--done">2026/03/22に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2026/03/10 09:30</td>
+              <td class="wth-td--num">8,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">7,700円</td>
+              <td><span class="wth-status wth-status--done">2026/03/12に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2026/02/28 11:00</td>
+              <td class="wth-td--num">25,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">24,700円</td>
+              <td><span class="wth-status wth-status--done">2026/03/02に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2026/02/15 13:20</td>
+              <td class="wth-td--num">12,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">11,700円</td>
+              <td><span class="wth-status wth-status--done">2026/02/17に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2026/02/05 08:45</td>
+              <td class="wth-td--num">40,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">39,700円</td>
+              <td><span class="wth-status wth-status--done">2026/02/07に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2026/01/22 15:10</td>
+              <td class="wth-td--num">18,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">17,700円</td>
+              <td><span class="wth-status wth-status--done">2026/01/24に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2026/01/10 10:30</td>
+              <td class="wth-td--num">35,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">34,700円</td>
+              <td><span class="wth-status wth-status--done">2026/01/12に振込処理済み</span></td>
+            </tr>
+            <tr>
+              <td>2025/12/25 09:00</td>
+              <td class="wth-td--num">22,000円</td>
+              <td class="wth-td--num">300円</td>
+              <td class="wth-td--num">21,700円</td>
+              <td><span class="wth-status wth-status--done">2025/12/27に振込処理済み</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>
