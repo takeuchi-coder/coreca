@@ -4184,6 +4184,16 @@
   background: #a00e1a;
 }
 
+.wbasic-btn-submit:disabled {
+  background: #ccc;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.wbasic-btn-submit:disabled:hover {
+  background: #ccc;
+}
+
 .wbasic-btn-submit--wide {
   padding-left: 120px;
   padding-right: 120px;
