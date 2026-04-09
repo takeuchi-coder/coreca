@@ -88,7 +88,7 @@ function renderRow(p) {
         <div class="proj-name-cell">
           <div class="proj-thumb">${ICONS.image}</div>
           <div class="proj-name-info">
-            <a href="detail.html" class="proj-title proj-title--link">${p.title}</a>
+            <a href="detail.html" class="proj-title proj-title--link">${p.jobType}</a>
             <div class="proj-sub">${p.location}</div>
             ${renderStatusTags(p.tags)}
             <div class="card-stats">
@@ -110,7 +110,6 @@ function renderRow(p) {
           </div>
         </div>
       </td>
-      <td class="col-type">${p.jobType}</td>
       <td class="col-date"><span class="date-start">${startDate}</span><br><span class="date-end">〜${endDate}</span></td>
       <td>
         <div style="display:flex;align-items:center;gap:8px;">
@@ -121,7 +120,6 @@ function renderRow(p) {
           <span class="state-badge ${stateClass}">${stateLabel}</span>
         </div>
       </td>
-      <td style="text-align:center;font-weight:700;color:#333;">${p.contracts}</td>
       <td class="col-actions">
         <div class="row-action-btns">
           <a href="applicants.html" class="row-action-btn row-action-btn--applicants">
@@ -266,10 +264,8 @@ function renderList() {
         <thead>
           <tr>
             <th>案件名</th>
-            <th class="col-type">コース名</th>
-            <th>掲載期間</th>
+            <th>作業・契約期間</th>
             <th>状態</th>
-            <th style="text-align:center;">契約者</th>
             <th class="col-actions">操作</th>
           </tr>
         </thead>
