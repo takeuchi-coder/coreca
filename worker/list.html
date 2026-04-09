@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/worker.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body class="wmypage-body wlist-body">
 
@@ -97,27 +98,18 @@
         </div>
       </div>
 
-      <!-- 右：カレンダー -->
+      <!-- 右：日付ピッカー -->
       <div class="wsearch-right">
-        <div class="wsearch-calendar">
-          <div class="wsearch-weekdays">
-            <span class="wsearch-wd">日</span>
-            <span class="wsearch-wd">月</span>
-            <span class="wsearch-wd">火</span>
-            <span class="wsearch-wd">水</span>
-            <span class="wsearch-wd">木</span>
-            <span class="wsearch-wd">金</span>
-            <span class="wsearch-wd wsearch-wd--sat">土</span>
-          </div>
-          <div class="wsearch-date-row">
-            <button class="wsearch-nav-btn" id="prevWeek" aria-label="前の週">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="wsearch-dates" id="dateList"></div>
-            <button class="wsearch-nav-btn" id="nextWeek" aria-label="次の週">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-          </div>
+        <div class="wsearch-datepicker-wrap">
+          <span class="wsearch-datepicker-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </span>
+          <input type="date" id="searchDate" class="wsearch-datepicker" value="2025-12-02">
         </div>
       </div>
 
@@ -288,72 +280,14 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
   <script>
-  /* =============================================
-     日付ピッカー（search.html と共通ロジック）
-  ============================================= */
-  const today = new Date(2025, 11, 2);
-  let selectedDate = new Date(today);
-  let weekOffset = 0;
-
-  const WEEKDAY_NAMES = ['日', '月', '火', '水', '木', '金', '土'];
-
-  function getWeekStart(base, offset) {
-    const d = new Date(base);
-    d.setDate(d.getDate() - d.getDay() + offset * 7);
-    return d;
-  }
-
-  function renderCalendar() {
-    const list = document.getElementById('dateList');
-    list.innerHTML = '';
-
-    const weekStart = getWeekStart(today, weekOffset);
-
-    for (let i = 0; i < 7; i++) {
-      const d = new Date(weekStart);
-      d.setDate(weekStart.getDate() + i);
-
-      const cell = document.createElement('button');
-      cell.className = 'wsearch-date-cell';
-      cell.textContent = d.getDate();
-
-      if (i === 6) cell.classList.add('wsearch-date-cell--sat');
-      if (i === 0) cell.classList.add('wsearch-date-cell--sun');
-      if (d.getMonth() !== today.getMonth()) cell.classList.add('wsearch-date-cell--other');
-      if (d.toDateString() === selectedDate.toDateString()) {
-        cell.classList.add('wsearch-date-cell--active');
-      }
-
-      cell.addEventListener('click', () => {
-        selectedDate = new Date(d);
-        renderCalendar();
-        updateTitle();
-      });
-
-      list.appendChild(cell);
-    }
-  }
-
-  function updateTitle() {
-    const el = document.getElementById('listDateTitle');
-    const m = selectedDate.getMonth() + 1;
-    const day = selectedDate.getDate();
-    const wd = WEEKDAY_NAMES[selectedDate.getDay()];
-    el.textContent = '案件検索';
-  }
-
-  document.getElementById('prevWeek').addEventListener('click', () => {
-    weekOffset--;
-    renderCalendar();
+  flatpickr('#searchDate', {
+    locale: 'ja',
+    defaultDate: '2025-12-02',
+    dateFormat: 'Y-m-d',
   });
-  document.getElementById('nextWeek').addEventListener('click', () => {
-    weekOffset++;
-    renderCalendar();
-  });
-
-  renderCalendar();
-  updateTitle();
   </script>
 
 </body>

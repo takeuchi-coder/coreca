@@ -1113,9 +1113,68 @@
   color: #fff;
 }
 
-/* 右カラム：カレンダー */
+/* 右カラム：日付ピッカー */
 .wsearch-right {
   flex-shrink: 0;
+}
+
+.wsearch-datepicker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.wsearch-datepicker-wrap:focus-within {
+  border-color: #e8192c;
+}
+
+.wsearch-datepicker-icon {
+  color: #888;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.wsearch-datepicker {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  background: transparent;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+/* Flatpickr テーマオーバーライド */
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover,
+.flatpickr-day.selected:focus {
+  background: #e8192c;
+  border-color: #e8192c;
+}
+
+.flatpickr-day:hover {
+  background: #ffeaec;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: #e8192c;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowUp:after {
+  border-bottom-color: #e8192c;
+}
+
+.flatpickr-current-month .numInputWrapper span.arrowDown:after {
+  border-top-color: #e8192c;
 }
 
 .wsearch-calendar {
