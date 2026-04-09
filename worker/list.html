@@ -83,7 +83,7 @@
 
       <!-- 左：日付タイトル＋フィルター -->
       <div class="wsearch-left">
-        <h1 class="wsearch-date-title" id="listDateTitle">2025年12月2日のお仕事</h1>
+        <h1 class="wsearch-date-title" id="listDateTitle">案件検索</h1>
         <div class="wsearch-filter-row">
           <!-- 応募可のみ トグル -->
           <label class="wsearch-toggle-wrap">
@@ -335,7 +335,7 @@
     const m = selectedDate.getMonth() + 1;
     const day = selectedDate.getDate();
     const wd = WEEKDAY_NAMES[selectedDate.getDay()];
-    el.textContent = `${selectedDate.getFullYear()}年${m}月${day}日(${wd})のお仕事`;
+    el.textContent = '案件検索';
   }
 
   document.getElementById('prevWeek').addEventListener('click', () => {
