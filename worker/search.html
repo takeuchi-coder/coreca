@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/worker.css">
 </head>
@@ -277,9 +275,6 @@
   </footer>
   <!-- ===== /フッター ===== -->
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPbM=" crossorigin=""></script>
-
   <script>
   /* =============================================
      受注者の登録住所（基準地点）
@@ -375,43 +370,30 @@
 
 
   /* =============================================
-     Leaflet マップ初期化
+     Google Maps 初期化（APIロード後にコールバック）
   ============================================= */
-  const map = L.map('wsearchMap', {
-    zoomControl: false,
-    center: [WORKER_HOME.lat, WORKER_HOME.lng],
-    zoom: 13
-  });
-
-  // ズームコントロールを左上に
-  L.control.zoom({ position: 'topleft' }).addTo(map);
-
-  // OpenStreetMap タイル
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 19
-  }).addTo(map);
-
-  // カスタムマーカーアイコン（赤丸に白い＋）
-  function createJobIcon(active) {
-    return L.divIcon({
-      html: `<div class="wsearch-marker${active ? ' wsearch-marker--active' : ''}">+</div>`,
-      className: '',
-      iconSize: [28, 28],
-      iconAnchor: [14, 14]
-    });
-  }
-
+  let map;
   let activeJobId = JOBS[0].id;
   const markerMap = {};
 
+  // カスタムマーカー要素を生成（赤丸に白い＋）
+  function createMarkerContent(active) {
+    const el = document.createElement('div');
+    el.className = `wsearch-marker${active ? ' wsearch-marker--active' : ''}`;
+    el.textContent = '+';
+    return el;
+  }
+
   function addMarkers() {
     JOBS.forEach(job => {
-      const marker = L.marker([job.lat, job.lng], {
-        icon: createJobIcon(job.id === activeJobId)
-      }).addTo(map);
+      const marker = new google.maps.marker.AdvancedMarkerElement({
+        position: { lat: job.lat, lng: job.lng },
+        map,
+        content: createMarkerContent(job.id === activeJobId),
+        gmpClickable: true
+      });
 
-      marker.on('click', () => {
+      marker.addListener('click', () => {
         selectJob(job.id);
       });
 
@@ -422,12 +404,25 @@
   function updateMarkers() {
     JOBS.forEach(job => {
       if (markerMap[job.id]) {
-        markerMap[job.id].setIcon(createJobIcon(job.id === activeJobId));
+        markerMap[job.id].content = createMarkerContent(job.id === activeJobId);
       }
     });
   }
 
-  addMarkers();
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('wsearchMap'), {
+      center: { lat: WORKER_HOME.lat, lng: WORKER_HOME.lng },
+      zoom: 13,
+      mapId: 'DEMO_MAP_ID',
+      zoomControl: true,
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: false,
+      gestureHandling: 'greedy'
+    });
+
+    addMarkers();
+  }
 
   /* =============================================
      ビュー切り替え共通関数
@@ -441,7 +436,6 @@
   function showMapView() {
     document.getElementById('listSection').style.display = 'none';
     document.getElementById('mapSection').style.display = '';
-    setTimeout(() => map.invalidateSize(), 50);
   }
 
   /* =============================================
@@ -450,8 +444,10 @@
   document.getElementById('listViewBtn').addEventListener('click', (e) => {
     e.preventDefault();
     // 一覧を開く時点の地図中心を検索基準地点として確定
-    const c = map.getCenter();
-    searchCenter = { lat: c.lat, lng: c.lng };
+    if (map) {
+      const c = map.getCenter();
+      searchCenter = { lat: c.lat(), lng: c.lng() };
+    }
     showListView();
   });
 
@@ -554,11 +550,6 @@
   });
 
   /* =============================================
-     マップのリサイズ対応
-  ============================================= */
-  window.addEventListener('resize', () => map.invalidateSize());
-
-  /* =============================================
      地域選択モーダル
   ============================================= */
   (function () {
@@ -597,6 +588,9 @@
     });
   })();
   </script>
+
+  <!-- Google Maps JavaScript API (APIキーを YOUR_GOOGLE_MAPS_API_KEY に差し替えてください) -->
+  <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=marker&callback=initMap"></script>
 
 </body>
 </html>
