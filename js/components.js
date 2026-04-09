@@ -49,12 +49,12 @@ const ICONS = {
    ステータスタグ定義
 =========================== */
 const TAG_LABELS = {
-  'no-hire':        '採用者なし',
-  'need-action':    '要対応',
-  'accepting':      '仕事を受け付ける',
+  'no-hire':        '契約者なし',
+  'need-action':    '要応募者対応',
+  'accepting':      '仕事引受け待ち',
   'contracted':     '契約中',
-  'need-inspection':'検収',
-  'unread-msg':     '未読メッセージ',
+  'need-inspection':'要検収',
+  'unread-msg':     'メッセージ未読',
 };
 
 function renderStatusTags(tags) {

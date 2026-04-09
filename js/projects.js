@@ -2,12 +2,12 @@
  * 案件データ定義
  * status: 'active'（進行中）| 'done'（完了）
  * tags: フィルター用タグ配列
- *   'no-hire'        採用者なし
- *   'need-action'    要対応
- *   'accepting'      仕事を受け付ける
+ *   'no-hire'        契約者なし
+ *   'need-action'    要応募者対応
+ *   'accepting'      仕事引受け待ち
  *   'contracted'     契約中
- *   'need-inspection'要収
- *   'unread-msg'     未読メッセージ
+ *   'need-inspection'要検収
+ *   'unread-msg'     メッセージ未読
  */
 const PROJECTS = [
   {
@@ -25,7 +25,7 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者なし' },
+    alert: { type: 'red', label: '契約者なし' },
     actions: ['applicants', 'procedure'],
   },
   {
@@ -61,7 +61,7 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 2,
     reporting: 0,
-    alert: { type: 'orange', label: '要対応' },
+    alert: { type: 'orange', label: '要応募者対応' },
     actions: ['applicants', 'procedure'],
   },
   {
@@ -115,7 +115,7 @@ const PROJECTS = [
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者なし' },
+    alert: { type: 'red', label: '契約者なし' },
     actions: ['applicants', 'procedure'],
   },
   {
