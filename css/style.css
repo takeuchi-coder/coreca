@@ -3608,6 +3608,13 @@ a.nav-user--active .header-avatar-icon {
   color: #999;
   white-space: nowrap;
 }
+.pay-td--id a {
+  color: #1a6fc4;
+  text-decoration: underline;
+}
+.pay-td--id a:hover {
+  color: #0f4f8e;
+}
 
 .pay-td--address {
   font-size: 12px;
