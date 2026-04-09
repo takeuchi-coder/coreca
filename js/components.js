@@ -89,8 +89,7 @@ function renderRow(p) {
           <div class="proj-thumb">${ICONS.image}</div>
           <div class="proj-name-info">
             <a href="detail.html" class="proj-title proj-title--link">${p.title}</a>
-            <div class="proj-sub">${p.location} ・ ${p.wage}</div>
-            <div class="proj-id">${p.id}</div>
+            <div class="proj-sub">${p.location}</div>
             ${renderStatusTags(p.tags)}
             <div class="card-stats">
               <div class="stat-item">
@@ -162,7 +161,6 @@ function renderCardItem(p) {
       <div class="pic-thumb">${ICONS.image}</div>
       <span>${p.jobType}</span>
       <div class="pic-title">${p.title}</div>
-      <div class="pic-id">${p.id}</div>
       <div class="pic-dates">${startDate} 〜 ${endDate}</div>
       <div class="pic-state">
         <label class="toggle-switch" style="flex-shrink:0;">
