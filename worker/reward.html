@@ -130,62 +130,24 @@
         <table class="pay-table">
           <thead>
             <tr>
-              <!-- ステータス -->
-              <th class="pay-th pay-th--status">ステータス</th>
-              <!-- 案件情報 -->
-              <th class="pay-th pay-th--order-id">案件ID</th>
-              <th class="pay-th pay-th--course">コース名</th>
-              <th class="pay-th pay-th--order-addr pay-th--sortable" data-sort="location">
-                案件住所
-                <svg class="pay-sort-icon pay-sort-icon--neutral" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="18 15 12 9 6 15"/>
-                </svg>
-              </th>
-              <th class="pay-th pay-th--period pay-th--sortable pay-th--sort-asc" data-sort="workdate">
-                作業契約期間
-                <svg class="pay-sort-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="18 15 12 9 6 15"/>
-                </svg>
-              </th>
-              <th class="pay-th pay-th--approval">検収承認日</th>
-              <th class="pay-th pay-th--expense">立替金項目</th>
-              <!-- 発注者情報 -->
-              <th class="pay-th pay-th--name pay-th--sortable" data-sort="client">
-                発注者名
-                <svg class="pay-sort-icon pay-sort-icon--neutral" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="18 15 12 9 6 15"/>
-                </svg>
-              </th>
-              <!-- 支払情報 -->
+              <th class="pay-th pay-th--order-id">発注者ID</th>
+              <th class="pay-th pay-th--name">発注者名</th>
+              <th class="pay-th pay-th--order-addr">住所</th>
               <th class="pay-th pay-th--category">区分</th>
               <th class="pay-th pay-th--detail">細目</th>
-              <th class="pay-th pay-th--unit-price">報酬単価</th>
-              <th class="pay-th pay-th--qty">納品数</th>
               <th class="pay-th pay-th--amount">支払金額</th>
               <th class="pay-th pay-th--tax">源泉徴収額</th>
-              <th class="pay-th" style="width: 90px; white-space: nowrap;">支払日</th>
             </tr>
           </thead>
           <tbody>
             <tr class="pay-row">
-              <td class="pay-td"><span class="pay-status pay-status--done">振込完了</span></td>
-              <td class="pay-td pay-td--id">30012</td>
-              <td class="pay-td">戸建て清掃スタンダード</td>
+              <td class="pay-td pay-td--id">10375</td>
+              <td class="pay-td">道原 靖人</td>
               <td class="pay-td pay-td--address">東京都 豊島区 北大塚1-22-3</td>
-              <td class="pay-td" style="white-space: nowrap;">2026/01/01〜2026/01/31</td>
-              <td class="pay-td" style="white-space: nowrap;">2026/02/03</td>
-              <td class="pay-td pay-td--expense pay-td--expense-none">なし</td>
-              <td class="pay-td">
-                <span class="pay-person-name">道原 靖人</span>
-                <span class="pay-worker-id">10375</span>
-              </td>
               <td class="pay-td">法人</td>
               <td class="pay-td">業務委託料</td>
               <td class="pay-td pay-td--amount">1,200円</td>
-              <td class="pay-td" style="text-align: right;">1</td>
-              <td class="pay-td pay-td--amount">1,200円</td>
               <td class="pay-td pay-td--amount">0円</td>
-              <td class="pay-td" style="white-space: nowrap;">2026/03/02</td>
             </tr>
           </tbody>
         </table>
