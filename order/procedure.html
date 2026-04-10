@@ -131,7 +131,7 @@
         <div class="proc-row proc-row--data">
           <div class="proc-cells">
             <span class="proc-col proc-col--worker">
-              <a href="#" class="proc-worker-link">山本 由香</a>
+              <a href="../message/detail.html" class="proc-worker-link">山本 由香</a>
             </span>
             <span class="proc-col proc-col--complete-date">2025年12月02日<br>15:00</span>
             <span class="proc-col proc-col--approved-date">2025年12月02日<br>17:18</span>
@@ -139,7 +139,7 @@
           </div>
           <!-- アクションボタン -->
           <div class="proc-actions">
-            <button type="button" class="btn-proc-action">確認する</button>
+            <button type="button" class="btn-proc-action" id="btn-open-order-confirm-modal">確認する</button>
             <button type="button" class="btn-proc-action">納品ダウンロード</button>
             <button type="button" class="btn-proc-action">作業写真報告書ダウンロード</button>
           </div>
@@ -149,7 +149,7 @@
         <div class="proc-row proc-row--data">
           <div class="proc-cells">
             <span class="proc-col proc-col--worker">
-              <a href="#" class="proc-worker-link">田中 浩二</a>
+              <a href="../message/detail.html" class="proc-worker-link">田中 浩二</a>
             </span>
             <span class="proc-col proc-col--complete-date">2025年12月02日<br>16:30</span>
             <span class="proc-col proc-col--approved-date"><span class="proc-deadline">検収承認期間：<br>2025年12月05日 23:59まで</span></span>
@@ -165,7 +165,7 @@
         <div class="proc-row proc-row--data">
           <div class="proc-cells">
             <span class="proc-col proc-col--worker">
-              <a href="#" class="proc-worker-link">佐藤 美咲</a>
+              <a href="../message/detail.html" class="proc-worker-link">佐藤 美咲</a>
             </span>
             <span class="proc-col proc-col--complete-date">—</span>
             <span class="proc-col proc-col--approved-date">—</span>
@@ -177,7 +177,7 @@
         <div class="proc-row proc-row--data">
           <div class="proc-cells">
             <span class="proc-col proc-col--worker">
-              <a href="#" class="proc-worker-link">鈴木 健太</a>
+              <a href="../message/detail.html" class="proc-worker-link">鈴木 健太</a>
             </span>
             <span class="proc-col proc-col--complete-date">—</span>
             <span class="proc-col proc-col--approved-date">—</span>
@@ -565,6 +565,133 @@
   </div>
   <!-- ===== /承認完了モーダル ===== -->
 
+  <!-- ===== 作業報告確認モーダル（発注者用・検収完了後） ===== -->
+  <div class="wprocedure-modal-overlay" id="order-confirm-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="order-confirm-modal-title">
+
+      <!-- ヘッダー -->
+      <div class="kenshu-complete-header">
+        <button type="button" class="kenshu-complete-header-close" id="btn-close-order-confirm-header" aria-label="閉じる">閉じる</button>
+        <p class="kenshu-complete-title" id="order-confirm-modal-title">菊岡作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</p>
+      </div>
+
+      <!-- 本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p style="font-size:14px;color:#444;margin-bottom:16px;">以下の内容で検収が完了しました。内容をご確認ください。</p>
+
+        <!-- 提出時の写真報告 -->
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>申請代領収書</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="申請代領収書" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">申請代理書類_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>控え</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="控え" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">控え_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td>2025年12月02日</td>
+          </tr>
+        </table>
+
+        <!-- 受理時の写真報告 -->
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>書類</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="書類" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">受理書類_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td>2025年12月02日</td>
+          </tr>
+        </table>
+
+        <!-- 立替金について -->
+        <div class="wprocedure-modal-h2">立替金について</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>立替金を証明する写真</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="立替金領収書" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">領収書_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>立替金の合計金額</th>
+            <td>2,700円</td>
+          </tr>
+        </table>
+
+        <!-- 決済日時 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済日時</span>
+          <div>
+            <p style="font-size:13px;color:#222;margin:0 0 4px;">2025年12月02日 17:18</p>
+            <p style="font-size:13px;color:#222;margin:0;">請求ID：787086</p>
+          </div>
+        </div>
+
+        <!-- 決済方法 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済方法</span>
+          <span class="kenshu-confirm-value">掛け払い</span>
+        </div>
+
+        <!-- 請求金額 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">請求金額</span>
+          <div class="kenshu-confirm-billing">
+            <div class="kenshu-billing-item">
+              <span>報酬単価</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>納品数</span>
+              <span>1件</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>報酬総額</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料</span>
+              <span>360円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料（税）</span>
+              <span>36円</span>
+            </div>
+            <div class="kenshu-billing-item kenshu-billing-item--bold">
+              <span>立替金額</span>
+              <span>2,700円</span>
+            </div>
+            <div class="kenshu-billing-total">合計<strong>4,296円</strong></div>
+          </div>
+        </div>
+
+        <!-- 納品アンケート -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">納品アンケート</span>
+          <div class="kenshu-confirm-survey">
+            <p class="kenshu-confirm-survey-q">Q1.今回の納品内容に満足していますか</p>
+            <p class="kenshu-complete-survey-answer">良い</p>
+            <p class="kenshu-confirm-survey-q">Q2. 納品に対するコメントがありましたらご記入ください</p>
+            <p class="kenshu-complete-survey-answer">とてもスムーズでよかったです。</p>
+          </div>
+        </div>
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- フッター -->
+      <div class="kenshu-complete-footer">
+        <button type="button" class="kenshu-complete-footer-btn" id="btn-close-order-confirm">閉じる</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業報告確認モーダル（発注者用・検収完了後） ===== -->
+
   <!-- ===== 詳細検索モーダル ===== -->
   <div class="search-modal-overlay" id="searchModalOverlay" hidden>
     <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
@@ -708,6 +835,40 @@
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && !kenshuOverlay.hasAttribute('hidden')) closeKenshuModal();
         if (e.key === 'Escape' && !kenshuCompleteOverlay.hasAttribute('hidden')) closeKenshuCompleteModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var orderConfirmOverlay = document.getElementById('order-confirm-modal-overlay');
+      var btnOpenOrderConfirm = document.getElementById('btn-open-order-confirm-modal');
+      var btnCloseOrderConfirmHeader = document.getElementById('btn-close-order-confirm-header');
+      var btnCloseOrderConfirm = document.getElementById('btn-close-order-confirm');
+
+      function openOrderConfirmModal() {
+        orderConfirmOverlay.removeAttribute('hidden');
+        orderConfirmOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseOrderConfirmHeader.focus();
+      }
+
+      function closeOrderConfirmModal() {
+        orderConfirmOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenOrderConfirm.focus();
+      }
+
+      btnOpenOrderConfirm.addEventListener('click', openOrderConfirmModal);
+      btnCloseOrderConfirmHeader.addEventListener('click', closeOrderConfirmModal);
+      btnCloseOrderConfirm.addEventListener('click', closeOrderConfirmModal);
+
+      orderConfirmOverlay.addEventListener('click', function (e) {
+        if (e.target === orderConfirmOverlay) closeOrderConfirmModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !orderConfirmOverlay.hasAttribute('hidden')) closeOrderConfirmModal();
       });
     })();
   </script>
