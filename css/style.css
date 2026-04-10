@@ -3104,6 +3104,13 @@ a.nav-user--active .header-avatar-icon {
   border-radius: 6px;
 }
 
+/* 編集ボタンエリア */
+.det-edit-action {
+  display: flex;
+  justify-content: center;
+  padding: 24px 20px 8px;
+}
+
 /* フッターノート */
 .det-footer-note {
   font-size: 12px;
