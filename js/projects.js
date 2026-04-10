@@ -27,6 +27,7 @@ const PROJECTS = [
     reporting: 0,
     alert: { type: 'red', label: '契約者なし' },
     actions: ['applicants', 'procedure'],
+    renewDisabled: true,
   },
   {
     id: 'GK-2024-002',

@@ -1475,9 +1475,13 @@ a.nav-user--active .header-avatar-icon {
   border: 1px solid #e8192c;
   color: #e8192c;
 }
-.row-action-btn--renew:hover {
+.row-action-btn--renew:hover:not(:disabled) {
   background: #e8192c;
   color: #fff;
+}
+.row-action-btn--renew:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 /* ===========================

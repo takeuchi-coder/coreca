@@ -128,7 +128,7 @@ function renderRow(p) {
           <a href="procedure.html" class="row-action-btn row-action-btn--procedure">
             ${ICONS.file}作業手順・報告を確認する
           </a>
-          <button class="row-action-btn row-action-btn--renew">
+          <button class="row-action-btn row-action-btn--renew" ${p.renewDisabled ? 'disabled' : ''}>
             ${ICONS.renew}契約を更新する
           </button>
         </div>
@@ -177,7 +177,7 @@ function renderCardItem(p) {
         <a href="procedure.html" class="row-action-btn row-action-btn--procedure">
           ${ICONS.file}作業手順・報告を確認する
         </a>
-        <button class="row-action-btn row-action-btn--renew">
+        <button class="row-action-btn row-action-btn--renew" ${p.renewDisabled ? 'disabled' : ''}>
           ${ICONS.renew}契約を更新する
         </button>
       </div>
