@@ -157,8 +157,25 @@ function renderCardItem(p) {
   return `
     <div class="proj-icon-card" data-id="${p.id}" data-tags="${p.tags.join(',')}">
       <div class="pic-thumb">${ICONS.image}</div>
-      <span>${p.jobType}</span>
-      <div class="pic-title">${p.title}</div>
+      <a href="detail.html" class="proj-title proj-title--link">${p.jobType}</a>
+      <div class="proj-sub">${p.location}</div>
+      ${renderStatusTags(p.tags)}
+      <div class="card-stats">
+        <div class="stat-item">
+          <span class="stat-label">契約者</span>
+          <span class="stat-value">${p.contracts}</span>
+        </div>
+        <span class="stat-sep">|</span>
+        <div class="stat-item">
+          <span class="stat-label">要検収</span>
+          <span class="stat-value ${p.needInspection > 0 ? 'stat-value--orange' : ''}">${p.needInspection}</span>
+        </div>
+        <span class="stat-sep">|</span>
+        <div class="stat-item">
+          <span class="stat-label">報告中</span>
+          <span class="stat-value">${p.reporting}</span>
+        </div>
+      </div>
       <div class="pic-dates">${startDate} 〜 ${endDate}</div>
       <div class="pic-state">
         <label class="toggle-switch" style="flex-shrink:0;">
@@ -166,9 +183,6 @@ function renderCardItem(p) {
           <span class="toggle-slider"></span>
         </label>
         <span class="state-badge ${stateClass}">${stateLabel}</span>
-      </div>
-      <div class="pic-footer">
-        <span class="pic-contracts">契約者 <strong>${p.contracts}</strong></span>
       </div>
       <div class="row-action-btns">
         <a href="applicants.html" class="row-action-btn row-action-btn--applicants">
