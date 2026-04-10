@@ -158,7 +158,7 @@
             </tr>
             <tr class="info-row">
               <td class="info-label">作業手順</td>
-              <td class="info-value"><button type="button" class="btn-secondary">作業手順を確認する</button></td>
+              <td class="info-value"><button type="button" class="btn-secondary" id="btn-open-procedure-modal">作業手順を確認する</button></td>
             </tr>
             <tr class="info-row">
               <td class="info-label">作業時間目安</td>
@@ -166,7 +166,7 @@
             </tr>
             <tr class="info-row">
               <td class="info-label">最低報酬単価</td>
-              <td class="info-value">1,200円/件</td>
+              <td class="info-value">1,200円</td>
             </tr>
             <tr class="info-row">
               <td class="info-label">作業場所の都道府県</td>
@@ -287,6 +287,179 @@
 
   </main>
   <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== 作業手順確認モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="procedure-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="procedure-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="procedure-modal-title">警察署への書類提出品業_30分</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-procedure-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p class="wprocedure-modal-section-title">作業手順の確認</p>
+
+        <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:10px 14px;margin-bottom:12px;color:#856404;font-size:13px;">
+          &#x26A0; 作業報告ではないので入力できません
+        </div>
+
+        <!-- 作業概要 -->
+        <div class="wprocedure-modal-h2">作業概要</div>
+        <div class="wprocedure-modal-overview">
+          <p>コンビニ等の警察署指定にて、指定の書類を提出・申請するお仕事です。</p>
+          <br>
+          <p>&lt;作業の流れ&gt;</p>
+          <p>①発注者からメッセージで送られた書類を確認し、書類をカラー印刷（必須）（正本・副本用に2部）をします。（だいたい6-8枚）</p>
+          <p>②コンビニ印刷の場合、だいたい1枚50円 ～ 一回代行では費用で買い取りします。領収証はなくさないよう注意ください。</p>
+          <p>※書類枚数が申告書補充表上の申告者枠が満数以上の場合は申請する名前のを記入入力してください。</p>
+          <p>※書類はクリアファイルに入れ、ホチキス止めはしないでください。</p>
+          <br>
+          <p>②作業完了後は警察署へ行き、申請口へ向かいます。</p>
+          <p>※（連絡担当者は来ます）申請窓口で「申告番号：ランディット」〇〇（ご自身の名前）と名乗ってください。</p>
+          <br>
+          <p>③書類担当者がその場で確認し先払いを手先に先払いするように案内されます。</p>
+          <p>※連絡先は、掲載者用「作業についての問い合わせ対策番号」（受注者のみ公開）をご確認ください。</p>
+          <p>※支払方法は現金の他に、クレジットカード等のキャッシュレス決済にも対応している警察署もあります。</p>
+        </div>
+
+        <!-- 提出時の写真報告 -->
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-note">※写真報告がぼけていたり、判別できない場合は、再提出していただくことがあります</p>
+        <p class="wprocedure-modal-note">※受領書が発行されない場合は、窓口で聞いた受け取り可能日をメモしたものを撮影し、その写真をアップロードしてください</p>
+
+        <p class="wprocedure-modal-photo-label">申請代領収書</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">控え（別紙がないときは領収書写真）</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>年
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>月
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>日
+        </div>
+
+        <!-- 受理時の写真報告 -->
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-note">※写真報告がぼけていたり、判別できない場合は、再提出していただくことがあります</p>
+        <p class="wprocedure-modal-note">※受領書が発行されない場合は、窓口で聞いた受け取り可能日をメモしたものを撮影し、その写真をアップロードしてください</p>
+
+        <p class="wprocedure-modal-photo-label">書類</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+        <p style="font-size:12px;color:#555;margin:4px 0 8px;">アップロードしました。</p>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>年
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>月
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>日
+        </div>
+
+        <!-- 立替金について -->
+        <div class="wprocedure-modal-h2">立替金について</div>
+
+        <p style="font-size:12px;color:#555;margin:10px 0 4px;">立替金が発生した場合は、領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-photo-label">立替金を証明する写真（レシート等）</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">立替金の合計金額</p>
+        <input type="number" class="wprocedure-modal-input" name="advance_total" min="0" placeholder="0" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:16px;">
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <button type="button" class="wprocedure-modal-start-btn" id="btn-procedure-modal-start">確認完了</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業手順確認モーダル ===== -->
+
+  <script>
+    (function () {
+      var procOverlay = document.getElementById('procedure-modal-overlay');
+      var btnOpenProc = document.getElementById('btn-open-procedure-modal');
+      var btnCloseProc = document.getElementById('btn-close-procedure-modal');
+      var btnStartProc = document.getElementById('btn-procedure-modal-start');
+
+      function openProcModal() {
+        procOverlay.removeAttribute('hidden');
+        procOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseProc.focus();
+      }
+
+      function closeProcModal() {
+        procOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenProc.focus();
+      }
+
+      btnOpenProc.addEventListener('click', openProcModal);
+      btnCloseProc.addEventListener('click', closeProcModal);
+      btnStartProc.addEventListener('click', closeProcModal);
+
+      procOverlay.addEventListener('click', function (e) {
+        if (e.target === procOverlay) closeProcModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !procOverlay.hasAttribute('hidden')) closeProcModal();
+      });
+    })();
+  </script>
 
   <!-- ===== フッター（共通） ===== -->
   <footer class="site-footer">
