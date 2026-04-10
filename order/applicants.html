@@ -155,7 +155,7 @@
 
       <!-- ボタンエリア -->
       <div class="applist-card-actions">
-        <button type="button" class="btn-applist-message">メッセージする</button>
+        <button type="button" class="btn-applist-message" onclick="location.href='../message/detail.html'">メッセージする</button>
       </div>
 
     </div>
@@ -210,7 +210,7 @@
       <!-- ボタンエリア -->
       <div class="applist-card-actions">
         <button type="button" class="btn-applist-order btn-applist-order--change" data-name="田中 浩二">発注に変更する</button>
-        <button type="button" class="btn-applist-message">メッセージする</button>
+        <button type="button" class="btn-applist-message" onclick="location.href='../message/detail.html'">メッセージする</button>
       </div>
 
     </div>
@@ -266,7 +266,7 @@
       <div class="applist-card-actions">
         <button type="button" class="btn-applist-order" data-name="佐藤 美咲">発注する</button>
         <button type="button" class="btn-applist-reject" data-name="佐藤 美咲">不採用</button>
-        <button type="button" class="btn-applist-message">メッセージする</button>
+        <button type="button" class="btn-applist-message" onclick="location.href='../message/detail.html'">メッセージする</button>
       </div>
 
     </div>
@@ -322,7 +322,7 @@
       <div class="applist-card-actions">
         <button type="button" class="btn-applist-order" data-name="鈴木 健太">発注する</button>
         <button type="button" class="btn-applist-reject" data-name="鈴木 健太">不採用</button>
-        <button type="button" class="btn-applist-message">メッセージする</button>
+        <button type="button" class="btn-applist-message" onclick="location.href='../message/detail.html'">メッセージする</button>
       </div>
 
     </div>
@@ -375,6 +375,31 @@
     </div>
   </div>
   <!-- ===== /発注確認モーダル ===== -->
+
+  <!-- ===== 不採用確認モーダル ===== -->
+  <div class="order-modal-overlay" id="rejectModalOverlay" hidden>
+    <div class="order-modal" role="dialog" aria-modal="true">
+
+      <!-- STEP 1: 確認 -->
+      <div class="order-modal-step" id="rejectStep1">
+        <p class="order-modal-question"><span id="rejectModalName"></span>さんを不採用にしますか？</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-yes" id="rejectModalYes">はい</button>
+          <button type="button" class="btn-order-modal-no" id="rejectModalNo">いいえ</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: 完了 -->
+      <div class="order-modal-step" id="rejectStep2" hidden>
+        <p class="order-modal-complete"><span id="rejectModalName2"></span>さんを不採用にしました。</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-continue" id="rejectModalClose">閉じる</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /不採用確認モーダル ===== -->
 
   <!-- ===== フッター（共通） ===== -->
   <footer class="site-footer">
@@ -434,6 +459,52 @@
 
       // 募集を停止する → 閉じる（実際の停止処理はここに追加）
       document.getElementById('orderModalStop').addEventListener('click', closeModal);
+
+      // オーバーレイ外クリックで閉じる
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var overlay  = document.getElementById('rejectModalOverlay');
+      var step1    = document.getElementById('rejectStep1');
+      var step2    = document.getElementById('rejectStep2');
+      var nameEl1  = document.getElementById('rejectModalName');
+      var nameEl2  = document.getElementById('rejectModalName2');
+
+      function openModal(name) {
+        nameEl1.textContent = name;
+        nameEl2.textContent = name;
+        step1.hidden = false;
+        step2.hidden = true;
+        overlay.hidden = false;
+      }
+
+      function closeModal() {
+        overlay.hidden = true;
+      }
+
+      // 不採用ボタンにイベント登録
+      document.querySelectorAll('.btn-applist-reject').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(btn.dataset.name);
+        });
+      });
+
+      // はい → STEP2へ
+      document.getElementById('rejectModalYes').addEventListener('click', function () {
+        step1.hidden = true;
+        step2.hidden = false;
+      });
+
+      // いいえ → 閉じる
+      document.getElementById('rejectModalNo').addEventListener('click', closeModal);
+
+      // 閉じる
+      document.getElementById('rejectModalClose').addEventListener('click', closeModal);
 
       // オーバーレイ外クリックで閉じる
       overlay.addEventListener('click', function (e) {
