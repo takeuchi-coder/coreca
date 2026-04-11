@@ -5645,6 +5645,17 @@ a.nav-user--active .header-avatar-icon {
   background: #1b5e20;
 }
 
+.btn-renew-order:disabled {
+  background: #bdbdbd;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-renew-order:disabled:hover {
+  background: #bdbdbd;
+}
+
 /* ページネーション */
 .applist-pagination {
   display: flex;
