@@ -88,7 +88,7 @@ function renderRow(p) {
         <div class="proj-name-cell">
           <div class="proj-thumb">${ICONS.image}</div>
           <div class="proj-name-info">
-            <a href="detail.html" class="proj-title proj-title--link">${p.jobType}</a>
+            <a href="detail.html" class="proj-title proj-title--link">${p.title}</a>
             <div class="proj-sub">${p.location}</div>
             ${renderStatusTags(p.tags)}
             <div class="card-stats">
@@ -110,6 +110,7 @@ function renderRow(p) {
           </div>
         </div>
       </td>
+      <td class="col-type"><span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span></td>
       <td class="col-date"><span class="date-start">${startDate}</span><br><span class="date-end">〜${endDate}</span></td>
       <td>
         <div style="display:flex;align-items:center;gap:8px;">
@@ -157,7 +158,8 @@ function renderCardItem(p) {
   return `
     <div class="proj-icon-card" data-id="${p.id}" data-tags="${p.tags.join(',')}">
       <div class="pic-thumb">${ICONS.image}</div>
-      <a href="detail.html" class="proj-title proj-title--link">${p.jobType}</a>
+      <a href="detail.html" class="proj-title proj-title--link">${p.title}</a>
+      <span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span>
       <div class="proj-sub">${p.location}</div>
       ${renderStatusTags(p.tags)}
       <div class="card-stats">
@@ -278,6 +280,7 @@ function renderList() {
         <thead>
           <tr>
             <th>案件名</th>
+            <th class="col-type">職種名</th>
             <th>作業・契約期間</th>
             <th>状態</th>
             <th class="col-actions">操作</th>
