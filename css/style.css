@@ -3990,6 +3990,7 @@ a.nav-user--active .header-avatar-icon {
 /* 詳細テーブル列幅 */
 .pay-th--order-id     { width: 70px; }
 .pay-th--course       { min-width: 100px; }
+.pay-th--job-type     { min-width: 100px; }
 .pay-th--order-addr   { }
 .pay-th--period       { width: 160px; white-space: nowrap; }
 .pay-th--approval     { width: 90px; white-space: nowrap; }
