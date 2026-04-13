@@ -115,7 +115,7 @@ function renderRow(p) {
       <td>
         <div style="display:flex;align-items:center;gap:8px;">
           <label class="toggle-switch" style="flex-shrink:0;">
-            <input type="checkbox" ${p.recruiting ? 'checked' : ''}>
+            <input type="checkbox" ${p.recruiting ? 'checked' : ''}${p.status === 'done' ? ' disabled' : ''}>
             <span class="toggle-slider"></span>
           </label>
           <span class="state-badge ${stateClass}">${stateLabel}</span>
@@ -181,7 +181,7 @@ function renderCardItem(p) {
       <div class="pic-dates">${startDate} 〜 ${endDate}</div>
       <div class="pic-state">
         <label class="toggle-switch" style="flex-shrink:0;">
-          <input type="checkbox" ${p.recruiting ? 'checked' : ''}>
+          <input type="checkbox" ${p.recruiting ? 'checked' : ''}${p.status === 'done' ? ' disabled' : ''}>
           <span class="toggle-slider"></span>
         </label>
         <span class="state-badge ${stateClass}">${stateLabel}</span>
