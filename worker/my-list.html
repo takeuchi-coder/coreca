@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/worker.css">
 </head>
@@ -85,21 +83,9 @@
         <!-- 右: コンテンツエリア -->
         <div class="wmylist-content">
 
-          <!-- 案件ID検索 + 地図トグル -->
+          <!-- 案件ID検索 -->
           <div class="wmylist-action-row">
             <button class="wmylist-id-search-btn" id="openSearchModal">案件ID検索</button>
-            <button class="wmylist-map-toggle-btn" id="mapToggleBtn" aria-expanded="false">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              地図で見る
-            </button>
-          </div>
-
-          <!-- Leaflet マップ（トグルで表示） -->
-          <div class="wmylist-map-wrap" id="wmylistMapWrap" hidden>
-            <div id="wmylistMap" class="wmylist-map"></div>
           </div>
 
           <!-- エントリー中 -->
@@ -131,8 +117,7 @@
                           <line x1="12" y1="8" x2="12" y2="16"/>
                           <line x1="8" y1="12" x2="16" y2="12"/>
                         </svg>
-                        ¥1,200 / 件
-                      </span>
+                        ¥1,200                      </span>
                     </div>
                     <div class="wmylist-card-id">案件ID：236603</div>
                   </div>
@@ -168,8 +153,7 @@
                           <line x1="12" y1="8" x2="12" y2="16"/>
                           <line x1="8" y1="12" x2="16" y2="12"/>
                         </svg>
-                        ¥1,500 / 件
-                      </span>
+                        ¥1,500                      </span>
                     </div>
                     <div class="wmylist-card-id">案件ID：236720</div>
                   </div>
@@ -222,8 +206,7 @@
                           <line x1="12" y1="8" x2="12" y2="16"/>
                           <line x1="8" y1="12" x2="16" y2="12"/>
                         </svg>
-                        ¥2,000 / 件
-                      </span>
+                        ¥2,000                      </span>
                     </div>
                     <div class="wmylist-card-id">案件ID：236580</div>
                   </div>
@@ -276,8 +259,7 @@
                           <line x1="12" y1="8" x2="12" y2="16"/>
                           <line x1="8" y1="12" x2="16" y2="12"/>
                         </svg>
-                        ¥1,200 / 件
-                      </span>
+                        ¥1,200                      </span>
                     </div>
                     <div class="wmylist-card-id">案件ID：236603</div>
                   </div>
@@ -343,9 +325,6 @@
     </div>
   </footer>
 
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPbM=" crossorigin=""></script>
-
   <script>
     // =============================================
     // タブ切り替え
@@ -361,10 +340,6 @@
       tabContents.forEach(c => {
         c.classList.toggle('wmylist-tab-content--active', c.dataset.tabContent === targetKey);
       });
-      // 地図が表示中ならマーカーを更新
-      if (!document.getElementById('wmylistMapWrap').hidden) {
-        refreshMapMarkers();
-      }
     }
 
     // URL ハッシュで初期タブを決定（例: my-list.html#done）
@@ -375,98 +350,6 @@
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => activateTab(tab.dataset.tab));
-    });
-
-    // =============================================
-    // Leaflet マップ
-    // =============================================
-    let map = null;
-    let markerLayer = null;
-    let activeCardId = null;
-
-    function createMarkerIcon(active) {
-      return L.divIcon({
-        html: `<div class="wmylist-map-marker${active ? ' wmylist-map-marker--active' : ''}">●</div>`,
-        className: '',
-        iconSize: [28, 28],
-        iconAnchor: [14, 14]
-      });
-    }
-
-    function initMap() {
-      map = L.map('wmylistMap', { zoomControl: true });
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19
-      }).addTo(map);
-      markerLayer = L.layerGroup().addTo(map);
-    }
-
-    function getActiveTabCards() {
-      const activeContent = document.querySelector('.wmylist-tab-content--active');
-      return activeContent ? activeContent.querySelectorAll('.wmylist-card[data-lat]') : [];
-    }
-
-    function refreshMapMarkers() {
-      if (!map) return;
-      markerLayer.clearLayers();
-
-      const cards = getActiveTabCards();
-      const latlngs = [];
-
-      cards.forEach(card => {
-        const lat = parseFloat(card.dataset.lat);
-        const lng = parseFloat(card.dataset.lng);
-        const title = card.dataset.title || '';
-        const cardId = card.id;
-
-        const marker = L.marker([lat, lng], {
-          icon: createMarkerIcon(cardId === activeCardId)
-        });
-
-        marker.on('click', () => {
-          // カードをハイライト
-          document.querySelectorAll('.wmylist-card--highlighted').forEach(c => c.classList.remove('wmylist-card--highlighted'));
-          card.classList.add('wmylist-card--highlighted');
-          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          activeCardId = cardId;
-          refreshMapMarkers();
-        });
-
-        marker.bindTooltip(title, { direction: 'top', offset: [0, -14] });
-        marker.addTo(markerLayer);
-        latlngs.push([lat, lng]);
-      });
-
-      if (latlngs.length > 0) {
-        if (latlngs.length === 1) {
-          map.setView(latlngs[0], 14);
-        } else {
-          map.fitBounds(latlngs, { padding: [40, 40] });
-        }
-      }
-
-      map.invalidateSize();
-    }
-
-    // 地図トグルボタン
-    const mapToggleBtn = document.getElementById('mapToggleBtn');
-    const mapWrap = document.getElementById('wmylistMapWrap');
-
-    mapToggleBtn.addEventListener('click', () => {
-      const isHidden = mapWrap.hidden;
-      mapWrap.hidden = !isHidden;
-      mapToggleBtn.setAttribute('aria-expanded', String(isHidden));
-      mapToggleBtn.classList.toggle('wmylist-map-toggle-btn--active', isHidden);
-
-      if (isHidden) {
-        if (!map) initMap();
-        // DOM表示後にサイズ確定してからマーカー描画
-        requestAnimationFrame(() => {
-          map.invalidateSize();
-          refreshMapMarkers();
-        });
-      }
     });
 
     // 案件ID検索モーダル
