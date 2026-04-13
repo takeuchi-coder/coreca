@@ -77,7 +77,7 @@ function renderRow(p) {
   if (p.status === 'done') {
     stateClass = 'state-badge--done'; stateLabel = '完了';
   } else if (p.recruiting) {
-    stateClass = 'state-badge--active'; stateLabel = '進行中';
+    stateClass = 'state-badge--active'; stateLabel = '募集中';
   } else {
     stateClass = 'state-badge--stopped'; stateLabel = '募集停止';
   }
@@ -150,7 +150,7 @@ function renderCardItem(p) {
   if (p.status === 'done') {
     stateClass = 'state-badge--done'; stateLabel = '完了';
   } else if (p.recruiting) {
-    stateClass = 'state-badge--active'; stateLabel = '進行中';
+    stateClass = 'state-badge--active'; stateLabel = '募集中';
   } else {
     stateClass = 'state-badge--stopped'; stateLabel = '募集停止';
   }
@@ -393,11 +393,11 @@ function buildPageNumbers(cur, total) {
 function initToggles() {
   document.querySelectorAll('.toggle-switch input').forEach(input => {
     input.addEventListener('change', () => {
-      const text       = input.checked ? '進行中' : '募集停止';
+      const text       = input.checked ? '募集中' : '募集停止';
       const badgeClass = input.checked ? 'state-badge--active' : 'state-badge--stopped';
-      const td = input.closest('td');
-      if (td) {
-        const badge = td.querySelector('.state-badge');
+      const container = input.closest('td') || input.closest('.proj-status-actions');
+      if (container) {
+        const badge = container.querySelector('.state-badge');
         if (badge) {
           badge.textContent = text;
           badge.className = `state-badge ${badgeClass}`;
