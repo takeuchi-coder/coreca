@@ -24,8 +24,7 @@
       align-items: center;
       gap: 12px;
     }
-    header svg { flex-shrink: 0; }
-    header h1 { font-size: 18px; font-weight: 700; }
+    .header-logo-img { height: 36px; flex-shrink: 0; }
     header span { font-size: 13px; opacity: .75; margin-left: 4px; }
 
     /* メインレイアウト */
@@ -118,10 +117,8 @@
 <body>
 
   <header>
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-      <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
-    </svg>
-    <h1>ご近所ワーク <span>画面一覧</span></h1>
+    <img src="images/logo.png" alt="ご近所ワーク" class="header-logo-img">
+    <span>画面一覧</span>
   </header>
 
   <main>
