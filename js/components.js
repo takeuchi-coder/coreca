@@ -110,7 +110,7 @@ function renderRow(p) {
           </div>
         </div>
       </td>
-      <td class="col-type"><span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span></td>
+      <td class="col-type">${p.jobType}</td>
       <td class="col-date"><span class="date-start">${startDate}</span><br><span class="date-end">〜${endDate}</span></td>
       <td>
         <div style="display:flex;align-items:center;gap:8px;">
@@ -159,7 +159,7 @@ function renderCardItem(p) {
     <div class="proj-icon-card" data-id="${p.id}" data-tags="${p.tags.join(',')}">
       <div class="pic-thumb">${ICONS.image}</div>
       <a href="detail.html" class="proj-title proj-title--link">${p.title}</a>
-      <span class="type-badge type-badge--${p.jobTypeColor}">${p.jobType}</span>
+      <span>${p.jobType}</span>
       <div class="proj-sub">${p.location}</div>
       ${renderStatusTags(p.tags)}
       <div class="card-stats">
