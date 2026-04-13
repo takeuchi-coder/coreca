@@ -889,5 +889,24 @@
       });
     })();
   </script>
+
+  <script>
+    (function () {
+      document.querySelectorAll('.toggle-switch input').forEach(function (input) {
+        input.addEventListener('change', function () {
+          var text = input.checked ? '募集中' : '募集停止';
+          var badgeClass = input.checked ? 'state-badge--active' : 'state-badge--stopped';
+          var container = input.closest('.proj-status-actions');
+          if (container) {
+            var badge = container.querySelector('.state-badge');
+            if (badge) {
+              badge.textContent = text;
+              badge.className = 'state-badge ' + badgeClass;
+            }
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
