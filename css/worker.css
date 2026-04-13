@@ -57,6 +57,12 @@
   letter-spacing: 0.02em;
 }
 
+.header-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
 /* ログインボタン（右上） */
 .worker-header-login {
   display: flex;

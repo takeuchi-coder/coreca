@@ -88,6 +88,12 @@ button {
   white-space: nowrap;
 }
 
+.header-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
 .logo-role {
   font-size: 11px;
   color: #fff;
