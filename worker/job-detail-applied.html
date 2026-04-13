@@ -82,6 +82,8 @@
         <div class="wdetail-hero-info">
           <h1 class="wdetail-job-title">在宅業務</h1>
           <div class="wdetail-job-price">¥ 1,300 30分</div>
+          <div class="wdetail-job-meta">案件ID：236603</div>
+          <div class="wdetail-job-meta">発注者：株式会社コレカ</div>
         </div>
       </div>
 
@@ -145,7 +147,7 @@
           <h2 class="wdetail-section-label">作業・契約期間</h2>
           <hr class="wdetail-section-rule">
           <div class="wdetail-section-body">
-            <p>2025年08月01日 〜 2025年12月31日（最長6ヶ月、双方合意により延長可）</p>
+            <p>2025年08月01日 〜 2025年12月31日</p>
           </div>
         </section>
 
@@ -155,6 +157,15 @@
           <hr class="wdetail-section-rule">
           <div class="wdetail-section-body">
             <p>¥1,300</p>
+          </div>
+        </section>
+
+        <!-- 作業時間目安 -->
+        <section class="wdetail-section">
+          <h2 class="wdetail-section-label">作業時間目安</h2>
+          <hr class="wdetail-section-rule">
+          <div class="wdetail-section-body">
+            <p>30分</p>
           </div>
         </section>
 
@@ -168,20 +179,11 @@
         </section>
 
         <!-- 作業可能時間帯・曜日・納期についての補足事項 -->
-        <section class="wdetail-section">
+        <section class="wdetail-section wdetail-section--last">
           <h2 class="wdetail-section-label">作業可能時間帯・曜日・納期についての補足事項</h2>
           <hr class="wdetail-section-rule">
           <div class="wdetail-section-body">
             <p>繁忙期（10月〜12月）は土日祝日の対応をお願いする場合があります。納期は原則として依頼日から3営業日以内でお願いしております。ご都合が合わない場合は事前にご相談ください。</p>
-          </div>
-        </section>
-
-        <!-- 発注者 -->
-        <section class="wdetail-section wdetail-section--last">
-          <h2 class="wdetail-section-label">発注者</h2>
-          <hr class="wdetail-section-rule">
-          <div class="wdetail-section-body">
-            <p>株式会社コレカ</p>
           </div>
         </section>
 
@@ -213,8 +215,133 @@
       <div class="wdetail-action-price">¥1,300 30分</div>
       <div class="wdetail-action-meta">2025年08月01日~2025年12月31日　いつでも</div>
     </div>
-    <button class="btn-wdetail-apply btn-wdetail-apply--applied" disabled>応募済み</button>
+    <button class="btn-wdetail-apply btn-wdetail-apply--cancel" id="btnCancel">応募キャンセル</button>
   </div>
 
+  <!-- ===== 応募モーダル ===== -->
+  <div class="apply-modal-overlay" id="applyModalOverlay" hidden>
+    <div class="apply-modal" role="dialog" aria-modal="true">
+
+      <!-- STEP 1: 応募フォーム -->
+      <div id="applyStep1">
+        <div class="apply-modal-header">
+          <h2 class="apply-modal-title">応募内容の入力</h2>
+          <button type="button" class="apply-modal-close" id="applyStep1Close" aria-label="閉じる">&times;</button>
+        </div>
+
+        <div class="apply-modal-body">
+
+          <!-- 電話番号表示 -->
+          <div class="apply-modal-field">
+            <div class="apply-modal-field-head">
+              <span class="apply-modal-field-label">発注者に自分の電話番号を表示</span>
+              <span class="apply-modal-badge apply-modal-badge--required">必須</span>
+            </div>
+            <p class="apply-modal-field-note">※本案件で発注者とやりとりをスムーズにするため表示推薦</p>
+            <div class="apply-modal-radios">
+              <label class="apply-modal-radio-label">
+                <input type="radio" name="showPhone" value="show" checked>
+                表示する
+              </label>
+              <label class="apply-modal-radio-label">
+                <input type="radio" name="showPhone" value="hide">
+                表示しない
+              </label>
+            </div>
+          </div>
+
+          <!-- 作業可能スケジュール -->
+          <div class="apply-modal-field">
+            <div class="apply-modal-field-head">
+              <span class="apply-modal-field-label">作業可能スケジュール</span>
+              <span class="apply-modal-badge apply-modal-badge--optional">任意</span>
+            </div>
+            <textarea class="apply-modal-textarea" id="applySchedule" maxlength="300" placeholder="情報を伝えてやりとりをスムーズにしましょう！&#10;例1：●月●日から●月●日ならいつでも可能です。&#10;例2：週2で月・木・金いずれかで可能です。"></textarea>
+            <div class="apply-modal-count"><span id="applyScheduleCount">0</span>/300文字</div>
+          </div>
+
+          <!-- 自己PR -->
+          <div class="apply-modal-field">
+            <div class="apply-modal-field-head">
+              <span class="apply-modal-field-label">自己PR・その他質問など</span>
+              <span class="apply-modal-badge apply-modal-badge--optional">任意</span>
+            </div>
+            <textarea class="apply-modal-textarea" id="applyPr" maxlength="300" placeholder="意気込み・経験・ご登録お住まい住所と作業場所が離れている場合は応募理由（別の仕事が近隣、引越し済で近隣、etc）など自己PRを伝えると安心感を持ってもらえます。&#10;質問や希望などもあれば記入してください。"></textarea>
+            <div class="apply-modal-count"><span id="applyPrCount">0</span>/300文字</div>
+          </div>
+
+        </div>
+
+        <div class="apply-modal-footer">
+          <p class="apply-modal-terms"><a href="#" class="apply-modal-terms-link">利用規約に同意し応募へお進みください</a></p>
+          <div class="apply-modal-actions">
+            <button type="button" class="btn-apply-modal-submit" id="applySubmit">応募する</button>
+            <button type="button" class="btn-apply-modal-cancel" id="applyCancel">応募しない</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: 応募完了 -->
+      <div id="applyStep2" hidden>
+        <div class="apply-modal-header">
+          <h2 class="apply-modal-title">案件への応募完了</h2>
+          <button type="button" class="apply-modal-close" id="applyStep2Close" aria-label="閉じる">&times;</button>
+        </div>
+        <div class="apply-modal-body">
+          <p class="apply-complete-text">「作業手順を確認する」ボタンを押して、作業内容を確認しましょう。</p>
+          <p class="apply-complete-text">発注者が選考を実施します。<br>選考通過すると通知メールが届きますので、リンクからログインして「仕事を引き受ける」ボタンを押してください。</p>
+          <div class="apply-complete-flow">
+            <p>【契約までの流れ】</p>
+            <p>①エントリー中　（←今ここ）</p>
+            <p>②選考通過　通知メール</p>
+            <p>③仕事を引き受けるボタン押下</p>
+            <p>④契約成立</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /応募モーダル ===== -->
+
+  <script>
+    (function () {
+      var overlay  = document.getElementById('applyModalOverlay');
+      var step1    = document.getElementById('applyStep1');
+      var step2    = document.getElementById('applyStep2');
+
+      function openModal() {
+        step1.hidden = false;
+        step2.hidden = true;
+        overlay.hidden = false;
+      }
+
+      function closeModal() {
+        overlay.hidden = true;
+      }
+
+      document.getElementById('btnCancel').addEventListener('click', openModal);
+      document.getElementById('applyStep1Close').addEventListener('click', closeModal);
+      document.getElementById('applyStep2Close').addEventListener('click', closeModal);
+      document.getElementById('applyCancel').addEventListener('click', closeModal);
+
+      document.getElementById('applySubmit').addEventListener('click', function () {
+        step1.hidden = true;
+        step2.hidden = false;
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+
+      // 文字数カウント
+      document.getElementById('applySchedule').addEventListener('input', function () {
+        document.getElementById('applyScheduleCount').textContent = this.value.length;
+      });
+      document.getElementById('applyPr').addEventListener('input', function () {
+        document.getElementById('applyPrCount').textContent = this.value.length;
+      });
+    })();
+  </script>
 </body>
 </html>
