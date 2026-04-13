@@ -2265,6 +2265,13 @@
   background: #c0111f;
 }
 
+.btn-wdetail-apply--applied,
+.btn-wdetail-apply--applied:hover {
+  background: #b0b0b0;
+  color: #fff;
+  cursor: not-allowed;
+}
+
 
 /* =============================================
    案件一覧（my-list.html） wmylist-*
