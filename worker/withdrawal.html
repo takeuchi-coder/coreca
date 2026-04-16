@@ -83,21 +83,20 @@
     </aside>
     <!-- ===== /サイドバー ===== -->
 
-        <div class="wbasic-inner">
+      <div class="wbasic-inner">
 
-      <!-- ページタイトル行 -->
-      <div class="wbasic-title-row">
-        <a href="mypage.html" class="wbasic-back-link" aria-label="戻る">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-        </a>
-        <h1 class="wbasic-title">退会</h1>
-      </div>
-      <hr class="wbasic-title-rule">
+        <!-- ページタイトル行 -->
+        <div class="wbasic-title-row">
+          <a href="mypage.html" class="wbasic-back-link" aria-label="戻る">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </a>
+          <h1 class="wbasic-title">退会</h1>
+        </div>
+        <hr class="wbasic-title-rule">
 
-      <!-- 注意事項カード -->
-      <div class="wbasic-card wwithdrawal-card">
+        <!-- 注意事項 -->
         <p class="wwithdrawal-notice">
           ※注意事項※<br>
           進捗中の案件がある場合、もしくは金額の残高がある場合は退会できません。<br>
@@ -106,12 +105,15 @@
           ご不明点がある場合は、お問い合わせよりご連絡ください。
         </p>
 
-        <div class="wbasic-submit-row">
+        <div class="wbasic-submit-row" style="flex-direction:column;align-items:center;">
           <button type="button" class="wbasic-btn-submit wbasic-btn-submit--wide" onclick="document.getElementById('withdrawal-confirm-modal').removeAttribute('hidden')">退会申請する</button>
         </div>
+
       </div>
+
     </div><!-- /wsidebar-layout -->
   </main>
+  <!-- ===== /メインコンテンツ ===== -->
 
   <!-- ===== 退会確認モーダル ===== -->
   <div id="withdrawal-confirm-modal" class="order-modal-overlay" hidden>
@@ -124,7 +126,6 @@
     </div>
   </div>
   <!-- ===== /退会確認モーダル ===== -->
-  <!-- ===== /メインコンテンツ ===== -->
 
   <!-- ===== フッター ===== -->
   <footer class="site-footer">
@@ -140,6 +141,7 @@
       <p class="footer-copy">&copy; 株式会社コレカ</p>
     </div>
   </footer>
+  <!-- ===== /フッター ===== -->
 
 </body>
 </html>
