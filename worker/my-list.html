@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件一覧 | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wmylist-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item">
+            <a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wmylist-main">
+    <div class="wmylist-inner">
+
+      <!-- ページタイトル -->
+      <div class="wmylist-title-row">
+        <h1 class="wmylist-title">案件一覧</h1>
+      </div>
+      <hr class="wmylist-title-rule">
+
+      <!-- 2カラムレイアウト: 左タブ + 右コンテンツ -->
+      <div class="wmylist-layout">
+
+        <!-- 左: 縦並びタブ -->
+        <aside class="wmylist-sidetabs" role="tablist" aria-label="案件ステータス">
+          <button class="wmylist-sidetab wmylist-sidetab--active" role="tab" aria-selected="true"  data-tab="entry">エントリー中</button>
+          <button class="wmylist-sidetab"                          role="tab" aria-selected="false" data-tab="judging">仕事引き受け判断中</button>
+          <button class="wmylist-sidetab"                          role="tab" aria-selected="false" data-tab="progress">進行中</button>
+          <button class="wmylist-sidetab"                          role="tab" aria-selected="false" data-tab="done">完了</button>
+        </aside>
+
+        <!-- 右: コンテンツエリア -->
+        <div class="wmylist-content">
+
+          <!-- 案件ID検索 -->
+          <div class="wmylist-action-row">
+            <button class="wmylist-id-search-btn" id="openSearchModal">案件ID検索</button>
+          </div>
+
+          <!-- エントリー中 -->
+          <div class="wmylist-tab-content wmylist-tab-content--active" data-tab-content="entry">
+            <div class="wmylist-cards">
+
+              <div class="wmylist-card wmylist-card--clickable" id="card-236720" data-lat="35.6897" data-lng="139.6530" data-title="共用部清掃スタッフ" onclick="location.href='my-list-detail.html'">
+                <div class="wmylist-card-body">
+                  <div class="wmylist-card-thumb">
+                    <img src="../images/job-sample.jpg" alt="案件画像" onerror="this.style.display='none'">
+                  </div>
+                  <div class="wmylist-card-info">
+                    <div class="wmylist-card-top-row">
+                      <span class="wmylist-card-date">2026年04月01日~2026年06月30日&nbsp;&nbsp;いつでも</span>
+                      <span class="wmylist-card-status">エントリー中</span>
+                    </div>
+                    <h3 class="wmylist-card-title">共用部清掃スタッフ</h3>
+                    <div class="wmylist-card-meta">
+                      <span class="wmylist-card-location">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        東京都 渋谷区渋谷3丁目
+                      </span>
+                      <span class="wmylist-card-price">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="12" y1="8" x2="12" y2="16"/>
+                          <line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                        ¥1,500                      </span>
+                    </div>
+                    <div class="wmylist-card-id">案件ID：236720</div>
+                  </div>
+                </div>
+                <div class="wmylist-card-actions">
+                  <a href="messages.html" class="wmylist-card-action-btn">メッセージ</a>
+                  <a href="#" class="wmylist-card-action-btn">作業手順・報告</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ページネーション -->
+            <div class="wmylist-pagination-wrap">
+              <div class="wmylist-count">1 件中 <strong>1〜1</strong> 件表示</div>
+              <div class="wmylist-pagination">
+                <button class="wmylist-page-btn" disabled>← 前の10件</button>
+                <button class="wmylist-page-btn wmylist-page-btn--active">1</button>
+                <button class="wmylist-page-btn" disabled>次の10件 →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 仕事引き受け判断中 -->
+          <div class="wmylist-tab-content" data-tab-content="judging">
+            <div class="wmylist-cards">
+
+              <div class="wmylist-card wmylist-card--clickable" id="card-236721" data-lat="35.6762" data-lng="139.6503" data-title="書類整理・データ入力補助スタッフ" onclick="location.href='my-list-detail.html'">
+                <div class="wmylist-card-body">
+                  <div class="wmylist-card-thumb">
+                    <img src="../images/job-sample.jpg" alt="案件画像" onerror="this.style.display='none'">
+                  </div>
+                  <div class="wmylist-card-info">
+                    <div class="wmylist-card-top-row">
+                      <span class="wmylist-card-date">2026年05月01日~2026年05月31日&nbsp;&nbsp;10:00〜17:00</span>
+                      <span class="wmylist-card-status">仕事引き受け判断中</span>
+                    </div>
+                    <h3 class="wmylist-card-title">書類整理・データ入力補助スタッフ</h3>
+                    <div class="wmylist-card-meta">
+                      <span class="wmylist-card-location">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        東京都 目黒区上目黒2丁目
+                      </span>
+                      <span class="wmylist-card-price">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="12" y1="8" x2="12" y2="16"/>
+                          <line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                        ¥1,800                      </span>
+                    </div>
+                    <div class="wmylist-card-id">案件ID：236721</div>
+                  </div>
+                </div>
+                <div class="wmylist-card-actions">
+                  <a href="messages.html" class="wmylist-card-action-btn">メッセージ</a>
+                  <a href="#" class="wmylist-card-action-btn">作業手順・報告</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ページネーション -->
+            <div class="wmylist-pagination-wrap">
+              <div class="wmylist-count">1 件中 <strong>1〜1</strong> 件表示</div>
+              <div class="wmylist-pagination">
+                <button class="wmylist-page-btn" disabled>← 前の10件</button>
+                <button class="wmylist-page-btn wmylist-page-btn--active">1</button>
+                <button class="wmylist-page-btn" disabled>次の10件 →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 進行中 -->
+          <div class="wmylist-tab-content" data-tab-content="progress">
+            <div class="wmylist-cards">
+
+              <div class="wmylist-card wmylist-card--clickable" id="card-236580" data-lat="35.7294" data-lng="139.7109" data-title="植栽水やり・軽作業スタッフ募集" onclick="location.href='my-list-detail.html'">
+                <div class="wmylist-card-body">
+                  <div class="wmylist-card-thumb">
+                    <img src="../images/job-sample.jpg" alt="案件画像" onerror="this.style.display='none'">
+                  </div>
+                  <div class="wmylist-card-info">
+                    <div class="wmylist-card-top-row">
+                      <span class="wmylist-card-date">2026年03月01日~2026年03月31日&nbsp;&nbsp;09:00〜12:00</span>
+                      <span class="wmylist-card-status">進行中</span>
+                    </div>
+                    <h3 class="wmylist-card-title">植栽水やり・軽作業スタッフ募集</h3>
+                    <div class="wmylist-card-meta">
+                      <span class="wmylist-card-location">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        東京都 文京区本郷3丁目
+                      </span>
+                      <span class="wmylist-card-price">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="12" y1="8" x2="12" y2="16"/>
+                          <line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                        ¥2,000                      </span>
+                    </div>
+                    <div class="wmylist-card-id">案件ID：236580</div>
+                  </div>
+                </div>
+                <div class="wmylist-card-actions">
+                  <a href="messages.html" class="wmylist-card-action-btn">メッセージ</a>
+                  <a href="#" class="wmylist-card-action-btn">作業手順・報告</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ページネーション -->
+            <div class="wmylist-pagination-wrap">
+              <div class="wmylist-count">1 件中 <strong>1〜1</strong> 件表示</div>
+              <div class="wmylist-pagination">
+                <button class="wmylist-page-btn" disabled>← 前の10件</button>
+                <button class="wmylist-page-btn wmylist-page-btn--active">1</button>
+                <button class="wmylist-page-btn" disabled>次の10件 →</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 完了 -->
+          <div class="wmylist-tab-content" data-tab-content="done">
+            <div class="wmylist-cards">
+
+              <div class="wmylist-card wmylist-card--clickable" id="card-236603d" data-lat="35.7050" data-lng="139.6367" data-title="警察署への書類提出業務_30分" onclick="location.href='my-list-detail.html'">
+                <div class="wmylist-card-body">
+                  <div class="wmylist-card-thumb">
+                    <img src="../images/job-sample.jpg" alt="案件画像" onerror="this.style.display='none'">
+                  </div>
+                  <div class="wmylist-card-info">
+                    <div class="wmylist-card-top-row">
+                      <span class="wmylist-card-date">2025年12月19日~2025年12月26日&nbsp;&nbsp;いつでも</span>
+                      <span class="wmylist-card-status">完了</span>
+                    </div>
+                    <h3 class="wmylist-card-title">警察署への書類提出業務_30分</h3>
+                    <div class="wmylist-card-meta">
+                      <span class="wmylist-card-location">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                          <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        東京都 杉並区成田東4丁目38番16号　杉並警察署
+                      </span>
+                      <span class="wmylist-card-price">
+                        <svg class="wmylist-card-meta-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="12" y1="8" x2="12" y2="16"/>
+                          <line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                        ¥1,200                      </span>
+                    </div>
+                    <div class="wmylist-card-id">案件ID：236603</div>
+                  </div>
+                </div>
+                <div class="wmylist-card-actions">
+                  <a href="messages.html" class="wmylist-card-action-btn">メッセージ</a>
+                  <a href="#" class="wmylist-card-action-btn">作業手順・報告</a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- ページネーション -->
+            <div class="wmylist-pagination-wrap">
+              <div class="wmylist-count">1 件中 <strong>1〜1</strong> 件表示</div>
+              <div class="wmylist-pagination">
+                <button class="wmylist-page-btn" disabled>← 前の10件</button>
+                <button class="wmylist-page-btn wmylist-page-btn--active">1</button>
+                <button class="wmylist-page-btn" disabled>次の10件 →</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /wmylist-content -->
+      </div><!-- /wmylist-layout -->
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== 案件ID検索モーダル ===== -->
+  <div class="wmylist-modal-overlay" id="searchModal" aria-modal="true" role="dialog" aria-labelledby="searchModalTitle" hidden>
+    <div class="wmylist-modal">
+      <button class="wmylist-modal-close" id="closeSearchModal" aria-label="閉じる">&times;</button>
+      <h2 class="wmylist-modal-title" id="searchModalTitle">絞り込み条件</h2>
+      <hr class="wmylist-modal-rule">
+      <div class="wmylist-modal-body">
+        <div class="wmylist-modal-field">
+          <label class="wmylist-modal-label" for="jobIdInput">案件ID</label>
+          <input class="wmylist-modal-input" type="text" id="jobIdInput" placeholder="">
+        </div>
+      </div>
+      <div class="wmylist-modal-footer">
+        <button class="wmylist-modal-btn wmylist-modal-btn--clear" id="clearSearchModal">クリア</button>
+        <button class="wmylist-modal-btn wmylist-modal-btn--submit">絞り込む</button>
+      </div>
+    </div>
+  </div>
+  <!-- ===== /案件ID検索モーダル ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+
+  <script>
+    // =============================================
+    // タブ切り替え
+    // =============================================
+    const tabs = document.querySelectorAll('.wmylist-sidetab');
+    const tabContents = document.querySelectorAll('.wmylist-tab-content');
+
+    function activateTab(targetKey) {
+      tabs.forEach(t => {
+        t.classList.toggle('wmylist-sidetab--active', t.dataset.tab === targetKey);
+        t.setAttribute('aria-selected', t.dataset.tab === targetKey ? 'true' : 'false');
+      });
+      tabContents.forEach(c => {
+        c.classList.toggle('wmylist-tab-content--active', c.dataset.tabContent === targetKey);
+      });
+    }
+
+    // URL ハッシュで初期タブを決定（例: my-list.html#done）
+    const hashTab = window.location.hash.replace('#', '');
+    if (hashTab && document.querySelector(`[data-tab="${hashTab}"]`)) {
+      activateTab(hashTab);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab.dataset.tab));
+    });
+
+    // 案件ID検索モーダル
+    const overlay    = document.getElementById('searchModal');
+    const openBtn    = document.getElementById('openSearchModal');
+    const closeBtn   = document.getElementById('closeSearchModal');
+    const clearBtn   = document.getElementById('clearSearchModal');
+    const jobIdInput = document.getElementById('jobIdInput');
+
+    function openModal()  { overlay.hidden = false; jobIdInput.focus(); }
+    function closeModal() { overlay.hidden = true; }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    clearBtn.addEventListener('click', () => { jobIdInput.value = ''; closeModal(); });
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メッセージ一覧 | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wmsg-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item">
+            <a href="search.html" class="nav-link">
+              <span class="nav-text">案件検索</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="my-list.html" class="nav-link">
+              <span class="nav-text">案件一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link">
+              <span class="nav-text">報酬情報</span>
+            </a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="messages.html" class="nav-link">
+              <span class="nav-text">メッセージ一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wmsg-main">
+    <div class="wmsg-inner">
+
+      <!-- ページタイトル -->
+      <h1 class="wmsg-title">メッセージ一覧</h1>
+      <hr class="wmsg-title-rule">
+
+      <!-- 件数バー + フィルター -->
+      <div class="wmsg-toolbar">
+        <div class="wmsg-count-row">
+          <span class="wmsg-count-num">1</span>
+          <span class="wmsg-count-text">件中 <strong class="wmsg-count-range">1〜1</strong> 件表示</span>
+          <div class="wmsg-per-page-select">
+            <select class="wmsg-per-page-dropdown" aria-label="表示件数">
+              <option value="10">10件</option>
+              <option value="20">20件</option>
+              <option value="50">50件</option>
+            </select>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wmsg-per-page-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+        <div class="wmsg-filter-btns">
+          <button class="wmsg-filter-btn wmsg-filter-btn--active">全て</button>
+          <button class="wmsg-filter-btn">未読のみ</button>
+          <button class="wmsg-filter-btn wmsg-filter-btn--search">詳細検索</button>
+        </div>
+      </div>
+
+      <!-- メッセージテーブル -->
+      <div class="wmsg-table-wrap">
+        <table class="wmsg-table">
+          <thead>
+            <tr>
+              <th class="wmsg-th">発注者名</th>
+              <th class="wmsg-th">案件ID</th>
+              <th class="wmsg-th">作業・契約期間</th>
+              <th class="wmsg-th">コース名</th>
+              <th class="wmsg-th wmsg-th--msg">メッセージ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="wmsg-tr">
+              <td class="wmsg-td">
+                <a href="message-detail.html" class="wmsg-orderer-link">株式会社コレカ</a>
+              </td>
+              <td class="wmsg-td wmsg-td--id">
+                <a href="my-list-detail.html" class="wmsg-job-id-link">236603</a>
+                <span class="wmsg-status-badge">完了</span>
+              </td>
+              <td class="wmsg-td wmsg-td--period">
+                2025/12/19 〜<br>2025/12/26
+              </td>
+              <td class="wmsg-td">警察署への書類提出業務_30分</td>
+              <td class="wmsg-td wmsg-td--msg">
+                <div class="wmsg-msg-content">
+                  <p class="wmsg-msg-text">よろしくお願いします。</p>
+                  <p class="wmsg-msg-date">12/18 竹内 由佳</p>
+                </div>
+                <a href="message-detail.html" class="wmsg-confirm-btn">確認する</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ページネーション -->
+      <div class="wmsg-pagination-wrap">
+        <button class="wmsg-page-btn wmsg-page-btn--prev" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          前の10件
+        </button>
+        <div class="wmsg-count-center">
+          <span class="wmsg-count-num">1</span>
+          <span class="wmsg-count-text">件中 <strong class="wmsg-count-range">1〜1</strong> 件表示</span>
+        </div>
+        <button class="wmsg-page-btn wmsg-page-btn--next" disabled>
+          次の10件
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== 絞り込み検索モーダル ===== -->
+  <div class="wmsg-modal-overlay" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle" hidden>
+    <div class="wmsg-modal">
+
+      <!-- モーダルヘッダー -->
+      <div class="wmsg-modal-header">
+        <h2 class="wmsg-modal-title" id="searchModalTitle">絞り込み条件</h2>
+        <button class="wmsg-modal-close" id="searchModalClose" aria-label="閉じる">&times;</button>
+      </div>
+      <hr class="wmsg-modal-rule">
+
+      <!-- フォーム -->
+      <form class="wmsg-modal-form" id="searchForm">
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterOrderer">発注者名</label>
+          <input class="wmsg-modal-input" type="text" id="filterOrderer" name="orderer">
+        </div>
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterJobId">案件ID</label>
+          <input class="wmsg-modal-input" type="text" id="filterJobId" name="jobId">
+        </div>
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterCourse">コース名</label>
+          <input class="wmsg-modal-input" type="text" id="filterCourse" name="course">
+        </div>
+        <div class="wmsg-modal-field">
+          <label class="wmsg-modal-label" for="filterAddress">案件住所</label>
+          <input class="wmsg-modal-input" type="text" id="filterAddress" name="address">
+        </div>
+        <div class="wmsg-modal-field wmsg-modal-field--check">
+          <label class="wmsg-modal-label" for="filterUnread">メッセージ未読</label>
+          <input class="wmsg-modal-checkbox" type="checkbox" id="filterUnread" name="unread">
+        </div>
+
+        <!-- ボタン行 -->
+        <div class="wmsg-modal-actions">
+          <button class="wmsg-modal-btn-clear" type="button" id="searchFormClear">クリア</button>
+          <button class="wmsg-modal-btn-submit" type="submit">絞り込む</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <!-- ===== /絞り込み検索モーダル ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var overlay  = document.getElementById('searchModal');
+      var openBtn  = document.querySelector('.wmsg-filter-btn--search');
+      var closeBtn = document.getElementById('searchModalClose');
+      var clearBtn = document.getElementById('searchFormClear');
+      var form     = document.getElementById('searchForm');
+
+      function openModal() {
+        overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        overlay.hidden = true;
+        document.body.style.overflow = '';
+        openBtn.focus();
+      }
+
+      openBtn.addEventListener('click', openModal);
+      closeBtn.addEventListener('click', closeModal);
+
+      // オーバーレイ背景クリックで閉じる
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+
+      // Escape キーで閉じる
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !overlay.hidden) closeModal();
+      });
+
+      // クリアボタン
+      clearBtn.addEventListener('click', function () {
+        form.reset();
+      });
+    })();
+  </script>
+
+</body>
+</html>

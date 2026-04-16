@@ -2,9 +2,9 @@
  * 案件データ定義
  * status: 'active'（進行中）| 'done'（完了）
  * tags: フィルター用タグ配列
- *   'no-hire'        採用者なし
- *   'need-report'    要近況報告
- *   'accepting'      仕事を受け付ける
+ *   'no-hire'        契約者なし
+ *   'need-action'    要応募者対応
+ *   'accepting'      仕事引受け待ち
  *   'contracted'     契約中
  *   'need-inspection'要検収
  *   'unread-msg'     メッセージ未読
@@ -19,12 +19,15 @@ const PROJECTS = [
     title: '【東京都渋谷区】スーパーのチラシ配布スタッフ大募集！時給1,200円・週2日〜OK',
     location: '東京都渋谷区',
     wage: '¥1,200〜¥1,500 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'blue',
     contracts: 0,
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者RL0件' },
+    alert: { type: 'red', label: '契約者なし' },
     actions: ['applicants', 'procedure'],
+    renewDisabled: true,
   },
   {
     id: 'GK-2024-002',
@@ -35,6 +38,8 @@ const PROJECTS = [
     title: '【神奈川県横浜市】カフェのホールスタッフ募集　未経験歓迎・シフト自由',
     location: '神奈川県横浜市',
     wage: '¥950〜¥1,100 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'orange',
     contracts: 4,
     inspected: 2,
     needInspection: 1,
@@ -45,17 +50,19 @@ const PROJECTS = [
   {
     id: 'GK-2024-003',
     status: 'active',
-    tags: ['need-report', 'need-inspection'],
+    tags: ['need-action', 'need-inspection'],
     dateRange: '2024/01/01 〜 2024/02/29',
     recruiting: true,
     title: '【埼玉県さいたま市】引越し作業補助スタッフ　土日のみ可・日払いあり',
     location: '埼玉県さいたま市',
     wage: '¥10,000〜¥15,000 / 日',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'purple',
     contracts: 2,
     inspected: 0,
     needInspection: 2,
     reporting: 0,
-    alert: { type: 'orange', label: '要近況報告' },
+    alert: { type: 'orange', label: '要応募者対応' },
     actions: ['applicants', 'procedure'],
   },
   {
@@ -67,6 +74,8 @@ const PROJECTS = [
     title: '【千葉県千葉市】大型ショッピングモール内の清掃スタッフ　週3日〜・交通費支給',
     location: '千葉県千葉市',
     wage: '¥1,050 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'teal',
     contracts: 6,
     inspected: 5,
     needInspection: 0,
@@ -83,6 +92,8 @@ const PROJECTS = [
     title: '【東京都港区】イベント会場の設営・撤去スタッフ　高時給・交通費全額支給',
     location: '東京都港区',
     wage: '¥1,500〜¥2,000 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'indigo',
     contracts: 3,
     inspected: 1,
     needInspection: 1,
@@ -99,11 +110,13 @@ const PROJECTS = [
     title: '【東京都新宿区】飲食店のキッチンスタッフ　週2〜OK・まかない付き',
     location: '東京都新宿区',
     wage: '¥1,100〜¥1,300 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'amber',
     contracts: 0,
     inspected: 0,
     needInspection: 0,
     reporting: 0,
-    alert: { type: 'red', label: '採用者RL0件' },
+    alert: { type: 'red', label: '契約者なし' },
     actions: ['applicants', 'procedure'],
   },
   {
@@ -115,6 +128,8 @@ const PROJECTS = [
     title: '【大阪府大阪市】倉庫内ピッキング作業スタッフ　夜勤あり・高時給',
     location: '大阪府大阪市',
     wage: '¥1,200〜¥1,600 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'gray',
     contracts: 5,
     inspected: 3,
     needInspection: 2,
@@ -131,6 +146,8 @@ const PROJECTS = [
     title: '【福岡県福岡市】コールセンタースタッフ　在宅勤務可・研修充実',
     location: '福岡県福岡市',
     wage: '¥1,000〜¥1,200 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'blue',
     contracts: 8,
     inspected: 8,
     needInspection: 0,
@@ -147,6 +164,8 @@ const PROJECTS = [
     title: '【愛知県名古屋市】年末年始の配送ドライバー補助　普通免許あればOK',
     location: '愛知県名古屋市',
     wage: '¥1,300 / 時間',
+    jobType: '警察署への書類提出業務_30分',
+    jobTypeColor: 'teal',
     contracts: 3,
     inspected: 3,
     needInspection: 0,

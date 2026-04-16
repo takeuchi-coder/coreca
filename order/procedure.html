@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作業手順・報告 | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
+
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link"><span class="nav-text">案件作成・一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../payment/list.html" class="nav-link"><span class="nav-text">報酬支払い情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../message/list.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <!-- 右側: アカウント情報 -->
+      <div class="nav-actions">
+        <span class="nav-user">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+        </span>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="applist-main">
+
+    <!-- ページタイトル -->
+    <div class="notif-page-header">
+      <a href="list.html" class="notif-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      <h1 class="notif-page-title">作業手順・報告</h1>
+    </div>
+
+    <!-- 案件情報カード -->
+    <div class="applist-proj-card">
+      <div class="applist-proj-top">
+        <span class="applist-proj-id">案件ID：232497</span>
+        <div class="proj-status-actions">
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="state-badge state-badge--active">募集中</span>
+        </div>
+      </div>
+      <div class="applist-proj-date">2025年12月02日〜2025年12月03日　いつでも</div>
+      <div class="applist-proj-title">菊岡作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</div>
+      <div class="applist-proj-addr">埼玉県 川口市西青木3丁目2-4 川口警察署</div>
+    </div>
+
+    <!-- タブバー -->
+    <div class="applist-tabs-wrap">
+      <div class="applist-tabs">
+        <a href="detail.html" class="applist-tab-btn">案件情報</a>
+        <a href="applicants.html" class="applist-tab-btn">応募者・契約者</a>
+        <span class="applist-tab-btn applist-tab-btn--active">作業手順・報告</span>
+        <a href="renew.html" class="applist-tab-btn">契約更新</a>
+      </div>
+    </div>
+
+    <!-- コンテンツ本体 -->
+    <div class="proc-body">
+
+      <!-- コントロールバー -->
+      <div class="proc-ctrl-bar">
+        <!-- 作業手順を確認するボタン（左） -->
+        <button type="button" class="btn-proc-outline" id="btn-open-procedure-modal">作業手順を確認する</button>
+
+        <!-- フィルターボタン（右） -->
+        <div class="proc-filter-btns">
+          <button type="button" class="btn-proc-filter btn-proc-filter--active">全て</button>
+          <button type="button" class="btn-proc-filter btn-proc-filter--outline">検収待ち</button>
+          <button type="button" class="btn-proc-filter btn-proc-filter--outline" id="btnDetailSearch">詳細検索</button>
+        </div>
+      </div>
+
+      <!-- 作業リスト -->
+      <div class="proc-list">
+
+        <!-- 作業行（ヘッダー） -->
+        <div class="proc-row proc-row--header">
+          <span class="proc-col proc-col--worker">契約者</span>
+          <span class="proc-col proc-col--complete-date">作業報告完了日</span>
+          <span class="proc-col proc-col--approved-date">検収承認日時</span>
+          <span class="proc-col proc-col--status">作業ステータス</span>
+        </div>
+
+        <!-- 作業行（データ） -->
+        <div class="proc-row proc-row--data">
+          <div class="proc-cells">
+            <span class="proc-col proc-col--worker">
+              <a href="../message/detail.html" class="proc-worker-link">山本 由香</a>
+            </span>
+            <span class="proc-col proc-col--complete-date">2025年12月02日<br>15:00</span>
+            <span class="proc-col proc-col--approved-date">2025年12月02日<br>17:18</span>
+            <span class="proc-col proc-col--status">検収完了</span>
+          </div>
+          <!-- アクションボタン -->
+          <div class="proc-actions">
+            <button type="button" class="btn-proc-action" id="btn-open-order-confirm-modal">確認する</button>
+            <button type="button" class="btn-proc-action">納品ダウンロード</button>
+            <button type="button" class="btn-proc-action">作業写真報告書ダウンロード</button>
+          </div>
+        </div>
+
+        <!-- 作業行（データ）2 -->
+        <div class="proc-row proc-row--data">
+          <div class="proc-cells">
+            <span class="proc-col proc-col--worker">
+              <a href="../message/detail.html" class="proc-worker-link">田中 浩二</a>
+            </span>
+            <span class="proc-col proc-col--complete-date">2025年12月02日<br>16:30</span>
+            <span class="proc-col proc-col--approved-date"><span class="proc-deadline">検収承認期間：<br>2025年12月05日 23:59まで</span></span>
+            <span class="proc-col proc-col--status">検収待ち</span>
+          </div>
+          <div class="proc-actions">
+            <button type="button" class="btn-proc-kenshu" id="btn-open-kenshu-modal">検収する</button>
+            <span class="proc-kenshu-note">重複報告、内容不備がある場合は、契約者にメッセージで修正・終了・削除の依頼をしてください</span>
+          </div>
+        </div>
+
+        <!-- 作業行（データ）3 -->
+        <div class="proc-row proc-row--data">
+          <div class="proc-cells">
+            <span class="proc-col proc-col--worker">
+              <a href="../message/detail.html" class="proc-worker-link">佐藤 美咲</a>
+            </span>
+            <span class="proc-col proc-col--complete-date">—</span>
+            <span class="proc-col proc-col--approved-date">—</span>
+            <span class="proc-col proc-col--status">作業中</span>
+          </div>
+        </div>
+
+        <!-- 作業行（データ）4 -->
+        <div class="proc-row proc-row--data">
+          <div class="proc-cells">
+            <span class="proc-col proc-col--worker">
+              <a href="../message/detail.html" class="proc-worker-link">鈴木 健太</a>
+            </span>
+            <span class="proc-col proc-col--complete-date">—</span>
+            <span class="proc-col proc-col--approved-date">—</span>
+            <span class="proc-col proc-col--status">作業中</span>
+          </div>
+        </div>
+
+      </div>
+      <!-- /proc-list -->
+
+    </div>
+    <!-- /proc-body -->
+
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== 作業手順確認モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="procedure-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="procedure-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="procedure-modal-title">警察署への書類提出品業_30分</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-procedure-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p class="wprocedure-modal-section-title">作業手順の確認</p>
+
+        <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:6px;padding:10px 14px;margin-bottom:12px;color:#856404;font-size:13px;">
+          &#x26A0; 作業報告ではないので入力できません
+        </div>
+
+        <!-- 作業概要 -->
+        <div class="wprocedure-modal-h2">作業概要</div>
+        <div class="wprocedure-modal-overview">
+          <p>コンビニ等の警察署指定にて、指定の書類を提出・申請するお仕事です。</p>
+          <br>
+          <p>&lt;作業の流れ&gt;</p>
+          <p>①発注者からメッセージで送られた書類を確認し、書類をカラー印刷（必須）（正本・副本用に2部）をします。（だいたい6-8枚）</p>
+          <p>②コンビニ印刷の場合、だいたい1枚50円 ～ 一回代行では費用で買い取りします。領収証はなくさないよう注意ください。</p>
+          <p>※書類枚数が申告書補充表上の申告者枠が満数以上の場合は申請する名前のを記入入力してください。</p>
+          <p>※書類はクリアファイルに入れ、ホチキス止めはしないでください。</p>
+          <br>
+          <p>②作業完了後は警察署へ行き、申請口へ向かいます。</p>
+          <p>※（連絡担当者は来ます）申請窓口で「申告番号：ランディット」〇〇（ご自身の名前）と名乗ってください。</p>
+          <br>
+          <p>③書類担当者がその場で確認し先払いを手先に先払いするように案内されます。</p>
+          <p>※連絡先は、掲載者用「作業についての問い合わせ対策番号」（受注者のみ公開）をご確認ください。</p>
+          <p>※支払方法は現金の他に、クレジットカード等のキャッシュレス決済にも対応している警察署もあります。</p>
+        </div>
+
+        <!-- 提出時の写真報告 (1回目) -->
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-note">※写真報告がぼけていたり、判別できない場合は、再提出していただくことがあります</p>
+        <p class="wprocedure-modal-note">※受領書が発行されない場合は、窓口で聞いた受け取り可能日をメモしたものを撮影し、その写真をアップロードしてください</p>
+
+        <p class="wprocedure-modal-photo-label">申請代領収書</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">控え（別紙がないときは領収書写真）</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>年
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>月
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>日
+        </div>
+
+        <!-- 受理時の写真報告 -->
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-note">※写真報告がぼけていたり、判別できない場合は、再提出していただくことがあります</p>
+        <p class="wprocedure-modal-note">※受領書が発行されない場合は、窓口で聞いた受け取り可能日をメモしたものを撮影し、その写真をアップロードしてください</p>
+
+        <p class="wprocedure-modal-photo-label">書類</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+        <p style="font-size:12px;color:#555;margin:4px 0 8px;">アップロードしました。</p>
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <div class="wprocedure-modal-date-row">
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>年
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>月
+          <select class="wprocedure-modal-date-select">
+            <option value="">─</option>
+          </select>日
+        </div>
+
+        <!-- 立替金について -->
+        <div class="wprocedure-modal-h2">立替金について</div>
+
+        <p style="font-size:12px;color:#555;margin:10px 0 4px;">立替金が発生した場合は、領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-photo-label">立替金を証明する写真（レシート等）</p>
+        <div class="wprocedure-modal-photo-box">
+          <svg class="wprocedure-modal-photo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span class="wprocedure-modal-photo-badge">+</span>
+        </div>
+        <span class="wprocedure-modal-photo-action">追加を削除する</span>
+
+        <p class="wprocedure-modal-photo-label">立替金の合計金額</p>
+        <input type="number" class="wprocedure-modal-input" name="advance_total" min="0" placeholder="0" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box;margin-bottom:16px;">
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- モーダルフッター -->
+      <div class="wprocedure-modal-footer">
+        <button type="button" class="wprocedure-modal-start-btn" id="btn-procedure-modal-start">確認完了</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業手順確認モーダル ===== -->
+
+  <!-- ===== 作業報告モーダル（検収する） ===== -->
+  <div class="wprocedure-modal-overlay" id="kenshu-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="kenshu-modal-title">
+
+      <!-- モーダルヘッダー -->
+      <div class="wprocedure-modal-header">
+        <p class="wprocedure-modal-title" id="kenshu-modal-title">警察署への書類提出品業_30分</p>
+        <button type="button" class="wprocedure-modal-close" id="btn-close-kenshu-modal" aria-label="閉じる">&times;</button>
+      </div>
+
+      <!-- モーダル本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p class="wprocedure-modal-section-title">作業報告</p>
+
+        <!-- 作業概要 -->
+        <div class="wprocedure-modal-h2">作業概要</div>
+        <div class="wprocedure-modal-overview">
+          <p>コンビニ等の警察署指定にて、指定の書類を提出・申請するお仕事です。</p>
+          <br>
+          <p>&lt;作業の流れ&gt;</p>
+          <p>①発注者からメッセージで送られた書類を確認し、書類をカラー印刷（必須）（正本・副本用に2部）をします。（だいたい6-8枚）</p>
+          <p>②コンビニ印刷の場合、だいたい1枚50円 ～ 一回代行では費用で買い取りします。領収証はなくさないよう注意ください。</p>
+          <p>※書類枚数が申告書補充表上の申告者枠が満数以上の場合は申請する名前のを記入入力してください。</p>
+          <p>※書類はクリアファイルに入れ、ホチキス止めはしないでください。</p>
+          <br>
+          <p>②作業完了後は警察署へ行き、申請口へ向かいます。</p>
+          <p>※（連絡担当者は来ます）申請窓口で「申告番号：ランディット」〇〇（ご自身の名前）と名乗ってください。</p>
+          <br>
+          <p>③書類担当者がその場で確認し先払いを手先に先払いするように案内されます。</p>
+          <p>※連絡先は、掲載者用「作業についての問い合わせ対策番号」（受注者のみ公開）をご確認ください。</p>
+          <p>※支払方法は現金の他に、クレジットカード等のキャッシュレス決済にも対応している警察署もあります。</p>
+        </div>
+
+        <!-- 提出時の写真報告 (1回目) -->
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-note">※写真報告がぼけていたり、判別できない場合は、再提出していただくことがあります</p>
+        <p class="wprocedure-modal-note">※受領書が発行されない場合は、窓口で聞いた受け取り可能日をメモしたものを撮影し、その写真をアップロードしてください</p>
+
+        <p class="wprocedure-modal-photo-label">申請代領収書</p>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60' viewBox='0 0 80 60'%3E%3Crect width='80' height='60' rx='4' fill='%23cce5ff'/%3E%3Ccircle cx='28' cy='22' r='6' fill='%2390caf9'/%3E%3Cpolygon points='10,50 30,28 50,42 60,32 72,50' fill='%2342a5f5'/%3E%3C/svg%3E" alt="アップロード済み写真" style="width:80px;height:60px;border-radius:4px;display:block;margin:0 0 8px;">
+
+        <p class="wprocedure-modal-photo-label">控え（別紙がないときは領収書写真）</p>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60' viewBox='0 0 80 60'%3E%3Crect width='80' height='60' rx='4' fill='%23cce5ff'/%3E%3Ccircle cx='28' cy='22' r='6' fill='%2390caf9'/%3E%3Cpolygon points='10,50 30,28 50,42 60,32 72,50' fill='%2342a5f5'/%3E%3C/svg%3E" alt="アップロード済み写真" style="width:80px;height:60px;border-radius:4px;display:block;margin:0 0 8px;">
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <p style="font-size:14px;color:#333;margin:4px 0 8px;">2025年12月02日</p>
+
+        <!-- 受理時の写真報告 -->
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <p>受領書、申請手数料領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-note">※写真報告がぼけていたり、判別できない場合は、再提出していただくことがあります</p>
+        <p class="wprocedure-modal-note">※受領書が発行されない場合は、窓口で聞いた受け取り可能日をメモしたものを撮影し、その写真をアップロードしてください</p>
+
+        <p class="wprocedure-modal-photo-label">書類</p>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60' viewBox='0 0 80 60'%3E%3Crect width='80' height='60' rx='4' fill='%23cce5ff'/%3E%3Ccircle cx='28' cy='22' r='6' fill='%2390caf9'/%3E%3Cpolygon points='10,50 30,28 50,42 60,32 72,50' fill='%2342a5f5'/%3E%3C/svg%3E" alt="アップロード済み写真" style="width:80px;height:60px;border-radius:4px;display:block;margin:0 0 8px;">
+
+        <p class="wprocedure-modal-photo-label">作業日</p>
+        <p style="font-size:14px;color:#333;margin:4px 0 8px;">2025年12月02日</p>
+
+        <!-- 立替金について -->
+        <div class="wprocedure-modal-h2">立替金について</div>
+
+        <p style="font-size:12px;color:#555;margin:10px 0 4px;">立替金が発生した場合は、領収書を撮影し報告してください（複数の領収書がある場合は1枚に収めて撮影してください）。</p>
+        <p class="wprocedure-modal-photo-label">立替金を証明する写真（レシート等）</p>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60' viewBox='0 0 80 60'%3E%3Crect width='80' height='60' rx='4' fill='%23cce5ff'/%3E%3Ccircle cx='28' cy='22' r='6' fill='%2390caf9'/%3E%3Cpolygon points='10,50 30,28 50,42 60,32 72,50' fill='%2342a5f5'/%3E%3C/svg%3E" alt="アップロード済み写真" style="width:80px;height:60px;border-radius:4px;display:block;margin:0 0 8px;">
+
+        <p class="wprocedure-modal-photo-label">立替金の合計金額</p>
+        <p style="font-size:14px;color:#333;margin:4px 0 16px;">300円</p>
+
+        <!-- 作業報告の検収 -->
+        <div class="wprocedure-modal-h2">作業報告の検収</div>
+
+        <p style="font-size:13px;color:#333;margin:0 0 6px;">報告内容を承認して、決済を行います。<br>内容をご確認のうえ、承認ボタンを押してください。</p>
+        <p class="wprocedure-modal-note">報告の重複・内容不備がある場合は契約者にメッセージで報告修正or削除の依頼をしてください。</p>
+
+        <!-- 決済方法 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済方法</span>
+          <span class="kenshu-confirm-value">掛け払い</span>
+        </div>
+
+        <!-- 請求金額 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">請求金額</span>
+          <div class="kenshu-confirm-billing">
+            <div class="kenshu-billing-item">
+              <span>報酬単価</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>納品数</span>
+              <span>1件</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>報酬総額</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料</span>
+              <span>360円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料（税）</span>
+              <span>36円</span>
+            </div>
+            <div class="kenshu-billing-item kenshu-billing-item--bold">
+              <span>立替金額</span>
+              <span>2,700円</span>
+            </div>
+            <div class="kenshu-billing-total">合計<strong>4,296円</strong></div>
+          </div>
+        </div>
+
+        <!-- 納品アンケート -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">納品アンケート</span>
+          <div class="kenshu-confirm-survey">
+            <p class="kenshu-confirm-survey-intro">今回の納品に対するアンケートのご協力お願いいたします。<br>集計結果はサービス向上のために役立てて行く予定です。</p>
+            <p class="kenshu-confirm-survey-note">※受注者には公開されません。受注者への連絡はメッセージにてお願いします。</p>
+            <p class="kenshu-confirm-survey-q">Q1.今回の納品内容に満足していますか</p>
+            <div class="kenshu-confirm-survey-radios">
+              <span class="wprocedure-modal-badge wprocedure-modal-badge--required">必須</span>
+              <label><input type="radio" name="kenshu-satisfaction" value="good"> 良い</label>
+              <label><input type="radio" name="kenshu-satisfaction" value="normal"> 普通</label>
+              <label><input type="radio" name="kenshu-satisfaction" value="bad"> 悪い</label>
+            </div>
+            <p class="kenshu-confirm-survey-q">Q2. 納品に対するコメントがありましたらご記入ください</p>
+            <textarea class="kenshu-confirm-survey-textarea" name="kenshu-comment"></textarea>
+          </div>
+        </div>
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- モーダルフッター -->
+      <div class="kenshu-confirm-footer-btns">
+        <button type="button" class="kenshu-confirm-cancel-btn" id="btn-kenshu-modal-cancel">キャンセル</button>
+        <button type="button" class="wprocedure-modal-start-btn" id="btn-kenshu-modal-confirm">上記の内容で、承認する</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業報告モーダル（検収する） ===== -->
+
+  <!-- ===== 承認完了モーダル ===== -->
+  <div class="wprocedure-modal-overlay" id="kenshu-complete-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="kenshu-complete-modal-title">
+
+      <!-- ヘッダー -->
+      <div class="kenshu-complete-header">
+        <button type="button" class="kenshu-complete-header-close" id="btn-close-kenshu-complete-header" aria-label="閉じる">閉じる</button>
+        <p class="kenshu-complete-title" id="kenshu-complete-modal-title">菊岡作成【株式会社コレカ様専用】警察署への書類提出業務_30分</p>
+      </div>
+
+      <!-- 本体 -->
+      <div class="wprocedure-modal-body">
+
+        <div class="kenshu-complete-intro">
+          <p>下記の内容で決済しました。<br>ご利用ありがとうございました。</p>
+          <p>作業報告の「検収日」を基準に、月末締め、翌月5営業日まで（当社営業日は土日祝日を除く平日）にご請求書を発行致します。<br>ご入金日は翌月末日までとさせていただいております。</p>
+        </div>
+
+        <!-- 決済日時 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済日時</span>
+          <div>
+            <p style="font-size:13px;color:#222;margin:0 0 4px;">2025年12月19日 16:21</p>
+            <p style="font-size:13px;color:#222;margin:0;">請求ID：787086</p>
+          </div>
+        </div>
+
+        <!-- 決済方法 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済方法</span>
+          <span class="kenshu-confirm-value">掛け払い</span>
+        </div>
+
+        <!-- 請求金額 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">請求金額</span>
+          <div class="kenshu-confirm-billing">
+            <div class="kenshu-billing-item">
+              <span>報酬単価</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>納品数</span>
+              <span>1件</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>報酬総額</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料</span>
+              <span>360円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料（税）</span>
+              <span>36円</span>
+            </div>
+            <div class="kenshu-billing-item kenshu-billing-item--bold">
+              <span>立替金額</span>
+              <span>2,700円</span>
+            </div>
+            <div class="kenshu-billing-total">合計<strong>4,296円</strong></div>
+          </div>
+        </div>
+
+        <!-- 納品アンケート -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">納品アンケート</span>
+          <div class="kenshu-confirm-survey">
+            <p class="kenshu-confirm-survey-q">Q1.今回の納品内容に満足していますか</p>
+            <p class="kenshu-complete-survey-answer">良い</p>
+            <p class="kenshu-confirm-survey-q">Q2. 納品に対するコメントがありましたらご記入ください</p>
+            <p class="kenshu-complete-survey-answer">とてもスムーズでよかったです。</p>
+          </div>
+        </div>
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- フッター -->
+      <div class="kenshu-complete-footer">
+        <button type="button" class="kenshu-complete-footer-btn" id="btn-close-kenshu-complete">閉じる</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /承認完了モーダル ===== -->
+
+  <!-- ===== 作業報告確認モーダル（発注者用・検収完了後） ===== -->
+  <div class="wprocedure-modal-overlay" id="order-confirm-modal-overlay" hidden>
+    <div class="wprocedure-modal" role="dialog" aria-modal="true" aria-labelledby="order-confirm-modal-title">
+
+      <!-- ヘッダー -->
+      <div class="kenshu-complete-header">
+        <button type="button" class="kenshu-complete-header-close" id="btn-close-order-confirm-header" aria-label="閉じる">閉じる</button>
+        <p class="kenshu-complete-title" id="order-confirm-modal-title">菊岡作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</p>
+      </div>
+
+      <!-- 本体 -->
+      <div class="wprocedure-modal-body">
+
+        <p style="font-size:14px;color:#444;margin-bottom:16px;">以下の内容で検収が完了しました。内容をご確認ください。</p>
+
+        <!-- 提出時の写真報告 -->
+        <div class="wprocedure-modal-h2">提出時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>申請代領収書</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="申請代領収書" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">申請代理書類_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>控え</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="控え" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">控え_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td>2025年12月02日</td>
+          </tr>
+        </table>
+
+        <!-- 受理時の写真報告 -->
+        <div class="wprocedure-modal-h2">受理時の写真報告</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>書類</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="書類" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">受理書類_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>作業日</th>
+            <td>2025年12月02日</td>
+          </tr>
+        </table>
+
+        <!-- 立替金について -->
+        <div class="wprocedure-modal-h2">立替金について</div>
+        <table class="wconfirm-table">
+          <tr>
+            <th>立替金を証明する写真</th>
+            <td><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect width='60' height='60' fill='%23d0d0d0'/%3E%3Crect x='10' y='14' width='40' height='30' rx='3' fill='%23a0a0a0'/%3E%3Ccircle cx='30' cy='29' r='8' fill='%23d0d0d0'/%3E%3Ccircle cx='30' cy='29' r='5' fill='%23b0b0b0'/%3E%3Ccircle cx='44' cy='18' r='3' fill='%23d0d0d0'/%3E%3C/svg%3E" alt="立替金領収書" style="width:60px;height:60px;border-radius:4px;vertical-align:middle;"> <span style="font-size:12px;color:#555;">領収書_20251202.jpg</span></td>
+          </tr>
+          <tr>
+            <th>立替金の合計金額</th>
+            <td>2,700円</td>
+          </tr>
+        </table>
+
+        <!-- 決済日時 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済日時</span>
+          <div>
+            <p style="font-size:13px;color:#222;margin:0 0 4px;">2025年12月02日 17:18</p>
+            <p style="font-size:13px;color:#222;margin:0;">請求ID：787086</p>
+          </div>
+        </div>
+
+        <!-- 決済方法 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">決済方法</span>
+          <span class="kenshu-confirm-value">掛け払い</span>
+        </div>
+
+        <!-- 請求金額 -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">請求金額</span>
+          <div class="kenshu-confirm-billing">
+            <div class="kenshu-billing-item">
+              <span>報酬単価</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>納品数</span>
+              <span>1件</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>報酬総額</span>
+              <span>1,200円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料</span>
+              <span>360円</span>
+            </div>
+            <div class="kenshu-billing-item">
+              <span>サービス利用料（税）</span>
+              <span>36円</span>
+            </div>
+            <div class="kenshu-billing-item kenshu-billing-item--bold">
+              <span>立替金額</span>
+              <span>2,700円</span>
+            </div>
+            <div class="kenshu-billing-total">合計<strong>4,296円</strong></div>
+          </div>
+        </div>
+
+        <!-- 納品アンケート -->
+        <div class="kenshu-confirm-row">
+          <span class="kenshu-confirm-label">納品アンケート</span>
+          <div class="kenshu-confirm-survey">
+            <p class="kenshu-confirm-survey-q">Q1.今回の納品内容に満足していますか</p>
+            <p class="kenshu-complete-survey-answer">良い</p>
+            <p class="kenshu-confirm-survey-q">Q2. 納品に対するコメントがありましたらご記入ください</p>
+            <p class="kenshu-complete-survey-answer">とてもスムーズでよかったです。</p>
+          </div>
+        </div>
+
+      </div><!-- /.wprocedure-modal-body -->
+
+      <!-- フッター -->
+      <div class="kenshu-complete-footer">
+        <button type="button" class="kenshu-complete-footer-btn" id="btn-close-order-confirm">閉じる</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /作業報告確認モーダル（発注者用・検収完了後） ===== -->
+
+  <!-- ===== 詳細検索モーダル ===== -->
+  <div class="search-modal-overlay" id="searchModalOverlay" hidden>
+    <div class="search-modal" role="dialog" aria-modal="true" aria-labelledby="searchModalTitle">
+
+      <div class="search-modal-header">
+        <h2 class="search-modal-title" id="searchModalTitle">絞り込み条件</h2>
+        <button type="button" class="search-modal-close" id="searchModalClose" aria-label="閉じる">&times;</button>
+      </div>
+
+      <div class="search-modal-body">
+
+        <div class="search-modal-row">
+          <label class="search-modal-label" for="searchWorkerName">契約者名</label>
+          <input type="text" id="searchWorkerName" class="search-modal-input" placeholder="">
+        </div>
+
+        <div class="search-modal-row">
+          <label class="search-modal-label" for="searchSortOrder">並び順</label>
+          <select id="searchSortOrder" class="search-modal-select">
+            <option>作業報告が新しい順</option>
+            <option>作業報告が古い順</option>
+            <option>検収承認日時が新しい順</option>
+            <option>検収承認日時が古い順</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="search-modal-footer">
+        <button type="button" class="btn-search-modal-clear" id="searchModalClear">クリア</button>
+        <button type="button" class="btn-search-modal-submit">絞り込む</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /詳細検索モーダル ===== -->
+
+  <!-- ===== フッター（共通） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+  <script>
+    (function () {
+      var procOverlay = document.getElementById('procedure-modal-overlay');
+      var btnOpenProc = document.getElementById('btn-open-procedure-modal');
+      var btnCloseProc = document.getElementById('btn-close-procedure-modal');
+      var btnStartProc = document.getElementById('btn-procedure-modal-start');
+
+      function openProcModal() {
+        procOverlay.removeAttribute('hidden');
+        procOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseProc.focus();
+      }
+
+      function closeProcModal() {
+        procOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenProc.focus();
+      }
+
+      btnOpenProc.addEventListener('click', openProcModal);
+      btnCloseProc.addEventListener('click', closeProcModal);
+      btnStartProc.addEventListener('click', closeProcModal);
+
+      procOverlay.addEventListener('click', function (e) {
+        if (e.target === procOverlay) closeProcModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !procOverlay.hasAttribute('hidden')) closeProcModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var kenshuOverlay = document.getElementById('kenshu-modal-overlay');
+      var btnOpenKenshu = document.getElementById('btn-open-kenshu-modal');
+      var btnCloseKenshu = document.getElementById('btn-close-kenshu-modal');
+      var btnConfirmKenshu = document.getElementById('btn-kenshu-modal-confirm');
+      var btnCancelKenshu = document.getElementById('btn-kenshu-modal-cancel');
+      var kenshuCompleteOverlay = document.getElementById('kenshu-complete-modal-overlay');
+      var btnCloseKenshuCompleteHeader = document.getElementById('btn-close-kenshu-complete-header');
+      var btnCloseKenshuComplete = document.getElementById('btn-close-kenshu-complete');
+
+      function openKenshuModal() {
+        kenshuOverlay.removeAttribute('hidden');
+        kenshuOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseKenshu.focus();
+      }
+
+      function closeKenshuModal() {
+        kenshuOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenKenshu.focus();
+      }
+
+      function openKenshuCompleteModal() {
+        kenshuOverlay.setAttribute('hidden', '');
+        kenshuCompleteOverlay.removeAttribute('hidden');
+        kenshuCompleteOverlay.scrollTop = 0;
+        btnCloseKenshuCompleteHeader.focus();
+      }
+
+      function closeKenshuCompleteModal() {
+        kenshuCompleteOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenKenshu.focus();
+      }
+
+      btnOpenKenshu.addEventListener('click', openKenshuModal);
+      btnCloseKenshu.addEventListener('click', closeKenshuModal);
+      btnConfirmKenshu.addEventListener('click', openKenshuCompleteModal);
+      btnCancelKenshu.addEventListener('click', closeKenshuModal);
+      btnCloseKenshuCompleteHeader.addEventListener('click', closeKenshuCompleteModal);
+      btnCloseKenshuComplete.addEventListener('click', closeKenshuCompleteModal);
+
+      kenshuOverlay.addEventListener('click', function (e) {
+        if (e.target === kenshuOverlay) closeKenshuModal();
+      });
+
+      kenshuCompleteOverlay.addEventListener('click', function (e) {
+        if (e.target === kenshuCompleteOverlay) closeKenshuCompleteModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !kenshuOverlay.hasAttribute('hidden')) closeKenshuModal();
+        if (e.key === 'Escape' && !kenshuCompleteOverlay.hasAttribute('hidden')) closeKenshuCompleteModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var orderConfirmOverlay = document.getElementById('order-confirm-modal-overlay');
+      var btnOpenOrderConfirm = document.getElementById('btn-open-order-confirm-modal');
+      var btnCloseOrderConfirmHeader = document.getElementById('btn-close-order-confirm-header');
+      var btnCloseOrderConfirm = document.getElementById('btn-close-order-confirm');
+
+      function openOrderConfirmModal() {
+        orderConfirmOverlay.removeAttribute('hidden');
+        orderConfirmOverlay.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        btnCloseOrderConfirmHeader.focus();
+      }
+
+      function closeOrderConfirmModal() {
+        orderConfirmOverlay.setAttribute('hidden', '');
+        document.body.style.overflow = '';
+        btnOpenOrderConfirm.focus();
+      }
+
+      btnOpenOrderConfirm.addEventListener('click', openOrderConfirmModal);
+      btnCloseOrderConfirmHeader.addEventListener('click', closeOrderConfirmModal);
+      btnCloseOrderConfirm.addEventListener('click', closeOrderConfirmModal);
+
+      orderConfirmOverlay.addEventListener('click', function (e) {
+        if (e.target === orderConfirmOverlay) closeOrderConfirmModal();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !orderConfirmOverlay.hasAttribute('hidden')) closeOrderConfirmModal();
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('searchModalOverlay');
+
+      document.getElementById('btnDetailSearch').addEventListener('click', function () {
+        overlay.hidden = false;
+      });
+
+      document.getElementById('searchModalClose').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      document.getElementById('searchModalClear').addEventListener('click', function () {
+        document.getElementById('searchWorkerName').value = '';
+        document.getElementById('searchSortOrder').selectedIndex = 0;
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.hidden = true;
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      document.querySelectorAll('.toggle-switch input').forEach(function (input) {
+        input.addEventListener('change', function () {
+          var text = input.checked ? '募集中' : '募集停止';
+          var badgeClass = input.checked ? 'state-badge--active' : 'state-badge--stopped';
+          var container = input.closest('.proj-status-actions');
+          if (container) {
+            var badge = container.querySelector('.state-badge');
+            if (badge) {
+              badge.textContent = text;
+              badge.className = 'state-badge ' + badgeClass;
+            }
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

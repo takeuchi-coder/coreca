@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>契約更新 | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
+
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link"><span class="nav-text">案件作成・一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../payment/list.html" class="nav-link"><span class="nav-text">報酬支払い情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../message/list.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <!-- 右側: アカウント情報 -->
+      <div class="nav-actions">
+        <span class="nav-user">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+        </span>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="applist-main">
+
+    <!-- ページタイトル -->
+    <div class="notif-page-header">
+      <a href="list.html" class="notif-back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </a>
+      <h1 class="notif-page-title">契約更新</h1>
+    </div>
+
+    <!-- 案件情報カード -->
+    <div class="applist-proj-card">
+      <div class="applist-proj-top">
+        <span class="applist-proj-id">案件ID：232497</span>
+        <div class="proj-status-actions">
+          <label class="toggle-switch">
+            <input type="checkbox" checked>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="state-badge state-badge--active">募集中</span>
+        </div>
+      </div>
+      <div class="applist-proj-date">2025年12月02日〜2025年12月03日　いつでも</div>
+      <div class="applist-proj-title">菊岡作成【株式会社コレカ様専用】警察署での書類受理・お届け業務_30分</div>
+      <div class="applist-proj-addr">埼玉県 川口市西青木3丁目2-4 川口警察署</div>
+    </div>
+
+    <!-- タブバー -->
+    <div class="applist-tabs-wrap">
+      <div class="applist-tabs">
+        <a href="detail.html" class="applist-tab-btn">案件情報</a>
+        <a href="applicants.html" class="applist-tab-btn">応募者・契約者</a>
+        <a href="procedure.html" class="applist-tab-btn">作業手順・報告</a>
+        <span class="applist-tab-btn applist-tab-btn--active">契約更新</span>
+      </div>
+    </div>
+
+    <!-- 契約更新エリア -->
+    <div class="renew-body">
+
+      <!-- 案件作成ボタン（非活性） -->
+      <div class="renew-create-wrap">
+        <a class="btn-renew-create" style="background:#b0b8c1; cursor:not-allowed; pointer-events:none;" aria-disabled="true" tabindex="-1">契約更新用案件作成</a>
+      </div>
+
+      <!-- 説明メッセージ -->
+      <div class="renew-info-box">
+        <p>案件終了後も継続でお仕事を依頼したい契約者と契約更新ができます。</p>
+        <p>契約更新するため「契約更新用案件作成」ボタンから案件を作成してください。</p>
+        <p>案件作成後にこちらのページで「契約更新オファーする」をお忘れずにお願いします。</p>
+      </div>
+
+      <!-- 契約者カード一覧 -->
+      <div class="applist-card">
+        <div class="applist-card-header">
+          <a href="../message/detail.html" class="applist-worker-name">山本 由香</a>
+          <span class="applist-ol-badge">契約中</span>
+        </div>
+        <div class="applist-info-list">
+          <div class="applist-info-row">
+            <span class="applist-info-label">電話番号：</span>
+            <a href="tel:08031793056" class="applist-tel-link">08031793056</a>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">年齢：</span>
+            <span class="applist-info-value">43歳（女性）</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">住所：</span>
+            <span class="applist-info-value">埼玉県 川口市芝西</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">納品評価：</span>
+            <span class="applist-info-value">良い 3　普通 2　悪い 0</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">応募日時：</span>
+            <span class="applist-info-value">2025-12-01 14:18:21</span>
+          </div>
+          <div class="applist-info-row applist-info-row--block">
+            <span class="applist-info-label">応募時登録情報：</span>
+            <div class="applist-register-box">
+              <p>【作業可能スケジュール】<br>明日作業可能です。<br>【自己PR・その他質問など】<br>※未登録</p>
+            </div>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">発注日時：</span>
+            <span class="applist-info-value">2025-12-01 14:50:27</span>
+          </div>
+        </div>
+        <div class="applist-card-actions">
+          <button type="button" class="btn-renew-order" disabled>契約更新オファー済み</button>
+        </div>
+      </div>
+
+      <div class="applist-card">
+        <div class="applist-card-header">
+          <a href="../message/detail.html" class="applist-worker-name">田中 浩二</a>
+          <span class="applist-ol-badge">契約中</span>
+        </div>
+        <div class="applist-info-list">
+          <div class="applist-info-row">
+            <span class="applist-info-label">電話番号：</span>
+            <a href="tel:09012345678" class="applist-tel-link">09012345678</a>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">年齢：</span>
+            <span class="applist-info-value">35歳（男性）</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">住所：</span>
+            <span class="applist-info-value">埼玉県 さいたま市南区</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">納品評価：</span>
+            <span class="applist-info-value">良い 3　普通 2　悪い 0</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">応募日時：</span>
+            <span class="applist-info-value">2025-12-01 16:30:45</span>
+          </div>
+          <div class="applist-info-row applist-info-row--block">
+            <span class="applist-info-label">応募時登録情報：</span>
+            <div class="applist-register-box">
+              <p>【作業可能スケジュール】<br>両日とも対応可能です。<br>【自己PR・その他質問など】<br>以前も同様の業務を経験しております。</p>
+            </div>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">発注日時：</span>
+            <span class="applist-info-value">2025-12-01 17:00:12</span>
+          </div>
+        </div>
+        <div class="applist-card-actions">
+          <button type="button" class="btn-renew-order">契約更新オファー</button>
+        </div>
+      </div>
+
+      <div class="applist-card">
+        <div class="applist-card-header">
+          <a href="../message/detail.html" class="applist-worker-name">佐藤 美咲</a>
+          <span class="applist-ol-badge">契約中</span>
+        </div>
+        <div class="applist-info-list">
+          <div class="applist-info-row">
+            <span class="applist-info-label">電話番号：</span>
+            <a href="tel:07056781234" class="applist-tel-link">07056781234</a>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">年齢：</span>
+            <span class="applist-info-value">28歳（女性）</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">住所：</span>
+            <span class="applist-info-value">埼玉県 川口市並木</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">納品評価：</span>
+            <span class="applist-info-value">良い 3　普通 2　悪い 0</span>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">応募日時：</span>
+            <span class="applist-info-value">2025-12-01 17:05:12</span>
+          </div>
+          <div class="applist-info-row applist-info-row--block">
+            <span class="applist-info-label">応募時登録情報：</span>
+            <div class="applist-register-box">
+              <p>【作業可能スケジュール】<br>12月2日のみ対応可能です。<br>【自己PR・その他質問など】<br>丁寧かつ迅速に対応いたします。</p>
+            </div>
+          </div>
+          <div class="applist-info-row">
+            <span class="applist-info-label">発注日時：</span>
+            <span class="applist-info-value">2025-12-01 17:30:55</span>
+          </div>
+        </div>
+        <div class="applist-card-actions">
+          <button type="button" class="btn-renew-order">契約更新オファー</button>
+        </div>
+      </div>
+
+    </div>
+    <!-- /renew-body -->
+
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター（共通） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+  <script>
+    (function () {
+      document.querySelectorAll('.toggle-switch input').forEach(function (input) {
+        input.addEventListener('change', function () {
+          var text = input.checked ? '募集中' : '募集停止';
+          var badgeClass = input.checked ? 'state-badge--active' : 'state-badge--stopped';
+          var container = input.closest('.proj-status-actions');
+          if (container) {
+            var badge = container.querySelector('.state-badge');
+            if (badge) {
+              badge.textContent = text;
+              badge.className = 'state-badge ' + badgeClass;
+            }
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

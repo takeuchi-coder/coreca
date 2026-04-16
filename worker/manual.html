@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご利用マニュアル | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wmanual-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item">
+            <a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="manual.html" class="nav-link nav-link--active"><span class="nav-text">ご利用マニュアル</span></a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== PDFビューアー ===== -->
+  <main class="wmanual-main">
+
+    <!-- PDFが存在する場合はiframeで表示 -->
+    <iframe
+      id="wmanual-iframe"
+      class="wmanual-iframe"
+      src="../pdf/worker_manual.pdf"
+      title="ご利用マニュアル"
+      aria-label="ご利用マニュアル PDF"
+    ></iframe>
+
+    <!-- PDFが用意されていない間は以下のプレースホルダーを表示 -->
+    <div class="wmanual-placeholder" id="wmanual-placeholder">
+      <div class="wmanual-placeholder-inner">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5" class="wmanual-placeholder-icon">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <p class="wmanual-placeholder-title">worker_manual.pdf</p>
+        <p class="wmanual-placeholder-text">マニュアルPDFは準備中です。<br>ファイルが用意され次第こちらに表示されます。</p>
+      </div>
+    </div>
+
+  </main>
+  <!-- ===== /PDFビューアー ===== -->
+
+  <script>
+    // PDFの読み込みを試みて、失敗した場合はプレースホルダーを表示
+    (function () {
+      var iframe = document.getElementById('wmanual-iframe');
+      var placeholder = document.getElementById('wmanual-placeholder');
+
+      // iframeのエラー検知（同一オリジンのみ有効）
+      iframe.addEventListener('error', function () {
+        iframe.style.display = 'none';
+        placeholder.style.display = 'flex';
+      });
+
+      // PDFファイルの存在確認（fetch で HEAD リクエスト）
+      fetch('../pdf/worker_manual.pdf', { method: 'HEAD' })
+        .then(function (res) {
+          if (!res.ok) throw new Error('not found');
+          // 存在する場合はiframeを表示
+          iframe.style.display = 'block';
+          placeholder.style.display = 'none';
+        })
+        .catch(function () {
+          // 存在しない場合はプレースホルダーを表示
+          iframe.style.display = 'none';
+          placeholder.style.display = 'flex';
+        });
+    })();
+  </script>
+
+</body>
+</html>

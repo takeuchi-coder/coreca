@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画面遷移図 | コレカらワーク</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+      background: #f4f5f7;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #e8192c;
+      color: #fff;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    header h1 { font-size: 18px; font-weight: 700; }
+    header span { font-size: 13px; opacity: .75; margin-left: 4px; }
+
+    main {
+      padding: 32px 24px 64px;
+      overflow-x: auto;
+    }
+
+    /* ===== ダイアグラム全体 ===== */
+    .diagram {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 900px;
+    }
+
+    /* ===== ルートノード ===== */
+    .root-node {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #333;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* ===== ルート→ブランチ接続 ===== */
+    .vline {
+      width: 2px;
+      background: #bbb;
+      flex-shrink: 0;
+    }
+    .vline-sm { height: 20px; }
+    .vline-md { height: 24px; }
+
+    /* ブランチ行: 水平線で2カラムを結ぶ */
+    .branch-row {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    /* 2カラムの上端を結ぶ水平線 */
+    .branch-row::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: calc(25% - 4px);
+      right: calc(25% - 4px);
+      height: 2px;
+      background: #bbb;
+    }
+
+    .branch-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 22px;
+      position: relative;
+    }
+
+    /* 各カラムの上に垂直線を引く */
+    .branch-col::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 22px;
+      background: #bbb;
+    }
+
+    /* ===== ブランチヘッダー ===== */
+    .branch-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      align-self: flex-start;
+      margin-left: 16px;
+    }
+    .branch-header--worker { background: #e8192c; }
+    .branch-header--order  { background: #1a6ce8; }
+
+    /* ===== セクションツリー ===== */
+    .section-list {
+      list-style: none;
+      margin-top: 6px;
+      padding-left: 16px;
+      border-left: 2px solid #ddd;
+      width: 100%;
+    }
+
+    .section-item {
+      position: relative;
+      margin-top: 10px;
+    }
+
+    /* セクション横コネクタ */
+    .section-item::before {
+      content: '';
+      position: absolute;
+      left: -16px;
+      top: 14px;
+      width: 16px;
+      height: 2px;
+      background: #ddd;
+    }
+
+    /* 最後のセクション以降の縦線を消す */
+    .section-item:last-child::after {
+      content: '';
+      position: absolute;
+      left: -18px;
+      top: 14px;
+      bottom: 0;
+      width: 4px;
+      background: #f4f5f7;
+    }
+
+    /* ===== セクションノード ===== */
+    .section-node {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .section-node svg { opacity: .5; }
+
+    /* ===== ページリスト ===== */
+    .page-list {
+      list-style: none;
+      margin-top: 4px;
+      padding-left: 24px;
+      border-left: 2px solid #eee;
+    }
+
+    .page-item {
+      position: relative;
+      margin-top: 4px;
+    }
+
+    .page-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 14px;
+      width: 22px;
+      height: 2px;
+      background: #eee;
+    }
+
+    /* 最後のページ以降の縦線を消す */
+    .page-item:last-child::after {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 14px;
+      bottom: 0;
+      width: 4px;
+      background: #f4f5f7;
+    }
+
+    /* ===== ページノード ===== */
+    .page-node {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+      background: #fff;
+      border: 1px solid #e4e4e4;
+      border-radius: 5px;
+      font-size: 12.5px;
+      color: #333;
+      text-decoration: none;
+      transition: border-color .12s, box-shadow .12s, color .12s;
+      white-space: nowrap;
+    }
+
+    .page-node:hover {
+      border-color: #e8192c;
+      box-shadow: 0 0 0 2px rgba(232,25,44,.1);
+      color: #e8192c;
+    }
+
+    .branch-col:last-child .page-node:hover {
+      border-color: #1a6ce8;
+      box-shadow: 0 0 0 2px rgba(26,108,232,.1);
+      color: #1a6ce8;
+    }
+
+    .page-path {
+      font-size: 10px;
+      color: #bbb;
+      font-family: 'SFMono-Regular', Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+    </svg>
+    <h1>コレカらワーク <span>画面遷移図</span></h1>
+  </header>
+
+  <main>
+    <div class="diagram">
+
+      <!-- ルートノード -->
+      <div class="root-node">
+        <svg width="16" height="16" viewBox="0 0 28 28" fill="none">
+          <path d="M14 3L2 12h3v13h7v-8h4v8h7V12h3L14 3z" fill="#fff"/>
+        </svg>
+        コレカらワーク
+      </div>
+
+      <!-- ルート→ブランチ 垂直線 -->
+      <div class="vline vline-sm"></div>
+
+      <!-- ブランチ行（受注者 ／ 発注者） -->
+      <div class="branch-row">
+
+        <!-- ===== 受注者 ===== -->
+        <div class="branch-col">
+          <div class="branch-header branch-header--worker">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            受注者
+          </div>
+
+          <ul class="section-list">
+
+            <!-- 認証 -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                認証
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="worker/login.html" class="page-node">
+                    ログイン
+                    <span class="page-path">worker/login.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/register.html" class="page-node">
+                    無料会員登録
+                    <span class="page-path">worker/register.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/password-reset.html" class="page-node">
+                    パスワード再設定
+                    <span class="page-path">worker/password-reset.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- プロフィール -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                プロフィール
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="worker/profile.html" class="page-node">
+                    基本情報入力
+                    <span class="page-path">worker/profile.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/profile-confirm.html" class="page-node">
+                    基本情報入力確認
+                    <span class="page-path">worker/profile-confirm.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/profile-complete.html" class="page-node">
+                    登録完了
+                    <span class="page-path">worker/profile-complete.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- ホーム・案件 -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                ホーム・案件
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="worker/mypage.html" class="page-node">
+                    ホーム（マイページ）
+                    <span class="page-path">worker/mypage.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/search.html" class="page-node">
+                    案件検索
+                    <span class="page-path">worker/search.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/list.html" class="page-node">
+                    案件一覧（日付別）
+                    <span class="page-path">worker/list.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/job-detail.html" class="page-node">
+                    案件詳細
+                    <span class="page-path">worker/job-detail.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/my-list.html" class="page-node">
+                    案件一覧（エントリー中／進行中／完了）
+                    <span class="page-path">worker/my-list.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- メッセージ -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                メッセージ
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="worker/messages.html" class="page-node">
+                    メッセージ一覧
+                    <span class="page-path">worker/messages.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/message-detail.html" class="page-node">
+                    メッセージ詳細
+                    <span class="page-path">worker/message-detail.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 報酬・振込 -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                報酬・振込
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="worker/reward.html" class="page-node">
+                    報酬情報
+                    <span class="page-path">worker/reward.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/transfer.html" class="page-node">
+                    振込申請
+                    <span class="page-path">worker/transfer.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/transfer-history.html" class="page-node">
+                    振込申請履歴一覧
+                    <span class="page-path">worker/transfer-history.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- アカウント -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                アカウント
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="worker/account-basic.html" class="page-node">
+                    基本情報
+                    <span class="page-path">worker/account-basic.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/account-email-password.html" class="page-node">
+                    メール・パスワード変更
+                    <span class="page-path">worker/account-email-password.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/account-bank.html" class="page-node">
+                    銀行口座一覧
+                    <span class="page-path">worker/account-bank.html</span>
+                  </a>
+                </li>
+
+                <li class="page-item">
+                  <a href="worker/withdrawal.html" class="page-node">
+                    退会
+                    <span class="page-path">worker/withdrawal.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- サポート -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                サポート
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="worker/contact.html" class="page-node">
+                    お問い合わせ
+                    <span class="page-path">worker/contact.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="worker/manual.html" class="page-node">
+                    ご利用マニュアル
+                    <span class="page-path">worker/manual.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        <!-- ===== /受注者 ===== -->
+
+        <!-- ===== 発注者 ===== -->
+        <div class="branch-col">
+          <div class="branch-header branch-header--order">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            </svg>
+            発注者
+          </div>
+
+          <ul class="section-list">
+
+            <!-- 案件管理 -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                案件管理
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="order/list.html" class="page-node">
+                    案件一覧
+                    <span class="page-path">order/list.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="order/create.html" class="page-node">
+                    案件新規作成
+                    <span class="page-path">order/create.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="order/detail.html" class="page-node">
+                    案件情報
+                    <span class="page-path">order/detail.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="order/applicants.html" class="page-node">
+                    応募者・契約者一覧
+                    <span class="page-path">order/applicants.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="order/procedure.html" class="page-node">
+                    作業手順・報告
+                    <span class="page-path">order/procedure.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- 支払い -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                支払い
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="payment/list.html" class="page-node">
+                    報酬支払い情報
+                    <span class="page-path">payment/list.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="payment/detail.html" class="page-node">
+                    報酬支払詳細
+                    <span class="page-path">payment/detail.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- メッセージ -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                メッセージ
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="message/list.html" class="page-node">
+                    メッセージ一覧
+                    <span class="page-path">message/list.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="message/detail.html" class="page-node">
+                    メッセージ詳細
+                    <span class="page-path">message/detail.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- アカウント -->
+            <li class="section-item">
+              <div class="section-node">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                アカウント
+              </div>
+              <ul class="page-list">
+                <li class="page-item">
+                  <a href="account/index.html" class="page-node">
+                    アカウント情報
+                    <span class="page-path">account/index.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="account/basic.html" class="page-node">
+                    基本情報
+                    <span class="page-path">account/basic.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="account/email-password.html" class="page-node">
+                    メール・パスワード変更
+                    <span class="page-path">account/email-password.html</span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="account/history-list.html" class="page-node">
+                    決済履歴一覧
+                    <span class="page-path">account/history-list.html</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        <!-- ===== /発注者 ===== -->
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

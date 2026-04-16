@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>振込申請 | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wbasic-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item">
+            <a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wbasic-main">
+    <div class="wsidebar-layout">
+
+    <!-- ===== サイドバー ===== -->
+    <aside class="wsidebar">
+      <div class="wsidebar-balance">
+        <span class="wsidebar-balance-label">残高</span>
+        <span class="wsidebar-balance-value">0円</span>
+      </div>
+      <nav>
+        <ul class="wsidebar-list">
+          <li class="wsidebar-item"><a href="account-basic.html" class="wsidebar-link">基本情報</a></li>
+          <li class="wsidebar-item"><a href="account-email-password.html" class="wsidebar-link">メール・パスワード変更</a></li>
+          <li class="wsidebar-item"><a href="account-bank.html" class="wsidebar-link">銀行口座</a></li>
+          <li class="wsidebar-item"><a href="transfer.html" class="wsidebar-link wsidebar-link--active">振込申請</a></li>
+          <li class="wsidebar-item"><a href="logout.html" class="wsidebar-link">ログアウト</a></li>
+          <li class="wsidebar-item"><a href="withdrawal.html" class="wsidebar-link wsidebar-link--danger">退会</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- ===== /サイドバー ===== -->
+
+        <div class="wbasic-inner">
+
+      <!-- ページタイトル行 -->
+      <div class="wbasic-title-row">
+        <a href="mypage.html" class="wbasic-back-link" aria-label="戻る">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </a>
+        <h1 class="wbasic-title">振込申請</h1>
+      </div>
+      <hr class="wbasic-title-rule">
+
+      <!-- 銀行口座未登録の案内 -->
+      <div class="wtransfer-alert">
+        銀行振込を申請するために、銀行口座を登録しましょう。
+      </div>
+
+      <!-- 銀行口座登録へボタン -->
+      <div class="wbasic-submit-row">
+        <a href="account-bank.html" class="wbasic-btn-submit wbasic-btn-submit--wide" style="display:inline-block;text-align:center;text-decoration:none;">銀行口座登録へ</a>
+      </div>
+
+      <!-- 残高・金額カード -->
+      <div class="wtransfer-summary">
+
+        <!-- 残高行 -->
+        <div class="wtransfer-balance-row">
+          <span class="wtransfer-balance-label">残高</span>
+          <span class="wtransfer-balance-amount">0円</span>
+        </div>
+
+        <!-- 明細行 -->
+        <div class="wtransfer-detail">
+          <div class="wtransfer-detail-row">
+            <span class="wtransfer-detail-label">振込手数料</span>
+            <span class="wtransfer-detail-value">300円</span>
+          </div>
+          <hr class="wtransfer-detail-rule">
+          <div class="wtransfer-detail-row">
+            <span class="wtransfer-detail-label">振込予定金額</span>
+            <span class="wtransfer-detail-value wtransfer-detail-value--total">合計0円</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 振込申請履歴リンク -->
+      <div class="wbasic-submit-row">
+        <a href="transfer-history.html" class="wbasic-link">振込申請履歴一覧</a>
+      </div>
+
+    </div><!-- /wsidebar-layout -->
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+
+</body>
+</html>

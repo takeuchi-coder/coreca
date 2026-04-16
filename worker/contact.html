@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wcontact-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item">
+            <a href="search.html" class="nav-link"><span class="nav-text">案件検索</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="my-list.html" class="nav-link"><span class="nav-text">案件一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link"><span class="nav-text">報酬情報</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link nav-link--active"><span class="nav-text">お問い合わせ</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span></a>
+          </li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <main class="wcontact-main">
+    <div class="wcontact-inner">
+
+      <h1 class="wcontact-heading">お問い合わせフォーム</h1>
+
+      <!-- フォームカード -->
+      <div class="wcontact-card">
+
+        <!-- ステッパー -->
+        <div class="wcontact-stepper">
+          <div class="wcontact-step">
+            <div class="wcontact-step-circle wcontact-step-circle--current">1</div>
+            <div class="wcontact-step-line"></div>
+          </div>
+          <div class="wcontact-step">
+            <div class="wcontact-step-circle">2</div>
+            <div class="wcontact-step-line"></div>
+          </div>
+          <div class="wcontact-step">
+            <div class="wcontact-step-circle">3</div>
+          </div>
+        </div>
+        <div class="wcontact-stepper-labels">
+          <div class="wcontact-stepper-label wcontact-stepper-label--active">
+            <span class="wcontact-stepper-title">お問い合わせ</span>
+          </div>
+          <div class="wcontact-stepper-label">
+            <span class="wcontact-stepper-title">確認</span>
+          </div>
+          <div class="wcontact-stepper-label">
+            <span class="wcontact-stepper-title">送信完了</span>
+          </div>
+        </div>
+
+        <!-- 案内文 -->
+        <p class="wcontact-notice">
+          お問い合わせ前に、<a href="manual.html" style="text-decoration: underline;">マニュアル</a>をご確認ください。<br>
+          マニュアルに記載のない内容に関しましては、こちらのフォームよりお問い合わせください。<br>
+          業務内容・作業場所・応募後の選考状況・承認状況に関するお問い合わせにはお答え致しかねます。<br>
+          業務の発注者様にメッセージ又はお電話（表示されている場合）で直接お問い合わせをお願い致します。<br>
+          解決ができない方は、以下のフォームの必要項目を入力・送信をしてください。
+        </p>
+
+        <hr class="wcontact-rule">
+
+        <!-- お問い合わせの項目 -->
+        <div class="wcontact-field">
+          <label class="wcontact-label">
+            お問い合わせの項目
+            <span class="wcontact-required">*</span>
+          </label>
+          <div class="wcontact-select-wrap">
+            <select class="wcontact-select" required>
+              <option value="" disabled selected>選択してください</option>
+              <option value="1">アカウントについて</option>
+              <option value="2">案件・仕事内容について</option>
+              <option value="3">報酬・振込について</option>
+              <option value="4">その他</option>
+            </select>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2.5" class="wcontact-select-chevron">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+
+        <hr class="wcontact-rule">
+
+        <!-- 入力フォーム -->
+        <form class="wcontact-detail-form">
+
+          <!-- 氏・名 -->
+          <div class="wcontact-name-row">
+            <div class="wcontact-field">
+              <label class="wcontact-label">
+                氏
+                <span class="wcontact-required">*</span>
+              </label>
+              <input type="text" class="wcontact-input" required>
+            </div>
+            <div class="wcontact-field">
+              <label class="wcontact-label">
+                名
+                <span class="wcontact-required">*</span>
+              </label>
+              <input type="text" class="wcontact-input" required>
+            </div>
+          </div>
+
+          <!-- メールアドレス -->
+          <div class="wcontact-field">
+            <label class="wcontact-label">
+              メールアドレス
+              <span class="wcontact-required">*</span>
+            </label>
+            <input type="email" class="wcontact-input wcontact-input--medium" required>
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="wcontact-field">
+            <label class="wcontact-label">
+              電話番号
+              <span class="wcontact-required">*</span>
+            </label>
+            <input type="tel" class="wcontact-input wcontact-input--medium" required>
+            <p class="wcontact-input-hint">ハイフンいれないでください</p>
+          </div>
+
+          <!-- 案件ID -->
+          <div class="wcontact-field">
+            <label class="wcontact-label">案件ID</label>
+            <input type="text" class="wcontact-input wcontact-input--medium">
+            <p class="wcontact-input-hint">個別案件に関する問い合わせの場合必須</p>
+          </div>
+
+          <!-- お問い合わせの件名 -->
+          <div class="wcontact-field">
+            <label class="wcontact-label">
+              お問い合わせの件名
+              <span class="wcontact-required">*</span>
+            </label>
+            <input type="text" class="wcontact-input wcontact-input--medium" required>
+          </div>
+
+          <!-- お問い合わせの内容 -->
+          <div class="wcontact-field">
+            <label class="wcontact-label">
+              お問い合わせの内容
+              <span class="wcontact-required">*</span>
+            </label>
+            <textarea class="wcontact-textarea" rows="6" required></textarea>
+            <p class="wcontact-input-hint">特定の案件に関するお問い合わせの際は、案件IDをご連絡ください</p>
+          </div>
+
+          <!-- 添付ファイル -->
+          <div class="wcontact-field">
+            <label class="wcontact-label">添付ファイル</label>
+            <div class="wcontact-file-wrap">
+              <label class="wcontact-file-btn">
+                参照...
+                <input type="file" class="wcontact-file-input">
+              </label>
+            </div>
+            <p class="wcontact-input-hint">最大10MB</p>
+          </div>
+
+          <!-- プライバシーポリシー -->
+          <div class="wcontact-privacy-row">
+            <div class="wcontact-privacy-link-wrap">
+              <a href="#" class="wcontact-privacy-link">プライバシーポリシー</a>を確認
+            </div>
+            <div class="wcontact-privacy-check-wrap">
+              <label class="wcontact-label">
+                プライバシーポリシー
+                <span class="wcontact-required">*</span>
+              </label>
+              <label class="wcontact-checkbox-label">
+                <input type="checkbox" class="wcontact-checkbox" required>
+                <span>同意する</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- ボタン -->
+          <div class="wcontact-detail-btn-row">
+            <button type="button" class="wcontact-btn-confirm" onclick="location.href='contact-detail-confirm.html'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              確認
+            </button>
+          </div>
+
+        </form>
+
+      </div><!-- /wcontact-card -->
+
+    </div>
+  </main>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="wcontact-footer">
+    <p class="wcontact-footer-text">&copy;Toyokumo, Inc.&nbsp;&nbsp;&nbsp;FormBridge&nbsp;&nbsp;Ver.1.37.36</p>
+  </footer>
+
+</body>
+</html>

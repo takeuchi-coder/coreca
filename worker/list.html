@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件一覧 | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body class="wmypage-body wlist-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item nav-item--active">
+            <a href="search.html" class="nav-link">
+              <span class="nav-text">案件検索</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="my-list.html" class="nav-link">
+              <span class="nav-text">案件一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link">
+              <span class="nav-text">報酬情報</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link">
+              <span class="nav-text">メッセージ一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- 右側アクション -->
+        <div class="nav-actions">
+          <!-- アカウント情報アイコン -->
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== 検索コントロール ===== -->
+  <section class="wsearch-controls">
+    <div class="wsearch-controls-inner">
+
+      <!-- 左：日付タイトル＋フィルター -->
+      <div class="wsearch-left">
+        <h1 class="wsearch-date-title" id="listDateTitle">案件検索</h1>
+        <div class="wsearch-filter-row">
+          <!-- 応募可のみ トグル -->
+          <label class="wsearch-toggle-wrap">
+            <span class="wsearch-toggle-text">応募可のみ</span>
+            <span class="wsearch-toggle">
+              <input type="checkbox" id="availableOnly" checked>
+              <span class="wsearch-toggle-slider"></span>
+            </span>
+          </label>
+
+        </div>
+      </div>
+
+      <!-- 右：日付ピッカー -->
+      <div class="wsearch-right">
+        <div class="wsearch-datepicker-wrap">
+          <span class="wsearch-datepicker-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </span>
+          <input type="date" id="searchDate" class="wsearch-datepicker" value="2025-12-02">
+          <span class="wsearch-datepicker-suffix">時点で作業・契約期間が終了していない案件一覧</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===== /検索コントロール ===== -->
+
+  <!-- ===== 案件一覧 ===== -->
+  <main class="wlist-main">
+    <div class="wlist-inner">
+
+      <hr class="wlist-separator">
+
+      <!-- 案件リスト -->
+      <ul class="wlist-items" id="jobList">
+
+        <!-- 案件 1 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img wlist-item-img--brand">
+            <svg width="64" height="64" viewBox="0 0 80 80" fill="none">
+              <rect width="80" height="80" rx="8" fill="#c0111f"/>
+              <path d="M40 10L10 32h8v32h16V44h12v20h16V32h8L40 10z" fill="#fff"/>
+              <rect x="28" y="48" width="8" height="8" rx="1" fill="#c0111f"/>
+              <rect x="44" y="48" width="8" height="8" rx="1" fill="#c0111f"/>
+            </svg>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">2025年12月1日〜2025年12月31日</span>
+            </div>
+            <h2 class="wlist-item-title">在宅業務</h2>
+            <div class="wlist-item-price">¥ 1,300<span class="wlist-item-duration">60分</span></div>
+            <div class="wlist-item-address">東京都新宿区西新宿2-8-1</div>
+            <div class="wlist-item-time">いつでも</div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="job-detail.html" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 2 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--books"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">〜2025年12月31日</span>
+              <span class="wlist-item-deadline wlist-item-deadline--soon">募集停止まであと10日</span>
+            </div>
+            <h2 class="wlist-item-title">相談サービスの体験談レポート業務</h2>
+            <div class="wlist-item-price">¥ 5,000<span class="wlist-item-duration">90分</span></div>
+            <div class="wlist-item-address">東京都渋谷区道玄坂1-12-1</div>
+            <div class="wlist-item-time">05:00〜12:00</div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="job-detail.html" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 3 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--notebooks"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">〜2025年12月31日</span>
+              <span class="wlist-item-deadline wlist-item-deadline--closed">募集停止</span>
+            </div>
+            <h2 class="wlist-item-title">出張買取の覆面調査のお仕事</h2>
+            <div class="wlist-item-price">¥ 6,000<span class="wlist-item-duration">120分</span></div>
+            <div class="wlist-item-address">大阪府大阪市北区梅田1-13-1</div>
+            <div class="wlist-item-time">いつでも</div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="job-detail.html" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 4 -->
+        <li class="wlist-item">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--phone"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">〜2025年12月31日</span>
+            </div>
+            <h2 class="wlist-item-title">家計相談の体験談レポート業務</h2>
+            <div class="wlist-item-price">¥ 8,000<span class="wlist-item-duration">60分</span></div>
+            <div class="wlist-item-address">神奈川県横浜市西区みなとみらい2-2-1</div>
+            <div class="wlist-item-time">05:00〜12:00</div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="job-detail.html" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+        <!-- 案件 5 -->
+        <li class="wlist-item wlist-item--last">
+          <div class="wlist-item-img">
+            <div class="wlist-item-img-ph wlist-item-img-ph--phone"></div>
+          </div>
+          <div class="wlist-item-body">
+            <div class="wlist-item-meta">
+              <span class="wlist-item-period">〜2025年12月31日</span>
+            </div>
+            <h2 class="wlist-item-title">ママ向け保険の面談モニター</h2>
+            <div class="wlist-item-price">¥ 5,000<span class="wlist-item-duration">90分</span></div>
+            <div class="wlist-item-address">東京都港区六本木6-10-1</div>
+            <div class="wlist-item-time">いつでも</div>
+          </div>
+          <div class="wlist-item-action">
+            <a href="job-detail.html" class="btn-wlist-detail">詳細をみる</a>
+          </div>
+        </li>
+
+      </ul>
+      <!-- ===== /案件リスト ===== -->
+
+      <!-- ページネーション -->
+      <div class="wlist-pagination">
+        <button class="wlist-pager-btn wlist-pager-prev" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          前の10件
+        </button>
+        <div class="wlist-count">
+          <span class="wlist-count-num">5</span>件中
+          <span class="wlist-count-range">1〜5</span>件表示
+        </div>
+        <button class="wlist-pager-btn wlist-pager-next" disabled>
+          次の10件
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+      </div>
+
+      <!-- マップでみる フローティングボタン -->
+      <div class="wsearch-map-actions">
+        <a href="search.html" class="wsearch-map-action-btn">
+          <span class="wsearch-map-action-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </span>
+          マップでみる
+        </a>
+      </div>
+
+    </div>
+  </main>
+  <!-- ===== /案件一覧 ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+  <script>
+  flatpickr('#searchDate', {
+    locale: 'ja',
+    defaultDate: '2025-12-02',
+    dateFormat: 'Y-m-d',
+  });
+  </script>
+
+</body>
+</html>

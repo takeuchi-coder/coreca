@@ -32,15 +32,7 @@ const ICONS = {
     <polyline points="7 23 3 19 7 15"/>
     <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
   </svg>`,
-  alert: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <circle cx="12" cy="12" r="10"/>
-    <line x1="12" y1="8" x2="12" y2="12"/>
-    <line x1="12" y1="16" x2="12.01" y2="16"/>
-  </svg>`,
-  chat: `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-  </svg>`,
-  image: `<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
+  image: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5">
     <rect x="3" y="3" width="18" height="18" rx="2"/>
     <circle cx="8.5" cy="8.5" r="1.5"/>
     <polyline points="21 15 16 10 5 21"/>
@@ -54,87 +46,155 @@ const ICONS = {
 };
 
 /* ===========================
-   カード HTML 生成
+   ステータスタグ定義
 =========================== */
-function renderCard(p) {
-  const recruitingLabel = p.recruiting ? '募集中' : '募集停止';
-  const recruitingBadgeClass = p.recruiting ? 'status-badge--blue' : 'status-badge--gray';
-  const hasAlert = !!p.alert;
-  const alertColor = p.alert?.type === 'orange' ? '#f57c00' : '#e8192c';
-  const alertIcon = p.alert?.label?.includes('メッセージ') ? ICONS.chat : ICONS.alert;
+const TAG_LABELS = {
+  'no-hire':        '契約者なし',
+  'need-action':    '要応募者対応',
+  'accepting':      '仕事引受け待ち',
+  'contracted':     '契約中',
+  'need-inspection':'要検収',
+  'unread-msg':     'メッセージ未読',
+};
 
-  const actionsHtml = [
-    p.actions.includes('applicants') ? `
-      <a href="#" class="btn-action btn-action--outline-red">
-        ${ICONS.users} 応募者・契約者を確認する
-      </a>` : '',
-    p.actions.includes('procedure') ? `
-      <a href="#" class="btn-action btn-action--outline-gray">
-        ${ICONS.file} 作業手順・報告を確認する
-      </a>` : '',
-    p.actions.includes('renew') ? `
-      <a href="#" class="btn-action btn-action--outline-blue">
-        ${ICONS.renew} 契約を更新する
-      </a>` : '',
-  ].join('');
+function renderStatusTags(tags) {
+  if (!tags || tags.length === 0) return '';
+  const pills = tags.map(t =>
+    `<span class="proj-tag proj-tag--${t}">${TAG_LABELS[t] || t}</span>`
+  ).join('');
+  return `<div class="proj-tags">${pills}</div>`;
+}
+
+/* ===========================
+   テーブル行 HTML 生成
+=========================== */
+function renderRow(p) {
+  const parts = p.dateRange.split('〜');
+  const startDate = parts[0] ? parts[0].trim() : '';
+  const endDate   = parts[1] ? parts[1].trim() : '';
+
+  let stateClass, stateLabel;
+  if (p.status === 'done') {
+    stateClass = 'state-badge--done'; stateLabel = '完了';
+  } else if (p.recruiting) {
+    stateClass = 'state-badge--active'; stateLabel = '募集中';
+  } else {
+    stateClass = 'state-badge--stopped'; stateLabel = '募集停止';
+  }
 
   return `
-    <div class="project-card${hasAlert ? ' project-card--alert' : ''}" data-id="${p.id}" data-tags="${p.tags.join(',')}">
-      <div class="card-top">
-        <div class="card-thumbnail">${ICONS.image}</div>
-        <div class="card-meta">
-          <p class="card-dates">${p.dateRange}</p>
-          <div class="card-status-row">
-            <span class="status-badge status-badge--green">進行中</span>
-            <span class="status-badge ${recruitingBadgeClass}">${recruitingLabel}</span>
-            <div class="toggle-wrap">
-              <span class="toggle-label">${recruitingLabel}</span>
-              <label class="toggle-switch">
-                <input type="checkbox" ${p.recruiting ? 'checked' : ''}>
-                <span class="toggle-slider"></span>
-              </label>
+    <tr class="proj-row" data-id="${p.id}" data-tags="${p.tags.join(',')}">
+      <td class="col-name">
+        <div class="proj-name-cell">
+          <div class="proj-thumb">${ICONS.image}</div>
+          <div class="proj-name-info">
+            <a href="detail.html" class="proj-title proj-title--link">${p.jobType}</a>
+            <div class="proj-sub">${p.location}</div>
+            ${renderStatusTags(p.tags)}
+            <div class="card-stats">
+              <div class="stat-item">
+                <span class="stat-label">契約者</span>
+                <span class="stat-value">${p.contracts}</span>
+              </div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item">
+                <span class="stat-label">要検収</span>
+                <span class="stat-value ${p.needInspection > 0 ? 'stat-value--orange' : ''}">${p.needInspection}</span>
+              </div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item">
+                <span class="stat-label">報告中</span>
+                <span class="stat-value">${p.reporting}</span>
+              </div>
             </div>
           </div>
-          <h2 class="card-title">${p.title}</h2>
+        </div>
+      </td>
+      <td class="col-date"><span class="date-start">${startDate}</span><br><span class="date-end">〜${endDate}</span></td>
+      <td>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <label class="toggle-switch" style="flex-shrink:0;">
+            <input type="checkbox" ${p.recruiting ? 'checked' : ''}${p.status === 'done' ? ' disabled' : ''}>
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="state-badge ${stateClass}">${stateLabel}</span>
+        </div>
+      </td>
+      <td class="col-actions">
+        <div class="row-action-btns">
+          <a href="applicants.html" class="row-action-btn row-action-btn--applicants">
+            ${ICONS.users}応募者・契約者を確認する
+          </a>
+          <a href="procedure.html" class="row-action-btn row-action-btn--procedure">
+            ${ICONS.file}作業手順・報告を確認する
+          </a>
+          <button class="row-action-btn row-action-btn--renew" ${p.renewDisabled ? 'disabled' : ''}>
+            ${ICONS.renew}契約を更新する
+          </button>
+        </div>
+      </td>
+    </tr>
+  `;
+}
+
+/* ===========================
+   グリッドカード行 HTML 生成
+=========================== */
+function renderCardItem(p) {
+  const parts = p.dateRange.split('〜');
+  const startDate = parts[0] ? parts[0].trim() : '';
+  const endDate   = parts[1] ? parts[1].trim() : '';
+
+  let stateClass, stateLabel;
+  if (p.status === 'done') {
+    stateClass = 'state-badge--done'; stateLabel = '完了';
+  } else if (p.recruiting) {
+    stateClass = 'state-badge--active'; stateLabel = '募集中';
+  } else {
+    stateClass = 'state-badge--stopped'; stateLabel = '募集停止';
+  }
+
+  return `
+    <div class="proj-icon-card" data-id="${p.id}" data-tags="${p.tags.join(',')}">
+      <div class="pic-thumb">${ICONS.image}</div>
+      <a href="detail.html" class="proj-title proj-title--link">${p.jobType}</a>
+      <div class="proj-sub">${p.location}</div>
+      ${renderStatusTags(p.tags)}
+      <div class="card-stats">
+        <div class="stat-item">
+          <span class="stat-label">契約者</span>
+          <span class="stat-value">${p.contracts}</span>
+        </div>
+        <span class="stat-sep">|</span>
+        <div class="stat-item">
+          <span class="stat-label">要検収</span>
+          <span class="stat-value ${p.needInspection > 0 ? 'stat-value--orange' : ''}">${p.needInspection}</span>
+        </div>
+        <span class="stat-sep">|</span>
+        <div class="stat-item">
+          <span class="stat-label">報告中</span>
+          <span class="stat-value">${p.reporting}</span>
         </div>
       </div>
-
-      <div class="card-info-row">
-        <span class="card-info-item">${ICONS.pin} ${p.location}</span>
-        <span class="card-info-item">${ICONS.yen} ${p.wage}</span>
+      <div class="pic-dates">${startDate} 〜 ${endDate}</div>
+      <div class="pic-state">
+        <label class="toggle-switch" style="flex-shrink:0;">
+          <input type="checkbox" ${p.recruiting ? 'checked' : ''}${p.status === 'done' ? ' disabled' : ''}>
+          <span class="toggle-slider"></span>
+        </label>
+        <span class="state-badge ${stateClass}">${stateLabel}</span>
       </div>
-
-      <div class="card-stats">
-        <span class="stat-item">
-          <span class="stat-label">契約者数：</span>
-          <span class="stat-value">${p.contracts} 名</span>
-        </span>
-        <span class="stat-sep">|</span>
-        <span class="stat-item">
-          <span class="stat-label">検収完了：</span>
-          <span class="stat-value stat-value--green">${p.inspected}</span>
-        </span>
-        <span class="stat-sep">|</span>
-        <span class="stat-item">
-          <span class="stat-label">要検収：</span>
-          <span class="stat-value stat-value--orange">${p.needInspection}</span>
-        </span>
-        <span class="stat-sep">|</span>
-        <span class="stat-item">
-          <span class="stat-label">報告中：</span>
-          <span class="stat-value">${p.reporting}</span>
-        </span>
+      <div class="row-action-btns">
+        <a href="applicants.html" class="row-action-btn row-action-btn--applicants">
+          ${ICONS.users}応募者・契約者を確認する
+        </a>
+        <a href="procedure.html" class="row-action-btn row-action-btn--procedure">
+          ${ICONS.file}作業手順・報告を確認する
+        </a>
+        <button class="row-action-btn row-action-btn--renew" ${p.renewDisabled ? 'disabled' : ''}>
+          ${ICONS.renew}契約を更新する
+        </button>
       </div>
-
-      <div class="card-footer-row">
-        <span class="card-id">案件ID：${p.id}</span>
-        ${hasAlert ? `
-          <span class="alert-badge" style="background:${alertColor};">
-            ${alertIcon} ${p.alert.label}
-          </span>` : ''}
-      </div>
-
-      <div class="card-actions">${actionsHtml}</div>
     </div>
   `;
 }
@@ -145,6 +205,8 @@ function renderCard(p) {
 let state = {
   tab: 'active',
   filter: 'all',
+  sort: 'default',
+  view: 'list',
   page: 1,
   perPage: 10,
 };
@@ -158,12 +220,34 @@ function getFiltered() {
   });
 }
 
+function getSortedFiltered() {
+  const filtered = getFiltered();
+  if (state.sort === 'default') return filtered;
+  return [...filtered].sort((a, b) => {
+    const ap = a.dateRange.split('〜');
+    const bp = b.dateRange.split('〜');
+    const aStart = ap[0] ? ap[0].trim() : '';
+    const bStart = bp[0] ? bp[0].trim() : '';
+    const aEnd   = ap[1] ? ap[1].trim() : '';
+    const bEnd   = bp[1] ? bp[1].trim() : '';
+    switch (state.sort) {
+      case 'start-date-desc':  return bStart.localeCompare(aStart);
+      case 'start-date-asc':   return aStart.localeCompare(bStart);
+      case 'end-date-asc':     return aEnd.localeCompare(bEnd);
+      case 'end-date-desc':    return bEnd.localeCompare(aEnd);
+      case 'contracts-desc':   return b.contracts - a.contracts;
+      case 'contracts-asc':    return a.contracts - b.contracts;
+      default: return 0;
+    }
+  });
+}
+
 function updateBadgeCounts() {
   const active = PROJECTS.filter(p => p.status === state.tab);
   const countMap = {
-    'no-hire':         active.filter(p => p.tags.includes('no-hire')).length,
-    'need-report':     active.filter(p => p.tags.includes('need-report')).length,
-    'unread-msg':      active.filter(p => p.tags.includes('unread-msg')).length,
+    'no-hire':     active.filter(p => p.tags.includes('no-hire')).length,
+    'need-action': active.filter(p => p.tags.includes('need-action')).length,
+    'unread-msg':  active.filter(p => p.tags.includes('unread-msg')).length,
   };
   for (const [key, val] of Object.entries(countMap)) {
     const el = document.getElementById(`count-${key}`);
@@ -172,25 +256,38 @@ function updateBadgeCounts() {
 }
 
 function renderList() {
-  const list = document.getElementById('projectList');
+  const list  = document.getElementById('projectList');
   const empty = document.getElementById('emptyState');
-  const totalEl = document.getElementById('totalCount');
-  const rangeEl = document.getElementById('rangeLabel');
 
-  const filtered = getFiltered();
-  const total = filtered.length;
-  const start = (state.page - 1) * state.perPage;
-  const end = Math.min(start + state.perPage, total);
-  const page = filtered.slice(start, end);
-
-  if (totalEl) totalEl.textContent = total;
-  if (rangeEl) rangeEl.textContent = total === 0 ? '0' : `${start + 1}〜${end}`;
+  const filtered = getSortedFiltered();
+  const total    = filtered.length;
+  const start    = (state.page - 1) * state.perPage;
+  const end      = Math.min(start + state.perPage, total);
+  const page     = filtered.slice(start, end);
 
   if (page.length === 0) {
     list.innerHTML = '';
     empty.style.display = 'flex';
+  } else if (state.view === 'grid') {
+    list.innerHTML = `<div class="proj-icon-grid">${page.map(renderCardItem).join('')}</div>`;
+    empty.style.display = 'none';
+    initToggles();
   } else {
-    list.innerHTML = page.map(renderCard).join('');
+    list.innerHTML = `
+      <table class="proj-table">
+        <thead>
+          <tr>
+            <th>案件</th>
+            <th>作業・契約期間</th>
+            <th>状態</th>
+            <th class="col-actions">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${page.map(renderRow).join('')}
+        </tbody>
+      </table>
+    `;
     empty.style.display = 'none';
     initToggles();
   }
@@ -201,22 +298,32 @@ function renderList() {
 }
 
 /* ===========================
-   フッターページネーション
+   フッター & ツールバーページネーション
 =========================== */
 function renderFooterPagination(total) {
-  const totalPages = Math.ceil(total / state.perPage);
+  const totalPages = Math.ceil(total / state.perPage) || 1;
   const start = (state.page - 1) * state.perPage;
-  const end = Math.min(start + state.perPage, total);
+  const end   = Math.min(start + state.perPage, total);
 
   const infoEl = document.getElementById('footerPageInfo');
   if (infoEl) {
     infoEl.textContent = total === 0 ? '0件' : `${total}件中${start + 1}〜${end}件表示`;
   }
 
-  const prevBtn = document.getElementById('footerPrevBtn');
-  const nextBtn = document.getElementById('footerNextBtn');
-  if (prevBtn) prevBtn.disabled = state.page <= 1;
-  if (nextBtn) nextBtn.disabled = state.page >= totalPages || totalPages <= 1;
+  const toolbarInfo = document.getElementById('toolbarPageInfo');
+  if (toolbarInfo) {
+    toolbarInfo.textContent = total === 0 ? '0 / 0' : `${state.page} / ${totalPages}`;
+  }
+
+  const footerPrev = document.getElementById('footerPrevBtn');
+  const footerNext = document.getElementById('footerNextBtn');
+  if (footerPrev) footerPrev.disabled = state.page <= 1;
+  if (footerNext) footerNext.disabled = state.page >= totalPages || totalPages <= 1;
+
+  const toolbarPrev = document.getElementById('toolbarPrevBtn');
+  const toolbarNext = document.getElementById('toolbarNextBtn');
+  if (toolbarPrev) toolbarPrev.disabled = state.page <= 1;
+  if (toolbarNext) toolbarNext.disabled = state.page >= totalPages || totalPages <= 1;
 }
 
 /* ===========================
@@ -283,14 +390,15 @@ function buildPageNumbers(cur, total) {
 function initToggles() {
   document.querySelectorAll('.toggle-switch input').forEach(input => {
     input.addEventListener('change', () => {
-      const wrap = input.closest('.toggle-wrap');
-      const label = wrap?.querySelector('.toggle-label');
-      const badge = wrap?.closest('.card-meta')?.querySelector('.status-badge:last-of-type');
-      const text = input.checked ? '募集中' : '募集停止';
-      if (label) label.textContent = text;
-      if (badge) {
-        badge.textContent = text;
-        badge.className = `status-badge ${input.checked ? 'status-badge--blue' : 'status-badge--gray'}`;
+      const text       = input.checked ? '募集中' : '募集停止';
+      const badgeClass = input.checked ? 'state-badge--active' : 'state-badge--stopped';
+      const container = input.closest('td') || input.closest('.proj-status-actions');
+      if (container) {
+        const badge = container.querySelector('.state-badge');
+        if (badge) {
+          badge.textContent = text;
+          badge.className = `state-badge ${badgeClass}`;
+        }
       }
     });
   });
@@ -300,22 +408,21 @@ function initToggles() {
    初期化
 =========================== */
 function initHeader() {
-  // ハンバーガーメニュー（モバイル用）
   const hamburger = document.getElementById('hamburgerBtn');
-  const nav = document.getElementById('headerNav');
+  const nav       = document.getElementById('headerNav');
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => nav.classList.toggle('is-open'));
   }
 }
 
 function initUI() {
-  // タブ
-  document.querySelectorAll('.tab-btn').forEach(btn => {
+  // タブ（サイドバーの data-tab ボタン）
+  document.querySelectorAll('[data-tab]').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('tab-btn--active'));
+      document.querySelectorAll('[data-tab]').forEach(b => b.classList.remove('tab-btn--active'));
       btn.classList.add('tab-btn--active');
-      state.tab = btn.dataset.tab || 'active';
-      state.page = 1;
+      state.tab    = btn.dataset.tab || 'active';
+      state.page   = 1;
       state.filter = 'all';
       document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('filter-pill--active'));
       document.querySelector('[data-filter="all"]')?.classList.add('filter-pill--active');
@@ -329,6 +436,17 @@ function initUI() {
       document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('filter-pill--active'));
       pill.classList.add('filter-pill--active');
       state.filter = pill.dataset.filter || 'all';
+      state.page   = 1;
+      renderList();
+    });
+  });
+
+  // ビュー切替（リスト / グリッド）
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('view-btn--active'));
+      btn.classList.add('view-btn--active');
+      state.view = btn.dataset.view || 'list';
       state.page = 1;
       renderList();
     });
@@ -339,8 +457,33 @@ function initUI() {
   if (perPageSel) {
     perPageSel.addEventListener('change', () => {
       state.perPage = parseInt(perPageSel.value);
-      state.page = 1;
+      state.page    = 1;
       renderList();
+    });
+  }
+
+  // ツールバー：前のページ
+  const toolbarPrev = document.getElementById('toolbarPrevBtn');
+  if (toolbarPrev) {
+    toolbarPrev.addEventListener('click', () => {
+      if (state.page > 1) {
+        state.page -= 1;
+        renderList();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
+
+  // ツールバー：次のページ
+  const toolbarNext = document.getElementById('toolbarNextBtn');
+  if (toolbarNext) {
+    toolbarNext.addEventListener('click', () => {
+      const totalPages = Math.ceil(getSortedFiltered().length / state.perPage);
+      if (state.page < totalPages) {
+        state.page += 1;
+        renderList();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     });
   }
 
@@ -360,13 +503,61 @@ function initUI() {
   const footerNext = document.getElementById('footerNextBtn');
   if (footerNext) {
     footerNext.addEventListener('click', () => {
-      const filtered = getFiltered();
-      const totalPages = Math.ceil(filtered.length / state.perPage);
+      const totalPages = Math.ceil(getSortedFiltered().length / state.perPage);
       if (state.page < totalPages) {
         state.page += 1;
         renderList();
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+    });
+  }
+
+  // 並び替えパネル
+  const sortBtn   = document.getElementById('sortCtrlBtn');
+  const sortPanel = document.getElementById('sortPanel');
+  if (sortBtn && sortPanel) {
+    sortBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      sortPanel.classList.toggle('is-open');
+      sortBtn.classList.toggle('filter-ctrl-btn--active', sortPanel.classList.contains('is-open'));
+    });
+    const SORT_BTN_ICONS = {
+      'default':         `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M9 18h6"/></svg>`,
+      'start-date-desc': `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`,
+      'start-date-asc':  `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`,
+      'end-date-asc':    `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`,
+      'end-date-desc':   `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`,
+      'contracts-desc':  `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>`,
+      'contracts-asc':   `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>`,
+    };
+
+    sortPanel.querySelectorAll('.sort-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        state.sort  = opt.dataset.sort;
+        state.page  = 1;
+        // アクティブ表示更新
+        sortPanel.querySelectorAll('.sort-option').forEach(o => o.classList.remove('sort-option--active'));
+        opt.classList.add('sort-option--active');
+        // ボタンのアイコン・ハイライト更新
+        const isActive = state.sort !== 'default';
+        sortBtn.classList.toggle('filter-ctrl-btn--active', isActive);
+        const icon = SORT_BTN_ICONS[state.sort] || SORT_BTN_ICONS['default'];
+        // アクティブ時はアイコンのみ表示、デフォルト時はアイコン＋テキスト
+        if (isActive) {
+          sortBtn.innerHTML = icon;
+          sortBtn.title = opt.textContent.trim();
+        } else {
+          sortBtn.innerHTML = `${icon} 並び替え`;
+          sortBtn.title = '';
+        }
+        sortPanel.classList.remove('is-open');
+        renderList();
+      });
+    });
+    // パネル外クリックで閉じる
+    document.addEventListener('click', () => {
+      sortPanel.classList.remove('is-open');
+      sortBtn.classList.toggle('filter-ctrl-btn--active', state.sort !== 'default');
     });
   }
 }

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件検索 | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/worker.css">
+</head>
+<body class="wmypage-body wsearch-body">
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+      </a>
+
+      <nav class="header-nav" aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
+          <li class="nav-item nav-item--active">
+            <a href="search.html" class="nav-link">
+              <span class="nav-text">案件検索</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="my-list.html" class="nav-link">
+              <span class="nav-text">案件一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="reward.html" class="nav-link">
+              <span class="nav-text">報酬情報</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link">
+              <span class="nav-text">メッセージ一覧</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"><span class="nav-text">お問い合わせ</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="manual.html" class="nav-link"><span class="nav-text">ご利用マニュアル</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- 右側アクション -->
+        <div class="nav-actions">
+          <!-- アカウント情報アイコン -->
+          <a href="mypage.html" class="nav-user" aria-label="アカウント情報">
+            <span class="header-avatar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+
+  <!-- ===== 地域選択モーダル ===== -->
+  <div class="wregion-overlay" id="regionModal" role="dialog" aria-modal="true" aria-labelledby="regionModalLabel" hidden>
+    <div class="wregion-modal">
+
+      <!-- 全国 / 閉じる タブ行 -->
+      <div class="wregion-tab-row">
+        <button class="wregion-tab wregion-tab--all" id="regionAllBtn">全国</button>
+        <button class="wregion-tab wregion-tab--close" id="regionCloseBtn">閉じる</button>
+      </div>
+
+      <!-- 地域グリッド -->
+      <div class="wregion-grid" id="regionGrid">
+        <button class="wregion-item" data-region="kanto">
+          <span>関東</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="kansai">
+          <span>関西</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="tokai">
+          <span>東海</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="hokkaido">
+          <span>北海道</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="tohoku">
+          <span>東北</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="koshinetsu">
+          <span>甲信越<br>北陸</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="chugoku">
+          <span>中国</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="shikoku">
+          <span>四国</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <button class="wregion-item" data-region="kyushu">
+          <span>九州<br>沖縄</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /地域選択モーダル ===== -->
+
+  <!-- ===== マップセクション ===== -->
+  <div class="wsearch-map-section" id="mapSection">
+    <!-- Google Maps iframe -->
+    <iframe
+      id="wsearchMap"
+      class="wsearch-map"
+      src="https://maps.google.com/maps?q=34.8897,136.9370&z=13&output=embed"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <!-- 上部中央：エリア選択ドロップダウン＋一覧でみる -->
+    <div class="wsearch-area-wrap">
+      <div class="wsearch-area-select-wrap">
+        <select class="wsearch-area-select" id="areaLocationSelect" aria-label="エリア選択">
+          <option value="current">現在地</option>
+          <option value="registered">登録住所</option>
+          <optgroup label="都道府県">
+            <option value="hokkaido">北海道</option>
+            <option value="aomori">青森県</option>
+            <option value="iwate">岩手県</option>
+            <option value="miyagi">宮城県</option>
+            <option value="akita">秋田県</option>
+            <option value="yamagata">山形県</option>
+            <option value="fukushima">福島県</option>
+            <option value="ibaraki">茨城県</option>
+            <option value="tochigi">栃木県</option>
+            <option value="gunma">群馬県</option>
+            <option value="saitama">埼玉県</option>
+            <option value="chiba">千葉県</option>
+            <option value="tokyo">東京都</option>
+            <option value="kanagawa">神奈川県</option>
+            <option value="niigata">新潟県</option>
+            <option value="toyama">富山県</option>
+            <option value="ishikawa">石川県</option>
+            <option value="fukui">福井県</option>
+            <option value="yamanashi">山梨県</option>
+            <option value="nagano">長野県</option>
+            <option value="gifu">岐阜県</option>
+            <option value="shizuoka">静岡県</option>
+            <option value="aichi">愛知県</option>
+            <option value="mie">三重県</option>
+            <option value="shiga">滋賀県</option>
+            <option value="kyoto">京都府</option>
+            <option value="osaka">大阪府</option>
+            <option value="hyogo">兵庫県</option>
+            <option value="nara">奈良県</option>
+            <option value="wakayama">和歌山県</option>
+            <option value="tottori">鳥取県</option>
+            <option value="shimane">島根県</option>
+            <option value="okayama">岡山県</option>
+            <option value="hiroshima">広島県</option>
+            <option value="yamaguchi">山口県</option>
+            <option value="tokushima">徳島県</option>
+            <option value="kagawa">香川県</option>
+            <option value="ehime">愛媛県</option>
+            <option value="kochi">高知県</option>
+            <option value="fukuoka">福岡県</option>
+            <option value="saga">佐賀県</option>
+            <option value="nagasaki">長崎県</option>
+            <option value="kumamoto">熊本県</option>
+            <option value="oita">大分県</option>
+            <option value="miyazaki">宮崎県</option>
+            <option value="kagoshima">鹿児島県</option>
+            <option value="okinawa">沖縄県</option>
+          </optgroup>
+        </select>
+        <svg class="wsearch-area-select-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+      <a href="list.html" class="wsearch-list-view-btn" id="listViewBtn">
+        地図上に表示されている案件一覧
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <!-- ===== /マップセクション ===== -->
+
+  <!-- ===== リスト表示セクション ===== -->
+  <div class="wsearch-list-section" id="listSection" hidden>
+
+    <!-- ヘッダー行：タイトル + ソート + トグルフィルター -->
+    <div class="wsearch-list-header">
+      <h2 class="wsearch-list-heading">案件検索</h2>
+      <div class="wsearch-list-controls">
+        <div class="wsearch-sort-wrap">
+          <select class="wsearch-sort-select" id="listSortSelect" aria-label="並び順">
+            <option value="distance">近い順</option>
+            <option value="deadline-asc">締切日 近い順</option>
+            <option value="deadline-desc">締切日 遠い順</option>
+          </select>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="wsearch-sort-chevron">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+        <div class="wsearch-list-toggles">
+          <label class="wsearch-toggle-wrap">
+            <span class="wsearch-toggle-text">応募可のみ</span>
+            <span class="wsearch-toggle">
+              <input type="checkbox" id="availableOnlyList" checked>
+              <span class="wsearch-toggle-slider"></span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- 検索基準地点の表示 -->
+    <div class="wsearch-base-notice" id="baseNotice"></div>
+
+    <!-- 案件リスト -->
+    <div class="wsearch-list-items" id="jobListItems">
+      <!-- JavaScript で生成 -->
+    </div>
+
+    <!-- 地図でみる フローティングボタン -->
+    <div class="wsearch-map-actions" id="mapViewContainer">
+      <button class="wsearch-map-action-btn" id="mapViewBtn" aria-label="地図表示に切り替え">
+        <span class="wsearch-map-action-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </span>
+        地図でみる
+      </button>
+    </div>
+
+  </div>
+  <!-- ===== /リスト表示セクション ===== -->
+
+  <!-- ===== フッター ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+  <script>
+  /* =============================================
+     受注者の登録住所（基準地点）
+     ※ 実装時はプロフィールDBから取得
+  ============================================= */
+  const WORKER_HOME = { lat: 34.8897, lng: 136.9370 }; // 愛知県半田市（登録住所）
+
+  // 現在の検索基準地点（初期値＝登録住所、地図移動後に更新）
+  let searchCenter = { lat: WORKER_HOME.lat, lng: WORKER_HOME.lng };
+
+  /* =============================================
+     距離計算（Haversine 公式、単位：km）
+  ============================================= */
+  function calcDistance(lat1, lng1, lat2, lng2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) ** 2 +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLng / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function formatDistance(km) {
+    return km < 1 ? `${Math.round(km * 1000)}m` : `${km.toFixed(1)}km`;
+  }
+
+  /* =============================================
+     案件サンプルデータ
+  ============================================= */
+  const JOBS = [
+    {
+      id: 1,
+      title: '役所等での申請・書類取得',
+      price: '¥1,000/件',
+      hours: '09:00〜17:00',
+      address: '愛知県半田市東洋町2-1',
+      period: '2026年04月01日~2026年06月30日',
+      daysLeft: 106,
+      lat: 34.8897,
+      lng: 136.9370,
+      img: null
+    },
+    {
+      id: 2,
+      title: '共用部清掃_掃き・拭き上げ_6-10世帯',
+      price: '¥1,200/件',
+      hours: 'いつでも',
+      address: '愛知県半田市東大矢知町',
+      period: '即日~2026年03月31日',
+      daysLeft: 15,
+      lat: 34.8850,
+      lng: 136.9350,
+      img: null
+    },
+    {
+      id: 3,
+      title: '駐車場設置のEV充電器アップデート業務',
+      price: '¥1,500/件',
+      hours: 'いつでも',
+      address: '愛知県常滑市 栄町7-108',
+      period: '即日~2026年03月29日',
+      daysLeft: 13,
+      lat: 34.8920,
+      lng: 136.8360,
+      img: null
+    },
+    {
+      id: 4,
+      title: '植栽水やり・軽作業スタッフ募集',
+      price: '¥2,000/件',
+      hours: 'いつでも',
+      address: '愛知県常滑市 栄町7-108',
+      period: '即日~2026年03月29日',
+      daysLeft: 13,
+      lat: 34.8900,
+      lng: 136.8400,
+      img: null
+    },
+    {
+      id: 5,
+      title: 'マンション共用廊下清掃スタッフ',
+      price: '¥1,800/件',
+      hours: '09:00〜12:00',
+      address: '愛知県知多市 新知字弐ノ割',
+      period: '即日~2026年04月15日',
+      daysLeft: 29,
+      lat: 34.9100,
+      lng: 136.9200,
+      img: null
+    }
+  ];
+
+
+  /* =============================================
+     ビュー切り替え共通関数
+  ============================================= */
+  function showListView() {
+    document.getElementById('mapSection').style.display = 'none';
+    document.getElementById('listSection').style.display = 'flex';
+    renderListItems();
+  }
+
+  function showMapView() {
+    document.getElementById('listSection').style.display = 'none';
+    document.getElementById('mapSection').style.display = '';
+  }
+
+
+  /* =============================================
+     地図でみる ボタン
+  ============================================= */
+  document.getElementById('mapViewBtn').addEventListener('click', showMapView);
+
+  /* =============================================
+     リスト表示：案件リストを生成（距離・ソート対応）
+  ============================================= */
+  function renderListItems() {
+    const container = document.getElementById('jobListItems');
+    const sortSelect = document.getElementById('listSortSelect');
+    const notice = document.getElementById('baseNotice');
+    const sortMode = sortSelect ? sortSelect.value : 'distance';
+
+    // 基準地点の表示を更新
+    const isHome = searchCenter.lat === WORKER_HOME.lat && searchCenter.lng === WORKER_HOME.lng;
+    notice.textContent = isHome
+      ? '基準地点：登録住所のエリア'
+      : `基準地点：現在の地図中心（地図を動かして「一覧でみる」を押すと更新）`;
+
+    // 距離を付与してソート
+    const jobs = JOBS.map(job => ({
+      ...job,
+      distance: calcDistance(searchCenter.lat, searchCenter.lng, job.lat, job.lng)
+    }));
+
+    if (sortMode === 'distance') {
+      jobs.sort((a, b) => a.distance - b.distance);
+    } else if (sortMode === 'deadline-asc') {
+      jobs.sort((a, b) => a.daysLeft - b.daysLeft);
+    } else if (sortMode === 'deadline-desc') {
+      jobs.sort((a, b) => b.daysLeft - a.daysLeft);
+    }
+
+    container.innerHTML = '';
+
+    jobs.forEach(job => {
+      const item = document.createElement('div');
+      item.className = 'wsearch-list-item';
+
+      const badgeClass = job.daysLeft <= 15
+        ? 'wsearch-list-badge--red'
+        : 'wsearch-list-badge--gray';
+
+      item.innerHTML = `
+        <div class="wsearch-list-thumb">
+          <div class="wsearch-list-thumb-inner">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+        </div>
+        <div class="wsearch-list-body">
+          <div class="wsearch-list-top">
+            <span class="wsearch-list-date">${job.period}</span>
+            <span class="wsearch-list-badge ${badgeClass}">募集終了まで：あと${job.daysLeft}日</span>
+          </div>
+          <div class="wsearch-list-title">${job.title}</div>
+          <div class="wsearch-list-price">${job.price}</div>
+          <div class="wsearch-list-meta">
+            <span class="wsearch-list-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              ${job.hours}
+            </span>
+            <span class="wsearch-list-meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              ${job.address}
+            </span>
+            <span class="wsearch-list-meta-item wsearch-list-distance">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="8 12 12 8 16 12"/>
+                <line x1="12" y1="8" x2="12" y2="16"/>
+              </svg>
+              基準地点から ${formatDistance(job.distance)}
+            </span>
+          </div>
+        </div>
+        <div class="wsearch-list-action">
+          <a href="detail.html" class="wsearch-list-detail-btn wsearch-list-detail-btn--red">詳細をみる</a>
+        </div>
+      `;
+
+      container.appendChild(item);
+    });
+  }
+
+  // ソート変更時に再レンダリング
+  document.addEventListener('change', (e) => {
+    if (e.target.id === 'listSortSelect') renderListItems();
+  });
+
+  /* =============================================
+     地域選択モーダル
+  ============================================= */
+  (function () {
+    var overlay   = document.getElementById('regionModal');
+    // var openBtn   = document.getElementById('regionOpenBtn'); // 削除済みボタン
+    var closeBtn  = document.getElementById('regionCloseBtn');
+    var allBtn    = document.getElementById('regionAllBtn');
+    var gridItems = document.querySelectorAll('.wregion-item');
+
+    function closeRegionModal() {
+      overlay.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeRegionModal);
+
+    allBtn.addEventListener('click', function () {
+      // 全国選択：ここでは単純に閉じる（実装時に絞り込みリセットを追加）
+      closeRegionModal();
+    });
+
+    gridItems.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var region = btn.dataset.region;
+        // 地域選択後の処理をここに追加
+        closeRegionModal();
+      });
+    });
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeRegionModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !overlay.hidden) closeRegionModal();
+    });
+  })();
+  </script>
+
+
+</body>
+</html>

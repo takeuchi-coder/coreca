@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メッセージ詳細（不採用） | コレカらワーク</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ===== ヘッダー（共通） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
+        <span class="logo-role">発注者としてログイン中</span>
+      </a>
+
+      <nav class="header-nav" id="headerNav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="../order/list.html" class="nav-link"><span class="nav-text">案件作成・一覧</span></a>
+          </li>
+          <li class="nav-item">
+            <a href="../payment/list.html" class="nav-link"><span class="nav-text">報酬支払い情報</span></a>
+          </li>
+          <li class="nav-item nav-item--active">
+            <a href="list.html" class="nav-link"><span class="nav-text">メッセージ一覧</span></a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <!-- 右側: アカウント情報 -->
+      <div class="nav-actions">
+        <span class="nav-user">
+          <span class="header-avatar-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="header-username">aaaaaa さん</span>
+        </span>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- ===== /ヘッダー ===== -->
+
+  <!-- ===== メインコンテンツ ===== -->
+  <div class="det-main">
+
+    <!-- トップバー（戻るリンク） -->
+    <div class="det-topbar">
+      <a href="list.html" class="det-back-link">
+        <svg class="det-topbar-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        メッセージ
+      </a>
+    </div>
+
+    <!-- コンテンツ本体 -->
+    <div class="msgd-wrap">
+
+      <!-- ===== 上部カード: ユーザー情報 + アクションボタン ===== -->
+      <div class="msgd-top-card">
+
+        <!-- ユーザー情報バー -->
+        <div class="msgd-user-bar">
+          <div class="msgd-user-bar-left">
+            <a href="../order/detail.html" class="msgd-user-link">警察署への書類提出業務_30分</a>
+          </div>
+          <span class="msgd-status-badge msgd-status-badge--rejected">不採用</span>
+        </div>
+
+        <!-- アクションボタン行（全幅） -->
+        <div class="msgd-action-row">
+          <button class="msgd-btn-order" id="msgBtnOrder">発注に変更する</button>
+        </div>
+
+      </div>
+      <!-- /msgd-top-card -->
+
+      <!-- ===== チャットカード: メッセージ + 入力エリア ===== -->
+      <div class="msgd-thread">
+
+        <!-- メッセージ表示領域 -->
+        <div class="msgd-messages">
+
+          <!-- 受信メッセージ：自動メッセージ（システム） -->
+          <div class="msgd-row msgd-row--recv">
+            <span class="msgd-sender-name">コレカらワーク</span>
+            <div class="msgd-msg-with-icon">
+              <!-- システムアイコン -->
+              <div class="msgd-sys-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <!-- 自動メッセージボックス -->
+              <div class="msgd-auto-box">
+                ※こちらのメッセージは応募時の登録情報を自動送信しております。<br>
+                ※応募者ご登録お住まい住所と作業場所が離れている場合は応募理由（別の仕事が近隣、引越し済で近隣、etc）のコミュニケーションをミスマッチ防止のため推奨しております。<br><br>
+                【電話番号】<br>
+                07065180111<br><br>
+                【作業可能スケジュール】<br>
+                4、5いずれも可能です。<br><br>
+                【自己PR・その他質問など】<br>
+                訪問調査や接客など経験あります。よろしくお願いします。
+              </div>
+            </div>
+            <div class="msgd-meta">
+              <span class="msgd-time">12月03日 04:21</span>
+              <span class="msgd-read-badge msgd-read-badge--read">開封済み</span>
+            </div>
+          </div>
+
+          <!-- 受信メッセージ（倉本 泰さんから） -->
+          <div class="msgd-row msgd-row--recv">
+            <span class="msgd-sender-name">倉本 泰さん</span>
+            <div class="msgd-msg-with-icon">
+              <div class="msgd-sys-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </div>
+              <div class="msgd-bubble--recv">
+                午前中を希望です。
+              </div>
+            </div>
+            <div class="msgd-meta">
+              <span class="msgd-time">12月03日 10:45</span>
+              <span class="msgd-read-badge msgd-read-badge--read">開封済み</span>
+            </div>
+          </div>
+
+          <!-- 送信メッセージ（発注者から） -->
+          <div class="msgd-row msgd-row--sent">
+            <div class="msgd-bubble--sent">
+              ご応募ありがとうございます。12/4でお願いしようと思っています。お伺いできる時間帯を教えてください。
+            </div>
+            <div class="msgd-meta">
+              <span class="msgd-time">12月03日 09:17</span>
+              <span class="msgd-read-badge msgd-read-badge--unread">未読</span>
+            </div>
+          </div>
+
+        </div>
+        <!-- /msgd-messages -->
+
+        <!-- メッセージ入力エリア -->
+        <div class="msgd-compose">
+          <input
+            type="text"
+            class="msgd-compose-input"
+            placeholder="メッセージを入力してください…"
+          >
+          <button class="msgd-compose-attach" aria-label="ファイルを添付">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+            </svg>
+          </button>
+          <button class="msgd-compose-send">送信</button>
+        </div>
+
+      </div>
+      <!-- /msgd-thread -->
+
+    </div>
+    <!-- /msgd-wrap -->
+
+  </div>
+  <!-- ===== /メインコンテンツ ===== -->
+
+  <!-- ===== 発注確認モーダル ===== -->
+  <div class="order-modal-overlay" id="orderModalOverlay" hidden>
+    <div class="order-modal" role="dialog" aria-modal="true">
+
+      <!-- STEP 1: 確認 -->
+      <div class="order-modal-step" id="orderStep1">
+        <p class="order-modal-caution">発注判断のため、作業可能日や人物面などで不安がないか事前にメッセージ等でのやり取りを推奨します。</p>
+        <p class="order-modal-question">倉本 泰さんに発注しますか？</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-yes" id="orderModalYes">はい</button>
+          <button type="button" class="btn-order-modal-no" id="orderModalNo">いいえ</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: 完了 -->
+      <div class="order-modal-step" id="orderStep2" hidden>
+        <p class="order-modal-complete">倉本 泰さんへの発注が完了しました。</p>
+        <p class="order-modal-caution">想定人数分の発注が完了しましたら、「募集を停止する」ボタンを押してください。</p>
+        <div class="order-modal-actions">
+          <button type="button" class="btn-order-modal-continue" id="orderModalContinue">募集を継続する</button>
+          <button type="button" class="btn-order-modal-stop" id="orderModalStop">募集を停止する</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ===== /発注確認モーダル ===== -->
+
+  <!-- ===== フッター（共通） ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">お仕事を紹介したい方はこちら</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">&copy; 株式会社コレカ</p>
+    </div>
+  </footer>
+  <!-- ===== /フッター ===== -->
+
+  <script>
+    (function () {
+      var overlay = document.getElementById('orderModalOverlay');
+      var step1   = document.getElementById('orderStep1');
+      var step2   = document.getElementById('orderStep2');
+
+      document.getElementById('msgBtnOrder').addEventListener('click', function () {
+        step1.hidden = false;
+        step2.hidden = true;
+        overlay.hidden = false;
+      });
+
+      document.getElementById('orderModalYes').addEventListener('click', function () {
+        step1.hidden = true;
+        step2.hidden = false;
+      });
+
+      document.getElementById('orderModalNo').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      document.getElementById('orderModalContinue').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      document.getElementById('orderModalStop').addEventListener('click', function () {
+        overlay.hidden = true;
+      });
+
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.hidden = true;
+      });
+    })();
+  </script>
+</body>
+</html>
