@@ -234,8 +234,532 @@
         </div>
       </div>
 
-      <!-- 案件テーブル（JS で描画） -->
-      <div class="proj-table-wrap" id="projectList"></div>
+      <!-- 案件一覧（静的HTML。JSはクラス付与で表示/非表示を制御） -->
+      <div class="proj-table-wrap" id="projectList">
+
+        <!-- リスト表示（テーブル） -->
+        <table class="proj-table proj-view--list">
+          <thead>
+            <tr>
+              <th>案件</th>
+              <th>作業・契約期間</th>
+              <th>状態</th>
+              <th class="col-actions">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr class="proj-row" data-id="GK-2024-001" data-status="active" data-tags="no-hire" data-start="2024/01/15" data-end="2024/03/31" data-contracts="0" data-order="1">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">東京都渋谷区</div>
+                  <div class="proj-tags"><span class="proj-tag proj-tag--no-hire">契約者なし</span></div>
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">0</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2024/01/15</span><br><span class="date-end">〜2024/03/31</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--active">募集中</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew" disabled><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-002" data-status="active" data-tags="contracted" data-start="2024/02/01" data-end="2024/04/30" data-contracts="4" data-order="2">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">神奈川県横浜市</div>
+                  <div class="proj-tags"><span class="proj-tag proj-tag--contracted">契約中</span></div>
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">4</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">1</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">1</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2024/02/01</span><br><span class="date-end">〜2024/04/30</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox"><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--stopped">募集停止</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-003" data-status="active" data-tags="need-action,need-inspection" data-start="2024/01/01" data-end="2024/02/29" data-contracts="2" data-order="3">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">埼玉県さいたま市</div>
+                  <div class="proj-tags"><span class="proj-tag proj-tag--need-action">要応募者対応</span><span class="proj-tag proj-tag--need-inspection">要検収</span></div>
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">2</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">2</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2024/01/01</span><br><span class="date-end">〜2024/02/29</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--active">募集中</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-004" data-status="active" data-tags="contracted,accepting" data-start="2024/03/01" data-end="2024/05/31" data-contracts="6" data-order="4">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">千葉県千葉市</div>
+                  <div class="proj-tags"><span class="proj-tag proj-tag--contracted">契約中</span><span class="proj-tag proj-tag--accepting">仕事引受け待ち</span></div>
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">6</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">1</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2024/03/01</span><br><span class="date-end">〜2024/05/31</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--active">募集中</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-005" data-status="active" data-tags="unread-msg,contracted" data-start="2024/02/15" data-end="2024/06/30" data-contracts="3" data-order="5">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">東京都港区</div>
+                  <div class="proj-tags"><span class="proj-tag proj-tag--unread-msg">メッセージ未読</span><span class="proj-tag proj-tag--contracted">契約中</span></div>
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">3</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">1</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">1</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2024/02/15</span><br><span class="date-end">〜2024/06/30</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox"><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--stopped">募集停止</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-006" data-status="active" data-tags="accepting,no-hire" data-start="2024/04/01" data-end="2024/07/31" data-contracts="0" data-order="6">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">東京都新宿区</div>
+                  <div class="proj-tags"><span class="proj-tag proj-tag--accepting">仕事引受け待ち</span><span class="proj-tag proj-tag--no-hire">契約者なし</span></div>
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">0</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2024/04/01</span><br><span class="date-end">〜2024/07/31</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--active">募集中</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-007" data-status="active" data-tags="need-inspection" data-start="2024/03/15" data-end="2024/06/15" data-contracts="5" data-order="7">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">大阪府大阪市</div>
+                  <div class="proj-tags"><span class="proj-tag proj-tag--need-inspection">要検収</span></div>
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">5</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">2</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2024/03/15</span><br><span class="date-end">〜2024/06/15</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox"><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--stopped">募集停止</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-008" data-status="done" data-tags="" data-start="2023/10/01" data-end="2023/12/31" data-contracts="8" data-order="8">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">福岡県福岡市</div>
+                  
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">8</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2023/10/01</span><br><span class="date-end">〜2023/12/31</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" disabled><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--done">完了</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          <tr class="proj-row" data-id="GK-2024-009" data-status="done" data-tags="" data-start="2023/11/01" data-end="2024/01/31" data-contracts="3" data-order="9">
+            <td class="col-name">
+              <div class="proj-name-cell">
+                <div class="proj-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+                <div class="proj-name-info">
+                  <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+                  <div class="proj-sub">愛知県名古屋市</div>
+                  
+                  <div class="card-stats">
+                    <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">3</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+                    <span class="stat-sep">|</span>
+                    <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="col-date"><span class="date-start">2023/11/01</span><br><span class="date-end">〜2024/01/31</span></td>
+            <td>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" disabled><span class="toggle-slider"></span></label>
+                <span class="state-badge state-badge--done">完了</span>
+              </div>
+            </td>
+            <td class="col-actions">
+              <div class="row-action-btns">
+                <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+                <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+                <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <!-- グリッド表示（初期非表示） -->
+        <div class="proj-icon-grid proj-view--grid is-hidden">
+          <div class="proj-icon-card" data-id="GK-2024-001" data-status="active" data-tags="no-hire" data-start="2024/01/15" data-end="2024/03/31" data-contracts="0" data-order="1">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">東京都渋谷区</div>
+            <div class="proj-tags"><span class="proj-tag proj-tag--no-hire">契約者なし</span></div>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">0</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+            </div>
+            <div class="pic-dates">2024/01/15 〜 2024/03/31</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--active">募集中</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew" disabled><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-002" data-status="active" data-tags="contracted" data-start="2024/02/01" data-end="2024/04/30" data-contracts="4" data-order="2">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">神奈川県横浜市</div>
+            <div class="proj-tags"><span class="proj-tag proj-tag--contracted">契約中</span></div>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">4</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">1</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">1</span></div>
+            </div>
+            <div class="pic-dates">2024/02/01 〜 2024/04/30</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox"><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--stopped">募集停止</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-003" data-status="active" data-tags="need-action,need-inspection" data-start="2024/01/01" data-end="2024/02/29" data-contracts="2" data-order="3">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">埼玉県さいたま市</div>
+            <div class="proj-tags"><span class="proj-tag proj-tag--need-action">要応募者対応</span><span class="proj-tag proj-tag--need-inspection">要検収</span></div>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">2</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">2</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+            </div>
+            <div class="pic-dates">2024/01/01 〜 2024/02/29</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--active">募集中</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-004" data-status="active" data-tags="contracted,accepting" data-start="2024/03/01" data-end="2024/05/31" data-contracts="6" data-order="4">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">千葉県千葉市</div>
+            <div class="proj-tags"><span class="proj-tag proj-tag--contracted">契約中</span><span class="proj-tag proj-tag--accepting">仕事引受け待ち</span></div>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">6</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">1</span></div>
+            </div>
+            <div class="pic-dates">2024/03/01 〜 2024/05/31</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--active">募集中</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-005" data-status="active" data-tags="unread-msg,contracted" data-start="2024/02/15" data-end="2024/06/30" data-contracts="3" data-order="5">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">東京都港区</div>
+            <div class="proj-tags"><span class="proj-tag proj-tag--unread-msg">メッセージ未読</span><span class="proj-tag proj-tag--contracted">契約中</span></div>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">3</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">1</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">1</span></div>
+            </div>
+            <div class="pic-dates">2024/02/15 〜 2024/06/30</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox"><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--stopped">募集停止</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-006" data-status="active" data-tags="accepting,no-hire" data-start="2024/04/01" data-end="2024/07/31" data-contracts="0" data-order="6">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">東京都新宿区</div>
+            <div class="proj-tags"><span class="proj-tag proj-tag--accepting">仕事引受け待ち</span><span class="proj-tag proj-tag--no-hire">契約者なし</span></div>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">0</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+            </div>
+            <div class="pic-dates">2024/04/01 〜 2024/07/31</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--active">募集中</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-007" data-status="active" data-tags="need-inspection" data-start="2024/03/15" data-end="2024/06/15" data-contracts="5" data-order="7">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">大阪府大阪市</div>
+            <div class="proj-tags"><span class="proj-tag proj-tag--need-inspection">要検収</span></div>
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">5</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value stat-value--orange">2</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+            </div>
+            <div class="pic-dates">2024/03/15 〜 2024/06/15</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox"><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--stopped">募集停止</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-008" data-status="done" data-tags="" data-start="2023/10/01" data-end="2023/12/31" data-contracts="8" data-order="8">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">福岡県福岡市</div>
+            
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">8</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+            </div>
+            <div class="pic-dates">2023/10/01 〜 2023/12/31</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" disabled><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--done">完了</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+          <div class="proj-icon-card" data-id="GK-2024-009" data-status="done" data-tags="" data-start="2023/11/01" data-end="2024/01/31" data-contracts="3" data-order="9">
+            <div class="pic-thumb"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <a href="detail.html" class="proj-title proj-title--link">警察署への書類提出業務_30分</a>
+            <div class="proj-sub">愛知県名古屋市</div>
+            
+            <div class="card-stats">
+              <div class="stat-item"><span class="stat-label">契約者</span><span class="stat-value">3</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">要検収</span><span class="stat-value">0</span></div>
+              <span class="stat-sep">|</span>
+              <div class="stat-item"><span class="stat-label">報告中</span><span class="stat-value">0</span></div>
+            </div>
+            <div class="pic-dates">2023/11/01 〜 2024/01/31</div>
+            <div class="pic-state">
+              <label class="toggle-switch" style="flex-shrink:0;"><input type="checkbox" disabled><span class="toggle-slider"></span></label>
+              <span class="state-badge state-badge--done">完了</span>
+            </div>
+            <div class="row-action-btns">
+              <a href="applicants.html" class="row-action-btn row-action-btn--applicants"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>応募者・契約者を確認する</a>
+              <a href="procedure.html" class="row-action-btn row-action-btn--procedure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>作業手順・報告を確認する</a>
+              <button class="row-action-btn row-action-btn--renew"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>契約を更新する</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
 
       <!-- 空の表示 -->
       <div class="empty-state" id="emptyState" style="display:none;">
@@ -471,7 +995,6 @@
   </div>
   <!-- ===== /絞り込み検索モーダル ===== -->
 
-  <script src="../js/projects.js"></script>
   <script src="../js/components.js"></script>
   <script>
     // 絞り込み検索モーダル開閉
