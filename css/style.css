@@ -1623,6 +1623,33 @@ a.nav-user--active .header-avatar-icon {
   gap: 8px;
 }
 
+/* ===========================
+   Project List: View/Filter/Sort utility classes
+   （JSで動的生成せず、クラス付与で表示制御）
+=========================== */
+.is-hidden {
+  display: none !important;
+}
+
+.proj-row.is-filtered-out,
+.proj-icon-card.is-filtered-out,
+.proj-row.is-paged-out,
+.proj-icon-card.is-paged-out {
+  display: none;
+}
+
+/* 並び替えボタン内のアイコン切り替え */
+.sort-btn-icon {
+  display: none;
+  align-items: center;
+}
+.sort-btn-icon.is-active {
+  display: inline-flex;
+}
+.filter-ctrl-btn.filter-ctrl-btn--active .sort-btn-label {
+  display: none;
+}
+
 .pic-footer {
   display: flex;
   align-items: center;

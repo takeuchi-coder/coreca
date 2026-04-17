@@ -137,10 +137,28 @@
           <!-- 並び替えボタン + ドロップダウン -->
           <div class="sort-ctrl-wrap">
             <button class="filter-ctrl-btn" id="sortCtrlBtn">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 6h18M6 12h12M9 18h6"/>
-              </svg>
-              並び替え
+              <span class="sort-btn-icon sort-btn-icon--default is-active">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M9 18h6"/></svg>
+              </span>
+              <span class="sort-btn-icon sort-btn-icon--start-date-desc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </span>
+              <span class="sort-btn-icon sort-btn-icon--start-date-asc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              </span>
+              <span class="sort-btn-icon sort-btn-icon--end-date-asc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              </span>
+              <span class="sort-btn-icon sort-btn-icon--end-date-desc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </span>
+              <span class="sort-btn-icon sort-btn-icon--contracts-desc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </span>
+              <span class="sort-btn-icon sort-btn-icon--contracts-asc">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              </span>
+              <span class="sort-btn-label">並び替え</span>
             </button>
             <div class="sort-panel" id="sortPanel">
               <button class="sort-option sort-option--active" data-sort="default">
@@ -228,8 +246,23 @@
         <p>該当する案件がありません</p>
       </div>
 
-      <!-- ページネーション -->
-      <nav class="pagination" id="pagination" aria-label="ページネーション"></nav>
+      <!-- ページネーション（最大2ページぶんのボタンを事前配置。表示件数と絞り込み結果に応じてクラスで表示/非表示） -->
+      <nav class="pagination is-hidden" id="pagination" aria-label="ページネーション">
+        <button class="page-btn page-btn--prev" id="pagePrevBtn" disabled>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          前へ
+        </button>
+        <button class="page-btn page-btn--active" data-page="1">1</button>
+        <button class="page-btn is-hidden" data-page="2">2</button>
+        <button class="page-btn page-btn--next" id="pageNextBtn" disabled>
+          次へ
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </nav>
 
       <!-- フッターページネーション -->
       <div class="footer-pagination" id="footerPagination">
