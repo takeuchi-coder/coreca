@@ -4,7 +4,7 @@
 
 /* ボディ */
 .worker-body {
-  background: #f3fff4;
+  background: #f9fffa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@
   width: 36px;
   height: 36px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   border: 1.5px solid #4c9e51;
 }
 
@@ -75,7 +75,7 @@
   font-weight: 600;
   line-height: 1;
   padding: 6px 10px;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: color 0.15s;
 }
 
@@ -152,7 +152,7 @@
   box-sizing: border-box;
   padding: 13px 16px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-family: inherit;
   color: #333;
@@ -177,7 +177,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
@@ -213,7 +213,7 @@
 =========================== */
 .worker-notice {
   background: #f5f5f5;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 16px 20px;
 }
 
@@ -247,7 +247,7 @@
   -webkit-appearance: none;
   padding: 6px 32px 6px 12px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 14px;
   font-family: inherit;
   color: #333;
@@ -298,7 +298,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
@@ -416,7 +416,7 @@
   color: #fff;
   font-size: 12px;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 12px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -431,7 +431,7 @@
   font-size: 12px;
   font-weight: 400;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 12px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -453,7 +453,7 @@
 .profile-input {
   padding: 9px 12px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-family: inherit;
   color: #333;
@@ -514,7 +514,7 @@
   color: #555;
   font-size: 14px;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 10px;
   max-width: 520px;
 }
@@ -530,7 +530,7 @@
   -webkit-appearance: none;
   padding: 9px 28px 9px 12px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-family: inherit;
   color: #333;
@@ -562,7 +562,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 14px;
   font-weight: 700;
   font-family: inherit;
@@ -596,7 +596,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
@@ -670,7 +670,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
@@ -764,7 +764,7 @@
   color: #fff;
   font-size: 13px;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 12px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -779,7 +779,7 @@
 /* グレー注意ボックス */
 .complete-notice-box {
   background: #f3f3f3;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 14px 18px;
   margin-top: 14px;
 }
@@ -826,7 +826,7 @@
   max-width: 900px;
   margin: 0 auto;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 28px 32px 40px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
@@ -848,7 +848,7 @@
 /* ── アカウント情報カード ── */
 .wmypage-account-card {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
 }
 
@@ -922,7 +922,7 @@
   color: #555;
   text-decoration: none;
   padding: 4px;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: color 0.15s;
   flex-shrink: 0;
 }
@@ -1068,7 +1068,7 @@
   position: absolute;
   inset: 0;
   background: #ccc;
-  border-radius: 16px;
+  border-radius: 24px;
   transition: background 0.2s;
   cursor: pointer;
 }
@@ -1098,7 +1098,7 @@
 .wsearch-remote-btn {
   padding: 5px 14px;
   border: 1.5px solid #aaa;
-  border-radius: 26px;
+  border-radius: 34px;
   background: #fff;
   color: #444;
   font-size: 14px;
@@ -1129,7 +1129,7 @@
   align-items: center;
   gap: 8px;
   border: 1px solid #ddd;
-  border-radius: 12px;
+  border-radius: 18px;
   padding: 8px 12px;
   background: #fff;
   cursor: pointer;
@@ -1226,7 +1226,7 @@
   background: none;
   color: #555;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   flex-shrink: 0;
   transition: background 0.12s, color 0.12s;
 }
@@ -1336,7 +1336,7 @@
   right: 12px;
   z-index: 1100;
   background: #fff;
-  border-radius: 24px;
+  border-radius: 32px;
   padding: 6px 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
@@ -1373,7 +1373,7 @@
   font-weight: 700;
   line-height: 1;
   border: none;
-  border-radius: 24px;
+  border-radius: 32px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   white-space: nowrap;
@@ -1402,7 +1402,7 @@
   font-weight: 700;
   line-height: 1;
   border: none;
-  border-radius: 24px;
+  border-radius: 32px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: background 0.15s;
@@ -1434,7 +1434,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 28px;
+  border-radius: 36px;
   font-family: inherit;
   font-size: 15px;
   font-weight: 700;
@@ -1515,7 +1515,7 @@
   appearance: none;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 6px 28px 6px 10px;
   font-size: 14px;
   color: #333;
@@ -1577,7 +1577,7 @@
   width: 130px;
   min-height: 110px;
   background: #e8e8e8;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -1619,7 +1619,7 @@
   display: inline-flex;
   align-items: center;
   padding: 2px 10px;
-  border-radius: 26px;
+  border-radius: 34px;
   border: 1px solid;
   font-size: 13px;
   font-weight: 700;
@@ -1683,7 +1683,7 @@
   color: #fff;
   font-size: 15px;
   font-weight: 700;
-  border-radius: 8px;
+  border-radius: 14px;
   text-decoration: none;
   white-space: nowrap;
   transition: background 0.15s;
@@ -1758,7 +1758,7 @@
   flex-shrink: 0;
   width: 130px;
   height: 96px;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
   background: #f0f0f0;
   display: flex;
@@ -1822,7 +1822,7 @@
   align-items: center;
   padding: 2px 10px;
   border: 1.5px solid #4c9e51;
-  border-radius: 26px;
+  border-radius: 34px;
   color: #4c9e51;
   font-size: 12px;
   font-weight: 700;
@@ -1887,7 +1887,7 @@
   align-items: center;
   padding: 2px 10px;
   border: 1.5px solid #4c9e51;
-  border-radius: 26px;
+  border-radius: 34px;
   color: #4c9e51;
   background: #fff;
 }
@@ -1926,7 +1926,7 @@
   padding: 10px 24px;
   background: #4c9e51;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
@@ -1980,7 +1980,7 @@
   font-size: 14px;
   color: #555;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 16px;
   transition: background 0.15s;
   white-space: nowrap;
 }
@@ -2063,7 +2063,7 @@
   width: 240px;
   min-height: 180px;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 16px;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -2136,7 +2136,7 @@
   color: #fff;
   font-size: 12px;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 12px;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -2251,7 +2251,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
@@ -2292,7 +2292,7 @@
   flex-direction: column;
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
 }
 
@@ -2374,7 +2374,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
   margin-bottom: 16px;
 }
@@ -2420,7 +2420,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #bbb;
-  border-radius: 26px;
+  border-radius: 34px;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -2439,7 +2439,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #bbb;
-  border-radius: 26px;
+  border-radius: 34px;
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
@@ -2461,7 +2461,7 @@
 /* マップコンテナ */
 .wmylist-map-wrap {
   margin-bottom: 16px;
-  border-radius: 12px;
+  border-radius: 18px;
   overflow: hidden;
   border: 1px solid #ddd;
 }
@@ -2498,13 +2498,13 @@
 .wmylist-card--highlighted {
   outline: 2px solid #4c9e51;
   outline-offset: -2px;
-  border-radius: 12px;
+  border-radius: 18px;
 }
 
 /* 空状態 */
 .wmylist-empty {
   background: #f0f0f0;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 20px 24px;
   color: #666;
   font-size: 15px;
@@ -2536,7 +2536,7 @@
 .wmylist-modal {
   position: relative;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   width: 100%;
   max-width: 760px;
   padding: 28px 36px 32px;
@@ -2597,7 +2597,7 @@
   padding: 0 12px;
   font-size: 15px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   outline: none;
   font-family: inherit;
 }
@@ -2616,7 +2616,7 @@
 .wmylist-modal-btn {
   padding: 10px 40px;
   font-size: 15px;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   font-family: inherit;
   font-weight: 400;
@@ -2654,7 +2654,7 @@
 .wmylist-card {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 16px;
   overflow: hidden;
 }
@@ -2701,7 +2701,7 @@
   font-size: 13px;
   color: #888;
   border: 1px solid #bbb;
-  border-radius: 26px;
+  border-radius: 34px;
   padding: 2px 10px;
   white-space: nowrap;
 }
@@ -2799,7 +2799,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s;
@@ -2888,7 +2888,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   outline: none;
 }
@@ -2975,7 +2975,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   outline: none;
 }
@@ -2998,7 +2998,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #bbb;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -3011,7 +3011,7 @@
 .wreward-table-wrap {
   overflow-x: auto;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 20px;
 }
 
@@ -3095,7 +3095,7 @@
   color: #555;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s;
@@ -3115,7 +3115,7 @@
 /* 空状態 */
 .wreward-empty {
   background: #f0f0f0;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 20px 24px;
   color: #666;
   font-size: 15px;
@@ -3206,7 +3206,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   outline: none;
 }
@@ -3232,7 +3232,7 @@
   padding: 8px 22px;
   font-size: 14px;
   font-family: inherit;
-  border-radius: 26px;
+  border-radius: 34px;
   cursor: pointer;
   transition: background 0.15s;
   background: #fff;
@@ -3261,7 +3261,7 @@
   overflow-x: auto;
   margin-bottom: 20px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 .wmsg-table {
@@ -3347,7 +3347,7 @@
   background: #555;
   color: #fff;
   font-size: 12px;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 
 .wmsg-msg-content {
@@ -3372,7 +3372,7 @@
   background: #fff;
   color: #333;
   border: 1px solid #bbb;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 13px;
   cursor: pointer;
   white-space: nowrap;
@@ -3409,7 +3409,7 @@
   color: #555;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.15s;
@@ -3429,7 +3429,7 @@
 /* 空状態 */
 .wmsg-empty {
   background: #f0f0f0;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 20px 24px;
   color: #666;
   font-size: 15px;
@@ -3462,7 +3462,7 @@
 /* モーダル本体 */
 .wmsg-modal {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   width: 100%;
   max-width: 560px;
   padding: 28px 36px 32px;
@@ -3493,7 +3493,7 @@
   cursor: pointer;
   line-height: 1;
   padding: 2px 6px;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: color 0.15s;
 }
 
@@ -3533,7 +3533,7 @@
   font-family: inherit;
   color: #333;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   outline: none;
   transition: border-color 0.15s;
 }
@@ -3563,7 +3563,7 @@
   font-size: 15px;
   font-family: inherit;
   font-weight: 700;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -3612,7 +3612,7 @@
   color: #3d8042;
   background: #fff;
   border: 1.5px solid #3d8042;
-  border-radius: 26px;
+  border-radius: 34px;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
   white-space: nowrap;
@@ -3643,7 +3643,7 @@
   background: #fff;
   width: 420px;
   max-width: calc(100vw - 32px);
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
 }
@@ -3706,7 +3706,7 @@
   color: #fff;
   background: #3d8042;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   text-align: left;
   line-height: 1.4;
@@ -3759,7 +3759,7 @@
   color: #333;
   text-decoration: none;
   padding: 4px;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: color 0.15s;
 }
 
@@ -3784,7 +3784,7 @@
 .wth-table-area {
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 14px;
   min-height: 80px;
   margin-bottom: 20px;
 }
@@ -3834,7 +3834,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: color 0.15s;
 }
 
@@ -3859,7 +3859,7 @@
   color: #555;
   background: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
@@ -3927,7 +3927,7 @@
 .wth-status {
   display: inline-block;
   padding: 3px 10px;
-  border-radius: 26px;
+  border-radius: 34px;
   font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
@@ -3997,7 +3997,7 @@
 /* カード */
 .wbasic-card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 16px;
   overflow: hidden;
 }
@@ -4029,7 +4029,7 @@
   color: #fff;
   background: #3d8042;
   padding: 1px 5px;
-  border-radius: 4px;
+  border-radius: 8px;
   white-space: nowrap;
 }
 
@@ -4053,7 +4053,7 @@
   font-family: inherit;
   color: #333;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   box-sizing: border-box;
   background: #fff;
   transition: border-color 0.2s;
@@ -4111,7 +4111,7 @@
   color: #3d8042;
   background: #fff;
   border: 1px solid #3d8042;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
@@ -4132,7 +4132,7 @@
   color: #fff;
   background: #3d8042;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s;
@@ -4168,7 +4168,7 @@
   color: #fff;
   background: #3d8042;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -4193,7 +4193,7 @@
   font-family: inherit;
   color: #333;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   background: #fff;
   cursor: pointer;
 }
@@ -4221,7 +4221,7 @@
   color: #555;
   background: #f5f5f5;
   padding: 6px 10px;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 10px;
 }
 
@@ -4289,7 +4289,7 @@
   color: #fff;
   background: #3d8042;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   transition: background 0.15s;
 }
@@ -4340,7 +4340,7 @@
   padding: 0;
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
 }
 
@@ -4375,7 +4375,7 @@
 .wbank-kana-card {
   background: #fff;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 16px;
 }
 
@@ -4424,7 +4424,7 @@
   font-size: 14px;
   color: #333;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   background: #fff;
   text-decoration: none;
   cursor: pointer;
@@ -4454,7 +4454,7 @@
   padding: 24px 16px 28px;
   background: #f9f9f9;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 16px;
   margin-bottom: 24px;
   gap: 12px;
 }
@@ -4480,7 +4480,7 @@
 .wtransfer-alert {
   background: #eaf6eb;
   border: 1px solid #f5c6cb;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 12px 16px;
   font-size: 15px;
   color: #3d8042;
@@ -4489,7 +4489,7 @@
 
 .wtransfer-summary {
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 14px;
   overflow: hidden;
   margin-top: 8px;
 }
@@ -4563,7 +4563,7 @@
 
 .wtransfer-modal {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 14px;
   width: 92%;
   max-width: 400px;
   padding: 36px 32px 32px;
@@ -4597,7 +4597,7 @@
   font-size: 16px;
   font-family: inherit;
   font-weight: 700;
-  border-radius: 8px;
+  border-radius: 14px;
   border: none;
   cursor: pointer;
   transition: opacity 0.15s;
@@ -4640,7 +4640,7 @@
 .wlogin-select-modal {
   position: relative;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 14px;
   width: 92%;
   max-width: 400px;
   padding: 40px 32px 36px;
@@ -4701,7 +4701,7 @@
   background: #e04a3a;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 18px;
   font-weight: 700;
   font-family: inherit;
@@ -4749,7 +4749,7 @@
   color: #1a6fa8;
   font-size: 15px;
   padding: 14px 18px;
-  border-radius: 8px;
+  border-radius: 14px;
   margin-bottom: 28px;
   line-height: 1.6;
 }
@@ -4771,7 +4771,7 @@
   color: #555;
   font-size: 14px;
   padding: 16px 20px;
-  border-radius: 8px;
+  border-radius: 14px;
   line-height: 1.7;
 }
 
@@ -4897,7 +4897,7 @@
 
 .wcontact-card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 36px 40px 40px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
@@ -5029,7 +5029,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -5081,7 +5081,7 @@
   background: #3d8042;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -5158,7 +5158,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-family: inherit;
   outline: none;
   box-sizing: border-box;
@@ -5189,7 +5189,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-family: inherit;
   outline: none;
   box-sizing: border-box;
@@ -5214,7 +5214,7 @@
   background: #fff;
   color: #666;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 400;
   cursor: pointer;
@@ -5297,7 +5297,7 @@
   background: #888;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -5318,7 +5318,7 @@
   background: #3d8042;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -5416,7 +5416,7 @@
 
 .wsidebar-balance {
   background: #f5f5f5;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 14px 16px;
   margin-bottom: 4px;
 }
@@ -5506,7 +5506,7 @@
 
 .apply-modal {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 18px;
   width: 100%;
   max-width: 460px;
   max-height: 90vh;
@@ -5572,7 +5572,7 @@
   font-size: 12px;
   font-weight: 700;
   padding: 2px 7px;
-  border-radius: 6px;
+  border-radius: 12px;
 }
 
 .apply-modal-badge--required {
@@ -5609,7 +5609,7 @@
   height: 90px;
   padding: 10px 12px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 14px;
   font-family: inherit;
   resize: vertical;
@@ -5654,7 +5654,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px 0 0 4px;
+  border-radius: 14px 0 0 4px;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
@@ -5694,7 +5694,7 @@
 
 .apply-complete-flow {
   background: #f5f7fa;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 14px 16px;
   font-size: 15px;
   line-height: 2;
@@ -5711,7 +5711,7 @@
   background: #fff;
   color: #555;
   border: 2px solid #ccc;
-  border-radius: 10px;
+  border-radius: 16px;
   font-size: 16px;
   font-weight: 700;
   font-family: inherit;
@@ -5806,7 +5806,7 @@
   display: inline-block;
   padding: 4px 14px;
   border: 1px solid #1a73e8;
-  border-radius: 26px;
+  border-radius: 34px;
   font-size: 13px;
   font-weight: 700;
   color: #1a73e8;
@@ -5950,7 +5950,7 @@
   display: inline-block;
   text-align: left;
   background: #f5f7fa;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 16px 28px;
   margin: 0 0 24px;
   font-size: 15px;
@@ -5998,7 +5998,7 @@
   background: #fff;
   color: #333;
   border: 1px solid #bbb;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 700;
   font-family: inherit;
@@ -6015,7 +6015,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 700;
   font-family: inherit;
@@ -6032,7 +6032,7 @@
   background: #fff;
   color: #555;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 700;
   font-family: inherit;
@@ -6065,7 +6065,7 @@
 
 .wprocedure-modal {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 16px;
   width: 100%;
   max-width: 560px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
@@ -6084,7 +6084,7 @@
   top: 0;
   background: #fff;
   z-index: 1;
-  border-radius: 10px 6px 0 0;
+  border-radius: 16px 6px 0 0;
 }
 
 .wprocedure-modal-title {
@@ -6137,7 +6137,7 @@
 .wprocedure-modal-overview {
   background: #fafafa;
   border: 1px solid #e8e8e8;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 12px 14px;
   margin: 0 0 16px;
   font-size: 14px;
@@ -6178,7 +6178,7 @@
   height: 90px;
   background: #f0f0f0;
   border: 1px dashed #bbb;
-  border-radius: 8px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6229,7 +6229,7 @@
 .wprocedure-modal-date-select {
   padding: 5px 8px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 14px;
   font-family: inherit;
   background: #fff;
@@ -6241,7 +6241,7 @@
   font-size: 12px;
   font-weight: 700;
   padding: 1px 6px;
-  border-radius: 6px;
+  border-radius: 12px;
   margin-left: 6px;
 }
 
@@ -6298,7 +6298,7 @@
   width: 100%;
   padding: 8px 10px;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 14px;
   font-family: inherit;
   box-sizing: border-box;
@@ -6308,7 +6308,7 @@
 .wprocedure-modal-info-box {
   background: #f1faf2;
   border: 1px solid #f5c0c4;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 10px 14px;
   font-size: 14px;
   margin: 10px 0 14px;
@@ -6317,7 +6317,7 @@
 /* 立替金セクション */
 .wprocedure-modal-box {
   background: #f5f7fa;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 12px 14px;
   font-size: 14px;
   line-height: 1.75;
@@ -6358,7 +6358,7 @@
   background: #4c9e51;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 700;
   font-family: inherit;
@@ -6385,7 +6385,7 @@
   background: #f5f5f5;
   color: #555;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 14px;
   font-weight: 700;
   font-family: inherit;
@@ -6402,7 +6402,7 @@
   background: #fff;
   color: #4c9e51;
   border: 1px solid #4c9e51;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 14px;
   font-weight: 700;
   font-family: inherit;
@@ -6445,7 +6445,7 @@
 .wreport-table-wrap {
   margin-top: 20px;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -6492,7 +6492,7 @@
   color: #333;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   margin-right: 8px;
 }
@@ -6509,7 +6509,7 @@
   color: #fff;
   background: #3d8042;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
 }
 
@@ -6521,7 +6521,7 @@
 .wreport-info-banner {
   background: #e8f4fd;
   border: 1px solid #b3d7f5;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 12px 16px;
   font-size: 15px;
   color: #1a6ce8;
@@ -6534,7 +6534,7 @@
   background: #b0b0b0;
   color: #fff;
   border: none;
-  border-radius: 10px;
+  border-radius: 16px;
   font-size: 15px;
   font-weight: 700;
   cursor: not-allowed;
@@ -6544,7 +6544,7 @@
 /* 仕事引き受け・辞退確認ポップアップ */
 .wprocedure-popup {
   background: #fff;
-  border-radius: 14px;
+  border-radius: 20px;
   padding: 32px 24px 24px;
   width: 90%;
   max-width: 360px;
@@ -6660,7 +6660,7 @@
   width: 100%;
   min-height: 100px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 8px 10px;
   font-size: 14px;
   font-family: inherit;
@@ -6680,7 +6680,7 @@
   background: #fff;
   color: #333;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 15px;
   font-weight: 700;
   font-family: inherit;
@@ -6706,7 +6706,7 @@
   padding: 6px 14px;
   background: #fff;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 14px;
   color: #333;
   cursor: pointer;
@@ -6759,7 +6759,7 @@
   background: #fff;
   color: #333;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -6841,7 +6841,7 @@
   font-size: 15px;
   color: #333;
   margin-bottom: 24px;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .wprocedure-out-of-period {
@@ -6868,7 +6868,7 @@
   background: #f0faf4;
   border: 1.5px solid #2a9d5c;
   border-left: 5px solid #2a9d5c;
-  border-radius: 12px;
+  border-radius: 18px;
   padding: 14px 18px 14px 16px;
   margin-bottom: 20px;
 }
