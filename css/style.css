@@ -3615,6 +3615,7 @@ a.nav-user--active .header-avatar-icon {
   width: 100%;
   border-collapse: collapse;
   min-width: 2200px;
+  background-color: #fff;
 }
 
 .pay-th {
