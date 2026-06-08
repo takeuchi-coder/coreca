@@ -2850,7 +2850,7 @@ a.nav-user--active .header-avatar-icon {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  background: #f0f2f5;
+  background-color: transparent;
   min-height: calc(100vh - 56px);
 }
 
