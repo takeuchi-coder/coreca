@@ -315,7 +315,7 @@ a.nav-user--active .header-avatar-icon {
   flex-shrink: 0;
   position: sticky;
   top: 72px;
-  background: #F5F5F5;
+  background: #eaf6eb;
   border: none;
   border-radius: 0;
   border-right: 1px solid #DCDCDC;
@@ -375,7 +375,7 @@ a.nav-user--active .header-avatar-icon {
 .main-content {
   flex: 1;
   min-width: 0;
-  background: #F5F5F5;
+  background: #eaf6eb;
   padding: 20px;
 }
 
@@ -629,7 +629,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .status-badge--gray {
-  background: #f5f5f5;
+  background: #eaf6eb;
   color: #616161;
   border: 1px solid #e0e0e0;
 }
@@ -833,7 +833,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-action--outline-gray:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
   border-color: #888;
 }
 
@@ -1413,7 +1413,7 @@ a.nav-user--active .header-avatar-icon {
 .type-badge--teal   { background: #e0f2f1; color: #00695c; }
 .type-badge--indigo { background: #e8eaf6; color: #283593; }
 .type-badge--amber  { background: #fff8e1; color: #f57f17; }
-.type-badge--gray   { background: #f5f5f5; color: #616161; }
+.type-badge--gray   { background: #eaf6eb; color: #616161; }
 
 /* State badge (solid) */
 .state-badge {
@@ -1544,7 +1544,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .sort-option:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .sort-option--active {
@@ -1710,7 +1710,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* ページ全体 */
 .notif-body {
-  background: #f5f5f5;
+  background: #eaf6eb;
   min-height: 100vh;
   margin: 0;
 }
@@ -1847,7 +1847,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-cta-btn:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .notif-cta-btn--help {
@@ -2458,7 +2458,7 @@ a.nav-user--active .header-avatar-icon {
   height: 72px;
   border: 1px solid #e0e0e0;
   border-radius: 14px;
-  background: #f5f5f5;
+  background: #eaf6eb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2912,7 +2912,7 @@ a.nav-user--active .header-avatar-icon {
 .proj-detail-id {
   font-size: 13px;
   color: #999;
-  background: #f5f5f5;
+  background: #eaf6eb;
   padding: 2px 8px;
   border-radius: 14px;
 }
@@ -3137,7 +3137,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: #f5f5f5;
+  background: #eaf6eb;
   border: 1px solid #e0e0e0;
   border-radius: 16px;
 }
@@ -3319,7 +3319,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msg-status-badge--active { background: #e8f5e9; color: #2e7d32; }
-.msg-status-badge--done   { background: #f5f5f5; color: #757575; }
+.msg-status-badge--done   { background: #eaf6eb; color: #757575; }
 
 /* メッセージセル */
 .msg-td--message { max-width: 240px; }
@@ -3708,7 +3708,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-mynumber--unknown {
-  background: #f5f5f5;
+  background: #eaf6eb;
   color: #757575;
 }
 
@@ -3866,7 +3866,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-status--none {
-  background: #f5f5f5;
+  background: #eaf6eb;
   color: #999;
 }
 
@@ -4156,7 +4156,7 @@ a.nav-user--active .header-avatar-icon {
   transition: all 0.15s;
 }
 
-.msgd-btn-reject:hover { background: #f5f5f5; color: #1a1a1a; }
+.msgd-btn-reject:hover { background: #eaf6eb; color: #1a1a1a; }
 
 /* ==============================
    チャットカード
@@ -4418,7 +4418,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .search-modal-close:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
   color: #333;
 }
 
@@ -5025,7 +5025,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-fmodal-clear:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .btn-fmodal-submit {
@@ -5391,7 +5391,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-order-modal-no:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .btn-order-modal-continue {
@@ -5409,7 +5409,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-order-modal-continue:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .btn-order-modal-stop {
@@ -5588,7 +5588,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-search-modal-clear:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .btn-search-modal-submit {
@@ -5786,7 +5786,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-proc-outline:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 /* フィルターボタン群 */
@@ -5822,7 +5822,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-proc-filter--outline:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 /* 作業リスト */
@@ -5900,7 +5900,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-proc-action:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .btn-proc-kenshu {
@@ -6232,7 +6232,7 @@ a.nav-user--active .header-avatar-icon {
 .order-status-badge--accepting  { background: #e8f5e9; color: #2e7d32; }
 .order-status-badge--contracted { background: #e3f2fd; color: #1565c0; }
 .order-status-badge--inspection { background: #fff3e0; color: #f57c00; }
-.order-status-badge--done       { background: #f5f5f5; color: #777; }
+.order-status-badge--done       { background: #eaf6eb; color: #777; }
 
 /* Alerts panel */
 .dashboard-alerts {

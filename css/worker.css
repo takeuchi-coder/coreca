@@ -212,7 +212,7 @@
    注意書きボックス
 =========================== */
 .worker-notice {
-  background: #f5f5f5;
+  background: #eaf6eb;
   border-radius: 14px;
   padding: 16px 20px;
 }
@@ -2766,7 +2766,7 @@
 }
 
 .wmylist-card-action-btn:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 /* ページネーション */
@@ -3673,7 +3673,7 @@
 }
 
 .wregion-tab--all:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .wregion-tab--close {
@@ -3683,7 +3683,7 @@
 }
 
 .wregion-tab--close:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 /* 地域グリッド */
@@ -4220,7 +4220,7 @@
 .wbasic-birth-note-bg {
   font-size: 13px;
   color: #555;
-  background: #f5f5f5;
+  background: #eaf6eb;
   padding: 6px 10px;
   border-radius: 14px;
   margin-bottom: 10px;
@@ -4433,7 +4433,7 @@
 }
 
 .wbankform-btn-change:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .wbankform-input-col {
@@ -4768,7 +4768,7 @@
 
 /* 注意書きボックス（グレー） */
 .wpr-note-box {
-  background: #f5f5f5;
+  background: #eaf6eb;
   color: #555;
   font-size: 14px;
   padding: 16px 20px;
@@ -4836,7 +4836,7 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 72px);
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .wmanual-placeholder-inner {
@@ -5224,7 +5224,7 @@
 }
 
 .wcontact-file-btn:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
   border-color: #aaa;
 }
 
@@ -5416,7 +5416,7 @@
 }
 
 .wsidebar-balance {
-  background: #f5f5f5;
+  background: #eaf6eb;
   border-radius: 16px;
   padding: 14px 16px;
   margin-bottom: 4px;
@@ -5456,7 +5456,7 @@
 }
 
 .wsidebar-link:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
   color: #3d8042;
 }
 
@@ -5473,7 +5473,7 @@
 
 .wsidebar-link--danger:hover {
   color: #3d8042;
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 @media (max-width: 640px) {
@@ -5683,7 +5683,7 @@
 }
 
 .btn-apply-modal-cancel:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .apply-complete-text {
@@ -5722,7 +5722,7 @@
 }
 
 .btn-wdetail-cancel:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
   border-color: #aaa;
 }
 
@@ -6008,7 +6008,7 @@
 }
 
 .btn-wprocedure-outline:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .btn-wprocedure-primary {
@@ -6042,7 +6042,7 @@
 }
 
 .btn-wprocedure-ghost:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 /* ===========================
@@ -6383,7 +6383,7 @@
 
 .wprocedure-modal-btn-secondary {
   padding: 11px 16px;
-  background: #f5f5f5;
+  background: #eaf6eb;
   color: #555;
   border: 1px solid #ccc;
   border-radius: 14px;
@@ -6499,7 +6499,7 @@
 }
 
 .btn-wreport-outline:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .btn-wreport-primary {
@@ -6690,7 +6690,7 @@
 }
 
 .kenshu-confirm-cancel-btn:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 /* 承認完了モーダル */
@@ -6714,7 +6714,7 @@
 }
 
 .kenshu-complete-header-close:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 .kenshu-complete-title {
@@ -6767,7 +6767,7 @@
 }
 
 .kenshu-complete-footer-btn:hover {
-  background: #f5f5f5;
+  background: #eaf6eb;
 }
 
 /* ===========================
