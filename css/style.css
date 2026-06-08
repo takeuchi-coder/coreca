@@ -318,7 +318,6 @@ a.nav-user--active .header-avatar-icon {
   background-color: transparent;
   border: none;
   border-radius: 0;
-  border-right: 1px solid #DCDCDC;
   padding: 14px 12px;
   display: flex;
   flex-direction: column;
@@ -335,7 +334,6 @@ a.nav-user--active .header-avatar-icon {
 .sidebar-nav {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #eee;
   padding-top: 8px;
 }
 
