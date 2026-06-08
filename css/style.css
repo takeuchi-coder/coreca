@@ -315,7 +315,7 @@ a.nav-user--active .header-avatar-icon {
   flex-shrink: 0;
   position: sticky;
   top: 72px;
-  background: #eaf6eb;
+  background-color: transparent;
   border: none;
   border-radius: 0;
   border-right: 1px solid #DCDCDC;
@@ -375,7 +375,7 @@ a.nav-user--active .header-avatar-icon {
 .main-content {
   flex: 1;
   min-width: 0;
-  background: #eaf6eb;
+  background-color: transparent;
   padding: 20px;
 }
 
