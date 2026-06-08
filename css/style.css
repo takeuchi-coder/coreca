@@ -1328,6 +1328,10 @@ a.nav-user--active .header-avatar-icon {
   border-bottom: none;
 }
 
+.proj-table td:last-child {
+  border-bottom: none;
+}
+
 .proj-table tbody tr:hover {
   background: #fafafa;
 }
