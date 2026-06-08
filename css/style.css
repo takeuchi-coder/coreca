@@ -168,7 +168,7 @@ button {
 
 .badge--red {
   background: #fff;
-  color: #4c9e51;
+  color: #c62828;
 }
 
 /* 右側アクション — flex: 1 で右半分を占有し、コンテンツを右端へ寄せる */
@@ -359,7 +359,7 @@ a.nav-user--active .header-avatar-icon {
 .sidebar-nav-btn:hover {
   color: #4c9e51;
   background: #eef8ef;
-  border-left-color: #f8a0a8;
+  border-left-color: #a5d6a7;
 }
 
 .sidebar-nav-btn.tab-btn--active {
@@ -481,7 +481,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 /* タグ別アクセント色 — proj-tag パレットと統一 */
-.filter-pill--no-hire        { --pill-color: #4c9e51; color: #4c9e51; border-color: #4c9e51; --pill-badge-bg: #4c9e51; }
+.filter-pill--no-hire        { --pill-color: #c62828; color: #c62828; border-color: #c62828; --pill-badge-bg: #c62828; }
 .filter-pill--need-action    { --pill-color: #f57c00; color: #f57c00; border-color: #f57c00; --pill-badge-bg: #f57c00; }
 .filter-pill--accepting      { --pill-color: #2e7d32; color: #2e7d32; border-color: #2e7d32; --pill-badge-bg: #2e7d32; }
 .filter-pill--contracted     { --pill-color: #0f569f; color: #0f569f; border-color: #0f569f; --pill-badge-bg: #0f569f; }
@@ -509,7 +509,7 @@ a.nav-user--active .header-avatar-icon {
   --pill-badge-bg: rgba(0,0,0,0.22);
 }
 
-.filter-pill--red    { --pill-color: #4c9e51; color: #4c9e51; border-color: #4c9e51; --pill-badge-bg: #4c9e51; }
+.filter-pill--red    { --pill-color: #c62828; color: #c62828; border-color: #c62828; --pill-badge-bg: #c62828; }
 .filter-pill--orange { --pill-color: #f57c00; color: #f57c00; border-color: #f57c00; --pill-badge-bg: #f57c00; }
 .filter-pill--detail { border-color: #888; color: #555; }
 
@@ -544,7 +544,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .project-card--alert {
-  border-left: 4px solid #4c9e51;
+  border-left: 4px solid #c62828;
 }
 
 /* Card top row */
@@ -621,7 +621,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .status-badge--red {
-  background: #e7f5e9;
+  background: #ffebee;
   color: #c62828;
   border: 1px solid #ef9a9a;
 }
@@ -782,7 +782,7 @@ a.nav-user--active .header-avatar-icon {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  background: #4c9e51;
+  background: #c62828;
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -1695,7 +1695,7 @@ a.nav-user--active .header-avatar-icon {
   white-space: nowrap;
 }
 
-.proj-tag--no-hire       { color: #4c9e51; }
+.proj-tag--no-hire       { color: #c62828; }
 .proj-tag--need-action   { color: #f57c00; }
 .proj-tag--accepting     { color: #2e7d32; }
 .proj-tag--contracted    { color: #0f569f; }
@@ -1796,7 +1796,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-nav-item:hover {
-  background: #fef2f2;
+  background: #eef8ef;
   color: #4c9e51;
 }
 
@@ -2162,7 +2162,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .field-badge--required {
-  background: #4c9e51;
+  background: #c62828;
   color: #fff;
 }
 
@@ -2370,7 +2370,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .billing-row--total {
-  background: #fff7f7;
+  background: #eef8ef;
   border-top: 2px solid #4c9e51;
 }
 
@@ -2792,7 +2792,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .det-nav-link.is-active {
-  background: #fff3f4;
+  background: #eef8ef;
   color: #4c9e51;
   font-weight: 700;
 }
@@ -2832,7 +2832,7 @@ a.nav-user--active .header-avatar-icon {
 
 .det-help-btn:hover { opacity: 0.85; }
 .det-help-btn--orange { background: #f57c00; color: #fff; }
-.det-help-btn--red    { background: #4c9e51; color: #fff; }
+.det-help-btn--red    { background: #c62828; color: #fff; }
 
 /* マスコット */
 .det-mascot {
@@ -3265,7 +3265,7 @@ a.nav-user--active .header-avatar-icon {
 .msg-row:hover { background: #fafafa; }
 
 /* 未読行：左ボーダー + ごく薄い背景 */
-.msg-row--unread { background: #fffbfb; }
+.msg-row--unread { background: #f1faf2; }
 .msg-row--unread:hover { background: #eef8ef; }
 .msg-row--unread .msg-td:first-child {
   border-left: 3px solid #4c9e51;
@@ -3822,7 +3822,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-th--sortable:hover {
-  background: #ffe0e3;
+  background: #eef8ef;
 }
 
 .pay-sort-icon {
@@ -4745,7 +4745,7 @@ a.nav-user--active .header-avatar-icon {
   max-width: 500px;
   margin: 0 auto;
   padding: 18px 0;
-  background: #4c9e51;
+  background: #c62828;
   color: #fff;
   border: none;
   border-radius: 14px;
@@ -4758,7 +4758,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-withdrawal:hover {
-  background: #3d8042;
+  background: #a02020;
 }
 
 /* ===========================
@@ -6034,7 +6034,7 @@ a.nav-user--active .header-avatar-icon {
   flex-shrink: 0;
 }
 
-.stat-card__icon--red    { background: #eaf6eb; color: #4c9e51; }
+.stat-card__icon--red    { background: #fdecea; color: #c62828; }
 .stat-card__icon--orange { background: #fff3e0; color: #f57c00; }
 .stat-card__icon--blue   { background: #e3f2fd; color: #0f569f; }
 .stat-card__icon--green  { background: #e8f5e9; color: #2e7d32; }
@@ -6265,7 +6265,7 @@ a.nav-user--active .header-avatar-icon {
   flex-shrink: 0;
 }
 
-.alert-item__dot--red    { background: #4c9e51; }
+.alert-item__dot--red    { background: #c62828; }
 .alert-item__dot--orange { background: #f57c00; }
 .alert-item__dot--blue   { background: #0f569f; }
 
@@ -6373,8 +6373,8 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
 /* ハンバーガー（モバイル） */
 .hamburger span { background: #4c9e51; }
 
-/* 通知バッジ：白背景ヘッダー上でも視認できるよう緑地・白文字に */
+/* 通知バッジ：アラート表示のため赤地・白文字に（白背景ヘッダー上でも視認可） */
 .badge--red {
-  background: #4c9e51;
+  background: #c62828;
   color: #fff;
 }

@@ -412,7 +412,7 @@
   align-items: center;
   justify-content: center;
   padding: 2px 6px;
-  background: #4c9e51;
+  background: #c62828;
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -1167,7 +1167,7 @@
 }
 
 .flatpickr-day:hover {
-  background: #ffeaec;
+  background: #eaf6eb;
 }
 
 .flatpickr-months .flatpickr-prev-month:hover svg,
@@ -1767,7 +1767,7 @@
 }
 
 .wlist-item-img--brand {
-  background: #fce4e7;
+  background: #eaf6eb;
 }
 
 /* カラープレースホルダー（画像の代替） */
@@ -2640,7 +2640,7 @@
 }
 
 .wmylist-modal-btn--submit:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 
@@ -3586,7 +3586,7 @@
 }
 
 .wmsg-modal-btn-submit:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 
@@ -3715,7 +3715,7 @@
 }
 
 .wregion-item:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 .wregion-item svg {
@@ -4028,7 +4028,7 @@
 .wbasic-badge-required {
   font-size: 12px;
   color: #fff;
-  background: #3d8042;
+  background: #c62828;
   padding: 1px 5px;
   border-radius: 8px;
   white-space: nowrap;
@@ -4141,7 +4141,7 @@
 }
 
 .wbasic-btn-inline:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 /* ヒント */
@@ -4175,7 +4175,7 @@
 }
 
 .wbasic-btn-zip:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 /* セレクト */
@@ -4296,7 +4296,7 @@
 }
 
 .wbasic-btn-submit:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 .wbasic-btn-submit:disabled {
@@ -4479,12 +4479,12 @@
 }
 
 .wtransfer-alert {
-  background: #eaf6eb;
+  background: #fdecea;
   border: 1px solid #f5c6cb;
   border-radius: 14px;
   padding: 12px 16px;
   font-size: 15px;
-  color: #3d8042;
+  color: #c62828;
   margin-bottom: 12px;
 }
 
@@ -4699,7 +4699,7 @@
   width: 100%;
   padding: 0 20px;
   min-height: 56px;
-  background: #e04a3a;
+  background: #4c9e51;
   color: #fff;
   border: none;
   border-radius: 14px;
@@ -4713,7 +4713,7 @@
 }
 
 .wlogin-select-btn:hover {
-  background: #c93d2d;
+  background: #3d8042;
 }
 
 .wlogin-select-btn--tall {
@@ -5013,7 +5013,7 @@
 }
 
 .wcontact-required {
-  color: #3d8042;
+  color: #c62828;
   margin-left: 4px;
 }
 
@@ -5091,7 +5091,7 @@
 }
 
 .wcontact-btn-next:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 /* フッター */
@@ -5329,7 +5329,7 @@
 }
 
 .wcontact-btn-confirm:hover {
-  background: #a00e1a;
+  background: #3d8042;
 }
 
 /* 確認画面 */
@@ -5577,7 +5577,7 @@
 }
 
 .apply-modal-badge--required {
-  background: #4c9e51;
+  background: #c62828;
   color: #fff;
 }
 
@@ -6247,7 +6247,7 @@
 }
 
 .wprocedure-modal-badge--required {
-  background: #4c9e51;
+  background: #c62828;
   color: #fff;
 }
 
@@ -6308,7 +6308,7 @@
 /* 強調ボックス */
 .wprocedure-modal-info-box {
   background: #f1faf2;
-  border: 1px solid #f5c0c4;
+  border: 1px solid #c8e6c9;
   border-radius: 14px;
   padding: 10px 14px;
   font-size: 14px;
@@ -6412,7 +6412,7 @@
 }
 
 .wprocedure-modal-btn-outline:hover {
-  background: #fef0f1;
+  background: #eef8ef;
 }
 
 /* 確認モーダル テーブル */
@@ -6515,7 +6515,7 @@
 }
 
 .btn-wreport-primary:hover {
-  background: #a93226;
+  background: #3d8042;
 }
 
 /* 作業報告途中バナー */
