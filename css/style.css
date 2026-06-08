@@ -3621,8 +3621,8 @@ a.nav-user--active .header-avatar-icon {
   text-align: left;
   font-size: 13px;
   font-weight: 700;
-  color: #555;
-  background: #eaf6eb;
+  color: #fff;
+  background-color: #4c9e51;
   border-bottom: 1px solid #e8e8e8;
   white-space: nowrap;
 }
