@@ -19,7 +19,7 @@ html {
 
 body {
   font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', Meiryo, sans-serif;
-  background-color: #f9fffa;
+  background-color: #fafffb;
   color: #333;
   min-height: 100vh;
   display: flex;
@@ -2692,7 +2692,7 @@ a.nav-user--active .header-avatar-icon {
    案件詳細ページ — 全体レイアウト
 =========================== */
 .body--detail {
-  background: #f9fffa;
+  background: #fafffb;
 }
 
 .detail-page {
