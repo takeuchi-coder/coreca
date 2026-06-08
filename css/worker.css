@@ -808,7 +808,7 @@
 /* body */
 .wmypage-body {
   font-family: 'Noto Sans JP', sans-serif;
-  background: #f5f5f5;
+  background: #f9fffa;
   color: #333;
   margin: 0;
   min-height: 100vh;
@@ -1710,7 +1710,7 @@
 =========================== */
 
 .wlist-body {
-  background: #fff;
+  background: #f9fffa;
 }
 
 /* ===========================
@@ -2001,7 +2001,7 @@
 =========================== */
 
 .wdetail-body {
-  background: #fff;
+  background: #f9fffa;
   padding-bottom: 72px; /* 固定バー分の余白 */
 }
 
@@ -2334,7 +2334,7 @@
 }
 
 .wmylist-body {
-  background: #f5f5f5;
+  background: #f9fffa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -2838,7 +2838,7 @@
    ============================================= */
 
 .wreward-body {
-  background: #f5f5f5;
+  background: #f9fffa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -3131,7 +3131,7 @@
    ============================================= */
 
 .wmsg-body {
-  background: #f5f5f5;
+  background: #f9fffa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -3728,7 +3728,7 @@
    ============================================= */
 
 .wth-body {
-  background: #f5f5f5;
+  background: #f9fffa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -3948,7 +3948,7 @@
 ============================================= */
 
 .wbasic-body {
-  background: #f4f4f4;
+  background: #f9fffa;
   min-height: 100vh;
 }
 
@@ -4808,7 +4808,7 @@
    ============================================= */
 
 .wmanual-body {
-  background: #f5f5f5;
+  background: #f9fffa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -4871,7 +4871,7 @@
    ============================================= */
 
 .wcontact-body {
-  background: #f5f5f5;
+  background: #f9fffa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
