@@ -273,7 +273,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-help--blue {
-  background: #1565c0;
+  background: #0f569f;
   color: #fff;
 }
 
@@ -486,7 +486,7 @@ a.nav-user--active .header-avatar-icon {
 .filter-pill--no-hire        { --pill-color: #4c9e51; color: #4c9e51; border-color: #4c9e51; --pill-badge-bg: #4c9e51; }
 .filter-pill--need-action    { --pill-color: #f57c00; color: #f57c00; border-color: #f57c00; --pill-badge-bg: #f57c00; }
 .filter-pill--accepting      { --pill-color: #2e7d32; color: #2e7d32; border-color: #2e7d32; --pill-badge-bg: #2e7d32; }
-.filter-pill--contracted     { --pill-color: #1565c0; color: #1565c0; border-color: #1565c0; --pill-badge-bg: #1565c0; }
+.filter-pill--contracted     { --pill-color: #0f569f; color: #0f569f; border-color: #0f569f; --pill-badge-bg: #0f569f; }
 .filter-pill--need-inspection { --pill-color: #f57c00; color: #f57c00; border-color: #f57c00; --pill-badge-bg: #f57c00; }
 .filter-pill--unread-msg     { --pill-color: #6a1b9a; color: #6a1b9a; border-color: #6a1b9a; --pill-badge-bg: #6a1b9a; }
 
@@ -618,7 +618,7 @@ a.nav-user--active .header-avatar-icon {
 
 .status-badge--blue {
   background: #e3f2fd;
-  color: #1565c0;
+  color: #0f569f;
   border: 1px solid #90caf9;
 }
 
@@ -838,13 +838,13 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-action--outline-blue {
-  border-color: #1565c0;
-  color: #1565c0;
+  border-color: #0f569f;
+  color: #0f569f;
   background: #fff;
 }
 
 .btn-action--outline-blue:hover {
-  background: #1565c0;
+  background: #0f569f;
   color: #fff;
 }
 
@@ -1407,7 +1407,7 @@ a.nav-user--active .header-avatar-icon {
   align-self: flex-start;
 }
 
-.type-badge--blue   { background: #e3f2fd; color: #1565c0; }
+.type-badge--blue   { background: #e3f2fd; color: #0f569f; }
 .type-badge--orange { background: #fff3e0; color: #e65100; }
 .type-badge--purple { background: #f3e5f5; color: #6a1b9a; }
 .type-badge--teal   { background: #e0f2f1; color: #00695c; }
@@ -1463,11 +1463,11 @@ a.nav-user--active .header-avatar-icon {
 
 .row-action-btn--applicants {
   background: #fff;
-  border: 1px solid #1565c0;
-  color: #1565c0;
+  border: 1px solid #0f569f;
+  color: #0f569f;
 }
 .row-action-btn--applicants:hover {
-  background: #1565c0;
+  background: #0f569f;
   color: #fff;
 }
 
@@ -1700,7 +1700,7 @@ a.nav-user--active .header-avatar-icon {
 .proj-tag--no-hire       { color: #4c9e51; }
 .proj-tag--need-action   { color: #f57c00; }
 .proj-tag--accepting     { color: #2e7d32; }
-.proj-tag--contracted    { color: #1565c0; }
+.proj-tag--contracted    { color: #0f569f; }
 .proj-tag--need-inspection { color: #f57c00; }
 .proj-tag--unread-msg    { color: #6a1b9a; }
 
@@ -1946,7 +1946,7 @@ a.nav-user--active .header-avatar-icon {
 .notif-item-title {
   display: block;
   font-size: 15px;
-  color: #1565c0;
+  color: #0f569f;
   text-decoration: underline;
   margin-bottom: 5px;
   cursor: pointer;
@@ -1954,7 +1954,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-item-title:hover {
-  color: #0d47a1;
+  color: #0f569f;
 }
 
 .notif-item-date {
@@ -2501,8 +2501,8 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-copy:hover {
-  border-color: #1565c0;
-  color: #1565c0;
+  border-color: #0f569f;
+  color: #0f569f;
 }
 
 /* 報酬サブグリッド */
@@ -2870,7 +2870,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 3px;
-  color: #1565c0;
+  color: #0f569f;
   font-size: 14px;
   text-decoration: none;
 }
@@ -3067,7 +3067,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 5px;
   font-size: 14px;
-  color: #1565c0;
+  color: #0f569f;
   cursor: pointer;
   background: none;
   border: none;
@@ -3291,7 +3291,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msg-person-link {
-  color: #1565c0;
+  color: #0f569f;
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
@@ -3302,7 +3302,7 @@ a.nav-user--active .header-avatar-icon {
 
 .msg-proj-id {
   display: block;
-  color: #1565c0;
+  color: #0f569f;
   font-weight: 700;
   text-decoration: none;
   margin-bottom: 4px;
@@ -3563,8 +3563,8 @@ a.nav-user--active .header-avatar-icon {
   gap: 6px;
   padding: 8px 16px;
   background: #fff;
-  color: #1565c0;
-  border: 1.5px solid #1565c0;
+  color: #0f569f;
+  border: 1.5px solid #0f569f;
   border-radius: 16px;
   font-size: 14px;
   font-weight: 700;
@@ -3574,7 +3574,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-csv-download:hover {
-  background: #1565c0;
+  background: #0f569f;
   color: #fff;
 }
 
@@ -3659,11 +3659,11 @@ a.nav-user--active .header-avatar-icon {
   white-space: nowrap;
 }
 .pay-td--id a {
-  color: #1a6fc4;
+  color: #0f569f;
   text-decoration: underline;
 }
 .pay-td--id a:hover {
-  color: #0f4f8e;
+  color: #0f569f;
 }
 
 .pay-td--address {
@@ -3686,7 +3686,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-person-link {
-  color: #1565c0;
+  color: #0f569f;
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
@@ -4079,7 +4079,7 @@ a.nav-user--active .header-avatar-icon {
 .msgd-user-link {
   font-size: 16px;
   font-weight: 700;
-  color: #1565c0;
+  color: #0f569f;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -4116,8 +4116,8 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msgd-status-badge--active {
-  border: 1.5px solid #1565c0;
-  color: #1565c0;
+  border: 1.5px solid #0f569f;
+  color: #0f569f;
   background: transparent;
 }
 
@@ -4240,7 +4240,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msgd-auto-link {
-  color: #1565c0;
+  color: #0f569f;
   text-decoration: underline;
 }
 
@@ -5215,7 +5215,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .applist-tel-link {
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: none;
 }
 
@@ -5224,7 +5224,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .applist-sub-link {
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: none;
   font-size: 14px;
   margin-left: 8px;
@@ -5281,7 +5281,7 @@ a.nav-user--active .header-avatar-icon {
 .btn-applist-order {
   display: inline-block;
   padding: 12px 32px;
-  background: #1a73e8;
+  background: #0f569f;
   color: #fff;
   border: none;
   border-radius: 14px;
@@ -5293,7 +5293,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-applist-order:hover {
-  background: #1557b0;
+  background: #0f569f;
 }
 
 .btn-applist-order--change {
@@ -5362,7 +5362,7 @@ a.nav-user--active .header-avatar-icon {
 .btn-order-modal-yes {
   flex: 1;
   padding: 12px;
-  background: #1a73e8;
+  background: #0f569f;
   color: #fff;
   border: none;
   border-radius: 14px;
@@ -5374,7 +5374,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-order-modal-yes:hover {
-  background: #1557b0;
+  background: #0f569f;
 }
 
 .btn-order-modal-no {
@@ -5549,7 +5549,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .search-modal-input:focus {
-  border-color: #1a73e8;
+  border-color: #0f569f;
 }
 
 .search-modal-select {
@@ -5565,7 +5565,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .search-modal-select:focus {
-  border-color: #1a73e8;
+  border-color: #0f569f;
 }
 
 .search-modal-footer {
@@ -5623,7 +5623,7 @@ a.nav-user--active .header-avatar-icon {
 .btn-renew-create {
   display: inline-block;
   padding: 13px 32px;
-  background: #1a73e8;
+  background: #0f569f;
   color: #fff;
   border: none;
   border-radius: 14px;
@@ -5636,7 +5636,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-renew-create:hover {
-  background: #1557b0;
+  background: #0f569f;
 }
 
 .renew-info-box {
@@ -5659,12 +5659,12 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .renew-info-link {
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: underline;
 }
 
 .renew-info-link:hover {
-  color: #1557b0;
+  color: #0f569f;
 }
 
 .btn-renew-order {
@@ -5873,7 +5873,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* 契約者リンク */
 .proc-worker-link {
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: none;
 }
 
@@ -6038,7 +6038,7 @@ a.nav-user--active .header-avatar-icon {
 
 .stat-card__icon--red    { background: #eaf6eb; color: #4c9e51; }
 .stat-card__icon--orange { background: #fff3e0; color: #f57c00; }
-.stat-card__icon--blue   { background: #e3f2fd; color: #1565c0; }
+.stat-card__icon--blue   { background: #e3f2fd; color: #0f569f; }
 .stat-card__icon--green  { background: #e8f5e9; color: #2e7d32; }
 
 .stat-card__body {
@@ -6231,7 +6231,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .order-status-badge--accepting  { background: #e8f5e9; color: #2e7d32; }
-.order-status-badge--contracted { background: #e3f2fd; color: #1565c0; }
+.order-status-badge--contracted { background: #e3f2fd; color: #0f569f; }
 .order-status-badge--inspection { background: #fff3e0; color: #f57c00; }
 .order-status-badge--done       { background: #eaf6eb; color: #777; }
 
@@ -6269,7 +6269,7 @@ a.nav-user--active .header-avatar-icon {
 
 .alert-item__dot--red    { background: #4c9e51; }
 .alert-item__dot--orange { background: #f57c00; }
-.alert-item__dot--blue   { background: #1565c0; }
+.alert-item__dot--blue   { background: #0f569f; }
 
 .alert-item__body {
   flex: 1;

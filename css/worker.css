@@ -654,7 +654,7 @@
 
 .btn-confirm-back {
   font-size: 15px;
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: none;
   cursor: pointer;
   padding: 4px 0;
@@ -1206,7 +1206,7 @@
 }
 
 .wsearch-wd--sat {
-  color: #1a73e8;
+  color: #0f569f;
 }
 
 /* 日付ナビ行（← 日付群 →） */
@@ -1266,7 +1266,7 @@
 }
 
 .wsearch-date-cell--sat {
-  color: #1a73e8;
+  color: #0f569f;
 }
 
 .wsearch-date-cell--sun {
@@ -3062,7 +3062,7 @@
 }
 
 .wreward-cell-link {
-  color: #1a6bc1;
+  color: #0f569f;
   text-decoration: none;
 }
 
@@ -3321,7 +3321,7 @@
 }
 
 .wmsg-orderer-link {
-  color: #1a6bc1;
+  color: #0f569f;
   text-decoration: none;
   line-height: 1.6;
 }
@@ -3332,7 +3332,7 @@
 
 .wmsg-job-id-link {
   display: block;
-  color: #1a6bc1;
+  color: #0f569f;
   text-decoration: none;
   font-weight: 700;
   margin-bottom: 4px;
@@ -4747,7 +4747,7 @@
 /* インフォメーションボックス（青） */
 .wpr-info-box {
   background: #e8f4fd;
-  color: #1a6fa8;
+  color: #0f569f;
   font-size: 15px;
   padding: 14px 18px;
   border-radius: 14px;
@@ -4795,7 +4795,7 @@
   display: inline-block;
   margin-top: 20px;
   font-size: 15px;
-  color: #4a90e2;
+  color: #0f569f;
   text-decoration: none;
 }
 
@@ -5640,7 +5640,7 @@
 
 .apply-modal-terms-link {
   font-size: 14px;
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: underline;
 }
 
@@ -5739,12 +5739,12 @@
 .cancel-to-list-link {
   display: inline-block;
   font-size: 15px;
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: underline;
 }
 
 .cancel-to-list-link:hover {
-  color: #1557b0;
+  color: #0f569f;
 }
 
 /* ===========================
@@ -5806,11 +5806,11 @@
 .wmld-status-badge {
   display: inline-block;
   padding: 4px 14px;
-  border: 1px solid #1a73e8;
+  border: 1px solid #0f569f;
   border-radius: 34px;
   font-size: 13px;
   font-weight: 700;
-  color: #1a73e8;
+  color: #0f569f;
   white-space: nowrap;
 }
 
@@ -5975,12 +5975,12 @@
 }
 
 .wprocedure-link {
-  color: #1a73e8;
+  color: #0f569f;
   text-decoration: underline;
 }
 
 .wprocedure-link:hover {
-  color: #1557b0;
+  color: #0f569f;
 }
 
 .wprocedure-actions {
@@ -6252,7 +6252,7 @@
 }
 
 .wprocedure-modal-badge--blue {
-  background: #1a73e8;
+  background: #0f569f;
   color: #fff;
 }
 
@@ -6525,7 +6525,7 @@
   border-radius: 14px;
   padding: 12px 16px;
   font-size: 15px;
-  color: #1a6ce8;
+  color: #0f569f;
   margin-bottom: 20px;
 }
 
@@ -6837,7 +6837,7 @@
 
 .wprocedure-info-banner {
   background: #e8f4fb;
-  border-left: 4px solid #5aacdc;
+  border-left: 4px solid #0f569f;
   padding: 12px 16px;
   font-size: 15px;
   color: #333;
