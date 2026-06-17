@@ -6536,3 +6536,16 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   font-weight: 700;
   border-bottom: none;
 }
+
+/* =========================================================
+   余白設計の統一（コンテナ所有のスタックスペーシング）
+   ※ 子要素の margin-top に依存していたため、直後にくる要素次第で
+     下余白が変わっていた問題を解消する。
+     コンテナ側が「要素間の余白」を所有し、子の組み合わせに依存しない。
+========================================================= */
+:root { --ds-stack-gap: 20px; }
+
+/* applist系ページ（案件詳細/応募者・契約者/作業手順/契約更新）の本文スタック */
+.applist-main { padding-top: 24px; }
+.applist-main > * { margin-top: 0; margin-bottom: 0; }
+.applist-main > * + * { margin-top: var(--ds-stack-gap); }
