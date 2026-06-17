@@ -13,7 +13,7 @@
 }
 
 html {
-  font-size: 15px;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 
@@ -68,7 +68,7 @@ button {
   align-items: center;
   gap: 8px;
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   flex: 1;
   letter-spacing: 0.02em;
@@ -95,7 +95,7 @@ button {
 }
 
 .logo-role {
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   font-weight: 700;
   white-space: nowrap;
@@ -126,7 +126,7 @@ button {
   padding: 6px 9px;
   border-radius: 16px;
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   white-space: nowrap;
   transition: background 0.15s, color 0.15s;
@@ -150,7 +150,7 @@ button {
 }
 
 .nav-text {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .badge {
@@ -161,7 +161,7 @@ button {
   height: 18px;
   padding: 0 4px;
   border-radius: 19px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1;
 }
@@ -206,7 +206,7 @@ button {
 .header-username {
   color: rgba(255,255,255,0.95);
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -257,7 +257,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 4px;
   padding: 5px 10px;
   border-radius: 34px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
   transition: opacity 0.15s;
@@ -344,7 +344,7 @@ a.nav-user--active .header-avatar-icon {
   width: 100%;
   text-align: left;
   padding: 9px 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #666;
   background: none;
@@ -388,7 +388,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .page-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: #333;
 }
@@ -401,7 +401,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   padding: 9px 18px;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   transition: background 0.15s;
   white-space: nowrap;
@@ -428,7 +428,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .list-count {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   white-space: nowrap;
 }
@@ -445,7 +445,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 4px 8px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   background: #fff;
   cursor: pointer;
   color: #333;
@@ -468,7 +468,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 4px;
   padding: 5px 12px;
   border-radius: 34px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   border: 1.5px solid #ccc;
   background: #fff;
@@ -516,7 +516,7 @@ a.nav-user--active .header-avatar-icon {
 .filter-pill .pill-count {
   background: var(--pill-badge-bg, #888);
   color: #fff;
-  font-size: 11px;
+  font-size: 13px;
   padding: 1px 5px;
   border-radius: 20px;
   font-weight: 700;
@@ -575,7 +575,7 @@ a.nav-user--active .header-avatar-icon {
 
 .card-thumbnail-placeholder {
   color: #bbb;
-  font-size: 26px;
+  font-size: 28px;
 }
 
 .card-meta {
@@ -584,7 +584,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .card-dates {
-  font-size: 13px;
+  font-size: 15px;
   color: #666;
   margin-bottom: 6px;
 }
@@ -604,7 +604,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 3px;
   padding: 2px 8px;
   border-radius: 14px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -641,7 +641,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .toggle-label {
-  font-size: 12px;
+  font-size: 14px;
   color: #555;
 }
 
@@ -694,7 +694,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* Card title */
 .card-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #222;
   margin-bottom: 6px;
@@ -718,7 +718,7 @@ a.nav-user--active .header-avatar-icon {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
 }
 
@@ -745,7 +745,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .stat-label {
@@ -774,7 +774,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .card-id {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
 }
 
@@ -784,7 +784,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 3px;
   background: #c62828;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 24px;
@@ -805,7 +805,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 5px;
   padding: 7px 14px;
   border-radius: 16px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   border: 1.5px solid;
   transition: all 0.15s;
@@ -856,7 +856,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 12px;
   padding: 48px 24px;
   color: #bbb;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 /* ===========================
@@ -877,7 +877,7 @@ a.nav-user--active .header-avatar-icon {
   width: 34px;
   height: 34px;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #555;
   background: #fff;
@@ -924,7 +924,7 @@ a.nav-user--active .header-avatar-icon {
   border-radius: 16px;
   background: #fff;
   color: #444;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.15s;
@@ -942,7 +942,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .footer-page-info {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   white-space: nowrap;
   min-width: 140px;
@@ -988,7 +988,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .footer-nav-list a {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   padding: 2px 6px;
   transition: color 0.15s;
@@ -999,7 +999,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .footer-copy {
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
 }
 
@@ -1039,7 +1039,7 @@ a.nav-user--active .header-avatar-icon {
   .nav-item .nav-link {
     width: 100%;
     padding: 10px 8px;
-    font-size: 15px;
+    font-size: 17px;
     border-radius: 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
@@ -1163,7 +1163,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 5px 12px;
   border: 1.5px solid #ccc;
   border-radius: 16px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: #555;
   background: #fff;
@@ -1209,7 +1209,7 @@ a.nav-user--active .header-avatar-icon {
   border: none;
   background: none;
   outline: none;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   font-family: inherit;
   width: 180px;
@@ -1226,7 +1226,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .toolbar-page-info {
-  font-size: 13px;
+  font-size: 15px;
   color: #666;
   white-space: nowrap;
 }
@@ -1304,13 +1304,13 @@ a.nav-user--active .header-avatar-icon {
 .proj-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .proj-table th {
   padding: 10px 12px;
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: #888;
   background: #fafafa;
@@ -1362,7 +1362,7 @@ a.nav-user--active .header-avatar-icon {
 .proj-title--link:hover { color: #4c9e51; text-decoration: underline; }
 
 .proj-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #222;
   line-height: 1.3;
@@ -1373,7 +1373,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .proj-sub {
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
   margin-top: 2px;
   white-space: nowrap;
@@ -1387,7 +1387,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .col-date {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   white-space: nowrap;
 }
@@ -1398,7 +1398,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   padding: 3px 8px;
   border-radius: 14px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
   align-self: flex-start;
@@ -1419,7 +1419,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: center;
   padding: 3px 10px;
   border-radius: 14px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
   min-width: 58px;
@@ -1448,7 +1448,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 5px;
   padding: 6px 10px;
   border-radius: 14px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -1529,7 +1529,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 7px;
   padding: 8px 12px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: #333;
   border-radius: 14px;
@@ -1552,7 +1552,7 @@ a.nav-user--active .header-avatar-icon {
 .sort-option--active::before {
   content: '✓';
   margin-right: 6px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* ===========================
@@ -1593,7 +1593,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pic-title {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: #222;
   line-height: 1.4;
@@ -1604,13 +1604,13 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pic-id {
-  font-size: 11px;
+  font-size: 13px;
   color: #bbb;
   font-family: monospace;
 }
 
 .pic-dates {
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
 }
 
@@ -1657,7 +1657,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pic-contracts {
-  font-size: 12px;
+  font-size: 14px;
   color: #555;
 }
 
@@ -1670,7 +1670,7 @@ a.nav-user--active .header-avatar-icon {
    Case ID in name cell
 =========================== */
 .proj-id {
-  font-size: 11px;
+  font-size: 13px;
   color: #bbb;
   margin-top: 2px;
   font-family: monospace;
@@ -1688,7 +1688,7 @@ a.nav-user--active .header-avatar-icon {
   display: inline-block;
   padding: 1px 6px;
   border-radius: 20px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   border: 1px solid currentColor;
   white-space: nowrap;
@@ -1742,7 +1742,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 8px 16px;
   background: #fafafa;
   border-bottom: 1px solid #e8e8e8;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: #555;
 }
@@ -1769,7 +1769,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-logo-text {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #222;
   letter-spacing: 0.02em;
@@ -1786,7 +1786,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 10px;
   padding: 11px 18px;
-  font-size: 14px;
+  font-size: 16px;
   color: #444;
   text-decoration: none;
   cursor: pointer;
@@ -1810,7 +1810,7 @@ a.nav-user--active .header-avatar-icon {
   margin-left: auto;
   background: #4c9e51;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   padding: 1px 7px;
   border-radius: 20px;
@@ -1836,7 +1836,7 @@ a.nav-user--active .header-avatar-icon {
   border-radius: 18px;
   border: 1.5px solid #ccc;
   background: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #555;
   cursor: pointer;
@@ -1900,7 +1900,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-page-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #222;
   margin: 0;
@@ -1942,7 +1942,7 @@ a.nav-user--active .header-avatar-icon {
 
 .notif-item-title {
   display: block;
-  font-size: 15px;
+  font-size: 17px;
   color: #0f569f;
   text-decoration: underline;
   margin-bottom: 5px;
@@ -1955,7 +1955,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-item-date {
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
 }
 
@@ -1964,7 +1964,7 @@ a.nav-user--active .header-avatar-icon {
   flex-shrink: 0;
   padding: 3px 12px;
   border-radius: 34px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -1994,12 +1994,12 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-total {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
 .notif-total strong {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #4c9e51;
 }
@@ -2018,7 +2018,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1px solid #ddd;
   border-radius: 14px;
   background: #fff;
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
   cursor: pointer;
   transition: all 0.12s;
@@ -2043,13 +2043,13 @@ a.nav-user--active .header-avatar-icon {
 
 .notif-page-btn--nav {
   color: #555;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .notif-page-ellipsis {
   color: #aaa;
   padding: 0 4px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* ============================================================
@@ -2094,7 +2094,7 @@ a.nav-user--active .header-avatar-icon {
 .create-back-link:hover { color: #4c9e51; }
 
 .create-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #222;
   margin: 0;
@@ -2104,7 +2104,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 7px 12px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   font-family: inherit;
   background: #fff;
@@ -2139,7 +2139,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .form-label-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #333;
   line-height: 1.45;
@@ -2153,7 +2153,7 @@ a.nav-user--active .header-avatar-icon {
 /* 必須 / 任意バッジ */
 .field-badge {
   display: inline-block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   padding: 1px 6px;
   border-radius: 12px;
@@ -2178,7 +2178,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   box-sizing: border-box;
   color: #333;
@@ -2200,7 +2200,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 13px;
+  font-size: 15px;
   font-family: inherit;
   box-sizing: border-box;
   resize: vertical;
@@ -2218,7 +2218,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   background: #fff;
   color: #333;
@@ -2242,7 +2242,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .form-unit {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   white-space: nowrap;
 }
@@ -2252,7 +2252,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   cursor: pointer;
 }
@@ -2276,7 +2276,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   cursor: pointer;
 }
@@ -2298,7 +2298,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1.5px solid #4c9e51;
   border-radius: 16px;
   color: #4c9e51;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -2313,7 +2313,7 @@ a.nav-user--active .header-avatar-icon {
 /* プレーンテキスト表示 */
 .form-plain-text {
   display: inline-block;
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
   padding: 8px 0;
 }
@@ -2322,7 +2322,7 @@ a.nav-user--active .header-avatar-icon {
   display: block;
   white-space: pre-wrap;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   color: #333;
   background: #f8f8f8;
@@ -2337,7 +2337,7 @@ a.nav-user--active .header-avatar-icon {
   display: block;
   white-space: pre-wrap;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
   color: #333;
   margin: 0;
@@ -2374,7 +2374,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .billing-label {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
@@ -2384,13 +2384,13 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .billing-value {
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
   white-space: nowrap;
 }
 
 .billing-row--total .billing-value {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #4c9e51;
 }
@@ -2407,20 +2407,20 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .form-period-label {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   min-width: 2.5em;
 }
 
 /* ファイルinput */
 .form-input-file {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 
 /* 補足テキスト */
 .form-note {
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
   margin-top: 6px;
   line-height: 1.6;
@@ -2432,7 +2432,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1px solid #90caf9;
   border-radius: 14px;
   padding: 10px 14px;
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   margin-top: 10px;
   line-height: 1.7;
@@ -2469,7 +2469,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 8px 16px;
   border: 1.5px dashed #bbb;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   cursor: pointer;
   transition: all 0.12s;
@@ -2489,7 +2489,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1.5px solid #ccc;
   border-radius: 14px;
   background: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   color: #555;
   cursor: pointer;
@@ -2516,7 +2516,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .form-wage-label {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   width: 200px;
   flex-shrink: 0;
@@ -2532,7 +2532,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .create-actions-note {
-  font-size: 13px;
+  font-size: 15px;
   color: #888;
   margin-bottom: 16px;
 }
@@ -2550,7 +2550,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 16px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -2565,7 +2565,7 @@ a.nav-user--active .header-avatar-icon {
   color: #333;
   border: 1.5px solid #ccc;
   border-radius: 16px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -2631,7 +2631,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .modal-title {
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
@@ -2722,7 +2722,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .det-logo-role {
-  font-size: 11px;
+  font-size: 13px;
   color: #aaa;
   margin-bottom: 5px;
   letter-spacing: 0.02em;
@@ -2732,7 +2732,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #1a1a1a;
   text-decoration: none;
@@ -2764,7 +2764,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -2780,7 +2780,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 10px;
   padding: 10px 16px;
   color: #555;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   transition: background 0.12s, color 0.12s;
 }
@@ -2801,7 +2801,7 @@ a.nav-user--active .header-avatar-icon {
 .det-nav-badge {
   background: #4c9e51;
   color: #fff;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   padding: 1px 6px;
   border-radius: 20px;
@@ -2820,7 +2820,7 @@ a.nav-user--active .header-avatar-icon {
 .det-help-btn {
   padding: 9px 12px;
   border-radius: 16px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -2868,7 +2868,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 3px;
   color: #0f569f;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
 }
 
@@ -2877,7 +2877,7 @@ a.nav-user--active .header-avatar-icon {
 .det-topbar-chevron { flex-shrink: 0; }
 
 .det-topbar-title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #1a1a1a;
 }
@@ -2907,7 +2907,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .proj-detail-id {
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
   background: #eaf6eb;
   padding: 2px 8px;
@@ -2915,12 +2915,12 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .proj-detail-date {
-  font-size: 13px;
+  font-size: 15px;
   color: #666;
 }
 
 .proj-detail-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #1a1a1a;
   line-height: 1.55;
@@ -2931,7 +2931,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: flex-start;
   gap: 3px;
-  font-size: 13px;
+  font-size: 15px;
   color: #777;
   line-height: 1.5;
 }
@@ -2956,7 +2956,7 @@ a.nav-user--active .header-avatar-icon {
   color: #4c9e51;
   border: 1.5px solid #4c9e51;
   border-radius: 14px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -2983,7 +2983,7 @@ a.nav-user--active .header-avatar-icon {
 
 .det-tab-btn {
   padding: 12px 20px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #999;
   border: none;
@@ -3017,7 +3017,7 @@ a.nav-user--active .header-avatar-icon {
 .det-section:last-child { margin-bottom: 0; }
 
 .det-section-title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #1a1a1a;
   padding-bottom: 8px;
@@ -3034,7 +3034,7 @@ a.nav-user--active .header-avatar-icon {
   margin-bottom: 14px;
 }
 
-.recruit-note { font-size: 14px; color: #555; }
+.recruit-note { font-size: 16px; color: #555; }
 
 .recruit-actions {
   display: flex;
@@ -3051,7 +3051,7 @@ a.nav-user--active .header-avatar-icon {
   color: #555;
   border: 1.5px solid #ccc;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   cursor: pointer;
   transition: all 0.12s;
@@ -3063,7 +3063,7 @@ a.nav-user--active .header-avatar-icon {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 14px;
+  font-size: 16px;
   color: #0f569f;
   cursor: pointer;
   background: none;
@@ -3077,7 +3077,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* 掲載内容ノート */
 .det-content-note {
-  font-size: 13px;
+  font-size: 15px;
   color: #7a5700;
   background: #fffde7;
   border: 1px solid #ffe082;
@@ -3099,7 +3099,7 @@ a.nav-user--active .header-avatar-icon {
   width: 220px;
   padding: 13px 16px 13px 0;
   vertical-align: top;
-  font-size: 13px;
+  font-size: 15px;
   color: #777;
   font-weight: 600;
   line-height: 1.6;
@@ -3108,7 +3108,7 @@ a.nav-user--active .header-avatar-icon {
 .info-value {
   padding: 13px 0;
   vertical-align: top;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   line-height: 1.7;
 }
@@ -3116,7 +3116,7 @@ a.nav-user--active .header-avatar-icon {
 /* 公開範囲バッジ */
 .visibility-badge {
   display: inline-block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   padding: 1px 7px;
   border-radius: 12px;
@@ -3148,7 +3148,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* フッターノート */
 .det-footer-note {
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
   padding: 0 20px 28px;
   line-height: 1.8;
@@ -3178,7 +3178,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
@@ -3188,7 +3188,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 3px 8px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 13px;
+  font-size: 15px;
   font-family: inherit;
   cursor: pointer;
   background: #fff;
@@ -3207,7 +3207,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 6px 14px;
   border: 1.5px solid #ccc;
   border-radius: 34px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   font-family: inherit;
   background: #fff;
@@ -3243,7 +3243,7 @@ a.nav-user--active .header-avatar-icon {
 .msg-th {
   padding: 10px 12px;
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
   background-color: #4c9e51;
@@ -3272,7 +3272,7 @@ a.nav-user--active .header-avatar-icon {
 
 .msg-td {
   padding: 11px 12px;
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   vertical-align: top;
 }
@@ -3290,7 +3290,7 @@ a.nav-user--active .header-avatar-icon {
 .msg-person-link {
   color: #0f569f;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -3309,7 +3309,7 @@ a.nav-user--active .header-avatar-icon {
 
 .msg-status-badge {
   display: inline-block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   padding: 2px 7px;
   border-radius: 12px;
@@ -3322,7 +3322,7 @@ a.nav-user--active .header-avatar-icon {
 .msg-td--message { max-width: 240px; }
 
 .msg-text {
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
   line-height: 1.55;
   margin-bottom: 4px;
@@ -3333,7 +3333,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msg-sender {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
 }
 
@@ -3344,7 +3344,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1.5px solid #4c9e51;
   border-radius: 14px;
   color: #4c9e51;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -3376,7 +3376,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 6px 12px;
   border: 1.5px solid #ddd;
   border-radius: 14px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   font-family: inherit;
   background: #fff;
@@ -3396,7 +3396,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: center;
   border: 1.5px solid #ddd;
   border-radius: 50%;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   font-family: inherit;
   background: #fff;
@@ -3413,7 +3413,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
 }
 
-.msg-page-ellipsis { font-size: 14px; color: #aaa; padding: 0 4px; }
+.msg-page-ellipsis { font-size: 16px; color: #aaa; padding: 0 4px; }
 
 /* チャットウィジェット */
 .chat-widget {
@@ -3434,7 +3434,7 @@ a.nav-user--active .header-avatar-icon {
   position: absolute;
   top: 6px;
   right: 8px;
-  font-size: 18px;
+  font-size: 20px;
   color: #aaa;
   background: none;
   border: none;
@@ -3451,7 +3451,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .chat-widget-text {
-  font-size: 12px;
+  font-size: 14px;
   color: #555;
   line-height: 1.6;
 }
@@ -3469,7 +3469,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-page-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 20px;
@@ -3499,7 +3499,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 6px 28px 6px 10px;
   border: 1.5px solid #ccc;
   border-radius: 16px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   background: #fff;
@@ -3509,7 +3509,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-year-note {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -3527,12 +3527,12 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
 .pay-count-num {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #4c9e51;
 }
@@ -3541,7 +3541,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 3px 8px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 13px;
+  font-size: 15px;
   font-family: inherit;
   cursor: pointer;
   background: #fff;
@@ -3563,7 +3563,7 @@ a.nav-user--active .header-avatar-icon {
   color: #0f569f;
   border: 1.5px solid #0f569f;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -3584,7 +3584,7 @@ a.nav-user--active .header-avatar-icon {
   color: #2e7d32;
   border: 1.5px solid #2e7d32;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -3618,7 +3618,7 @@ a.nav-user--active .header-avatar-icon {
 .pay-th {
   padding: 10px 12px;
   text-align: left;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
   background-color: #4c9e51;
@@ -3645,13 +3645,13 @@ a.nav-user--active .header-avatar-icon {
 
 .pay-td {
   padding: 11px 12px;
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   vertical-align: middle;
 }
 
 .pay-td--id {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
   white-space: nowrap;
 }
@@ -3664,7 +3664,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-td--address {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   line-height: 1.5;
 }
@@ -3677,7 +3677,7 @@ a.nav-user--active .header-avatar-icon {
 
 .pay-td--mynumber-num {
   font-family: monospace;
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
   letter-spacing: 0.03em;
 }
@@ -3685,7 +3685,7 @@ a.nav-user--active .header-avatar-icon {
 .pay-person-link {
   color: #0f569f;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -3694,7 +3694,7 @@ a.nav-user--active .header-avatar-icon {
 
 .pay-mynumber {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 2px 8px;
   border-radius: 12px;
@@ -3740,7 +3740,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-filter-label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: #555;
   white-space: nowrap;
@@ -3750,7 +3750,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 5px 28px 5px 8px;
   border: 1.5px solid #ccc;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   background: #fff;
   color: #1a1a1a;
@@ -3762,7 +3762,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 5px 8px;
   border: 1.5px solid #ccc;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   background: #fff;
   color: #1a1a1a;
@@ -3770,7 +3770,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .pay-filter-range-sep {
-  font-size: 14px;
+  font-size: 16px;
   color: #888;
 }
 
@@ -3786,7 +3786,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -3803,7 +3803,7 @@ a.nav-user--active .header-avatar-icon {
   color: #666;
   border: 1.5px solid #ccc;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   cursor: pointer;
   transition: all 0.12s;
@@ -3856,7 +3856,7 @@ a.nav-user--active .header-avatar-icon {
 
 .pay-status {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 12px;
@@ -3890,7 +3890,7 @@ a.nav-user--active .header-avatar-icon {
 .pay-td--bank-code {
   text-align: center;
   font-family: monospace;
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   letter-spacing: 0.05em;
 }
@@ -3898,13 +3898,13 @@ a.nav-user--active .header-avatar-icon {
 .pay-td--account-num {
   text-align: right;
   font-family: monospace;
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
   letter-spacing: 0.05em;
 }
 
 .pay-td--account-kana {
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   white-space: nowrap;
 }
@@ -3913,37 +3913,37 @@ a.nav-user--active .header-avatar-icon {
 .pay-person-name {
   display: block;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: #1a1a1a;
   white-space: nowrap;
 }
 
 .pay-worker-id {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   color: #bbb;
   margin-top: 2px;
 }
 
 .pay-td--workdate {
   white-space: nowrap;
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
 }
 
 .pay-td--course {
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
 }
 
 .pay-td--location {
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   line-height: 1.5;
 }
 
 .pay-td--expense {
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   white-space: nowrap;
 }
@@ -3968,25 +3968,25 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .paydet-person-id {
-  font-size: 13px;
+  font-size: 15px;
   color: #999;
   white-space: nowrap;
 }
 
 .paydet-person-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #1a1a1a;
   white-space: nowrap;
 }
 
 .paydet-person-address {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
 .paydet-person-mynumber {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   display: flex;
   align-items: center;
@@ -4010,7 +4010,7 @@ a.nav-user--active .header-avatar-icon {
   border-radius: 16px;
   background: #fff;
   color: #444;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -4074,7 +4074,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msgd-user-link {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #0f569f;
   text-decoration: none;
@@ -4090,7 +4090,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1.5px solid #e65100;
   color: #e65100;
   background: transparent;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding: 2px 9px;
   border-radius: 20px;
@@ -4101,7 +4101,7 @@ a.nav-user--active .header-avatar-icon {
   display: inline-block;
   padding: 3px 13px;
   border-radius: 24px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -4132,7 +4132,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -4147,7 +4147,7 @@ a.nav-user--active .header-avatar-icon {
   color: #555;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -4196,7 +4196,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msgd-sender-name {
-  font-size: 13px;
+  font-size: 15px;
   color: #888;
   margin-bottom: 6px;
   font-weight: 600;
@@ -4246,7 +4246,7 @@ a.nav-user--active .header-avatar-icon {
   background: #f0f2f5;
   border-radius: 0 10px 10px 10px;
   padding: 12px 16px;
-  font-size: 14px;
+  font-size: 16px;
   color: #1a1a1a;
   line-height: 1.7;
 }
@@ -4257,7 +4257,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border-radius: 20px 0 10px 10px;
   padding: 12px 16px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
 }
 
@@ -4270,7 +4270,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msgd-time {
-  font-size: 12px;
+  font-size: 14px;
   color: #bbb;
 }
 
@@ -4278,7 +4278,7 @@ a.nav-user--active .header-avatar-icon {
   display: inline-block;
   padding: 1px 9px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -4311,7 +4311,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1.5px solid #e0e0e0;
   border-radius: 34px;
   padding: 9px 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   color: #1a1a1a;
   outline: none;
@@ -4343,7 +4343,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -4394,7 +4394,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .search-modal-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
@@ -4437,7 +4437,7 @@ a.nav-user--active .header-avatar-icon {
 .search-form-label {
   width: 100px;
   flex-shrink: 0;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #333;
 }
@@ -4448,7 +4448,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1.5px solid #ddd;
   border-radius: 16px;
   padding: 0 12px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   color: #1a1a1a;
   outline: none;
@@ -4483,7 +4483,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .search-form-check-text {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   font-weight: 600;
   user-select: none;
@@ -4505,7 +4505,7 @@ a.nav-user--active .header-avatar-icon {
   color: #555;
   border: 1.5px solid #bbb;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -4523,7 +4523,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -4549,7 +4549,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .acct-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 16px;
@@ -4575,7 +4575,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 18px 20px;
   text-decoration: none;
   color: #1a1a1a;
-  font-size: 15px;
+  font-size: 17px;
   border-bottom: 1px solid #f0f0f0;
   transition: background 0.12s;
 }
@@ -4630,7 +4630,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .phistory-date {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
@@ -4640,7 +4640,7 @@ a.nav-user--active .header-avatar-icon {
   border-radius: 14px;
   background: #fff;
   color: #4c9e51;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
@@ -4658,7 +4658,7 @@ a.nav-user--active .header-avatar-icon {
   flex-direction: column;
   gap: 3px;
   margin-bottom: 14px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   line-height: 1.6;
 }
@@ -4695,7 +4695,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -4716,7 +4716,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .phistory-total {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
@@ -4732,7 +4732,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .withdrawal-desc {
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
   line-height: 1.8;
   margin-bottom: 32px;
@@ -4748,7 +4748,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -4789,7 +4789,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 3px 14px;
   border: 1px solid #555;
   border-radius: 34px;
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
 }
 
@@ -4812,14 +4812,14 @@ a.nav-user--active .header-avatar-icon {
 .phdet-label {
   width: 160px;
   min-width: 160px;
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   padding-top: 2px;
 }
 
 .phdet-value {
   flex: 1;
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
 }
 
@@ -4849,7 +4849,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   padding: 8px 0;
   border-bottom: 1px dotted #e0e0e0;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -4875,7 +4875,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 12px 0 4px;
   border-top: 1px solid #e0e0e0;
   margin-top: 4px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #111;
 }
@@ -4916,7 +4916,7 @@ a.nav-user--active .header-avatar-icon {
 .fmodal-label {
   width: 130px;
   min-width: 130px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -4933,7 +4933,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 0 10px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   box-sizing: border-box;
 }
@@ -4958,7 +4958,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   cursor: pointer;
 }
@@ -4978,7 +4978,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .fmodal-period-sep {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   padding: 0 4px;
 }
@@ -4989,7 +4989,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 0 6px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   background: #fff;
   cursor: pointer;
@@ -5016,7 +5016,7 @@ a.nav-user--active .header-avatar-icon {
   color: #333;
   border: 1px solid #bbb;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: inherit;
   cursor: pointer;
   transition: background 0.15s;
@@ -5034,7 +5034,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5070,7 +5070,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .applist-proj-id {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #111;
 }
@@ -5081,7 +5081,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 3px 14px;
   border: 1px solid #555;
   border-radius: 34px;
-  font-size: 13px;
+  font-size: 15px;
   color: #555;
   white-space: nowrap;
 }
@@ -5092,19 +5092,19 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .applist-proj-date {
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
   margin-bottom: 4px;
 }
 
 .applist-proj-title {
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
   margin-bottom: 4px;
 }
 
 .applist-proj-addr {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
 }
 
@@ -5122,7 +5122,7 @@ a.nav-user--active .header-avatar-icon {
 .applist-tab-btn {
   display: inline-block;
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 17px;
   color: #555;
   text-decoration: none;
   border-bottom: 2px solid transparent;
@@ -5163,7 +5163,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .applist-worker-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #4c9e51;
   text-decoration: none;
@@ -5184,7 +5184,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: baseline;
   padding: 7px 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -5206,7 +5206,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .applist-addr-note {
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
   margin-left: 8px;
 }
@@ -5223,7 +5223,7 @@ a.nav-user--active .header-avatar-icon {
 .applist-sub-link {
   color: #0f569f;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 8px;
 }
 
@@ -5238,7 +5238,7 @@ a.nav-user--active .header-avatar-icon {
   border: 1px solid #ddd;
   border-radius: 14px;
   background: #fafafa;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   color: #333;
   box-sizing: border-box;
@@ -5260,7 +5260,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 10px 12px;
   border: 1px solid #ddd;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   color: #333;
   resize: vertical;
@@ -5282,7 +5282,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5326,7 +5326,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .order-modal-caution {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
   line-height: 1.7;
   margin: 0 0 16px;
@@ -5337,14 +5337,14 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .order-modal-question {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #222;
   margin: 0 0 24px;
 }
 
 .order-modal-complete {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #222;
   margin: 0 0 16px;
@@ -5363,7 +5363,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5381,7 +5381,7 @@ a.nav-user--active .header-avatar-icon {
   color: #555;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5399,7 +5399,7 @@ a.nav-user--active .header-avatar-icon {
   color: #555;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5417,7 +5417,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5435,7 +5435,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 16px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.15s;
@@ -5452,7 +5452,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5495,7 +5495,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .search-modal-title {
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 700;
   color: #222;
   margin: 0;
@@ -5504,7 +5504,7 @@ a.nav-user--active .header-avatar-icon {
 .search-modal-close {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 26px;
   color: #999;
   cursor: pointer;
   line-height: 1;
@@ -5531,7 +5531,7 @@ a.nav-user--active .header-avatar-icon {
 .search-modal-label {
   width: 72px;
   flex-shrink: 0;
-  font-size: 15px;
+  font-size: 17px;
   color: #333;
 }
 
@@ -5540,7 +5540,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 9px 12px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: inherit;
   outline: none;
 }
@@ -5554,7 +5554,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 9px 10px;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: inherit;
   background: #fff;
   outline: none;
@@ -5578,7 +5578,7 @@ a.nav-user--active .header-avatar-icon {
   color: #333;
   border: 1px solid #ccc;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5595,7 +5595,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5624,7 +5624,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5642,7 +5642,7 @@ a.nav-user--active .header-avatar-icon {
   border-radius: 16px;
   padding: 18px 20px;
   margin-bottom: 28px;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.8;
   color: #333;
 }
@@ -5671,7 +5671,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5701,14 +5701,14 @@ a.nav-user--active .header-avatar-icon {
   margin-top: 24px;
   padding-top: 16px;
   border-top: 1px solid #e0e0e0;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 
 .applist-pager-total {
   font-weight: 700;
   color: #4c9e51;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .applist-pager-range {
@@ -5726,7 +5726,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 4px 10px;
   background: none;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   color: #555;
   cursor: pointer;
@@ -5777,7 +5777,7 @@ a.nav-user--active .header-avatar-icon {
   color: #333;
   border: 1px solid #bbb;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   cursor: pointer;
   transition: background 0.15s;
@@ -5796,7 +5796,7 @@ a.nav-user--active .header-avatar-icon {
 .btn-proc-filter {
   padding: 8px 18px;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
@@ -5838,7 +5838,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 10px 16px;
   background: #fafafa;
   border-bottom: 1px solid #e0e0e0;
-  font-size: 13px;
+  font-size: 15px;
   color: #777;
   gap: 0;
 }
@@ -5852,7 +5852,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: flex-start;
   margin-bottom: 12px;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -5891,7 +5891,7 @@ a.nav-user--active .header-avatar-icon {
   color: #333;
   border: 1px solid #bbb;
   border-radius: 14px;
-  font-size: 13px;
+  font-size: 15px;
   font-family: inherit;
   cursor: pointer;
   transition: background 0.15s;
@@ -5907,7 +5907,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -5920,7 +5920,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .proc-kenshu-note {
-  font-size: 13px;
+  font-size: 15px;
   color: #666;
   line-height: 1.6;
   flex: 1;
@@ -5928,7 +5928,7 @@ a.nav-user--active .header-avatar-icon {
 
 .proc-deadline {
   color: #4c9e51;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.6;
 }
@@ -5970,14 +5970,14 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .dashboard-welcome__text h1 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #333;
   margin-bottom: 4px;
 }
 
 .dashboard-welcome__text p {
-  font-size: 14px;
+  font-size: 16px;
   color: #666;
 }
 
@@ -5989,7 +5989,7 @@ a.nav-user--active .header-avatar-icon {
   color: #fff;
   padding: 10px 20px;
   border-radius: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   transition: background 0.15s;
   white-space: nowrap;
@@ -6044,27 +6044,27 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .stat-card__value {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
   color: #333;
   line-height: 1.1;
 }
 
 .stat-card__unit {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #666;
   margin-left: 2px;
 }
 
 .stat-card__label {
-  font-size: 13px;
+  font-size: 15px;
   color: #777;
   margin-top: 4px;
 }
 
 .stat-card__link {
-  font-size: 12px;
+  font-size: 14px;
   color: #4c9e51;
   font-weight: 600;
   margin-top: 6px;
@@ -6091,7 +6091,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .dashboard-section__title {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: #333;
   display: flex;
@@ -6104,7 +6104,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .dashboard-section__link {
-  font-size: 13px;
+  font-size: 15px;
   color: #4c9e51;
   font-weight: 600;
   display: flex;
@@ -6164,7 +6164,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .action-card__label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -6179,14 +6179,14 @@ a.nav-user--active .header-avatar-icon {
 .dashboard-table td {
   padding: 10px 16px;
   text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   border-bottom: 1px solid #f0f0f0;
 }
 
 .dashboard-table th {
   font-weight: 700;
   color: #666;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   background: #fafafa;
@@ -6222,7 +6222,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 4px;
   padding: 3px 9px;
   border-radius: 24px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -6274,14 +6274,14 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .alert-item__title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #333;
   margin-bottom: 2px;
 }
 
 .alert-item__sub {
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
 }
 
