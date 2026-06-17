@@ -7098,3 +7098,10 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wprocedure-body {
   max-width: var(--ds-container);
 }
+
+/* コンテナ幅統一の追補: 全幅だったマニュアル本文(.wmanual-main)を中央1200pxに */
+.wmanual-main {
+  max-width: var(--ds-container);
+  margin-left: auto;
+  margin-right: auto;
+}
