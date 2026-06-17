@@ -7042,3 +7042,33 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   font-weight: 700;
   border-bottom: none;
 }
+
+/* =========================================================
+   余白設計の全体展開（受注者）: コンテナ所有のスタックスペーシング
+   ※ 子の上下マージン依存を解除し、コンテナが要素間の余白を所有。
+     block の縦積みコンテナ（各ページ本文ラッパー / フォームカード）に適用。
+     worker.css は後読みのため、ここで確実に最終適用される。
+========================================================= */
+:root { --ds-stack-gap: 20px; }
+
+.wlist-inner > * ,
+.wdetail-inner > * ,
+.wmylist-inner > * ,
+.wreward-inner > * ,
+.wmsg-inner > * ,
+.wbasic-inner > * ,
+.wcontact-inner > * ,
+.worker-card > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.wlist-inner > * + * ,
+.wdetail-inner > * + * ,
+.wmylist-inner > * + * ,
+.wreward-inner > * + * ,
+.wmsg-inner > * + * ,
+.wbasic-inner > * + * ,
+.wcontact-inner > * + * ,
+.worker-card > * + * {
+  margin-top: var(--ds-stack-gap);
+}

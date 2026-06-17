@@ -6549,3 +6549,11 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .applist-main { padding-top: 24px; }
 .applist-main > * { margin-top: 0; margin-bottom: 0; }
 .applist-main > * + * { margin-top: var(--ds-stack-gap); }
+
+/* --- 余白設計の全体展開（発注者）: コンテナ所有のスタックスペーシング ---
+   ※ block の縦積みコンテナに限定（flexの .det-main は対象外） */
+.main-content > * { margin-top: 0; margin-bottom: 0; }
+.main-content > * + * { margin-top: var(--ds-stack-gap); }
+
+.det-tab-body > * { margin-top: 0; margin-bottom: 0; }
+.det-tab-body > * + * { margin-top: var(--ds-stack-gap); }
