@@ -6557,3 +6557,26 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 
 .det-tab-body > * { margin-top: 0; margin-bottom: 0; }
 .det-tab-body > * + * { margin-top: var(--ds-stack-gap); }
+
+/* =========================================================
+   コンテナ幅の統一（PC閲覧時 約1200px）
+   ※ 主要なページ本文/ヘッダー/フッターの最大幅を単一トークンに統一。
+     max-width のためビューポートが狭い端末では自動的に縮小（モバイル無害）。
+     モーダル(.modal-dialog/.fmodal-dialog)は対象外。
+========================================================= */
+:root { --ds-container: 1200px; }
+
+.header-inner,
+.site-main,
+.footer-inner,
+.notif-main,
+.create-wrap,
+.pay-page-main,
+.acct-wrap,
+.phistory-main,
+.phdet-main,
+.applist-main,
+.renew-body,
+.dashboard-main {
+  max-width: var(--ds-container);
+}

@@ -7072,3 +7072,29 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .worker-card > * + * {
   margin-top: var(--ds-stack-gap);
 }
+
+/* =========================================================
+   コンテナ幅の統一（PC閲覧時 約1200px／受注者）
+   ※ worker.css は後読みのため、ここで確実に最終適用される。
+     モーダル(.wmylist-modal)は対象外。
+========================================================= */
+:root { --ds-container: 1200px; }
+
+.worker-header-inner,
+.worker-card,
+.worker-card--wide,
+.wmypage-content,
+.wsearch-controls-inner,
+.wlist-inner,
+.wdetail-inner,
+.wmylist-inner,
+.wreward-inner,
+.wmsg-inner,
+.wth-inner,
+.wbasic-inner,
+.wcontact-inner,
+.wsidebar-layout,
+.wmld-inner,
+.wprocedure-body {
+  max-width: var(--ds-container);
+}
