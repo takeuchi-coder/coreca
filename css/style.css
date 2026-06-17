@@ -6377,3 +6377,90 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
   background: #c62828;
   color: #fff;
 }
+
+/* =========================================================
+   レイアウト刷新（カード型・余白広め）
+   ※ HTML/JS は変更せず、主要コンテナ・カード・余白のみ調整
+========================================================= */
+/* ヘッダー: ややゆとりを持たせ、やわらかい影に */
+.header-inner { height: 64px; }
+.site-header {
+  border-bottom: 1px solid #e6efe6;
+  box-shadow: 0 2px 16px rgba(36,80,40,0.06);
+}
+
+/* メインレイアウト: 全体の余白とサイド〜本文のギャップを拡大 */
+.site-main {
+  max-width: 1280px;
+  margin: 32px auto 56px;
+  padding: 0 24px;
+  gap: 28px;
+}
+
+/* サイドバー: 白カード化（本文と分離） */
+.sidebar {
+  background: #fff;
+  border: 1px solid #e6efe6;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(36,80,40,0.06);
+  padding: 18px 14px;
+  top: 88px;
+}
+
+/* メインコンテンツ: 淡いトレイ + 余白広め（内側の白カードを際立たせる） */
+.main-content {
+  background-color: #edf5ee;
+  border-radius: 20px;
+  padding: 26px 28px;
+}
+
+/* ページ見出し: 余白と区切りでセクション感を強調 */
+.page-header {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #dfeae0;
+}
+.list-controls { margin-bottom: 18px; }
+
+/* カード類: やわらかい影・ホバーで浮き上がる */
+.project-card {
+  border-color: #e6efe6;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(36,80,40,0.06);
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.project-card:hover {
+  box-shadow: 0 10px 26px rgba(36,80,40,0.13);
+  transform: translateY(-3px);
+}
+.stat-card {
+  border-color: #e6efe6;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(36,80,40,0.06);
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.stat-card:hover {
+  box-shadow: 0 10px 26px rgba(36,80,40,0.13);
+  transform: translateY(-3px);
+}
+
+/* テーブルを独立した白カードに */
+.proj-table-wrap {
+  border: 1px solid #e6efe6;
+  border-radius: 18px;
+  box-shadow: 0 3px 14px rgba(36,80,40,0.06);
+  overflow: hidden;
+}
+.pay-table-wrap {
+  border-color: #e6efe6;
+  border-radius: 18px;
+  box-shadow: 0 3px 14px rgba(36,80,40,0.06);
+}
+
+/* 詳細ページ: サイドバーの硬い境界線をやわらかい影に */
+.det-sidebar {
+  border-right: none;
+  box-shadow: 1px 0 14px rgba(36,80,40,0.05);
+}
