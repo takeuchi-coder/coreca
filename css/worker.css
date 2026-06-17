@@ -6970,3 +6970,75 @@
   box-shadow: 0 10px 24px rgba(36,80,40,0.12);
   transform: translateY(-3px);
 }
+
+/* =========================================================
+   共通デザインシステム層（デザイントークン + 横断統一ルール）
+   ※ HTML/JS は変更せず、別要素のセレクタをまとめて同一スタイルを付与し、
+     共通のスタイルガイドから生成されたような一貫性を持たせる
+   ※ 受注者ページは worker.css が後読みのため、両CSSの末尾に同一内容を配置
+========================================================= */
+:root {
+  --ds-primary: #4c9e51;
+  --ds-primary-dark: #3d8042;
+  --ds-danger: #c62828;
+  --ds-border: #e6efe6;
+  --ds-radius-sm: 10px;
+  --ds-radius-md: 14px;
+  --ds-radius-lg: 20px;
+  --ds-radius-pill: 999px;
+  --ds-shadow-sm: 0 2px 10px rgba(36,80,40,0.06);
+  --ds-shadow-md: 0 6px 20px rgba(36,80,40,0.10);
+  --ds-ease: 0.18s ease;
+}
+
+/* ボタン: 角丸・トランジション・フォントを全ボタンで統一 */
+[class*="btn"],
+button[class] {
+  border-radius: var(--ds-radius-md);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background var(--ds-ease), color var(--ds-ease),
+              border-color var(--ds-ease), box-shadow var(--ds-ease),
+              transform var(--ds-ease), opacity var(--ds-ease);
+}
+
+/* フォーム部品: 角丸・フォント・フォーカスリングを統一 */
+input, select, textarea,
+input[class], select[class], textarea[class] {
+  border-radius: var(--ds-radius-sm);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+input:focus, select:focus, textarea:focus,
+input[class]:focus, select[class]:focus, textarea[class]:focus {
+  outline: none;
+  border-color: var(--ds-primary);
+  box-shadow: 0 0 0 3px rgba(76,158,81,0.15);
+}
+
+/* バッジ/ピル: ピル形状・太字で統一 */
+[class*="badge"],
+[class*="pill"] {
+  border-radius: var(--ds-radius-pill);
+  font-weight: 700;
+}
+
+/* カード/サーフェス: 角丸を共通トークンで統一 */
+.sidebar, .main-content,
+.project-card, .stat-card,
+.proj-table-wrap, .pay-table-wrap,
+.worker-card, .wdetail-inner, .wmylist-card,
+.wlist-item, .wsearch-list-item {
+  border-radius: var(--ds-radius-lg);
+}
+
+/* テーブルヘッダー: 全テーブル共通の緑ヘッダーに統一 */
+.proj-table th, .dashboard-table th, .msg-th, .pay-th,
+.wmsg-th, .wreward-th, .confirm-th,
+.wth-table th, .wprocedure-modal-table th,
+.wconfirm-table th, .wreport-table th {
+  background-color: var(--ds-primary);
+  color: #fff;
+  font-weight: 700;
+  border-bottom: none;
+}
