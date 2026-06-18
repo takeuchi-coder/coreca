@@ -7279,3 +7279,14 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
     display: none;
   }
 }
+
+/* profile.html: スマホでは入力行を縦積み（見出しセルと入力セルをカラム落ち） */
+@media (max-width: 600px) {
+  .profile-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .profile-label-cell {
+    width: auto;
+  }
+}
