@@ -452,6 +452,7 @@
 
 /* テキスト入力 */
 .profile-input {
+  width: 100%;
   padding: 9px 12px;
   border: 1px solid #ccc;
   border-radius: 14px;
@@ -474,9 +475,9 @@
 }
 
 .profile-input--name { width: 140px; }
-.profile-input--phone { width: 240px; }
-.profile-input--city { width: 100%; max-width: 440px; }
-.profile-input--password { width: 100%; max-width: 440px; }
+.profile-input--phone { width: 100%; }
+.profile-input--city { width: 100%; }
+.profile-input--password { width: 100%; }
 
 /* ヒントテキスト */
 .profile-hint {
@@ -547,7 +548,7 @@
 .profile-select--year  { width: 90px; }
 .profile-select--month { width: 72px; }
 .profile-select--day   { width: 72px; }
-.profile-select--pref  { width: 200px; }
+.profile-select--pref  { width: 100%; }
 
 /* 郵便番号 + 住所入力ボタン */
 .profile-zip-row {
