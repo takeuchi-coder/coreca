@@ -5793,6 +5793,8 @@
   line-height: 1.45;
   letter-spacing: 0.01em;
   margin: 6px 0 16px;
+  border-left: 4px solid #4caf50;
+  padding: .1em .75em;
 }
 
 /* 案件IDバー: ピルと調和する角丸の薄グレーバー */
@@ -5848,7 +5850,7 @@
   padding: 6px;
   background: #eaf7ec;
   border-radius: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .wmld-tab {
