@@ -7179,3 +7179,23 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   /* 地域選択グリッド(3列)を2列に */
   .wregion-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* my-list-detail.html: スマホでは表の見出し(th)と値(td)をカラム落ち（縦積み）に */
+@media (max-width: 768px) {
+  .wmld-table,
+  .wmld-table tbody,
+  .wmld-row,
+  .wmld-label,
+  .wmld-value {
+    display: block;
+    width: 100%;
+  }
+  .wmld-label {
+    padding: 14px 0 0;
+    white-space: normal;   /* 全幅になるため長い見出しは折り返す */
+    font-weight: 700;
+  }
+  .wmld-value {
+    padding: 4px 0 14px;
+  }
+}
