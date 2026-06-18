@@ -6587,3 +6587,26 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* =========================================================
+   1カラムページのコンテンツ幅を統一
+   ※ コンテナ最大幅は1200pxのまま、横ガターを24pxに揃え、
+     ページごとに20〜36pxと異なっていた実効コンテンツ幅を均一化(約1152px)。
+     renewのapplist-main+renew-body二重ネストによる過剰な縮小も解消。
+========================================================= */
+.applist-main,
+.dashboard-main,
+.notif-main,
+.acct-wrap,
+.phistory-main,
+.phdet-main,
+.create-wrap,
+.msg-wrap,
+.msgd-wrap {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.renew-body {
+  padding-left: 0;
+  padding-right: 0;
+}
