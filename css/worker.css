@@ -5890,7 +5890,7 @@
 
 .wmld-label {
   width: 170px;
-  padding: 24px 28px 24px 4px;
+  padding: 24px 40px 24px 4px;
   font-size: 16px;
   font-weight: 400;
   color: #555;
@@ -5900,7 +5900,7 @@
 }
 
 .wmld-value {
-  padding: 24px 4px;
+  padding: 24px 4px 24px 24px;
   font-size: 16px;
   color: #222;
   line-height: 1.9;
