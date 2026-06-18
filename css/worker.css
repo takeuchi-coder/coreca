@@ -4758,7 +4758,8 @@
 
 /* メールアドレス入力幅 */
 .wpr-email-input {
-  max-width: 340px;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* 送信ボタン余白調整 */
