@@ -7120,6 +7120,10 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
      最終行は下線を消して角丸の下端をきれいに見せる） */
 .confirm-th {
   border-bottom: 1px solid #e0e0e0;
+  background-color: transparent;
+  color: #333;
+  width: 1%;
+  white-space: nowrap;
 }
 .confirm-row:last-child .confirm-th,
 .confirm-row:last-child .confirm-td {
