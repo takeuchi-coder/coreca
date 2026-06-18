@@ -7129,3 +7129,13 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .confirm-row:last-child .confirm-td {
   border-bottom: none;
 }
+
+/* reward.html: 「コース名」列の幅を文字幅に合わせて縮める
+   （.pay-th--course-name は reward.html 専用。住所列と同様 width:1%+nowrap で最小化） */
+.pay-th--course-name {
+  width: 1%;
+  white-space: nowrap;
+}
+.wreward-table-wrap .pay-table td:nth-child(2) {
+  white-space: nowrap;
+}
