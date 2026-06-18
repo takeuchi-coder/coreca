@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 24px;
   height: 56px;
@@ -7097,11 +7098,13 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wmld-inner,
 .wprocedure-body {
   max-width: var(--ds-container);
+  width: 100%;
 }
 
 /* コンテナ幅統一の追補: 全幅だったマニュアル本文(.wmanual-main)を中央1200pxに */
 .wmanual-main {
   max-width: var(--ds-container);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }

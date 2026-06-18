@@ -6585,6 +6585,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 /* コンテナ幅統一の追補: 全幅だったメッセージ系レイアウト(.det-main)を中央1200pxに */
 .det-main {
   max-width: var(--ds-container);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
