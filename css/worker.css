@@ -5785,37 +5785,55 @@
   color: #4c9e51;
 }
 
+/* 案件タイトル（.wmld-inner 直下の先頭 p）: 見出しとして強調 */
+.wmld-inner > p:first-of-type {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  margin: 6px 0 16px;
+}
+
+/* 案件IDバー: ピルと調和する角丸の薄グレーバー */
 .wmld-id-bar {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 10px 0 16px;
+  gap: 10px 16px;
   flex-wrap: wrap;
+  background: #f7f7f7;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
 }
 
 .wmld-id-bar-left {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 18px;
 }
 
 .wmld-id {
-  font-size: 16px;
-  color: #555;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
 }
 
 .wmld-orderer {
-  font-size: 16px;
-  color: #555;
+  font-size: 15px;
+  color: #666;
 }
 
 .wmld-status-badge {
   display: inline-block;
-  padding: 4px 14px;
+  padding: 5px 16px;
+  background: #fff;
   border: 1px solid #0f569f;
   border-radius: 34px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   color: #0f569f;
   white-space: nowrap;
