@@ -107,9 +107,7 @@ button {
 
 /* Nav — 中央配置（ロゴとアクションが両側でflex:1を取るため自然に中央へ） */
 .header-nav {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
+  display: contents;
 }
 
 .nav-list {
@@ -6671,33 +6669,31 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 }
 
 /* =========================================================
-   発注者ヘッダー: スマホで受注者側と同じ見た目に
-   （白いメニュー／ナビ＋アカウントをメニュー内に展開／ヘッダーバーはロゴ+ハンバーガーのみ）
-   ※ HTMLは変更せず、.nav-actions が .header-nav の後続兄弟である構造を利用。
-     既存の発注者モバイル指定(緑・absolute)を上書きするため末尾に配置。
+   発注者ヘッダー: スマホで受注者側と同一のオーバーレイ挙動に
+   （.nav-actions を <nav> 内へ移したHTML構造に対応。ナビ+アカウントを
+     白いドロップダウンとしてオーバーレイ表示し、バーはロゴ+ハンバーガーのみ）
+   ※ 既存の発注者モバイル指定(緑)を上書きするため末尾に配置。
 ========================================================= */
 @media (max-width: 900px) {
   .header-inner {
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
   }
-  .header-logo { order: 0; }
-  .hamburger { order: 1; margin-left: auto; display: flex; }
-
-  /* ナビ: 閉時は非表示、開時に全幅で下に展開（白メニュー） */
+  /* ナビ(+アカウント)を白いオーバーレイのドロップダウンに */
   .header-nav {
-    order: 2;
-    flex: 0 0 100%;
     display: none;
-    position: static;
-    top: auto; left: auto; right: auto;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
     flex-direction: column;
     background: #fff;
+    box-shadow: 0 6px 14px rgba(36,80,40,0.12);
     border-top: 1px solid #e6efe6;
-    box-shadow: none;
-    padding: 6px 0 0;
-    margin: 0;
+    padding: 8px 16px;
+    z-index: 200;
   }
   .header-nav.is-open { display: flex; }
   .nav-list {
@@ -6709,7 +6705,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .nav-item { width: 100%; }
   .nav-item .nav-link {
     width: 100%;
-    padding: 12px 4px;
+    padding: 12px 8px;
     border-radius: 0;
     border-bottom: 1px solid #eef2ee;
     color: #555;
@@ -6717,21 +6713,16 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .nav-item .nav-link:hover { background: rgba(76,158,81,0.08); color: #4c9e51; }
   .nav-item--active .nav-link { color: #4c9e51; background: rgba(76,158,81,0.12); }
 
-  /* アカウント: ナビが開いている時だけメニュー内に表示（ヘッダーバーからは消える） */
+  /* アカウント: ドロップダウン内（nav内）に表示 */
   .nav-actions {
-    order: 3;
-    flex: 0 0 100%;
-    display: none;
     width: 100%;
-    background: #fff;
-    border-top: 1px solid #eef2ee;
-    box-shadow: 0 8px 14px rgba(36,80,40,0.10);
-    padding: 12px 4px 14px;
-    margin: 0;
     justify-content: flex-start;
+    padding: 10px 0 4px;
     gap: 8px;
   }
-  .header-nav.is-open ~ .nav-actions { display: flex; }
   .header-username { display: inline; color: #333; }
   .header-avatar-icon { background: rgba(76,158,81,0.16); color: #4c9e51; }
+
+  .hamburger { display: flex; }
+  .site-header { position: relative; }
 }
