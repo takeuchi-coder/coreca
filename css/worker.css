@@ -614,9 +614,13 @@
 /* 確認テーブル */
 .confirm-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 16px;
   margin-bottom: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
 .confirm-row {
@@ -634,14 +638,15 @@
   text-align: left;
   vertical-align: middle;
   white-space: nowrap;
-  border: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
 }
 
 .confirm-td {
   padding: 8px 10px;
   color: #333;
   vertical-align: middle;
-  border: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* ボタン群（戻る＋登録する） */
@@ -7108,4 +7113,15 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* profile-confirm: 角丸テーブルの行区切り線を整える
+   （テーブルヘッダー統一ルールが th の border-bottom を none にするため復活させ、
+     最終行は下線を消して角丸の下端をきれいに見せる） */
+.confirm-th {
+  border-bottom: 1px solid #e0e0e0;
+}
+.confirm-row:last-child .confirm-th,
+.confirm-row:last-child .confirm-td {
+  border-bottom: none;
 }
