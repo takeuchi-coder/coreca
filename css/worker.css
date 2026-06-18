@@ -518,7 +518,6 @@
   padding: 10px 14px;
   border-radius: 14px;
   margin-bottom: 10px;
-  max-width: 520px;
 }
 
 .profile-birthday-selects {
@@ -7285,6 +7284,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 @media (max-width: 600px) {
   .profile-row {
     flex-direction: column;
+    align-items: stretch;
     gap: 6px;
   }
   .profile-label-cell {
