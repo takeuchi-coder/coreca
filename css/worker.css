@@ -618,7 +618,8 @@
   border-spacing: 0;
   font-size: 16px;
   margin-bottom: 16px;
-  border: 1px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -639,7 +640,6 @@
   vertical-align: middle;
   white-space: nowrap;
   border-bottom: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
 }
 
 .confirm-td {
