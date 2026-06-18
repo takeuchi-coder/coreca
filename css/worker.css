@@ -7142,3 +7142,40 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wreward-table-wrap .pay-table td {
   white-space: nowrap;
 }
+
+/* =========================================================
+   レスポンシブ調整（スマホ ~768px／受注者）
+   ※ 横長要素をカラム落ち/縦積みさせ、余白を縮小する単純設計。
+     worker.css は後読みのため、ここで確実に最終適用。
+========================================================= */
+@media (max-width: 768px) {
+  .worker-header-inner { padding: 0 12px; }
+
+  /* ページ余白を縮小 */
+  .worker-main { padding: 28px 12px 48px; }
+  .wmypage-main { padding: 24px 12px 40px; }
+  .wlist-main,
+  .wdetail-main,
+  .wmylist-main,
+  .wreward-main,
+  .wmsg-main,
+  .wbasic-main,
+  .wcontact-main,
+  .wmld-main,
+  .wth-main,
+  .wmanual-main {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* カードの余白を縮小 */
+  .worker-card { padding: 20px 16px; }
+  .wdetail-inner { padding: 18px 14px; }
+
+  /* 横長の一覧行はカラム落ち */
+  .wlist-item,
+  .wsearch-list-item { flex-wrap: wrap; }
+
+  /* 地域選択グリッド(3列)を2列に */
+  .wregion-grid { grid-template-columns: repeat(2, 1fr); }
+}

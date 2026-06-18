@@ -6614,3 +6614,58 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   padding-left: 0;
   padding-right: 0;
 }
+
+/* =========================================================
+   レスポンシブ調整（スマホ ~768px）
+   ※ レイアウトは大きく変えず、横長要素をカラム落ち/縦積みさせる単純設計。
+     既存メディアクエリ・再設計上書きより後に配置し確実に最終適用。
+========================================================= */
+@media (max-width: 768px) {
+  .header-inner { padding: 0 12px; }
+
+  /* メイン: サイドバー+本文を縦積み */
+  .site-main {
+    flex-direction: column;
+    gap: 16px;
+    margin: 16px auto;
+    padding: 0 12px;
+  }
+  .sidebar { width: 100%; position: static; top: auto; }
+  .main-content { padding: 16px; }
+
+  /* フォーム: ラベルと入力を縦積み */
+  .form-row { grid-template-columns: 1fr; }
+  .form-label-cell { border-right: none; }
+
+  /* ダッシュボードの多列グリッドを1列に */
+  .dashboard-stats,
+  .dashboard-actions { grid-template-columns: 1fr; }
+
+  /* ツールバー/見出し/タブは折り返し */
+  .page-header,
+  .list-controls,
+  .list-controls-right,
+  .det-topbar,
+  .det-tabs { flex-wrap: wrap; }
+
+  /* 詳細タブ本文の余白を縮小 */
+  .det-tab-body { margin: 0 0 16px; padding: 16px; }
+
+  /* アクション行は縦並び */
+  .card-actions { flex-direction: column; align-items: stretch; }
+
+  /* 1カラムページの左右ガターを縮小 */
+  .applist-main,
+  .dashboard-main,
+  .notif-main,
+  .acct-wrap,
+  .phistory-main,
+  .phdet-main,
+  .create-wrap,
+  .pay-page-main,
+  .msg-wrap,
+  .msgd-wrap {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
