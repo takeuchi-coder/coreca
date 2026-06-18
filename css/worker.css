@@ -7130,12 +7130,14 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   border-bottom: none;
 }
 
-/* reward.html: 「コース名」列の幅を文字幅に合わせて縮める
-   （.pay-th--course-name は reward.html 専用。住所列と同様 width:1%+nowrap で最小化） */
-.pay-th--course-name {
-  width: 1%;
-  white-space: nowrap;
+/* reward.html: 表の全セルを文字幅に合わせる
+   （.pay-table は width:100%+min-width:2200px で強制的に広がり各列に余白が出るため、
+     reward の表に限定して内容幅に縮め、全セルを nowrap で1行に収める） */
+.wreward-table-wrap .pay-table {
+  width: auto;
+  min-width: 0;
 }
-.wreward-table-wrap .pay-table td:nth-child(2) {
+.wreward-table-wrap .pay-table th,
+.wreward-table-wrap .pay-table td {
   white-space: nowrap;
 }
