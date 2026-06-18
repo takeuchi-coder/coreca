@@ -7245,8 +7245,6 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
     border-bottom: 1px solid #eef2ee;
   }
   .wmypage-body .nav-actions {
-    width: 100%;
-    justify-content: flex-start;
-    padding: 8px 0 4px;
+    display: none;
   }
 }

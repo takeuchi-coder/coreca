@@ -6713,15 +6713,10 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .nav-item .nav-link:hover { background: rgba(76,158,81,0.08); color: #4c9e51; }
   .nav-item--active .nav-link { color: #4c9e51; background: rgba(76,158,81,0.12); }
 
-  /* アカウント: ドロップダウン内（nav内）に表示 */
+  /* アカウント: スマホのハンバーガーメニュー内では非表示 */
   .nav-actions {
-    width: 100%;
-    justify-content: flex-start;
-    padding: 10px 0 4px;
-    gap: 8px;
+    display: none;
   }
-  .header-username { display: inline; color: #333; }
-  .header-avatar-icon { background: rgba(76,158,81,0.16); color: #4c9e51; }
 
   .hamburger { display: flex; }
   .site-header { position: relative; }
