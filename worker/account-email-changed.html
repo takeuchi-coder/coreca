@@ -21,7 +21,7 @@
         <img src="../images/logo.png" alt="コレからワーク" class="header-logo-img">
       </a>
 
-      <nav class="header-nav" aria-label="メインナビゲーション">
+      <nav class="header-nav" id="headerNav" aria-label="メインナビゲーション">
         <ul class="nav-list">
           <li class="nav-item"><a href="mypage.html" class="nav-link"><span class="nav-text">マイページ</span></a></li>
           <li class="nav-item">
@@ -55,6 +55,13 @@
           </a>
         </div>
       </nav>
+
+      <!-- ハンバーガーメニュー（モバイル用） -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
   </header>
@@ -169,5 +176,12 @@
   </footer>
 
 
+  <script>
+    (function () {
+      var h = document.getElementById("hamburgerBtn");
+      var n = document.getElementById("headerNav");
+      if (h && n) h.addEventListener("click", function () { n.classList.toggle("is-open"); });
+    })();
+  </script>
 </body>
 </html>

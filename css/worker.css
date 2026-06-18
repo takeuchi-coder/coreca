@@ -7199,3 +7199,54 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
     padding: 4px 0 14px;
   }
 }
+
+/* =========================================================
+   受注者ヘッダー: モバイルでハンバーガーメニュー化（発注者側と同挙動）
+   ※ .wmypage-body のグリッド/contents 指定を解除し、ナビをドロップダウンに。
+     ハンバーガー表示(.hamburger)・.site-header position:relative・.is-open表示は
+     style.css の既存モバイル指定を流用。
+========================================================= */
+@media (max-width: 900px) {
+  .wmypage-body .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wmypage-body .header-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(36,80,40,0.12);
+    border-top: 1px solid #e6efe6;
+    padding: 8px 16px;
+    gap: 0;
+    z-index: 200;
+  }
+  .wmypage-body .header-nav.is-open {
+    display: flex;
+  }
+  .wmypage-body .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0;
+  }
+  .wmypage-body .nav-item {
+    width: 100%;
+  }
+  .wmypage-body .nav-item .nav-link {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 0;
+    border-bottom: 1px solid #eef2ee;
+  }
+  .wmypage-body .nav-actions {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 8px 0 4px;
+  }
+}
