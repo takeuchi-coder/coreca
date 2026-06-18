@@ -5821,30 +5821,40 @@
   white-space: nowrap;
 }
 
+/* セグメント型ピル（既存の緑/グレー/白のみ使用） */
 .wmld-tabs {
   display: flex;
-  border-bottom: 2px solid #e0e0e0;
-  margin-bottom: 0;
+  width: fit-content;
+  max-width: 100%;
+  gap: 4px;
+  padding: 5px;
+  background: #f0f0f0;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  overflow-x: auto;
 }
 
 .wmld-tab {
-  padding: 10px 20px;
-  font-size: 17px;
+  padding: 9px 22px;
+  font-size: 15px;
   font-weight: 700;
   color: #666;
   text-decoration: none;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
+  border-radius: 10px;
+  white-space: nowrap;
   cursor: pointer;
+  transition: color 0.18s, background 0.18s, box-shadow 0.18s;
 }
 
 .wmld-tab--active {
-  color: #4c9e51;
-  border-bottom-color: #4c9e51;
+  color: #fff;
+  background: #4c9e51;
+  box-shadow: 0 3px 8px rgba(76,158,81,0.30);
 }
 
 .wmld-tab:not(.wmld-tab--active):hover {
-  color: #333;
+  color: #4c9e51;
+  background: #fff;
 }
 
 .wmld-table {
