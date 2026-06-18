@@ -474,7 +474,7 @@
   gap: 8px;
 }
 
-.profile-input--name { width: 140px; }
+.profile-input--name { flex: 1; width: auto; min-width: 0; }
 .profile-input--phone { width: 100%; }
 .profile-input--city { width: 100%; }
 .profile-input--password { width: 100%; }
@@ -545,9 +545,9 @@
 
 .profile-select:focus { border-color: #4c9e51; }
 
-.profile-select--year  { width: 90px; }
-.profile-select--month { width: 72px; }
-.profile-select--day   { width: 72px; }
+.profile-select--year  { flex: 1; width: auto; min-width: 0; }
+.profile-select--month { flex: 1; width: auto; min-width: 0; }
+.profile-select--day   { flex: 1; width: auto; min-width: 0; }
 .profile-select--pref  { width: 100%; }
 
 /* 郵便番号 + 住所入力ボタン */
@@ -557,7 +557,7 @@
   gap: 8px;
 }
 
-.profile-input--zip { width: 110px; }
+.profile-input--zip { flex: 1; width: auto; min-width: 0; }
 
 .btn-zip-search {
   padding: 9px 14px;
