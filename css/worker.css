@@ -5220,7 +5220,9 @@
 .wcontact-file-btn {
   display: inline-flex;
   align-items: center;
-  padding: 6px 16px;
+  justify-content: center;
+  min-width: 220px;
+  padding: 10px 16px;
   background: #fff;
   color: #666;
   border: 1px solid #ccc;
