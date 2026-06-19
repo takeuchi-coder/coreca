@@ -5479,14 +5479,36 @@
   background: #eaf6eb;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 960px) {
   .wsidebar-layout {
     flex-direction: column;
     gap: 16px;
   }
 
+  .wbasic-inner {
+    max-width: none;
+    order: 0;
+  }
+
   .wsidebar {
     width: 100%;
+    order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .wbasic-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 16px 18px;
+  }
+  .wbasic-label-col {
+    width: auto;
+    padding-top: 0;
+  }
+  .wbasic-email-row {
+    flex-wrap: wrap;
   }
 }
 
