@@ -5057,9 +5057,10 @@ a.nav-user--active .header-avatar-icon {
 
 /* 案件情報カード */
 .applist-proj-card {
-  margin-top: 20px;
-  padding: 14px 0 16px;
-  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  padding: 16px 18px;
 }
 
 .applist-proj-top {
@@ -5110,40 +5111,45 @@ a.nav-user--active .header-avatar-icon {
 
 /* タブバー */
 .applist-tabs-wrap {
-  border-bottom: 1px solid #ddd;
-  margin-top: 16px;
+  background: #eaf7ec;
+  border-radius: 16px;
+  padding: 6px;
+  overflow-x: auto;
 }
 
 .applist-tabs {
   display: flex;
-  gap: 0;
+  width: 100%;
+  gap: 5px;
 }
 
 .applist-tab-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 17px;
-  color: #555;
+  flex: 1;
+  display: block;
+  text-align: center;
+  padding: 15px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #5a8560;
   text-decoration: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
+  border: none;
+  border-radius: 12px;
   background: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  cursor: pointer;
   font-family: inherit;
   white-space: nowrap;
-  transition: color 0.15s;
+  transition: color 0.18s, background 0.18s, box-shadow 0.18s;
 }
 
-.applist-tab-btn:hover {
-  color: #4c9e51;
+.applist-tab-btn:not(.applist-tab-btn--active):hover {
+  color: #4caf50;
+  background: #fff;
 }
 
 .applist-tab-btn--active {
-  color: #4c9e51;
-  border-bottom-color: #4c9e51;
-  font-weight: 700;
+  color: #fff;
+  background: #4caf50;
+  box-shadow: 0 3px 10px rgba(76,175,80,0.35);
 }
 
 /* 応募者カード */
