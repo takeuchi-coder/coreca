@@ -7353,3 +7353,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   width: auto;
   min-width: 0;
 }
+
+/* account-*-error: エラーバナー上部に余白を追加（インラインstyleはmargin-top未指定のため外部CSSで付与） */
+.wbasic-error-banner {
+  margin-top: 16px;
+}
