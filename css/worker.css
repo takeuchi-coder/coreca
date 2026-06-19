@@ -4008,7 +4008,7 @@
   border-radius: 22px;
   box-shadow: 0 4px 20px rgba(36,80,40,0.06);
   margin-bottom: 16px;
-  padding: 22px 8px;
+  padding: 22px 32px;
   overflow: hidden;
 }
 
@@ -4016,7 +4016,7 @@
 .wbasic-row {
   display: flex;
   align-items: flex-start;
-  padding: 16px 32px;
+  padding: 16px 8px;
   gap: 24px;
 }
 
@@ -4404,7 +4404,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px 24px;
+  padding: 20px 8px;
 }
 
 .wbankform-label {
@@ -5505,13 +5505,13 @@
 @media (max-width: 600px) {
   /* カード/表の余白をスマホ向けに縮小 */
   .wbasic-card {
-    padding: 14px 10px;
+    padding: 14px 18px;
   }
   .wbasic-row {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
-    padding: 16px 16px;
+    padding: 16px 8px;
   }
   .wbasic-label-col {
     width: auto;
@@ -5526,7 +5526,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 6px;
-    padding: 16px 16px;
+    padding: 16px 8px;
   }
   .wbankform-label {
     flex: none;
