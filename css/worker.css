@@ -7172,6 +7172,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wreward-table-wrap .pay-table th,
 .wreward-table-wrap .pay-table td {
   white-space: nowrap;
+  padding: 16px 20px;
 }
 
 /* =========================================================
