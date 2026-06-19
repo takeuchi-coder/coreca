@@ -136,7 +136,7 @@
 }
 
 .worker-form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .worker-label {
@@ -282,7 +282,7 @@
 
 /* ログインフォーム: フィールド下余白調整 */
 .worker-form--login .worker-form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 /* ログインボタン（中央寄せ・幅固定） */
@@ -7004,7 +7004,7 @@
   border: 1px solid #e6efe6;
   border-radius: 22px;
   box-shadow: 0 4px 20px rgba(36,80,40,0.06);
-  padding: 38px 40px;
+  padding: 48px 48px;
 }
 .wdetail-inner {
   background: #fff;
