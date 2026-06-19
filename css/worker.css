@@ -5253,6 +5253,7 @@
 }
 
 .wcontact-privacy-link-wrap {
+  order: 1;
   font-size: 16px;
   color: #444;
   line-height: 1.7;
@@ -5268,6 +5269,7 @@
 }
 
 .wcontact-privacy-check-wrap {
+  order: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
