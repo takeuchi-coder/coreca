@@ -5307,13 +5307,15 @@
 .wcontact-btn-back {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 10px 24px;
+  min-width: 160px;
+  padding: 16px 40px;
   background: #888;
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
@@ -5328,13 +5330,15 @@
 .wcontact-btn-confirm {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 10px 24px;
+  min-width: 160px;
+  padding: 16px 40px;
   background: #3d8042;
   color: #fff;
   border: none;
   border-radius: 14px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   cursor: pointer;
   font-family: inherit;
