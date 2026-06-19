@@ -5181,7 +5181,7 @@
 }
 
 .wcontact-input--medium {
-  max-width: 280px;
+  max-width: 100%;
 }
 
 .wcontact-input-hint {
