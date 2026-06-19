@@ -7358,3 +7358,59 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wbasic-error-banner {
   margin-top: 16px;
 }
+
+/* =========================================================
+   transfer-history の表を messages の表と共通化（同じ見た目に）
+   ※ messagesは .wmsg-* のセルクラス、transfer-historyは .wth-table 要素セレクタ。
+     構造が違うため、共通プロパティをまとめて両方に適用する。
+     見出しの緑背景は共通の green-header ルールから継承。
+========================================================= */
+.wmsg-table-wrap,
+.wth-table-area {
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+.wmsg-table,
+.wth-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  background-color: #fff;
+}
+.wmsg-th,
+.wth-table th {
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+.wmsg-td,
+.wth-table td {
+  padding: 14px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  vertical-align: top;
+  border-bottom: none;
+}
+.wmsg-tr,
+.wth-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+.wmsg-tr:last-child,
+.wth-table tbody tr:last-child {
+  border-bottom: none;
+}
+.wmsg-tr:hover,
+.wth-table tbody tr:hover {
+  background: #fafafa;
+}
+/* wth固有のヘッダー行スタイルを無効化（wmsgに合わせる） */
+.wth-table thead tr {
+  background: transparent;
+  border-bottom: none;
+}
