@@ -4085,14 +4085,13 @@
 }
 
 .wbasic-input--email-readonly {
-  max-width: 440px;
   background: #eef2f7;
   color: #555;
   cursor: default;
 }
 
 .wbasic-input--password {
-  max-width: 440px;
+  width: 100%;
 }
 
 /* メールアドレス行 */
