@@ -4507,20 +4507,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fffbe6;
+  background: #3d8042;
+  color: #fff;
   padding: 18px 24px;
 }
 
 .wtransfer-balance-label {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .wtransfer-balance-amount {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
 }
 
 .wtransfer-detail {
