@@ -4015,7 +4015,7 @@
 .wbasic-row {
   display: flex;
   align-items: flex-start;
-  padding: 20px 24px;
+  padding: 16px 32px;
   gap: 24px;
 }
 
