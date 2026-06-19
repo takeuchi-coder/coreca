@@ -4080,10 +4080,6 @@
   flex: 1;
 }
 
-.wbasic-input--tel,
-.wbasic-input--zip,
-.wbasic-input--city,
-.wbasic-input--building,
 .wbasic-input--mynumber {
   max-width: 360px;
 }
