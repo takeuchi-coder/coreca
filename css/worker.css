@@ -4004,7 +4004,9 @@
 /* カード */
 .wbasic-card {
   background: #fff;
-  border-radius: 14px;
+  border: 1px solid #e6efe6;
+  border-radius: 22px;
+  box-shadow: 0 4px 20px rgba(36,80,40,0.06);
   margin-bottom: 16px;
   overflow: hidden;
 }
