@@ -136,7 +136,7 @@
 }
 
 .worker-form-group {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .worker-label {
@@ -7004,7 +7004,7 @@
   border: 1px solid #e6efe6;
   border-radius: 22px;
   box-shadow: 0 4px 20px rgba(36,80,40,0.06);
-  padding: 30px 32px;
+  padding: 38px 40px;
 }
 .wdetail-inner {
   background: #fff;
