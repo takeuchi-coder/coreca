@@ -5505,13 +5505,13 @@
 @media (max-width: 600px) {
   /* カード/表の余白をスマホ向けに縮小 */
   .wbasic-card {
-    padding: 8px 6px;
+    padding: 14px 10px;
   }
   .wbasic-row {
     flex-direction: column;
     align-items: stretch;
     gap: 8px;
-    padding: 12px 12px;
+    padding: 16px 16px;
   }
   .wbasic-label-col {
     width: auto;
@@ -5526,7 +5526,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 6px;
-    padding: 12px 12px;
+    padding: 16px 16px;
   }
   .wbankform-label {
     flex: none;
