@@ -7292,3 +7292,21 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
     width: auto;
   }
 }
+
+/* account-basic.html: 入力項目を幅いっぱいに（都道府県・生年月日セレクト） */
+.wbasic-field-col > .wbasic-select-wrap {
+  display: flex;
+  width: 100%;
+}
+.wbasic-select--pref {
+  width: 100%;
+}
+.wbasic-birth-selects .wbasic-select-wrap {
+  flex: 1;
+  min-width: 0;
+}
+.wbasic-birth-selects .wbasic-select {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
