@@ -5246,51 +5246,72 @@
 /* プライバシーポリシー */
 .wcontact-privacy-row {
   display: flex;
-  align-items: flex-start;
-  gap: 48px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
   margin-bottom: 28px;
+  padding: 18px 20px;
+  background: #f3faf5;
+  border: 1px solid #d8ecdd;
+  border-radius: 14px;
 }
 
 .wcontact-privacy-link-wrap {
   font-size: 16px;
   color: #444;
-  line-height: 1.85;
-  padding-top: 4px;
+  line-height: 1.7;
 }
 
 .wcontact-privacy-link {
-  color: #3d8042;
-  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .wcontact-privacy-link:hover {
-  text-decoration: underline;
+  color: #1b5e20;
 }
 
 .wcontact-privacy-check-wrap {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .wcontact-privacy-check-wrap .wcontact-label {
   margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #666;
 }
 
 .wcontact-checkbox-label {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  align-self: flex-start;
   font-size: 17px;
-  color: #333;
+  font-weight: 700;
+  color: #222;
   cursor: pointer;
+  padding: 12px 18px;
+  background: #fff;
+  border: 1.5px solid #cfe3d4;
+  border-radius: 12px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.wcontact-checkbox-label:hover {
+  border-color: #4caf50;
+  background: #f6fdf7;
 }
 
 .wcontact-checkbox {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   flex-shrink: 0;
+  accent-color: #4caf50;
 }
 
 /* 戻る・確認ボタン */
