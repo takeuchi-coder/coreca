@@ -6962,7 +6962,7 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #e6f4ea;
+  background-color: #fff;
   flex-shrink: 0;
 }
 
@@ -7003,7 +7003,8 @@
 .wmylist-main { padding: 20px 24px 64px; }
 
 /* フォーム/コンテンツを白カード化 */
-.worker-card {
+.worker-card,
+.wwithdrawal-notice {
   background: #fff;
   border: 1px solid #e6efe6;
   border-radius: 22px;
