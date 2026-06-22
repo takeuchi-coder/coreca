@@ -3077,6 +3077,10 @@ a.nav-user--active .header-avatar-icon {
 .btn-copy-url:hover,
 .profile-consent-link:hover { text-decoration: underline; }
 
+.profile-consent-link svg {
+  stroke: #0f569f;
+}
+
 /* 掲載内容ノート */
 .det-content-note {
   font-size: 15px;
