@@ -4736,13 +4736,13 @@
 
 /* インフォメーションボックス（青） */
 .wpr-info-box {
-  background: #e8f4fd;
-  color: #0f569f;
-  font-size: 17px;
+  background: #f3f3f3;
+  color: #555;
+  font-size: 16px;
   padding: 14px 18px;
   border-radius: 14px;
   margin-bottom: 28px;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* メールアドレス入力幅 */
