@@ -6585,7 +6585,8 @@
 }
 
 /* 作業報告途中バナー */
-.wreport-info-banner {
+.wreport-info-banner,
+.wprocedure-info-banner {
   background: #e8f4fd;
   border: 1px solid #b3d7f5;
   border-radius: 14px;
@@ -6901,15 +6902,7 @@
   margin-bottom: 0;
 }
 
-.wprocedure-info-banner {
-  background: #e8f4fb;
-  border-left: 4px solid #0f569f;
-  padding: 12px 16px;
-  font-size: 17px;
-  color: #333;
-  margin-bottom: 24px;
-  border-radius: 8px;
-}
+/* .wprocedure-info-banner は .wreport-info-banner と共通化（上部でグループ定義） */
 
 .wprocedure-out-of-period {
   font-size: 17px;
