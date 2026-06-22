@@ -500,7 +500,8 @@
 }
 
 /* 生年月日 */
-.profile-age-notice {
+.profile-age-notice,
+.wbasic-birth-note-bg {
   background: #f0f0f0;
   color: #555;
   font-size: 16px;
@@ -4208,14 +4209,7 @@
 }
 
 /* 生年月日 */
-.wbasic-birth-note-bg {
-  font-size: 15px;
-  color: #555;
-  background: #eaf6eb;
-  padding: 6px 10px;
-  border-radius: 14px;
-  margin-bottom: 10px;
-}
+/* .wbasic-birth-note-bg は .profile-age-notice と共通化（上部でグループ定義） */
 
 .wbasic-birth-selects {
   display: flex;
