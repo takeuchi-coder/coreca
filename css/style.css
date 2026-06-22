@@ -908,6 +908,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   gap: 20px;
+  margin: 40px 0;
   padding: 14px 0 4px;
   width: 100%;
   justify-content: center;
@@ -2853,14 +2854,8 @@ a.nav-user--active .header-avatar-icon {
 
 /* トップバー */
 .det-topbar {
-  background: #fff;
-  border-bottom: 1px solid #e4e4e4;
-  padding: 0 24px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .det-back-link {
@@ -2875,12 +2870,6 @@ a.nav-user--active .header-avatar-icon {
 .det-back-link:hover { text-decoration: underline; }
 
 .det-topbar-chevron { flex-shrink: 0; }
-
-.det-topbar-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: #1a1a1a;
-}
 
 /* 案件ヘッダーカード */
 .proj-detail-header {
@@ -3475,7 +3464,8 @@ a.nav-user--active .header-avatar-icon {
   width: 100%;
 }
 
-.pay-page-title {
+.pay-page-title,
+.det-topbar {
   font-size: 24px;
   font-weight: 700;
   color: #1a1a1a;
