@@ -4450,7 +4450,7 @@
 }
 
 .wtransfer-complete-icon {
-  color: #3d8042;
+  color: #0f569f;
 }
 
 .wtransfer-complete-title {
@@ -5367,7 +5367,7 @@
 }
 
 .wcontact-complete-icon {
-  color: #3d8042;
+  color: #0f569f;
 }
 
 .wcontact-complete-title {
@@ -6932,8 +6932,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #e2f5e9;
-  border: 1.5px solid #2a9d5c;
+  background: #e8f4fd;
+  border: 1.5px solid #0f569f;
   border-radius: 18px;
   padding: 14px 18px 14px 16px;
   margin-bottom: 20px;
@@ -6957,8 +6957,12 @@
 .w-toast-title {
   font-size: 17px;
   font-weight: 700;
-  color: #1a6636;
+  color: #0f569f;
   line-height: 1.4;
+}
+
+.w-toast-icon svg {
+  stroke: #0f569f;
 }
 
 .w-toast-sub {
