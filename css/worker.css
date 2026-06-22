@@ -7429,7 +7429,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .btn-confirm-back,
 .wprocedure-link,
 .wbasic-link,
-.wcontact-privacy-link {
+.wcontact-privacy-link,
+.wcontact-notice a {
   color: #0f569f;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -7443,4 +7444,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wcontact-privacy-link:hover {
   color: #0f569f;
   text-decoration: none;
+}
+/* .wcontact-notice a はHTML側のinline styleを上書きするため!important */
+.wcontact-notice a:hover {
+  text-decoration: none !important;
 }
