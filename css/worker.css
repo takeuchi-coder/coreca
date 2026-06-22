@@ -853,7 +853,7 @@
   justify-content: space-between;
   padding: 16px 20px;
   background: #eef8ef;
-  border-top: 2px solid #4c9e51;
+  border-bottom: 2px solid #4c9e51;
 }
 
 .wmypage-balance-label {
@@ -4489,7 +4489,7 @@
   align-items: center;
   justify-content: space-between;
   background: #eef8ef;
-  border-top: 2px solid #4c9e51;
+  border-bottom: 2px solid #4c9e51;
   padding: 18px 24px;
 }
 
