@@ -7425,3 +7425,28 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   background: transparent;
   border-bottom: none;
 }
+
+/* =========================================================
+   テキストリンクの共通スタイル（.wpr-back-login に統一）
+========================================================= */
+.wpr-back-login,
+.worker-text-link,
+.worker-login-link,
+.btn-confirm-back,
+.wprocedure-link,
+.wbasic-link,
+.wcontact-privacy-link {
+  color: #0f569f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.wpr-back-login:hover,
+.worker-text-link:hover,
+.worker-login-link:hover,
+.btn-confirm-back:hover,
+.wprocedure-link:hover,
+.wbasic-link:hover,
+.wcontact-privacy-link:hover {
+  color: #0f569f;
+  text-decoration: none;
+}
