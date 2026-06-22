@@ -777,14 +777,16 @@
 }
 
 /* グレー注意ボックス */
-.complete-notice-box {
+.complete-notice-box,
+.wpr-note-box {
   background: #f3f3f3;
   border-radius: 14px;
   padding: 14px 18px;
   margin-top: 14px;
 }
 
-.complete-notice-box p {
+.complete-notice-box p,
+.wpr-note-box {
   font-size: 16px;
   color: #555;
   line-height: 1.8;
@@ -4770,15 +4772,7 @@
   margin-bottom: 24px;
 }
 
-/* 注意書きボックス（グレー） */
-.wpr-note-box {
-  background: #eaf6eb;
-  color: #555;
-  font-size: 16px;
-  padding: 16px 20px;
-  border-radius: 14px;
-  line-height: 1.7;
-}
+/* 注意書きボックス（.complete-notice-box と共通化：上部で定義） */
 
 /* 送信完了ビュー */
 .wpr-sent-title {
