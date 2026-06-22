@@ -3059,7 +3059,8 @@ a.nav-user--active .header-avatar-icon {
 
 .btn-duplicate:hover { border-color: #888; color: #1a1a1a; }
 
-.btn-copy-url {
+.btn-copy-url,
+.profile-consent-link {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -3073,7 +3074,8 @@ a.nav-user--active .header-avatar-icon {
   text-decoration: none;
 }
 
-.btn-copy-url:hover { text-decoration: underline; }
+.btn-copy-url:hover,
+.profile-consent-link:hover { text-decoration: underline; }
 
 /* 掲載内容ノート */
 .det-content-note {
