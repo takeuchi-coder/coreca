@@ -852,20 +852,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: #fdf8e1;
-  border-bottom: 1px solid #e8d9a0;
+  background: #eef8ef;
+  border-top: 2px solid #4c9e51;
 }
 
 .wmypage-balance-label {
   font-size: 17px;
   font-weight: 700;
-  color: #333;
+  color: #1a1a1a;
 }
 
 .wmypage-balance-value {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
-  color: #333;
+  color: #4c9e51;
 }
 
 /* メニューリスト */
@@ -4488,21 +4488,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #3d8042;
-  color: #fff;
+  background: #eef8ef;
+  border-top: 2px solid #4c9e51;
   padding: 18px 24px;
 }
 
 .wtransfer-balance-label {
   font-size: 18px;
   font-weight: 700;
-  color: #fff;
+  color: #1a1a1a;
 }
 
 .wtransfer-balance-amount {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  color: #fff;
+  color: #4c9e51;
 }
 
 .wtransfer-detail {
