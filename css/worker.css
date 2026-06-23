@@ -6757,6 +6757,7 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 16px;
+  background: #fff;
 }
 
 .wreport-table thead tr {
