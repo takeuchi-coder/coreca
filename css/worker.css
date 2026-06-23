@@ -5948,13 +5948,38 @@
   margin: 16px 0;
 }
 
-/* カードをクリッカブルにする */
-.wmylist-card--clickable {
+/* カードをクリッカブルにする（強調デザイン） */
+.wmylist-card.wmylist-card--clickable {
+  position: relative;
   cursor: pointer;
+  background: linear-gradient(135deg, #ffffff 0%, #f1faf2 100%);
+  border: 1.5px solid #d6ebd8;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(36,80,40,0.07);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
 }
 
-.wmylist-card--clickable:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+/* 左端のアクセントバー */
+.wmylist-card.wmylist-card--clickable::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #4c9e51, #3d8042);
+  transition: width 0.2s;
+}
+
+.wmylist-card.wmylist-card--clickable:hover {
+  border-color: #4c9e51;
+  box-shadow: 0 14px 32px rgba(36,80,40,0.2);
+  transform: translateY(-4px);
+}
+
+.wmylist-card.wmylist-card--clickable:hover::before {
+  width: 8px;
 }
 
 @media (max-width: 600px) {
