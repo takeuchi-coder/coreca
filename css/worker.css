@@ -2937,6 +2937,14 @@
   margin-bottom: 12px;
 }
 
+@media (max-width: 600px) {
+  .wreward-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}
+
 .wreward-count-row {
   display: flex;
   align-items: baseline;
