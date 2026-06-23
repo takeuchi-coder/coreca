@@ -2234,6 +2234,13 @@ a.nav-user--active .header-avatar-icon {
 .form-select--short { min-width: 100px; }
 .form-select--wide  { flex: 1; min-width: 200px; }
 
+@media (max-width: 600px) {
+  .form-select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /* インライン配置 */
 .form-inline {
   display: flex;
