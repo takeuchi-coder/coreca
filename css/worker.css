@@ -6157,7 +6157,7 @@
   border-radius: 16px;
   padding: 18px 28px;
   margin: 4px 0 28px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 2.1;
   color: #333;
 }
@@ -6205,12 +6205,12 @@
 }
 
 .btn-wprocedure-outline {
-  padding: 11px 24px;
+  padding: 15px 36px;
   background: #fff;
   color: #333;
   border: 1px solid #bbb;
   border-radius: 14px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
