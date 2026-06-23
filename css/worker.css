@@ -7071,9 +7071,13 @@
 /* .wprocedure-info-banner は .wreport-info-banner と共通化（上部でグループ定義） */
 
 .wprocedure-out-of-period {
-  font-size: 17px;
-  color: #c62828;
-  font-weight: 700;
+  background: #fff5f5;
+  border: 1px solid #f5c6c6;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #c0392b;
+  font-size: 14px;
+  line-height: 1.5;
   margin: 16px 0;
 }
 
