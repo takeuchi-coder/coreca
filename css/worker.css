@@ -993,6 +993,7 @@
 =========================== */
 .wsearch-controls {
   flex-shrink: 0;
+  margin-top: 24px;
 }
 
 /* 1248px以下は余白をラッパー側で確保 */
