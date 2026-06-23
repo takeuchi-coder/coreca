@@ -5956,38 +5956,135 @@
   margin: 16px 0;
 }
 
-/* カードをクリッカブルにする（強調デザイン） */
+/* =========================================================
+   クリッカブルカード: レイアウトを一から再構築
+   横並びメディアカード → 上部ワイドバナー型の縦構成カードへ
+   ========================================================= */
 .wmylist-card.wmylist-card--clickable {
   position: relative;
   cursor: pointer;
-  background: linear-gradient(135deg, #ffffff 0%, #f1faf2 100%);
-  border: 1.5px solid #d6ebd8;
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(36,80,40,0.07);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e6efe6;
+  border-radius: 22px;
+  box-shadow: 0 6px 22px rgba(36,80,40,0.08);
   overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-}
-
-/* 左端のアクセントバー */
-.wmylist-card.wmylist-card--clickable::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(180deg, #4c9e51, #3d8042);
-  transition: width 0.2s;
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
 }
 
 .wmylist-card.wmylist-card--clickable:hover {
-  border-color: #4c9e51;
-  box-shadow: 0 14px 32px rgba(36,80,40,0.2);
-  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(36,80,40,0.18);
+  transform: translateY(-5px);
 }
 
-.wmylist-card.wmylist-card--clickable:hover::before {
-  width: 8px;
+/* 本体を縦積みに（バナー → 情報） */
+.wmylist-card.wmylist-card--clickable .wmylist-card-body {
+  flex-direction: column;
+}
+
+/* サムネを上部のワイドバナーへ */
+.wmylist-card.wmylist-card--clickable .wmylist-card-thumb {
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+
+/* バナー下部にグラデーションを重ねて締まりを出す */
+.wmylist-card.wmylist-card--clickable .wmylist-card-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.18) 100%);
+  pointer-events: none;
+}
+
+/* ステータスをバナー右上にフロートするバッジへ */
+.wmylist-card.wmylist-card--clickable .wmylist-card-info {
+  position: static;
+  padding: 20px 22px 14px;
+}
+
+.wmylist-card.wmylist-card--clickable .wmylist-card-status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  background: #4c9e51;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.22);
+}
+
+/* 日付をピル型チップに */
+.wmylist-card.wmylist-card--clickable .wmylist-card-top-row {
+  margin-bottom: 12px;
+}
+
+.wmylist-card.wmylist-card--clickable .wmylist-card-date {
+  display: inline-flex;
+  align-items: center;
+  background: #eef6ef;
+  color: #3d8042;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 13px;
+  border-radius: 30px;
+}
+
+/* タイトルを大きく */
+.wmylist-card.wmylist-card--clickable .wmylist-card-title {
+  font-size: 22px;
+  margin-bottom: 14px;
+  line-height: 1.35;
+}
+
+/* メタ情報を横並びのチップ列に */
+.wmylist-card.wmylist-card--clickable .wmylist-card-meta {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.wmylist-card.wmylist-card--clickable .wmylist-card-meta-icon {
+  color: #4c9e51;
+}
+
+.wmylist-card.wmylist-card--clickable .wmylist-card-price {
+  color: #3d8042;
+  font-weight: 700;
+}
+
+/* 案件IDを左寄せの控えめ表示に */
+.wmylist-card.wmylist-card--clickable .wmylist-card-id {
+  text-align: left;
+  margin-top: 14px;
+}
+
+/* アクションを角丸ピルボタンの横並びに（仕切り線を撤廃） */
+.wmylist-card.wmylist-card--clickable .wmylist-card-actions {
+  display: flex;
+  gap: 10px;
+  border-top: none;
+  padding: 0 22px 20px;
+}
+
+.wmylist-card.wmylist-card--clickable .wmylist-card-action-btn {
+  flex: 1;
+  padding: 12px 0;
+  border: 1.5px solid #4c9e51;
+  border-radius: 12px;
+  color: #3d8042;
+  font-weight: 700;
+  background: #fff;
+}
+
+.wmylist-card.wmylist-card--clickable .wmylist-card-action-btn:hover {
+  background: #4c9e51;
+  color: #fff;
 }
 
 @media (max-width: 600px) {
