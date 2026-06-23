@@ -190,5 +190,12 @@
   </footer>
   <!-- ===== /フッター ===== -->
 
+  <script>
+    (function () {
+      var h = document.getElementById("hamburgerBtn");
+      var n = document.getElementById("headerNav");
+      if (h && n) h.addEventListener("click", function () { n.classList.toggle("is-open"); });
+    })();
+  </script>
 </body>
 </html>
