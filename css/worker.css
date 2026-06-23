@@ -634,19 +634,25 @@
 }
 
 @media (max-width: 600px) {
-  .confirm-row { display: block; }
-  .confirm-th,
-  .confirm-td {
+  /* セルを縦積みし、行ごとに区切り線は1本だけ（値セルの下）に統一
+     ※詳細度を上げて後続の非メディア .confirm-th ルールに勝たせる */
+  .confirm-table .confirm-row { display: block; }
+  .confirm-table .confirm-th,
+  .confirm-table .confirm-td {
     display: block;
     width: 100%;
     white-space: normal;
-  }
-  .confirm-th {
-    padding: 16px 20px 0;
     border-bottom: none;
   }
-  .confirm-td {
+  .confirm-table .confirm-th {
+    padding: 16px 20px 0;
+  }
+  .confirm-table .confirm-td {
     padding: 4px 20px 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .confirm-table .confirm-row:last-child .confirm-td {
+    border-bottom: none;
   }
 }
 
