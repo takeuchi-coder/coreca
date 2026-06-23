@@ -640,6 +640,11 @@
     border-bottom: none;
   }
 
+  /* 行のボーダーを削除 */
+  .confirm-table .confirm-row {
+    border-bottom: none;
+  }
+
   /* セルを縦積みし、行ごとに区切り線は1本だけ（値セルの下）に統一
      ※詳細度を上げて後続の非メディア .confirm-th ルールに勝たせる */
   .confirm-table .confirm-row { display: block; }
