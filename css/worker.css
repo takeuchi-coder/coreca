@@ -6985,6 +6985,19 @@
 /* ===========================
    作業手順・報告（引き受け後）
 =========================== */
+/* 住所・電話・補足事項をまとめる白背景ボックス */
+.wprocedure-info-card {
+  background: #fff;
+  border: 1px solid #e6efe6;
+  border-radius: 16px;
+  box-shadow: 0 3px 14px rgba(36,80,40,0.06);
+  padding: 22px 26px;
+  margin: 24px 0;
+}
+
+.wprocedure-info-card > *:first-child { margin-top: 0; }
+.wprocedure-info-card > *:last-child { margin-bottom: 0; }
+
 .wprocedure-special-notes {
   margin: 24px 0 20px;
 }
