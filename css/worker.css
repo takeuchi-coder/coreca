@@ -4923,6 +4923,13 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
+@media (max-width: 600px) {
+  .wcontact-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 /* ステッパー */
 .wcontact-stepper {
   display: flex;
