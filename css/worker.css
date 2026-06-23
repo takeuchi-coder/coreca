@@ -6741,6 +6741,10 @@
   margin-bottom: 20px;
 }
 
+.wprocedure-info-banner {
+  margin-bottom: 32px;
+}
+
 /* 無効化ボタン（作業報告を追加する・報告中は押せない） */
 .btn-wprocedure-disabled {
   padding: 11px 28px;
