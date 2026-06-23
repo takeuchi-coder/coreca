@@ -7581,6 +7581,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   /* カードの余白を縮小 */
   .worker-card { padding: 20px; }
   .wwithdrawal-notice {
+    padding-top: 30px;
+    padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
   }
