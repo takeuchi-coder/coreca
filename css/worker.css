@@ -2284,22 +2284,18 @@
   width: 180px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
   background: transparent;
-  padding-top: 4px;
-  border-right: 1px solid #e6e6e6;
 }
 
 .wmylist-sidetab {
-  padding: 14px 14px 14px 18px;
+  padding: 13px 16px;
   font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #5b5b5b;
-  background: none;
-  border: none;
-  border-left: 2px solid transparent;
-  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+  color: #555;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 12px;
   text-align: left;
   cursor: pointer;
   font-family: inherit;
@@ -2308,16 +2304,16 @@
 }
 
 .wmylist-sidetab--active {
-  color: #2f6b34;
-  background: #f1f6f1;
-  border-left-color: #3d8042;
+  color: #fff;
+  background: #4c9e51;
+  border-color: #4c9e51;
   font-weight: 700;
 }
 
 .wmylist-sidetab:not(.wmylist-sidetab--active):hover {
-  color: #2f6b34;
-  background: #f6f9f6;
-  border-left-color: #c3ddc5;
+  color: #3d8042;
+  background: #eaf6eb;
+  border-color: #a5d6a7;
 }
 
 /* 右: コンテンツエリア */
@@ -7230,6 +7226,18 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   /* 横長の一覧行はカラム落ち */
   .wlist-item,
   .wsearch-list-item { flex-wrap: wrap; }
+
+  /* マイリストのサイドタブはカラム落ち（横並びのピル） */
+  .wmylist-layout { flex-direction: column; }
+  .wmylist-sidetabs {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .wmylist-sidetab {
+    flex: 1 1 auto;
+    text-align: center;
+  }
 
   /* 地域選択グリッド(3列)を2列に */
   .wregion-grid { grid-template-columns: repeat(2, 1fr); }
