@@ -6344,6 +6344,10 @@ a.nav-user--active .header-avatar-icon {
 .logo-role {
   color: #4c9e51;
   background: rgba(76,158,81,0.12);
+  font-size: 10px;
+  width: 8em;
+  white-space: normal;
+  text-align: center;
 }
 
 /* ナビゲーションリンク */
