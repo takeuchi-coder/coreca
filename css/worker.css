@@ -995,6 +995,11 @@
   flex-shrink: 0;
 }
 
+/* 1248px以下は余白をラッパー側で確保 */
+@media (max-width: 1248px) {
+  .wsearch-controls { padding: 12px; }
+}
+
 .wsearch-controls-inner {
   display: flex;
   align-items: center;
@@ -7446,9 +7451,6 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   /* カードの余白を縮小 */
   .worker-card { padding: 20px 16px; }
   .wdetail-inner { padding: 18px 14px; }
-
-  /* 検索コントロールの余白はラッパー側で確保 */
-  .wsearch-controls { padding: 12px; }
 
   /* 検索コントロールの子要素はカラム落ち */
   .wsearch-controls-inner {
