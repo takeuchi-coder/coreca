@@ -2350,6 +2350,13 @@
   padding: 0 24px;
 }
 
+@media (max-width: 600px) {
+  .wmylist-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* タイトル */
 .wmylist-title-row {
   margin-bottom: 12px;
@@ -7590,7 +7597,6 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .wmypage-main { padding: 24px 12px 40px; }
   .wlist-main,
   .wdetail-main,
-  .wmylist-main,
   .wmsg-main,
   .wbasic-main,
   .wcontact-main,
@@ -7601,7 +7607,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 
   .wmld-main,
   .wth-main,
-  .wreward-main {
+  .wreward-main,
+  .wmylist-main {
     padding-left: 20px;
     padding-right: 20px;
   }
