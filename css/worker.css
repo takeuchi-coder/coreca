@@ -5848,6 +5848,13 @@
   padding: 0 16px 40px;
 }
 
+@media (max-width: 600px) {
+  .wmld-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .wmld-page-header {
   padding: 20px 0 12px;
 }
