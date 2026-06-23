@@ -6194,10 +6194,10 @@
 
 .wprocedure-actions {
   display: flex;
-  gap: 12px;
+  gap: 20px;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 28px;
 }
 
 .wprocedure-actions--center {
