@@ -2854,6 +2854,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* トップバー */
 .det-topbar {
+  margin-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
 }
