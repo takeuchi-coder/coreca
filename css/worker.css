@@ -7565,7 +7565,11 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   }
 
   /* カードの余白を縮小 */
-  .worker-card { padding: 20px 16px; }
+  .worker-card { padding: 20px; }
+  .wwithdrawal-notice {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .wdetail-inner { padding: 18px 14px; }
 
   /* 検索コントロールの子要素はカラム落ち */
