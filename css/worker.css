@@ -1001,7 +1001,6 @@
   justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 16px 24px;
   gap: 24px;
 }
 
@@ -7447,6 +7446,9 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   /* カードの余白を縮小 */
   .worker-card { padding: 20px 16px; }
   .wdetail-inner { padding: 18px 14px; }
+
+  /* 検索コントロールの余白はラッパー側で確保 */
+  .wsearch-controls { padding: 12px; }
 
   /* 横長の一覧行はカラム落ち */
   .wlist-item,
