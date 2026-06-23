@@ -7450,6 +7450,13 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   /* 検索コントロールの余白はラッパー側で確保 */
   .wsearch-controls { padding: 12px; }
 
+  /* 検索コントロールの子要素はカラム落ち */
+  .wsearch-controls-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
   /* 横長の一覧行はカラム落ち */
   .wlist-item,
   .wsearch-list-item { flex-wrap: wrap; }
