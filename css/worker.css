@@ -1986,6 +1986,18 @@
   padding: 20px 0 12px;
 }
 
+@media (max-width: 600px) {
+  .wlist-pagination {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  /* 件数表示を上段で全幅、前へ・次へは下段で横並び */
+  .wlist-pagination .wlist-count {
+    order: -1;
+    flex: 1 1 100%;
+  }
+}
+
 /* 件数表示（中央） */
 .wlist-count {
   flex: 1;
