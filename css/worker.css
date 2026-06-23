@@ -6200,6 +6200,13 @@
   max-width: 760px;
 }
 
+@media (max-width: 600px) {
+  .wprocedure-body {
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+}
+
 .wprocedure-body--center {
   text-align: center;
   margin: 0 auto;
