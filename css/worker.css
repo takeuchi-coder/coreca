@@ -3774,6 +3774,13 @@
   padding: 0 24px;
 }
 
+@media (max-width: 600px) {
+  .wth-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* タイトル行 */
 .wth-title-row {
   display: flex;
@@ -7553,13 +7560,13 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .wmsg-main,
   .wbasic-main,
   .wcontact-main,
-  .wth-main,
   .wmanual-main {
     padding-left: 12px;
     padding-right: 12px;
   }
 
-  .wmld-main {
+  .wmld-main,
+  .wth-main {
     padding-left: 20px;
     padding-right: 20px;
   }
