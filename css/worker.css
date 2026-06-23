@@ -7539,11 +7539,15 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .wmsg-main,
   .wbasic-main,
   .wcontact-main,
-  .wmld-main,
   .wth-main,
   .wmanual-main {
     padding-left: 12px;
     padding-right: 12px;
+  }
+
+  .wmld-main {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   /* カードの余白を縮小 */
