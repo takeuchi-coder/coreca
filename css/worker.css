@@ -6744,6 +6744,15 @@
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .wreport-table-wrap {
+    overflow-x: auto;
+  }
+  .wreport-table {
+    min-width: 560px;
+  }
+}
+
 .wreport-table {
   width: 100%;
   border-collapse: collapse;
