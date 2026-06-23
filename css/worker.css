@@ -2281,23 +2281,25 @@
 /* 左: 縦並びタブ */
 .wmylist-sidetabs {
   flex-shrink: 0;
-  width: 130px;
+  width: 180px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   background: transparent;
   padding-top: 4px;
+  border-right: 1px solid #e6e6e6;
 }
 
 .wmylist-sidetab {
-  padding: 12px 10px 12px 13px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #666;
+  padding: 14px 14px 14px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #5b5b5b;
   background: none;
   border: none;
-  border-left: 3px solid transparent;
-  border-radius: 0 10px 10px 0;
+  border-left: 2px solid transparent;
+  border-radius: 0 8px 8px 0;
   text-align: left;
   cursor: pointer;
   font-family: inherit;
@@ -2306,16 +2308,16 @@
 }
 
 .wmylist-sidetab--active {
-  color: #3d8042;
-  background: #eaf6eb;
+  color: #2f6b34;
+  background: #f1f6f1;
   border-left-color: #3d8042;
   font-weight: 700;
 }
 
 .wmylist-sidetab:not(.wmylist-sidetab--active):hover {
-  color: #3d8042;
-  background: #eef8ef;
-  border-left-color: #a5d6a7;
+  color: #2f6b34;
+  background: #f6f9f6;
+  border-left-color: #c3ddc5;
 }
 
 /* 右: コンテンツエリア */
@@ -2781,7 +2783,7 @@
 .wmylist-pagination {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .wmylist-page-btn {
