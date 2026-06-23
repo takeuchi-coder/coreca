@@ -2862,6 +2862,13 @@
   padding: 0 24px;
 }
 
+@media (max-width: 600px) {
+  .wreward-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .wreward-title {
   font-size: 26px;
   font-weight: 700;
@@ -7556,7 +7563,6 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .wlist-main,
   .wdetail-main,
   .wmylist-main,
-  .wreward-main,
   .wmsg-main,
   .wbasic-main,
   .wcontact-main,
@@ -7566,7 +7572,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   }
 
   .wmld-main,
-  .wth-main {
+  .wth-main,
+  .wreward-main {
     padding-left: 20px;
     padding-right: 20px;
   }
