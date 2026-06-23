@@ -3091,10 +3091,11 @@
     flex-wrap: wrap;
     gap: 12px;
   }
-  /* 件数表示を上段で全幅、前へ・次へは下段で横並び */
-  .wreward-count-center {
+  /* 件数表示を上段で全幅、前へ・次へは下段で横並び
+     （※後続の .wreward-count-center { flex:1 } に勝つため詳細度を上げる） */
+  .wreward-pagination-wrap .wreward-count-center {
     order: -1;
-    flex-basis: 100%;
+    flex: 1 1 100%;
   }
 }
 
