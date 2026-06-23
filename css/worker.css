@@ -633,6 +633,23 @@
   border-bottom: 1px solid #e0e0e0;
 }
 
+@media (max-width: 600px) {
+  .confirm-row { display: block; }
+  .confirm-th,
+  .confirm-td {
+    display: block;
+    width: 100%;
+    white-space: normal;
+  }
+  .confirm-th {
+    padding: 16px 20px 0;
+    border-bottom: none;
+  }
+  .confirm-td {
+    padding: 4px 20px 16px;
+  }
+}
+
 /* ボタン群（戻る＋登録する） */
 .confirm-btn-row {
   display: flex;
