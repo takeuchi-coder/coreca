@@ -7472,7 +7472,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
     flex-wrap: wrap;
   }
   .wmylist-sidetab {
-    flex: 1 1 auto;
+    flex: 1 1 calc(50% - 4px);
     text-align: center;
   }
 
