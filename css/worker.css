@@ -2284,41 +2284,38 @@
   width: 130px;
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 14px;
-  overflow: hidden;
+  gap: 4px;
+  background: transparent;
+  padding-top: 4px;
 }
 
 .wmylist-sidetab {
-  padding: 14px 10px 14px 13px;
+  padding: 12px 10px 12px 13px;
   font-size: 16px;
-  color: #555;
-  background: #fff;
+  font-weight: 600;
+  color: #666;
+  background: none;
   border: none;
-  border-bottom: 1px solid #ddd;
   border-left: 3px solid transparent;
+  border-radius: 0 10px 10px 0;
   text-align: left;
   cursor: pointer;
   font-family: inherit;
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
   line-height: 1.4;
-}
-
-.wmylist-sidetab:last-child {
-  border-bottom: none;
 }
 
 .wmylist-sidetab--active {
   color: #3d8042;
-  background: #eef8ef;
+  background: #eaf6eb;
   border-left-color: #3d8042;
   font-weight: 700;
 }
 
 .wmylist-sidetab:not(.wmylist-sidetab--active):hover {
   color: #3d8042;
-  background: #fafafa;
+  background: #eef8ef;
+  border-left-color: #a5d6a7;
 }
 
 /* 右: コンテンツエリア */
@@ -2784,7 +2781,7 @@
 .wmylist-pagination {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 8px;
 }
 
 .wmylist-page-btn {
