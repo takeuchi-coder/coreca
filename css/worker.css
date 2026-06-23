@@ -4306,6 +4306,7 @@
 }
 
 @media (max-width: 600px) {
+  .wbasic-btn-submit,
   .wbasic-btn-submit.wbasic-btn-submit--wide {
     width: 100%;
     box-sizing: border-box;
