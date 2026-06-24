@@ -1394,6 +1394,13 @@
   white-space: nowrap;
 }
 
+@media (max-width: 600px) {
+  .wsearch-area-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 /* エリア選択ドロップダウン */
 .wsearch-area-select-wrap {
   position: relative;
