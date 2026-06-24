@@ -3260,6 +3260,13 @@
   padding: 0 24px;
 }
 
+@media (max-width: 600px) {
+  .wmsg-inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .wmsg-title {
   font-size: 26px;
   font-weight: 700;
@@ -7667,7 +7674,6 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .wmypage-main { padding: 24px 12px 40px; }
   .wlist-main,
   .wdetail-main,
-  .wmsg-main,
   .wbasic-main,
   .wcontact-main,
   .wmanual-main {
@@ -7678,7 +7684,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .wmld-main,
   .wth-main,
   .wreward-main,
-  .wmylist-main {
+  .wmylist-main,
+  .wmsg-main {
     padding-left: 20px;
     padding-right: 20px;
   }
