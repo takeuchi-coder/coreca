@@ -1398,6 +1398,23 @@
   .wsearch-area-wrap {
     flex-direction: column;
     align-items: stretch;
+    left: 0;
+    right: 0;
+    transform: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  /* 子要素（ドロップダウン・ボタン）を横幅いっぱいに */
+  .wsearch-area-wrap > * {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .wsearch-area-wrap .wsearch-area-select-wrap {
+    display: flex;
+  }
+  .wsearch-area-wrap .wsearch-area-select {
+    width: 100%;
   }
 }
 
