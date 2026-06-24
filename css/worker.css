@@ -3512,6 +3512,18 @@
   padding: 20px 0 12px;
 }
 
+@media (max-width: 600px) {
+  .wmsg-pagination-wrap {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  /* 件数表示を上段で全幅、前へ・次へは下段で横並び */
+  .wmsg-pagination-wrap .wmsg-count-center {
+    order: -1;
+    flex: 1 1 100%;
+  }
+}
+
 .wmsg-count-center {
   flex: 1;
   text-align: center;
