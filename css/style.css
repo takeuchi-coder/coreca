@@ -441,7 +441,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 4px;
   padding: 4px 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 16px;
   background: #fff;
@@ -531,7 +531,7 @@ a.nav-user--active .header-avatar-icon {
 
 .project-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 18px;
   padding: 16px;
   transition: box-shadow 0.15s;
@@ -627,7 +627,7 @@ a.nav-user--active .header-avatar-icon {
 .status-badge--gray {
   background: #eaf6eb;
   color: #616161;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
 }
 
 /* Toggle switch */
@@ -953,7 +953,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .site-footer {
   background: #fff;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #a7c6a8;
   margin-top: auto;
 }
 
@@ -1186,7 +1186,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   padding: 8px 12px;
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-bottom: none;
   border-radius: 16px 6px 0 0;
   gap: 12px;
@@ -1294,7 +1294,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .proj-table-wrap {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-top: none;
   border-radius: 0 0 6px 6px;
   overflow-x: auto;
@@ -1313,7 +1313,7 @@ a.nav-user--active .header-avatar-icon {
   font-weight: 700;
   color: #888;
   background: #fafafa;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   white-space: nowrap;
 }
 
@@ -1510,7 +1510,7 @@ a.nav-user--active .header-avatar-icon {
   top: calc(100% + 4px);
   right: 0;
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   min-width: 200px;
@@ -1566,7 +1566,7 @@ a.nav-user--active .header-avatar-icon {
 
 .proj-icon-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 18px;
   padding: 12px;
   display: flex;
@@ -1724,7 +1724,7 @@ a.nav-user--active .header-avatar-icon {
   width: 232px;
   flex-shrink: 0;
   background: #fff;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid #a7c6a8;
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -1740,7 +1740,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 6px;
   padding: 8px 16px;
   background: #fafafa;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   font-size: 14px;
   font-weight: 700;
   color: #555;
@@ -1752,7 +1752,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 10px;
   padding: 14px 16px;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   text-decoration: none;
 }
 
@@ -1823,7 +1823,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid #bfe5c1;
 }
 
 .notif-cta-btn {
@@ -1880,7 +1880,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 8px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #a7c6a8;
   margin-bottom: 0;
 }
 
@@ -1910,7 +1910,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .notif-list {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 18px;
   margin-top: 20px;
   overflow: hidden;
@@ -1969,7 +1969,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-status--read {
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   color: #999;
   background: #fff;
 }
@@ -2070,7 +2070,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   margin-bottom: 20px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #a7c6a8;
   gap: 16px;
 }
 
@@ -2101,7 +2101,7 @@ a.nav-user--active .header-avatar-icon {
 
 .create-type-select {
   padding: 7px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 16px;
   color: #333;
@@ -2115,7 +2115,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .proj-form {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -2177,7 +2177,7 @@ a.nav-user--active .header-avatar-icon {
 .form-input {
   width: 100%;
   padding: 8px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 16px;
   font-family: inherit;
@@ -2199,7 +2199,7 @@ a.nav-user--active .header-avatar-icon {
 .form-textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 15px;
   font-family: inherit;
@@ -2217,7 +2217,7 @@ a.nav-user--active .header-avatar-icon {
 
 .form-select {
   padding: 8px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 16px;
   font-family: inherit;
@@ -2334,7 +2334,7 @@ a.nav-user--active .header-avatar-icon {
   line-height: 1.7;
   color: #333;
   background: #f8f8f8;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #bfe5c1;
   border-radius: 16px;
   padding: 10px 12px;
   margin: 0;
@@ -2357,7 +2357,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .billing-summary {
   width: 100%;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 18px;
   overflow: hidden;
   background: #fafafa;
@@ -2368,7 +2368,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   gap: 16px;
 }
 
@@ -2469,7 +2469,7 @@ a.nav-user--active .header-avatar-icon {
 .form-upload-thumb {
   width: 72px;
   height: 72px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 14px;
   background: #eaf6eb;
   display: flex;
@@ -2544,7 +2544,7 @@ a.nav-user--active .header-avatar-icon {
 .create-actions {
   margin-top: 24px;
   padding-top: 20px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #a7c6a8;
 }
 
 .create-actions-note {
@@ -2641,7 +2641,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   justify-content: space-between;
   padding: 18px 24px;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   background: #fff;
   flex-shrink: 0;
   gap: 12px;
@@ -2705,7 +2705,7 @@ a.nav-user--active .header-avatar-icon {
 /* ── モーダルフッター ── */
 .modal-footer {
   padding: 16px 32px 20px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #a7c6a8;
   background: #fafafa;
   flex-shrink: 0;
 }
@@ -3154,7 +3154,7 @@ a.nav-user--active .header-avatar-icon {
   width: 80px;
   height: 80px;
   background: #eaf6eb;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 16px;
 }
 
@@ -3205,7 +3205,7 @@ a.nav-user--active .header-avatar-icon {
 
 .msg-per-page {
   padding: 3px 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 15px;
   font-family: inherit;
@@ -3249,7 +3249,7 @@ a.nav-user--active .header-avatar-icon {
 .msg-table-wrap {
   overflow-x: auto;
   border-radius: 18px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #bfe5c1;
   background: #fff;
 }
 
@@ -3266,7 +3266,7 @@ a.nav-user--active .header-avatar-icon {
   font-weight: 700;
   color: #fff;
   background-color: #4c9e51;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   white-space: nowrap;
 }
 
@@ -3494,7 +3494,7 @@ a.nav-user--active .header-avatar-icon {
   color: #1a1a1a;
   margin-bottom: 20px;
   padding-bottom: 14px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #a7c6a8;
 }
 
 .pay-wrap {
@@ -3559,7 +3559,7 @@ a.nav-user--active .header-avatar-icon {
 
 .pay-per-page {
   padding: 3px 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 15px;
   font-family: inherit;
@@ -3624,7 +3624,7 @@ a.nav-user--active .header-avatar-icon {
 .pay-table-wrap {
   overflow-x: auto;
   border-radius: 18px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #bfe5c1;
   background: #fff;
 }
 
@@ -3642,7 +3642,7 @@ a.nav-user--active .header-avatar-icon {
   font-weight: 700;
   color: #fff;
   background-color: #4c9e51;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   white-space: nowrap;
 }
 
@@ -3748,7 +3748,7 @@ a.nav-user--active .header-avatar-icon {
   gap: 12px 20px;
   padding: 14px 16px;
   background: #f9f9f9;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #bfe5c1;
   border-radius: 18px;
   margin-bottom: 14px;
 }
@@ -3977,7 +3977,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .paydet-person-card {
   background: #fff;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #bfe5c1;
   border-radius: 18px;
   padding: 16px 20px;
   margin-bottom: 18px;
@@ -4165,7 +4165,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 7px 20px;
   background: #fff;
   color: #555;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
@@ -4235,7 +4235,7 @@ a.nav-user--active .header-avatar-icon {
   height: 34px;
   border-radius: 50%;
   background: #f0f0f0;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4247,7 +4247,7 @@ a.nav-user--active .header-avatar-icon {
 /* 自動メッセージ（システム）ボックス */
 .msgd-auto-box {
   background: #fafafa;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 0 10px 10px 10px;
   padding: 14px 18px;
   font-size: 12.5px;
@@ -4303,7 +4303,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msgd-read-badge--read {
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   color: #999;
   background: transparent;
 }
@@ -4583,7 +4583,7 @@ a.nav-user--active .header-avatar-icon {
 
 .acct-menu-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -4637,7 +4637,7 @@ a.nav-user--active .header-avatar-icon {
 
 .phistory-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 18px;
   padding: 20px 24px 16px;
 }
@@ -4747,8 +4747,8 @@ a.nav-user--active .header-avatar-icon {
 .withdrawal-section {
   margin-top: 32px;
   padding: 32px 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-top: 1px solid #a7c6a8;
+  border-bottom: 1px solid #a7c6a8;
 }
 
 .withdrawal-desc {
@@ -4821,7 +4821,7 @@ a.nav-user--active .header-avatar-icon {
 .phdet-row {
   display: flex;
   align-items: flex-start;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #bfe5c1;
   padding: 14px 20px;
 }
 
@@ -4868,7 +4868,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px dotted #e0e0e0;
+  border-bottom: 1px dotted #a7c6a8;
   font-size: 16px;
   color: #333;
 }
@@ -4893,7 +4893,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: baseline;
   gap: 16px;
   padding: 12px 0 4px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #a7c6a8;
   margin-top: 4px;
   font-size: 18px;
   font-weight: 700;
@@ -4917,7 +4917,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* フォームコンテナ */
 .fmodal-form {
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #a7c6a8;
 }
 
 /* 各行 */
@@ -4951,7 +4951,7 @@ a.nav-user--active .header-avatar-icon {
   max-width: 340px;
   height: 36px;
   padding: 0 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 16px;
   font-family: inherit;
@@ -5007,7 +5007,7 @@ a.nav-user--active .header-avatar-icon {
 .fmodal-select {
   height: 34px;
   padding: 0 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 16px;
   font-family: inherit;
@@ -5078,7 +5078,7 @@ a.nav-user--active .header-avatar-icon {
 /* 案件情報カード */
 .applist-proj-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 14px;
   padding: 16px 18px;
 }
@@ -5177,7 +5177,7 @@ a.nav-user--active .header-avatar-icon {
   margin-top: 20px;
   padding: 20px 20px 20px;
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 14px;
 }
 
@@ -5405,7 +5405,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 12px;
   background: #fff;
   color: #555;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 17px;
   font-weight: 700;
@@ -5423,7 +5423,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 12px;
   background: #fff;
   color: #555;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 17px;
   font-weight: 700;
@@ -5517,7 +5517,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px 16px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #a7c6a8;
 }
 
 .search-modal-title {
@@ -5564,7 +5564,7 @@ a.nav-user--active .header-avatar-icon {
 .search-modal-input {
   flex: 1;
   padding: 9px 12px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 17px;
   font-family: inherit;
@@ -5578,7 +5578,7 @@ a.nav-user--active .header-avatar-icon {
 .search-modal-select {
   flex: 1;
   padding: 9px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 17px;
   font-family: inherit;
@@ -5602,7 +5602,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 10px 36px;
   background: #fff;
   color: #333;
-  border: 1px solid #ccc;
+  border: 1px solid #86a688;
   border-radius: 14px;
   font-size: 17px;
   font-weight: 700;
@@ -5726,7 +5726,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   margin-top: 24px;
   padding-top: 16px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #a7c6a8;
   font-size: 16px;
   color: #333;
 }
@@ -5851,7 +5851,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* 作業リスト */
 .proc-list {
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 14px;
   overflow: hidden;
   background: #fff;
@@ -5863,7 +5863,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   padding: 10px 16px;
   background: #fafafa;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #a7c6a8;
   font-size: 15px;
   color: #777;
   gap: 0;
@@ -5991,7 +5991,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
@@ -6035,7 +6035,7 @@ a.nav-user--active .header-avatar-icon {
 
 .stat-card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -6101,7 +6101,7 @@ a.nav-user--active .header-avatar-icon {
 /* Dashboard section */
 .dashboard-section {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #a7c6a8;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
@@ -6415,7 +6415,7 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
 /* ヘッダー: ややゆとりを持たせ、やわらかい影に */
 .header-inner { height: 64px; }
 .site-header {
-  border-bottom: 1px solid #e6efe6;
+  border-bottom: 1px solid #e5ffe6;
   box-shadow: 0 2px 16px rgba(36,80,40,0.06);
 }
 
@@ -6430,7 +6430,7 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
 /* サイドバー: 白カード化（本文と分離） */
 .sidebar {
   background: #fff;
-  border: 1px solid #e6efe6;
+  border: 1px solid #e5ffe6;
   border-radius: 20px;
   box-shadow: 0 4px 18px rgba(36,80,40,0.06);
   padding: 18px 14px;
@@ -6454,7 +6454,7 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
 
 /* カード類: やわらかい影・ホバーで浮き上がる */
 .project-card {
-  border-color: #e6efe6;
+  border-color: #e5ffe6;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 3px 12px rgba(36,80,40,0.06);
@@ -6465,7 +6465,7 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
   transform: translateY(-3px);
 }
 .stat-card {
-  border-color: #e6efe6;
+  border-color: #e5ffe6;
   border-radius: 20px;
   padding: 22px;
   box-shadow: 0 3px 12px rgba(36,80,40,0.06);
@@ -6478,13 +6478,13 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
 
 /* テーブルを独立した白カードに */
 .proj-table-wrap {
-  border: 1px solid #e6efe6;
+  border: 1px solid #e5ffe6;
   border-radius: 18px;
   box-shadow: 0 3px 14px rgba(36,80,40,0.06);
   overflow: hidden;
 }
 .pay-table-wrap {
-  border-color: #e6efe6;
+  border-color: #e5ffe6;
   border-radius: 18px;
   box-shadow: 0 3px 14px rgba(36,80,40,0.06);
 }
@@ -6505,7 +6505,7 @@ a.nav-user--active .header-avatar-icon { background: rgba(76,158,81,0.28); }
   --ds-primary: #4c9e51;
   --ds-primary-dark: #3d8042;
   --ds-danger: #c62828;
-  --ds-border: #e6efe6;
+  --ds-border: #e5ffe6;
   --ds-radius-sm: 10px;
   --ds-radius-md: 14px;
   --ds-radius-lg: 20px;
@@ -6721,7 +6721,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
     flex-direction: column;
     background: #fff;
     box-shadow: 0 6px 14px rgba(36,80,40,0.12);
-    border-top: 1px solid #e6efe6;
+    border-top: 1px solid #e5ffe6;
     padding: 8px 16px;
     z-index: 200;
   }
