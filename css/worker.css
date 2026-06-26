@@ -114,7 +114,7 @@
 
 .worker-title-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 32px;
 }
 
@@ -876,13 +876,13 @@
 
 .wmypage-title-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 24px;
 }
 
 /* ── アカウント情報カード ── */
 .wmypage-account-card {
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -1166,7 +1166,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 18px;
   padding: 8px 12px;
   background: #fff;
@@ -1790,7 +1790,7 @@
 
 .wlist-separator {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 0;
 }
 
@@ -2113,7 +2113,7 @@
 
 .wdetail-top-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 28px;
 }
 
@@ -2441,7 +2441,7 @@
 
 .wmylist-title-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 24px;
 }
 
@@ -2539,7 +2539,7 @@
   margin-bottom: 16px;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
 }
 
 .wmylist-map {
@@ -2645,7 +2645,7 @@
 
 .wmylist-modal-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 28px;
 }
 
@@ -2729,7 +2729,7 @@
 
 .wmylist-card {
   background: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   margin-bottom: 16px;
   overflow: hidden;
@@ -2819,7 +2819,7 @@
 .wmylist-card-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
 }
 
 .wmylist-card-action-btn {
@@ -2830,7 +2830,7 @@
   color: #333;
   background: #fff;
   border: none;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #6fb373;
   cursor: pointer;
   text-decoration: none;
   transition: background 0.15s;
@@ -2955,7 +2955,7 @@
 
 .wreward-title-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 24px;
 }
 
@@ -3109,7 +3109,7 @@
 /* テーブル */
 .wreward-table-wrap {
   overflow-x: auto;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   margin-bottom: 20px;
 }
@@ -3127,7 +3127,7 @@
   font-weight: 700;
   font-size: 16px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #6fb373;
   white-space: nowrap;
 }
 
@@ -3276,7 +3276,7 @@
 
 .wmsg-title-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 24px;
 }
 
@@ -3379,7 +3379,7 @@
 .wmsg-table-wrap {
   overflow-x: auto;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
 }
 
@@ -3397,7 +3397,7 @@
   font-weight: 700;
   font-size: 16px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #6fb373;
   white-space: nowrap;
 }
 
@@ -3635,7 +3635,7 @@
 
 .wmsg-modal-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 20px;
 }
 
@@ -3799,7 +3799,7 @@
 .wregion-tab--all {
   background: #fff;
   color: #333;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #6fb373;
   border-bottom: 2px solid #ddd;
 }
 
@@ -3915,7 +3915,7 @@
 
 .wth-title-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 24px;
 }
 
@@ -4014,7 +4014,7 @@
 
 .wth-footer-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0;
 }
 
@@ -4129,7 +4129,7 @@
 
 .wbasic-title-rule {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0 0 20px;
 }
 
@@ -6674,7 +6674,7 @@
 
 .wprocedure-modal-table th,
 .wprocedure-modal-table td {
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   padding: 7px 10px;
   text-align: left;
   vertical-align: middle;
@@ -7852,7 +7852,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wmsg-table-wrap,
 .wth-table-area {
   overflow-x: auto;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   margin-bottom: 20px;
   background-color: #fff;

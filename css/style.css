@@ -879,7 +879,7 @@ a.nav-user--active .header-avatar-icon {
   font-weight: 600;
   color: #555;
   background: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   cursor: pointer;
   transition: all 0.15s;
 }
@@ -1198,7 +1198,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 16px;
   background: #fafafa;
   cursor: text;
@@ -1242,7 +1242,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: center;
   width: 28px;
   height: 28px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   background: #fff;
   color: #555;
@@ -1262,7 +1262,7 @@ a.nav-user--active .header-avatar-icon {
 
 .view-toggle {
   display: flex;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -1281,7 +1281,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .view-btn + .view-btn {
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #6fb373;
 }
 
 .view-btn--active {
@@ -2014,7 +2014,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 4px;
   padding: 5px 11px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   background: #fff;
   font-size: 15px;
@@ -4577,7 +4577,7 @@ a.nav-user--active .header-avatar-icon {
 
 .acct-divider {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #6fb373;
   margin: 0;
 }
 
@@ -4792,7 +4792,7 @@ a.nav-user--active .header-avatar-icon {
 
 .phdet-card {
   margin-top: 24px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   overflow: hidden;
   background: #fff;
@@ -5261,7 +5261,7 @@ a.nav-user--active .header-avatar-icon {
 .applist-register-box {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   background: #fafafa;
   font-size: 16px;
@@ -5284,7 +5284,7 @@ a.nav-user--active .header-avatar-icon {
 .applist-memo-area {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #6fb373;
   border-radius: 14px;
   font-size: 16px;
   font-family: inherit;
