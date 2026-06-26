@@ -531,7 +531,7 @@ a.nav-user--active .header-avatar-icon {
 
 .project-card {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 18px;
   padding: 16px;
   transition: box-shadow 0.15s;
@@ -627,7 +627,7 @@ a.nav-user--active .header-avatar-icon {
 .status-badge--gray {
   background: #eaf6eb;
   color: #616161;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
 }
 
 /* Toggle switch */
@@ -1186,7 +1186,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   padding: 8px 12px;
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-bottom: none;
   border-radius: 16px 6px 0 0;
   gap: 12px;
@@ -1294,7 +1294,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .proj-table-wrap {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-top: none;
   border-radius: 0 0 6px 6px;
   overflow-x: auto;
@@ -1479,7 +1479,7 @@ a.nav-user--active .header-avatar-icon {
 
 .row-action-btn--renew {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   color: #4c9e51;
 }
 .row-action-btn--renew:hover:not(:disabled) {
@@ -1510,7 +1510,7 @@ a.nav-user--active .header-avatar-icon {
   top: calc(100% + 4px);
   right: 0;
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   min-width: 200px;
@@ -1566,7 +1566,7 @@ a.nav-user--active .header-avatar-icon {
 
 .proj-icon-card {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 18px;
   padding: 12px;
   display: flex;
@@ -1724,7 +1724,7 @@ a.nav-user--active .header-avatar-icon {
   width: 232px;
   flex-shrink: 0;
   background: #fff;
-  border-right: 1px solid #4c9e51;
+  border-right: 1px solid #d6eed7;
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -1880,7 +1880,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 8px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   margin-bottom: 0;
 }
 
@@ -1910,7 +1910,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .notif-list {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 18px;
   margin-top: 20px;
   overflow: hidden;
@@ -1975,7 +1975,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .notif-status--unread {
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   color: #4c9e51;
   background: #fff;
 }
@@ -2070,7 +2070,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   margin-bottom: 20px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   gap: 16px;
 }
 
@@ -2115,7 +2115,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .proj-form {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -2357,7 +2357,7 @@ a.nav-user--active .header-avatar-icon {
 =========================== */
 .billing-summary {
   width: 100%;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 18px;
   overflow: hidden;
   background: #fafafa;
@@ -2469,7 +2469,7 @@ a.nav-user--active .header-avatar-icon {
 .form-upload-thumb {
   width: 72px;
   height: 72px;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   background: #eaf6eb;
   display: flex;
@@ -2544,7 +2544,7 @@ a.nav-user--active .header-avatar-icon {
 .create-actions {
   margin-top: 24px;
   padding-top: 20px;
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
 }
 
 .create-actions-note {
@@ -2705,7 +2705,7 @@ a.nav-user--active .header-avatar-icon {
 /* ── モーダルフッター ── */
 .modal-footer {
   padding: 16px 32px 20px;
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
   background: #fafafa;
   flex-shrink: 0;
 }
@@ -3154,7 +3154,7 @@ a.nav-user--active .header-avatar-icon {
   width: 80px;
   height: 80px;
   background: #eaf6eb;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 16px;
 }
 
@@ -3494,7 +3494,7 @@ a.nav-user--active .header-avatar-icon {
   color: #1a1a1a;
   margin-bottom: 20px;
   padding-bottom: 14px;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
 }
 
 .pay-wrap {
@@ -4235,7 +4235,7 @@ a.nav-user--active .header-avatar-icon {
   height: 34px;
   border-radius: 50%;
   background: #f0f0f0;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4247,7 +4247,7 @@ a.nav-user--active .header-avatar-icon {
 /* 自動メッセージ（システム）ボックス */
 .msgd-auto-box {
   background: #fafafa;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 0 10px 10px 10px;
   padding: 14px 18px;
   font-size: 12.5px;
@@ -4309,7 +4309,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .msgd-read-badge--unread {
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   color: #4c9e51;
   background: transparent;
 }
@@ -4583,7 +4583,7 @@ a.nav-user--active .header-avatar-icon {
 
 .acct-menu-card {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 18px;
   overflow: hidden;
 }
@@ -4637,7 +4637,7 @@ a.nav-user--active .header-avatar-icon {
 
 .phistory-card {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 18px;
   padding: 20px 24px 16px;
 }
@@ -4747,8 +4747,8 @@ a.nav-user--active .header-avatar-icon {
 .withdrawal-section {
   margin-top: 32px;
   padding: 32px 0;
-  border-top: 1px solid #4c9e51;
-  border-bottom: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
+  border-bottom: 1px solid #d6eed7;
 }
 
 .withdrawal-desc {
@@ -4868,7 +4868,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0;
-  border-bottom: 1px dotted #4c9e51;
+  border-bottom: 1px dotted #d6eed7;
   font-size: 16px;
   color: #333;
 }
@@ -4893,7 +4893,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: baseline;
   gap: 16px;
   padding: 12px 0 4px;
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
   margin-top: 4px;
   font-size: 18px;
   font-weight: 700;
@@ -4917,7 +4917,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* フォームコンテナ */
 .fmodal-form {
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
 }
 
 /* 各行 */
@@ -5078,7 +5078,7 @@ a.nav-user--active .header-avatar-icon {
 /* 案件情報カード */
 .applist-proj-card {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   padding: 16px 18px;
 }
@@ -5177,7 +5177,7 @@ a.nav-user--active .header-avatar-icon {
   margin-top: 20px;
   padding: 20px 20px 20px;
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
 }
 
@@ -5517,7 +5517,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px 16px;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
 }
 
 .search-modal-title {
@@ -5726,7 +5726,7 @@ a.nav-user--active .header-avatar-icon {
   justify-content: space-between;
   margin-top: 24px;
   padding-top: 16px;
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
   font-size: 16px;
   color: #333;
 }
@@ -5851,7 +5851,7 @@ a.nav-user--active .header-avatar-icon {
 
 /* 作業リスト */
 .proc-list {
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   overflow: hidden;
   background: #fff;
@@ -5863,7 +5863,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   padding: 10px 16px;
   background: #fafafa;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   font-size: 15px;
   color: #777;
   gap: 0;
@@ -5991,7 +5991,7 @@ a.nav-user--active .header-avatar-icon {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
@@ -6035,7 +6035,7 @@ a.nav-user--active .header-avatar-icon {
 
 .stat-card {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -6101,7 +6101,7 @@ a.nav-user--active .header-avatar-icon {
 /* Dashboard section */
 .dashboard-section {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);

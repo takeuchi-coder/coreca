@@ -265,7 +265,7 @@
 /* フィールド間の区切り線 */
 .worker-field-rule {
   border: none;
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
   margin: 4px 0 24px;
 }
 
@@ -364,7 +364,7 @@
 
 /* フォーム本体 */
 .profile-form {
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
 }
 
 /* 各行 */
@@ -372,7 +372,7 @@
   display: flex;
   align-items: flex-start;
   padding: 20px 0;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   gap: 24px;
 }
 
@@ -602,14 +602,14 @@
   border-spacing: 0;
   font-size: 16px;
   margin-bottom: 16px;
-  border-top: 1px solid #4c9e51;
-  border-bottom: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
+  border-bottom: 1px solid #d6eed7;
   border-radius: 14px;
   overflow: hidden;
 }
 
 .confirm-row {
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
 }
 
 .confirm-row--last {
@@ -623,14 +623,14 @@
   text-align: left;
   vertical-align: middle;
   white-space: nowrap;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
 }
 
 .confirm-td {
   padding: 24px 28px;
   color: #333;
   vertical-align: middle;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
 }
 
 @media (max-width: 600px) {
@@ -660,7 +660,7 @@
   }
   .confirm-table .confirm-td {
     padding: 4px 20px 16px;
-    border-bottom: 1px solid #4c9e51;
+    border-bottom: 1px solid #d6eed7;
   }
   .confirm-table .confirm-row:last-child .confirm-td {
     border-bottom: none;
@@ -2136,7 +2136,7 @@
 .wdetail-img-wrap {
   width: 240px;
   min-height: 180px;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 16px;
   background: #fff;
   display: flex;
@@ -2179,7 +2179,7 @@
    詳細セクション群
 =========================== */
 .wdetail-sections {
-  border-top: 1px solid #4c9e51;
+  border-top: 1px solid #d6eed7;
 }
 
 .wdetail-section {
@@ -3922,7 +3922,7 @@
 /* テーブル領域 */
 .wth-table-area {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   min-height: 80px;
   margin-bottom: 20px;
@@ -4478,7 +4478,7 @@
   margin: 0;
   padding: 0;
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -4513,7 +4513,7 @@
 
 .wbank-kana-card {
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   padding: 16px;
 }
@@ -4596,7 +4596,7 @@
   text-align: center;
   padding: 24px 16px 28px;
   background-color: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 16px;
   margin-bottom: 24px;
   gap: 12px;
@@ -4631,7 +4631,7 @@
 }
 
 .wtransfer-summary {
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   overflow: hidden;
   margin-top: 8px;
@@ -6017,7 +6017,7 @@
   gap: 10px 16px;
   flex-wrap: wrap;
   background: #fff;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   padding: 14px 18px;
   margin-bottom: 30px;
@@ -6488,7 +6488,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px 12px;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   position: sticky;
   top: 0;
   background: #fff;
@@ -6810,7 +6810,7 @@
   padding: 11px 16px;
   background: #fff;
   color: #4c9e51;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 14px;
   font-size: 16px;
   font-weight: 700;
@@ -6834,7 +6834,7 @@
 .wconfirm-table th,
 .wconfirm-table td {
   padding: 8px 10px;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   vertical-align: middle;
 }
 
@@ -6853,7 +6853,7 @@
 /* 作業報告一覧テーブル */
 .wreport-table-wrap {
   margin-top: 20px;
-  border: 1px solid #4c9e51;
+  border: 1px solid #d6eed7;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -6880,7 +6880,7 @@
 
 .wreport-table th {
   padding: 10px 12px;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   color: #555;
   font-weight: 700;
   text-align: left;
@@ -6889,7 +6889,7 @@
 
 .wreport-table td {
   padding: 10px 12px;
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   color: #333;
   vertical-align: middle;
   white-space: nowrap;
@@ -7021,7 +7021,7 @@
   display: flex;
   justify-content: space-between;
   padding: 6px 0;
-  border-bottom: 1px dashed #4c9e51;
+  border-bottom: 1px dashed #d6eed7;
   font-size: 16px;
   color: #333;
 }
@@ -7649,7 +7649,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
    （テーブルヘッダー統一ルールが th の border-bottom を none にするため復活させ、
      最終行は下線を消して角丸の下端をきれいに見せる） */
 .confirm-th {
-  border-bottom: 1px solid #4c9e51;
+  border-bottom: 1px solid #d6eed7;
   background-color: transparent;
   color: #333;
   width: 1%;
