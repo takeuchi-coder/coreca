@@ -5034,7 +5034,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 0 24px;
   background: #fff;
   color: #333;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 14px;
   font-size: 17px;
   font-family: inherit;
@@ -5801,7 +5801,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 8px 16px;
   background: #fff;
   color: #333;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 14px;
   font-size: 16px;
   font-family: inherit;
@@ -5842,7 +5842,7 @@ a.nav-user--active .header-avatar-icon {
 .btn-proc-filter--outline {
   background: #fff;
   color: #333;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
 }
 
 .btn-proc-filter--outline:hover {
@@ -5915,7 +5915,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 6px 14px;
   background: #fff;
   color: #333;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 14px;
   font-size: 15px;
   font-family: inherit;

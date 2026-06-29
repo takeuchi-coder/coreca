@@ -2495,7 +2495,7 @@
   font-size: 16px;
   color: #333;
   background: #fff;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 34px;
   cursor: pointer;
   transition: background 0.15s;
@@ -2514,7 +2514,7 @@
   font-size: 16px;
   color: #333;
   background: #fff;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 34px;
   cursor: pointer;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
@@ -2702,7 +2702,7 @@
 .wmylist-modal-btn--clear {
   background: #fff;
   color: #333;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
 }
 
 .wmylist-modal-btn--clear:hover {
@@ -2776,7 +2776,7 @@
 .wmylist-card-status {
   font-size: 15px;
   color: #888;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 34px;
   padding: 2px 10px;
   white-space: nowrap;
@@ -3096,7 +3096,7 @@
   font-family: inherit;
   color: #333;
   background: #fff;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 14px;
   cursor: pointer;
   transition: background 0.15s;
@@ -3491,7 +3491,7 @@
   padding: 6px 16px;
   background: #fff;
   color: #333;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 12px;
   font-size: 15px;
   cursor: pointer;
@@ -6406,7 +6406,7 @@
   padding: 15px 36px;
   background: #fff;
   color: #333;
-  border: 1px solid #bbb;
+  border: 1px solid #2e7d32;
   border-radius: 14px;
   font-size: 18px;
   font-weight: 700;
@@ -6586,7 +6586,7 @@
   width: 110px;
   height: 90px;
   background: #f0f0f0;
-  border: 1px dashed #bbb;
+  border: 1px dashed #2e7d32;
   border-radius: 14px;
   display: flex;
   align-items: center;
