@@ -720,7 +720,7 @@
   color: #555;
   font-size: 16px;
   padding: 7px 16px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d6edd7;
 }
 
 /* ヘッダー右側アイコン群 */
@@ -917,7 +917,7 @@
 }
 
 .wmypage-menu-item {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d6edd7;
 }
 
 .wmypage-menu-item--last {
@@ -3136,7 +3136,7 @@
 }
 
 .wreward-tr {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d6edd7;
 }
 
 .wreward-tr:last-child {
@@ -3406,7 +3406,7 @@
 }
 
 .wmsg-tr {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d6edd7;
 }
 
 .wmsg-tr:last-child {
@@ -4182,7 +4182,7 @@
 
 .wbasic-row-rule {
   border: none;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #d6edd7;
   margin: 0 24px;
 }
 
@@ -4686,7 +4686,7 @@
 
 .wtransfer-detail-rule {
   border: none;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #d6edd7;
   margin: 0;
 }
 
@@ -5614,7 +5614,7 @@
 }
 
 .wsidebar-item {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d6edd7;
 }
 
 .wsidebar-link {
@@ -7883,7 +7883,7 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 }
 .wmsg-tr,
 .wth-table tbody tr {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d6edd7;
 }
 .wmsg-tr:last-child,
 .wth-table tbody tr:last-child {
