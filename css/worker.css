@@ -304,7 +304,7 @@
 
 /* ログアウト完了メッセージ */
 .worker-logout-message {
-  text-align: center;
+  text-align: left;
   margin: 24px 0 32px;
 }
 
