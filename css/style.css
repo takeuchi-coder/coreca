@@ -3133,6 +3133,8 @@ a.nav-user--active .header-avatar-icon {
 }
 
 @media (max-width: 600px) {
+  .info-table,
+  .info-table tbody { display: block; }
   .info-row { display: block; }
   .info-label,
   .info-value {
