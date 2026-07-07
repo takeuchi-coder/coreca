@@ -5148,7 +5148,7 @@ a.nav-user--active .header-avatar-icon {
   border-radius: 16px;
   padding: 6px;
   overflow-x: auto;
-  margin-bottom: 24px;
+  margin-bottom: 24px !important;
 }
 
 .applist-tabs {
