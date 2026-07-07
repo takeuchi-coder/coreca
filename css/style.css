@@ -3772,6 +3772,13 @@ a.nav-user--active .header-avatar-icon {
   gap: 6px;
 }
 
+@media (max-width: 600px) {
+  .pay-filter-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 .pay-filter-label {
   font-size: 15px;
   font-weight: 700;
