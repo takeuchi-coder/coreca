@@ -5938,6 +5938,19 @@ a.nav-user--active .header-avatar-icon {
   background: #eaf6eb;
 }
 
+@media (max-width: 600px) {
+  /* コントロールバーの子要素はカラム落ち */
+  .proc-ctrl-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  /* 一覧は横スクロール（列幅を保って潰さない） */
+  .proc-list { overflow-x: auto; }
+  .proc-row--header,
+  .proc-row--data { min-width: 640px; }
+}
+
 .btn-proc-kenshu {
   padding: 6px 18px;
   background: #4c9e51;
