@@ -3132,6 +3132,17 @@ a.nav-user--active .header-avatar-icon {
   line-height: 1.7;
 }
 
+@media (max-width: 600px) {
+  .info-row { display: block; }
+  .info-label,
+  .info-value {
+    display: block;
+    width: 100%;
+  }
+  .info-label { padding: 12px 0 0; }
+  .info-value { padding: 4px 0 12px; }
+}
+
 /* 公開範囲バッジ */
 .visibility-badge {
   display: inline-block;
