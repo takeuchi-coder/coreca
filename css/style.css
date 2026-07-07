@@ -823,7 +823,7 @@ a.nav-user--active .header-avatar-icon {
 }
 
 .btn-action--outline-gray {
-  border-color: #bbb;
+  border-color: #86a688;
   color: #555;
   background: #fff;
 }
@@ -919,7 +919,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 6px;
   padding: 8px 20px;
-  border: 1.5px solid #bbb;
+  border: 1.5px solid #86a688;
   border-radius: 16px;
   background: #fff;
   color: #444;
@@ -2483,7 +2483,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  border: 1.5px dashed #bbb;
+  border: 1.5px dashed #86a688;
   border-radius: 14px;
   font-size: 16px;
   color: #555;
@@ -4026,7 +4026,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   gap: 4px;
   padding: 6px 16px;
-  border: 1.5px solid #bbb;
+  border: 1.5px solid #86a688;
   border-radius: 16px;
   background: #fff;
   color: #444;
@@ -4523,7 +4523,7 @@ a.nav-user--active .header-avatar-icon {
   padding: 9px 28px;
   background: #fff;
   color: #555;
-  border: 1.5px solid #bbb;
+  border: 1.5px solid #86a688;
   border-radius: 16px;
   font-size: 16px;
   font-weight: 700;
