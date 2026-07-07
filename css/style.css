@@ -2123,14 +2123,14 @@ a.nav-user--active .header-avatar-icon {
 .form-row {
   display: grid;
   grid-template-columns: 196px 1fr;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #d6eed7;
 }
 
 .form-row:last-child { border-bottom: none; }
 
 .form-label-cell {
   background: #f7f7f7;
-  border-right: 1px solid #ececec;
+  border-right: 1px solid #d6eed7;
   padding: 14px 16px;
   display: flex;
   flex-direction: row;
