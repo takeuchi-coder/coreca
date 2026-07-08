@@ -383,6 +383,7 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
+  text-align: center;
 }
 
 .page-title {
@@ -1882,6 +1883,7 @@ a.nav-user--active .header-avatar-icon {
   padding-bottom: 16px;
   border-bottom: 1px solid #d6eed7;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .notif-back-link {
@@ -2072,6 +2074,7 @@ a.nav-user--active .header-avatar-icon {
   padding-bottom: 16px;
   border-bottom: 1px solid #d6eed7;
   gap: 16px;
+  text-align: center;
 }
 
 .create-page-header-left {
@@ -3509,6 +3512,7 @@ a.nav-user--active .header-avatar-icon {
   margin-bottom: 20px;
   padding-bottom: 14px;
   border-bottom: 1px solid #d6eed7;
+  text-align: center;
 }
 
 .pay-wrap {
