@@ -383,8 +383,10 @@ a.nav-user--active .header-avatar-icon {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 14px;
-  text-align: center;
 }
+
+/* タイトルのテキストのみ中央、アイコン/リンクは左のまま */
+.page-header .page-title { flex: 1; text-align: center; }
 
 .page-title {
   font-size: 24px;
@@ -1883,8 +1885,10 @@ a.nav-user--active .header-avatar-icon {
   padding-bottom: 16px;
   border-bottom: 1px solid #d6eed7;
   margin-bottom: 0;
-  text-align: center;
 }
+
+/* タイトルのテキストのみ中央、戻るリンク/アイコンは左のまま */
+.notif-page-header .notif-page-title { flex: 1; text-align: center; }
 
 .notif-back-link {
   display: flex;
@@ -2074,8 +2078,11 @@ a.nav-user--active .header-avatar-icon {
   padding-bottom: 16px;
   border-bottom: 1px solid #d6eed7;
   gap: 16px;
-  text-align: center;
 }
+
+/* タイトルのテキストのみ中央、戻るリンク/アイコンは左のまま */
+.create-page-header .create-page-header-left { flex: 1; }
+.create-page-header .create-title { flex: 1; text-align: center; }
 
 .create-page-header-left {
   display: flex;
