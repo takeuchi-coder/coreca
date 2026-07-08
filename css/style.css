@@ -2905,6 +2905,19 @@ a.nav-user--active .header-avatar-icon {
 
 .det-topbar-chevron { flex-shrink: 0; }
 
+/* det-topbar 内の戻るリンク: テキストのみ中央、シェブロンアイコンは左に固定
+   （chevron を絶対配置でフローから外し、残るテキストを中央寄せ） */
+.det-topbar .det-back-link {
+  position: relative;
+  justify-content: center;
+}
+.det-topbar .det-back-link .det-topbar-chevron {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* 案件ヘッダーカード */
 .proj-detail-header {
   background: #fff;
