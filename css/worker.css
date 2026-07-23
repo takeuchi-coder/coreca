@@ -6006,6 +6006,20 @@
   color: #4c9e51;
 }
 
+/* wmld-page-header 内の戻るリンク: テキストのみ中央、シェブロンアイコンは左に固定
+   （アイコンSVGを絶対配置でフローから外し、残るテキストを中央寄せ） */
+.wmld-page-header .wmld-back-link {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.wmld-page-header .wmld-back-link svg {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* 案件タイトル（.wmld-inner 直下の先頭 p）: 見出しとして強調 */
 .wmld-inner > p:first-of-type {
   font-size: 22px;
