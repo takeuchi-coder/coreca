@@ -873,6 +873,7 @@
   font-weight: 700;
   color: #222;
   margin: 0 0 16px;
+  text-align: center;
 }
 
 .wmypage-title-rule {
@@ -2438,6 +2439,7 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
+  text-align: center;
 }
 
 .wmylist-title-rule {
@@ -2952,6 +2954,7 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 12px;
+  text-align: center;
 }
 
 .wreward-title-rule {
@@ -3273,6 +3276,7 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0 0 12px;
+  text-align: center;
 }
 
 .wmsg-title-rule {
@@ -3912,6 +3916,8 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
+  flex: 1;
+  text-align: center;
 }
 
 .wth-title-rule {
