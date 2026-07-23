@@ -110,6 +110,7 @@
   color: #222;
   margin: 0 0 14px;
   line-height: 1.4;
+  text-align: center;
 }
 
 .worker-title-rule {
@@ -4125,6 +4126,8 @@
   font-weight: 700;
   color: #1a1a1a;
   margin: 0;
+  flex: 1;
+  text-align: center;
 }
 
 .wbasic-title-rule {
