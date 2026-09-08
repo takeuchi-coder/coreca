@@ -6814,8 +6814,17 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
    order/list.html スマホ最適化（差分明示のため末尾に追記）
    ========================================================= */
 @media (max-width: 600px) {
-  /* フィルターバー: 縦積み（ステータスは横スクロール継続） */
+  /* 本文がPC幅のままになる問題の修正:
+     縦積み時に .site-main が align-items:flex-start のままだと、本文が中身の
+     幅（≈780px）に広がって画面からはみ出す。全幅にストレッチして収める。 */
+  .site-main { align-items: stretch; }
+  .main-content { width: 100%; }
+
+  /* フィルターバー: 縦積み（ステータスは横スクロール継続）
+     子要素が中身幅(≈780px)に広がるのを防ぐため列幅で頭打ちにする */
   .filter-bar { flex-direction: column; align-items: stretch; }
+  .filter-bar > * { min-width: 0; max-width: 100%; }
+  .status-filters { overflow-x: auto; }
   .filter-bar-right { flex-wrap: wrap; justify-content: flex-end; }
 
   /* ツールバー: 折り返して収める＋カードと分離した見た目に */
