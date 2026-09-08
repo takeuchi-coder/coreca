@@ -1378,7 +1378,6 @@ a.nav-user--active .header-avatar-icon {
   font-size: 14px;
   color: #888;
   margin-top: 2px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
