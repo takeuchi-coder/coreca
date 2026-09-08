@@ -6856,7 +6856,8 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   }
   .proj-table td {
     display: block;
-    width: 100%;
+    width: 100% !important;
+    white-space: normal !important;
     padding: 6px 0;
     border-bottom: none;
   }
