@@ -7951,3 +7951,9 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
 .wcontact-notice a:hover {
   text-decoration: none !important;
 }
+
+@media (max-width: 600px) {
+  .wdetail-hero {
+    flex-direction: column;
+  }
+}
