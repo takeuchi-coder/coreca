@@ -6809,3 +6809,55 @@ input[class]:focus, select[class]:focus, textarea[class]:focus {
   .hamburger { display: flex; }
   .site-header { position: relative; }
 }
+
+/* =========================================================
+   order/list.html スマホ最適化（差分明示のため末尾に追記）
+   ========================================================= */
+@media (max-width: 600px) {
+  /* フィルターバー: 縦積み（ステータスは横スクロール継続） */
+  .filter-bar { flex-direction: column; align-items: stretch; }
+  .filter-bar-right { flex-wrap: wrap; justify-content: flex-end; }
+
+  /* ツールバー: 折り返して収める＋カードと分離した見た目に */
+  .proj-toolbar {
+    flex-wrap: wrap;
+    border-bottom: 1px solid #d6eed7;
+    border-radius: 14px;
+    margin-bottom: 12px;
+  }
+  .toolbar-right { flex-wrap: wrap; justify-content: flex-end; row-gap: 8px; }
+
+  /* 一覧テーブルをカード型に積み替え（ビュー切替は :not(.is-hidden) で維持） */
+  .proj-table-wrap {
+    overflow-x: visible;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+  }
+  .proj-table:not(.is-hidden) { display: block; }
+  .proj-table thead { display: none; }
+  .proj-table tbody { display: block; }
+  .proj-table tr.proj-row {
+    display: block;
+    background: #fff;
+    border: 1px solid #d6eed7;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 12px;
+  }
+  .proj-table td {
+    display: block;
+    width: 100%;
+    padding: 6px 0;
+    border-bottom: none;
+  }
+  .proj-table tbody tr:hover { background: #fff; }
+
+  .col-name { min-width: 0; }
+  .col-date { white-space: normal; }
+
+  /* 操作ボタンは全幅で押しやすく */
+  .col-actions { width: auto; text-align: left; }
+  .row-action-btns { gap: 8px; }
+  .row-action-btn { width: 100%; justify-content: center; }
+}
